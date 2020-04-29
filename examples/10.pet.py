@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import sys
+sys.path.append(r'/opt/ezblock')
 from spider import Spider
 __SPIDER__ = Spider([10,11,12,4,5,6,1,2,3,7,8,9])
 from Music import *
