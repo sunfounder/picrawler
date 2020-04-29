@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import sys
+sys.path.append(r'/opt/ezblock')
 from Music import *
 from ezblock import delay
 from spider import Spider
