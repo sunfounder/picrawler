@@ -109,7 +109,7 @@ Email: service@sunfounder.com
 ## Contact us
 
 website:
-    <ezblock.cc>
+    ezblock.cc
 
 E-mail:
     service@sunfounder.com
