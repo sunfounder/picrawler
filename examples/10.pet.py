@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 import sys
 sys.path.append(r'/opt/ezblock')
+from ezblock import __reset_mcu__
+import time
+__reset_mcu__()
+time.sleep(0.01)
 from spider import Spider
 __SPIDER__ = Spider([10,11,12,4,5,6,1,2,3,7,8,9])
 from Music import *

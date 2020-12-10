@@ -2,8 +2,12 @@ from os import system
 from ezblock import getIP
 import time
 import os
+from ezblock import __reset_mcu__
+import time
+__reset_mcu__()
+time.sleep(0.01)
 
-CODE_DIR = "/home/pi/web_control"
+CODE_DIR = "/home/pi/picrawler/examples/web_control"
 
 
 def start_http_server():
