@@ -1,9 +1,13 @@
-from spider import Spider
+from crawler import Spider
 import sys
 import tty
 import termios
 import asyncio
 import time
+from ezblock import __reset_mcu__
+import time
+__reset_mcu__()
+time.sleep(0.01)
 
 def cali_helper():
     
