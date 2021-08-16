@@ -11,6 +11,32 @@ crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9])
 #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
 speed = 80
 
+
+
+
+
+def readchar():
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(sys.stdin.fileno())
+        ch = sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    return ch
+
+
+manual = '''
+Press keys on keyboard to control PiSloth!
+    W: Forward
+    A: Turn left
+    S: Backward
+    D: Turn right
+    Q: Wave
+    E: Swing
+    R: Rotate
+'''
+
 #俯卧撑
 def pushup():
 
@@ -50,31 +76,6 @@ def rotate(clockwise):
         crawler.do_action('turn right',1,speed)
     else:
         crawler.do_action('turn left',1,speed)
-
-
-def readchar():
-    fd = sys.stdin.fileno()
-    old_settings = termios.tcgetattr(fd)
-    try:
-        tty.setraw(sys.stdin.fileno())
-        ch = sys.stdin.read(1)
-    finally:
-        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-    return ch
-
-
-manual = '''
-Press keys on keyboard to control PiSloth!
-    W: Forward
-    A: Turn left
-    S: Backward
-    D: Turn right
-    Q: Wave
-    E: Swing
-    R: Rotate
-'''
-
-
 
 
 

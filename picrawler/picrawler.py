@@ -595,8 +595,9 @@ class Picrawler(Robot):
         return list(self.current_coord)
 
 
-    def mix_step(self,step_name,leg,coodinate=[50,50,-33]):
-        new_step = self.step_list[step_name]
+    def mix_step(self,basic_step,leg,coodinate=[50,50,-33]):
+        # Pay attention to adding list(), otherwise the address pointer is returned
+        new_step = list(basic_step)
         new_step[leg] = coodinate
         return list(new_step)
 
