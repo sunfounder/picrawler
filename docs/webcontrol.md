@@ -1,31 +1,35 @@
-# web-server- server process
+@ECHO OFF
 
-Usage:
-```python
-ws = Websocket()
-ws.test()
-```
-## Methods
-- recv_server_func(websocket) - recv the data from client .
-- remote_control(move) - recv key value to contrl spider move
-- send_server_func(websocket) - send the data to the client.
-- main_func() - the main logic api
-- main_logic_1(websocket,path) - build a run forever recv api .
+pushd %~dp0
 
-- main_logic_2(websocket,path) - build a run forever send api.
+REM Command file for Sphinx documentation
 
-## 文件说明
+if "%SPHINXBUILD%" == "" (
+	set SPHINXBUILD=sphinx-build
+)
+set SOURCEDIR=source
+set BUILDDIR=build
 
-- Music.py - 喇叭播放库文件
+if "%1" == "" goto help
 
-- spider.py - spider库文件
+%SPHINXBUILD% >NUL 2>NUL
+if errorlevel 9009 (
+	echo.
+	echo.The 'sphinx-build' command was not found. Make sure you have Sphinx
+	echo.installed, then set the SPHINXBUILD environment variable to point
+	echo.to the full path of the 'sphinx-build' executable. Alternatively you
+	echo.may add the Sphinx directory to PATH.
+	echo.
+	echo.If you don't have Sphinx installed, grab it from
+	echo.http://sphinx-doc.org/
+	exit /b 1
+)
 
-- robot.py - spider库文件
+%SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+goto end
 
-- vilib.py - 摄像头库文件
+:help
+%SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 
-- web_server.py - websocket服务器库文件
-
-- start_server.py  - 快捷启动websocket服务器和文件接收服务器文件
-
-### 启动服务器命令: sudo python3 start_server.py
+:end
+popd

@@ -66,15 +66,28 @@ class Picrawler(Robot):
             except KeyError:
                 print("No such action")
 
+
     def do_step(self, _step, speed=50):
+
+        step_temp = []
+        if isinstance(_step,str):
+            if _step in self.step_list.keys():
+                step_temp  = list(self.step_list[_step])
+            else:
+                print("The name of gait is not in the default gait dictionary")
+        elif isinstance(_step,list):
+            step_temp = _step
+        else:
+            print("The \"_step\" parameter is wrong.")
+            return
+
         translate_list = []
-        for coord in _step: # each servo motion
+        for coord in step_temp: # each servo motion
             alpha, beta, gamma = self.coord2polar(coord)
             translate_list += [beta, alpha, gamma]
-             
+            
         self.servo_move(translate_list, speed=speed)
-        #新增
-        self.current_coord = _step
+        self.current_coord = step_temp
         return translate_list
     
 
@@ -314,7 +327,7 @@ class Picrawler(Robot):
             
         def is_stand(self):
             tmp = self.z_current == self.Z_DEFAULT
-            print("is stand? %s"%tmp)
+            # print("is stand? %s"%tmp)
             return tmp
         
         @property
@@ -605,7 +618,8 @@ class Picrawler(Robot):
 if __name__ == "__main__":
     pass
     # crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9])
-    # #crawler.do_step([[50, 20, -70],[50, 30, -70],[50, 40, -70],[80, 50, -70]])
+    # crawler.do_step("stand")
+    # print("done")
 
     
   
