@@ -9,6 +9,8 @@ Welcome to picrawler's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
+   thank-robot
 
 
 
