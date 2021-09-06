@@ -1,64 +1,35 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+SunFounder Raspberry Pi Robot - PiCrawler
+=============================================
 
 
-# -- Project information -----------------------------------------------------
-import sphinx_rtd_theme
+Thanks for choosing our PiCrawler.
 
-project = 'picrawler'
-copyright = '2021, sunfounder'
-author = 'sunfounder'
+PiCrawler is a Raspberry Pi Bionic robot with an aluminum alloy structure. It can talk, dance, and even express emotions, such as happiness and excitement.
 
+It has 22 different actions, such as: Stomp, Swing and MoonWalk, and you can customize the actions according to your needs. PiCrawler's eyes consist of an ultrasonic sensor module that can be used to detect distance for obstacle avoidance and following functions.
 
-# -- General configuration ---------------------------------------------------
+In this tutorial, a list and assembly pdf, introduction to Robot HAT, and programming of PiCrawler are included.
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
-extensions = [
-]
+The programming part is divided into two chapters: :ref:`Play with Ezblock` & :ref:`Play with Python`, and each of them can get you stated on making PiCrawler work in way you want.
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+Ezblock Studio is a development platform developed by SunFounder designed for beginners to lower the barriers to getting started with Raspberry Pi. It has two programming languages: Graphical and Python, and available on almost all different types of devices. With Bluetooth and Wi-Fi support, you can download code, remote control a Raspberry Pi, on Ezblock Studio.
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+More experienced makers can use the popular programming language - Python.
 
 
-# -- Options for HTML output -------------------------------------------------
+**Content**
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = 'alabaster'
+.. toctree::
+   :maxdepth: 2
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+   list_and_assembly
+   about_robot_hat 
+   ezblock/play_with_ezblock
+   play_with_python
+   appendix
 
-html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+Copyright Notice
+--------------------------
 
-#公司自定义js和css
-html_js_files = [
-    'https://ezblock.cc/readDocFile/topHead.js',
-]
-html_css_files = [
-    'https://ezblock.cc/readDocFile/topHead.css',
-]
+All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+

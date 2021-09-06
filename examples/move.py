@@ -1,5 +1,3 @@
-
-from sys import set_asyncgen_hooks
 from picrawler import Picrawler
 from time import sleep
 
@@ -27,7 +25,5 @@ def main():
         crawler.do_step('stand',speed)
         sleep(1)
 
-            
- 
 if __name__ == "__main__":
     main()

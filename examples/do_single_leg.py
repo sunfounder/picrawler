@@ -79,7 +79,7 @@ def main():
             leg=3     
             coodinate=crawler.current_step_leg_value(leg)  
         elif chr(32) == key:
-            print("[[right front], [left front], [left read], [left rear]]")
+            print("[[right front], [left front], [left rear], [left rear]]")
             print(crawler.current_step_all_leg_value())
 
         elif chr(27) == key:# 27 for ESC

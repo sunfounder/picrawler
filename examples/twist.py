@@ -1,5 +1,4 @@
 
-from sys import set_asyncgen_hooks
 from picrawler import Picrawler
 from time import sleep
 from robot_hat import Music
@@ -10,7 +9,7 @@ crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9])
 
 
 def twist(speed):
-    new_step=[[50, 50, -80], [50, 50, -80],[80, 80, 0], [50, 50, -80]]
+    new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
     for i in range(4):
         for inc in range(30,60,5): 
             rise = [50,50,(-80+inc*0.5)]

@@ -6,14 +6,9 @@ import tty
 import termios
 import copy
 
-
 crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
 #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
 speed = 80
-
-
-
-
 
 def readchar():
     fd = sys.stdin.fileno()
@@ -51,8 +46,8 @@ def save_new_step():
     print(new_step)
 
 def play_all_new_step():
-    for i in range(len(new_step)):
-        crawler.do_step(new_step[i],speed)
+    for step in new_step:
+        crawler.do_step(step,speed)
         sleep(0.6)
 
 def main():  
