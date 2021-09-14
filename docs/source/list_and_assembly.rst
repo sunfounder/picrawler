@@ -7,5 +7,5 @@ Please follow the steps on the PDF to assemble.
 
 If the servo has been powered on, please do not turn the Servo shaft to avoid damage.
 
-* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/a0000690-piSloth.pdf>`.
+* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/a0000692-picrawler.pdf>`.
 

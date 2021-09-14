@@ -1,7 +1,7 @@
 Sound Effect
 =====================
 
-在这个示例中，我们使用PiCrawler的(准确的说，robot hat的)音效功能。它由三个部分组成，分别是 **Muisc**, **Sound**, **Text to Speech**.
+In this example, we use PiCrawler's (to be precise, Robot HAT's) sound effects. It consists of three parts, namely **Muisc**, **Sound**, **Text to Speech**.
 
 **Install i2samp**
 
@@ -34,7 +34,7 @@ After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a 
     cd /home/pi/picrawler/examples
     sudo python3 sound_effect.py
 
-代码运行后，请根据terminal中弹出的提示进行操作。
+After the code runs, please operate according to the prompt that printed on the terminal.
 
 **Code** 
 
@@ -96,25 +96,25 @@ After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a 
 
 **How it works?**
 
-与背景音乐相关的函数包括这些：
+Functions related to background music include these:
 
-* ``music = Music()`` : 声明对象
-* ``music.music_set_volume(20)`` : 设置音量，范围是0~100。
-* ``music.background_music(./musics/sports-Ahjay_Stelino.mp3)`` : 播放音乐文件，在这里是 ``./musics`` 路径下的 **sports-Ahjay_Stelino.mp3** 文件.
-* ``music.music_stop()`` : 停止播放背景音乐
+* ``music = Music()`` : Declare the object.
+* ``music.music_set_volume(20)`` : Set the volume, the range is 0~100.
+* ``music.background_music(./musics/sports-Ahjay_Stelino.mp3)`` : Play music files, here is the **sports-Ahjay_Stelino.mp3** file under the ``./musics`` path.
+* ``music.music_stop()`` : Stop playing background music.
 
 .. note::
 
     You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`Filezilla Software`.
 
 
-与音效相关的函数包括这些：
+Functions related to sound effects include these:
 
 * ``music = Music()``
-* ``music.sound_effect_play('./sounds/talk1.wav')`` : 播放音效文件，在这里是 ``./musics`` 路径下的 **talk1.wav** 文件.
-* ``muisc.sound_effect_threading('./sounds/talk1.wav')`` ： 以新线程的方式播放音效文件，不会暂停主线程的运行。
+* ``music.sound_effect_play('./sounds/talk1.wav')`` : Play the sound effect file, here is the **talk1.wav** file under the ``./musics`` path.
+* ``muisc.sound_effect_threading('./sounds/talk1.wav')`` : Play the sound effect file in a new thread mode without suspending the main thread.
 
-与 Text to Speech 相关的函数包括这些：
+Functions related to Text to Speech include these:
 
 * ``tts = TTS()``
 * ``tts.say(words)`` : Text audio.

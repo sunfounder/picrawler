@@ -1,7 +1,7 @@
 Record New Step
 =================
 
-我们使用键盘控制PiCrawler依次摆出几个姿势，并将这些姿势记录下来。随后replay它们。
+We use the keyboard to control PiCrawler to make several poses in turn, and record these poses. Replay them later.
 
 
 **Run the Code**
@@ -128,9 +128,9 @@ Record New Step
 
 **How it works?**
 
-这个项目脱胎于 :ref:`Do Single Leg` 。增加了记录和重播的功能。
+This project was born out of :ref:`Do Single Leg`. Added recording and replay functions.
 
-记录功能由以下代码实现。
+The recording function is implemented by the following code.
 
 .. code-block:: python
 
@@ -140,10 +140,11 @@ Record New Step
         new_step.append(copy.deepcopy(crawler.current_step_all_leg_value()))
         print(new_step)
 
-.. note:: 在此处需要使用 `Deep Copy <https://docs.python.org/3/library/copy.html>`_ ，否则new_step在append时不会获得新的数组对象.
+.. note:: 
+    The assignment here needs to use the `Deep Copy <https://docs.python.org/3/library/copy.html>`_ function, otherwise the ``new_step`` will not get a new array object when appending.
 
 
-replay功能则由以下代码实现。
+The replay function is implemented by the following code.
 
 .. code-block:: python
 

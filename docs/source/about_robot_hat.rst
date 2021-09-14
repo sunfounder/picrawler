@@ -1,7 +1,7 @@
 About Robot HAT
 -----------------------------
 
-.. image:: media/picar_x_pic7.png
+.. image:: image/picar_x_pic7.png
 
 **RST Button**
     * Short pressing RST Button causes program resetting.
@@ -18,3 +18,5 @@ About Robot HAT
 
 **Bluetooth Indicator**
     * The Bluetooth indicator keeps turning on at a well Bluetooth connection, blink at a Bluetooth disconnection, blink fast at a signal transmission.    
+
+.. note:: You can see more details in the `Robot HAT Documentation <https://robot-hat.readthedocs.io/en/latest/index.html>`_.

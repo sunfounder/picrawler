@@ -19,8 +19,8 @@ Install ``robot-hat`` library first.
     sudo python3 setup.py install
 
 .. note::
-    Running setup.py will download some necessary components. You may fail to download due to network problems. You may need to download again at this time.
-    In the following cases, enter Y and press Enter.
+    Running ``setup.py`` will download some necessary components. You may fail to download due to network problems. You may need to download again at this time.
+    In the following cases, enter ``Y`` and press Enter.
 	
 	.. image:: media/dowload_code.png
 

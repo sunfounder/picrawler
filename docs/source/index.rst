@@ -2,19 +2,19 @@ SunFounder Raspberry Pi Robot - PiCrawler
 =============================================
 
 
-Thanks for choosing our PiCrawler.
+Thank you for choosing our PiCrawler.
 
-PiCrawler is a Raspberry Pi Bionic robot with an aluminum alloy structure. It can talk, dance, and even express emotions, such as happiness and excitement.
+PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. It is equipped with a camera module, which can perform color recognition, face detection and other items; 12 metal gear servos support it to walk, dance, and pose various postures; the ultrasonic module on the body allows it to quickly detect obstacles in front of it Respond; Robot HAT is equipped with a speaker, allowing it to express emotions such as happiness and excitement.
 
-It has 22 different actions, such as: Stomp, Swing and MoonWalk, and you can customize the actions according to your needs. PiCrawler's eyes consist of an ultrasonic sensor module that can be used to detect distance for obstacle avoidance and following functions.
+The library contains basic actions such as "forward", "sit", etc.; the example includes some pre-programmed interesting actions that can be used directly; the tutorial provides a way to make custom actions for you.
 
-In this tutorial, a list and assembly pdf, introduction to Robot HAT, and programming of PiCrawler are included.
+This document includes the list and assembly pdf, Robot HAT introduction and PiCrawler programming.
 
-The programming part is divided into two chapters: :ref:`Play with Ezblock` & :ref:`Play with Python`, and each of them can get you stated on making PiCrawler work in way you want.
+The programming part is divided into two chapters: :ref:`Play with Ezblock` & :ref:`Play with Python`, each chapter allows you to explain how to make PiCrawler work the way you want.
 
-Ezblock Studio is a development platform developed by SunFounder designed for beginners to lower the barriers to getting started with Raspberry Pi. It has two programming languages: Graphical and Python, and available on almost all different types of devices. With Bluetooth and Wi-Fi support, you can download code, remote control a Raspberry Pi, on Ezblock Studio.
+Ezblock Studio is a development platform developed by SunFounder for beginners, aiming to lower the barriers to entry for Raspberry Pi. It has two programming languages: Graphical and Python, which can be used on almost all different types of devices. With Bluetooth and Wi-Fi support, you can download codes on Ezblock Studio and remotely control Raspberry Pi.
 
-More experienced makers can use the popular programming language - Python.
+More experienced makers can use the popular programming language-Python.
 
 
 **Content**

@@ -1,7 +1,7 @@
 Move
 ==============
 
-这是第一个项目，我们让PiCrawler进行它最基础的功能——移动。
+This is PiCrawler's first project. Perform its most basic function - move.
 
 **Run the Code**
 
@@ -14,7 +14,7 @@ Move
     cd /home/pi/picrawler/examples
     sudo python3 move.py
 
-在代码执行后，PiCrawler会依次执行以下动作：move forward, move backward, turn left, turn right, turn left angle, turn right angle, stand
+After the code is executed, PiCrawler will perform the following actions in sequence: move forward, move backward, turn left, turn right, stand.
 
 **Code**
 
@@ -88,4 +88,4 @@ In general, all movement of PiCrawler can be implemented with the ``do_action()`
 * ``step`` represents the number of each action is done, the default is 1.
 * ``speed`` indicates the speed of the action, the default is 50 and the range is 0~100.
 
-除此之外，这里还用到了 ``crawler.do_step('stand',speed)`` 来让PiCrawler站立。该函数的用法将在后面的示例中详细解答。
+In addition, ``crawler.do_step('stand',speed)`` is also used here to make PiCrawler stand. The usage of this function will be explained in the following example.

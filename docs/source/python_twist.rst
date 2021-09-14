@@ -1,9 +1,9 @@
 Twist
 ==============
 
-我们已经知道了如何让PiCrawler摆出特定的姿势，接下来就是将姿势组合起来，形成连续的动作。
+We already know how to make PiCrawler assume a specific pose, the next step is to combine the poses to form a continuous action.
 
-在这里让PiCrawler的四只脚两两起伏，随着音乐蹦跶。
+Here, PiCrawler's four feet are up and down in twos, jumping with the music.
 
 **Run the Code**
 
@@ -59,7 +59,7 @@ Twist
 
 **How it works?**
 
-在这个代码中，你需要注意的是这一部分：
+In this code, you need to pay attention to this part:
 
 .. code-block:: python
 
@@ -77,12 +77,12 @@ Twist
                 new_step[(i-1)%4] = drop
                 crawler.do_step(new_step,speed)
 
-简单的说，它就是使用了两层for循环来让 ``new_step`` 数组产生持续且规律的变化，同时由 ``crawler.do_step()`` 把姿势执行出来，形成连续动作。
+Simply put, it uses two layers of for loops to make the ``new_step`` array produce continuous and regular changes, and at the same time, ``crawler.do_step()`` executes the posture to form a continuous action.
 
-您可以从 :ref:`Do Single Leg` 中直观的获取到每个姿势所对应的坐标值数组。
+You can intuitively get the coordinate value array corresponding to each pose from :ref:`Do Single Leg`.
 
 
-除此之外，该示例还播放了背景音乐。其实现方法如下。
+In addition, the example also played background music. The implementation method is as follows.
 
 Play music by importing the following libraries.
 
@@ -90,7 +90,7 @@ Play music by importing the following libraries.
 
     from robot_hat import Music
 
-声明一个 Music 对象
+Declare a Music object.
 
 .. code-block:: python
 

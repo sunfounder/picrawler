@@ -1,8 +1,7 @@
 Mix Step
 =================
 
-如果你对反复测量多个坐标感到厌倦，可以尝试在现有的Step中快速生成新的一个.
-
+If you are tired of repeatedly measuring multiple coordinates, you can try to quickly generate a new one in the existing step.
 
 
 **Run the Code**
@@ -64,14 +63,14 @@ Mix Step
 
 **How it works?**
 
-首先，我们获取 ``step_list`` 现成的 ``'sit'`` step，赋值到 ``basic_step`` 。
+First, we get the ready-made ``'sit'`` step of ``step_list`` and assign it to ``basic_step``.
 
 .. code-block:: python
 
     basic_step = []
     basic_step = crawler.step_list.get("sit")
 
-然后，用 ``mix_step(step_list_value,leg,coordinate)`` 替换掉原步态的某一个脚的坐标值。
+Then, use ``mix_step(step_list_value,leg,coordinate)`` to replace the coordinate value of a certain foot of the original gait.
 
 .. code-block:: python
 
@@ -79,4 +78,4 @@ Mix Step
     right_hand  = crawler.mix_step(basic_step,1,[0,50,80])
     two_hand = crawler.mix_step(left_hand,1,[0,50,80])
 
-就这样，我们生成了三个新的step。
+In this way, we have generated three new steps.

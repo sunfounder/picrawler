@@ -1,9 +1,9 @@
 Do Single Leg
 =====================
 
-在这个示例中，我们用键盘来对PiCrawler的逐个脚进行控制，摆出想要的姿势。
+In this example, we use the keyboard to control the PiCrawler foot by foot and assume the desired posture.
 
-你可以按下空格键将当前的坐标值打印出来，这些坐标值在你为PiCrawler创造独特的行为时派上用场。
+You can press the space bar to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
 
 
 **Run the Code**
@@ -17,7 +17,7 @@ Do Single Leg
     cd /home/pi/picrawler/examples
     sudo python3 do_step.py
 
-代码运行后，请根据terminal中弹出的提示进行操作。
+After the code runs, please operate according to the prompt that pops up in the terminal.
 
 **Code**
 
@@ -109,7 +109,7 @@ Do Single Leg
 
 **How it works?**
 
-在该项目中你需要注意的是以下三个函数：
+What you need to pay attention to in this project are the following three functions:
 
 .. code-block:: python
 
@@ -117,6 +117,6 @@ Do Single Leg
     current_step_all_leg_value()
     do_single_leg(leg,coodinate,speed) 
 
-* ``current_step_leg_value(leg)`` : 返回对应脚的坐标值。参数 ``leg`` 可以为 ``0``, ``1``, ``2``, ``3`` 四个值，分别对应right front, left front, left rear, left rear 四个leg。
-* ``current_step_all_leg_value()`` : 返回所有脚的坐标值。
-* ``do_single_leg(leg,coodinate,speed)`` : 单独修改某一个脚的坐标值。
+* ``current_step_leg_value(leg)`` : Returns the coordinate value of the corresponding foot. The parameter ``leg`` can be ``0``, ``1``, ``2``, ``3`` four values, corresponding to right front, left front, left rear, left rear four values respectively leg.
+* ``current_step_all_leg_value()`` : Returns the coordinate values of all legs.
+* ``do_single_leg(leg,coodinate,speed)`` : Modify the coordinate value of a certain foot individually.

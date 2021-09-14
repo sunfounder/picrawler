@@ -1,7 +1,7 @@
 Do Step
 =============
 
-在这个示例中，我们让PiCrawler摆出特定的Postion。
+In this example, let PiCrawler pose a specific Postion.
 
 
 **Run the Code**
@@ -46,22 +46,22 @@ Do Step
             print(new_step)
             sleep(3)
 
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()
 
 
 **How it works?**
 
-在这个代码中，你需要关注的代码是这个 ``crawler.do_step()`` 。 
+In this code, the code you need to pay attention to is this ``crawler.do_step()``.
 
-与 ``do_action()`` 相似， ``do_step()`` 也可以操控PiCrawler的行为。
-不同的是，前者可以做出 ``move forward`` 这种连续的行为，而后者则是用于做出 ``stand`` 与 ``sit`` 这种单独的姿势。
-
-
-它有两种用法:
+Similar to ``do_action()``, ``do_step()`` can also manipulate PiCrawler's behavior.
+The difference is that the former can perform the continuous behavior of ``move forward``, while the latter can be used to make separate gestures of ``stand`` and ``sit``.
 
 
-其一：它可以写入字符串，直接使用 ``picrawler`` 库中的 ``step_list`` 字典.
+It has two uses:
+
+
+One: It can write strings, directly use the ``step_list`` dictionary in the ``picrawler`` library.
 
 .. code-block:: python
 
@@ -69,23 +69,23 @@ if __name__ == "__main__":
     # "speed" indicates the speed of the step, the range is 0~100.
 
 
-其二：它也可以写入一组记录了4个坐标值的数组.
+Second: It can also write an array of 4 coordinate values.
 
 .. code-block:: python
 
     crawler.do_step([[50, 50, -80], [50, 50, -80],[80, 80, 0], [50, 50, -80]],speed)
-    # 这四个坐标分别用于控制 right front, left front, left rear, left rear 四个leg。
+    # These four coordinates are used to control the four legs of right front, left front, left rear, and left rear respectively.
 
-每个脚各自拥有一个独立的坐标系。如下图所示：
+Each foot has an independent coordinate system. As shown below:
 
-.. image:: image/
+.. image:: image/4cood.png
 
-你需要单独测量每一个脚尖的坐标值。如下图所示：
+You need to measure the coordinates of each toe individually. As shown below:
 
-.. image:: image/
+.. image:: image/1cood.png
 
 
-顺带一提：第一种方法中调用的 ``step_list`` 同样由包含4个坐标值的数组组成。
+By the way: the ``step_list`` called in the first method also consists of an array containing 4 coordinate values.
 
 .. code-block:: python
 
