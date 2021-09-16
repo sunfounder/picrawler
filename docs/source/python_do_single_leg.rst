@@ -1,10 +1,11 @@
-Do Single Leg
+Adjust posture
 =====================
 
 In this example, we use the keyboard to control the PiCrawler foot by foot and assume the desired posture.
 
 You can press the space bar to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
 
+.. image:: image/1cood.A.png
 
 **Run the Code**
 

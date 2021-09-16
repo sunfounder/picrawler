@@ -83,5 +83,5 @@ In general, this project combines the knowledge points of :ref:`Keyboard Control
 
 Its flow is shown in the figure below:
 
-.. image:: image/flow_bullfight.png
+.. image:: image/bull_fight.png
 

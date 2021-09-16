@@ -1,8 +1,9 @@
-Do Step
+Pose
 =============
 
-In this example, let PiCrawler pose a specific Postion.
+PiCrawler can assume a specific posture by writing a coordinate array. Here it assumes a raised right rear foot posture.
 
+.. image:: image/4cood.A.png
 
 **Run the Code**
 

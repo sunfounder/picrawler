@@ -55,28 +55,34 @@ After the program runs, you will see the following information in the final:
 
 Please follow the prompts to activate the corresponding functions.
 
-    #. **Take Photo**
+    *  **Take Photo**
 
         Type ``q`` in the terminal and press Enter. The picture currently seen by the camera will be saved (if the color detection function is turned on, the mark box will also appear in the saved picture). You can see these photos from the ``/home/pi/Pictures/PiCrawler/`` directory of the Raspberry Pi.
         You can use tools such as :ref:`Filezilla Software` to transfer photos to your PC.
         
 
-    #. **Color Detect**
+    *  **Color Detect**
 
         Entering a number between ``1~6`` will detect one of the colors in "red, orange, yellow, green, blue, purple". Enter ``0`` to turn off color detection.
+
+        .. image:: image/DTC2.png
 
         .. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
 
 
-    #. **Face Detect**
+    *  **Face Detect**
 
         Type ``f`` to turn on face detection.
 
-    #. **QR Code Detect**
+        .. image:: image/DTC5.png
+
+    *  **QR Code Detect**
 
         Enter ``r`` to open the QR code recognition. No other operations can be performed before the QR code is recognized. The decoding information of the QR code will be printed in the terminal.
 
-    #. **Display Information**
+        .. image:: image/DTC4.png
+
+    *  **Display Information**
 
         Entering ``s`` will print the information of the face detection (and color detection) target in the terminal. Including the center coordinates (X, Y) and size (Weight, height) of the measured object.
 
