@@ -27,12 +27,7 @@ def main():
             music.sound_effect_threading('./sounds/sign.wav')
         except Exception as e:
             print(e)
-        # crawler.do_action('stand', 1,95)
-        time.sleep(0.5)
-        # crawler.do_action('stand', 1,95)
-        time.sleep(0.5)
         crawler.do_action('turn left angle',3,speed)
-        # crawler.do_action('stand', 1,95)
         time.sleep(0.2)
     else :
         crawler.do_action('forward', 1,speed)

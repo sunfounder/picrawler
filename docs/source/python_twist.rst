@@ -64,7 +64,7 @@ In this code, you need to pay attention to this part:
 .. code-block:: python
 
     def twist(speed):
-        ## [right front],[left front],[left rear],[left rear]
+        ## [right front],[left front],[left rear],[right rear]
         new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
         for i in range(4):
             for inc in range(30,60,5): 
@@ -79,7 +79,7 @@ In this code, you need to pay attention to this part:
 
 Simply put, it uses two layers of for loops to make the ``new_step`` array produce continuous and regular changes, and at the same time, ``crawler.do_step()`` executes the posture to form a continuous action.
 
-You can intuitively get the coordinate value array corresponding to each pose from :ref:`Do Single Leg`.
+You can intuitively get the coordinate value array corresponding to each pose from :ref:`Adjust Posture`.
 
 
 In addition, the example also played background music. The implementation method is as follows.

@@ -28,6 +28,7 @@ Press keys on keyboard to control PiCrawler!
     A: Turn left
     S: Backward
     D: Turn right
+    ESC: Quit
 '''
 
 def main():  

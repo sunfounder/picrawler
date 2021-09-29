@@ -1,4 +1,4 @@
-Adjust posture
+Adjust Posture
 =====================
 
 In this example, we use the keyboard to control the PiCrawler foot by foot and assume the desired posture.
@@ -56,7 +56,7 @@ After the code runs, please operate according to the prompt that pops up in the 
         2: Select left front leg
         3: Select left rear leg
         4: Select right rear leg
-        Space: Print all leg coodinate
+        Space: Print all leg coordinate
         ESC: Quit
     '''
 
@@ -66,43 +66,43 @@ After the code runs, please operate according to the prompt that pops up in the 
         print(manual)
         crawler.do_step('stand',speed)
         leg = 0 
-        coodinate=crawler.current_step_leg_value(leg)   
+        coordinate=crawler.current_step_leg_value(leg)   
         while True:
             key = readchar()
             print(key)
             if 'w' == key:
-                coodinate[1]=coodinate[1]+5    
+                coordinate[1]=coordinate[1]+5    
             elif 's' == key:
-                coodinate[1]=coodinate[1]-5           
+                coordinate[1]=coordinate[1]-5           
             elif 'a' == key:
-                coodinate[0]=coodinate[0]-5         
+                coordinate[0]=coordinate[0]-5         
             elif 'd' == key:
-                coodinate[0]=coodinate[0]+5   
+                coordinate[0]=coordinate[0]+5   
             elif 'r' == key:
-                coodinate[2]=coodinate[2]+5         
+                coordinate[2]=coordinate[2]+5         
             elif 'f' == key:
-                coodinate[2]=coodinate[2]-5       
+                coordinate[2]=coordinate[2]-5       
             elif '1' == key:
                 leg=0
-                coodinate=crawler.current_step_leg_value(leg)           
+                coordinate=crawler.current_step_leg_value(leg)           
             elif '2' == key:
                 leg=1   
-                coodinate=crawler.current_step_leg_value(leg)              
+                coordinate=crawler.current_step_leg_value(leg)              
             elif '3' == key:
                 leg=2  
-                coodinate=crawler.current_step_leg_value(leg)     
+                coordinate=crawler.current_step_leg_value(leg)     
             elif '4' == key:
                 leg=3     
-                coodinate=crawler.current_step_leg_value(leg)  
+                coordinate=crawler.current_step_leg_value(leg)  
             elif chr(32) == key:
-                print("[[right front], [left front], [left read], [left rear]]")
+                print("[[right front],[left front],[left rear],[right rear]]")
                 print(crawler.current_step_all_leg_value())
 
             elif chr(27) == key:# 27 for ESC
                 break    
 
             sleep(0.05)
-            crawler.do_single_leg(leg,coodinate,speed)          
+            crawler.do_single_leg(leg,coordinate,speed)          
         print("\n q Quit")  
             
     if __name__ == "__main__":
@@ -116,8 +116,8 @@ What you need to pay attention to in this project are the following three functi
 
     current_step_leg_value(leg)
     current_step_all_leg_value()
-    do_single_leg(leg,coodinate,speed) 
+    do_single_leg(leg,coordinate,speed) 
 
-* ``current_step_leg_value(leg)`` : Returns the coordinate value of the corresponding foot. The parameter ``leg`` can be ``0``, ``1``, ``2``, ``3`` four values, corresponding to right front, left front, left rear, left rear four values respectively leg.
+* ``current_step_leg_value(leg)`` : Returns the coordinate value of the corresponding leg. The parameter ``leg`` can be ``0``, ``1``, ``2``, ``3`` four values, corresponding to right front, left front, left rear, left rear four values respectively leg.
 * ``current_step_all_leg_value()`` : Returns the coordinate values of all legs.
-* ``do_single_leg(leg,coodinate,speed)`` : Modify the coordinate value of a certain foot individually.
+* ``do_single_leg(leg,coordinate,speed)`` : Modify the coordinate value of a certain leg individually.

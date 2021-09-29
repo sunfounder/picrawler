@@ -108,7 +108,7 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
                 leg=3     
                 coodinate=crawler.current_step_leg_value(leg)  
             elif chr(32) == key:
-                print("[[right front], [left front], [left read], [left rear]]")
+                print("[[right front],[left front],[left rear],[right rear]]")
                 print("saved new step")
                 print(crawler.current_step_all_leg_value())
                 save_new_step()
@@ -128,7 +128,7 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
 
 **How it works?**
 
-This project was born out of :ref:`Do Single Leg`. Added recording and replay functions.
+This project was born out of :ref:`Adjust Posture`. Added recording and replay functions.
 
 The recording function is implemented by the following code.
 

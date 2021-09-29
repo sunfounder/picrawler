@@ -26,3 +26,16 @@ If you don't want to write these projects one by one, we have uploaded them to E
 
 .. toctree::
 
+  ezblock_move
+  ezblock_remote_control
+  ezblock_sound_effect
+  ezblock_avoid
+  ezblock_do_step
+  ezblock_do_single_leg
+  ezblock_twist
+  ezblock_emotional_robot
+  ezblock_record_new_step
+  ezblock_computer_vision
+  ezblock_bull_fight
+  ezblock_treasure_hunt
+

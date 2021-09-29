@@ -56,13 +56,13 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 
         while True:
             if Vilib.detect_obj_parameter['color_n']!=0:
-                coodinate_x = Vilib.detect_obj_parameter['color_x']
+                coordinate_x = Vilib.detect_obj_parameter['color_x']
                 music.sound_effect_threading('./sounds/talk1.wav')
 
-                if coodinate_x < 100:
+                if coordinate_x < 100:
                     crawler.do_action('turn left',1,speed)
                     sleep(0.05) 
-                elif coodinate_x > 220:
+                elif coordinate_x > 220:
                     crawler.do_action('turn right',1,speed)
                     sleep(0.05) 
                 else :
@@ -79,7 +79,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 
 **How it works?**
 
-In general, this project combines the knowledge points of :ref:`Keyboard Control`, :ref:`Computer Vision` and :ref:`Sound Effect`.
+In general, this project combines the knowledge points of :ref:`Move`, :ref:`Computer Vision` and :ref:`Sound Effect`.
 
 Its flow is shown in the figure below:
 

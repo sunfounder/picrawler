@@ -42,8 +42,8 @@ def twist(speed):
 ##"[[right front], [left front], [left rear], [left rear]]")
 
 def pushup(speed):
-    up=[[80, 0, -80], [80, 0, -80],[0, 100, 0], [0, 100, 0]]
-    down=[[80, 0, -30], [80, 0, -30],[0, 100, 0], [0, 100, 0]]
+    up=[[80, 0, -100], [80, 0, -100],[0, 120, -60], [0, 120, -60]]
+    down=[[80, 0, -30], [80, 0, -30],[0, 120, -60], [0, 120, -60]]
     crawler.do_step(up,speed)
     sleep(0.6)
     crawler.do_step(down,speed)
@@ -51,7 +51,7 @@ def pushup(speed):
 
 def swimming(speed):
     for i in range(100):
-        crawler.do_step([100-i,i,0],[100-i,i,0],[0,100,i/5],[0,100,i/5],speed)
+        crawler.do_step([100-i,i,0],[100-i,i,0],[0,120,-60+i/5],[0,100,-40-i/5],speed)
 
 
 

@@ -13,7 +13,9 @@ Before assembling the PiCrawler, follow the instructions on how to install the E
 
 After burning the Ezblock system on the SD-card, the P11 port on the Robot HAT is set to calibrate the servo angle to a 0° angle. To make sure the servo has been correctly set to 0°, first gently insert a rocker arm in the servo shaft, then slightly rotate the rocker arm to a different angle.
 
+
 .. image:: media/servo_arm.png
+    :width: 200
 
 Next, insert the servo cable into the P11 port as shown below:
 

@@ -15,16 +15,16 @@ not, please continue).
 
 **3 Interfacing options**
 
-.. image:: media/image282.png
+.. image:: image/image282.png
     :align: center
 
 **P5 I2C**
 
-.. image:: media/image283.png
+.. image:: image/image283.png
     :align: center
 
 **<Yes>, then <Ok> -> <Finish>**.
 
-.. image:: media/image284.png
+.. image:: image/image284.png
     :align: center
 

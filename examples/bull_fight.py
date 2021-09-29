@@ -17,13 +17,13 @@ def main():
 
     while True:
         if Vilib.detect_obj_parameter['color_n']!=0:
-            coodinate_x = Vilib.detect_obj_parameter['color_x']
+            coordinate_x = Vilib.detect_obj_parameter['color_x']
             music.sound_effect_threading('./sounds/talk1.wav')
 
-            if coodinate_x < 100:
+            if coordinate_x == -1:
                 crawler.do_action('turn left',1,speed)
                 sleep(0.05) 
-            elif coodinate_x > 220:
+            elif coordinate_x == 1:
                 crawler.do_action('turn right',1,speed)
                 sleep(0.05) 
             else :
