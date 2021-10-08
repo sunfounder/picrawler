@@ -21,13 +21,29 @@ class Picrawler(Robot):
             1,1,1,
         ]
         # self.soft_reset()
-        self.current_coord = [[60, 0, -30], [60, 0, -30], [60, 0, -30], [60, 0, -30]]
-        
-        self.init_coord = [[60, 0, -30], [60, 0, -30], [60, 0, -30], [60, 0, -30]]
-        
+        temp = math.sqrt((self.B+self.C)**2/2)
+        self.current_coord = [[temp, temp, self.A],[temp, temp, self.A],[temp, temp, self.A],[temp, temp, self.A]]
+        self.coord_temp = [[temp, temp, self.A],[temp, temp, self.A],[temp, temp, self.A],[temp, temp, self.A]]
+    
     def coord2polar(self, coord):
         x,y,z = coord
         
+        L = math.sqrt(x**2+y**2+z**2)
+        if L == 0:
+            L = 0.1
+        if L < self.C:
+            temp = self.C/L
+            x = temp * x
+            y = temp * y
+            z = temp * z           
+        elif L > (self.A+self.B+self.C):
+            temp = (self.A+self.B+self.C)/L
+            x = temp * x
+            y = temp * y
+            z = temp * z   
+
+        self.coord_temp.append([x,y,z])
+
         w = math.sqrt(math.pow(x,2) + math.pow(y,2))
         v = w - self.C
         u = math.sqrt(math.pow(z,2) + math.pow(v,2))
@@ -45,8 +61,52 @@ class Picrawler(Robot):
         beta = beta / math.pi * 180 - 90
         gamma = -(gamma / math.pi * 180 - 45) 
 
-        return alpha, beta, gamma
-        
+        return round(alpha,4), round(beta,4), round(gamma,4)
+
+    def polar2coord(self, angles):
+        alpha, beta, gamma = angles
+
+        L1 = math.sqrt(self.A**2+self.B**2-2*self.A*self.B*math.cos((90+alpha)/180*math.pi))
+        angle = math.acos((self.A**2+L1**2-self.B**2)/(2*self.A*L1))*180/math.pi
+        angle = 90 - beta - angle
+        L = L1*math.cos(angle*math.pi/180) + self.C
+
+        x = L*math.sin((45+gamma)*math.pi/180)
+        y = L*math.cos((45+gamma)*math.pi/180)
+        z = L1*math.sin(angle*math.pi/180)
+    
+        return [round(x,4),round(y,4),round(z,4)]
+
+    def limit(self,min,max,x):
+        if x > max:
+            return max
+        elif x < min:
+            return min
+        else:
+            return x
+
+    def limit_angle(self,angles):
+        alpha, beta, gamma = angles
+        # limit 
+        limit_flag = False
+        ## alpha
+        temp = self.limit(-90,90,alpha)
+        if temp != alpha:
+            alpha = temp
+            limit_flag = True
+        ## beta
+        temp = self.limit(-10,90,beta)
+        if temp != beta:
+            beta = temp
+            limit_flag = True
+        ## gamma
+        temp = self.limit(-52,60,gamma)
+        if temp != gamma:
+            gamma = temp
+            limit_flag = True
+        # return
+        return limit_flag,[alpha,beta,gamma]
+
     def do_action(self, motion_name, step=1, speed=50):
         try:
             for _ in range(step): # times
@@ -66,9 +126,29 @@ class Picrawler(Robot):
             except KeyError:
                 print("No such action")
 
+    def set_angle(self, angles_list,speed=50,israise=False):
+        translate_list = []
+        results = []
+        for angles in angles_list:
+            result, angles = self.limit_angle(angles)
+            translate_list += angles
+            results.append(result)
+        if True in results:
+            if israise == True:
+                raise ValueError('\033[1;35mCoordinates out of controllable range.\033[0m')
+            else:
+                print('\033[1;35mCoordinates out of controllable range.\033[0m')
+                coords = []
+                # Calculate coordinates 
+                for i in range(4):
+                    coords.append(self.polar2coord([translate_list[i*3],translate_list[i*3+1],translate_list[i*3+2]]))
+                self.current_coord = coords
+        else:
+            self.current_coord = self.coord_temp
 
-    def do_step(self, _step, speed=50):
+        self.servo_move(translate_list,speed)
 
+    def do_step(self, _step, speed=50,israise=False):
         step_temp = []
         if isinstance(_step,str):
             if _step in self.step_list.keys():
@@ -81,21 +161,19 @@ class Picrawler(Robot):
             print("The \"_step\" parameter is wrong.")
             return
 
-        translate_list = []
-        for coord in step_temp: # each servo motion
-            alpha, beta, gamma = self.coord2polar(coord)
-            translate_list += [beta, alpha, gamma]
-            
-        self.servo_move(translate_list, speed=speed)
-        self.current_coord = step_temp
-        return translate_list
+        angles_temp = []
+        self.coord_temp.clear()
+        for coord in step_temp: # each servo motion    
+            angles_temp.append(self.coord2polar(coord)) 
+          
+        self.set_angle(angles_temp,speed,israise) 
     
+
+    def current_step_all_leg_angle(self):
+        return self.servo_positions
 
     def add_action(self,action_name, action_list):
         self.move_list_add[action_name] = action_list
-
-  
-
     
     def cali_helper(self, leg, up, down, left, right, hight, low, enter):
         step = 0.01
@@ -327,7 +405,7 @@ class Picrawler(Robot):
             
         def is_stand(self):
             tmp = self.z_current == self.Z_DEFAULT
-            # print("is stand? %s"%tmp)
+            print("is stand? %s"%tmp)
             return tmp
         
         @property
@@ -602,10 +680,6 @@ class Picrawler(Robot):
 
     def current_step_leg_value(self,leg):
         return self.current_coord[leg]
-
-
-    def current_step_all_leg_value(self):
-        return list(self.current_coord)
 
 
     def mix_step(self,basic_step,leg,coodinate=[50,50,-33]):
