@@ -1,7 +1,7 @@
 Download and Run the Code
 ============================
 
-Download the Code Install 2 Libraries
+Download the Code Install 3 Libraries
 --------------------------------------
 We can download the files by using ``git clone`` in the command line.
 
@@ -23,6 +23,20 @@ Install ``robot-hat`` library first.
     In the following cases, enter ``Y`` and press Enter.
 	
 	.. image:: media/dowload_code.png
+
+Then download the code and install ``vilib`` library.
+
+.. raw:: html
+
+    <run></run>
+
+.. code-block::
+
+    cd /home/pi/
+    git clone https://github.com/sunfounder/vilib.git
+    cd picrawler
+    sudo python3 setup.py install
+
 
 Then download the code and install ``picrawler`` library.
 
