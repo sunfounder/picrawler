@@ -34,7 +34,7 @@ Then download the code and install ``vilib`` library.
 
     cd /home/pi/
     git clone https://github.com/sunfounder/vilib.git
-    cd picrawler
+    cd vilib
     sudo python3 setup.py install
 
 
