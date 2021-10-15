@@ -680,7 +680,9 @@ class Picrawler(Robot):
 
     def current_step_leg_value(self,leg):
         return self.current_coord[leg]
-
+        
+    def current_step_all_leg_value(self):
+        return list(self.current_coord)
 
     def mix_step(self,basic_step,leg,coodinate=[50,50,-33]):
         # Pay attention to adding list(), otherwise the address pointer is returned
