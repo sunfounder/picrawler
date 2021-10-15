@@ -19,6 +19,14 @@ If you are tired of repeatedly measuring multiple coordinates, you can try to qu
 
 **Code**
 
+.. note::
+    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+
+
+.. raw:: html
+
+    <run></run>
+
 .. code-block:: python
 
 

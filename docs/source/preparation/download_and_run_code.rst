@@ -37,7 +37,6 @@ Then download the code and install ``vilib`` library.
     cd vilib
     sudo python3 setup.py install
 
-
 Then download the code and install ``picrawler`` library.
 
 .. raw:: html
@@ -50,7 +49,6 @@ Then download the code and install ``picrawler`` library.
     git clone -b v2.0 https://github.com/sunfounder/picrawler.git
     cd picrawler
     sudo python3 setup.py install
-
 
 This step will take a little time, so please be patient.
 

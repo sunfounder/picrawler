@@ -16,7 +16,7 @@ You can press the space bar to print out the current coordinate values. These co
 .. code-block::
 
     cd /home/pi/picrawler/examples
-    sudo python3 do_step.py
+    sudo python3 do_single_leg.py
 
 After the code runs, please operate according to the prompt that pops up in the terminal.
 
