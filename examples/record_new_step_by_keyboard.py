@@ -59,7 +59,7 @@ def main():
     coodinate=crawler.current_step_leg_value(leg)   
     while True:
         key = readchar()
-        print(key)
+        # print(key)
         if 'w' == key:
             coodinate[1]=coodinate[1]+2    
         elif 's' == key:
