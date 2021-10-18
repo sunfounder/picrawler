@@ -14,6 +14,9 @@ This example will guide you how to use the recording function.
     cd /home/pi/picrawler/examples
     sudo python3 record_video.py
 
+
+After the code runs, the recording function will start. You can input ``w`` to pause recording, input ``q`` to start/continue recording, and input ``e`` to stop recording.
+
 **View the Image**
 
 After the code runs, the terminal will display the following prompt:
@@ -63,3 +66,15 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 
     if __name__ == "__main__":
         main()
+
+
+**How it works?**
+
+Functions related to recording include the following:
+
+* ``Vilib.rec_video_run(video_name)`` : Started the thread to record the video. ``video_name`` is the name of the video file, it should be a string.
+* ``Vilib.rec_video_start()`` : Start or continue video recording.
+* ``Vilib.rec_video_pause()`` : Pause recording.
+* ``Vilib.rec_video_stop()`` : Stop recording.
+
+``Vilib.rec_video_set["path"] = "/home/pi/video/test/"`` sets the storage location of video files.
