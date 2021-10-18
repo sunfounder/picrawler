@@ -18,14 +18,15 @@ After the assembly is complete, you can try to run the projects below.
     python_keyboard_control
     python_sound_effect
     python_avoid
-    python_do_step
-    python_do_single_leg
-    python_twist
-    python_record_new_step
-    python_computer_vision
-    python_emotional_robot
     python_bull_fight
     python_treasure_hunt
+    python_do_step
+    python_do_single_leg
+    python_record_new_step
+    python_twist
+    python_computer_vision
+    python_emotional_robot
+
 
 
     

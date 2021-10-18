@@ -91,5 +91,5 @@ In general, this project combines the knowledge points of :ref:`Move`, :ref:`Com
 
 Its flow is shown in the figure below:
 
-.. image:: image/bull_fight.png
+.. image:: image/bull_fight-f.png
 

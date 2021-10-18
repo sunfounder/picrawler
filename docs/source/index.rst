@@ -26,8 +26,8 @@ More experienced makers can use the popular programming language-Python.
 
     list_and_assembly
     about_robot_hat
-    ezblock/play_with_ezblock
     play_with_python 
+    ezblock/play_with_ezblock
     appendix
 
 Copyright Notice
