@@ -3,20 +3,11 @@ About Robot HAT
 
 .. image:: image/picar_x_pic7.png
 
-**RST Button**
-    * Short pressing RST Button causes program resetting.
-    * Long press RST Button till the LED lights up then release, and you will disconnect the Bluetooth.
+Robot HAT is a multifunctional expansion board that allows Raspberry Pi to be quickly turned into a robot. An MCU is on board to extend the PWM output and ADC input for the Raspberry Pi, as well as a motor driver chip, Bluetooth module, I2S audio module and mono speaker. As well as the GPIOs that lead out of the Raspberry Pi itself.
 
-**USR Button**
-    * The functions of USR Button can be set by your programming. (Pressing down leads to a input “0”; releasing produces a input “1”. ) 
+It also comes with a Speaker, which can be used to play background music, sound effects and implement TTS functions to make your project more interesting.
 
-**LED**
-    * Set by your program. (Outputting 1 turns the LED on; Outputting 0 turns it off.)
+Accepts 7-12V PH2.0 2pin power input with 2 power indicators. The board also has a user available LED and a button for you to quickly test some effects.
 
-**Battery Indicator**
-    * The voltage ranging above 7.8V, two LEDs light up; ranging 6.7V~7.8V, one LED turns on; ranging below 6.7V, all LEDs turn off.
-
-**Bluetooth Indicator**
-    * The Bluetooth indicator keeps turning on at a well Bluetooth connection, blink at a Bluetooth disconnection, blink fast at a signal transmission.    
-
-.. note:: You can see more details in the `Robot HAT Documentation <https://robot-hat.readthedocs.io/en/latest/index.html>`_.
+.. note::
+    You can see more details in the `Robot HAT Documentation <https://robot-hat.readthedocs.io/en/latest/index.html>`_.
