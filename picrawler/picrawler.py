@@ -1,4 +1,5 @@
-from robot_hat import Robot
+from robot_hat import Robot,utils
+
 import time
 import math
 
@@ -7,8 +8,14 @@ class Picrawler(Robot):
     B = 78
     C = 33
     
-    def __init__(self, pin_list):
-        super().__init__(pin_list, group=3)
+    def __init__(self, pin_list):  
+
+        self.current_coord = self.step_list['stand']
+        init_angles = [-40, 55, 0]*4
+        self.coord_temp = init_angles    
+        
+        super().__init__(pin_list, group=3,init_angles=init_angles)
+
         self.move_list = self.MoveList()
         self.move_list_add = {
             'my action': None
@@ -20,11 +27,8 @@ class Picrawler(Robot):
             1,1,-1,
             1,1,1,
         ]
-        # self.soft_reset()
-        temp = math.sqrt((self.B+self.C)**2/2)
-        self.current_coord = [[temp, temp, self.A],[temp, temp, self.A],[temp, temp, self.A],[temp, temp, self.A]]
-        self.coord_temp = [[temp, temp, self.A],[temp, temp, self.A],[temp, temp, self.A],[temp, temp, self.A]]
-    
+
+        
     def coord2polar(self, coord):
         x,y,z = coord
         
@@ -61,7 +65,7 @@ class Picrawler(Robot):
         beta = beta / math.pi * 180 - 90
         gamma = -(gamma / math.pi * 180 - 45) 
 
-        return round(alpha,4), round(beta,4), round(gamma,4)
+        return [round(alpha,4), round(beta,4), round(gamma,4)]
 
     def polar2coord(self, angles):
         alpha, beta, gamma = angles
@@ -87,24 +91,26 @@ class Picrawler(Robot):
 
     def limit_angle(self,angles):
         alpha, beta, gamma = angles
+        # print('input: %s'%angles)
         # limit 
         limit_flag = False
-        ## alpha
+        # alpha
         temp = self.limit(-90,90,alpha)
         if temp != alpha:
             alpha = temp
             limit_flag = True
-        ## beta
+        # beta
         temp = self.limit(-10,90,beta)
         if temp != beta:
             beta = temp
             limit_flag = True
-        ## gamma
-        temp = self.limit(-52,60,gamma)
+        # gamma
+        temp = self.limit(-60,60,gamma)
         if temp != gamma:
             gamma = temp
             limit_flag = True
-        # return
+        #return
+        # print('output: %s'%[alpha,beta,gamma])
         return limit_flag,[alpha,beta,gamma]
 
     def do_action(self, motion_name, step=1, speed=50):
@@ -114,7 +120,6 @@ class Picrawler(Robot):
                 if motion_name in ["forward", "backward", "turn left", "turn right", "turn left angle", "turn right angle"]:
                     self.stand_position = self.stand_position + 1 & 1
                 action = self.move_list[motion_name]
-                # for _step in action: # spyder motion
                 for _step in action: # spyder motion
                     self.do_step(_step, speed=speed)
         except AttributeError:
@@ -137,12 +142,15 @@ class Picrawler(Robot):
             if israise == True:
                 raise ValueError('\033[1;35mCoordinates out of controllable range.\033[0m')
             else:
-                print('\033[1;35mCoordinates out of controllable range.\033[0m')
-                coords = []
-                # Calculate coordinates 
-                for i in range(4):
-                    coords.append(self.polar2coord([translate_list[i*3],translate_list[i*3+1],translate_list[i*3+2]]))
-                self.current_coord = coords
+                try:
+                    print('\033[1;35mCoordinates out of controllable range.\033[0m')
+                    coords = []
+                    # Calculate coordinates 
+                    for i in range(4):
+                        coords.append(self.polar2coord([translate_list[i*3],translate_list[i*3+1],translate_list[i*3+2]]))
+                    self.current_coord = coords
+                except Exception as e:
+                    print('re : %s'%e)
         else:
             self.current_coord = self.coord_temp
 
@@ -164,7 +172,8 @@ class Picrawler(Robot):
         angles_temp = []
         self.coord_temp.clear()
         for coord in step_temp: # each servo motion    
-            angles_temp.append(self.coord2polar(coord)) 
+            alpha, beta, gamma = self.coord2polar(coord)
+            angles_temp.append([beta, alpha, gamma]) 
           
         self.set_angle(angles_temp,speed,israise) 
     
@@ -284,7 +293,7 @@ class Picrawler(Robot):
         Z_UP = -30
         Z_WAVE = 60
         Z_TURN = -40
-        Z_PUSH = -90
+        Z_PUSH = -76
          
         # temp length
         TEMP_A = math.sqrt(pow(2 * X_DEFAULT + LENGTH_SIDE, 2) + pow(Y_DEFAULT, 2))
@@ -313,7 +322,7 @@ class Picrawler(Robot):
             a = math.atan(self.Y_DEFAULT/(self.X_DEFAULT+self.LENGTH_SIDE/2))
             angle1 = a/math.pi*180
             r1 = math.sqrt(pow(self.Y_DEFAULT,2)+ pow(self.X_DEFAULT+ self.LENGTH_SIDE/2, 2))
-            x1 = r1* math.cos((angle1-angle)* math.pi/180)- self.LENGTH_SIDE/2
+            x1 = r1* math.cos((angle1-angle)* math.pi/180)- self.LENGTH_SIDE/2 
             y1 = r1* math.sin((angle1-angle)* math.pi/180)
             # print(x1,y1)
             
@@ -324,8 +333,10 @@ class Picrawler(Robot):
             b = math.atan((self.X_DEFAULT+self.LENGTH_SIDE/2)/(self.Y_DEFAULT+ self.LENGTH_SIDE))
             angle2 = b/math.pi*180
             r2 = math.sqrt(pow(self.X_DEFAULT+ self.LENGTH_SIDE/2, 2)+ pow(self.Y_DEFAULT+ self.LENGTH_SIDE,2))
-            x3 = r2*math.sin((angle2-angle)* math.pi/180) - self.LENGTH_SIDE/2
+            x3 = r2*math.sin((angle2-angle)* math.pi/180) - self.LENGTH_SIDE/2 
             y3 = r2*math.cos((angle2-angle)*math.pi/180)- self.LENGTH_SIDE
+
+            x3 += 10
             # print(x3,y3)
             return [x1,y1,x2,y2,x3,y3]
         
@@ -508,6 +519,7 @@ class Picrawler(Robot):
         @normal_action(1)
         def look_left(self):
             li = self.turn_angle_coord(self.angle)
+            print('li : %s'%li)
             temp_x1 = li[0:2]
             temp_x1.append(self.z_current)
             temp_x2 = li[2:4]
@@ -530,8 +542,14 @@ class Picrawler(Robot):
             temp_x2.append(self.z_current)
             temp_x3 = li[4:6]
             temp_x3.append(self.z_current)
+
             return [
-                [[self.X_DEFAULT, self.Y_DEFAULT, self.z_current],[self.X_TURN, self.Y_START,self.Z_UP],[self.X_DEFAULT, self.Y_START, self.z_current],[self.X_DEFAULT, self.Y_DEFAULT, self.z_current]],
+                [
+                    [self.X_DEFAULT, self.Y_DEFAULT, self.z_current],
+                    [self.X_TURN, self.Y_START,self.Z_UP],
+                    [self.X_DEFAULT, self.Y_START, self.z_current],
+                    [self.X_DEFAULT, self.Y_DEFAULT, self.z_current]
+                ],
                 [temp_x3, [self.X_TURN, self.Y_START, self.Z_UP], temp_x2, temp_x1]
             ]
         
@@ -642,33 +660,21 @@ class Picrawler(Robot):
             return _dance
 
 
-# 2021.7.29 
-
     step_list = {
+
         "stand":[
-            [50, 50, -80],
-            [50, 50, -80],
-            [50, 50, -80],
-            [50, 50, -80]
+            [45, 45, -50], 
+            [45, 45, -50], 
+            [45, 45, -50], 
+            [45, 45, -50]
         ],
         "sit":[
-            [50, 50, -33],
-            [50, 50, -33],
-            [50, 50, -33],
-            [50, 50, -33]
+            [45, 45, -30], 
+            [45, 45, -30], 
+            [45, 45, -30], 
+            [45, 45, -30]
         ],
-        "step3":[
-            [60, 60, 80],
-            [60, 60, 80],
-            [60, 60, 80],
-            [60, 60, 80]
-        ],
-        "step4":[
-            [60, 60, -80],
-            [60, 60, -80],
-            [60, 60, -80],
-            [60, 60, -80]
-        ],                
+              
     }
 
 
@@ -690,14 +696,28 @@ class Picrawler(Robot):
         new_step[leg] = coodinate
         return list(new_step)
 
+def test():
+    utils.reset_mcu()
+    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9])
 
-if __name__ == "__main__":
-    pass
-    # crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9])
-    # crawler.do_step("stand")
-    # print("done")
+    # 
+    # crawler.do_action('sit',1,100)
+    time.sleep(0.5)
+    for _ in range(10):
+        for i,step in enumerate(crawler.move_list.look_right):
+            print(i,step)
+            crawler.do_step(step,100)
 
+    # crawler.do_step([[-10, 70.40509926170151, -50]]*4)
     
+    # ans = [0, 120, 0]*4
+    # ans = [0,0,0]+[0,0,0]+[0,0,0]+[0,90,0]
+    # crawler.servo_move(ans,50)
+    
+if __name__ == "__main__":
+    test()
+
+
   
     
    
