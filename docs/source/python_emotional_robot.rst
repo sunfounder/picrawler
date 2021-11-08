@@ -17,9 +17,14 @@ This example shows several interesting custom actions of PiCrawler.
 
 **Code**
 
+.. note::
+    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+
+
 .. raw:: html
 
     <run></run>
+
 
 .. code-block:: python
 
@@ -74,7 +79,7 @@ This example shows several interesting custom actions of PiCrawler.
 
     def swimming(speed):
         for i in range(100):
-            crawler.do_step([100-i,i,0],[100-i,i,0],[0,120,-60+i/5],[0,100,-40-i/5],speed)
+            crawler.do_step([[100-i,i,0],[100-i,i,0],[0,120,-60+i/5],[0,100,-40-i/5]],speed)
 
     # main
     def main():

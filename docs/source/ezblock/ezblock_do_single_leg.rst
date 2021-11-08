@@ -17,7 +17,7 @@ After opening the example, you can see the following code block.
 
 Switch to the Remote Control interface, and you will see the following widgets.
 
-.. image:: media/do_single_leg_B.png
+.. image:: media/do_single_leg_B-1.png
     :width: 600
 
 **How it works?**

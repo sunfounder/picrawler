@@ -13,7 +13,7 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
 .. code-block::
 
     cd /home/pi/picrawler/examples
-    sudo python3 mix_step.py
+    sudo python3 record_new_step_by_keyboard.py
 
 
 

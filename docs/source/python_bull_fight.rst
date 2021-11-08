@@ -35,6 +35,14 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 
 **Code**
 
+.. note::
+    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+
+
+.. raw:: html
+
+    <run></run>
+
 .. code-block:: python
 
     from picrawler import Picrawler
@@ -83,5 +91,5 @@ In general, this project combines the knowledge points of :ref:`Move`, :ref:`Com
 
 Its flow is shown in the figure below:
 
-.. image:: image/bull_fight.png
+.. image:: image/bull_fight-f.png
 

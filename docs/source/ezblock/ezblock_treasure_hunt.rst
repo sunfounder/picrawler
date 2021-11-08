@@ -25,5 +25,5 @@ In general, this project combines the knowledge points of :ref:`Remote Control â
 
 Its flow is shown in the figure below:
 
-.. image:: ../image/treasure_hunt.png
+.. image:: ../image/treasure_hunt-f.png
     :width: 600

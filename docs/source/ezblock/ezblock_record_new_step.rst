@@ -13,7 +13,7 @@ After opening the example, you can see the following code block.
 
 Switch to the Remote Control interface, and you will see the following widgets.
 
-.. image:: media/sp210928_164343.png
+.. image:: media/sp210928_164343-1.png
     :width: 600
 
 **How it works?**

@@ -19,6 +19,14 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
 
 **Code**
 
+.. note::
+    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+
+
+.. raw:: html
+
+    <run></run>
+
 .. code-block:: python
 
     from picrawler import Picrawler

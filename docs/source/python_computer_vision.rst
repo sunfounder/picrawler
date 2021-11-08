@@ -211,9 +211,9 @@ Functions related to "object detection":
 * ``Vilib.face_detect_switch(True)`` : Switch ON/OFF face detection
 * ``Vilib.color_detect(color)`` : For color detection, only one color detection can be performed at the same time. The parameters that can be input are: ``"red"``, ``"orange"``, ``"yellow"``, ``"green"``, ``"blue"``, ``"purple"``
 * ``Vilib.color_detect_switch(False)`` : Switch OFF color detection
-* ``color_detect_switch(False)`` : Switch ON/OFF QR code detection, Returns the decoded data of the QR code.
-* ``gesture_detect_switch(False)`` : Switch ON/OFF gesture detection
-* ``traffic_sign_detect_switch(False)`` : Switch ON/OFF traffic sign detection
+* ``Vilib.qrcode_detect_switch(False)`` : Switch ON/OFF QR code detection, Returns the decoded data of the QR code.
+* ``Vilib.gesture_detect_switch(False)`` : Switch ON/OFF gesture detection
+* ``Vilib.traffic_sign_detect_switch(False)`` : Switch ON/OFF traffic sign detection
 
 The information detected by the target will be stored in the ``detect_obj_parameter = Manager().dict()`` dictionary.
 

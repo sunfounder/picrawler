@@ -4,9 +4,11 @@ SunFounder Raspberry Pi Robot - PiCrawler
 
 Thank you for choosing our PiCrawler.
 
-PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. It is equipped with a camera module, which can perform color recognition, face detection and other items; 12 metal gear servos support it to walk, dance, and pose various postures; the ultrasonic module on the body allows it to quickly detect obstacles in front of it Respond; Robot HAT is equipped with a speaker, allowing it to express emotions such as happiness and excitement.
+PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. 
+It is equipped with a camera module, which can perform color recognition, face detection and other items; 
+12 metal gear servos support it to walk, dance, and pose various postures; 
+the ultrasonic module on the body allows it to quickly detect obstacles in front of it; the expansion board-robot HAT is equipped with a speaker, allowing it to express emotions such as happiness and excitement.
 
-The library contains basic actions such as "forward", "sit", etc.; the example includes some pre-programmed interesting actions that can be used directly; the tutorial provides a way to make custom actions for you.
 
 This document includes the list and assembly pdf, Robot HAT introduction and PiCrawler programming.
 
@@ -20,13 +22,13 @@ More experienced makers can use the popular programming language-Python.
 **Content**
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   list_and_assembly
-   about_robot_hat 
-   ezblock/play_with_ezblock
-   play_with_python
-   appendix
+    list_and_assembly
+    about_robot_hat
+    play_with_python 
+    ezblock/play_with_ezblock
+    appendix
 
 Copyright Notice
 --------------------------

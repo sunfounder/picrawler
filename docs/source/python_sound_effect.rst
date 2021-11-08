@@ -38,7 +38,7 @@ After the code runs, please operate according to the prompt that printed on the 
 
 **Code** 
 
-.. code-block::python
+.. code-block:: python
 
     from time import sleep
     from robot_hat import Music,TTS

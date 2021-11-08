@@ -30,12 +30,12 @@ If you don't want to write these projects one by one, we have uploaded them to E
   ezblock_remote_control
   ezblock_sound_effect
   ezblock_avoid
-  ezblock_do_step
-  ezblock_do_single_leg
-  ezblock_twist
-  ezblock_emotional_robot
-  ezblock_record_new_step
   ezblock_computer_vision
   ezblock_bull_fight
   ezblock_treasure_hunt
+  ezblock_do_step
+  ezblock_do_single_leg
+  ezblock_record_new_step  
+  ezblock_twist
+  ezblock_emotional_robot
 

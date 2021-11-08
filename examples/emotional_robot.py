@@ -51,7 +51,7 @@ def pushup(speed):
 
 def swimming(speed):
     for i in range(100):
-        crawler.do_step([100-i,i,0],[100-i,i,0],[0,120,-60+i/5],[0,100,-40-i/5],speed)
+        crawler.do_step([[100-i,i,0],[100-i,i,0],[0,120,-60+i/5],[0,100,-40-i/5]],speed)
 
 
 
