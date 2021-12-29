@@ -24,11 +24,11 @@ def readchar():
 
 manual = '''
 Press keys on keyboard to control PiCrawler!
-    W: Forward
-    A: Turn left
-    S: Backward
-    D: Turn right
-    ESC: Quit
+    w: Forward
+    a: Turn left
+    s: Backward
+    d: Turn right
+    esc: Quit
 '''
 
 def main():  

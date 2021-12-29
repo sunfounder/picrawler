@@ -28,18 +28,18 @@ def readchar():
 
 manual = '''
 Press keys on keyboard to control PiSloth!
-    W: Y++
-    A: X--
-    S: Y--
-    D: X++
-    R: Z++
-    F: Z--
+    w: Y++
+    a: X--
+    s: Y--
+    d: X++
+    r: Z++
+    f: Z--
     1: Select right front leg
     2: Select left front leg
     3: Select left rear leg
     4: Select right rear leg
-    Space: Print all leg coordinate
-    ESC: Quit
+    space: Print all leg coordinate
+    esc: Quit
 '''
 
 

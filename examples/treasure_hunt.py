@@ -27,12 +27,12 @@ def readchar():
 
 manual = '''
 Press keys on keyboard to control Picrawler!
-    W: Forward
-    A: Turn left
-    S: Backward
-    D: Turn right
-    Space: Say the target again
-    ESC: Quit
+    w: Forward
+    a: Turn left
+    s: Backward
+    d: Turn right
+    space: Say the target again
+    esc: Quit
 '''
 
 color = "red"
