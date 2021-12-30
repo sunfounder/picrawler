@@ -10,6 +10,8 @@ class Picrawler(Robot):
     
     def __init__(self, pin_list):  
 
+        utils.reset_mcu()
+        time.sleep(0.2)
         self.current_coord = self.step_list['stand']
         init_angles = [-40, 55, 0]*4
         self.coord_temp = init_angles    
@@ -697,7 +699,7 @@ class Picrawler(Robot):
         return list(new_step)
 
 def test():
-    utils.reset_mcu()
+    
     crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9])
 
     # 
