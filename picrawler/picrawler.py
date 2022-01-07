@@ -8,15 +8,19 @@ class Picrawler(Robot):
     B = 78
     C = 33
     
-    def __init__(self, pin_list):  
+    def __init__(self, pin_list, init_angles=None):  
 
         utils.reset_mcu()
         time.sleep(0.2)
-        self.current_coord = self.step_list['stand']
-        init_angles = [-40, 55, 0]*4
-        self.coord_temp = init_angles    
+
+        # if init_angles == None:
+        #     self.current_coord = self.step_list['stand']
+
+        # self.current_coord = self.step_list['stand']
+        # init_angles = [-40, 55, 0]*4
+        # self.coord_temp = init_angles    
         
-        super().__init__(pin_list, group=3,init_angles=init_angles)
+        super().__init__(pin_list, group=3,init_angles=None)
 
         self.move_list = self.MoveList()
         self.move_list_add = {
@@ -30,7 +34,9 @@ class Picrawler(Robot):
             1,1,1,
         ]
 
-        
+        self.current_coord = [[60, 0, -30], [60, 0, -30], [60, 0, -30], [60, 0, -30]]
+        self.coord_temp = [[60, 0, -30], [60, 0, -30], [60, 0, -30], [60, 0, -30]]
+
     def coord2polar(self, coord):
         x,y,z = coord
         
@@ -140,6 +146,7 @@ class Picrawler(Robot):
             result, angles = self.limit_angle(angles)
             translate_list += angles
             results.append(result)
+        
         if True in results:
             if israise == True:
                 raise ValueError('\033[1;35mCoordinates out of controllable range.\033[0m')
@@ -150,15 +157,17 @@ class Picrawler(Robot):
                     # Calculate coordinates 
                     for i in range(4):
                         coords.append(self.polar2coord([translate_list[i*3],translate_list[i*3+1],translate_list[i*3+2]]))
-                    self.current_coord = coords
+                    self.current_coord = list.copy(coords)
                 except Exception as e:
                     print('re : %s'%e)
         else:
-            self.current_coord = self.coord_temp
+            self.current_coord = list.copy(self.coord_temp)
 
-        self.servo_move(translate_list,speed)
+        self.servo_move(translate_list,speed)  
+        return list.copy(translate_list)
 
     def do_step(self, _step, speed=50,israise=False):
+        
         step_temp = []
         if isinstance(_step,str):
             if _step in self.step_list.keys():
@@ -172,65 +181,26 @@ class Picrawler(Robot):
             return
 
         angles_temp = []
-        self.coord_temp.clear()
+        self.coord_temp = []   # do not use list.clear()
         for coord in step_temp: # each servo motion    
             alpha, beta, gamma = self.coord2polar(coord)
             angles_temp.append([beta, alpha, gamma]) 
-          
-        self.set_angle(angles_temp,speed,israise) 
-    
+
+        # print('current_coord: %s'%len(self.current_coord))
+        # print('_step: %s'%len(_step))
+        # print('angles_temp：%s'%len(angles_temp))
+        # print('angles_temp：%s'%len(self.coord_temp))
+
+        return list.copy(self.set_angle(angles_temp,speed,israise))
+
 
     def current_step_all_leg_angle(self):
-        return self.servo_positions
+        return list.copy(self.servo_positions)
 
     def add_action(self,action_name, action_list):
         self.move_list_add[action_name] = action_list
-    
-    def cali_helper(self, leg, up, down, left, right, hight, low, enter):
-        step = 0.01
-        cali_position = []
-        cali_coord = [[60, 0, -30], [60, 0, -30], [60, 0, -30], [60, 0, -30]]
-        for coord in cali_coord: # each servo motion
-            alpha, beta, gamma = self.coord2polar(coord)
-            cali_position += [beta, alpha, gamma]
-        
-        positive_list = [
-            [1, -1, -1, 1, 1, -1],
-            [1, -1, 1, -1, 1, -1],
-            [-1, 1, 1, -1, 1, -1],
-            [-1, 1, -1, 1, 1, -1],
-        ]
-        
-        offset = list(self.offset)
-        leg = leg - 1
-        if up == 1:
-            self.current_coord[leg][1] += step * positive_list[leg][0]
-        elif down == 1:
-            self.current_coord[leg][1] += step * positive_list[leg][1]
-        elif left == 1:
-            self.current_coord[leg][0] += step * positive_list[leg][2]
-        elif right == 1:
-            self.current_coord[leg][0] += step * positive_list[leg][3]
-        elif hight == 1:
-            self.current_coord[leg][2] += step * positive_list[leg][4]
-        elif low == 1:
-            self.current_coord[leg][2] += step * positive_list[leg][5]
-        
-        for coord in self.current_coord:
-            coord[0] = max(40, min(80, coord[0]))
-            coord[1] = max(-20, min(20, coord[1]))
-            coord[2] = max(-50, min(-10, coord[2]))
-        # print("coord%s" %self.current_coord)
-        current_position = self.do_step(self.current_coord, speed=100)
-        # print(current_position)
-        if enter == 1:
-            tmp = [current_position[i] - cali_position[i] + offset[i] for i in range(len(current_position))]
-            offset[leg*3:(leg + 1)*3] = tmp[leg*3:(leg + 1)*3]
-            self.current_coord[leg] = [60, 0, -30]
-            self.set_offset(offset)
-            self.do_step(self.current_coord, speed=100)
-            
-        
+
+
     def cali_helper_web(self, leg, pos, enter):
         step=0.2
         cali_position = []
@@ -241,7 +211,7 @@ class Picrawler(Robot):
             cali_position += [beta, alpha, gamma]
 
         cali_position = [cali_position[i] + self.offset[i] for i in range(12)]
-        print("cali_position:",cali_position)
+        # print("cali_position:",cali_position)
 
         positive_list = [
             [1, -1, -1, 1, 1, -1],
@@ -269,9 +239,9 @@ class Picrawler(Robot):
             coord[0] = max(40, min(80, coord[0]))
             coord[1] = max(-20, min(20, coord[1]))
             coord[2] = max(-50, min(-10, coord[2]))
-        # print("coord:%s"%self.current_coord)
         self.do_step(self.current_coord, speed=100)
-        current_position = self.do_step(self.current_coord, speed=100)
+        current_position = list.copy(self.do_step(self.current_coord, speed=100))
+        # print('current_position: %s'%current_position)
         if enter == 1:
             tmp = [current_position[i] - cali_position[i] + offset[i] for i in range(len(current_position))]
             offset[leg*3:(leg + 1)*3] = tmp[leg*3:(leg + 1)*3]
@@ -418,7 +388,7 @@ class Picrawler(Robot):
             
         def is_stand(self):
             tmp = self.z_current == self.Z_DEFAULT
-            print("is stand? %s"%tmp)
+            # print("is stand? %s"%tmp)
             return tmp
         
         @property
@@ -687,10 +657,10 @@ class Picrawler(Robot):
  
 
     def current_step_leg_value(self,leg):
-        return self.current_coord[leg]
+        return list.copy(self.current_coord[leg])
         
     def current_step_all_leg_value(self):
-        return list(self.current_coord)
+        return list.copy(self.current_coord)
 
     def mix_step(self,basic_step,leg,coodinate=[50,50,-33]):
         # Pay attention to adding list(), otherwise the address pointer is returned
