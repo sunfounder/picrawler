@@ -32,7 +32,7 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``https://192.168.18.113:9000/mjpg``
+Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
 
 .. image:: image/display.png
 
@@ -40,89 +40,106 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 
 .. code-block:: python
 
-    from picrawler import Picrawler
-    from time import sleep
-    from robot_hat import Music,TTS
-    from vilib import Vilib
-    import sys
-    import tty
-    import termios
-    import random
+	from picrawler import Picrawler
+	from time import sleep
+	from robot_hat import Music,TTS
+	from vilib import Vilib
+	import readchar
+	import random
+	import threading
 
+	crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
+	#crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+	music = Music()
+	tts = TTS()
 
-    music = Music()
-    tts = TTS()
+	manual = '''
+	Press keys on keyboard to control Picrawler!
+		w: Forward
+		a: Turn left
+		s: Backward
+		d: Turn right
+		space: Say the target again
+		esc: Quit
+	'''
 
-    def readchar():
-        fd = sys.stdin.fileno()
-        old_settings = termios.tcgetattr(fd)
-        try:
-            tty.setraw(sys.stdin.fileno())
-            ch = sys.stdin.read(1)
-        finally:
-            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-        return ch
+	color = "red"
+	color_list=["red","orange","yellow","green","blue","purple"]
+	key_dict = {
+		'w': 'forward',
+		's': 'backward',
+		'a': 'turn_left',
+		'd': 'turn_right',
+	}
+	def renew_color_detect():
+		global color
+		color = random.choice(color_list)
+		Vilib.color_detect(color)
+		tts.say("Look for " + color)
 
+	key = None
+	lock = threading.Lock()
+	def key_scan_thread():
+		global key
+		while True:
+			key_temp = readchar.readkey()
+			print('\r',end='')
+			with lock:
+				key = key_temp.lower()
+				if key == readchar.key.SPACE:
+					key = 'space'
+				elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+					key = 'quit'
+					break
+			sleep(0.01)
 
-    manual = '''
-    Press keys on keyboard to control Picrawler!
-        W: Forward
-        A: Turn left
-        S: Backward
-        D: Turn right
-        Space: Say the target again
-        ESC: Quit
-    '''
+	def main():
+		global key
+		action = None
+		Vilib.camera_start(vflip=False,hflip=False)
+		Vilib.display(local=False,web=True)
+		sleep(0.8)
+		speed = 100
+		print(manual)
 
-    color = "red"
-    color_list=["red","orange","yellow","green","blue","purple"]
+		sleep(1)
+		_key_t = threading.Thread(target=key_scan_thread)
+		_key_t.setDaemon(True)
+		_key_t.start()
 
+		tts.say("game start")
+		sleep(0.05)   
+		renew_color_detect()
+		while True:
 
-    def renew_color_detect():
-        global color
-        color = random.choice(color_list)
-        Vilib.color_detect(color)
-        tts.say("Look for " + color)
+			if Vilib.detect_obj_parameter['color_n']!=0 and Vilib.detect_obj_parameter['color_w']>100:
+				tts.say("will done")
+				sleep(0.05)   
+				renew_color_detect()
 
+			with lock:
+				if key != None and key in ('wsad'):
+					action = key_dict[str(key)]
+					key =  None
+				elif key == 'space':
+					tts.say("Look for " + color)
+					key =  None
+				elif key == 'quit':
+					_key_t.join()
+					Vilib.camera_close()
+					print("\n\rQuit") 
+					break 
 
-    def main():
-        Vilib.camera_start()
-        Vilib.display()
-        speed = 100
-        print(manual)
+			if action != None:
+				crawler.do_action(action,1,speed)  
+				action = None
 
-        tts.say("game start")
-        sleep(0.05)   
-        renew_color_detect()
+			sleep(0.05)          
+		 
 
-        while True:
-            if Vilib.detect_obj_parameter['color_n']!=0 and Vilib.detect_obj_parameter['color_w']>100:
-                tts.say("will done")
-                sleep(0.05)   
-                renew_color_detect()
-                
-            key = readchar()
-            if 'w' == key:
-                crawler.do_action('forward',1,speed)     
-            elif 's' == key:
-                crawler.do_action('backward',1,speed)          
-            elif 'a' == key:
-                crawler.do_action('turn left',1,speed)           
-            elif 'd' == key:
-                crawler.do_action('turn right',1,speed)
-            elif chr(32) == key:
-                tts.say("Look for " + color)
-            elif chr(27) == key:# 27 for ESC
-                break    
-
-            sleep(0.05)          
-        print("\n q Quit")  
-
-    if __name__ == "__main__":
-        main()
+	if __name__ == "__main__":
+		main()
 
 
 **How it works?**

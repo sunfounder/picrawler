@@ -15,7 +15,7 @@ This example will guide you how to use the recording function.
     sudo python3 record_video.py
 
 
-After the code runs, the recording function will start. You can input ``w`` to pause recording, input ``q`` to start/continue recording, and input ``e`` to stop recording.
+After the code runs, the recording function will start. You can input ``q`` to start/pause/continue recording, and input ``e`` to stop recording.
 
 **View the Image**
 
@@ -31,7 +31,7 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``https://192.168.18.113:9000/mjpg``
+Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
 
 .. image:: image/display.png
 
@@ -40,32 +40,70 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 
 .. code-block:: python
 
-    from os import pardir
-    from time import sleep
-    from vilib import Vilib
+	from time import sleep,strftime,localtime
+	from vilib import Vilib
+	import readchar 
 
-    def main():
-        Vilib.camera_start()
-        Vilib.display()
+	manual = '''
+	Press keys on keyboard to control recording:
+		Q: record/pause/continue
+		E: stop
+		ESC: Quit
+	'''
 
-        Vilib.rec_video_set["path"] = "/home/pi/video/test/"
-        vname = "vtest"
-        Vilib.rec_video_run(vname)
-        print('start rec ...')
-        while True:
-            if input() == 'q':
-                Vilib.rec_video_start()
-                print('continue')
-            if input() == 'w':
-                Vilib.rec_video_pause()
-                print('pause')                                                       
-            if input() == 'e':
-                Vilib.rec_video_stop()
-                print('stop')
-                print("The video saved as",Vilib.rec_video_set["path"],vname)
+	def print_overwrite(msg,  end='', flush=True):
+		print('\r\033[2K', end='',flush=True)
+		print(msg, end=end, flush=True)
 
-    if __name__ == "__main__":
-        main()
+	def main():
+		rec_flag = 'stop' # start,pause,stop
+		vname = None
+		Vilib.rec_video_set["path"] = "/home/pi/Videos/" # set path
+
+		Vilib.camera_start(vflip=False,hflip=False) 
+		Vilib.display(local=True,web=True)
+		sleep(0.8)  # wait for startup
+
+		print(manual)
+		while True:
+			# read keyboard
+			key = readchar.readkey()
+			key = key.lower()
+			# start,pause
+			if key == 'q':
+				key = None
+				if rec_flag == 'stop':            
+					rec_flag = 'start'
+					# set name
+					vname = strftime("%Y-%m-%d-%H.%M.%S", localtime())
+					Vilib.rec_video_set["name"] = vname
+					# start record
+					Vilib.rec_video_run()
+					print_overwrite('rec start ...')
+				elif rec_flag == 'start':
+					rec_flag = 'pause'
+					Vilib.rec_video_pause()
+					print_overwrite('pause')
+				elif rec_flag == 'pause':
+					rec_flag = 'start'
+					Vilib.rec_video_start()
+					print_overwrite('continue')
+			# stop       
+			elif key == 'e' and rec_flag != 'stop':
+				key = None
+				rec_flag = 'stop'
+				Vilib.rec_video_stop()
+				print_overwrite("The video saved as %s%s.avi"%(Vilib.rec_video_set["path"],vname),end='\n')  
+			# quit
+			elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+				Vilib.camera_close()
+				print('\nquit')
+				break 
+
+			sleep(0.1)
+
+	if __name__ == "__main__":
+		main()
 
 
 **How it works?**
