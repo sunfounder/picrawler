@@ -77,11 +77,11 @@ def cali_helper():
             elif key == 'a' and cali_coord[_leg_num][0] <= 40:
                 cali_coord[_leg_num][0] += step
             elif key == 'd' and cali_coord[_leg_num][0] >= -40:
-                cali_coord[_leg_num][0] += step
+                cali_coord[_leg_num][0] -= step
             elif key == 'r' and cali_coord[_leg_num][2] <= 40:
                 cali_coord[_leg_num][2] += step   
             elif key == 'f' and cali_coord[_leg_num][2] >= -40:
-                cali_coord[_leg_num][2] += step 
+                cali_coord[_leg_num][2] -= step 
             else:
                 continue
             pos = key_dict[str(key)]
