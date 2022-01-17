@@ -37,6 +37,7 @@ def main():
                 Vilib.rec_video_set["name"] = vname
                 # start record
                 Vilib.rec_video_run()
+                Vilib.rec_video_start()
                 print_overwrite('rec start ...')
             elif rec_flag == 'start':
                 rec_flag = 'pause'
