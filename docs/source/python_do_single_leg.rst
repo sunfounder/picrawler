@@ -20,7 +20,6 @@
 
 代码运行后，请根据终端弹出的提示进行操作。
 
-* 注意要将键盘切换为小写的英文输入。
 * 按下1234来分别选择脚， ``1``：右前脚， ``2``：左前脚， ``3``：左后脚， ``4``：右后脚
 * 按下 ``w``， ``a``， ``s``， ``d``， ``r``，和 ``f`` 来慢慢控制PiCrawler的坐标值。
 * 按下 ``空格键`` 来打印所有的坐标值。
@@ -76,17 +75,17 @@
         while True:
             key = readchar()
             print(key)
-            if 'w' == key:
+            if 'w' == key or 'W' == key:
                 coordinate[1]=coordinate[1]+5    
-            elif 's' == key:
+            elif 's' == key or 'S' == key:
                 coordinate[1]=coordinate[1]-5           
-            elif 'a' == key:
+            elif 'a' == key or 'A' == key:
                 coordinate[0]=coordinate[0]-5         
-            elif 'd' == key:
+            elif 'd' == key or 'D' == key:
                 coordinate[0]=coordinate[0]+5   
-            elif 'r' == key:
+            elif 'r' == key or 'R' == key:
                 coordinate[2]=coordinate[2]+5         
-            elif 'f' == key:
+            elif 'f' == key or 'F' == key:
                 coordinate[2]=coordinate[2]-5       
             elif '1' == key:
                 leg=0

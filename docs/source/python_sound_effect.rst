@@ -38,7 +38,6 @@
 
 代码运行后，请按照终端打印的提示进行操作。
 
-* 注意要将键盘切换为小写的英文输入。
 * 按下 ``q`` 来播放背景音乐
 * 按下 ``1`` 来播放音效
 * 按下 ``2`` 来以单独的线程播放音效
@@ -73,7 +72,7 @@
 
         while True:
             key = input()  
-            if key == "q":
+            if key == "q" or key == "Q":
                 flag_bgm = not flag_bgm
                 if flag_bgm is True:
                     music.background_music('./musics/sports-Ahjay_Stelino.mp3')
@@ -96,7 +95,7 @@
                 music.sound_effect_threading('./sounds/sign.wav')
                 sleep(0.5)
 
-            elif key == "t":
+            elif key == "t" or key == "T":
                 words = "Hello"
                 tts.say(words)
             

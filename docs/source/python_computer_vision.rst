@@ -20,7 +20,7 @@
 
 .. image:: image/display.png
 
-按照根据终端的信息提示，按下键盘上的按键来查看相应的功能。注意要将键盘切换为小写的英文输入。
+按照根据终端的信息提示，按下键盘上的按键来查看相应的功能。
 
 .. code-block::
 
@@ -146,7 +146,7 @@
 
         while True:
             key = input()  
-            if key == "q":
+            if key == "q" or key == "Q":
                 take_photo()
             elif key == "1":
                 color_detect("red")
@@ -169,12 +169,12 @@
             elif key =="0":
                 Vilib.color_detect_switch(False)
                 flag_color = False
-            elif key =="f":
+            elif key =="f" or key == "F":
                 flag_face = not flag_face
                 face_detect(flag_face)
-            elif key =="r":
+            elif key =="r" or key == "R":
                 qrcode_detect()
-            elif key == "s":
+            elif key == "s" or key == "S":
                 object_show()
 
     if __name__ == "__main__":

@@ -3,7 +3,7 @@
 
 在这个项目中，picrawler 将使用超声波模块来检测前方的障碍物。当 PiCrawler 检测到障碍物时，它会发出信号并寻找另一个方向前进。
 
-.. image:: image/avoid.png
+.. image:: image/avoid1.png
 
 **运行代码**
 

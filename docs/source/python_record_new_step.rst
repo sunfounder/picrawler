@@ -16,7 +16,6 @@
 
 代码运行后，请根据终端弹出的提示进行操作。
 
-* 注意要将键盘切换为小写的英文输入。
 * 按下1234来分别选择脚， ``1``：右前脚， ``2``：左前脚， ``3``：左后脚， ``4``：右后脚
 * 按下 ``w``， ``a``， ``s``， ``d``， ``r``，和 ``f`` 来慢慢控制PiCrawler的坐标值。
 * 按下 ``空格键`` 来打印所有的坐标值并且保存这一动作。
@@ -89,17 +88,17 @@
         while True:
             key = readchar()
             print(key)
-            if 'w' == key:
+            if 'w' == key or 'W' == key:
                 coodinate[1]=coodinate[1]+2    
-            elif 's' == key:
+            elif 's' == key or 'S' == key:
                 coodinate[1]=coodinate[1]-2           
-            elif 'a' == key:
+            elif 'a' == key or 'A' == key:
                 coodinate[0]=coodinate[0]-2         
-            elif 'd' == key:
+            elif 'd' == key or 'D' == key:
                 coodinate[0]=coodinate[0]+2   
-            elif 'r' == key:
+            elif 'r' == key or 'R' == key:
                 coodinate[2]=coodinate[2]+2         
-            elif 'f' == key:
+            elif 'f' == key or 'F' == key:
                 coodinate[2]=coodinate[2]-2       
             elif '1' == key:
                 leg=0
@@ -118,7 +117,7 @@
                 print("saved new step")
                 print(crawler.current_step_all_leg_value())
                 save_new_step()
-            elif 'p' == key:
+            elif 'p' == key or 'P' == key:
                 play_all_new_step()
             elif chr(27) == key:# 27 for ESC
                 break    

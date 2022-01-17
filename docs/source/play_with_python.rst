@@ -8,6 +8,7 @@
 
     quick_guide_on_python
     preparation/download_and_run_code
+    calibrate
 
 组装完成后，您可以尝试运行下面的项目。
 

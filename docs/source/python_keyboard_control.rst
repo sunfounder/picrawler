@@ -16,7 +16,6 @@
 
 代码运行后，请根据终端弹出的提示进行操作。
 
-* 注意要将键盘切换为小写的英文输入。
 * 按下 ``w``，让PiCrawler前进。
 * 按下 ``a``，让PiCrawler左转。
 * 按下 ``s``，让PiCrawler后退。
@@ -64,13 +63,13 @@
         while True:
             key = readchar()
             print(key)
-            if 'w' == key:
+            if 'w' == key or 'W' == key:
                 crawler.do_action('forward',1,speed)     
-            elif 's' == key:
+            elif 's' == key or 'S' == key:
                 crawler.do_action('backward',1,speed)          
-            elif 'a' == key:
+            elif 'a' == key or 'A' == key:
                 crawler.do_action('turn left',1,speed)           
-            elif 'd' == key:
+            elif 'd' == key or 'D' == key:
                 crawler.do_action('turn right',1,speed)
             elif chr(27) == key:# 27 for ESC
                 break    
