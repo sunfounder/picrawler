@@ -26,6 +26,7 @@ If you don't want to write these projects one by one, we have uploaded them to E
 
 .. toctree::
 
+  ezBlock_how_to
   ezblock_move
   ezblock_remote_control
   ezblock_sound_effect

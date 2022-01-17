@@ -161,7 +161,7 @@ Please follow the prompts to activate the corresponding functions.
 
         while True:
             key = input()  
-            if key == "q":
+            if key == "q" or key == "Q":
                 take_photo()
             elif key == "1":
                 color_detect("red")
@@ -184,12 +184,12 @@ Please follow the prompts to activate the corresponding functions.
             elif key =="0":
                 Vilib.color_detect_switch(False)
                 flag_color = False
-            elif key =="f":
+            elif key =="f" or key == "F":
                 flag_face = not flag_face
                 face_detect(flag_face)
-            elif key =="r":
+            elif key =="r" or key == "R":
                 qrcode_detect()
-            elif key == "s":
+            elif key == "s" or key == "S":
                 object_show()
 
     if __name__ == "__main__":
