@@ -1,9 +1,10 @@
 移动 — EzBlock
 =================
 
-
 这是 PiCrawler’s 的第一个项目， 让它移动起来。
 
+.. image:: ../image/move.png
+    :align: center
 
 **程序**
 
