@@ -35,7 +35,7 @@
     cd /home/pi/
     git clone https://gitee.com/sunfounder/vilib.git
     cd vilib
-    sudo python3 setup.py install
+    sudo python3 install.py
 
 然后下载代码并安装 ``picrawler`` 库。
 
