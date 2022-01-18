@@ -14,4 +14,5 @@ If you are familiar with Raspberry Pi and can open the command line successfully
     preparation/installing_the_os
     preparation/set_up_your_raspberry_pi    
     preparation/download_and_run_code
+    calibrate
 
