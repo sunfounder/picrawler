@@ -3,6 +3,8 @@ Sound Effect
 
 In this example, we use PiCrawler's (to be precise, Robot HAT's) sound effects. It consists of three parts, namely **Muisc**, **Sound**, **Text to Speech**.
 
+.. image:: image/tts.png
+
 **Install i2samp**
 
 Before using that functions, first activate the speaker so that it will be enabled and can make sounds.

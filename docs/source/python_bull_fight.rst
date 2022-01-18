@@ -3,6 +3,8 @@ Bull Fight
 
 Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
 
+.. image:: image/bullfight.png
+
 **Run the Code**
 
 .. raw:: html

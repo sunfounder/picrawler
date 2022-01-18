@@ -3,6 +3,8 @@ Move
 
 This is PiCrawler's first project. Perform its most basic function - move.
 
+.. image:: image/move.png
+
 **Run the Code**
 
 .. raw:: html

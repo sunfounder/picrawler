@@ -5,7 +5,7 @@ Obstacle Avoidance — Ezblock
 In this project, picrawler will use an ultrasonic module to detect obstacles in front. 
 When PiCrawler detects an obstacle, it will send a signal and look for another direction to move forward.
 
-.. image:: ../media/avoid1.png
+.. image:: ../image/avoid1.png
 
 **Program**
 

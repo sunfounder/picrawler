@@ -4,6 +4,7 @@ Move — Ezblock
 
 This is PiCrawler's first project. Perform its most basic function - move.
 
+.. image:: ../image/move.png
 
 .. note:: 
 
