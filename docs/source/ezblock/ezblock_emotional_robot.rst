@@ -11,5 +11,5 @@ It is a supplementary example of :ref:`Twist — Ezblock`.
 
 After opening the example, you can see the following code block.
 
-.. image:: media/sp210928_173753.png
+.. image:: img/sp210928_173753.png
     :width: 800

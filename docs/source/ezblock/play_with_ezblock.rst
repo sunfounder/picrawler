@@ -11,10 +11,9 @@ Ezblock has been upgraded to the third version. Compared with the Bluetooth comm
 So Ezblock 3 is used here.
 
 .. toctree::
-  :maxdepth: 2
+    :maxdepth: 2
 
-  quick_guide_on_ezblock
-
+    quick_guide_on_ezblock
 
 
 **Projects**
@@ -26,17 +25,17 @@ If you don't want to write these projects one by one, we have uploaded them to E
 
 .. toctree::
 
-  EzBlock_how_to
-  ezblock_move
-  ezblock_remote_control
-  ezblock_sound_effect
-  ezblock_avoid
-  ezblock_computer_vision
-  ezblock_bull_fight
-  ezblock_treasure_hunt
-  ezblock_do_step
-  ezblock_do_single_leg
-  ezblock_record_new_step  
-  ezblock_twist
-  ezblock_emotional_robot
+
+    ezblock_move
+    ezblock_remote_control
+    ezblock_sound_effect
+    ezblock_avoid
+    ezblock_computer_vision
+    ezblock_bull_fight
+    ezblock_treasure_hunt
+    ezblock_do_step
+    ezblock_do_single_leg
+    ezblock_record_new_step   
+    ezblock_twist
+    ezblock_emotional_robot
 

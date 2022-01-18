@@ -9,7 +9,7 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
 
 After opening the example, you can see the following code block.
 
-.. image:: media/twist.png
+.. image:: img/twist.png
     :width: 800
 
 **How it works?**
@@ -20,7 +20,7 @@ You can intuitively get the coordinate value array corresponding to each pose fr
 
 One thing you need to pay attention to is this coordinate matrix block:
 
-.. image:: media/sp210928_154257.png
+.. image:: img/sp210928_154257.png
     
 It is essentially a two-dimensional array, which can be processed by blocks in the **List** category. Its structure is ``[[right front],[left front],[left rear],[right rear]]``.
 In other words, in this example, ``new_step#1`` corresponds to the right front; ``new_step#2`` corresponds to the left front; ``new_step#3`` corresponds to the left rear; and ``new_step#4`` corresponds to right rear.

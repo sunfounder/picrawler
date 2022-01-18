@@ -1,7 +1,7 @@
 About Robot HAT
 -----------------------------
 
-.. image:: image/picar_x_pic7.png
+.. image:: img/picar_x_pic7.png
 
 Robot HAT is a multifunctional expansion board that allows Raspberry Pi to be quickly turned into a robot. An MCU is on board to extend the PWM output and ADC input for the Raspberry Pi, as well as a motor driver chip, Bluetooth module, I2S audio module and mono speaker. As well as the GPIOs that lead out of the Raspberry Pi itself.
 

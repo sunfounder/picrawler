@@ -4,7 +4,7 @@ Pose — Ezblock
 
 PiCrawler can assume a specific posture by writing a coordinate array. Here it assumes a raised right rear foot posture.
 
-.. image:: ../image/4cood.A.png
+.. image:: ../python/img/4cood.A.png
 
 
 
@@ -12,7 +12,7 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
 
 After opening the example, you can see the following code block.
 
-.. image:: media/dostep.png
+.. image:: img/dostep.png
 
 
 **How it works?**
@@ -27,8 +27,8 @@ Second: It can also write an array of 4 coordinate values.
 
 Each foot has an independent coordinate system. As shown below:
 
-.. image:: ../image/4cood.png
+.. image:: ../python/img/4cood.png
 
 You need to measure the coordinates of each toe individually. As shown below:
 
-.. image:: ../image/1cood.png
+.. image:: ../python/img/1cood.png
