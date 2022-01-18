@@ -54,17 +54,17 @@ def main():
     while True:
         key = readchar()
         print(key)
-        if 'w' == key:
+        if 'w' == key or 'W' == key:
             coordinate[1]=coordinate[1]+2    
-        elif 's' == key:
+        elif 's' == key or 'S' == key:
             coordinate[1]=coordinate[1]-2           
-        elif 'a' == key:
+        elif 'a' == key or 'A' == key:
             coordinate[0]=coordinate[0]-2         
-        elif 'd' == key:
+        elif 'd' == key or 'D' == key:
             coordinate[0]=coordinate[0]+2   
-        elif 'r' == key:
+        elif 'r' == key or 'R' == key:
             coordinate[2]=coordinate[2]+2         
-        elif 'f' == key:
+        elif 'f' == key or 'F' == key:
             coordinate[2]=coordinate[2]-2       
         elif '1' == key:
             leg=0

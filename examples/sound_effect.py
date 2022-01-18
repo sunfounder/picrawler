@@ -22,7 +22,7 @@ def main():
 
     while True:
         key = input()  
-        if key == "q":
+        if key == "q" or key == "Q":
             flag_bgm = not flag_bgm
             if flag_bgm is True:
                 music.background_music('./musics/sports-Ahjay_Stelino.mp3')
@@ -45,7 +45,7 @@ def main():
             music.sound_effect_threading('./sounds/sign.wav')
             sleep(0.5)
 
-        elif key == "t":
+        elif key == "t" or key == "T":
             words = "Hello"
             tts.say(words)
         

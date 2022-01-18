@@ -38,13 +38,13 @@ def main():
     while True:
         key = readchar()
         print(key)
-        if 'w' == key:
+        if 'w' == key or 'W' == key:
             crawler.do_action('forward',1,speed)     
-        elif 's' == key:
+        elif 's' == key or 'S' == key:
             crawler.do_action('backward',1,speed)          
-        elif 'a' == key:
+        elif 'a' == key or 'A' == key:
             crawler.do_action('turn left',1,speed)           
-        elif 'd' == key:
+        elif 'd' == key or 'D' == key:
             crawler.do_action('turn right',1,speed)
         elif chr(27) == key:# 27 for ESC
             break    
