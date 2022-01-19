@@ -9,10 +9,10 @@
 
 打开示例后，可以看到如下积木块。
 
-.. image:: media/twist.png
+.. image:: img/twist.png
     :width: 800
 
-.. image:: media/twist2.png
+.. image:: img/twist2.png
     :width: 800    
 
 **这个如何运作?**
@@ -24,7 +24,7 @@
 
 坐标值数组如下图所示：
 
-.. image:: media/sp210928_154257.png
+.. image:: img/sp210928_154257.png
 
 它本质上是一个二维数组，可以被列表类中的积木块处理。它的结构是 ``[[right front],[left front],[left rear],[right rear]]`` ，在这个例子中对应于右前方，左前方，左后方和右后方。
 

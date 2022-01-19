@@ -4,21 +4,18 @@
 
 在这个项目中，我们将学习如何远程控制 PiCrawler。您可以控制 PiCrawler 向前、向后、向左和向右移动。
 
-.. image:: media/remote_control.png
+.. image:: img/remote_control.png
 
-.. note:: 
-
-    您可以参考 `如何使用遥控功能? <https://docs.sunfounder.com/projects/EzBlock3/en/latest/remote.html>`_ 来帮助你更好的完成这个项目。
 
 **程序**
 
 打开示例后，可以看到如下积木块。
 
-.. image:: media/remote.png
+.. image:: img/remote.png
 
 切换到远程控制界面，您将看到下面这个小部件。
 
-.. image:: media/remote_B.png
+.. image:: img/remote_B.png
 
 程序运行后，您可以通过按下方向键让 PiCrawler 动起来。
 
@@ -28,24 +25,24 @@
 
 因为我们添加了小部件方向盘A, 所以这里出现了 **方向盘A获取...值** 的积木块。
 
-.. image:: media/sp210927_180739.png
+.. image:: img/sp210927_180739.png
 
 方向盘可以看作是一个四合一的按钮。您可以在块的第二个凹槽中选择读取哪个方向的按钮。
 
 按下按钮时，值为“1”；没有按下按钮时，值为“0”。
 
 
-.. image:: media/sp210927_182447.png
+.. image:: img/sp210927_182447.png
     :width: 200
 
 我们用到了 **如果...执行...** 的积木块 (您可以在左侧的 **逻辑** 类别中找到他) 当按下方向盘的向上按钮时让 PiCrawler 向前移动一次。
 
-.. image:: media/sp210927_182828.png
+.. image:: img/sp210927_182828.png
     :width: 400
 
 你可以点击块左上角的齿轮图标修改 **如果...执行...** 积木块的形状，实现多个判断分支。
 
-.. image:: media/sp210927_183237.png
+.. image:: img/sp210927_183237.png
     :width: 200
 
 **如果...执行...** 通常和 **=** 一起使用, 可以通过下拉菜单将 **=** 条件修改为 **>** 或 **<**，具体根据实际代码修改。

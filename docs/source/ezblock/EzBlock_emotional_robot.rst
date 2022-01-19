@@ -11,8 +11,8 @@
 
 打开示例后，可以看到如下积木块。（点击图片可以放大）
 
-.. image:: media/sp210928_173753.png
+.. image:: img/sp210928_173753.png
     :width: 800
 
-.. image:: media/sp210928_1737532.png
+.. image:: img/sp210928_1737532.png
     :width: 800    

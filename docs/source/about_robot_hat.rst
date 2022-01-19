@@ -1,7 +1,7 @@
 关于 Robot HAT
 -----------------------------
 
-.. image:: image/picar_x_pic7.png
+.. image:: img/picar_x_pic7.png
 
 **RST 按钮**
     * 短按 RST 按钮将导致所有正在运行的程序重置。

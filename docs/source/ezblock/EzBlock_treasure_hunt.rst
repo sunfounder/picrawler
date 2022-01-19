@@ -13,12 +13,12 @@
 
 打开示例后，可以看到如下积木块。（点击图片可以放大）
 
-.. image:: media/sp210928_181036.png
+.. image:: img/sp210928_181036.png
     :width: 800
 
 切换到远程控制界面，您将看到以下小部件。
 
-.. image:: media/sp210928_181134.png
+.. image:: img/sp210928_181134.png
     :width: 800
 
 
@@ -28,5 +28,5 @@
 
 其流程图如下所示:
 
-.. image:: ../image/treasure_hunt-f.png
+.. image:: img/treasure_hunt-f.png
     :width: 600

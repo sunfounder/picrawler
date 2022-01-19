@@ -4,21 +4,21 @@
 
 在这个项目中，picrawler 将使用超声波模块来检测前方的障碍物。当 PiCrawler 检测到障碍物时，它会发出信号并寻找另一个方向前进。
 
-.. image:: media/avoid1.png
+.. image:: img/avoid1.png
 
 
 **程序**
 
 打开示例后，可以看到如下积木块。
 
-.. image:: media/avoid.png
+.. image:: img/avoid.png
 
 
 **这个如何运作?**
 
 您可以在 **模块** 类别中找到以下块来实现距离检测：
 
-.. image:: media/sp210928_103046.png
+.. image:: img/sp210928_103046.png
     :width: 350
 
 需要注意的是，此积木块的两个引脚要对应实际接线，即trig-D2，echo-D3。

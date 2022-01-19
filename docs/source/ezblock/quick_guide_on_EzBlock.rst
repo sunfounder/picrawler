@@ -18,7 +18,7 @@ EzBlock 快速指南
 
 访问下载页面：https://www.raspberrypi.org/software/。 单击与您的操作系统匹配的 Raspberry Pi Imager 链接，下载完成后，单击它以启动安装程序。
 
-.. image:: ../image/image11x.png
+.. image:: img/image11x.png
     :align: center
 
 
@@ -28,7 +28,7 @@ EzBlock 快速指南
 
 如果出现此消息，请点击 **更多信息** ，然后点击 **仍然运行** ，然后按照说明安装 Raspberry Pi Imager。
 
-.. image:: ../image/image12x.png
+.. image:: img/image12x.png
     :align: center
 
 **第3步**
@@ -43,7 +43,7 @@ EzBlock 快速指南
 
 在 Raspberry Pi Imager 中选择刚下载的 EzBlock 镜像。
 
-.. image:: ../image/otherOSx.png
+.. image:: img/use_custom.png
     :align: center
 
 
@@ -51,39 +51,39 @@ EzBlock 快速指南
 
 选择您正在使用的 SD 卡。
 
-.. image:: ../image/image14x.png
+.. image:: img/image14x.png
     :align: center
 
 **第7步**
 
 单击 **WRITE** 按钮。
 
-.. image:: ../image/image17x.png
+.. image:: img/image17x.png
     :align: center
 
 **第8步**
 
 如果您的 SD 卡上当前有任何文件，您可能希望先备份这些文件以防止永久丢失它们。 如果没有要备份的文件，请单击 **YES**。
 
-.. image:: ../image/image18x.png
+.. image:: img/image18x.png
     :align: center
 
 **第9步**
 
 等待一段时间后，会出现如下窗口，代表写入完成。
 
-.. image:: ../image/image19x.png
+.. image:: img/image19x.png
     :align: center
 
 
 
 在Micro SD卡上烧录EzBlock镜像后，你将可以设置Robot HAT上的P11口将舵机角度校准为0°角。 为确保舵机已正确设置为 0°，首先将摇臂轻轻插入舵机轴，然后将摇臂轻轻旋转到不同的角度。
 
-.. image:: ../image/servo_armx.png
+.. image:: img/servo_arm.png
 
 接下来，将伺服电缆插入 P11 端口，如下所示：
 
-.. image:: ../image/pin11_connectx.png
+.. image:: img/pin11_connect.png
     :width: 600
 
 打开Robot HAT的 **电源开关**，舵机臂应回到0°位置。 如果伺服臂没有返回到 0°，请按 **RST** 按钮重新启动Robot HAT。
@@ -101,7 +101,7 @@ EzBlock 快速指南
 
 扫描下方二维码，下载 EzBlock Studio APP。
 
-.. image:: ../image/EzBlock_Studio_v3.0.1_Appx.png
+.. image:: img/EzBlock_Studio_v3.0.1_Appx.png
     :align: center
 
 .. .. note::

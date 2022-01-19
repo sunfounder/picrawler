@@ -21,9 +21,9 @@ EzBlock Studio是 Emakefun 为初学者开发的开发平台，旨在降低树�
 
     list_and_assembly
     about_robot_hat
-    play_with_python 
+    python/play_with_python 
     ezblock/play_with_EzBlock
-    appendix
+    appendix/appendix
 
 版权声明
 --------------------------

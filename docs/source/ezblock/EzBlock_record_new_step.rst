@@ -7,15 +7,15 @@
 
 打开示例后，可以看到如下积木块。（点击图片可以放大）
 
-.. image:: media/record.png
+.. image:: img/record.png
     :width: 800
 
-.. image:: media/record2.png
+.. image:: img/record2.png
     :width: 800    
 
 切换到远程控制界面，您将看到以下小部件。
 
-.. image:: media/sp210928_164343-1.png
+.. image:: img/sp210928_164343-1.png
     :width: 600
 
 **这个如何运作?**
@@ -25,8 +25,8 @@
 
 记录功能由以下代码实现。
 
-.. image:: media/sp210928_164449.png
+.. image:: img/sp210928_164449.png
 
 回放功能由以下代码实现。
 
-.. image:: media/sp210928_164500.png
+.. image:: img/sp210928_164500.png

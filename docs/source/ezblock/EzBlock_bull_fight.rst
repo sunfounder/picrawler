@@ -4,7 +4,7 @@
 
 让 PiCrawler 成为愤怒的公牛！用它的相机追踪功能来冲撞红布！
 
-.. image:: ../image/bullfight.png
+.. image:: img/bullfight.png
 
 .. note:: 
     
@@ -15,13 +15,13 @@
 
 打开示例后，可以看到如下积木块。
 
-.. image:: media/sp210928_175806.png
+.. image:: img/sp210928_175806.png
     :width: 600
 
 
 切换到远程控制界面，您将看到以下屏幕。
 
-.. image:: media/sp21aa.png
+.. image:: img/sp21aa.png
 
 
 **这个如何运作?**
@@ -30,6 +30,6 @@
 
 其流程图如下所示：
 
-.. image:: media/bull_fight-f.png
+.. image:: img/bull_fight-f.png
     :width: 600
 

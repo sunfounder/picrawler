@@ -5,7 +5,7 @@
 PiCrawler 可以通过写入坐标数组来呈现特定的姿势。在本项目让它摆出抬起的右后脚姿势。
 
 
-.. image:: ../image/4cood.A.png
+.. image:: img/4cood.A.png
 
 
 
@@ -13,7 +13,7 @@ PiCrawler 可以通过写入坐标数组来呈现特定的姿势。在本项目�
 
 打开示例后，可以看到如下积木块。
 
-.. image:: media/dostep.png
+.. image:: img/dostep.png
 
 
 **这个如何运作?**
@@ -28,8 +28,8 @@ PiCrawler 可以通过写入坐标数组来呈现特定的姿势。在本项目�
 
 PiCrawler每只脚都有一个独立的坐标系。如下所示：
 
-.. image:: ../image/4cood.png
+.. image:: img/4cood.png
 
 您需要单独测量每个脚趾的坐标。如下所示：
 
-.. image:: ../image/1cood.png
+.. image:: img/1cood.png
