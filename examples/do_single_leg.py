@@ -1,94 +1,83 @@
 
 from picrawler import Picrawler
 from time import sleep
-import sys
-import tty
-import termios
-
-
+import readchar
 
 crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-#crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
 speed = 80
 
 
-
-
-
-def readchar():
-    fd = sys.stdin.fileno()
-    old_settings = termios.tcgetattr(fd)
-    try:
-        tty.setraw(sys.stdin.fileno())
-        ch = sys.stdin.read(1)
-    finally:
-        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-    return ch
-
-
 manual = '''
-Press keys on keyboard to control PiSloth!
-    w: Y++
-    a: X--
-    s: Y--
-    d: X++
-    r: Z++
-    f: Z--
+-------- PiCrawler Controller --------- 
+       .......          .......
+    <=|   2   |┌-┌┐┌┐-┐|   1   |=>
+       ``````` ├      ┤ ```````
+       ....... ├      ┤ .......
+    <=|   3   |└------┘|   4   |=>
+       ```````          ```````
     1: Select right front leg
     2: Select left front leg
     3: Select left rear leg
     4: Select right rear leg
-    space: Print all leg coordinate
-    esc: Quit
+
+    W: Y++          R: Z++             
+    A: X--          F: Z--
+    S: Y--
+    D: X++          Esc: Quit
 '''
-
-
+legs_list = ['right front', 'left front', 'left rear', 'right rear']
 
 def main():  
-
+    leg = 0
     speed = 80
+    step = 2
     print(manual)
     crawler.do_step('stand',speed)
-    leg = 0 
-    coordinate=crawler.current_step_leg_value(leg)   
-    while True:
-        key = readchar()
-        print(key)
-        if 'w' == key or 'W' == key:
-            coordinate[1]=coordinate[1]+2    
-        elif 's' == key or 'S' == key:
-            coordinate[1]=coordinate[1]-2           
-        elif 'a' == key or 'A' == key:
-            coordinate[0]=coordinate[0]-2         
-        elif 'd' == key or 'D' == key:
-            coordinate[0]=coordinate[0]+2   
-        elif 'r' == key or 'R' == key:
-            coordinate[2]=coordinate[2]+2         
-        elif 'f' == key or 'F' == key:
-            coordinate[2]=coordinate[2]-2       
-        elif '1' == key:
-            leg=0
-            coordinate=crawler.current_step_leg_value(leg)           
-        elif '2' == key:
-            leg=1   
-            coordinate=crawler.current_step_leg_value(leg)              
-        elif '3' == key:
-            leg=2  
-            coordinate=crawler.current_step_leg_value(leg)     
-        elif '4' == key:
-            leg=3     
-            coordinate=crawler.current_step_leg_value(leg)  
-        elif chr(32) == key:
-            print("[[right front], [left front], [left rear], [right rear]]")
-            print(crawler.current_step_all_leg_value())
+    sleep(0.2)
+    coordinate=crawler.current_step_all_leg_value()  
 
-        elif chr(27) == key:# 27 for ESC
+    def show_info():
+        print("\033[H\033[J",end='')  # clear terminal windows
+        print(manual)   
+        print('%s : %s'%(leg+1, legs_list[leg])) 
+        print('coordinate: %s'%(coordinate))  
+    
+    show_info()
+
+    while True:
+        # readkey
+        key = readchar.readkey()
+        key = key.lower()
+        # select the leg 
+        if key in ('1234'):
+            leg = int(key) - 1
+            show_info()
+        # move
+        elif key in ('wsadrf'):         
+            if 'w' == key:
+                coordinate[leg][1]=coordinate[leg][1] + step    
+            elif 's' == key:
+                coordinate[leg][1]=coordinate[leg][1] - step           
+            elif 'a' == key:
+                coordinate[leg][0]=coordinate[leg][0] - step         
+            elif 'd' == key:
+                coordinate[leg][0]=coordinate[leg][0] + step   
+            elif 'r' == key:
+                coordinate[leg][2]=coordinate[leg][2] + step         
+            elif 'f' == key:
+                coordinate[leg][2]=coordinate[leg][2] - step 
+
+            crawler.do_single_leg(leg,coordinate[leg],speed) 
+            sleep(0.1)  
+            # coordinate=crawler.current_step_all_leg_value()
+            show_info()
+        # quit 
+        elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+            print("\n Quit")  
             break    
 
         sleep(0.05)
-        crawler.do_single_leg(leg,coordinate,speed)          
-    print("\n q Quit")  
-            
- 
+               
+   
 if __name__ == "__main__":
     main()
