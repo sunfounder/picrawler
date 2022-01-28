@@ -181,10 +181,10 @@ class Picrawler(Robot):
             return
 
         angles_temp = []
-        self.coord_temp = []   # do not use list.clear()
+        self.coord_temp = [] # do not use list.clear()
         for coord in step_temp: # each servo motion    
             alpha, beta, gamma = self.coord2polar(coord)
-            angles_temp.append([beta, alpha, gamma]) 
+            angles_temp.append([beta, alpha, gamma])
 
         # print('current_coord: %s'%len(self.current_coord))
         # print('_step: %s'%len(_step))
@@ -220,7 +220,7 @@ class Picrawler(Robot):
             [-1, 1, -1, 1, 1, -1],
         ]
         
-        offset = list(self.offset)
+        offset = list.copy(self.offset)
         leg = leg - 1
         if pos == 'up':
             self.current_coord[leg][1] += step * positive_list[leg][0]
@@ -294,7 +294,7 @@ class Picrawler(Robot):
             a = math.atan(self.Y_DEFAULT/(self.X_DEFAULT+self.LENGTH_SIDE/2))
             angle1 = a/math.pi*180
             r1 = math.sqrt(pow(self.Y_DEFAULT,2)+ pow(self.X_DEFAULT+ self.LENGTH_SIDE/2, 2))
-            x1 = r1* math.cos((angle1-angle)* math.pi/180)- self.LENGTH_SIDE/2 
+            x1 = r1* math.cos((angle1-angle)* math.pi/180)- self.LENGTH_SIDE/2
             y1 = r1* math.sin((angle1-angle)* math.pi/180)
             # print(x1,y1)
             
@@ -305,7 +305,7 @@ class Picrawler(Robot):
             b = math.atan((self.X_DEFAULT+self.LENGTH_SIDE/2)/(self.Y_DEFAULT+ self.LENGTH_SIDE))
             angle2 = b/math.pi*180
             r2 = math.sqrt(pow(self.X_DEFAULT+ self.LENGTH_SIDE/2, 2)+ pow(self.Y_DEFAULT+ self.LENGTH_SIDE,2))
-            x3 = r2*math.sin((angle2-angle)* math.pi/180) - self.LENGTH_SIDE/2 
+            x3 = r2*math.sin((angle2-angle)* math.pi/180) - self.LENGTH_SIDE/2
             y3 = r2*math.cos((angle2-angle)*math.pi/180)- self.LENGTH_SIDE
 
             x3 += 10
@@ -491,7 +491,6 @@ class Picrawler(Robot):
         @normal_action(1)
         def look_left(self):
             li = self.turn_angle_coord(self.angle)
-            print('li : %s'%li)
             temp_x1 = li[0:2]
             temp_x1.append(self.z_current)
             temp_x2 = li[2:4]
@@ -514,7 +513,6 @@ class Picrawler(Robot):
             temp_x2.append(self.z_current)
             temp_x3 = li[4:6]
             temp_x3.append(self.z_current)
-
             return [
                 [
                     [self.X_DEFAULT, self.Y_DEFAULT, self.z_current],

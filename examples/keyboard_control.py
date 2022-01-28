@@ -1,26 +1,10 @@
 
 from picrawler import Picrawler
 from time import sleep
-import sys
-import tty
-import termios
-
-
+import readchar
 
 crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-#crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
 speed = 90
-
-def readchar():
-    fd = sys.stdin.fileno()
-    old_settings = termios.tcgetattr(fd)
-    try:
-        tty.setraw(sys.stdin.fileno())
-        ch = sys.stdin.read(1)
-    finally:
-        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-    return ch
-
 
 manual = '''
 Press keys on keyboard to control PiCrawler!
@@ -31,27 +15,33 @@ Press keys on keyboard to control PiCrawler!
     esc: Quit
 '''
 
-def main():  
-    
+def show_info():
+    print("\033[H\033[J",end='')  # clear terminal windows 
     print(manual)
-          
-    while True:
-        key = readchar()
-        print(key)
-        if 'w' == key or 'W' == key:
-            crawler.do_action('forward',1,speed)     
-        elif 's' == key or 'S' == key:
-            crawler.do_action('backward',1,speed)          
-        elif 'a' == key or 'A' == key:
-            crawler.do_action('turn left',1,speed)           
-        elif 'd' == key or 'D' == key:
-            crawler.do_action('turn right',1,speed)
-        elif chr(27) == key:# 27 for ESC
-            break    
 
-        sleep(0.05)          
-    print("\n q Quit")  
-            
+
+def main(): 
+    show_info()   
+    while True:
+        key = readchar.readkey()
+        key = key.lower()
+        if key in('wsad'):
+            if 'w' == key:
+                crawler.do_action('forward',1,speed)     
+            elif 's' == key:
+                crawler.do_action('backward',1,speed)          
+            elif 'a' == key:
+                crawler.do_action('turn left',1,speed)           
+            elif 'd' == key:
+                crawler.do_action('turn right',1,speed)
+            sleep(0.05)
+            show_info()  
+        elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+            print("\n Quit") 
+            break    
+        
+        sleep(0.02)          
+     
  
 if __name__ == "__main__":
     main()

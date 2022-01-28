@@ -59,18 +59,19 @@ def main():
     coodinate=crawler.current_step_leg_value(leg)   
     while True:
         key = readchar()
+        key = key.lower()
         # print(key)
-        if 'w' == key or 'W' == key:
+        if 'w' == key:
             coodinate[1]=coodinate[1]+2    
-        elif 's' == key or 'S' == key:
+        elif 's' == key:
             coodinate[1]=coodinate[1]-2           
-        elif 'a' == key or 'A' == key:
+        elif 'a' == key:
             coodinate[0]=coodinate[0]-2         
-        elif 'd' == key or 'D' == key:
+        elif 'd' == key:
             coodinate[0]=coodinate[0]+2   
-        elif 'r' == key or 'R' == key:
+        elif 'r' == key:
             coodinate[2]=coodinate[2]+2         
-        elif 'f' == key or 'F' == key:
+        elif 'f' == key:
             coodinate[2]=coodinate[2]-2       
         elif '1' == key:
             leg=0
@@ -89,7 +90,7 @@ def main():
             print("saved new step")
             print(crawler.current_step_all_leg_value())
             save_new_step()
-        elif 'p' == key or 'P' == key:
+        elif 'p' == key:
             play_all_new_step()
         elif chr(27) == key:# 27 for ESC
             break    

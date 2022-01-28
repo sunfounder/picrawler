@@ -1,3 +1,8 @@
+
+'''
+    Sorry, currently there is only sound when running with sudo
+'''
+
 from time import sleep
 from robot_hat import Music,TTS
 
@@ -21,8 +26,9 @@ def main():
     
 
     while True:
-        key = input()  
-        if key == "q" or key == "Q":
+        key = input() 
+        key = key.lower() 
+        if key == "q":
             flag_bgm = not flag_bgm
             if flag_bgm is True:
                 music.background_music('./musics/sports-Ahjay_Stelino.mp3')
@@ -45,7 +51,7 @@ def main():
             music.sound_effect_threading('./sounds/sign.wav')
             sleep(0.5)
 
-        elif key == "t" or key == "T":
+        elif key == "t":
             words = "Hello"
             tts.say(words)
         
