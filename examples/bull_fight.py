@@ -20,10 +20,10 @@ def main():
             coordinate_x = Vilib.detect_obj_parameter['color_x']
             music.sound_effect_threading('./sounds/talk1.wav')
 
-            if coordinate_x == -1:
+            if coordinate_x < 100:
                 crawler.do_action('turn left',1,speed)
                 sleep(0.05) 
-            elif coordinate_x == 1:
+            elif coordinate_x > 220:
                 crawler.do_action('turn right',1,speed)
                 sleep(0.05) 
             else :
