@@ -1,3 +1,5 @@
+.. _py_sound_effect:
+
 音效
 =====================
 
@@ -50,6 +52,7 @@
 
     from time import sleep
     from robot_hat import Music,TTS
+    import readchar
 
     music = Music()
     tts = TTS()
@@ -59,7 +62,7 @@
         q: Play background music
         1: Play sound effect
         2: Play sound effect with threads
-        t: Text to Speech
+        t: Text to speak
     '''
 
     def main():  
@@ -71,8 +74,9 @@
         
 
         while True:
-            key = input()  
-            if key == "q" or key == "Q":
+            key = readchar.readkey() 
+            key = key.lower() 
+            if key == "q":
                 flag_bgm = not flag_bgm
                 if flag_bgm is True:
                     music.background_music('./musics/sports-Ahjay_Stelino.mp3')
@@ -95,7 +99,7 @@
                 music.sound_effect_threading('./sounds/sign.wav')
                 sleep(0.5)
 
-            elif key == "t" or key == "T":
+            elif key == "t":
                 words = "Hello"
                 tts.say(words)
             
@@ -113,7 +117,7 @@
 
 .. note::
 
-    你可以通过 :ref:`Filezilla` 给 ``musics`` or ``sounds`` 文件夹添加不同的音乐或者音效。
+    你可以通过 :ref:`filezilla` 给 ``musics`` or ``sounds`` 文件夹添加不同的音乐或者音效。
 
 
 与音效相关的功能包括:

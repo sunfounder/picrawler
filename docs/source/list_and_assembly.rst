@@ -9,7 +9,7 @@
 
 .. note::
 
-    #. 组装前需要购买2节18650电池并充满电，参见 :ref:`关于电池`.
+    #. 组装前需要购买2节18650电池并充满电，参见 :ref:`about_battery`.
     #. Robot HAT不能给电池充电，需要同时购买充电器。
 
 * :download:`PiCrawler组装教程.pdf <https://gitee.com/sunfounder/sf-pdf/raw/master/%E7%BB%84%E8%A3%85%E6%96%87%E4%BB%B6/PiCrawler%E7%BB%84%E8%A3%85%E6%95%99%E7%A8%8B.pdf>`

@@ -1,3 +1,5 @@
+.. _py_remote_control:
+
 键盘控制
 =======================
 
@@ -20,6 +22,7 @@
 * 按下 ``a``，让PiCrawler左转。
 * 按下 ``s``，让PiCrawler后退。
 * 按下 ``d``，让PiCrawler右转。
+* 按下 ``esc`` 退出程序。
 
 **代码**
 
@@ -27,26 +30,10 @@
 
     from picrawler import Picrawler
     from time import sleep
-    import sys
-    import tty
-    import termios
-
-
+    import readchar
 
     crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
     speed = 90
-
-    def readchar():
-        fd = sys.stdin.fileno()
-        old_settings = termios.tcgetattr(fd)
-        try:
-            tty.setraw(sys.stdin.fileno())
-            ch = sys.stdin.read(1)
-        finally:
-            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-        return ch
-
 
     manual = '''
     Press keys on keyboard to control PiCrawler!
@@ -54,29 +41,36 @@
         a: Turn left
         s: Backward
         d: Turn right
+        esc: Quit
     '''
 
-    def main():  
-        
+    def show_info():
+        print("\033[H\033[J",end='')  # clear terminal windows 
         print(manual)
-            
-        while True:
-            key = readchar()
-            print(key)
-            if 'w' == key or 'W' == key:
-                crawler.do_action('forward',1,speed)     
-            elif 's' == key or 'S' == key:
-                crawler.do_action('backward',1,speed)          
-            elif 'a' == key or 'A' == key:
-                crawler.do_action('turn left',1,speed)           
-            elif 'd' == key or 'D' == key:
-                crawler.do_action('turn right',1,speed)
-            elif chr(27) == key:# 27 for ESC
-                break    
 
-            sleep(0.05)          
-        print("\n q Quit")  
-                
+
+    def main(): 
+        show_info()   
+        while True:
+            key = readchar.readkey()
+            key = key.lower()
+            if key in('wsad'):
+                if 'w' == key:
+                    crawler.do_action('forward',1,speed)     
+                elif 's' == key:
+                    crawler.do_action('backward',1,speed)          
+                elif 'a' == key:
+                    crawler.do_action('turn left',1,speed)           
+                elif 'd' == key:
+                    crawler.do_action('turn right',1,speed)
+                sleep(0.05)
+                show_info()  
+            elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+                print("\n Quit") 
+                break    
+            
+            sleep(0.02)          
+        
     
     if __name__ == "__main__":
         main()
@@ -85,38 +79,25 @@
 
 **这个怎么运作?**
 
-下面这个函数引用标准输入流并返回读取的数据流的第一个字符。
-
-* ``tty.setraw(sys.stdin.fileno)`` 就是将标准输入流改为raw模式，即传输过程中所有字符都不会被转义，包括特殊字符。更改模式前，请备份原模式，更改后恢复。
-* ``old_settings = termios.tcgetattr(fd)`` 和 ``termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)`` 起到备份和恢复的作用。
-        
-.. code-block:: python
-
-    def readchar():
-		fd = sys.stdin.fileno() 
-		old_settings = termios.tcgetattr(fd) 
-		try:
-			tty.setraw(sys.stdin.fileno())  
-			ch = sys.stdin.read(1)
-		finally:
-			termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)  
-		return ch
-
-最后，根据读取的键盘字符，让PiCrawler做我们设置的动作。
+根据读取的键盘字符，让PiCrawler做我们设置的动作。 ``lower()`` 是将读取的按键字符转化成小写字符，这样无论读取了该字母的大小写，都是有效的。
 
 .. code-block:: python
 
     while True:
-        key = readchar()
-        print(key)
-        if 'w' == key or 'W' == key:
+        key = readchar.readkey()
+        key = key.lower()
+        if key in('wsad'):
+        if 'w' == key:
             crawler.do_action('forward',1,speed)     
-        elif 's' == key or 'S' == key:
-            crawler.do_action('backward',1,speed)          
-        elif 'a' == key or 'A' == key:
-            crawler.do_action('turn left',1,speed)           
-        elif 'd' == key or 'D' == key:
+        elif 's' == key:
+            crawler.do_action('backward',1,speed)     
+        elif 'a' == key:
+            crawler.do_action('turn left',1,speed)     
+        elif 'd' == key:
             crawler.do_action('turn right',1,speed)
-        elif chr(27) == key:# 27 for ESC
+        sleep(0.05)
+        show_info()  
+        elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+        print("\n Quit") 
             break 
 

@@ -144,7 +144,7 @@
 
 **怎么运行的?**
 
-总的来说，这个项目结合了 :ref:`键盘控制`, :ref:`计算机视觉` 和 :ref:`音效`。
+总的来说，这个项目结合了 :ref:`py_remote_control`, :ref:`py_computer_vision` 和 :ref:`py_sound_effect`。
 
 其流程如下图所示:
 

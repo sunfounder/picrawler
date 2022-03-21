@@ -1,3 +1,5 @@
+.. _py_twist:
+
 组合动作
 ==============
 
@@ -84,7 +86,7 @@
 
 简单的说，就是使用两层for循环，让 ``new_step`` 数组产生连续有规律的变化，同时用 ``crawler.do_step()`` 函数执行姿势，形成连续动作。
 
-你可以从 :ref:`调整姿势` 课程中直观的获得每个动作对应的坐标值数组。
+你可以从 :ref:`py_do_leg` 课程中直观的获得每个动作对应的坐标值数组。
 
 除此以外，该示例还可以播放背景音乐。实现方法如下。
 
@@ -100,7 +102,7 @@
 
     music = Music()
 
-播放 ``picrawler/examples/musics`` 目录中的背景音乐，音量设置为20。 您也可以通过 :ref:`Filezilla` 软件将音乐添加到 ``musics`` 文件夹中。
+播放 ``picrawler/examples/musics`` 目录中的背景音乐，音量设置为20。 您也可以通过 :ref:`filezilla` 软件将音乐添加到 ``musics`` 文件夹中。
 
 .. code-block:: python
 
@@ -110,4 +112,4 @@
 
 .. note::
 
-    您可以通过 :ref:`Filezilla` 软件向 ``musics`` 或 ``sounds`` 文件夹添加不同的音效或音乐。 
+    您可以通过 :ref:`filezilla` 软件向 ``musics`` 或 ``sounds`` 文件夹添加不同的音效或音乐。 

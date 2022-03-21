@@ -1,3 +1,5 @@
+.. _play_python:
+
 玩转 Python
 ====================
 
@@ -6,8 +8,7 @@
 .. toctree::
     :maxdepth: 2
 
-    quick_guide_on_python
-    preparation/download_and_run_code
+    python_start/quick_guide_on_python
     calibrate
 
 组装完成后，您可以尝试运行下面的项目。

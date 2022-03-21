@@ -51,7 +51,7 @@
     from vilib import Vilib
 
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
+    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9])
     #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
 
     music = Music()
@@ -59,7 +59,7 @@
     def main():
         Vilib.camera_start()
         Vilib.display()
-        Vilib.color_detect("red") 
+        Vilib.color_detect("red")
         speed = 100
 
         while True:
@@ -69,13 +69,13 @@
 
                 if coordinate_x < 100:
                     crawler.do_action('turn left',1,speed)
-                    sleep(0.05) 
+                    sleep(0.05)
                 elif coordinate_x > 220:
                     crawler.do_action('turn right',1,speed)
-                    sleep(0.05) 
+                    sleep(0.05)
                 else :
                     crawler.do_action('forward',2,speed)
-                    sleep(0.05)    
+                    sleep(0.05)
             else :
                 crawler.do_step('stand',speed)
                 sleep(0.05)
@@ -87,7 +87,7 @@
 
 **这个怎么运作?**
 
-总的来说，这个项目结合了 :ref:`移动`, :ref:`计算机视觉` 和 :ref:`音效` 的知识点。
+总的来说，这个项目结合了 :ref:`py_move`, :ref:`py_computer_vision` 和 :ref:`py_sound_effect` 的知识点。
 
 其流程如下图所示:
 

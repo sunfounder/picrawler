@@ -26,7 +26,6 @@
 
 .. code-block:: python
 
-
     from picrawler import Picrawler
     from time import sleep
     import sys
@@ -50,7 +49,7 @@
 
 
     manual = '''
-    Press keys on keyboard to control PiCrawler!
+    Press keys on keyboard to control PiSloth!
         w: Y++
         a: X--
         s: Y--
@@ -87,18 +86,19 @@
         coodinate=crawler.current_step_leg_value(leg)   
         while True:
             key = readchar()
-            print(key)
-            if 'w' == key or 'W' == key:
+            key = key.lower()
+            # print(key)
+            if 'w' == key:
                 coodinate[1]=coodinate[1]+2    
-            elif 's' == key or 'S' == key:
+            elif 's' == key:
                 coodinate[1]=coodinate[1]-2           
-            elif 'a' == key or 'A' == key:
+            elif 'a' == key:
                 coodinate[0]=coodinate[0]-2         
-            elif 'd' == key or 'D' == key:
+            elif 'd' == key:
                 coodinate[0]=coodinate[0]+2   
-            elif 'r' == key or 'R' == key:
+            elif 'r' == key:
                 coodinate[2]=coodinate[2]+2         
-            elif 'f' == key or 'F' == key:
+            elif 'f' == key:
                 coodinate[2]=coodinate[2]-2       
             elif '1' == key:
                 leg=0
@@ -117,7 +117,7 @@
                 print("saved new step")
                 print(crawler.current_step_all_leg_value())
                 save_new_step()
-            elif 'p' == key or 'P' == key:
+            elif 'p' == key:
                 play_all_new_step()
             elif chr(27) == key:# 27 for ESC
                 break    
@@ -130,10 +130,9 @@
     if __name__ == "__main__":
         main()
 
-
 **这个怎么运作?**
 
-这个项目参考自 :ref:`调整姿势`。 我们增加了记录和回放功能。
+这个项目参考自 :ref:`py_do_leg`。 我们增加了记录和回放功能。
 
 记录功能由以下代码实现。
 

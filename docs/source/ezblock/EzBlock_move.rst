@@ -1,14 +1,16 @@
-移动 — EzBlock
+.. _ezb_move:
+
+移动
 =================
 
 这是 PiCrawler’s 的第一个项目， 让它移动起来。
 
-.. image:: img/move.png
-    :align: center
 
 **程序**
 
-打开示例后，可以看到如下积木块。
+.. note::
+
+  你可以直接打开我们提供的示例或者是按照下图来编写程序，详细教程请参考 :ref:`open_create`。
 
 .. image:: img/move.png
 

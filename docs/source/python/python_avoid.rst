@@ -111,4 +111,4 @@
 
 .. note::
 
-    你可以通过 :ref:`Filezilla` 给 ``musics`` or ``sounds`` 文件夹添加不同的音乐或者音效。
+    你可以通过 :ref:`filezilla` 给 ``musics`` or ``sounds`` 文件夹添加不同的音乐或者音效。

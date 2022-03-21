@@ -1,5 +1,5 @@
 校准PiCrawler
-===============
+==================
 
 因为 PiCrawler 安装过程中可能存在偏差或舵机本身的限制，
 使一些舵机角度略有倾斜，因此您可以对其进行校准。
@@ -25,20 +25,20 @@
 
 具体的步骤如下：
 
-1.拿出组装折页，将它翻到最后一页，平整的放桌上。然后将PiCrawler如下图放置，需要将它的底部与校准图上的轮廓线对齐。
+#. 拿出组装折页，将它翻到最后一页，平整的放桌上。然后将PiCrawler如下图放置，需要将它的底部与校准图上的轮廓线对齐。
 
-.. image:: img/calibration2.png
+    .. image:: img/calibration2.png
 
-2.先选择2和3将左侧两条腿移动到校准点。
+#. 先选择2和3将左侧两条腿移动到校准点。
 
-.. image:: img/calibration3.png
+    .. image:: img/calibration3.png
 
-3.然后将校准纸换到右边，选择1和4将右侧2条腿移动到校准点。   
+#. 然后将校准纸换到右边，选择1和4将右侧2条腿移动到校准点。   
 
-.. image:: img/calibration4.png
+    .. image:: img/calibration4.png
 
-4.校准完毕后按 ``空格键`` 进行保存，会提示输入 ``Y`` 确认，然后 ``ctrl+c`` 退出程序完成校准。
+#. 校准完毕后按 ``空格键`` 进行保存，会提示输入 ``Y`` 确认，然后 ``ctrl+c`` 退出程序完成校准。
 
-.. image:: img/calibration5.png
+    .. image:: img/calibration5.png
 
 
