@@ -18,9 +18,9 @@
 # -- Project information -----------------------------------------------------
 import sphinx_rtd_theme
 
-project = 'Emakefun PiCrawler机器人'
-copyright = '2021, Emakefun'
-author = 'Emakefun'
+project = 'SunFounder PiCrawler机器人'
+copyright = '2021, SunFounder'
+author = 'SunFounder'
 
 
 # -- General configuration ---------------------------------------------------
@@ -49,7 +49,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
-# Emakefun logo
+# SunFounder logo
 
 # html_js_files = [
 #     'https://ezblock.cc/readDocFile/topHead.js',
