@@ -1,3 +1,5 @@
+.. _py_bull:
+
 Bull Fight
 ==========
 
@@ -89,7 +91,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 
 **How it works?**
 
-In general, this project combines the knowledge points of :ref:`Move`, :ref:`Computer Vision` and :ref:`Sound Effect`.
+In general, this project combines the knowledge points of :ref:`py_move`, :ref:`py_vision` and :ref:`py_sound`.
 
 Its flow is shown in the figure below:
 

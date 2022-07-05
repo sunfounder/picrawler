@@ -168,4 +168,4 @@ Here, we get the Raspberry Pi connected and it is time to conduct the next steps
 
     If you are not satisfied with using the command window to control the Raspberry Pi, you can also use the remote desktop function, which can help us manage the files in the Raspberry Pi easily.
 
-    For details on how to do this, please refer to :ref:`Remote Desktop`.
+    For details on how to do this, please refer to :ref:`remote_desktop`.

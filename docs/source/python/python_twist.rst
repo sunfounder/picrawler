@@ -1,3 +1,5 @@
+.. _py_twist:
+
 Twist
 ==============
 
@@ -87,7 +89,7 @@ In this code, you need to pay attention to this part:
 
 Simply put, it uses two layers of for loops to make the ``new_step`` array produce continuous and regular changes, and at the same time, ``crawler.do_step()`` executes the posture to form a continuous action.
 
-You can intuitively get the coordinate value array corresponding to each pose from :ref:`Adjust Posture`.
+You can intuitively get the coordinate value array corresponding to each pose from :ref:`py_posture`.
 
 
 In addition, the example also played background music. The implementation method is as follows.
@@ -104,7 +106,7 @@ Declare a Music object.
 
     music = Music()
 
-Play the background music in the ``picrawler/examples/musics`` directory and set the volume to 20. You can also add music to the ``musics`` folder via :ref:`Filezilla Software`.
+Play the background music in the ``picrawler/examples/musics`` directory and set the volume to 20. You can also add music to the ``musics`` folder via :ref:`filezilla`.
 
 .. code-block:: python
 
@@ -114,4 +116,4 @@ Play the background music in the ``picrawler/examples/musics`` directory and set
 
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`Filezilla Software`.
+    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.

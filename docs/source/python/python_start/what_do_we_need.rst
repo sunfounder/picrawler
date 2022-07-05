@@ -12,8 +12,6 @@ It is a capable little device that enables people of all ages to explore
 computing, and to learn how to program in languages like Scratch and
 Python.
 
-Our kit applies to the following versions of the product of Raspberry Pi
-
 .. image:: img/image10.jpeg
    :alt: RPi2
    :width: 5.61806in

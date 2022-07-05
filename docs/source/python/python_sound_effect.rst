@@ -1,3 +1,5 @@
+.. _py_sound:
+
 Sound Effect
 =====================
 
@@ -38,12 +40,19 @@ After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a 
 
 After the code runs, please operate according to the prompt that printed on the terminal.
 
+Input key to call the function!
+* q: Play background music
+* 1: Play sound effect
+* 2: Play sound effect with threads
+* t: Text to speak
+
 **Code** 
 
 .. code-block:: python
 
     from time import sleep
     from robot_hat import Music,TTS
+    import readchar
 
     music = Music()
     tts = TTS()
@@ -53,20 +62,21 @@ After the code runs, please operate according to the prompt that printed on the 
         q: Play background music
         1: Play sound effect
         2: Play sound effect with threads
-        t: Text to Speech
+        t: Text to speak
     '''
 
-    def main():  
+    def main():
         print(manual)
 
         flag_bgm = False
         music.music_set_volume(20)
         tts.lang("en-US")
-        
+
 
         while True:
-            key = input()  
-            if key == "q"  or 'Q' == key:
+            key = readchar.readkey()
+            key = key.lower()
+            if key == "q":
                 flag_bgm = not flag_bgm
                 if flag_bgm is True:
                     music.background_music('./musics/sports-Ahjay_Stelino.mp3')
@@ -89,12 +99,13 @@ After the code runs, please operate according to the prompt that printed on the 
                 music.sound_effect_threading('./sounds/sign.wav')
                 sleep(0.5)
 
-            elif key == "t" or 'T' == key:
+            elif key == "t":
                 words = "Hello"
                 tts.say(words)
-            
+
     if __name__ == "__main__":
         main()
+
 
 **How it works?**
 
@@ -107,7 +118,7 @@ Functions related to background music include these:
 
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`Filezilla Software`.
+    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
 
 
 Functions related to sound effects include these:

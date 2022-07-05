@@ -1,3 +1,5 @@
+.. _py_record:
+
 Record New Step
 =================
 
@@ -15,12 +17,18 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
     cd /home/pi/picrawler/examples
     sudo python3 record_new_step_by_keyboard.py
 
+After the code runs, please operate according to the prompt that pops up in the terminal.
+
+* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
+* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
+* Press ``space`` to print all coordinate values.
+* Press ``p`` to have PiCrawler replay the recorded action.
+* Press ``esc`` to exit.
 
 
 **Code**
 
 .. code-block:: python
-
 
     from picrawler import Picrawler
     from time import sleep
@@ -46,19 +54,19 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
 
     manual = '''
     Press keys on keyboard to control PiSloth!
-        W: Y++
-        A: X--
-        S: Y--
-        D: X++
-        R: Z++
-        F: Z--
+        w: Y++
+        a: X--
+        s: Y--
+        d: X++
+        r: Z++
+        f: Z--
         1: Select right front leg
         2: Select left front leg
         3: Select left rear leg
         4: Select right rear leg
-        Space: Print all leg coodinate & Save this step
-        P: Play all saved step
-        ESC: Quit
+        space: Print all leg coodinate & Save this step
+        p: Play all saved step
+        esc: Quit
     '''
 
 
@@ -82,18 +90,19 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
         coodinate=crawler.current_step_leg_value(leg)   
         while True:
             key = readchar()
-            print(key)
-            if 'w' == key or 'W' == key:
+            key = key.lower()
+            # print(key)
+            if 'w' == key:
                 coodinate[1]=coodinate[1]+2    
-            elif 's' == key or 'S' == key:
+            elif 's' == key:
                 coodinate[1]=coodinate[1]-2           
-            elif 'a' == key or 'A' == key:
+            elif 'a' == key:
                 coodinate[0]=coodinate[0]-2         
-            elif 'd' == key or 'D' == key:
+            elif 'd' == key:
                 coodinate[0]=coodinate[0]+2   
-            elif 'r' == key or 'R' == key:
+            elif 'r' == key:
                 coodinate[2]=coodinate[2]+2         
-            elif 'f' == key or 'F' == key:
+            elif 'f' == key:
                 coodinate[2]=coodinate[2]-2       
             elif '1' == key:
                 leg=0
@@ -112,7 +121,7 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
                 print("saved new step")
                 print(crawler.current_step_all_leg_value())
                 save_new_step()
-            elif 'p' == key or 'P' == key:
+            elif 'p' == key:
                 play_all_new_step()
             elif chr(27) == key:# 27 for ESC
                 break    
@@ -126,9 +135,10 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
         main()
 
 
+
 **How it works?**
 
-This project was born out of :ref:`Adjust Posture`. Added recording and replay functions.
+This project was born out of :ref:`py_posture`. Added recording and replay functions.
 
 The recording function is implemented by the following code.
 

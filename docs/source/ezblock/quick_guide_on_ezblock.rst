@@ -1,75 +1,54 @@
-Quick Guide on Ezblock
+Quick Guide on EzBlock
 ===========================
 
 There are 2 parts here:
 
-* :ref:`Before Assembling PiCrawler` allows you to keep all the servos at 0 degrees to complete a proper and safe assembly (otherwise you will probably damage the servos).
-* :ref:`Before Programming With Ezblock` will guide you to download Ezblock Studio to play with PiCrawler.
+* :ref:`ezb_servo_adjust` allows you to keep all the servos at 0 degrees to complete a proper and safe assembly (otherwise you will probably damage the servos).
+* :ref:`install_ezblock` will guide you to download EzBlock Studio to play with your robot.
 
-Before Assembling PiCrawler
------------------------------
+.. _ezb_servo_adjust:
 
-Before assembling the PiCrawler, follow the instructions on how to install the Ezblock OS on an Micro SD card here: `Download and Install Ezblock OS <https://docs.sunfounder.com/projects/ezblock3/en/latest/quick_user_guide_for_ezblock3.html#download-and-install-ezblock-os>`_.
+Servo Adjust
+--------------------------------
 
-After burning the Ezblock system on the SD-card, the P11 port on the Robot HAT is set to calibrate the servo angle to a 0° angle. To make sure the servo has been correctly set to 0°, first gently insert a rocker arm in the servo shaft, then slightly rotate the rocker arm to a different angle.
-
-
-.. image:: img/servo_arm.png
-    :width: 200
-
-Next, insert the servo cable into the P11 port as shown below:
-
-.. image:: img/pin11_connect.png
-    :width: 600
-
-Turn on the **Power Switch** to the Robot HAT, and the servo arm should return to the 0° position. If the servo arm does not return to 0°, press the **RST** button to restart the Robot HAT.
-
-.. note::
-
-    Before attaching each servo, plug the servo cable into P11 and turn the power on to set the servo to 0°.
-
-    This function will become invalid after writing any programs to the Micro SD card.
+When assembling to the part with the servo, you need to keep the servo at 0° and secure it with the servo screw. Please follow the tutorial below to do this.
 
 
-Before Programming With Ezblock
--------------------------------------
+#. Firstly, :ref:`ezblock:install_ezblock_os_latest` onto a Micro SD card, once the installation is complete, insert it into the Raspberry Pi.
 
+#. To ensure that the servo has been properly set to 0°, first insert the rocker arm into the servo shaft and then gently rotate the rocker arm to a different angle.
 
-First download Ezblock Studio 2, and then manually upgrade to Ezblock Studio 3 to begin programming. 
+    .. image:: img/servo_arm.png
 
-For a detailed installation and using tutorial, please refer to: `Install Ezblock Studio <https://docs.sunfounder.com/projects/ezblock3/en/latest/quick_user_guide_for_ezblock3.html#install-ezblock-studio>`_.
+#. Follow the instructions on the assembly foldout, insert the battery holder cable and turn the power switch to the ON. Wait for 1-2 minutes, there will be a sound to indicate that the Raspberry Pi boots successfully.
 
+    .. image:: img/slide_to_power.png
 
-Calibrate the PiCrawler
-----------------------------
+#. Next, plug the servo cable into the P11 port as follows.
+
+    .. image:: img/pin11_connect.png
+
+#. At this point you will see the servo arm rotate to a specific position (0°). If the servo arm does not return to 0°, press the RST button to restart the Robot HAT.
+
+#. Now you can continue the installation as instructed on the assembly foldout.
 
 .. note::
 
-    After you connect the PiCrawler, there will be a calibration step. This is because of possible deviations in the installation process or limitations of the servos themselves, making some servo angles slightly tilted, so you can calibrate them in this step.
-    
-    But if you think the assembly is perfect and no calibration is needed, you can also skip this step.
+    * Do not unplug this servo cable before fastening this servo with the servo screw, you can unplug it after fastening.
+    * Do not turn the servo while it is powered on to avoid damage; if the servo shaft is inserted at the wrong angle, pull out the servo and reinsert it.
+    * Before assembling each servo, you need to plug the servo cable into P11 and turn on the power to set its angle to 0°.
+    * This zeroing function will be disabled if you download a program to the robot later with the EzBlock APP.
 
-The calibration steps are as follows:
 
-#. Take out the assembly leaflet, turn it to the last page, and lay it flat on the table. Then place the PiCrawler as shown below, aligning its bottom with the outline on the calibration chart.
+.. _install_ezblock:
 
-    .. image:: ../python/preparation/img/calibration2.png
-        :align: center
+Install and Configure EzBlock Studio
+----------------------------------------
 
-#. Go back to EzBlock Studio, select one foot on the left, then click the 3 sets of X, Y and Z buttons, and let the toes slowly align with the calibration point.
+As soon as the robot is assembled, you will need to carry out some basic operations.
 
-   * The calibration buttons are used for fine-tuning, and you need to press these buttons multiple times to see the pin position change.
-   * It is recommended to click the up button of Z axis to lift the foot up first, then go to adjust X and Y.
+* :ref:`ezblock:install_ezblock_app_latest`: Download and install EzBlock Studio on your device or use the web-based version.
+* :ref:`ezblock:connect_product_ezblock_latest`: Configure Wi-Fi, Bluetooth and calibrate before use.
+* :ref:`ezblock:open_run_latest`: View or run the related example directly.
 
-    .. image:: img/calibration4.jpg
-        :align: center
 
-#. Align the other foot on the left in the same way.
-
-    .. image:: ../python/preparation/img/calibration3.png
-        :align: center
-
-#. After calibrating the left two feet, change the calibration paper to the right, and calibrate the right two feet according to the above method.
-
-    .. image:: ../python/preparation/img/calibration4.png
-        :align: center

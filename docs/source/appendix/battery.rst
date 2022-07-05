@@ -1,3 +1,5 @@
+.. _battery:
+
 About the Battery
 ========================
 

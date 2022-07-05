@@ -1,4 +1,6 @@
-Twist  — Ezblock
+.. _ezb_twist:
+
+Twist 
 ==================
 
 We already know how to make PiCrawler assume a specific pose, the next step is to combine the poses to form a continuous action.
@@ -7,7 +9,10 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
 
 **Program**
 
-After opening the example, you can see the following code block.
+.. note::
+
+    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
+    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
 
 .. image:: img/twist.png
     :width: 800
@@ -16,7 +21,7 @@ After opening the example, you can see the following code block.
 
 It uses two layers of for loops to make the ``new_step`` array produce continuous and regular changes, and at the same time, **do step** executes the posture to form a continuous action.
 
-You can intuitively get the coordinate value array corresponding to each pose from :ref:`Adjust Posture — Ezblock`.
+You can intuitively get the coordinate value array corresponding to each pose from :ref:`ezb_posture`.
 
 One thing you need to pay attention to is this coordinate matrix block:
 

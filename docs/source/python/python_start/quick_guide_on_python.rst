@@ -1,3 +1,5 @@
+.. _quick_guide_python:
+
 Quick Guide on Python
 ==========================
 
@@ -10,8 +12,11 @@ If you are familiar with Raspberry Pi and can open the command line successfully
 .. toctree::
     :maxdepth: 1
 
-    preparation/what_do_we_need
-    preparation/installing_the_os
-    preparation/set_up_your_raspberry_pi    
+    what_do_we_need
+    installing_the_os
+    set_up_your_raspberry_pi
+    download_and_run_code
+    py_servo_adjust
+    
 
 

@@ -1,4 +1,6 @@
-Obstacle Avoidance — Ezblock
+.. _ezb_avoid:
+
+Obstacle Avoidance
 =============================
 
 
@@ -9,7 +11,10 @@ When PiCrawler detects an obstacle, it will send a signal and look for another d
 
 **Program**
 
-After opening the example, you can see the following code block.
+.. note::
+
+    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
+    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
 
 .. image:: img/avoid.png
 

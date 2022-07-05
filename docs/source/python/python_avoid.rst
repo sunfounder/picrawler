@@ -1,3 +1,5 @@
+.. _py_avoid:
+
 Obstacle Avoidance
 =====================
 
@@ -113,4 +115,4 @@ Here is the main program.
 
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`Filezilla Software`.
+    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.

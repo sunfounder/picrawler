@@ -1,4 +1,6 @@
-Pose — Ezblock
+.. _ezb_pose:
+
+Pose
 ===============
 
 
@@ -10,7 +12,10 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
 
 **Program**
 
-After opening the example, you can see the following code block.
+.. note::
+
+    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
+    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
 
 .. image:: img/dostep.png
 

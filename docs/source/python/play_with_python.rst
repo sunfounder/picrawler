@@ -1,15 +1,16 @@
+.. _play_python:
+
 Play with Python
 ====================
 
-If you want to program in python, then you will need to learn some basic Python programming skills and basic knowledge of Raspberry Pi, please configure the Raspberry Pi first according to :ref:`Quick Guide on Python`.
+If you want to program in python, then you will need to learn some basic Python programming skills and basic knowledge of Raspberry Pi, please configure the Raspberry Pi first according to :ref:`quick_guide_python`.
 
 
 .. toctree::
     :maxdepth: 2
 
-    quick_guide_on_python
-    preparation/download_and_run_code
-    preparation/calibrate
+    python_start/quick_guide_on_python
+    python_start/calibrate
 
 
 After the assembly is complete, you can try to run the projects below.

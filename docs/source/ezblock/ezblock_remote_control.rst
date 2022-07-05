@@ -1,4 +1,6 @@
-Remote Control — Ezblock
+.. _ezb_remote:
+
+Remote Control
 =========================
 
 
@@ -9,11 +11,14 @@ You can control the PiCrawler to move forward, backward, left, and right.
 
 .. note:: 
 
-    You can refer to `How to Use the Remote Control Function? <https://docs.sunfounder.com/projects/ezblock3/en/latest/remote.html>`_. Come and carry out this project smoothly.
+    You can refer to :ref:`ezblock:remote_control_latest`. Come and carry out this project smoothly.
 
 **Program**
 
-After opening the example, you can see the following code block.
+.. note::
+
+    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
+    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
 
 .. image:: img/remote.png
 

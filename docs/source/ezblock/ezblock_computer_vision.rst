@@ -1,4 +1,6 @@
-Computer Vision — Ezblock
+.. _ezb_vision:
+
+Computer Vision
 =============================
 
 This project will officially enter the field of computer vision!
@@ -6,12 +8,16 @@ This project will officially enter the field of computer vision!
 
 .. note:: 
     
-    You can read `How to Use the Video Function? <https://docs.sunfounder.com/projects/ezblock3/en/latest/use_video.html>`_. Come and carry out this project smoothly.
+    You can read :ref:`ezblock:video_latest`. Come and carry out this project smoothly.
 
 
 **Program**
 
-After opening the example, you can see the following code block.
+.. note::
+
+    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
+    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+
 
 .. image:: img/sp210928_165255.png
     :width: 800

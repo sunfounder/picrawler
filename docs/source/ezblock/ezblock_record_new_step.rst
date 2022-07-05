@@ -1,4 +1,6 @@
-Record New Step — Ezblock
+.. _ezb_record:
+
+Record New Step
 ==============================
 
 We use the remote function to control PiCrawler to make several poses in turn, and record these poses. Replay them later.
@@ -6,7 +8,10 @@ We use the remote function to control PiCrawler to make several poses in turn, a
 
 **Program**
 
-After opening the example, you can see the following code block.
+.. note::
+
+    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
+    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
 
 .. image:: img/record.png
     :width: 800
@@ -19,7 +24,7 @@ Switch to the Remote Control interface, and you will see the following widgets.
 **How it works?**
 
 
-This project was born out of :ref:`Adjust Posture`. Added recording and replay functions.
+This project was born out of :ref:`ezb_posture`. Added recording and replay functions.
 
 The recording function is implemented by the following code.
 

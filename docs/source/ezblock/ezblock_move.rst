@@ -1,4 +1,6 @@
-Move — Ezblock
+.. _ezb_move:
+
+Move
 =================
 
 
@@ -6,15 +8,13 @@ This is PiCrawler's first project. Perform its most basic function - move.
 
 .. image:: ../python/img/move.png
 
-.. note:: 
-
-    If you are not yet familiar with the use of Ezblock, please refer to the `Quick User Guide <https://docs.sunfounder.com/projects/ezblock3/en/latest/quick_user_guide_for_ezblock3.html#>`_. 
-    
-    You need to know **How to connect the product and Ezblock Studio?** and **How to Open and Run examples?** to proceed with this project smoothly.
 
 **Program**
 
-After opening the example, you can see the following code block.
+.. note::
+
+    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
+    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
 
 .. image:: img/move.png
 

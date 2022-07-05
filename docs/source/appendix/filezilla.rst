@@ -1,3 +1,5 @@
+.. _filezilla:
+
 Filezilla Software
 ==========================
 
