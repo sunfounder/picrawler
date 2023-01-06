@@ -1,7 +1,32 @@
-Download and Run the Code
+.. _install_all_modules:
+
+
+Install All the Modules
 ============================
 
-We can download the files by using ``git clone`` in the command line.
+Make sure you are connected to the Internet and update your system:
+
+.. raw:: html
+
+    <run></run>
+
+.. code-block::
+
+    sudo apt update
+    sudo apt upgrade
+
+.. note::
+
+    Python3 related packages must be installed if you are installing the Lite version OS.
+
+    .. raw:: html
+
+        <run></run>
+
+    .. code-block::
+    
+        sudo apt install git python3-pip python3-setuptools python3-smbus
+
 
 Install ``robot-hat`` module first.
 

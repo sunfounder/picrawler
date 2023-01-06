@@ -5,7 +5,7 @@ SunFounder Raspberry Pi Robot - PiCrawler
 Thank you for choosing our PiCrawler.
 
 .. image:: img/picrawler.jpg
-    :width: 400
+    :width: 600
     :align: center
 
 PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. 
