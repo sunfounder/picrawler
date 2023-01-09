@@ -88,7 +88,7 @@ Don't Have Temporarily Monitor (or TV)?
 
 * You can apply the SSH command to open the Raspberry Pi's Bash shell.
 * Bash is the standard default shell for Linux.
-* The shell itself is a command (instruction) when the user uses Unix/Linux.
+* The shell is a command line interpreter (CLI) when the user uses Unix/Linux.
 * Most of what you need to do can be done through the shell.
 * After setting up the Raspberry pi side, you can access the desktop of the Raspberry Pi using the **Finder** from the Mac.
 

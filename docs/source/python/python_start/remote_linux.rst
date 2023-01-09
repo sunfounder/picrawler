@@ -2,8 +2,7 @@ Linux /Unix Users
 ==========================
 
 
-#. Go to **Applications**->\ **Utilities**, find the **Terminal**, and open
-it.
+#. Go to **Applications**->\ **Utilities**, find the **Terminal**, and open it.
 
     .. image:: img/image21.png
         :align: center
@@ -47,15 +46,6 @@ it.
 
 
 #. Input the password you set before. (Mine is ``raspberry``.)
-
-.. .. image:: img/image23.png
-..     :align: center
-
-    .. note::
-        When you input the password, the characters do not display on
-        window accordingly, which is normal. What you need is to input the
-        correct password.
-
 
 
 #. We now get the Raspberry Pi connected and are ready to go to the nextstep.

@@ -28,7 +28,7 @@ Make sure you are connected to the Internet and update your system:
         sudo apt install git python3-pip python3-setuptools python3-smbus
 
 
-Install ``robot-hat`` module first.
+Install ``robot-hat`` module.
 
 .. raw:: html
 
