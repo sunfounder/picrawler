@@ -20,10 +20,6 @@ Now, run ``servo_zeroing.py`` in the ``examples/`` folder.
     cd /home/pi/picrawler/examples
     sudo python3 servo_zeroing.py
 
-
-.. note::
-    If you get an error, try re-enabling the Raspberry Pi's I2C port, see: :ref:`i2c_config`.
-
 Next, plug the servo cable into the P11 port as follows.
 
 .. image:: img/pin11_connect.png

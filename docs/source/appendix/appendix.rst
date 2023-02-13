@@ -6,6 +6,7 @@ Appendix
 
     filezilla
     battery
-    get_ip
+    login_windows
+    install_openssh_powershell
 
 
