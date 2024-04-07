@@ -1,4 +1,4 @@
-from robot_hat import Robot,utils
+from robot_hat import Robot, utils
 
 import time
 import math
@@ -7,20 +7,15 @@ class Picrawler(Robot):
     A = 48
     B = 78
     C = 33
-    
-    def __init__(self, pin_list, init_angles=None):  
+    OFFSET_FILE = '/opt/picrawler/picrawler.config'
+    PIN_LIST = [9, 10, 11, 3, 4, 5, 0, 1, 2, 6, 7, 8]
+
+    def __init__(self, pin_list=PIN_LIST, init_angles=None):  
 
         utils.reset_mcu()
         time.sleep(0.2)
 
-        # if init_angles == None:
-        #     self.current_coord = self.step_list['stand']
-
-        # self.current_coord = self.step_list['stand']
-        # init_angles = [-40, 55, 0]*4
-        # self.coord_temp = init_angles    
-        
-        super().__init__(pin_list, group=3,init_angles=None)
+        super().__init__(pin_list, db=self.OFFSET_FILE, name='picrawler', init_angles=init_angles)
 
         self.move_list = self.MoveList()
         self.move_list_add = {
@@ -139,7 +134,7 @@ class Picrawler(Robot):
             except KeyError:
                 print("No such action")
 
-    def set_angle(self, angles_list,speed=50,israise=False):
+    def set_angle(self, angles_list, speed=50, israise=False):
         translate_list = []
         results = []
         for angles in angles_list:
@@ -152,7 +147,7 @@ class Picrawler(Robot):
                 raise ValueError('\033[1;35mCoordinates out of controllable range.\033[0m')
             else:
                 try:
-                    print('\033[1;35mCoordinates out of controllable range.\033[0m')
+                    # print('\033[1;35mCoordinates out of controllable range.\033[0m')
                     coords = []
                     # Calculate coordinates 
                     for i in range(4):
@@ -163,10 +158,10 @@ class Picrawler(Robot):
         else:
             self.current_coord = list.copy(self.coord_temp)
 
-        self.servo_move(translate_list,speed)  
+        self.servo_move(translate_list, speed)  
         return list.copy(translate_list)
 
-    def do_step(self, _step, speed=50,israise=False):
+    def do_step(self, _step, speed=50, israise=False):
         
         step_temp = []
         if isinstance(_step,str):
@@ -191,7 +186,7 @@ class Picrawler(Robot):
         # print('angles_temp：%s'%len(angles_temp))
         # print('angles_temp：%s'%len(self.coord_temp))
 
-        return list.copy(self.set_angle(angles_temp,speed,israise))
+        return list.copy(self.set_angle(angles_temp, speed, israise))
 
 
     def current_step_all_leg_angle(self):
@@ -248,8 +243,7 @@ class Picrawler(Robot):
             self.current_coord[leg] = [60, 0, -30]
             self.set_offset(offset)
             self.do_step(self.current_coord, speed=100)
-            
-    
+
 
     class MoveList(dict):
         
