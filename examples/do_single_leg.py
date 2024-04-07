@@ -3,7 +3,7 @@ from picrawler import Picrawler
 from time import sleep
 import readchar
 
-crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
+crawler = Picrawler()
 speed = 80
 
 
@@ -23,7 +23,7 @@ manual = '''
     W: Y++          R: Z++             
     A: X--          F: Z--
     S: Y--
-    D: X++          Esc: Quit
+    D: X++          Ctrl^C: Quit
 '''
 legs_list = ['right front', 'left front', 'left rear', 'right rear']
 
@@ -72,7 +72,7 @@ def main():
             # coordinate=crawler.current_step_all_leg_value()
             show_info()
         # quit 
-        elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+        elif key == readchar.key.CTRL_C:
             print("\n Quit")  
             break    
 

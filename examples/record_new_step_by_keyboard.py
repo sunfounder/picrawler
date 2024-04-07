@@ -6,8 +6,7 @@ import tty
 import termios
 import copy
 
-crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-#crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+crawler = Picrawler() 
 speed = 80
 
 def readchar():

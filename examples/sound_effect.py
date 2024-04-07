@@ -15,6 +15,8 @@ Input key to call the function!
     1: Play sound effect
     2: Play sound effect with threads
     t: Text to speak
+
+    Ctrl^C: quit
 '''
 
 def main():  
@@ -31,24 +33,24 @@ def main():
         if key == "q":
             flag_bgm = not flag_bgm
             if flag_bgm is True:
-                music.background_music('./musics/sports-Ahjay_Stelino.mp3')
+                music.music_play('./musics/sports-Ahjay_Stelino.mp3')
             else:
                 music.music_stop()
 
         elif key == "1":
-            music.sound_effect_play('./sounds/talk1.wav')
+            music.sound_play('./sounds/talk1.wav')
             sleep(0.05)
-            music.sound_effect_play('./sounds/talk3.wav')
+            music.sound_play('./sounds/talk3.wav')
             sleep(0.05)
-            music.sound_effect_play('./sounds/sign.wav')
+            music.sound_play('./sounds/sign.wav')
             sleep(0.5)
 
         elif key =="2":
-            music.sound_effect_threading('./sounds/talk1.wav')
+            music.sound_play_threading('./sounds/talk1.wav')
             sleep(0.05)
-            music.sound_effect_threading('./sounds/talk3.wav')
+            music.sound_play_threading('./sounds/talk3.wav')
             sleep(0.05)
-            music.sound_effect_threading('./sounds/sign.wav')
+            music.sound_play_threading('./sounds/sign.wav')
             sleep(0.5)
 
         elif key == "t":

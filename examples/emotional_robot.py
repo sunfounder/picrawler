@@ -1,10 +1,7 @@
 from picrawler import Picrawler
 from time import sleep
 
-
-
-crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-#crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+crawler = Picrawler() 
 
 def handwork(speed):
 
@@ -27,11 +24,11 @@ def handwork(speed):
 
 def twist(speed):
 
-    new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
+    new_step=[[50, 50, -75], [50, 50, -75],[50, 50, -75], [50, 50, -75]]
     for i in range(4):
         for inc in range(30,60,5): 
-            rise = [50,50,(-80+inc*0.5)]
-            drop = [50,50,(-80-inc)]
+            rise = [50,50,(-75+inc*0.5)]
+            drop = [50,50,(-75-inc)]
 
             new_step[i]=rise
             new_step[(i+2)%4] = drop
@@ -42,8 +39,8 @@ def twist(speed):
 ##"[[right front], [left front], [left rear], [left rear]]")
 
 def pushup(speed):
-    up=[[80, 0, -100], [80, 0, -100],[0, 120, -60], [0, 120, -60]]
-    down=[[80, 0, -30], [80, 0, -30],[0, 120, -60], [0, 120, -60]]
+    up=[[75, 0, -100], [75, 0, -100],[0, 120, -60], [0, 120, -60]]
+    down=[[75, 0, -30], [75, 0, -30],[0, 120, -60], [0, 120, -60]]
     crawler.do_step(up,speed)
     sleep(0.6)
     crawler.do_step(down,speed)

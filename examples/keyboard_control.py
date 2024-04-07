@@ -3,16 +3,17 @@ from picrawler import Picrawler
 from time import sleep
 import readchar
 
-crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
+crawler = Picrawler() 
 speed = 90
 
 manual = '''
 Press keys on keyboard to control PiCrawler!
-    w: Forward
-    a: Turn left
-    s: Backward
-    d: Turn right
-    esc: Quit
+    W: Forward
+    A: Turn left
+    S: Backward
+    D: Turn right
+
+    Ctrl^C: Quit
 '''
 
 def show_info():
@@ -36,7 +37,7 @@ def main():
                 crawler.do_action('turn right',1,speed)
             sleep(0.05)
             show_info()  
-        elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+        elif key == readchar.key.CTRL_C:
             print("\n Quit") 
             break    
         

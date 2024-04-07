@@ -1,12 +1,15 @@
 from time import sleep,strftime,localtime
 from vilib import Vilib
 import readchar 
+from os import getlogin
+
+username = getlogin()
 
 manual = '''
 Press keys on keyboard to control recording:
     Q: record/pause/continue
     E: stop
-    ESC: Quit
+    Ctrl^C: Quit
 '''
 
 def print_overwrite(msg,  end='', flush=True):
@@ -16,7 +19,7 @@ def print_overwrite(msg,  end='', flush=True):
 def main():
     rec_flag = 'stop' # start,pause,stop
     vname = None
-    Vilib.rec_video_set["path"] = "/home/pi/Videos/" # set path
+    Vilib.rec_video_set["path"] = f"/home/{username}/Videos/" # set path
 
     Vilib.camera_start(vflip=False,hflip=False) 
     Vilib.display(local=True,web=True)
@@ -54,7 +57,7 @@ def main():
             Vilib.rec_video_stop()
             print_overwrite("The video saved as %s%s.avi"%(Vilib.rec_video_set["path"],vname),end='\n')  
         # quit
-        elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+        elif key == readchar.key.CTRL_C:
             Vilib.camera_close()
             print('\nquit')
             break 

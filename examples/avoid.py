@@ -9,8 +9,7 @@ import os
 tts = TTS()
 music = Music()
 
-crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-#crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+crawler = Picrawler() 
 sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
 
 alert_distance = 15
@@ -32,7 +31,6 @@ def main():
     else :
         crawler.do_action('forward', 1,speed)
         time.sleep(0.2)
-
 
 if __name__ == "__main__":
     while True:

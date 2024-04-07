@@ -2,11 +2,15 @@ from vilib import Vilib
 from vilib import Face
 import pickle
 
+from os import getlogin
+
+username = getlogin()
+
 
 def main():
     
-    pic_path='/home/pi/trainer/Jackie_Chan'
-    model_path="/home/pi/trainer/encodings.pickle"
+    pic_path=f'/home/{username}/trainer/Jackie_Chan'
+    model_path=f"/home/{username}/trainer/encodings.pickle"
     Face.training("Jackie", pic_path,model_path)
 
     datas = []

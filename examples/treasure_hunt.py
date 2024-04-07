@@ -6,8 +6,8 @@ import readchar
 import random
 import threading
 
-crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-#crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+crawler = Picrawler()
+
 
 music = Music()
 tts = TTS()
@@ -19,7 +19,7 @@ Press keys on keyboard to control Picrawler!
     s: Backward
     d: Turn right
     space: Say the target again
-    esc: Quit
+    Ctrl^C: Quit
 '''
 
 color = "red"
@@ -47,7 +47,7 @@ def key_scan_thread():
             key = key_temp.lower()
             if key == readchar.key.SPACE:
                 key = 'space'
-            elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+            elif key == readchar.key.CTRL_C:
                 key = 'quit'
                 break
         sleep(0.01)
