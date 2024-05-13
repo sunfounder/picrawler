@@ -9,7 +9,7 @@ new_step=[[50, 50, -75], [50, 50, -75], [75, 75, 0], [50, 50, -75]]
 
 def main():  
     
-    speed = 100
+    speed = 80
           
     while True:
         

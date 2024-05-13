@@ -58,7 +58,7 @@ def main():
     Vilib.camera_start(vflip=False,hflip=False)
     Vilib.display(local=False,web=True)
     sleep(0.8)
-    speed = 100
+    speed = 80
     print(manual)
 
     sleep(1)

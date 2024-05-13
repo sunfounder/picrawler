@@ -54,7 +54,7 @@ def swimming(speed):
 
 # main
 def main():
-    speed = 100
+    speed = 80
     
     swimming(speed)
     pushup(speed)

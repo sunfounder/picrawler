@@ -12,7 +12,7 @@ def main():
     Vilib.camera_start()
     Vilib.display()
     Vilib.color_detect("red") 
-    speed = 100
+    speed = 80
 
     while True:
         if Vilib.detect_obj_parameter['color_n']!=0:

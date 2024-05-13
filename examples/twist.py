@@ -27,7 +27,7 @@ def main():
     music.music_set_volume(20)
 
     while True:
-        twist(speed=100) 
+        twist(speed=30) 
             
  
 if __name__ == "__main__":

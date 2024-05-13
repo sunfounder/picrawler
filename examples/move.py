@@ -5,7 +5,7 @@ crawler = Picrawler()
 
 def main():  
     
-    speed = 100
+    speed = 80
           
     while True:
        
