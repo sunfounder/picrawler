@@ -660,28 +660,6 @@ class Picrawler(Robot):
         new_step[leg] = coodinate
         return list(new_step)
 
-def test():
-    
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9])
-
-    # 
-    # crawler.do_action('sit',1,100)
-    time.sleep(0.5)
-    for _ in range(10):
-        for i,step in enumerate(crawler.move_list.look_right):
-            print(i,step)
-            crawler.do_step(step,100)
-
-    # crawler.do_step([[-10, 70.40509926170151, -50]]*4)
-    
-    # ans = [0, 120, 0]*4
-    # ans = [0,0,0]+[0,0,0]+[0,0,0]+[0,90,0]
-    # crawler.servo_move(ans,50)
-    
-if __name__ == "__main__":
-    test()
-
-
   
     
    

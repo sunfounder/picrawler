@@ -21,7 +21,7 @@ def readchar():
 
 
 manual = '''
-Press keys on keyboard to control PiSloth!
+Press keys on keyboard to control!
     w: Y++
     a: X--
     s: Y--
@@ -32,7 +32,7 @@ Press keys on keyboard to control PiSloth!
     2: Select left front leg
     3: Select left rear leg
     4: Select right rear leg
-    space: Print all leg coodinate & Save this step
+    Space: Print all leg coodinate & Save this step
     p: Play all saved step
     esc: Quit
 '''

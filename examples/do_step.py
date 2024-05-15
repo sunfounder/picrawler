@@ -5,21 +5,19 @@ from time import sleep
 crawler = Picrawler() 
 
 ## [right front],[left front],[left rear],[right rear]
-new_step=[[50, 50, -75], [50, 50, -75], [75, 75, 0], [50, 50, -75]]
+new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
+stand_step = crawler.move_list['stand'][0]
 
 def main():  
     
     speed = 80
-          
-    while True:
         
-        crawler.do_step('stand',speed)
-        print(crawler.step_list.get('stand'))
-        sleep(3)
-        crawler.do_step(new_step,speed)
-        print(new_step)
-        sleep(3)
-
+    print(f"stand step: {stand_step}")
+    crawler.do_step(stand_step, speed)
+    sleep(3)
+    print(f"new step: {new_step}")
+    crawler.do_step(new_step,speed)
+    sleep(3)
             
  
 if __name__ == "__main__":
