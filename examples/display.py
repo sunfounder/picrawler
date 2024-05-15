@@ -1,13 +1,17 @@
 from vilib import Vilib
 from time import sleep, time, strftime, localtime
 import threading
+from os import getlogin
+
+USERNAME = getlogin()
+PICTURE_PATH = f"/home/{USERNAME}/Pictures/"
 
 
 flag_face = False
 flag_color = False
 qr_code_flag = False
 
-manual = '''
+MANUAL = '''
 Input key to call the function!
     q: Take photo
     1: Color detect : red
@@ -52,9 +56,8 @@ def qrcode_detect():
 def take_photo():
     _time = strftime('%Y-%m-%d-%H-%M-%S',localtime(time()))
     name = 'photo_%s'%_time
-    path = "/home/pi/Pictures/PiCrawler/"
-    Vilib.take_photo(name, path)
-    print('photo save as %s%s.jpg'%(path,name))
+    Vilib.take_photo(name, PICTURE_PATH)
+    print('photo save as %s%s.jpg'%(PICTURE_PATH, name))
 
 
 def object_show():
@@ -83,7 +86,7 @@ def main():
 
     Vilib.camera_start(vflip=False,hflip=False)
     Vilib.display(local=True,web=True)
-    print(manual)
+    print(MANUAL)
 
     while True:
         # readkey

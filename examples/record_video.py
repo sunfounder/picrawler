@@ -3,9 +3,10 @@ from vilib import Vilib
 import readchar 
 from os import getlogin
 
-username = getlogin()
+USERNAME = getlogin()
+VIDEO_PATH = f"/home/{USERNAME}/Videos/"
 
-manual = '''
+MANUAL = '''
 Press keys on keyboard to control recording:
     Q: record/pause/continue
     E: stop
@@ -19,13 +20,13 @@ def print_overwrite(msg,  end='', flush=True):
 def main():
     rec_flag = 'stop' # start,pause,stop
     vname = None
-    Vilib.rec_video_set["path"] = f"/home/{username}/Videos/" # set path
+    Vilib.rec_video_set["path"] = VIDEO_PATH
 
     Vilib.camera_start(vflip=False,hflip=False) 
     Vilib.display(local=True,web=True)
     sleep(0.8)  # wait for startup
 
-    print(manual)
+    print(MANUAL)
     while True:
         # read keyboard
         key = readchar.readkey()
