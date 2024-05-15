@@ -23,12 +23,11 @@ def handwork(speed):
     sleep(0.6)
 
 def twist(speed):
-
-    new_step=[[50, 50, -75], [50, 50, -75],[50, 50, -75], [50, 50, -75]]
+    new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
     for i in range(4):
         for inc in range(30,60,5): 
-            rise = [50,50,(-75+inc*0.5)]
-            drop = [50,50,(-75-inc)]
+            rise = [50,50,(-80+inc*0.5)]
+            drop = [50,50,(-80-inc)]
 
             new_step[i]=rise
             new_step[(i+2)%4] = drop
