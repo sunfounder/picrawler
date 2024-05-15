@@ -38,8 +38,8 @@ def twist(speed):
 ##"[[right front], [left front], [left rear], [left rear]]")
 
 def pushup(speed):
-    up=[[75, 0, -100], [75, 0, -100],[0, 120, -60], [0, 120, -60]]
-    down=[[75, 0, -30], [75, 0, -30],[0, 120, -60], [0, 120, -60]]
+    up=[[80, 0, -100], [80, 0, -100],[0, 120, -60], [0, 120, -60]]
+    down=[[80, 0, -30], [80, 0, -30],[0, 120, -60], [0, 120, -60]]
     crawler.do_step(up,speed)
     sleep(0.6)
     crawler.do_step(down,speed)
