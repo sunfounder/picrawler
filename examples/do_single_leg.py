@@ -23,7 +23,7 @@ manual = '''
     W: Y++          R: Z++             
     A: X--          F: Z--
     S: Y--
-    D: X++          ESC: Quit
+    D: X++          Ctrl+C: Quit
 '''
 legs_list = ['right front', 'left front', 'left rear', 'right rear']
 
@@ -71,13 +71,6 @@ def main():
             sleep(0.1)  
             # coordinate=crawler.current_step_all_leg_value()
             show_info()
-        # quit 
-        elif key == readchar.key.ESC:
-            print("\n Quit")  
-            break
-        elif key == readchar.key.CTRL_C:
-            print("\n Quit")  
-            break    
 
         sleep(0.05)
                
