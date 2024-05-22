@@ -87,3 +87,13 @@ language = 'en'
 locale_dirs = ['locale/'] 
 
 gettext_compact = False
+
+# open link in a new window
+
+rst_epilog = """
+
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/4anU9Mb" target="_blank">here</a>
+
+"""
