@@ -94,6 +94,6 @@ rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/4anU9Mb" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
 
 """
