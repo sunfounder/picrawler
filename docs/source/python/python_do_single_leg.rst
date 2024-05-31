@@ -31,26 +31,26 @@ You can press the space bar to print out the current coordinate values. These co
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 do_single_leg.py
 
 After the code runs, please operate according to the prompt that pops up in the terminal.
 
 * Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
 * Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``space`` to print all coordinate values.
-* Press ``esc`` to exit.
+* Press ``Ctrl+C`` to exit.
 
 
 **Code**
 
 .. code-block:: python
 
+
     from picrawler import Picrawler
     from time import sleep
     import readchar
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
+    crawler = Picrawler()
     speed = 80
 
 
@@ -66,10 +66,11 @@ After the code runs, please operate according to the prompt that pops up in the 
         2: Select left front leg
         3: Select left rear leg
         4: Select right rear leg
+
         W: Y++          R: Z++             
         A: X--          F: Z--
         S: Y--
-        D: X++          Esc: Quit
+        D: X++          Ctrl+C: Quit
     '''
     legs_list = ['right front', 'left front', 'left rear', 'right rear']
 
@@ -117,10 +118,6 @@ After the code runs, please operate according to the prompt that pops up in the 
                 sleep(0.1)  
                 # coordinate=crawler.current_step_all_leg_value()
                 show_info()
-            # quit 
-            elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
-                print("\n Quit")  
-                break    
 
             sleep(0.05)
                 
@@ -128,6 +125,5 @@ After the code runs, please operate according to the prompt that pops up in the 
     if __name__ == "__main__":
         main()
 
-
-* ``current_step_all_leg_value()`` : Returns the coordinate values of all legs.
-* ``do_single_leg(leg,coordinate,speed)`` : Modify the coordinate value of a certain leg individually.
+* ``current_step_all_leg_value()``: Returns the coordinate values of all legs.
+* ``do_single_leg(leg,coordinate[leg],speed)``: Modify the coordinate value of a certain leg individually.

@@ -29,7 +29,7 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 twist.py
 
 
@@ -45,20 +45,19 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
 
 .. code-block:: python
 
+
     from picrawler import Picrawler
     from time import sleep
     from robot_hat import Music
 
     music = Music()
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+    crawler = Picrawler()
 
 
     def twist(speed):
-         ## [right front],[left front],[left rear],[left rear]
         new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
         for i in range(4):
-            for inc in range(30,60,5): 
+            for inc in range(30, 50, 5): 
                 rise = [50,50,(-80+inc*0.5)]
                 drop = [50,50,(-80-inc)]
 
@@ -68,9 +67,10 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
                 new_step[(i-1)%4] = drop
                 crawler.do_step(new_step,speed)
 
+
     def main():  
 
-        music.background_music('./musics/sports-Ahjay_Stelino.mp3')
+        music.music_play('./musics/sports-Ahjay_Stelino.mp3')
         music.music_set_volume(20)
 
         while True:
@@ -79,7 +79,6 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
     
     if __name__ == "__main__":
         main()
-
 
 **How it works?**
 
@@ -91,7 +90,7 @@ In this code, you need to pay attention to this part:
         ## [right front],[left front],[left rear],[right rear]
         new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
         for i in range(4):
-            for inc in range(30,60,5): 
+            for inc in range(30,60,5):  
                 rise = [50,50,(-80+inc*0.5)]
                 drop = [50,50,(-80-inc)]
 
@@ -124,7 +123,7 @@ Play the background music in the ``picrawler/examples/musics`` directory and set
 
 .. code-block:: python
 
-    music.background_music('./musics/sports-Ahjay_Stelino.mp3')
+    music.music_play('./musics/sports-Ahjay_Stelino.mp3')
     music.music_set_volume(20)
 
 

@@ -29,7 +29,7 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 do_step.py
 
 
@@ -41,28 +41,28 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
 
 .. code-block:: python
 
+
     from picrawler import Picrawler
     from time import sleep
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+    crawler = Picrawler() 
 
     ## [right front],[left front],[left rear],[right rear]
-    new_step=[[50, 50, -80], [50, 50, -80],[80, 80, 0], [50, 50, -80]]
+    new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
+    stand_step = crawler.move_list['stand'][0]
 
     def main():  
-        
-        speed = 100
-            
         while True:
-            
-            crawler.do_step('stand',speed)
-            print(crawler.step_list.get('stand'))
+            speed = 80
+                
+            print(f"stand step: {stand_step}")
+            crawler.do_step(stand_step, speed)
             sleep(3)
+            print(f"new step: {new_step}")
             crawler.do_step(new_step,speed)
-            print(new_step)
             sleep(3)
-
+                
+    
     if __name__ == "__main__":
         main()
 
@@ -90,7 +90,7 @@ Second: It can also write an array of 4 coordinate values.
 
 .. code-block:: python
 
-    crawler.do_step([[50, 50, -80], [50, 50, -80],[80, 80, 0], [50, 50, -80]],speed)
+    new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
     # These four coordinates are used to control the four legs of right front, left front, left rear, and left rear respectively.
 
 Each foot has an independent coordinate system. As shown below:
@@ -107,18 +107,20 @@ By the way: the ``step_list`` called in the first method also consists of an arr
 .. code-block:: python
 
     step_list = {
+
         "stand":[
-            [50, 50, -80],
-            [50, 50, -80],
-            [50, 50, -80],
-            [50, 50, -80]
+            [45, 45, -50], 
+            [45, 45, -50], 
+            [45, 45, -50], 
+            [45, 45, -50]
         ],
         "sit":[
-            [50, 50, -33],
-            [50, 50, -33],
-            [50, 50, -33],
-            [50, 50, -33]
+            [45, 45, -30], 
+            [45, 45, -30], 
+            [45, 45, -30], 
+            [45, 45, -30]
         ],
+              
     }
 
 

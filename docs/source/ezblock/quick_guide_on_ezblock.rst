@@ -12,39 +12,49 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
+.. _ezb_servo_adjust:
+
 Quick Guide on EzBlock
 ===========================
 
-There are 2 parts here:
+The angle range of the servo is -90~90, but the angle set at the factory is random, maybe 0°, maybe 45°; if we assemble it with such an angle directly, it will lead to a chaotic state after the robot runs the code, or worse, it will cause the servo to block and burn out.
 
-* :ref:`ezb_servo_adjust` allows you to keep all the servos at 0 degrees to complete a proper and safe assembly (otherwise you will probably damage the servos).
-* :ref:`install_ezblock` will guide you to download EzBlock Studio to play with your robot.
+So here we need to set all the servo angles to 0° and then install them, so that the servo angle is in the middle, no matter which direction to turn.
 
-.. _ezb_servo_adjust:
+#. Firstly, :ref:`ezblock:install_ezblock_os_latest` (EzBlock's own tutorials) onto a Micro SD card, once the installation is complete, insert it into the Raspberry Pi.
 
-Servo Adjust
---------------------------------
+    .. note::
+        After the installation is complete, please return to this page.
 
-When assembling to the part with the servo, you need to keep the servo at 0° and secure it with the servo screw. Please follow the tutorial below to do this.
+    .. image:: img/insert_sd_card.png
+        :width: 500
+        :align: center
 
-
-#. Firstly, :ref:`ezblock:install_ezblock_os_latest` onto a Micro SD card, once the installation is complete, insert it into the Raspberry Pi.
-
-#. To ensure that the servo has been properly set to 0°, first insert the rocker arm into the servo shaft and then gently rotate the rocker arm to a different angle.
+#. To ensure that the servo has been properly set to 0°, first insert the servo arm into the servo shaft and then gently rotate the rocker arm to a different angle. This servo arm is just to allow you to clearly see that the servo is rotating.
 
     .. image:: img/servo_arm.png
 
-#. Follow the instructions on the assembly foldout, insert the battery holder cable and turn the power switch to the ON. Wait for 1-2 minutes, there will be a sound to indicate that the Raspberry Pi boots successfully.
+#. Follow the instructions on the assembly foldout, insert the battery cable and turn the power switch to the ON. Then plug in a powered USB-C cable to activate the battery. Wait for 1-2 minutes, there will be a sound to indicate that the Raspberry Pi boots successfully.
 
-    .. image:: img/slide_to_power.png
+    .. image:: img/Z_BTR.JPG
+        :width: 800
+        :align: center
 
 #. Next, plug the servo cable into the P11 port as follows.
 
-    .. image:: img/pin11_connect.png
+    .. image:: img/Z_P11.JPG
 
-#. At this point you will see the servo arm rotate to a specific position (0°). If the servo arm does not return to 0°, press the RST button to restart the Robot HAT.
+#. Press and hold the **USR** key, then press the **RST** key to execute the servo zeroing script within the system. When you see the servo arm rotate to a position(This is the 0° position, which is a random location and may not be vertical or parallel.), it indicates that the program has run.
 
-#. Now you can continue the installation as instructed on the assembly foldout.
+    .. note::
+
+        This step only needs to be done once; afterward, simply insert other servo wires, and they will automatically zero.
+
+    .. image:: img/Z_P11_BT.png
+        :width: 400
+        :align: center
+    
+#. Now, remove the servo arm, ensuring the servo wire remains connected, and do not turn off the power. Then continue the assembly following the paper assembly instructions.
 
 .. note::
 
@@ -54,15 +64,5 @@ When assembling to the part with the servo, you need to keep the servo at 0° an
     * This zeroing function will be disabled if you download a program to the robot later with the EzBlock APP.
 
 
-.. _install_ezblock:
-
-Install and Configure EzBlock Studio
-----------------------------------------
-
-As soon as the robot is assembled, you will need to carry out some basic operations.
-
-* :ref:`ezblock:install_ezblock_app_latest`: Download and install EzBlock Studio on your device or use the web-based version.
-* :ref:`ezblock:connect_product_ezblock_latest`: Configure Wi-Fi, Bluetooth and calibrate before use.
-* :ref:`ezblock:open_run_latest`: View or run the related example directly.
 
 

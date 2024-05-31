@@ -29,7 +29,7 @@ This is PiCrawler's first project. Perform its most basic function - move.
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 move.py
 
 After the code is executed, PiCrawler will perform the following actions in sequence: move forward, move backward, turn left, turn right, stand.
@@ -47,16 +47,15 @@ After the code is executed, PiCrawler will perform the following actions in sequ
 
     from picrawler import Picrawler
     from time import sleep
-    
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
-    
+
+    crawler = Picrawler() 
+
     def main():  
         
         speed = 100
-              
+            
         while True:
-           
+        
             crawler.do_action('forward',2,speed)
             sleep(0.05)     
             crawler.do_action('backward',2,speed)
@@ -71,9 +70,10 @@ After the code is executed, PiCrawler will perform the following actions in sequ
             sleep(0.05) 
             crawler.do_step('stand',speed)
             sleep(1)
-                
+
     if __name__ == "__main__":
-        main()    
+        main()
+
 
 **How it works?**
 
@@ -87,7 +87,7 @@ Then instantiate the ``crawler`` class.
 
 .. code-block:: python
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
+    crawler = Picrawler() 
 
 Finally use the ``crawler.do_action()`` function to make Pisloth move.
 

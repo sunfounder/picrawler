@@ -28,9 +28,10 @@ If you are familiar with Raspberry Pi and can open the command line successfully
 
     what_do_we_need
     installing_the_os
+    charge_battery
     set_up_your_raspberry_pi
-    download_and_run_code
-    enable_i2c_camera
+    install_all_modules
+    enable_i2c
     py_servo_adjust
     
 

@@ -33,7 +33,7 @@ Run ``i2samp.sh`` in, and this script will install everything needed to use i2s 
 
 .. code-block::
 
-    cd /home/pi/picrawler/
+    cd ~/picrawler/
     sudo bash i2samp.sh 
 
 There will be several prompts asking to confirm the request. Respond to all prompts with a **Y**. After the changes have been made to the Raspberry Pi system, the computer will need to reboot for these changes to take effect.
@@ -49,24 +49,30 @@ After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a 
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 sound_effect.py
 
 After the code runs, please operate according to the prompt that printed on the terminal.
 
 Input key to call the function!
-* q: Play background music
-* 1: Play sound effect
-* 2: Play sound effect with threads
-* t: Text to speak
+* ``q``: Play background music
+* ``1``: Play sound effect
+* ``2``: Play sound effect with threads
+* ``t``: Text to speak
+* If you want to exit the program, press ``Ctrl+C``.
+
 
 **Code** 
 
 .. code-block:: python
 
+
+    '''
+        Sorry, currently there is only sound when running with sudo
+    '''
+
     from time import sleep
     from robot_hat import Music,TTS
-    import readchar
 
     music = Music()
     tts = TTS()
@@ -77,46 +83,48 @@ Input key to call the function!
         1: Play sound effect
         2: Play sound effect with threads
         t: Text to speak
+
+        Ctrl^C: quit
     '''
 
-    def main():
+    def main():  
         print(manual)
 
         flag_bgm = False
         music.music_set_volume(20)
         tts.lang("en-US")
-
+        
 
         while True:
-            key = readchar.readkey()
-            key = key.lower()
+            key = input() 
+            key = key.lower() 
             if key == "q":
                 flag_bgm = not flag_bgm
                 if flag_bgm is True:
-                    music.background_music('./musics/sports-Ahjay_Stelino.mp3')
+                    music.music_play('./musics/sports-Ahjay_Stelino.mp3')
                 else:
                     music.music_stop()
 
             elif key == "1":
-                music.sound_effect_play('./sounds/talk1.wav')
+                music.sound_play('./sounds/talk1.wav')
                 sleep(0.05)
-                music.sound_effect_play('./sounds/talk3.wav')
+                music.sound_play('./sounds/talk3.wav')
                 sleep(0.05)
-                music.sound_effect_play('./sounds/sign.wav')
+                music.sound_play('./sounds/sign.wav')
                 sleep(0.5)
 
             elif key =="2":
-                music.sound_effect_threading('./sounds/talk1.wav')
+                music.sound_play_threading('./sounds/talk1.wav')
                 sleep(0.05)
-                music.sound_effect_threading('./sounds/talk3.wav')
+                music.sound_play_threading('./sounds/talk3.wav')
                 sleep(0.05)
-                music.sound_effect_threading('./sounds/sign.wav')
+                music.sound_play_threading('./sounds/sign.wav')
                 sleep(0.5)
 
             elif key == "t":
                 words = "Hello"
                 tts.say(words)
-
+            
     if __name__ == "__main__":
         main()
 
@@ -127,7 +135,7 @@ Functions related to background music include these:
 
 * ``music = Music()`` : Declare the object.
 * ``music.music_set_volume(20)`` : Set the volume, the range is 0~100.
-* ``music.background_music(./musics/sports-Ahjay_Stelino.mp3)`` : Play music files, here is the **sports-Ahjay_Stelino.mp3** file under the ``./musics`` path.
+* ``music.music_play(./musics/sports-Ahjay_Stelino.mp3)`` : Play music files, here is the **sports-Ahjay_Stelino.mp3** file under the ``./musics`` path.
 * ``music.music_stop()`` : Stop playing background music.
 
 .. note::
@@ -138,8 +146,8 @@ Functions related to background music include these:
 Functions related to sound effects include these:
 
 * ``music = Music()``
-* ``music.sound_effect_play('./sounds/talk1.wav')`` : Play the sound effect file, here is the **talk1.wav** file under the ``./musics`` path.
-* ``muisc.sound_effect_threading('./sounds/talk1.wav')`` : Play the sound effect file in a new thread mode without suspending the main thread.
+* ``music.sound_play('./sounds/talk1.wav')``: Play the sound effect file, here is the **talk1.wav** file under the ``./musics`` path.
+* ``music.sound_play_threading('./sounds/talk1.wav')``: Play the sound effect file in a new thread mode without suspending the main thread.
 
 Functions related to Text to Speech include these:
 

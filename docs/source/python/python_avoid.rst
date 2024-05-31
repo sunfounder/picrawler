@@ -30,7 +30,7 @@ When PiCrawler detects an obstacle, it will send a signal and look for another d
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 avoid.py
 
 After the code runs, PiCrawler will walk forward. If it detects that the distance of the obstacle ahead is less than 10cm, it will stop and sound a warning, then turn left and stop. If there is no obstacle in the direction after turning left or the obstacle distance is greater than 10, it will continue to move forward.
@@ -59,8 +59,7 @@ After the code runs, PiCrawler will walk forward. If it detects that the distanc
     tts = TTS()
     music = Music()
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+    crawler = Picrawler() 
     sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
 
     alert_distance = 15
@@ -82,7 +81,6 @@ After the code runs, PiCrawler will walk forward. If it detects that the distanc
         else :
             crawler.do_action('forward', 1,speed)
             time.sleep(0.2)
-
 
     if __name__ == "__main__":
         while True:

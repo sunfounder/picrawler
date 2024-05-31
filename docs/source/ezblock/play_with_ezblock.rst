@@ -28,6 +28,7 @@ Here is a tutorial to help you complete EzBlock installation, download, and use.
     :maxdepth: 2
 
     quick_guide_on_ezblock
+    get_start_app
     calibrate
 
 

@@ -27,7 +27,7 @@ This example will guide you how to use the recording function.
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 record_video.py
 
 
@@ -38,7 +38,7 @@ After the code runs, you can enter ``http://<your IP>:9000/mjpg`` in the browser
 Recording can be stopped or started by pressing the keys on the keyboard.
 
 * Press ``q`` to begin recording or pause/continue, ``e`` to stop recording or save.
-* If you want to exit the program, press ``esc``.
+* If you want to exit the program, press ``Ctrl+C``.
 
 
 **Code** 
@@ -48,12 +48,15 @@ Recording can be stopped or started by pressing the keys on the keyboard.
     from time import sleep,strftime,localtime
     from vilib import Vilib
     import readchar 
+    from os import getlogin
+
+    username = getlogin()
 
     manual = '''
     Press keys on keyboard to control recording:
         Q: record/pause/continue
         E: stop
-        ESC: Quit
+        Ctrl^C: Quit
     '''
 
     def print_overwrite(msg,  end='', flush=True):
@@ -63,7 +66,7 @@ Recording can be stopped or started by pressing the keys on the keyboard.
     def main():
         rec_flag = 'stop' # start,pause,stop
         vname = None
-        Vilib.rec_video_set["path"] = "/home/pi/Videos/" # set path
+        Vilib.rec_video_set["path"] = f"/home/{username}/Videos/" # set path
 
         Vilib.camera_start(vflip=False,hflip=False) 
         Vilib.display(local=True,web=True)
@@ -101,7 +104,7 @@ Recording can be stopped or started by pressing the keys on the keyboard.
                 Vilib.rec_video_stop()
                 print_overwrite("The video saved as %s%s.avi"%(Vilib.rec_video_set["path"],vname),end='\n')  
             # quit
-            elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+            elif key == readchar.key.CTRL_C:
                 Vilib.camera_close()
                 print('\nquit')
                 break 
@@ -115,9 +118,9 @@ Recording can be stopped or started by pressing the keys on the keyboard.
 
 Functions related to recording include the following:
 
-* ``Vilib.rec_video_run(video_name)`` : Started the thread to record the video. ``video_name`` is the name of the video file, it should be a string.
-* ``Vilib.rec_video_start()`` : Start or continue video recording.
-* ``Vilib.rec_video_pause()`` : Pause recording.
-* ``Vilib.rec_video_stop()`` : Stop recording.
+* ``Vilib.rec_video_run(video_name)``: Started the thread to record the video. ``video_name`` is the name of the video file, it should be a string.
+* ``Vilib.rec_video_start()``: Start or continue video recording.
+* ``Vilib.rec_video_pause()``: Pause recording.
+* ``Vilib.rec_video_stop()``: Stop recording.
 
-``Vilib.rec_video_set["path"] = "/home/pi/video/test/"`` sets the storage location of video files.
+``Vilib.rec_video_set["path"] = "~/video/test/"`` sets the storage location of video files.

@@ -22,10 +22,8 @@ Please follow the steps on the PDF to assemble.
 If the servo has been powered on, please do not turn the Servo shaft to avoid damage.
 
 
-.. note::
+* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/20102V23-a0000692-picrawler.pdf>`.
 
-    #. Before assembling, you need to buy 2 18650 batteries and fully charge them, refer to :ref:`battery`.
-    #. Robot HAT cannot charge the battery, so you need to buy a battery charger at the same time.
 
-* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/a0000692-picrawler.pdf>`.
+* You can find a comprehensive tutorial about the |link_robot_hat| here, including information on its hardware and API.
 

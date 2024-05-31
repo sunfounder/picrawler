@@ -30,7 +30,7 @@ Arrange a maze in your room and place six different color cards in six corners. 
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 treasure_hunt.py
 
 
@@ -64,8 +64,8 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 	import random
 	import threading
 
-	crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-	#crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+	crawler = Picrawler()
+
 
 	music = Music()
 	tts = TTS()
@@ -77,7 +77,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 		s: Backward
 		d: Turn right
 		space: Say the target again
-		esc: Quit
+		Ctrl^C: Quit
 	'''
 
 	color = "red"
@@ -105,7 +105,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 				key = key_temp.lower()
 				if key == readchar.key.SPACE:
 					key = 'space'
-				elif key == readchar.key.CTRL_C or key in readchar.key.ESCAPE_SEQUENCES:
+				elif key == readchar.key.CTRL_C:
 					key = 'quit'
 					break
 			sleep(0.01)
@@ -152,11 +152,10 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 				action = None
 
 			sleep(0.05)          
-		 
+		
 
 	if __name__ == "__main__":
 		main()
-
 
 **How it works?**
 

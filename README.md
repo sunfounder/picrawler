@@ -31,6 +31,10 @@ More experienced makers can use the popular programming language-Python.
 
 <a id="update"></a>
 ## Update:
+2024-05-31:
+- ptimized the introductory knowledge of Python, including all Python code and related courses.
+- ptimized the introductory knowledge of Ezblock.
+
 
 2024-05-22:
  - Add the note of join in the SunFounder Facebook group

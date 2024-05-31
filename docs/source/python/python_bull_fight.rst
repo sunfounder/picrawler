@@ -29,7 +29,7 @@ Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 bull_fight.py
 
 
@@ -69,8 +69,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
     from vilib import Vilib
 
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+    crawler = Picrawler() 
 
     music = Music()
 
@@ -83,7 +82,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
         while True:
             if Vilib.detect_obj_parameter['color_n']!=0:
                 coordinate_x = Vilib.detect_obj_parameter['color_x']
-                music.sound_effect_threading('./sounds/talk1.wav')
+                music.sound_play_threading('./sounds/talk1.wav')
 
                 if coordinate_x < 100:
                     crawler.do_action('turn left',1,speed)

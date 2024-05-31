@@ -34,7 +34,7 @@ The specific steps are as follows:
 
     .. code-block::
 
-        cd /home/pi/picrawler/examples/calibration
+        cd ~/picrawler/examples/calibration
         sudo python3 calibration.py
         
     After running the above code, you will see the following interface displayed in the terminal.

@@ -96,4 +96,9 @@ rst_epilog = """
 
     <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
 
+.. |link_robot_hat| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/hardware_introduction.html" target="_blank">SunFounder Robot HAT</a>
+
+
 """

@@ -36,14 +36,17 @@ Ezblock Studio is a development platform developed by SunFounder for beginners, 
 
 More experienced makers can use the popular programming language-Python.
 
+If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+
 
 **Content**
 
 .. toctree::
     :maxdepth: 2
 
+    About this Kit <self>
     list_and_assembly
-    about_robot_hat
+    servo_zeroing
     python/play_with_python 
     ezblock/play_with_ezblock
     appendix/appendix

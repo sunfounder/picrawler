@@ -25,7 +25,7 @@ There are 17 areas A-Q , where you can place different widgets to customize your
 
 In addition, this application provides a live video streaming service.
 
-Let's customize a PiCar-X controller using this app.
+Let's customize a PiCrawler controller using this app.
 
 **How to do?**
 

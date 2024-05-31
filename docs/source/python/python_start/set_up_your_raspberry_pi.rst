@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Set up Your Raspberry Pi
+4. Set up Your Raspberry Pi
 ============================
 
 If You Have a Screen
@@ -42,9 +42,11 @@ Raspberry Pi.
 
         If you use a Raspberry Pi 4, you need to connect the screen to the HDMI0 (nearest the power in port).
 
-#. Use the power adapter to power the Raspberry Pi. After a few seconds, the Raspberry Pi OS desktop will be displayed.
+#. Use the power adapter to power the Raspberry Pi. 
 
-    .. image:: img/image20.png
+#. After a few seconds, the Raspberry Pi OS desktop will be displayed. Now you can open the Terminal to start entering commands.
+
+    .. image:: img/bookwarm.png
         :align: center
 
 If You Have No Screen
@@ -64,4 +66,5 @@ See below for detailed tutorials for each system.
     remote_macosx
     remote_windows
     remote_linux
+    remote_desktop
 

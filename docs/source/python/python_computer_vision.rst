@@ -27,7 +27,7 @@ This project will officially enter the field of computer vision!
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 display.py
 
 **View the Image**
@@ -53,23 +53,23 @@ After the program runs, you will see the following information in the final:
 
 
 * Input key to call the function!
-* q: Take photo
-* 1: Color detect : red
-* 2: Color detect : orange
-* 3: Color detect : yellow
-* 4: Color detect : green
-* 5: Color detect : blue
-* 6: Color detect : purple
-* 0: Switch off Color detect
-* r：Scan the QR code
-* f: Switch ON/OFF face detect
-* s: Display detected object information
+* ``q``: Take photo
+* ``1``: Color detect : red
+* ``2``: Color detect : orange
+* ``3``: Color detect : yellow
+* ``4``: Color detect : green
+* ``5``: Color detect : blue
+* ``6``: Color detect : purple
+* ``0``: Switch off Color detect
+* ``r``: Scan the QR code
+* ``f``: Switch ON/OFF face detect
+* ``s``: Display detected object information
 
 Please follow the prompts to activate the corresponding functions.
 
     *  **Take Photo**
 
-        Type ``q`` in the terminal and press Enter. The picture currently seen by the camera will be saved (if the color detection function is turned on, the mark box will also appear in the saved picture). You can see these photos from the ``/home/pi/Pictures/PiCrawler/`` directory of the Raspberry Pi.
+        Type ``q`` in the terminal and press Enter. The picture currently seen by the camera will be saved (if the color detection function is turned on, the mark box will also appear in the saved picture). You can see these photos from the ``~/Pictures/PiCrawler/`` directory of the Raspberry Pi.
         You can use tools such as :ref:`filezilla` to transfer photos to your PC.
         
 
@@ -103,11 +103,9 @@ Please follow the prompts to activate the corresponding functions.
 
 .. code-block:: python
 
-    from pydoc import text
     from vilib import Vilib
     from time import sleep, time, strftime, localtime
     import threading
-    import readchar
 
 
     flag_face = False
@@ -124,12 +122,12 @@ Please follow the prompts to activate the corresponding functions.
         5: Color detect : blue
         6: Color detect : purple
         0: Switch off Color detect
-        r：Scan the QR code
+        r: Scan the QR code
         f: Switch ON/OFF face detect
         s: Display detected object information
     '''
 
-    color_list = ['close', 'red', 'orange', 'yellow',
+    color_list = ['close', 'red', 'orange', 'yellow', 
             'green', 'blue', 'purple',
     ]
 
@@ -147,10 +145,10 @@ Please follow the prompts to activate the corresponding functions.
         text = None
         while True:
             temp = Vilib.detect_obj_parameter['qr_data']
-            if temp != "None" and temp != text:
-                text = temp
+            if temp != "None" and temp != text: 
+                text = temp         
                 print('QR code:%s'%text)
-            if qr_code_flag == False:
+            if qr_code_flag == False:          
                 break
             sleep(0.5)
         Vilib.qrcode_detect_switch(False)
@@ -194,12 +192,12 @@ Please follow the prompts to activate the corresponding functions.
 
         while True:
             # readkey
-            key = readchar.readkey()
+            key = input()
             key = key.lower()
             # take photo
             if key == 'q':
                 take_photo()
-            # color detect
+            # color detect         
             elif key != '' and key in ('0123456'):  # '' in ('0123') -> True
                 index = int(key)
                 if index == 0:
@@ -208,7 +206,7 @@ Please follow the prompts to activate the corresponding functions.
                 else:
                     flag_color = True
                     Vilib.color_detect(color_list[index]) # color_detect(color:str -> color_name/close)
-                print('Color detect : %s'%color_list[index])
+                print('Color detect : %s'%color_list[index])  
             # face detection
             elif key =="f":
                 flag_face = not flag_face
@@ -222,8 +220,8 @@ Please follow the prompts to activate the corresponding functions.
                         qrcode_thread.setDaemon(True)
                         qrcode_thread.start()
                 else:
-                    if qrcode_thread != None and qrcode_thread.is_alive():
-                    # wait for thread to end
+                    if qrcode_thread != None and qrcode_thread.is_alive(): 
+                    # wait for thread to end 
                         qrcode_thread.join()
                         print('QRcode Detect: close')
             # show detected object information
@@ -235,7 +233,6 @@ Please follow the prompts to activate the corresponding functions.
 
     if __name__ == "__main__":
         main()
-
 
 **How it works?**
 

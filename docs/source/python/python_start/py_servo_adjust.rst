@@ -12,39 +12,41 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Servo Adjust
-===============
+7. Servo Adjust (Important)
+===================================
 
-To ensure that the servo has been properly set to 0°, first insert the rocker arm into the servo shaft and then gently rotate the rocker arm to a different angle.
+The angle range of the servo is -90~90, but the angle set at the factory is random, maybe 0°, maybe 45°; if we assemble it with such an angle directly, it will lead to a chaotic state after the robot runs the code, or worse, it will cause the servo to block and burn out.
 
-.. image:: img/servo_arm.png
+So here we need to set all the servo angles to 0° and then install them, so that the servo angle is in the middle, no matter which direction to turn.
 
-Follow the instructions on the assembly foldout, insert the battery holder cable and turn the power switch to the ON. Wait for 1-2 minutes, there will be a sound to indicate that the Raspberry Pi boots successfully.
+#. To ensure that the servo has been properly set to 0°, first insert the servo arm into the servo shaft and then gently rotate the rocker arm to a different angle. This servo arm is just to allow you to clearly see that the servo is rotating.
 
-.. image:: img/slide_to_power.png
+    .. image:: img/servo_arm.png
+        :align: center
 
-Now, run ``servo_zeroing.py`` in the ``examples/`` folder.
 
-.. raw:: html
+#. Now, run ``servo_zeroing.py`` in the ``examples/`` folder.
 
-    <run></run>
+    .. raw:: html
 
-.. code-block::
+        <run></run>
 
-    cd /home/pi/picrawler/examples
-    sudo python3 servo_zeroing.py
+    .. code-block::
 
-Next, plug the servo cable into the P11 port as follows.
+        cd ~/picrawler/examples
+        sudo python3 servo_zeroing.py
 
-.. image:: img/pin11_connect.png
+#. Next, plug the servo cable into the P11 port as follows, at the same time you will see the servo arm rotate to a position(This is the 0° position, which is a random location and may not be vertical or parallel.).
 
-At this point you will see the servo arm rotate to a specific position (0°). If the servo arm does not return to 0°, press the RST button to restart the Robot HAT.
+    .. image:: img/servo_pin11.jpg
 
-Now you can continue the installation as instructed on the assembly foldout.
+
+#. Now, remove the servo arm, ensuring the servo wire remains connected, and do not turn off the power. Then continue the assembly following the paper instructions.
 
 .. note::
 
     * Do not unplug this servo cable before fixing it with the servo screw, you can unplug it after fixing it.
     * Do not rotate the servo while it is powered on to avoid damage; if the servo shaft is not inserted at the right angle, pull the servo out and reinsert it.
-    * Before assembling each servo, you need to plug the servo cable into P11 and turn on the power to set its angle to 0°.
+    * Before assembling each servo, you need to plug the servo cable into PWM pin and turn on the power to set its angle to 0°.
+
 
