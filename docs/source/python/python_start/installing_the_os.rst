@@ -48,7 +48,7 @@
 
 #. Within the Imager, click **Raspberry Pi Device** and select the Raspberry Pi model from the dropdown list.
 
-    .. image:: img/os_choose_device_pi5.png
+    .. image:: img/os_choose_device.png
         :align: center
 
 #. Select **Operating System** and opt for the recommended operating system version.
@@ -131,3 +131,8 @@
     .. image:: img/os_finish.png
         :align: center
 
+#. Now you can insert the SD card set up with Raspberry Pi OS into the microSD card slot located on the underside of the Raspberry Pi.
+
+    .. image:: img/insert_sd_card.png
+        :width: 500
+        :align: center
