@@ -21,6 +21,11 @@ class Picrawler(Robot):
         self.move_list_add = {
             'my action': None
         }
+        self.step_list = {
+            "stand": self.move_list['stand'][0],
+            "sit": self.move_list['sit'][0],
+        }
+
         self.stand_position = 0
         self.direction = [
             1,1,-1,
@@ -623,23 +628,6 @@ class Picrawler(Robot):
             _dance.append(self.move_body_absolute(0, 0, 0))
             return _dance
 
-
-    step_list = {
-
-        "stand":[
-            [45, 45, -50], 
-            [45, 45, -50], 
-            [45, 45, -50], 
-            [45, 45, -50]
-        ],
-        "sit":[
-            [45, 45, -30], 
-            [45, 45, -30], 
-            [45, 45, -30], 
-            [45, 45, -30]
-        ],
-              
-    }
 
 
     def do_single_leg(self,leg,coodinate=[50,50,-33],speed=50):

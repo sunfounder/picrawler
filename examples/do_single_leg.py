@@ -32,12 +32,12 @@ def main():
     speed = 80
     step = 2
     print(manual)
-    crawler.do_step('stand',speed)
+    crawler.do_step('stand', speed)
     sleep(0.2)
     coordinate=crawler.current_step_all_leg_value()  
 
     def show_info():
-        print("\033[H\033[J",end='')  # clear terminal windows
+        print("\033[H\033[J", end='')  # clear terminal windows
         print(manual)   
         print('%s : %s'%(leg+1, legs_list[leg])) 
         print('coordinate: %s'%(coordinate))  

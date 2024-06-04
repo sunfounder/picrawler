@@ -1,6 +1,5 @@
 
 from picrawler import Picrawler
-from time import sleep
 from robot_hat import Music
 
 music = Music()
@@ -18,7 +17,7 @@ def twist(speed):
             new_step[(i+2)%4] = drop
             new_step[(i+1)%4] = rise
             new_step[(i-1)%4] = drop
-            print(new_step)
+            # print(new_step)
             crawler.do_step(new_step,speed)
 
 
@@ -28,7 +27,7 @@ def main():
     music.music_set_volume(20)
 
     while True:
-        twist(speed=90) 
+        twist(speed=100) 
             
  
 if __name__ == "__main__":
