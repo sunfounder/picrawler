@@ -116,7 +116,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 		Vilib.camera_start(vflip=False,hflip=False)
 		Vilib.display(local=False,web=True)
 		sleep(0.8)
-		speed = 100
+		speed = 80
 		print(manual)
 
 		sleep(1)

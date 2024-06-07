@@ -79,12 +79,12 @@ After the code runs, please operate according to the prompt that pops up in the 
         speed = 80
         step = 2
         print(manual)
-        crawler.do_step('stand',speed)
+        crawler.do_step('stand', speed)
         sleep(0.2)
         coordinate=crawler.current_step_all_leg_value()  
 
         def show_info():
-            print("\033[H\033[J",end='')  # clear terminal windows
+            print("\033[H\033[J", end='')  # clear terminal windows
             print(manual)   
             print('%s : %s'%(leg+1, legs_list[leg])) 
             print('coordinate: %s'%(coordinate))  
@@ -124,6 +124,7 @@ After the code runs, please operate according to the prompt that pops up in the 
     
     if __name__ == "__main__":
         main()
+
 
 * ``current_step_all_leg_value()``: Returns the coordinate values of all legs.
 * ``do_single_leg(leg,coordinate[leg],speed)``: Modify the coordinate value of a certain leg individually.

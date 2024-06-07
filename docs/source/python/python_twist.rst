@@ -47,7 +47,6 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
 
 
     from picrawler import Picrawler
-    from time import sleep
     from robot_hat import Music
 
     music = Music()
@@ -57,7 +56,7 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
     def twist(speed):
         new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
         for i in range(4):
-            for inc in range(30, 50, 5): 
+            for inc in range(30, 60, 5): 
                 rise = [50,50,(-80+inc*0.5)]
                 drop = [50,50,(-80-inc)]
 
@@ -65,6 +64,7 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
                 new_step[(i+2)%4] = drop
                 new_step[(i+1)%4] = rise
                 new_step[(i-1)%4] = drop
+                # print(new_step)
                 crawler.do_step(new_step,speed)
 
 

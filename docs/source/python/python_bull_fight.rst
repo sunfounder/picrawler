@@ -77,7 +77,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
         Vilib.camera_start()
         Vilib.display()
         Vilib.color_detect("red") 
-        speed = 100
+        speed = 80
 
         while True:
             if Vilib.detect_obj_parameter['color_n']!=0:

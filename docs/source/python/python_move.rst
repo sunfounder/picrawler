@@ -52,7 +52,7 @@ After the code is executed, PiCrawler will perform the following actions in sequ
 
     def main():  
         
-        speed = 100
+        speed = 80
             
         while True:
         

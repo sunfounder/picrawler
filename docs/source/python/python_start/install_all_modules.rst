@@ -51,7 +51,7 @@ Install ``robot-hat`` module.
 .. code-block::
 
     cd ~/
-    git clone -b v2.0 https://github.com/sunfounder/robot-hat.git
+    git clone -b v3.0 https://github.com/sunfounder/robot-hat.git
     cd robot-hat
     sudo python3 setup.py install
 
