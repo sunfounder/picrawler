@@ -22,7 +22,7 @@ Please follow the steps on the PDF to assemble.
 If the servo has been powered on, please do not turn the Servo shaft to avoid damage.
 
 
-* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/20102V23-a0000692-picrawler.pdf>`.
+* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0102v30-a0000684-picrawler.pdf>`.
 
 
 * You can find a comprehensive tutorial about the |link_robot_hat| here, including information on its hardware and API.
