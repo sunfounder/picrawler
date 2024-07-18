@@ -28,7 +28,7 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 record_new_step_by_keyboard.py
 
 After the code runs, please operate according to the prompt that pops up in the terminal.
@@ -51,8 +51,7 @@ After the code runs, please operate according to the prompt that pops up in the 
     import termios
     import copy
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+    crawler = Picrawler() 
     speed = 80
 
     def readchar():
@@ -67,7 +66,7 @@ After the code runs, please operate according to the prompt that pops up in the 
 
 
     manual = '''
-    Press keys on keyboard to control PiSloth!
+    Press keys on keyboard to control!
         w: Y++
         a: X--
         s: Y--
@@ -78,7 +77,7 @@ After the code runs, please operate according to the prompt that pops up in the 
         2: Select left front leg
         3: Select left rear leg
         4: Select right rear leg
-        space: Print all leg coodinate & Save this step
+        Space: Print all leg coodinate & Save this step
         p: Play all saved step
         esc: Quit
     '''

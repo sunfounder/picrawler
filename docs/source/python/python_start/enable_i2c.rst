@@ -12,10 +12,12 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-Enable I2C and Camera Interface
+.. _i2c_spi_config:
+
+Check I2C Interface
 ========================================
 
-Here we are using the Raspberry Pi's I2C and Camera interfaces, but by default they are disabled, so we need to enable them first.
+We will be using the Raspberry Pi's I2C interface. This interface should have been enabled when installing the ``robot-hat`` module earlier. To ensure everything is in order, let's check if it is indeed enabled.
 
 #. Input the following command:
 
@@ -27,12 +29,12 @@ Here we are using the Raspberry Pi's I2C and Camera interfaces, but by default t
 
         sudo raspi-config
 
-#. Choose **3** **Interfacing Options** by press the down arrow key on your keyboard, then press the **Enter** key.
+#. Choose **Interfacing Options** by press the down arrow key on your keyboard, then press the **Enter** key.
 
     .. image:: img/image282.png
         :align: center
 
-#. Then **P5 I2C**.
+#. Then **I2C**.
 
     .. image:: img/image283.png
         :align: center
@@ -40,19 +42,4 @@ Here we are using the Raspberry Pi's I2C and Camera interfaces, but by default t
 #. Use the arrow keys on the keyboard to select **<Yes>** -> **<OK>** to complete the setup of the I2C.
 
     .. image:: img/image284.png
-        :align: center
-
-#. Go to **3 Interfacing Options** again and select **P1 Camera**.
-
-    .. image:: img/camera_enable.png
-        :align: center
-
-#. Again select **<Yes>** -> **<OK>** to complete the setup.
-
-    .. image:: img/camera_enable1.png
-        :align: center
-
-#. After you select **<Finish>**, a pop-up will remind you that you need to reboot for the settings to take effect, select **<Yes>**.
-
-    .. image:: img/camera_enable2.png
         :align: center

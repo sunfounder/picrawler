@@ -31,7 +31,7 @@ Now, run ``servo_zeroing.py`` in the ``examples/`` folder.
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 servo_zeroing.py
 
 Next, plug the servo cable into the P11 port as follows.

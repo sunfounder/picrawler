@@ -30,7 +30,7 @@ When PiCrawler detects an obstacle, it will send a signal and look for another d
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 avoid.py
 
 After the code runs, PiCrawler will walk forward. If it detects that the distance of the obstacle ahead is less than 10cm, it will stop and sound a warning, then turn left and stop. If there is no obstacle in the direction after turning left or the obstacle distance is greater than 10, it will continue to move forward.
@@ -49,23 +49,22 @@ After the code runs, PiCrawler will walk forward. If it detects that the distanc
 
 .. code-block:: python
 
+
     from picrawler import Picrawler
     from robot_hat import TTS, Music
     from robot_hat import Ultrasonic
     from robot_hat import Pin
     import time
-    import os
 
     tts = TTS()
     music = Music()
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+    crawler = Picrawler() 
     sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
+    music.music_set_volume(100)
 
     alert_distance = 15
-
-    speed = 100
+    speed = 80
 
     def main():
         distance = sonar.read()
@@ -74,7 +73,7 @@ After the code runs, PiCrawler will walk forward. If it detects that the distanc
             pass
         elif distance <= alert_distance:
             try:
-                music.sound_effect_threading('./sounds/sign.wav')
+                music.sound_play_threading('./sounds/sign.wav', volume=100)
             except Exception as e:
                 print(e)
             crawler.do_action('turn left angle',3,speed)
@@ -82,7 +81,6 @@ After the code runs, PiCrawler will walk forward. If it detects that the distanc
         else :
             crawler.do_action('forward', 1,speed)
             time.sleep(0.2)
-
 
     if __name__ == "__main__":
         while True:
@@ -117,7 +115,7 @@ Here is the main program.
         pass
     elif distance <= alert_distance:
         try:
-            music.sound_effect_threading('./sounds/sign.wav')
+            music.sound_play_threading('./sounds/sign.wav', volume=100)
         except Exception as e:
             print(e)
         crawler.do_action('turn left angle',3,speed)

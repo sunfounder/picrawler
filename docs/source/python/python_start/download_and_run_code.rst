@@ -50,16 +50,10 @@ Install ``robot-hat`` module.
 
 .. code-block::
 
-    cd /home/pi/
-    git clone https://github.com/sunfounder/robot-hat.git
+    cd ~/
+    git clone -b v2.0 https://github.com/sunfounder/robot-hat.git
     cd robot-hat
     sudo python3 setup.py install
-
-.. note::
-    Running ``setup.py`` will download some necessary components. You may fail to download due to network problems. You may need to download again at this time.
-    In the following cases, enter ``Y`` and press Enter.
-	
-	.. image:: img/dowload_code.png
 
 Then download the code and install ``vilib`` module.
 
@@ -69,8 +63,8 @@ Then download the code and install ``vilib`` module.
 
 .. code-block::
 
-    cd /home/pi/
-    git clone https://github.com/sunfounder/vilib.git
+    cd ~/
+    git clone -b picamera2 https://github.com/sunfounder/vilib.git
     cd vilib
     sudo python3 install.py
 
@@ -82,7 +76,7 @@ Then download the code and install ``picrawler`` module.
 
 .. code-block::
 
-    cd /home/pi/
+    cd ~/
     git clone -b v2.0 https://github.com/sunfounder/picrawler.git
     cd picrawler
     sudo python3 setup.py install
@@ -97,7 +91,7 @@ Finally, you need to run the script ``i2samp.sh`` to install the components requ
 
 .. code-block::
 
-    cd /home/pi/picrawler
+    cd ~/picrawler
     sudo bash i2samp.sh
 	
 .. image:: img/i2s.png

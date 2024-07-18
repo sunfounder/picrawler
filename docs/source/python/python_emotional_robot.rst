@@ -27,7 +27,7 @@ This example shows several interesting custom actions of PiCrawler.
 
 .. code-block::
 
-    cd /home/pi/picrawler/examples
+    cd ~/picrawler/examples
     sudo python3 emotional_robot.py
 
 
@@ -47,8 +47,7 @@ This example shows several interesting custom actions of PiCrawler.
     from picrawler import Picrawler
     from time import sleep
 
-    crawler = Picrawler([10,11,12,4,5,6,1,2,3,7,8,9]) 
-    #crawler.set_offset([0,0,0,0,0,0,0,0,0,0,0,0])
+    crawler = Picrawler() 
 
     def handwork(speed):
 
@@ -70,7 +69,6 @@ This example shows several interesting custom actions of PiCrawler.
         sleep(0.6)
 
     def twist(speed):
-
         new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
         for i in range(4):
             for inc in range(30,60,5): 
@@ -97,6 +95,8 @@ This example shows several interesting custom actions of PiCrawler.
         for i in range(100):
             crawler.do_step([[100-i,i,0],[100-i,i,0],[0,120,-60+i/5],[0,100,-40-i/5]],speed)
 
+
+
     # main
     def main():
         speed = 100
@@ -110,5 +110,7 @@ This example shows several interesting custom actions of PiCrawler.
 
     if __name__ == "__main__":
         main()
-    
+
+  
+ 
     
