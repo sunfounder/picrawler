@@ -77,7 +77,7 @@ Then download the code and install ``picrawler`` module.
 .. code-block::
 
     cd ~/
-    git clone -b v2.0 https://github.com/sunfounder/picrawler.git
+    git clone -b v3.0 https://github.com/sunfounder/picrawler.git
     cd picrawler
     sudo python3 setup.py install
 
