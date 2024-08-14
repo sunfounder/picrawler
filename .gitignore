@@ -1,1 +1,8 @@
 .vscode/*
+
+# Virtual environment directory
+myenv/
+
+# Build directories
+build/
+dist/

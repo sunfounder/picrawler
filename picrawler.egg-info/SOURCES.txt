@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+picrawler/__init__.py
+picrawler/picrawler.py
+picrawler/version.py
+picrawler.egg-info/PKG-INFO
+picrawler.egg-info/SOURCES.txt
+picrawler.egg-info/dependency_links.txt
+picrawler.egg-info/entry_points.txt
+picrawler.egg-info/not-zip-safe
+picrawler.egg-info/requires.txt
+picrawler.egg-info/top_level.txt
