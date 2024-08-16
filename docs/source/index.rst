@@ -12,11 +12,12 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-SunFounder Raspberry Pi Robot - PiCrawler
+SunFounder Raspberry Pi Robot - |link_PiCrawler|
 =============================================
 
+* |link_Pi_Crawler|
 
-Thank you for choosing our PiCrawler.
+Thank you for choosing our |link_PiCrawler|.
 
 .. image:: img/picrawler.jpg
     :width: 600

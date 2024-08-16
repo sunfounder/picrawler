@@ -96,4 +96,13 @@ rst_epilog = """
 
     <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
 
+.. |link_Pi_Crawler| raw:: html
+
+    <a href="https://www.sunfounder.com/products/picrawler-robot-kit?_pos=1&_sid=2ebeb7ad0&_ss=r" target="_blank">Purchase Link for PiCrawler</a>
+
+.. |link_PiCrawler| raw:: html
+
+    <a href="https://www.sunfounder.com/products/picrawler-robot-kit?_pos=1&_sid=2ebeb7ad0&_ss=r" target="_blank">PiCrawler</a>
+
+    
 """
