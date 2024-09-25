@@ -21,9 +21,10 @@ class Picrawler(Robot):
         self.move_list_add = {
             'my action': None
         }
+
         self.step_list = {
-            "stand": self.move_list['stand'][0],
-            "sit": self.move_list['sit'][0],
+            "stand": self.move_list['stand'],
+            "sit": self.move_list['sit'],
         }
 
         self.stand_position = 0
@@ -167,31 +168,27 @@ class Picrawler(Robot):
         return list.copy(translate_list)
 
     def do_step(self, _step, speed=50, israise=False):
-        
-        step_temp = []
-        if isinstance(_step,str):
+        if isinstance(_step, str):
             if _step in self.step_list.keys():
-                step_temp  = list(self.step_list[_step])
+                for one_step in self.step_list[_step]:
+                    angles_temp = []
+                    for coord in one_step: # each servo motion    
+                        alpha, beta, gamma = self.coord2polar(coord)
+                        angles_temp.append([beta, alpha, gamma])
+                    self.coord_temp = list.copy(one_step)
+                    self.set_angle(angles_temp, speed, israise)
             else:
                 print("The name of gait is not in the default gait dictionary")
-        elif isinstance(_step,list):
-            step_temp = _step
+        elif isinstance(_step, list):
+            angles_temp = []
+            for coord in _step: # each servo motion    
+                alpha, beta, gamma = self.coord2polar(coord)
+                angles_temp.append([beta, alpha, gamma])
+            self.coord_temp = list.copy(_step)
+            self.set_angle(angles_temp, speed, israise)
         else:
             print("The \"_step\" parameter is wrong.")
             return
-
-        angles_temp = []
-        self.coord_temp = [] # do not use list.clear()
-        for coord in step_temp: # each servo motion    
-            alpha, beta, gamma = self.coord2polar(coord)
-            angles_temp.append([beta, alpha, gamma])
-
-        # print('current_coord: %s'%len(self.current_coord))
-        # print('_step: %s'%len(_step))
-        # print('angles_temp：%s'%len(angles_temp))
-        # print('angles_temp：%s'%len(self.coord_temp))
-
-        return list.copy(self.set_angle(angles_temp, speed, israise))
 
 
     def current_step_all_leg_angle(self):
@@ -285,7 +282,6 @@ class Picrawler(Robot):
             self.ready_state = 0
             self.angle = 30
    
-
         def __getitem__(self, item):
             return eval("self.%s"%item.replace(" ", "_"))
         
@@ -356,7 +352,6 @@ class Picrawler(Robot):
         @property
         @normal_action(0)
         def stand(self):
-            # print("get stand")
             _stand = []
             if self.ready_state ==  0:
                 _stand += self.ready
