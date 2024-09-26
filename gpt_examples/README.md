@@ -9,8 +9,8 @@
 
 - Install openai and speech processing libraries
 
-    > **Note:**\
-    When using pip install outside of a virtual environment you may need to use the `"--break-system-packages"` option.
+    > [!Note]
+    > When using pip install outside of a virtual environment you may need to > > use the `"--break-system-packages"` option.
 
     ```bash
     sudo pip3 install -U openai --break-system-packages
@@ -92,5 +92,5 @@ sudo python3 gpt_spider.py --keyboard
 sudo python3 gpt_spider.py --keyboard --no-img
 ```
 
-> **Warning:**\
+> [!Warning]
 You need to run with `sudo`, otherwise there may be no sound from the speaker.
