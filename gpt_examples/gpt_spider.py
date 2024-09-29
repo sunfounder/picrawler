@@ -36,6 +36,9 @@ else:
 
 # openai assistant init
 # =================================================================
+if len(OPENAI_API_KEY) < 10 or len(OPENAI_ASSISTANT_ID) < 10:
+    raise ValueError("\n\nInvalid OPENAI_API_KEY and OPENAI_ASSISTANT_ID in `keys.py`.\n")
+
 openai_helper = OpenAiHelper(OPENAI_API_KEY, OPENAI_ASSISTANT_ID, 'picrawler')
 
 # LANGUAGE = ['zh', 'en'] # config stt language code, https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
@@ -221,6 +224,7 @@ def main():
     global action_status, actions_to_be_done
     global tts_file
 
+    my_spider.do_action('sit', speed=60)
     my_spider.do_action('stand', speed=60)
 
     speak_thread.start()
