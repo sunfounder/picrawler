@@ -497,28 +497,28 @@ if __name__ == "__main__":
 
     try:
         while True:
-            # key = input()
+            key = input()
 
-            # if key == '':
-            #     print(actions[last_key])
-            #     actions_dict[actions[last_key]](my_spider)
-            # else:
-            #     key = int(key)
-            #     if key > (len(actions) - 1):
-            #         print("Invalid key")
-            #     else:
-            #         last_key = key
-            #         print(actions[key])
-            #         actions_dict[actions[key]](my_spider)
+            if key == '':
+                print(actions[last_key])
+                actions_dict[actions[last_key]](my_spider)
+            else:
+                key = int(key)
+                if key > (len(actions) - 1):
+                    print("Invalid key")
+                else:
+                    last_key = key
+                    print(actions[key])
+                    actions_dict[actions[key]](my_spider)
 
-            sleep(2)
+            # sleep(2)
             # wave_hand(my_spider)
             # shake_hand(my_spider)
             # fighting(my_spider)
             # excited(my_spider)
             # play_dead(my_spider)
             # nod(my_spider)
-            shake_head(my_spider)
+            # shake_head(my_spider)
             # look_left(my_spider)
             # look_right(my_spider)
             # look_up(my_spider)
