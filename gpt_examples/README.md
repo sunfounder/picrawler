@@ -94,3 +94,34 @@ sudo python3 gpt_spider.py --keyboard --no-img
 
 > [!Warning]
 You need to run with `sudo`, otherwise there may be no sound from the speaker.
+
+## Modify parameters [optional]
+
+- Set language of STT
+
+    Config `LANGUAGE` variable in the file `gpt_spider.py` to improve STT accuracy and latency, `"LANGUAGE = []"`means supporting all languages, but it may affect the accuracy and latency of the speech-to-text (STT) system.
+    <https://platform.openai.com/docs/api-reference/audio/createTranscription#audio-createtranscription-language>
+
+- Set TTS volume gain
+
+    After TTS, the audio volume will be increased using sox, and the gain can be set through the `"VOLUME_DB"` parameter, preferably not exceeding `5`, as going beyond this might result in audio distortion.
+
+- Select TTS voice role
+
+    Config `TTS_VOICE` variable in the file `gpt_spider.py` to select the TTS voice role counld be `"alloy, echo, fable, onyx, nova, and shimmer"`
+
+```python
+# openai assistant init
+# =================================================================
+openai_helper = OpenAiHelper(OPENAI_API_KEY, OPENAI_ASSISTANT_ID, 'picrawler')
+
+# LANGUAGE = ['zh', 'en'] # config stt language code, https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+LANGUAGE = []
+
+VOLUME_DB = 3 # tts voloume gain, preferably less than 5db
+
+# select tts voice role, counld be "alloy, echo, fable, onyx, nova, and shimmer"
+# https://platform.openai.com/docs/guides/text-to-speech/supported-languages
+TTS_VOICE = 'nova'
+
+```
