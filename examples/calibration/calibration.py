@@ -9,10 +9,12 @@ from time import sleep
 crawler = Picrawler()
 crawler.do_step([[60, 0, -30]]*4, 80)
 
-# print(f'current_angles: {[round(x, 2) for x in crawler.servo_positions]}')
-# print(f'OFFSET_ZERO: {[round(x, 2) for x in OFFSET_ZERO]}')
-# print(f'offset: {offset}')
+# ANGLE_ZERO = crawler.coord2polar([60, 0, -30])
+# _offset = list.copy(crawler.offset)
 
+# print(f'current_angles: {[round(x, 2) for x in crawler.servo_positions]}')
+# print(f'ANGLE_ZERO: {[round(x, 2) for x in ANGLE_ZERO]}')
+# print(f'offset: {_offset}')
 
 # global variables
 # ======================================
@@ -40,7 +42,7 @@ key_dict = {
     'f': 'low', 
 }
 
-OFFSET_ZERO = crawler.coord2polar([60, 0, -30])
+ANGLE_ZERO = crawler.coord2polar([60, 0, -30])
 COORD_OFFSET_STEP = 0.2
 ANGLE_LIMIT = 20
 
@@ -53,8 +55,8 @@ POSITIVE_LIST = [
 
 leg_num = 1
 coord_offset = [[0, 0, 0]]*4
-offset = list.copy(crawler.offset)
-angle_offset = offset
+OFFSET_O = list.copy(crawler.offset)
+angle_offset = list.copy(OFFSET_O)
 
 # ======================================
 
@@ -124,9 +126,9 @@ def cali_helper():
             _angles = crawler.coord2polar(_coord)
             _angles = [round(x, 2) for x in _angles]
 
-            _alpha_offset = round(_angles[0] - OFFSET_ZERO[0], 2)
-            _beta_offset = round(_angles[1] - OFFSET_ZERO[1], 2)
-            _gamma_offset = round(_angles[2] - OFFSET_ZERO[2], 2)
+            _alpha_offset = round(_angles[0] - ANGLE_ZERO[0], 2) + OFFSET_O[_index*3 + 1]
+            _beta_offset = round(_angles[1] - ANGLE_ZERO[1], 2) + OFFSET_O[_index*3 + 0]
+            _gamma_offset = round(_angles[2] - ANGLE_ZERO[2], 2) + OFFSET_O[_index*3 + 2]
 
             if (_alpha_offset > ANGLE_LIMIT) or (_alpha_offset < -ANGLE_LIMIT):
                 continue
@@ -136,13 +138,18 @@ def cali_helper():
                 continue
             else:
                 coord_offset[_index] = [round(x, 2) for x in _coord_offset]
-                offset[_index*3 + 0] = _beta_offset
-                offset[_index*3 + 1] = _alpha_offset
-                offset[_index*3 + 2] = _gamma_offset
+                angle_offset[_index*3 + 0] = round(_beta_offset, 2)
+                angle_offset[_index*3 + 1] = round(_alpha_offset, 2)
+                angle_offset[_index*3 + 2] = round(_gamma_offset, 2)
 
-                crawler.servo_list[_index*3 + 0].angle(_angles[1]*POSITIVE_LIST[_index][0])
-                crawler.servo_list[_index*3 + 1].angle(_angles[0]*POSITIVE_LIST[_index][1])
-                crawler.servo_list[_index*3 + 2].angle(_angles[2]*POSITIVE_LIST[_index][2])
+                angle_a = POSITIVE_LIST[_index][0] * (ANGLE_ZERO[1]+ angle_offset[_index*3 + 0])
+                angle_b = POSITIVE_LIST[_index][1] * (ANGLE_ZERO[0]+ angle_offset[_index*3 + 1])
+                angle_c = POSITIVE_LIST[_index][2] * (ANGLE_ZERO[2]+ angle_offset[_index*3 + 2])
+
+                crawler.servo_list[_index*3 + 0].angle(angle_a)
+                crawler.servo_list[_index*3 + 1].angle(angle_b)
+                crawler.servo_list[_index*3 + 2].angle(angle_c)
+
                 show_info()
         elif key == readchar.key.SPACE:
             print('Confirm save ?(y/n)')
@@ -150,7 +157,7 @@ def cali_helper():
                 key = readchar.readkey()
                 key = key.lower()
                 if key == 'y':
-                    crawler.set_offset(offset)
+                    crawler.set_offset(angle_offset)
                     sleep(0.2)
                     crawler.do_step([[60, 0, -30]]*4, 80)
                     show_info()
