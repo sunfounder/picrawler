@@ -16,7 +16,7 @@ You also need to install robot_hat, vilib, sunfounder_controller and other depen
 <https://docs.sunfounder.com/projects/picar-x-v20/en/latest/python/python_start/install_all_modules.html>
 
 ```bash
-git clone -b v3.0 https://github.com/sunfounder/picrawler.git
+git clone https://github.com/sunfounder/picrawler.git
 cd picrawler
 sudo python3 setup.py install
 
