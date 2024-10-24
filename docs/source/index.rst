@@ -46,11 +46,13 @@ If you have any questions, please send an email to service@sunfounder.com and we
     :maxdepth: 2
 
     About this Kit <self>
-    list_and_assembly
-    servo_zeroing
     python/play_with_python 
     ezblock/play_with_ezblock
+    servo_zeroing
+    openai
     appendix/appendix
+    hardware/cpn_hardware
+    faq
 
 Copyright Notice
 --------------------------

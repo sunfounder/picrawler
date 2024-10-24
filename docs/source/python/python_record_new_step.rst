@@ -66,7 +66,7 @@ After the code runs, please operate according to the prompt that pops up in the 
 
 
     manual = '''
-    Press keys on keyboard to control PiSloth!
+    Press keys on keyboard to control!
         w: Y++
         a: X--
         s: Y--
@@ -77,7 +77,7 @@ After the code runs, please operate according to the prompt that pops up in the 
         2: Select left front leg
         3: Select left rear leg
         4: Select right rear leg
-        space: Print all leg coodinate & Save this step
+        Space: Print all leg coodinate & Save this step
         p: Play all saved step
         esc: Quit
     '''
@@ -142,12 +142,10 @@ After the code runs, please operate according to the prompt that pops up in the 
             sleep(0.05)
             crawler.do_single_leg(leg,coodinate,speed)          
         print("\n q Quit")  
-                
+
     
     if __name__ == "__main__":
         main()
-
-
 
 **How it works?**
 

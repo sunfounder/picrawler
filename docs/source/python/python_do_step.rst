@@ -41,7 +41,6 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
 
 .. code-block:: python
 
-
     from picrawler import Picrawler
     from time import sleep
 
@@ -54,18 +53,17 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
     def main():  
         while True:
             speed = 80
-                
+
             print(f"stand step: {stand_step}")
             crawler.do_step(stand_step, speed)
             sleep(3)
             print(f"new step: {new_step}")
             crawler.do_step(new_step,speed)
             sleep(3)
-                
+
     
     if __name__ == "__main__":
         main()
-
 
 **How it works?**
 

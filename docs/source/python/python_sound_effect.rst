@@ -66,7 +66,6 @@ Input key to call the function!
 
 .. code-block:: python
 
-
     '''
         Sorry, currently there is only sound when running with sudo
     '''
@@ -93,7 +92,7 @@ Input key to call the function!
         flag_bgm = False
         music.music_set_volume(20)
         tts.lang("en-US")
-        
+
 
         while True:
             key = input() 
@@ -124,7 +123,7 @@ Input key to call the function!
             elif key == "t":
                 words = "Hello"
                 tts.say(words)
-            
+
     if __name__ == "__main__":
         main()
 

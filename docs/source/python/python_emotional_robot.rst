@@ -69,12 +69,11 @@ This example shows several interesting custom actions of PiCrawler.
         sleep(0.6)
 
     def twist(speed):
-
-        new_step=[[50, 50, -75], [50, 50, -75],[50, 50, -75], [50, 50, -75]]
+        new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
         for i in range(4):
             for inc in range(30,60,5): 
-                rise = [50,50,(-75+inc*0.5)]
-                drop = [50,50,(-75-inc)]
+                rise = [50,50,(-80+inc*0.5)]
+                drop = [50,50,(-80-inc)]
 
                 new_step[i]=rise
                 new_step[(i+2)%4] = drop
@@ -85,8 +84,8 @@ This example shows several interesting custom actions of PiCrawler.
     ##"[[right front], [left front], [left rear], [left rear]]")
 
     def pushup(speed):
-        up=[[75, 0, -100], [75, 0, -100],[0, 120, -60], [0, 120, -60]]
-        down=[[75, 0, -30], [75, 0, -30],[0, 120, -60], [0, 120, -60]]
+        up=[[80, 0, -100], [80, 0, -100],[0, 120, -60], [0, 120, -60]]
+        down=[[80, 0, -30], [80, 0, -30],[0, 120, -60], [0, 120, -60]]
         crawler.do_step(up,speed)
         sleep(0.6)
         crawler.do_step(down,speed)
@@ -96,12 +95,10 @@ This example shows several interesting custom actions of PiCrawler.
         for i in range(100):
             crawler.do_step([[100-i,i,0],[100-i,i,0],[0,120,-60+i/5],[0,100,-40-i/5]],speed)
 
-
-
     # main
     def main():
         speed = 100
-        
+
         swimming(speed)
         pushup(speed)
         handwork(speed)
@@ -111,6 +108,7 @@ This example shows several interesting custom actions of PiCrawler.
 
     if __name__ == "__main__":
         main()
+
     
  
     

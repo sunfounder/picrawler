@@ -19,18 +19,13 @@ It is equipped with a camera module, which can perform color recognition, face d
 the ultrasonic module on the body allows it to quickly detect obstacles in front of it; the expansion board-robot HAT is equipped with a speaker, allowing it to express emotions such as happiness and excitement.
 
 
-This document includes the list and assembly pdf, Robot HAT introduction and PiCrawler programming.
-
-The programming part is divided into two chapters: :ref:`play_ezblock` & :ref:`play_python`, each chapter allows you to explain how to make PiCrawler work the way you want.
-
-Ezblock Studio is a development platform developed by SunFounder for beginners, aiming to lower the barriers to entry for Raspberry Pi. It has two programming languages: Graphical and Python, which can be used on almost all different types of devices. With Bluetooth and Wi-Fi support, you can download codes on Ezblock Studio and remotely control Raspberry Pi.
-
-More experienced makers can use the popular programming language-Python.
-
-
-
 <a id="update"></a>
 ## Update:
+
+2024-10-21:
+- Include a tutorial on interacting with GPT-4O.
+- Optimize version compatibility issues.
+
 2024-05-31:
 - ptimized the introductory knowledge of Python, including all Python code and related courses.
 - ptimized the introductory knowledge of Ezblock.

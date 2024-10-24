@@ -106,13 +106,17 @@ Please follow the prompts to activate the corresponding functions.
     from vilib import Vilib
     from time import sleep, time, strftime, localtime
     import threading
-
-
+    from os import getlogin
+    
+    USERNAME = getlogin()
+    PICTURE_PATH = f"/home/{USERNAME}/Pictures/"
+    
+    
     flag_face = False
     flag_color = False
     qr_code_flag = False
-
-    manual = '''
+    
+    MANUAL = '''
     Input key to call the function!
         q: Take photo
         1: Color detect : red
@@ -126,22 +130,22 @@ Please follow the prompts to activate the corresponding functions.
         f: Switch ON/OFF face detect
         s: Display detected object information
     '''
-
+    
     color_list = ['close', 'red', 'orange', 'yellow', 
             'green', 'blue', 'purple',
     ]
-
+    
     def face_detect(flag):
         print("Face Detect:" + str(flag))
         Vilib.face_detect_switch(flag)
-
-
+    
+    
     def qrcode_detect():
         global qr_code_flag
         if qr_code_flag == True:
             Vilib.qrcode_detect_switch(True)
             print("Waitting for QR code")
-
+    
         text = None
         while True:
             temp = Vilib.detect_obj_parameter['qr_data']
@@ -152,19 +156,18 @@ Please follow the prompts to activate the corresponding functions.
                 break
             sleep(0.5)
         Vilib.qrcode_detect_switch(False)
-
-
+    
+    
     def take_photo():
         _time = strftime('%Y-%m-%d-%H-%M-%S',localtime(time()))
         name = 'photo_%s'%_time
-        path = "/home/pi/Pictures/PiCrawler/"
-        Vilib.take_photo(name, path)
-        print('photo save as %s%s.jpg'%(path,name))
-
-
+        Vilib.take_photo(name, PICTURE_PATH)
+        print('photo save as %s%s.jpg'%(PICTURE_PATH, name))
+    
+    
     def object_show():
         global flag_color, flag_face
-
+    
         if flag_color is True:
             if Vilib.detect_obj_parameter['color_n'] == 0:
                 print('Color Detect: None')
@@ -172,7 +175,7 @@ Please follow the prompts to activate the corresponding functions.
                 color_coodinate = (Vilib.detect_obj_parameter['color_x'],Vilib.detect_obj_parameter['color_y'])
                 color_size = (Vilib.detect_obj_parameter['color_w'],Vilib.detect_obj_parameter['color_h'])
                 print("[Color Detect] ","Coordinate:",color_coodinate,"Size",color_size)
-
+    
         if flag_face is True:
             if Vilib.detect_obj_parameter['human_n'] == 0:
                 print('Face Detect: None')
@@ -180,16 +183,16 @@ Please follow the prompts to activate the corresponding functions.
                 human_coodinate = (Vilib.detect_obj_parameter['human_x'],Vilib.detect_obj_parameter['human_y'])
                 human_size = (Vilib.detect_obj_parameter['human_w'],Vilib.detect_obj_parameter['human_h'])
                 print("[Face Detect] ","Coordinate:",human_coodinate,"Size",human_size)
-
-
+    
+    
     def main():
         global flag_face, flag_color, qr_code_flag
         qrcode_thread = None
-
+    
         Vilib.camera_start(vflip=False,hflip=False)
         Vilib.display(local=True,web=True)
-        print(manual)
-
+        print(MANUAL)
+    
         while True:
             # readkey
             key = input()
@@ -221,16 +224,16 @@ Please follow the prompts to activate the corresponding functions.
                         qrcode_thread.start()
                 else:
                     if qrcode_thread != None and qrcode_thread.is_alive(): 
-                    # wait for thread to end 
+                       # wait for thread to end 
                         qrcode_thread.join()
                         print('QRcode Detect: close')
             # show detected object information
             elif key == "s":
                 object_show()
-
+    
             sleep(0.5)
-
-
+    
+    
     if __name__ == "__main__":
         main()
 

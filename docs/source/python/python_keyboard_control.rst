@@ -85,14 +85,12 @@ Press keys on keyboard to control PiCrawler!
             elif key == readchar.key.CTRL_C:
                 print("\n Quit") 
                 break    
-            
+
             sleep(0.02)          
-        
+
     
     if __name__ == "__main__":
         main()
-
-
 
 **How it works?**
 

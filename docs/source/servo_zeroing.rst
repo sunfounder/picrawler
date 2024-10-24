@@ -27,17 +27,19 @@ Therefore, setting the angle to zero is an important step to ensure the
 safe and normal operation of the servo motor.
 
 
-**For Python User**
+For Python User
+------------------------
 
 Please refer to :ref:`quick_guide_python` to complete the 
 installation of the Raspberry Pi OS and adjust the angle of the servos.
 
 
-**For Ezblock User**
+For Ezblock User
+-----------------------
 
 .. note::
 
-    If you are using a Raspberry Pi 5, you will not be able to use our graphical programming software, EzBlock, to program the PiCrawler.
+    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
 
 After you have installed the ezblock system, 
 the P11 pin can be used to adjust the servo. 

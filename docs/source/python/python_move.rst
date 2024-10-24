@@ -47,15 +47,15 @@ After the code is executed, PiCrawler will perform the following actions in sequ
 
     from picrawler import Picrawler
     from time import sleep
-
+    
     crawler = Picrawler() 
-
+    
     def main():  
         
-        speed = 100
-            
+        speed = 80
+              
         while True:
-        
+           
             crawler.do_action('forward',2,speed)
             sleep(0.05)     
             crawler.do_action('backward',2,speed)
@@ -70,7 +70,7 @@ After the code is executed, PiCrawler will perform the following actions in sequ
             sleep(0.05) 
             crawler.do_step('stand',speed)
             sleep(1)
-
+    
     if __name__ == "__main__":
         main()
 

@@ -15,8 +15,6 @@
 3. Power Supply for Raspberry Pi (Important)
 =====================================================
 
-
-
 Charge
 -------------------
 
@@ -44,22 +42,3 @@ Wait for a few seconds, and you will hear a slight beep, indicating that the Ras
     If both battery level indicator lights are off, please charge the battery.
     When you need extended programming or debugging sessions, you can keep the Raspberry Pi operational by inserting the USB-C cable to charge the battery simultaneously.
 
-18650 Battery
------------------------------------
-
-.. image:: img/5pin_battery.jpg
-
-* VCC: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* Middle: To balance the voltage between the two cells and thus protect the battery.
-* GND: Negative battery terminal.
-
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. The connector is PH2.0-5P, which can be charged directly after being inserted into the shield.
-
-**Features**
-
-* Composition: Li-ion
-* Battery Capacity: 2000mAh, 14.8Wh
-* Battery Weight: 90.8g
-* Number of Cells: 2
-* Connector: PH2.0-5P
-* Over-discharge protection: 6.0V
