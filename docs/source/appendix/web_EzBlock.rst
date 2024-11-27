@@ -4,7 +4,7 @@
 ===========================================
 
 
-进入 `网页版 EzBlock <http://ezblock.com.cn/ezblock_studio/index.html?lang=zh-hans&distributor=mammoth>`_ 。
+进入 `网页版 EzBlock <http://ezblock.cc/ezblock-studio/?lang=zh-hans&distributor=sunfounder>`_ 。
 
 
 在首页点击左上角的产品按钮。
