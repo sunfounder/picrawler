@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und verbinden Sie sich mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Einblicken.
+    - **Exklusive Rabatte**: Genießen Sie besondere Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und saisonalen Angeboten teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu schaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _py_treasure:
 
-Treasure Hunt
+Schatzsuche
 ============================
 
-Arrange a maze in your room and place six different color cards in six corners. Then control PiCrawler to search for these color cards one by one!
+Richten Sie ein Labyrinth in Ihrem Raum ein und platzieren Sie sechs verschiedene Farbkarte in den sechs Ecken. Steuern Sie dann PiCrawler, um diese Farbkarte nacheinander zu suchen!
 
-.. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
+.. note:: Sie können die :download:`PDF Farbkarte <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` für die Farberkennung herunterladen und ausdrucken.
 
-
-**Run the Code**
+**Code ausführen**
 
 .. raw:: html
 
@@ -34,9 +33,9 @@ Arrange a maze in your room and place six different color cards in six corners. 
     sudo python3 treasure_hunt.py
 
 
-**View the Image**
+**Bild anzeigen**
 
-After the code runs, the terminal will display the following prompt:
+Nachdem der Code ausgeführt wurde, wird im Terminal die folgende Aufforderung angezeigt:
 
 .. code-block::
 
@@ -48,7 +47,7 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
+Nun können Sie ``http://<Ihre IP>:9000/mjpg`` im Browser eingeben, um das Video anzuzeigen, z. B. ``http://192.168.18.113:9000/mjpg``
 
 .. image:: img/display.png
 
@@ -100,7 +99,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 	    global key
 	    while True:
 	        key_temp = readchar.readkey()
-	        print('\r',end='')
+	        print('\r',end='') 
 	        with lock:
 	            key = key_temp.lower()
 	            if key == readchar.key.SPACE:
@@ -158,11 +157,11 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 	    main()
 
 
-**How it works?**
+**Wie funktioniert es?**
 
-In general, this project combines the knowledge points of :ref:`py_keyboard`, :ref:`py_vision` and :ref:`py_sound`.
+Dieses Projekt kombiniert im Allgemeinen die Wissensbereiche von :ref:`py_keyboard`, :ref:`py_vision` und :ref:`py_sound`.
 
-Its flow is shown in the figure below:
+Der Ablauf ist wie folgt dargestellt:
 
 .. image:: img/treasure_hunt-f.png
 

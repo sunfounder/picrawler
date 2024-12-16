@@ -1,45 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.  
 
-    **Why Join?**
+    **Warum beitreten?**  
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.  
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.  
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.  
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.  
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!  
 
-.. _ezb_twist:
+.. _ezb_twist:  
 
-Twist 
-==================
+Twist  
+==================  
 
-We already know how to make PiCrawler assume a specific pose, the next step is to combine the poses to form a continuous action.
+Wir wissen bereits, wie PiCrawler eine bestimmte Pose einnehmen kann. Der nächste Schritt ist, diese Posen zu kombinieren, um eine kontinuierliche Bewegung zu erzeugen.  
 
-Here, PiCrawler's four feet are up and down in twos, jumping with the music.
+Hier bewegen sich PiCrawlers vier Beine paarweise auf und ab und hüpfen im Takt der Musik.  
 
-**Program**
+**Programm**  
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Sie können das Programm gemäß der folgenden Abbildung schreiben. Bitte folgen Sie dem Tutorial: :ref:`ezblock:create_project_latest`.  
+    * Oder suchen Sie den gleichnamigen Code auf der **Beispiele**-Seite von EzBlock Studio und klicken Sie direkt auf **Ausführen** oder **Bearbeiten**.  
 
-.. image:: img/twist.png
-    :width: 800
+.. image:: img/twist.png  
+    :width: 800  
 
-**How it works?**
+**Wie funktioniert es?**  
 
-It uses two layers of for loops to make the ``new_step`` array produce continuous and regular changes, and at the same time, **do step** executes the posture to form a continuous action.
+Es verwendet zwei geschachtelte **for**-Schleifen, um das ``new_step``-Array kontinuierlich und regelmäßig zu verändern, während gleichzeitig der Block **do step** die Haltung ausführt, um eine fließende Bewegung zu erzeugen.  
 
-You can intuitively get the coordinate value array corresponding to each pose from :ref:`ezb_posture`.
+Sie können die Koordinatenwert-Arrays, die den einzelnen Posen entsprechen, direkt aus :ref:`ezb_posture` erhalten.  
 
-One thing you need to pay attention to is this coordinate matrix block:
+Ein Punkt, auf den Sie achten sollten, ist der Koordinatenmatrix-Block:  
 
-.. image:: img/sp210928_154257.png
-    
-It is essentially a two-dimensional array, which can be processed by blocks in the **List** category. Its structure is ``[[right front],[left front],[left rear],[right rear]]``.
-In other words, in this example, ``new_step#1`` corresponds to the right front; ``new_step#2`` corresponds to the left front; ``new_step#3`` corresponds to the left rear; and ``new_step#4`` corresponds to right rear.
+.. image:: img/sp210928_154257.png  
+
+Er ist im Wesentlichen ein zweidimensionales Array, das mit Blöcken aus der Kategorie **Liste** verarbeitet werden kann. Seine Struktur lautet ``[[vorn rechts],[vorn links],[hinten links],[hinten rechts]]``.  
+Das bedeutet, dass in diesem Beispiel ``new_step#1`` dem rechten Vorderbein entspricht, ``new_step#2`` dem linken Vorderbein, ``new_step#3`` dem linken Hinterbein und ``new_step#4`` dem rechten Hinterbein.  

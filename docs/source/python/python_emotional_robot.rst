@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und verbinden Sie sich mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Einblicken.
+    - **Exklusive Rabatte**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und festlichen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit für spannende Projekte? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _py_emotional:
 
-Emotional Robot
-===============
+Emotionaler Roboter
+=====================
 
-This example shows several interesting custom actions of PiCrawler.
+Dieses Beispiel zeigt mehrere interessante benutzerdefinierte Aktionen des PiCrawler.
 
-**Run the Code**
+**Code ausführen**
 
 .. raw:: html
 
@@ -34,7 +34,7 @@ This example shows several interesting custom actions of PiCrawler.
 **Code**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+    Sie können den folgenden Code **Ändern/Zurücksetzen/Kopieren/Ausführen/Beenden**. Bevor Sie dies tun, wechseln Sie bitte zum Quellcode-Pfad wie ``picrawler\examples``. Nach Änderungen können Sie den Code direkt ausführen, um die Effekte zu sehen.
 
 
 .. raw:: html
@@ -111,4 +111,3 @@ This example shows several interesting custom actions of PiCrawler.
 
     
  
-    

@@ -1,53 +1,48 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _ezb_pose:
 
-Pose
-===============
+Pose  
+===============  
 
+PiCrawler kann eine bestimmte Haltung einnehmen, indem ein Koordinatenarray geschrieben wird. Hier wird eine Haltung mit angehobenem rechten Hinterfuß eingenommen.  
 
-PiCrawler can assume a specific posture by writing a coordinate array. Here it assumes a raised right rear foot posture.
+.. image:: ../python/img/4cood.A.png  
 
-.. image:: ../python/img/4cood.A.png
+**Programm**  
 
+.. note::  
 
+    * Sie können das Programm gemäß der folgenden Abbildung schreiben. Bitte folgen Sie dem Tutorial: :ref:`ezblock:create_project_latest`.  
+    * Oder suchen Sie den gleichnamigen Code auf der **Beispiele**-Seite von EzBlock Studio und klicken Sie direkt auf **Ausführen** oder **Bearbeiten**.  
 
-**Program**
+.. image:: img/dostep.png  
 
-.. note::
+**Wie funktioniert es?**  
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+In diesem Code ist der Abschnitt **do step** besonders wichtig.  
 
-.. image:: img/dostep.png
+Er hat zwei Hauptfunktionen:  
 
+1. Er kann direkt mit den Befehlen **stand** (stehen) oder **sit** (sitzen) verwendet werden.  
+2. Er ermöglicht das Schreiben eines Arrays mit 4 Koordinatenwerten.  
 
-**How it works?**
+Jeder Fuß hat ein eigenes Koordinatensystem. Dies wird in der folgenden Abbildung dargestellt:  
 
-In this code, the code you need to pay attention to is this **do step**.
+.. image:: ../python/img/4cood.png  
 
-It has two uses:
+Sie müssen die Koordinaten jedes einzelnen Zehs individuell messen. Wie unten gezeigt:  
 
-One: It can directly use **stand** or **sit**.
-
-Second: It can also write an array of 4 coordinate values.
-
-Each foot has an independent coordinate system. As shown below:
-
-.. image:: ../python/img/4cood.png
-
-You need to measure the coordinates of each toe individually. As shown below:
-
-.. image:: ../python/img/1cood.png
+.. image:: ../python/img/1cood.png  

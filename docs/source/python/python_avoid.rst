@@ -1,128 +1,125 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.  
 
-    **Why Join?**
+    **Warum beitreten?**  
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.  
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.  
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.  
+    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Gewinnspielen und saisonalen Aktionen teil.  
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!  
 
-.. _py_avoid:
+.. _py_avoid:  
 
-Obstacle Avoidance
+Hindernisvermeidung  
 =====================
 
-In this project, picrawler will use an ultrasonic module to detect obstacles in front. 
-When PiCrawler detects an obstacle, it will send a signal and look for another direction to move forward.
+In diesem Projekt verwendet der PiCrawler ein Ultraschallmodul, um Hindernisse vor ihm zu erkennen.  
+Wenn der PiCrawler ein Hindernis erkennt, sendet er ein Signal und sucht nach einer anderen Richtung, um weiterzugehen.  
 
-.. image:: img/avoid1.png
+.. image:: img/avoid1.png  
 
-**Run the Code**
+**Code ausführen**  
 
-.. raw:: html
+.. raw:: html  
 
-    <run></run>
+    <run></run>  
 
-.. code-block::
+.. code-block::  
 
-    cd ~/picrawler/examples
-    sudo python3 avoid.py
+    cd ~/picrawler/examples  
+    sudo python3 avoid.py  
 
-After the code runs, PiCrawler will walk forward. If it detects that the distance of the obstacle ahead is less than 10cm, it will stop and sound a warning, then turn left and stop. If there is no obstacle in the direction after turning left or the obstacle distance is greater than 10, it will continue to move forward.
+Nach dem Start des Codes wird der PiCrawler vorwärts gehen. Wenn er feststellt, dass der Abstand zum Hindernis weniger als 10 cm beträgt, stoppt er, gibt einen Warnton aus, dreht sich nach links und hält an. Wenn in der neuen Richtung kein Hindernis ist oder der Abstand größer als 10 cm ist, bewegt er sich weiter vorwärts.  
 
-
-
-**Code**
+**Code**  
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+    Sie können den unten stehenden Code **bearbeiten/zurücksetzen/kopieren/ausführen/stoppen**. Gehen Sie dazu zunächst in das Verzeichnis des Quellcodes, z. B. ``picrawler\examples``. Nach der Bearbeitung können Sie den Code direkt ausführen, um den Effekt zu sehen.  
 
-.. raw:: html
+.. raw:: html  
 
-    <run></run>
+    <run></run>  
 
-.. code-block:: python
+.. code-block:: python  
 
-    from picrawler import Picrawler
-    from robot_hat import TTS, Music
-    from robot_hat import Ultrasonic
-    from robot_hat import Pin
-    import time
+    from picrawler import Picrawler  
+    from robot_hat import TTS, Music  
+    from robot_hat import Ultrasonic  
+    from robot_hat import Pin  
+    import time  
 
-    tts = TTS()
-    music = Music()
+    tts = TTS()  
+    music = Music()  
 
-    crawler = Picrawler() 
+    crawler = Picrawler()  
     sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
-    music.music_set_volume(100)
+    music.music_set_volume(100)  
 
-    alert_distance = 15
-    speed = 80
+    alert_distance = 15  
+    speed = 80  
 
-    def main():
-        distance = sonar.read()
-        print(distance)
-        if distance < 0:
-            pass
-        elif distance <= alert_distance:
-            try:
-                music.sound_play_threading('./sounds/sign.wav', volume=100)
-            except Exception as e:
-                print(e)
+    def main():  
+        distance = sonar.read()  
+        print(distance)  
+        if distance < 0:  
+            pass  
+        elif distance <= alert_distance:  
+            try:  
+                music.sound_play_threading('./sounds/sign.wav', volume=100)  
+            except Exception as e:  
+                print(e)  
             crawler.do_action('turn left angle',3,speed)
-            time.sleep(0.2)
+            time.sleep(0.2)  
         else :
             crawler.do_action('forward', 1,speed)
-            time.sleep(0.2)
+            time.sleep(0.2)  
 
-    if __name__ == "__main__":
-        while True:
-            main()
+    if __name__ == "__main__":  
+        while True:  
+            main()  
 
-**How it works?**
+**Funktionsweise**  
 
-You can get the distance by importing the ``Ultrasonic`` class.
+Sie können den Abstand ermitteln, indem Sie die Klasse ``Ultrasonic`` importieren.  
 
-.. code-block:: python
+.. code-block:: python  
 
-    from robot_hat import Ultrasonic
+    from robot_hat import Ultrasonic  
 
-Then initialize the ultrasonic pins.
+Dann initialisieren Sie die Ultraschall-Pins.  
 
-.. code-block:: python
+.. code-block:: python  
 
     sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
 
+Hier ist das Hauptprogramm.  
 
-Here is the main program.
+* Lesen Sie die vom Ultraschallmodul erkannten ``Abstände`` und filtern Sie Werte kleiner als 0 heraus (wenn das Ultraschallmodul zu weit vom Hindernis entfernt ist oder die Daten nicht korrekt gelesen werden können, erscheint ``distance < 0``).  
+* Wenn der ``Abstand`` kleiner oder gleich dem ``alert_distance`` (dem zuvor festgelegten Schwellenwert, der 10 beträgt) ist, wird der Soundeffekt ``sign.wav`` abgespielt. Der PiCrawler führt ``turn left angle`` aus.  
+* Wenn der ``Abstand`` größer als ``alert_distance`` ist, bewegt sich der PiCrawler ``vorwärts``.  
 
-* Read the ``distance`` detected by ultrasonic module and filter out the values less than 0 (When the ultrasonic module is too far from the obstacle or cannot read the data correctly, ``distance<0`` will appear).
-* When the ``distance`` is less than or equal to  ``alert_distance`` (the threshold value set earlier, which is 10), play the sound effect ``sign.wav``. PiCrawler does ``turn left angle`` .
-* When the ``distance`` is greater than ``alert_distance``, PiCrawler will move ``forward``.
+.. code-block:: python  
 
-.. code-block:: python
-
-    distance = sonar.read()
-    print(distance)
-    if distance < 0:
-        pass
-    elif distance <= alert_distance:
-        try:
-            music.sound_play_threading('./sounds/sign.wav', volume=100)
-        except Exception as e:
-            print(e)
+    distance = sonar.read()  
+    print(distance)  
+    if distance < 0:  
+        pass  
+    elif distance <= alert_distance:  
+        try:  
+            music.sound_play_threading('./sounds/sign.wav', volume=100)  
+        except Exception as e:  
+            print(e)  
         crawler.do_action('turn left angle',3,speed)
-        time.sleep(0.2)
+        time.sleep(0.2)  
     else :
         crawler.do_action('forward', 1,speed)
-        time.sleep(0.2)
+        time.sleep(0.2)  
 
 
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
+    Sie können verschiedene Soundeffekte oder Musikdateien im Ordner ``musics`` oder ``sounds`` über :ref:`filezilla` hinzufügen.  

@@ -1,61 +1,57 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.  
 
-    **Why Join?**
+    **Warum beitreten?**  
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.  
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.  
+    - **Spezielle Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.  
+    - **Festliche Aktionen und Verlosungen**: Nehmen Sie an Gewinnspielen und saisonalen Aktionen teil.  
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!  
 
-7. Servo Adjust (Important)
+7. Servoanpassung (Wichtig)  
 ===================================
 
 .. note::
 
-    If your Robot HAT is version V44 or higher (with the speaker located at the top of the board) and includes an onboard **Zero** button, you can skip this step and simply press the **Zero** button to activate the servo zeroing program.
+    Wenn Ihre Robot HAT-Version V44 oder höher ist (mit einem Lautsprecher oben auf der Platine) und einen eingebauten **Zero**-Knopf enthält, können Sie diesen Schritt überspringen und einfach den **Zero**-Knopf drücken, um das Servo-Nullstellungsprogramm zu aktivieren.  
 
-    .. image:: img/robot_hat_v44.png
-        :width: 500
-        :align: center
-
-
-The angle range of the servo is -90~90, but the angle set at the factory is random, maybe 0°, maybe 45°; if we assemble it with such an angle directly, it will lead to a chaotic state after the robot runs the code, or worse, it will cause the servo to block and burn out.
-
-So here we need to set all the servo angles to 0° and then install them, so that the servo angle is in the middle, no matter which direction to turn.
-
-#. To ensure that the servo has been properly set to 0°, first insert the servo arm into the servo shaft and then gently rotate the rocker arm to a different angle. This servo arm is just to allow you to clearly see that the servo is rotating.
-
-    .. image:: img/servo_arm.png
-        :align: center
+    .. image:: img/robot_hat_v44.png  
+        :width: 500  
+        :align: center  
 
 
-#. Now, run ``servo_zeroing.py`` in the ``examples/`` folder.
+Der Winkelbereich des Servos liegt zwischen -90° und 90°, jedoch ist der ab Werk eingestellte Winkel zufällig, möglicherweise 0° oder 45°. Wenn wir das Servo mit einem solchen Winkel direkt montieren, führt dies zu einem chaotischen Verhalten des Roboters beim Ausführen des Codes oder im schlimmsten Fall zum Blockieren und Durchbrennen des Servos.  
 
-    .. raw:: html
+Daher müssen wir alle Servowinkel auf 0° einstellen, bevor sie installiert werden, sodass der Servowinkel mittig ist, unabhängig davon, in welche Richtung er sich dreht.  
 
-        <run></run>
+#. Um sicherzustellen, dass das Servo korrekt auf 0° eingestellt ist, stecken Sie zunächst den Servoarm auf die Servowelle und drehen Sie den Hebelarm vorsichtig in eine andere Position. Dieser Servoarm dient lediglich dazu, klar zu sehen, dass sich das Servo dreht.  
 
-    .. code-block::
+    .. image:: img/servo_arm.png  
+        :align: center  
 
-        cd ~/picrawler/examples
-        sudo python3 servo_zeroing.py
+#. Führen Sie nun ``servo_zeroing.py`` im Ordner ``examples/`` aus.  
 
-#. Next, plug the servo cable into the P11 port as follows, at the same time you will see the servo arm rotate to a position(This is the 0° position, which is a random location and may not be vertical or parallel.).
+    .. raw:: html  
 
-    .. image:: img/servo_pin11.jpg
+        <run></run>  
 
+    .. code-block::  
 
-#. Now, remove the servo arm, ensuring the servo wire remains connected, and do not turn off the power. Then continue the assembly following the paper instructions.
+        cd ~/picrawler/examples  
+        sudo python3 servo_zeroing.py  
 
-.. note::
+#. Schließen Sie anschließend das Servokabel an den P11-Port an, wie unten gezeigt. Gleichzeitig sehen Sie, wie sich der Servoarm in eine Position dreht (dies ist die 0°-Position, die zufällig sein kann und möglicherweise nicht vertikal oder parallel ist).  
 
-    * Do not unplug this servo cable before fixing it with the servo screw, you can unplug it after fixing it.
-    * Do not rotate the servo while it is powered on to avoid damage; if the servo shaft is not inserted at the right angle, pull the servo out and reinsert it.
-    * Before assembling each servo, you need to plug the servo cable into PWM pin and turn on the power to set its angle to 0°.
+    .. image:: img/servo_pin11.jpg  
 
+#. Entfernen Sie nun den Servoarm, während das Servokabel verbunden bleibt, und schalten Sie die Stromversorgung nicht aus. Fahren Sie dann mit der Montage gemäß der gedruckten Anleitung fort.  
 
+.. note:: 
+
+    * Ziehen Sie das Servokabel nicht ab, bevor das Servo mit der Schraube befestigt ist. Sie können es erst danach abziehen.  
+    * Drehen Sie das Servo nicht, während es eingeschaltet ist, um Schäden zu vermeiden. Wenn die Servowelle nicht im richtigen Winkel eingeführt wurde, ziehen Sie das Servo heraus und setzen Sie es erneut ein.  
+    * Vor der Montage jedes Servos müssen Sie das Servokabel in den PWM-Pin einstecken und die Stromversorgung einschalten, um den Winkel auf 0° einzustellen.  

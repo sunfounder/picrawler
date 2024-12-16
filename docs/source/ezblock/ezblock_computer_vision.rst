@@ -1,60 +1,56 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _ezb_vision:
 
-Computer Vision
-=============================
+Computer Vision  
+=============================  
 
-This project will officially enter the field of computer vision!
-
+In diesem Projekt betreten wir offiziell das Feld der Computer Vision!  
 
 .. note:: 
-    
-    You can read :ref:`ezblock:video_latest`. Come and carry out this project smoothly.
 
+    Lesen Sie :ref:`ezblock:video_latest`, um dieses Projekt reibungslos umzusetzen.  
 
-**Program**
+**Programm**  
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Sie können das Programm gemäß der folgenden Abbildung schreiben. Bitte folgen Sie dem Tutorial: :ref:`ezblock:create_project_latest`.  
+    * Oder suchen Sie den gleichnamigen Code auf der **Beispiele**-Seite von EzBlock Studio und klicken Sie direkt auf **Ausführen** oder **Bearbeiten**.  
 
+.. image:: img/sp210928_165255.png  
+    :width: 800  
 
-.. image:: img/sp210928_165255.png
-    :width: 800
+Wechseln Sie zur Schnittstelle für die Fernsteuerung, und Sie werden die folgenden Widgets sehen.  
 
-Switch to the Remote Control interface, and you will see the following widgets.
+.. image:: img/sp210928_165642.png  
 
-.. image:: img/sp210928_165642.png
+Nach dem Start des Programms können Sie den Schieberegler verwenden, um die Gesichtserkennung ein- oder auszuschalten. Mit dem Steuerkreuz (D-Pad) können Sie die Farbe für die Erkennung auswählen, und mit einem Klick auf die Schaltfläche wird das Erkennungsergebnis angezeigt.  
 
-After the program is running, you can switch the slider widget to turn on/off the face detection; click the D-Pad to select the color of the detection; click the button to print the detection result.
+**Wie funktioniert es?**  
 
-**How it works?**
+.. image:: img/sp210928_170920.png  
 
-.. image:: img/sp210928_170920.png
+Dieser Block wird verwendet, um das Kameramodul zu aktivieren.  
 
-This block is used to enable the camera module.
+.. image:: img/sp210928_171021.png  
+    :width: 400  
 
-.. image:: img/sp210928_171021.png
-    :width: 400
+Diese beiden Blöcke werden verwendet, um die Gesichtserkennungs- bzw. Farberkennungsfunktion zu aktivieren.  
 
-These two blocks are used to enable the face detection/color detection function.
+.. image:: img/sp210928_171125.png  
+    :width: 400  
 
-.. image:: img/sp210928_171125.png
-    :width: 400
-
-These two blocks are used to output information. The detection result has five output values, namely coordinate x value, coordinate y value, width, height, and number.
-
+Diese beiden Blöcke werden verwendet, um Informationen auszugeben. Das Erkennungsergebnis liefert fünf Ausgabewerte: den x-Koordinatenwert, den y-Koordinatenwert, die Breite, die Höhe und die Anzahl.  

@@ -1,26 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und verbinden Sie sich mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Unterstützung unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühen Zugang zu neuen Produktankündigungen und Einblicken.
+    - **Exklusive Rabatte**: Genießen Sie besondere Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und saisonalen Angeboten teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu schaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _py_record:
 
-Record New Step
-=================
+Neuen Schritt aufnehmen
+==============================
 
-We use the keyboard to control PiCrawler to make several poses in turn, and record these poses. Replay them later.
+In diesem Projekt verwenden wir die Tastatur, um PiCrawler verschiedene Posen ausführen zu lassen und diese Posen anschließend aufzuzeichnen. Diese können später abgespielt werden.
 
-
-**Run the Code**
+**Code ausführen**
 
 .. raw:: html
 
@@ -31,14 +30,13 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
     cd ~/picrawler/examples
     sudo python3 record_new_step_by_keyboard.py
 
-After the code runs, please operate according to the prompt that pops up in the terminal.
+Nachdem der Code ausgeführt wurde, folgen Sie den Anweisungen, die im Terminal angezeigt werden.
 
-* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
-* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``space`` to print all coordinate values.
-* Press ``p`` to have PiCrawler replay the recorded action.
-* Press ``esc`` to exit.
-
+* Drücken Sie ``1234``, um die Beine einzeln auszuwählen: ``1``: rechtes Vorderbein, ``2``: linkes Vorderbein, ``3``: linkes Hinterbein, ``4``: rechtes Hinterbein
+* Drücken Sie ``w``, ``a``, ``s``, ``d``, ``r`` und ``f``, um die Koordinatenwerte von PiCrawler langsam zu steuern.
+* Drücken Sie ``Leertaste``, um alle Koordinatenwerte auszugeben.
+* Drücken Sie ``p``, um die aufgezeichnete Aktion abzuspielen.
+* Drücken Sie ``esc``, um das Programm zu beenden.
 
 **Code**
 
@@ -66,22 +64,21 @@ After the code runs, please operate according to the prompt that pops up in the 
 
 
     manual = '''
-    Press keys on keyboard to control!
+    Drücken Sie Tasten auf der Tastatur zur Steuerung!
         w: Y++
         a: X--
         s: Y--
         d: X++
         r: Z++
         f: Z--
-        1: Select right front leg
-        2: Select left front leg
-        3: Select left rear leg
-        4: Select right rear leg
-        Space: Print all leg coodinate & Save this step
-        p: Play all saved step
-        esc: Quit
+        1: Wählen Sie das rechte Vorderbein aus
+        2: Wählen Sie das linke Vorderbein aus
+        3: Wählen Sie das linke Hinterbein aus
+        4: Wählen Sie das rechte Hinterbein aus
+        Leertaste: Alle Bein-Koordinaten ausgeben & Schritt speichern
+        p: Alle gespeicherten Schritte abspielen
+        esc: Beenden
     '''
-
 
     new_step=[]
 
@@ -136,7 +133,7 @@ After the code runs, please operate according to the prompt that pops up in the 
                 save_new_step()
             elif 'p' == key:
                 play_all_new_step()
-            elif chr(27) == key:# 27 for ESC
+            elif chr(27) == key:  # 27 für ESC
                 break    
 
             sleep(0.05)
@@ -147,11 +144,11 @@ After the code runs, please operate according to the prompt that pops up in the 
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**Wie funktioniert es?**
 
-This project was born out of :ref:`py_posture`. Added recording and replay functions.
+Dieses Projekt basiert auf :ref:`py_posture` und fügt die Funktionen zur Aufnahme und Wiedergabe hinzu.
 
-The recording function is implemented by the following code.
+Die Aufnahmefunktion wird mit dem folgenden Code realisiert.
 
 .. code-block:: python
 
@@ -160,12 +157,10 @@ The recording function is implemented by the following code.
     def save_new_step():
         new_step.append(copy.deepcopy(crawler.current_step_all_leg_value()))
         print(new_step)
-
 .. note:: 
-    The assignment here needs to use the `Deep Copy <https://docs.python.org/3/library/copy.html>`_ function, otherwise the ``new_step`` will not get a new array object when appending.
+    Die Zuweisung hier benötigt die Verwendung der `Deep Copy <https://docs.python.org/3/library/copy.html>`_-Funktion, da sonst die ``new_step``-Liste nicht ein neues Array-Objekt beim Anhängen erhält.
 
-
-The replay function is implemented by the following code.
+Die Wiedergabefunktion wird mit folgendem Code umgesetzt.
 
 .. code-block:: python
 

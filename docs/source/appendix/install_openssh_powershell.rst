@@ -1,70 +1,70 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _openssh_powershell:
 
-Install OpenSSH via Powershell
-==================================
+Installation von OpenSSH über PowerShell  
+===========================================
 
-When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
+Wenn Sie versuchen, eine Verbindung zu Ihrem Raspberry Pi mit dem Befehl ``ssh <Benutzername>@<Hostname>.local`` (oder ``ssh <Benutzername>@<IP-Adresse>``) herzustellen, aber die folgende Fehlermeldung erscheint:  
 
-    .. code-block::
+    .. code-block::  
 
-        ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
-        spelling of the name, or if a path was included, verify that the path is correct and try again.
+        ssh: Der Begriff 'ssh' ist nicht als Name eines Cmdlets, einer Funktion, einer Skriptdatei oder eines ausführbaren Programms erkannt. Überprüfen Sie  
+        die Schreibweise des Namens, oder wenn ein Pfad enthalten ist, stellen Sie sicher, dass der Pfad korrekt ist, und versuchen Sie es erneut.  
 
 
-It means your computer system is too old and does not have `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ pre-installed, you need to follow the tutorial below to install it manually.
+Dies bedeutet, dass Ihr Betriebssystem zu alt ist und `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ nicht vorinstalliert ist. Sie müssen es manuell installieren, indem Sie der folgenden Anleitung folgen.  
 
-#. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
+#. Geben Sie ``powershell`` in das Suchfeld auf Ihrem Windows-Desktop ein, klicken Sie mit der rechten Maustaste auf ``Windows PowerShell`` und wählen Sie im angezeigten Menü ``Als Administrator ausführen`` aus.  
 
-    .. image:: img/powershell_ssh.png
-        :align: center
+    .. image:: img/powershell_ssh.png  
+        :align: center  
 
-#. Use the following command to install ``OpenSSH.Client``.
+#. Verwenden Sie den folgenden Befehl, um ``OpenSSH.Client`` zu installieren.  
 
-    .. code-block::
+    .. code-block::  
 
-        Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+        Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0  
 
-#. After installation, the following output will be returned.
+#. Nach der Installation wird die folgende Ausgabe angezeigt.  
 
-    .. code-block::
+    .. code-block::  
 
-        Path          :
-        Online        : True
-        RestartNeeded : False
+        Path          :  
+        Online        : True  
+        RestartNeeded : False  
 
-#. Verify the installation by using the following command.
+#. Überprüfen Sie die Installation mit dem folgenden Befehl.  
 
-    .. code-block::
+    .. code-block::  
 
-        Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+        Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'  
 
-#. It now tells you that ``OpenSSH.Client`` has been successfully installed.
+#. Es wird nun angezeigt, dass ``OpenSSH.Client`` erfolgreich installiert wurde.  
 
-    .. code-block::
+    .. code-block::  
 
-        Name  : OpenSSH.Client~~~~0.0.1.0
-        State : Installed
+        Name  : OpenSSH.Client~~~~0.0.1.0  
+        State : Installed  
 
-        Name  : OpenSSH.Server~~~~0.0.1.0
-        State : NotPresent
+        Name  : OpenSSH.Server~~~~0.0.1.0  
+        State : NotPresent  
 
     .. warning:: 
-        If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like PuTTY.
+        Wenn die obige Anzeige nicht erscheint, bedeutet dies, dass Ihr Windows-System weiterhin zu alt ist. In diesem Fall wird empfohlen, ein Drittanbieter-SSH-Tool wie PuTTY zu installieren.  
 
-#. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
+#. Starten Sie PowerShell neu und führen Sie es erneut als Administrator aus. Ab diesem Punkt können Sie sich mit dem Befehl ``ssh`` bei Ihrem Raspberry Pi anmelden. Sie werden aufgefordert, das zuvor eingerichtete Passwort einzugeben.  
 
-    .. image:: img/powershell_login.png
+    .. image:: img/powershell_login.png  

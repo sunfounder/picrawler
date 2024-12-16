@@ -1,46 +1,46 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
-Servo Zeroing for Assembly
-=================================
+Servo-Nullstellung für die Montage  
+=====================================
 
-Before assembling the servo, 
-the angle needs to be set to zero. 
-This is because the servo motor has a limited range of motion, 
-setting the angle to zero degrees ensures that the servo is in its 
-initial position and does not exceed its range of motion when the servo is powered on. 
-If the servo is not set to zero degrees prior to assembly, 
-it may attempt to exceed its range of motion when powered, 
-potentially damaging the servo or the mechanical system it is connected to. 
-Therefore, setting the angle to zero is an important step to ensure the 
-safe and normal operation of the servo motor.
+Vor der Montage des Servos muss der Winkel auf Null eingestellt werden.  
+Dies liegt daran, dass der Servomotor einen begrenzten Bewegungsbereich hat.  
+Durch das Einstellen des Winkels auf null Grad wird sichergestellt, dass sich 
+der Servo in seiner Ausgangsposition befindet und den Bewegungsbereich nicht 
+überschreitet, wenn er eingeschaltet wird.  
+Falls der Servo vor der Montage nicht auf null Grad eingestellt wird, könnte er 
+beim Einschalten versuchen, seinen Bewegungsbereich zu überschreiten, was 
+möglicherweise den Servo oder das angeschlossene mechanische System beschädigen könnte.  
+Daher ist die Einstellung des Winkels auf Null ein wichtiger Schritt, um den sicheren 
+und normalen Betrieb des Servomotors zu gewährleisten.  
 
 
-For Python User
+Für Python-Nutzer  
 ------------------------
 
-Please refer to :ref:`quick_guide_python` to complete the 
-installation of the Raspberry Pi OS and adjust the angle of the servos.
+Bitte folgen Sie :ref:`quick_guide_python`, um die Installation des Raspberry Pi OS 
+abzuschließen und die Winkel der Servos anzupassen.  
 
-
-For Ezblock User
+Für Ezblock-Nutzer  
 -----------------------
 
-.. note::
+.. note:: 
 
-    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
+    Falls Sie einen Raspberry Pi 5 verwenden, wird unsere grafische Programmiersoftware EzBlock nicht unterstützt.  
 
-After you have installed the ezblock system, 
-the P11 pin can be used to adjust the servo. 
-Please refer to :ref:`ezb_servo_adjust` for details.
+
+Nach der Installation des Ezblock-Systems kann der P11-Pin zur 
+Anpassung des Servos verwendet werden.  
+Bitte folgen Sie :ref:`ezb_servo_adjust` für weitere Details.  

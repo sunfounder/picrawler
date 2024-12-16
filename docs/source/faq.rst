@@ -1,44 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
-FAQ
-===========================
+FAQ  
+===========================  
 
-Q1: After installing Ezblock OS, the servo can't turn to 0°?
--------------------------------------------------------------------
+F1: Nach der Installation von Ezblock OS kann sich der Servo nicht auf 0° einstellen?  
+------------------------------------------------------------------------------------------
 
-1) Check if the servo cable is properly connected and if the Robot HAT power is on.
-2) Press Reset button.
-3) If you have already run the program in Ezblock Studio, the custom program for P11 is no longer available. You can refer to the picture below to manually write a program in Ezblock Studio to set the servo angle to 0.
+1) Überprüfen Sie, ob das Servokabel ordnungsgemäß angeschlossen ist und ob die Stromversorgung des Robot HAT eingeschaltet ist.  
+2) Drücken Sie die Reset-Taste.  
+3) Falls Sie bereits ein Programm in Ezblock Studio ausgeführt haben, ist das benutzerdefinierte Programm für P11 nicht mehr verfügbar. Sie können das untenstehende Bild verwenden, um in Ezblock Studio ein eigenes Programm zu schreiben, das den Servowinkel auf 0 einstellt.  
 
-.. image:: img/faq_servo.png
+.. image:: img/faq_servo.png  
 
-Q2: When using VNC, I am prompted that the desktop cannot be displayed at the moment?
---------------------------------------------------------------------------------------------
+F2: Bei der Nutzung von VNC erhalte ich die Meldung, dass der Desktop momentan nicht angezeigt werden kann?  
+-------------------------------------------------------------------------------------------------------------------
 
-In Terminal, type ``sudo raspi-config`` to change the resolution.
+Geben Sie im Terminal ``sudo raspi-config`` ein, um die Bildschirmauflösung zu ändern.  
 
-Q3: Why does the servo sometimes return to the middle position for no reason?
+F3: Warum kehrt der Servo manchmal grundlos in die Mittelstellung zurück?  
 ------------------------------------------------------------------------------------
 
-When the servo is blocked by a structure or other object and cannot reach its intended position, the servo will enter the power-off protection mode in order to prevent the servo from being burned out by too much current.
+Wenn der Servo durch eine Struktur oder ein anderes Objekt blockiert ist und seine gewünschte Position nicht erreichen kann, wechselt er in den Stromausfallschutzmodus, um ein Durchbrennen durch zu hohen Strom zu verhindern.  
 
-After a period of power failure, if no PWM signal is given to the servo, the servo will automatically return to its original position.
+Nach einer Phase ohne Stromversorgung kehrt der Servo automatisch in seine ursprüngliche Position zurück, sofern kein PWM-Signal an den Servo gesendet wird.  
 
-Q4: About the Robot HAT Detailed Tutorial?
------------------------------------------------------
+F4: Wo finde ich eine detaillierte Anleitung zum Robot HAT?  
+-----------------------------------------------------------------
 
-You can find a comprehensive tutorial about the Robot HAT here, including information on its hardware and API.
+Eine umfassende Anleitung zum Robot HAT, einschließlich Informationen zu seiner Hardware und API, finden Sie hier:  
 
-* |link_robot_hat|
+* |link_robot_hat|  

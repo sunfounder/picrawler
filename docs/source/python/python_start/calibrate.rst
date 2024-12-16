@@ -1,58 +1,54 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.  
 
-    **Why Join?**
+    **Warum beitreten?**  
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.  
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.  
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.  
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.  
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!  
 
-Calibrate the PiCrawler
+Kalibrierung des PiCrawler  
 =============================
 
-Due to possible deviations during PiCrawler installation or limitations of the servos themselves, some servo angles may be slightly tilted, so you can calibrate them.
+Aufgrund möglicher Abweichungen während der Installation des PiCrawler oder Einschränkungen der Servos können einige Servowinkel leicht geneigt sein. Daher können Sie diese kalibrieren.  
 
-Of course you can skip this chapter if you think the assembly is perfect and doesn't require calibration.
-
-
-The specific steps are as follows:
-
-1. Take out the assembly leaflet, turn it to the last page, and lay it flat on the table. Then place the PiCrawler as shown below, aligning its bottom with the outline on the calibration chart.
-
-    .. image:: img/calibration2.png
-
-#. Run the ``calibration.py``.
-
-    .. raw:: html
-
-        <run></run>
-
-    .. code-block::
-
-        cd ~/picrawler/examples/calibration
-        sudo python3 calibration.py
-        
-    After running the above code, you will see the following interface displayed in the terminal.
-
-    .. image:: img/calibration1.png
+Selbstverständlich können Sie dieses Kapitel überspringen, wenn Sie der Meinung sind, dass die Montage perfekt ist und keine Kalibrierung erfordert.  
 
 
-#. Press ``2`` and ``3`` keys respectively to choose left 2 legs，then press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` keys to move them to the calibration point.
+Die spezifischen Schritte sind wie folgt:  
 
-    .. image:: img/calibration3.png
+1. Nehmen Sie die Montageanleitung, schlagen Sie die letzte Seite auf und legen Sie sie flach auf den Tisch. Platzieren Sie dann den PiCrawler wie unten gezeigt, wobei sein Boden mit der Umrisslinie auf der Kalibrierungskarte ausgerichtet ist.  
 
-#. Now, change the calibration paper to the right and press the ``1`` and ``4`` keys to choose right 2 legs, then press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` keys to move them to the calibration point.
+    .. image:: img/calibration2.png  
 
-    .. image:: img/calibration4.png
+#. Führen Sie die Datei ``calibration.py`` aus.  
 
-#. After the calibration is completed, press the ``space`` key to save, you will be prompted to enter ``Y`` to confirm, and then ``ctrl+c`` to exit the program to complete the calibration.
+    .. raw:: html  
 
-    .. image:: img/calibration5.png
+        <run></run>  
 
+    .. code-block::  
 
+        cd ~/picrawler/examples/calibration  
+        sudo python3 calibration.py  
 
+    Nach der Ausführung des obigen Codes wird im Terminal die folgende Oberfläche angezeigt.  
+
+    .. image:: img/calibration1.png  
+
+#. Drücken Sie die Tasten ``2`` und ``3``, um die linken zwei Beine auszuwählen. Drücken Sie anschließend die Tasten ``w``, ``a``, ``s``, ``d``, ``r`` und ``f``, um sie zum Kalibrierungspunkt zu bewegen.  
+
+    .. image:: img/calibration3.png  
+
+#. Wechseln Sie nun das Kalibrierungspapier nach rechts und drücken Sie die Tasten ``1`` und ``4``, um die rechten zwei Beine auszuwählen. Drücken Sie anschließend die Tasten ``w``, ``a``, ``s``, ``d``, ``r`` und ``f``, um sie zum Kalibrierungspunkt zu bewegen.  
+
+    .. image:: img/calibration4.png  
+
+#. Nach Abschluss der Kalibrierung drücken Sie die Taste ``space``, um die Einstellungen zu speichern. Sie werden aufgefordert, ``Y`` einzugeben, um zu bestätigen, und dann ``ctrl+c``, um das Programm zu beenden und die Kalibrierung abzuschließen.  
+
+    .. image:: img/calibration5.png  

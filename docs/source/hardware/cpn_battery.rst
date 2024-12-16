@@ -1,54 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.  
 
-    **Why Join?**
+    **Warum beitreten?**  
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.  
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.  
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.  
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.  
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!  
 
+3-Pin-Batterie  
+================
 
-3-pin Battery
-=================
+.. image:: img/3pin_battery.jpg  
 
-.. image:: img/3pin_battery.jpg
+* **VCC**: Positiver Batterieanschluss. Hier gibt es zwei VCC- und GND-Sätze, um den Strom zu erhöhen und den Widerstand zu reduzieren.  
+* **Middle**: Zum Ausgleichen der Spannung zwischen den beiden Zellen, um die Batterie zu schützen.  
+* **GND**: Negativer Batterieanschluss.  
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+Dies ist ein von SunFounder maßgefertigtes Batteriepack, bestehend aus zwei 18650-Batterien mit einer Kapazität von 2000mAh. Der Anschluss ist XH2.54 3P, der direkt in den Robot HAT eingesteckt und geladen werden kann.  
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. The connector is XH2.54 3P, which can be charged directly after being inserted into the Robot HAT.
+**Eigenschaften**  
 
-**Features**
+* Zusammensetzung: Li-ion  
+* Batteriekapazität: 2000mAh, 14.8Wh  
+* Batteriegewicht: 90.8g  
+* Anzahl der Zellen: 2  
+* Anschluss: XH2.54 3P  
+* Überentladungsschutz: 6.0V  
 
-* Composition: Li-ion
-* Battery Capacity: 2000mAh, 14.8Wh
-* Battery Weight: 90.8g
-* Number of Cells: 2
-* Connector: XH2.54 3P
-* Over-discharge protection: 6.0V
-
-5-pin Battery
+5-Pin-Batterie  
 -----------------------------------
 
-.. image:: img/5pin_battery.jpg
+.. image:: img/5pin_battery.jpg  
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC**: Positiver Batterieanschluss. Hier gibt es zwei VCC- und GND-Sätze, um den Strom zu erhöhen und den Widerstand zu reduzieren.  
+* **Middle**: Zum Ausgleichen der Spannung zwischen den beiden Zellen, um die Batterie zu schützen.  
+* **GND**: Negativer Batterieanschluss.  
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. The connector is PH2.0-5P, which can be charged directly after being inserted into the shield.
+Dies ist ein von SunFounder maßgefertigtes Batteriepack, bestehend aus zwei 18650-Batterien mit einer Kapazität von 2000mAh. Der Anschluss ist PH2.0-5P, der direkt in das Shield eingesteckt und geladen werden kann.  
 
-**Features**
+**Eigenschaften**  
 
-* **Composition**: Li-ion
-* **Battery Capacity**: 2000mAh, 14.8Wh
-* **Battery Weight**: 90.8g
-* **Number of Cells**: 2
-* **Connector**: PH2.0-5P
-* **Over-discharge protection**: 6.0V
+* **Zusammensetzung**: Li-Ion  
+* **Batteriekapazität**: 2000mAh, 14,8Wh  
+* **Batteriegewicht**: 90,8g  
+* **Anzahl der Zellen**: 2  
+* **Anschluss**: PH2.0-5P  
+* **Überentladungsschutz**: 6,0V  

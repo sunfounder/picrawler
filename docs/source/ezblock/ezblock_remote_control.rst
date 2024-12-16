@@ -1,72 +1,69 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.  
 
-    **Why Join?**
+    **Warum beitreten?**  
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.  
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.  
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.  
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.  
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!  
 
-.. _ezb_remote:
+.. _ezb_remote:  
 
-Remote Control
+Fernsteuerung  
 =========================
 
+In diesem Projekt lernen wir, wie man PiCrawler fernsteuert.  
+Sie können PiCrawler steuern, um vorwärts, rückwärts, nach links und nach rechts zu bewegen.  
 
-In this project, we will learn how to remote control the PiCrawler. 
-You can control the PiCrawler to move forward, backward, left, and right.
-
-.. image:: img/remote_control.png
+.. image:: img/remote_control.png  
 
 .. note:: 
 
-    You can refer to :ref:`ezblock:remote_control_latest`. Come and carry out this project smoothly.
+    Sie können :ref:`ezblock:remote_control_latest` konsultieren, um dieses Projekt erfolgreich durchzuführen.  
 
-**Program**
+**Programm**  
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Sie können das Programm gemäß der folgenden Abbildung schreiben. Bitte folgen Sie dem Tutorial: :ref:`ezblock:create_project_latest`.  
+    * Oder suchen Sie den gleichnamigen Code auf der **Beispiele**-Seite von EzBlock Studio und klicken Sie direkt auf **Ausführen** oder **Bearbeiten**.  
 
-.. image:: img/remote.png
+.. image:: img/remote.png  
 
-Switch to the Remote Control interface, and you will see the following widgets.
+Wechseln Sie zur Fernsteuerungsschnittstelle, und Sie sehen die folgenden Widgets.  
 
-.. image:: img/remote_B.png
+.. image:: img/remote_B.png  
 
-After the program is running, you can activate PiCrawler through D-Pad.
+Nach dem Start des Programms können Sie PiCrawler über das Steuerkreuz (D-Pad) aktivieren.  
 
-**How it works?**
+**Wie funktioniert es?**  
 
-After dragging out the widget on the Remote Control interface, a category named **Remote** will appear in the block categories column of the programming interface.
+Nachdem Sie das Widget in der Fernsteuerungsschnittstelle hinzugefügt haben, erscheint eine Kategorie namens **Remote** in der Blockkategorien-Spalte der Programmierschnittstelle.  
 
-Here we add the D-Pad widget, so the **D-Pad get value** block appears here.
+Hier fügen wir das D-Pad-Widget hinzu, sodass der **D-Pad get value**-Block hier verfügbar ist.  
 
-.. image:: img/sp210927_180739.png
+.. image:: img/sp210927_180739.png  
 
-D-Pad can be regarded as a four-in-one button. You can choose which button to read in the second groove of the block.
+Das D-Pad kann als eine Vier-in-Eins-Taste betrachtet werden. Sie können in der zweiten Aussparung des Blocks auswählen, welche Taste gelesen werden soll.  
 
-When the button is pressed, the value is "1"; when the button is not pressed, the value is "0".
+Wenn die Taste gedrückt wird, ist der Wert „1“; wenn die Taste nicht gedrückt wird, ist der Wert „0“.  
 
+.. image:: img/sp210927_182447.png  
+    :width: 200  
 
-.. image:: img/sp210927_182447.png
-    :width: 200
+Wir haben einen **if**-Block verwendet (diesen finden Sie in der Kategorie **Logik** auf der linken Seite), um PiCrawler einmal vorwärts zu bewegen, wenn die **UP**-Taste des D-Pads gedrückt wird.  
 
-We used an **if** block (you can find it in the **Logic** category on the left) to make the PiCrawler move forward once when the **UP** button of the D-pad is pressed.
+.. image:: img/sp210927_182828.png  
+    :width: 600  
 
-.. image:: img/sp210927_182828.png
-    :width: 600
+Sie können auf das Zahnrad-Symbol oben links im Block klicken, um die Form des **if**-Blocks zu ändern und mehrere Verzweigungsabfragen zu realisieren.  
 
-You can click the gear icon on the upper left of the block to modify the shape of the **if** block to realize multiple judgment branches.
+.. image:: img/sp210927_183237.png  
+    :width: 300  
 
-
-.. image:: img/sp210927_183237.png
-    :width: 300
-
-**if** block is usually used with **=** block, **=** block can be modified to **>**, **<** and other conditions through the drop-down menu, please use it flexibly.
+Der **if**-Block wird normalerweise zusammen mit dem **=**-Block verwendet. Der **=**-Block kann über das Dropdown-Menü in **>**, **<** oder andere Bedingungen geändert werden. Bitte verwenden Sie ihn flexibel.  

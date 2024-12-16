@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein und verbinden Sie sich mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und technische Herausforderungen mit Unterstützung unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühen Zugang zu neuen Produktankündigungen und Einblicken.
+    - **Exklusive Rabatte**: Genießen Sie besondere Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und saisonalen Angeboten teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu schaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _py_video:
 
-Record Video
+Video aufnehmen
 ==================
 
-This example will guide you how to use the recording function.
+Dieses Beispiel zeigt Ihnen, wie Sie die Aufnahmefunktion verwenden.
 
-**Run the Code**
+**Code ausführen**
 
 .. raw:: html
 
@@ -30,18 +30,16 @@ This example will guide you how to use the recording function.
     cd ~/picrawler/examples
     sudo python3 record_video.py
 
-
-After the code runs, you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
+Nach dem Start des Codes können Sie ``http://<Ihre IP>:9000/mjpg`` im Browser eingeben, um das Video anzuzeigen, zum Beispiel: ``http://192.168.18.113:9000/mjpg``
 
 .. image:: img/display.png
 
-Recording can be stopped or started by pressing the keys on the keyboard.
+Die Aufnahme kann durch Drücken der Tasten auf der Tastatur gestartet, pausiert oder gestoppt werden.
 
-* Press ``q`` to begin recording or pause/continue, ``e`` to stop recording or save.
-* If you want to exit the program, press ``Ctrl+C``.
+* Drücken Sie ``q``, um die Aufnahme zu starten oder zu pausieren/fortzusetzen, ``e``, um die Aufnahme zu stoppen oder zu speichern.
+* Wenn Sie das Programm beenden möchten, drücken Sie ``Ctrl+C``.
 
-
-**Code** 
+**Code**
 
 .. code-block:: python
 
@@ -65,28 +63,28 @@ Recording can be stopped or started by pressing the keys on the keyboard.
         print(msg, end=end, flush=True)
     
     def main():
-        rec_flag = 'stop' # start,pause,stop
+        rec_flag = 'stop' # start, pause, stop
         vname = None
         Vilib.rec_video_set["path"] = VIDEO_PATH
     
-        Vilib.camera_start(vflip=False,hflip=False) 
-        Vilib.display(local=True,web=True)
-        sleep(0.8)  # wait for startup
+        Vilib.camera_start(vflip=False, hflip=False) 
+        Vilib.display(local=True, web=True)
+        sleep(0.8)  # Warte auf den Start
     
         print(MANUAL)
         while True:
-            # read keyboard
+            # Tastatureingabe lesen
             key = readchar.readkey()
             key = key.lower()
-            # start,pause
+            # Start, Pause
             if key == 'q':
                 key = None
                 if rec_flag == 'stop':            
                     rec_flag = 'start'
-                    # set name
+                    # Name festlegen
                     vname = strftime("%Y-%m-%d-%H.%M.%S", localtime())
                     Vilib.rec_video_set["name"] = vname
-                    # start record
+                    # Aufnahme starten
                     Vilib.rec_video_run()
                     Vilib.rec_video_start()
                     print_overwrite('rec start ...')
@@ -115,13 +113,15 @@ Recording can be stopped or started by pressing the keys on the keyboard.
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**Wie funktioniert es?**
 
-Functions related to recording include the following:
 
-* ``Vilib.rec_video_run(video_name)``: Started the thread to record the video. ``video_name`` is the name of the video file, it should be a string.
-* ``Vilib.rec_video_start()``: Start or continue video recording.
-* ``Vilib.rec_video_pause()``: Pause recording.
-* ``Vilib.rec_video_stop()``: Stop recording.
+Die mit der Aufnahme verbundenen Funktionen sind wie folgt:
 
-``Vilib.rec_video_set["path"] = "~/video/test/"`` sets the storage location of video files.
+
+* ``Vilib.rec_video_run(video_name)``: Startet den Thread für die Videoaufnahme. ``video_name`` ist der Name der Videodatei und sollte ein String sein.
+* ``Vilib.rec_video_start()``: Startet oder setzt die Videoaufnahme fort.
+* ``Vilib.rec_video_pause()``: Pausiert die Aufnahme.
+* ``Vilib.rec_video_stop()``: Stoppt die Aufnahme.
+
+``Vilib.rec_video_set["path"] = "~/video/test/"`` legt den Speicherort der Videodateien fest.

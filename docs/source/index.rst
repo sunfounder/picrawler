@@ -1,61 +1,71 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugriff auf neue Produktankündigungen und exklusive Einblicke.
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
-SunFounder Raspberry Pi Robot - |link_PiCrawler|
+SunFounder Raspberry Pi Roboter - |link_PiCrawler|  
 =====================================================
 
 * |link_Pi_Crawler|
 
-Thank you for choosing our |link_PiCrawler|.
+Vielen Dank, dass Sie sich für unseren |link_PiCrawler| entschieden haben.
+
+.. note::
+    This document is available in the following languages.
+
+        * |link_en_tutorials|
+        * |link_german_tutorials|
+   
+    Please click on the respective links to access the document in your preferred language.
 
 .. image:: img/picrawler.jpg
     :width: 600
     :align: center
 
-PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. 
-It is equipped with a camera module, which can perform color recognition, face detection and other items; 
-12 metal gear servos support it to walk, dance, and pose various postures; 
-the ultrasonic module on the body allows it to quickly detect obstacles in front of it; the expansion board-robot HAT is equipped with a speaker, allowing it to express emotions such as happiness and excitement.
+PiCrawler ist ein vierbeiniger Roboter mit einer Aluminiumlegierungsstruktur, der auf einem Raspberry Pi basiert.  
+Er ist mit einem Kameramodul ausgestattet, das Funktionen wie Farberkennung, Gesichtserkennung und weitere Objekterkennungen ausführen kann.  
+12 Servomotoren mit Metallgetriebe ermöglichen ihm das Laufen, Tanzen und Einnehmen verschiedener Posen.  
+Das Ultraschallmodul an seinem Gehäuse erlaubt ihm, Hindernisse vor sich schnell zu erkennen.  
+Die Erweiterungsplatine Robot HAT verfügt über einen Lautsprecher, mit dem der PiCrawler Emotionen wie Freude und Aufregung ausdrücken kann.
 
+Dieses Dokument umfasst die Liste und Montage-PDF, eine Einführung zum Robot HAT sowie die Programmierung des PiCrawler.
 
-This document includes the list and assembly pdf, Robot HAT introduction and PiCrawler programming.
+Der Programmierabschnitt ist in zwei Kapitel unterteilt: :ref:`play_ezblock` & :ref:`play_python`. Jedes Kapitel erklärt, wie Sie den PiCrawler so steuern können, wie Sie es möchten.
 
-The programming part is divided into two chapters: :ref:`play_ezblock` & :ref:`play_python`, each chapter allows you to explain how to make PiCrawler work the way you want.
+Ezblock Studio ist eine von SunFounder entwickelte Entwicklungsplattform für Anfänger, die darauf abzielt, die Einstiegshürden für Raspberry Pi zu senken.  
+Sie unterstützt zwei Programmiersprachen: Grafische Programmierung und Python, die auf nahezu allen Gerätetypen verwendet werden können.  
+Mit Bluetooth- und WLAN-Unterstützung können Sie Codes in Ezblock Studio herunterladen und den Raspberry Pi fernsteuern.
 
-Ezblock Studio is a development platform developed by SunFounder for beginners, aiming to lower the barriers to entry for Raspberry Pi. It has two programming languages: Graphical and Python, which can be used on almost all different types of devices. With Bluetooth and Wi-Fi support, you can download codes on Ezblock Studio and remotely control Raspberry Pi.
+Erfahrenere Nutzer können die beliebte Programmiersprache Python verwenden.
 
-More experienced makers can use the popular programming language-Python.
+Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com, und wir werden so schnell wie möglich antworten.
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
-
-
-**Content**
+**Inhalt**
 
 .. toctree::
     :maxdepth: 2
 
     About this Kit <self>
-    python/play_with_python 
-    ezblock/play_with_ezblock
-    servo_zeroing
-    openai
-    appendix/appendix
-    hardware/cpn_hardware
-    faq
+    python/play_with_python  
+    ezblock/play_with_ezblock  
+    servo_zeroing  
+    openai  
+    appendix/appendix  
+    hardware/cpn_hardware  
+    faq  
 
-Copyright Notice
+Urheberrechtshinweis  
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+Alle Inhalte, einschließlich, aber nicht beschränkt auf Texte, Bilder und Code in diesem Handbuch, sind Eigentum der SunFounder Company.  
+Sie dürfen diese nur für persönliche Studien, Untersuchungen, Unterhaltung oder andere nicht-kommerzielle oder gemeinnützige Zwecke gemäß den geltenden Vorschriften und Urheberrechtsgesetzen verwenden, ohne die gesetzlichen Rechte des Autors und der entsprechenden Rechteinhaber zu verletzen.  
+Für jede Person oder Organisation, die diese Inhalte ohne Genehmigung zu kommerziellen Zwecken nutzt, behält sich das Unternehmen das Recht vor, rechtliche Schritte einzuleiten.  

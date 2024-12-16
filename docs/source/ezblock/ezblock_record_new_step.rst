@@ -1,49 +1,48 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.  
 
-    **Why Join?**
+    **Warum beitreten?**  
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.  
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.  
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.  
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.  
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!  
 
-.. _ezb_record:
+.. _ezb_record:  
 
-Record New Step
+Neue Schritte aufzeichnen  
 ==============================
 
-We use the remote function to control PiCrawler to make several poses in turn, and record these poses. Replay them later.
+Mit der Fernsteuerungsfunktion können wir PiCrawler nacheinander verschiedene Posen einnehmen lassen und diese Posen aufzeichnen. Später können diese wieder abgespielt werden.  
 
-
-**Program**
+**Programm**  
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Sie können das Programm gemäß der folgenden Abbildung schreiben. Bitte folgen Sie dem Tutorial: :ref:`ezblock:create_project_latest`.  
+    * Oder suchen Sie den gleichnamigen Code auf der **Beispiele**-Seite von EzBlock Studio und klicken Sie direkt auf **Ausführen** oder **Bearbeiten**.  
 
-.. image:: img/record.png
-    :width: 800
+.. image:: img/record.png  
+    :width: 800  
 
-Switch to the Remote Control interface, and you will see the following widgets.
+Wechseln Sie zur Schnittstelle für die Fernsteuerung, und Sie werden die folgenden Widgets sehen.  
 
-.. image:: img/sp210928_164343-1.png
-    :width: 600
+.. image:: img/sp210928_164343-1.png  
+    :width: 600  
 
-**How it works?**
+**Wie funktioniert es?**  
 
 
-This project was born out of :ref:`ezb_posture`. Added recording and replay functions.
+Dieses Projekt basiert auf :ref:`ezb_posture`. Es wurde um Aufnahme- und Wiedergabefunktionen erweitert.  
 
-The recording function is implemented by the following code.
+Die Aufzeichnungsfunktion wird durch den folgenden Code realisiert.  
 
-.. image:: img/sp210928_164449.png
+.. image:: img/sp210928_164449.png  
 
-The replay function is implemented by the following code.
+Die Wiedergabefunktion wird durch den folgenden Code realisiert.  
 
-.. image:: img/sp210928_164500.png
+.. image:: img/sp210928_164500.png  

@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 ein und tauschen Sie sich mit anderen Technikbegeisterten aus.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Einblicken.
+    - **Exklusive Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit für spannende Projekte? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _py_posture:
 
-Adjust Posture
-=====================
+Anpassung der Haltung
+========================
 
-In this example, we use the keyboard to control the PiCrawler foot by foot and assume the desired posture.
+In diesem Beispiel verwenden wir die Tastatur, um die Beine des PiCrawler einzeln zu steuern und die gewünschte Haltung einzunehmen.
 
-You can press the space bar to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
+Sie können die Leertaste drücken, um die aktuellen Koordinatenwerte auszudrucken. Diese Werte sind nützlich, wenn Sie eigene Aktionen für den PiCrawler erstellen möchten.
 
 .. image:: img/1cood.A.png
 
-**Run the Code**
+**Code ausführen**
 
 .. raw:: html
 
@@ -34,12 +34,11 @@ You can press the space bar to print out the current coordinate values. These co
     cd ~/picrawler/examples
     sudo python3 do_single_leg.py
 
-After the code runs, please operate according to the prompt that pops up in the terminal.
+Nach dem Ausführen des Codes folgen Sie bitte den Anweisungen im Terminal.
 
-* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
-* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``Ctrl+C`` to exit.
-
+* Drücken Sie ``1234``, um die Beine einzeln auszuwählen. ``1``: rechtes Vorderbein, ``2``: linkes Vorderbein, ``3``: linkes Hinterbein, ``4``: rechtes Hinterbein.
+* Drücken Sie ``w``, ``a``, ``s``, ``d``, ``r`` und ``f``, um die Koordinaten des PiCrawler schrittweise anzupassen.
+* Drücken Sie ``Ctrl+C``, um das Programm zu beenden.
 
 **Code**
 
@@ -91,14 +90,14 @@ After the code runs, please operate according to the prompt that pops up in the 
         show_info()
 
         while True:
-            # readkey
+            # Eingabe lesen
             key = readchar.readkey()
             key = key.lower()
-            # select the leg 
+            # Bein auswählen
             if key in ('1234'):
                 leg = int(key) - 1
                 show_info()
-            # move
+            # Bewegung
             elif key in ('wsadrf'):         
                 if 'w' == key:
                     coordinate[leg][1]=coordinate[leg][1] + step    
@@ -120,9 +119,9 @@ After the code runs, please operate according to the prompt that pops up in the 
 
             sleep(0.05)
 
-    
+
     if __name__ == "__main__":
         main()
 
-* ``current_step_all_leg_value()``: Returns the coordinate values of all legs.
-* ``do_single_leg(leg,coordinate[leg],speed)``: Modify the coordinate value of a certain leg individually.
+* ``current_step_all_leg_value()``: Gibt die Koordinatenwerte aller Beine zurück.
+* ``do_single_leg(leg, coordinate[leg], speed)``: Passt die Koordinatenwerte eines einzelnen Beins an.

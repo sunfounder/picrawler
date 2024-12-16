@@ -1,52 +1,51 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.  
 
-    **Why Join?**
+    **Warum beitreten?**  
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.  
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.  
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.  
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.  
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!  
 
-.. _ezb_sound:
+.. _ezb_sound:  
 
-Sound Effect
-=======================
+Soundeffekte  
+=======================  
 
-In this example, we use PiCrawler's (to be precise, Robot HAT's) sound effects. It consists of three parts, namely **Muisc**, **Sound**, **Text to Speech**.
+In diesem Beispiel verwenden wir die Soundeffekte von PiCrawler (genauer gesagt, des Robot HAT). Sie bestehen aus drei Teilen: **Musik**, **Sound** und **Text-to-Speech**.  
 
-.. image:: ../python/img/tts.png
+.. image:: ../python/img/tts.png  
 
-**Program**
+**Programm**  
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Sie können das Programm gemäß der folgenden Abbildung schreiben. Bitte folgen Sie dem Tutorial: :ref:`ezblock:create_project_latest`.  
+    * Oder suchen Sie den gleichnamigen Code auf der **Beispiele**-Seite von EzBlock Studio und klicken Sie direkt auf **Ausführen** oder **Bearbeiten**.  
 
-.. image:: img/soundeff.png
+.. image:: img/soundeff.png  
 
-Switch to the Remote Control interface, and you will see the following widgets.
+Wechseln Sie zur Fernsteuerungsschnittstelle, und Sie sehen die folgenden Widgets.  
 
-.. image:: img/soundeff_B.png
+.. image:: img/soundeff_B.png  
 
-After the program is running, you can press different buttons to make PiCrawler sound.
+Nach dem Start des Programms können Sie verschiedene Tasten drücken, um PiCrawler Geräusche erzeugen zu lassen.  
 
-**How it works?**
+**Wie funktioniert es?**  
 
-Functions related to background music include these:
+Funktionen im Zusammenhang mit Hintergrundmusik umfassen:  
 
-.. image:: img/sp210928_101816.png
+.. image:: img/sp210928_101816.png  
 
-Functions related to sound effects include these:
+Funktionen im Zusammenhang mit Soundeffekten umfassen:  
 
-.. image:: img/sp210928_101727.png
+.. image:: img/sp210928_101727.png  
 
+Funktionen im Zusammenhang mit Text-to-Speech umfassen:  
 
-Functions related to Text to Speech include these:
-
-.. image:: img/sp210928_101609.png
+.. image:: img/sp210928_101609.png  

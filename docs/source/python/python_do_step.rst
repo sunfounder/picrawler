@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie tiefer in Raspberry Pi, Arduino und ESP32 ein und tauschen Sie sich mit anderen Technikbegeisterten aus.
 
-    **Why Join?**
+    **Warum mitmachen?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Verkauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und Einblicken.
+    - **Exklusive Rabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit für spannende Projekte? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 .. _py_pose:
 
 Pose
 =============
 
-PiCrawler can assume a specific posture by writing a coordinate array. Here it assumes a raised right rear foot posture.
+Der PiCrawler kann durch die Angabe eines Koordinatenarrays eine bestimmte Haltung einnehmen. Hier nimmt er eine Haltung mit erhobenem rechten Hinterbein ein.
 
 .. image:: img/4cood.A.png
 
-**Run the Code**
+**Code ausführen**
 
 .. raw:: html
 
@@ -46,7 +46,7 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
 
     crawler = Picrawler() 
 
-    ## [right front],[left front],[left rear],[right rear]
+    ## [rechts vorne], [links vorne], [links hinten], [rechts hinten]
     new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
     stand_step = crawler.move_list['stand'][0]
 
@@ -65,42 +65,42 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**Funktionsweise**
 
-In this code, the code you need to pay attention to is this ``crawler.do_step()``.
+In diesem Code ist die Funktion ``crawler.do_step()`` besonders wichtig.
 
-Similar to ``do_action()``, ``do_step()`` can also manipulate PiCrawler's behavior.
-The difference is that the former can perform the continuous behavior of ``move forward``, while the latter can be used to make separate gestures of ``stand`` and ``sit``.
+Ähnlich wie bei ``do_action()`` kann auch ``do_step()`` das Verhalten des PiCrawler 
+steuern. Der Unterschied besteht darin, dass die erste Methode kontinuierliche Bewegungen wie ``vorwärts gehen`` ausführt, während die zweite Methode separate Haltungen wie ``stehen`` oder ``sitzen`` ermöglicht.
 
-
-It has two uses:
-
-
-One: It can write strings, directly use the ``step_list`` dictionary in the ``picrawler`` library.
-
-.. code-block:: python
-
-    crawler.do_step('stand',speed) 
-    # "speed" indicates the speed of the step, the range is 0~100.
+**Zwei Verwendungsmöglichkeiten:**
 
 
-Second: It can also write an array of 4 coordinate values.
+1. **Verwendung mit String:**  
+   Sie können direkt auf die ``step_list``-Daten im ``picrawler``-Modul zugreifen.
 
-.. code-block:: python
+   .. code-block:: python
 
-    new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
-    # These four coordinates are used to control the four legs of right front, left front, left rear, and left rear respectively.
+       crawler.do_step('stand',speed) 
+       # "speed" gibt die Geschwindigkeit des Schritts an, der Bereich liegt zwischen 0~100.
 
-Each foot has an independent coordinate system. As shown below:
+2. **Verwendung mit Koordinatenarray:**  
+   Sie können ein Array mit vier Koordinatenwerten angeben.
+
+   .. code-block:: python
+
+       new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
+       # Diese vier Koordinaten steuern die Beine in der Reihenfolge rechts vorne, links vorne, links hinten, rechts hinten.
+
+Jedes Bein hat ein eigenes Koordinatensystem, wie unten dargestellt:
 
 .. image:: img/4cood.png
 
-You need to measure the coordinates of each toe individually. As shown below:
+Die Koordinaten jedes Zehs müssen individuell gemessen werden. Beispiel:
 
 .. image:: img/1cood.png
 
-
-By the way: the ``step_list`` called in the first method also consists of an array containing 4 coordinate values.
+**Hinweis:**  
+Die ``step_list``-Werte der ersten Methode bestehen ebenfalls aus Arrays mit vier Koordinatenwerten.
 
 .. code-block:: python
 

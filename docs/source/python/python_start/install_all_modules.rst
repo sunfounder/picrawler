@@ -1,110 +1,108 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauchen Sie gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.  
 
-    **Why Join?**
+    **Warum beitreten?**  
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Lösen Sie Probleme nach dem Kauf und bewältigen Sie technische Herausforderungen mit der Hilfe unserer Community und unseres Teams.  
+    - **Lernen & Teilen**: Tauschen Sie Tipps und Tutorials aus, um Ihre Fähigkeiten zu erweitern.  
+    - **Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.  
+    - **Spezielle Rabatte**: Profitieren Sie von exklusiven Angeboten für unsere neuesten Produkte.  
+    - **Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Verlosungen und saisonalen Aktionen teil.  
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!  
 
-.. _install_all_modules:
+.. _install_all_modules:  
 
-
-5. Install All the Modules (Important)
+5. Installieren Sie alle Module (Wichtig)  
 ===============================================
 
-Make sure you are connected to the Internet and update your system:
+Stellen Sie sicher, dass Sie mit dem Internet verbunden sind, und aktualisieren Sie Ihr System:  
 
-.. raw:: html
+.. raw:: html  
 
-    <run></run>
+    <run></run>  
 
-.. code-block::
+.. code-block::  
 
-    sudo apt update
-    sudo apt upgrade
+    sudo apt update  
+    sudo apt upgrade  
 
-.. note::
+.. note:: 
 
-    Python3 related packages must be installed if you are installing the Lite version OS.
+    Python3-bezogene Pakete müssen installiert sein, wenn Sie die Lite-Version des Betriebssystems verwenden.  
 
-    .. raw:: html
+    .. raw:: html  
 
-        <run></run>
+        <run></run>  
 
-    .. code-block::
+    .. code-block::  
     
-        sudo apt install git python3-pip python3-setuptools python3-smbus
+        sudo apt install git python3-pip python3-setuptools python3-smbus  
 
+Installieren Sie das ``robot-hat``-Modul.  
 
-Install ``robot-hat`` module.
+.. raw:: html  
 
-.. raw:: html
+    <run></run>  
 
-    <run></run>
+.. code-block::  
 
-.. code-block::
+    cd ~/  
+    git clone -b v2.0 https://github.com/sunfounder/robot-hat.git  
+    cd robot-hat  
+    sudo python3 setup.py install  
 
-    cd ~/
-    git clone -b v2.0 https://github.com/sunfounder/robot-hat.git
-    cd robot-hat
-    sudo python3 setup.py install
+Laden Sie anschließend den Code herunter und installieren Sie das ``vilib``-Modul.  
 
-Then download the code and install ``vilib`` module.
+.. raw:: html  
 
-.. raw:: html
+    <run></run>  
 
-    <run></run>
+.. code-block::  
 
-.. code-block::
+    cd ~/  
+    git clone -b picamera2 https://github.com/sunfounder/vilib.git  
+    cd vilib  
+    sudo python3 install.py  
 
-    cd ~/
-    git clone -b picamera2 https://github.com/sunfounder/vilib.git
-    cd vilib
-    sudo python3 install.py
+Laden Sie anschließend den Code herunter und installieren Sie das ``picrawler``-Modul.  
 
-Then download the code and install ``picrawler`` module.
+.. raw:: html  
 
-.. raw:: html
+    <run></run>  
 
-    <run></run>
+.. code-block::  
 
-.. code-block::
+    cd ~/  
+    git clone https://github.com/sunfounder/picrawler.git  
+    cd picrawler  
+    sudo python3 setup.py install  
 
-    cd ~/
-    git clone https://github.com/sunfounder/picrawler.git
-    cd picrawler
-    sudo python3 setup.py install
+Dieser Schritt wird etwas Zeit in Anspruch nehmen, bitte haben Sie Geduld.  
 
-This step will take a little time, so please be patient.
+Abschließend müssen Sie das Skript ``i2samp.sh`` ausführen, um die für den i2s-Verstärker erforderlichen Komponenten zu installieren, andernfalls hat der PiCrawler keinen Ton.  
 
-Finally, you need to run the script ``i2samp.sh`` to install the components required by the i2s amplifier, otherwise the pislot will have no sound.
+.. raw:: html  
 
-.. raw:: html
+    <run></run>  
 
-    <run></run>
+.. code-block::  
 
-.. code-block::
-
-    cd ~/picrawler
-    sudo bash i2samp.sh
+    cd ~/picrawler  
+    sudo bash i2samp.sh  
 	
-.. image:: img/i2s.png
+.. image:: img/i2s.png  
 
-Type ``y`` and press ``Enter`` to continue running the script.
+Geben Sie ``y`` ein und drücken Sie ``Enter``, um das Skript weiter auszuführen.  
 
-.. image:: img/i2s2.png
+.. image:: img/i2s2.png  
 
-Type ``y`` and press ``Enter`` to run ``/dev/zero`` in the background.
+Geben Sie ``y`` ein und drücken Sie ``Enter``, um ``/dev/zero`` im Hintergrund auszuführen.  
 
-.. image:: img/i2s3.png
+.. image:: img/i2s3.png  
 
-Type ``y`` and press ``Enter`` to restart the machine.
+Geben Sie ``y`` ein und drücken Sie ``Enter``, um den Computer neu zu starten.  
 
-.. note::
-    If there is no sound after restarting, you may need to run the ``i2samp.sh`` script multiple times.
+.. note::  
+    Falls nach dem Neustart kein Ton zu hören ist, müssen Sie das Skript ``i2samp.sh`` möglicherweise mehrfach ausführen.  
