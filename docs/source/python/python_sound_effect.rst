@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes post-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_sound:
 
-Sound Effect
+Effet Sonore
 =====================
 
-In this example, we use PiCrawler's (to be precise, Robot HAT's) sound effects. It consists of three parts, namely **Muisc**, **Sound**, **Text to Speech**.
+Dans cet exemple, nous utilisons les effets sonores de PiCrawler (plus précisément, ceux du Robot HAT). Cela se compose de trois parties : **Musique**, **Son**, et **Texte à la parole**.
 
 .. image:: img/tts.png
 
-**Install i2samp**
+**Installer i2samp**
 
-Before using that functions, first activate the speaker so that it will be enabled and can make sounds.
+Avant d'utiliser ces fonctions, commencez par activer le haut-parleur pour qu'il soit activé et puisse émettre des sons.
 
-Run ``i2samp.sh`` in, and this script will install everything needed to use i2s amplifier.
+Exécutez ``i2samp.sh``, ce script installera tout ce qui est nécessaire pour utiliser l'amplificateur i2s.
 
 .. raw:: html
 
@@ -36,12 +36,11 @@ Run ``i2samp.sh`` in, and this script will install everything needed to use i2s 
     cd ~/picrawler/
     sudo bash i2samp.sh 
 
-There will be several prompts asking to confirm the request. Respond to all prompts with a **Y**. After the changes have been made to the Raspberry Pi system, the computer will need to reboot for these changes to take effect.
+Plusieurs invites apparaîtront vous demandant de confirmer l'action. Répondez à toutes les invites par **Y**. Après avoir effectué les modifications sur le système Raspberry Pi, un redémarrage sera nécessaire pour que ces changements prennent effet.
 
-After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a sound successfully plays from the speaker, the configuration is complete.
+Après le redémarrage, exécutez à nouveau le script ``i2samp.sh`` pour tester l'amplificateur. Si un son est émis par le haut-parleur, la configuration est terminée.
 
-
-**Run the Code**
+**Exécuter le Code**
 
 .. raw:: html
 
@@ -52,17 +51,16 @@ After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a 
     cd ~/picrawler/examples
     sudo python3 sound_effect.py
 
-After the code runs, please operate according to the prompt that printed on the terminal.
+Une fois le code exécuté, suivez les instructions qui s'affichent dans le terminal.
 
-Input key to call the function!
-* ``q``: Play background music
-* ``1``: Play sound effect
-* ``2``: Play sound effect with threads
-* ``t``: Text to speak
-* If you want to exit the program, press ``Ctrl+C``.
+Appuyez sur une touche pour appeler la fonction !
+* ``q`` : Lire la musique de fond
+* ``1`` : Lire un effet sonore
+* ``2`` : Lire un effet sonore avec des fils d'exécution
+* ``t`` : Texte à parler
+* Pour quitter le programme, appuyez sur ``Ctrl+C``.
 
-
-**Code** 
+**Code**
 
 .. code-block:: python
 
@@ -127,51 +125,49 @@ Input key to call the function!
     if __name__ == "__main__":
         main()
 
+**Comment ça fonctionne ?**
 
-**How it works?**
+Les fonctions liées à la musique de fond comprennent :
 
-Functions related to background music include these:
-
-* ``music = Music()`` : Declare the object.
-* ``music.music_set_volume(20)`` : Set the volume, the range is 0~100.
-* ``music.music_play(./musics/sports-Ahjay_Stelino.mp3)`` : Play music files, here is the **sports-Ahjay_Stelino.mp3** file under the ``./musics`` path.
-* ``music.music_stop()`` : Stop playing background music.
+* ``music = Music()`` : Déclare l'objet.
+* ``music.music_set_volume(20)`` : Définit le volume, avec une plage de 0 à 100.
+* ``music.music_play(./musics/sports-Ahjay_Stelino.mp3)`` : Joue le fichier musical, ici le fichier **sports-Ahjay_Stelino.mp3** situé sous le chemin ``./musics``.
+* ``music.music_stop()`` : Arrête la musique de fond.
 
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
+    Vous pouvez ajouter différents effets sonores ou musiques dans les dossiers ``musics`` ou ``sounds`` via :ref:`filezilla`.
 
-
-Functions related to sound effects include these:
+Les fonctions liées aux effets sonores comprennent :
 
 * ``music = Music()``
-* ``music.sound_play('./sounds/talk1.wav')``: Play the sound effect file, here is the **talk1.wav** file under the ``./musics`` path.
-* ``music.sound_play_threading('./sounds/talk1.wav')``: Play the sound effect file in a new thread mode without suspending the main thread.
+* ``music.sound_play('./sounds/talk1.wav')`` : Joue le fichier d'effet sonore, ici le fichier **talk1.wav** situé sous le chemin ``./musics``.
+* ``music.sound_play_threading('./sounds/talk1.wav')`` : Joue le fichier d'effet sonore en mode fil d'exécution, sans suspendre le fil principal.
 
-Functions related to Text to Speech include these:
+Les fonctions liées au texte à la parole comprennent :
 
 * ``tts = TTS()``
-* ``tts.say(words)`` : Text audio.
-* ``tts.lang("en-US")`` :  Set the language.
+* ``tts.say(words)`` : Lecture audio du texte.
+* ``tts.lang("en-US")`` : Définit la langue.
 
-.. note:: 
+.. note::
 
-    Set the language by setting the parameters of ``lang("")`` with the following characters.
+    Vous pouvez définir la langue en ajustant les paramètres de ``lang("")`` avec les caractères suivants.
 
 .. list-table:: Language
     :widths: 15 50
 
     *   - zh-CN 
-        - Mandarin (Chinese)
+        - Mandarin (Chinois)
     *   - en-US 
-        - English-United States
+        - Anglais - États-Unis
     *   - en-GB     
-        - English-United Kingdom
+        - Anglais - Royaume-Uni
     *   - de-DE     
-        - Germany-Deutsch
+        - Allemand - Allemagne
     *   - es-ES     
-        - España-Español
+        - Espagnol - Espagne
     *   - fr-FR  
-        - France-Le français
+        - Français - France
     *   - it-IT  
-        - Italia-lingua italiana
+        - Italien - Italie

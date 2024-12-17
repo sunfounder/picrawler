@@ -1,28 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes post-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_treasure:
 
-Treasure Hunt
+Chasse au Trésor
 ============================
 
-Arrange a maze in your room and place six different color cards in six corners. Then control PiCrawler to search for these color cards one by one!
+Aménagez un labyrinthe dans votre pièce et placez six cartes de couleur différentes dans six coins. Ensuite, contrôlez PiCrawler pour rechercher ces cartes de couleur une par une !
 
-.. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
+.. note:: Vous pouvez télécharger et imprimer les :download:`cartes de couleur PDF <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` pour la détection des couleurs.
 
-
-**Run the Code**
+**Exécuter le Code**
 
 .. raw:: html
 
@@ -34,9 +33,9 @@ Arrange a maze in your room and place six different color cards in six corners. 
     sudo python3 treasure_hunt.py
 
 
-**View the Image**
+**Affichage de l'Image**
 
-After the code runs, the terminal will display the following prompt:
+Après l'exécution du code, le terminal affichera l'invite suivante :
 
 .. code-block::
 
@@ -48,7 +47,7 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
+Vous pouvez alors entrer ``http://<votre IP>:9000/mjpg`` dans le navigateur pour afficher l'écran vidéo. Par exemple : ``http://192.168.18.113:9000/mjpg``
 
 .. image:: img/display.png
 
@@ -158,11 +157,11 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 	    main()
 
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-In general, this project combines the knowledge points of :ref:`py_keyboard`, :ref:`py_vision` and :ref:`py_sound`.
+En général, ce projet combine les points de connaissance des sections :ref:`py_keyboard`, :ref:`py_vision` et :ref:`py_sound`.
 
-Its flow is shown in the figure below:
+Voici le flux de ce projet, illustré dans la figure ci-dessous :
 
 .. image:: img/treasure_hunt-f.png
 

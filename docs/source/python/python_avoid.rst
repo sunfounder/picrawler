@@ -1,28 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et obtenez des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions et concours festifs** : Participez à des concours et des promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_avoid:
 
-Obstacle Avoidance
-=====================
+Évitement d'Obstacle
+=========================
 
-In this project, picrawler will use an ultrasonic module to detect obstacles in front. 
-When PiCrawler detects an obstacle, it will send a signal and look for another direction to move forward.
+Dans ce projet, PiCrawler utilise un module ultrasonique pour détecter les obstacles 
+devant lui. Lorsque PiCrawler détecte un obstacle, il envoie un signal et cherche une 
+autre direction pour continuer à avancer.
 
 .. image:: img/avoid1.png
 
-**Run the Code**
+**Exécuter le Code**
 
 .. raw:: html
 
@@ -33,14 +34,12 @@ When PiCrawler detects an obstacle, it will send a signal and look for another d
     cd ~/picrawler/examples
     sudo python3 avoid.py
 
-After the code runs, PiCrawler will walk forward. If it detects that the distance of the obstacle ahead is less than 10cm, it will stop and sound a warning, then turn left and stop. If there is no obstacle in the direction after turning left or the obstacle distance is greater than 10, it will continue to move forward.
-
-
+Après l'exécution du code, PiCrawler avancera. S'il détecte qu'un obstacle est à moins de 10 cm, il s'arrêtera, émettra un signal d'alerte, puis tournera à gauche et s'arrêtera. Si aucun obstacle n'est détecté après le virage à gauche, ou si la distance à l'obstacle est supérieure à 10 cm, il continuera à avancer.
 
 **Code**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+    Vous pouvez **Modifier/Réinitialiser/Copier/Exécuter/Arrêter** le code ci-dessous. Mais avant cela, vous devez vous rendre dans le répertoire du code source, tel que ``picrawler\examples``. Après avoir modifié le code, vous pouvez l'exécuter directement pour voir l'effet.
 
 .. raw:: html
 
@@ -84,26 +83,26 @@ After the code runs, PiCrawler will walk forward. If it detects that the distanc
         while True:
             main()
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-You can get the distance by importing the ``Ultrasonic`` class.
+Vous pouvez obtenir la distance en important la classe ``Ultrasonic``.
 
 .. code-block:: python
 
     from robot_hat import Ultrasonic
 
-Then initialize the ultrasonic pins.
+Ensuite, initialisez les broches du module ultrasonique.
 
 .. code-block:: python
 
     sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
 
 
-Here is the main program.
+Voici le programme principal.
 
-* Read the ``distance`` detected by ultrasonic module and filter out the values less than 0 (When the ultrasonic module is too far from the obstacle or cannot read the data correctly, ``distance<0`` will appear).
-* When the ``distance`` is less than or equal to  ``alert_distance`` (the threshold value set earlier, which is 10), play the sound effect ``sign.wav``. PiCrawler does ``turn left angle`` .
-* When the ``distance`` is greater than ``alert_distance``, PiCrawler will move ``forward``.
+* Lisez la ``distance`` détectée par le module ultrasonique et filtrez les valeurs inférieures à 0 (lorsque le module ultrasonique est trop éloigné de l'obstacle ou qu'il ne peut pas lire les données correctement, ``distance < 0`` apparaîtra).
+* Lorsque la ``distance`` est inférieure ou égale à ``alert_distance`` (la valeur seuil définie précédemment, soit 10), le son ``sign.wav`` est joué. PiCrawler effectue un ``virage à gauche``.
+* Lorsque la ``distance`` est supérieure à ``alert_distance``, PiCrawler se déplace ``en avant``.
 
 .. code-block:: python
 
@@ -125,4 +124,4 @@ Here is the main program.
 
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
+    Vous pouvez ajouter différents effets sonores ou musiques dans les dossiers ``musics`` ou ``sounds`` via :ref:`filezilla`.

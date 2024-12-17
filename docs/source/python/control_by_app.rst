@@ -1,37 +1,37 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et obtenez des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions et concours festifs** : Participez à des concours et des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _control_by_app:
 
-Controlled by the APP
-=======================
+Contrôlé par l'application
+==============================
 
-The SunFounder controller is used to control Raspberry Pi/Pico based robots.
+Le contrôleur SunFounder est utilisé pour contrôler les robots basés sur Raspberry Pi/Pico.
 
-The APP integrates Button, Switch, Joystick, D-pad, Slider and Throttle Slider widgets; Digital Display, Ultrasonic Radar, Grayscale Detection and Speedometer input widgets.
+L'application intègre des widgets pour des boutons, des interrupteurs, des joysticks, des croix directionnelles, des curseurs et des curseurs de gaz ; des widgets pour l'affichage numérique, le radar ultrasonique, la détection en niveaux de gris et la vitesse.
 
-There are 17 areas A-Q , where you can place different widgets to customize your own controller.
+Il y a 17 zones (A-Q), où vous pouvez placer différents widgets pour personnaliser votre propre contrôleur.
 
-In addition, this application provides a live video streaming service.
+De plus, cette application propose un service de diffusion vidéo en direct.
 
-Let's customize a PiCrawler controller using this app.
+Personnalisons un contrôleur PiCrawler avec cette application.
 
-**How to do?**
+**Comment faire ?**
 
-#. Install the ``sunfounder-controller`` module.
+#. Installez le module ``sunfounder-controller``.
 
-    The ``robot-hat``, ``vilib``, and ``picrawler`` modules need to be installed first, for details see: :ref:`install_all_modules`.
+    Les modules ``robot-hat``, ``vilib`` et ``picrawler`` doivent d'abord être installés. Pour plus de détails, consultez :ref:`install_all_modules`.
 
     .. raw:: html
 
@@ -44,7 +44,7 @@ Let's customize a PiCrawler controller using this app.
         cd ~/sunfounder-controller
         sudo python3 setup.py install
 
-#. Run the code.
+#. Exécutez le code.
 
     .. raw:: html
 
@@ -55,61 +55,59 @@ Let's customize a PiCrawler controller using this app.
         cd ~/sunfounder-controller/examples
         sudo python3 picrawler_control.py
 
-#. Install `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
+#. Installez `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ depuis l'**App Store (iOS)** ou **Google Play (Android)**.
 
 
-#. Open and create a new controller.
+#. Ouvrez l'application et créez un nouveau contrôleur.
 
-    Create a new controller by clicking on the + sign in the SunFounder Controller APP.
+    Créez un nouveau contrôleur en cliquant sur le signe + dans l'application SunFounder Controller.
 
     .. image:: img/app1.PNG
 
-    There are preset controllers for some products in the Preset section, 这里我们选择PiCrawler.
+    Il existe des contrôleurs prédéfinis pour certains produits dans la section Prédéfinis. Ici, nous choisissons PiCrawler.
 
     .. image:: img/app_control1.jpg
 
-    Give it a name and select the Controller type. 
+    Donnez-lui un nom et sélectionnez le type de contrôleur.
 
     .. image:: img/app_control2.jpg
 
-    进入到这个预设的控制器之后，你会发现已经有一些小部件了。如果你没有其他要修改的，点击|app_save|按键。
+    Une fois dans ce contrôleur prédéfini, vous remarquerez déjà quelques widgets. Si vous n'avez rien d'autre à modifier, cliquez sur le bouton |app_save|.
 
     .. image:: img/app_control3.jpg
 
-#. Connect to PiCrawler.
+#. Connectez-vous à PiCrawler.
 
-    When you click the **Connect** button, it will automatically search for robots nearby. Its name is defined in ``picrawler_control.py`` and it must be running at all times.
+    Lorsque vous cliquez sur le bouton **Connecter**, l'application recherche automatiquement les robots à proximité. Leur nom est défini dans ``picrawler_control.py`` et doit être en cours d'exécution en tout temps.
 
     .. image:: img/app_control6.jpg
-    
-    Once you click on the product name, the message "Connected Successfully" will appear and the product name will appear in the upper right corner.
+
+    Une fois que vous avez cliqué sur le nom du produit, le message "Connecté avec succès" apparaît et le nom du produit s'affiche dans le coin supérieur droit.
 
     .. image:: img/app_control7.jpg
 
     .. note::
 
-        * You need to make sure that your mobile device is connected to the same LAN as PiCrawler.
-        * If it doesn't search automatically, you can also manually enter the IP to connect.
+        * Vous devez vous assurer que votre appareil mobile est connecté au même réseau local que PiCrawler.
+        * Si la recherche automatique échoue, vous pouvez aussi entrer manuellement l'IP pour vous connecter.
 
         .. image:: img/app11.PNG
 
-#. Run this controller.
+#. Exécutez ce contrôleur.
 
-    Click the **Run** button to start the controller, you will see the footage of the car shooting, and now you can control your PiCrawler with these widgets.
+    Cliquez sur le bouton **Exécuter** pour démarrer le contrôleur. Vous verrez l'image capturée par la caméra, et vous pourrez désormais contrôler votre PiCrawler avec ces widgets.
 
     .. image:: img/app_control8.jpg
-    
-    Here are the functions of the widgets.
 
-    * **A**: Set the power of the Picrawler.
-    * **B**: Show the move speed of the robot.
-    * **C**: The same function as the B widget.
-    * **D**: Show the detected obstacles in red points.
-    * **G**: voice recognition, press and hold this widget to start speaking, and it will show the recognized voice when you release it. We have set ``forward``, ``backard``, ``left`` and ``right`` 4 commands in the code to control the car.
-    * **K**: Control forward, backward, left, and right motions of the car.
-    * **Q**: turn the head(Camera) up, down, left and right.
-    * **N**: Turn on the color recognition function.
-    * **O**: Turn on the face recognition function.
-    * **P**: Turn on the object recognition function, it can recognize nearly 90 kinds of objects, for the list of models, please refer to: https://github.com/sunfounder/vilib/blob/master/workspace/coco_labels.txt.
+    Voici les fonctions des widgets.
 
-
+    * **A** : Réglez l'alimentation de PiCrawler.
+    * **B** : Affichez la vitesse de déplacement du robot.
+    * **C** : Fonction identique à celle du widget B.
+    * **D** : Affichez les obstacles détectés sous forme de points rouges.
+    * **G** : Reconnaissance vocale, appuyez et maintenez ce widget pour commencer à parler. Il affichera la voix reconnue lorsque vous le relâcherez. Nous avons défini les commandes ``avant``, ``arrière``, ``gauche`` et ``droite`` dans le code pour contrôler le robot.
+    * **K** : Contrôlez les mouvements avant, arrière, gauche et droite du robot.
+    * **Q** : Tournez la tête (caméra) vers le haut, vers le bas, à gauche ou à droite.
+    * **N** : Activez la fonction de reconnaissance des couleurs.
+    * **O** : Activez la fonction de reconnaissance faciale.
+    * **P** : Activez la fonction de reconnaissance d'objets, elle peut reconnaître près de 90 types d'objets. Pour la liste des modèles, veuillez consulter : https://github.com/sunfounder/vilib/blob/master/workspace/coco_labels.txt.

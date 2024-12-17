@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et obtenez des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions et concours festifs** : Participez à des concours et à des promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_posture:
 
-Adjust Posture
+Ajuster la posture
 =====================
 
-In this example, we use the keyboard to control the PiCrawler foot by foot and assume the desired posture.
+Dans cet exemple, nous utilisons le clavier pour contrôler le PiCrawler, pied par pied, et adopter la posture souhaitée.
 
-You can press the space bar to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
+Vous pouvez appuyer sur la barre d'espace pour afficher les valeurs de coordonnées actuelles. Ces valeurs sont utiles lorsque vous créez des actions uniques pour le PiCrawler.
 
 .. image:: img/1cood.A.png
 
-**Run the Code**
+**Exécuter le code**
 
 .. raw:: html
 
@@ -34,11 +34,11 @@ You can press the space bar to print out the current coordinate values. These co
     cd ~/picrawler/examples
     sudo python3 do_single_leg.py
 
-After the code runs, please operate according to the prompt that pops up in the terminal.
+Après avoir exécuté le code, veuillez suivre les instructions qui apparaîtront dans le terminal.
 
-* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
-* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``Ctrl+C`` to exit.
+* Appuyez sur ``1234`` pour sélectionner chaque patte séparément, ``1`` : patte avant droite, ``2`` : patte avant gauche, ``3`` : patte arrière gauche, ``4`` : patte arrière droite
+* Appuyez sur ``w``, ``a``, ``s``, ``d``, ``r`` et ``f`` pour contrôler lentement les valeurs de coordonnées du PiCrawler.
+* Appuyez sur ``Ctrl+C`` pour quitter.
 
 
 **Code**
@@ -67,8 +67,8 @@ After the code runs, please operate according to the prompt that pops up in the 
         4: Select right rear leg
 
         W: Y++          R: Z++             
-        A: X--          F: Z--
-        S: Y--
+        A: X--          F: Z-- 
+        S: Y--  
         D: X++          Ctrl+C: Quit
     '''
     legs_list = ['right front', 'left front', 'left rear', 'right rear']
@@ -83,7 +83,7 @@ After the code runs, please operate according to the prompt that pops up in the 
         coordinate=crawler.current_step_all_leg_value()  
 
         def show_info():
-            print("\033[H\033[J", end='')  # clear terminal windows
+            print("\033[H\033[J", end='')  # Effacer la fenêtre du terminal
             print(manual)   
             print('%s : %s'%(leg+1, legs_list[leg])) 
             print('coordinate: %s'%(coordinate))  
@@ -91,14 +91,14 @@ After the code runs, please operate according to the prompt that pops up in the 
         show_info()
 
         while True:
-            # readkey
+            # lire la touche
             key = readchar.readkey()
             key = key.lower()
-            # select the leg 
+            # sélectionner la patte 
             if key in ('1234'):
                 leg = int(key) - 1
                 show_info()
-            # move
+            # mouvement
             elif key in ('wsadrf'):         
                 if 'w' == key:
                     coordinate[leg][1]=coordinate[leg][1] + step    
@@ -115,14 +115,14 @@ After the code runs, please operate according to the prompt that pops up in the 
 
                 crawler.do_single_leg(leg,coordinate[leg],speed) 
                 sleep(0.1)  
-                # coordinate=crawler.current_step_all_leg_value()
+                # coordinate = crawler.current_step_all_leg_value()
                 show_info()
 
             sleep(0.05)
 
     
-    if __name__ == "__main__":
+    if __name__ == "__main__": 
         main()
 
-* ``current_step_all_leg_value()``: Returns the coordinate values of all legs.
-* ``do_single_leg(leg,coordinate[leg],speed)``: Modify the coordinate value of a certain leg individually.
+* ``current_step_all_leg_value()`` : Retourne les valeurs des coordonnées de toutes les pattes.
+* ``do_single_leg(leg, coordinate[leg], speed)`` : Modifie les coordonnées d'une patte spécifique.

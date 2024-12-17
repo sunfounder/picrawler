@@ -97,6 +97,22 @@ gettext_compact = False
 
 rst_epilog = """
 
+.. |link_fr_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pi-crawler/fr/latest/" target="_blank">Didacticiels en ligne en français</a>
+
+.. |link_en_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/" target="_blank">English Online-tutorials</a>
+
+.. |link_ja_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pi-crawler/ja/latest/" target="_blank">日本語オンライン教材</a>
+
+.. |link_german_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pi-crawler/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+
 .. |link_robot_hat_v4| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/" target="_blank">Robot HAT</a>
@@ -119,7 +135,7 @@ rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">ici</a>
 
 .. |link_robot_hat| raw:: html
 

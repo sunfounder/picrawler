@@ -1,54 +1,54 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et bénéficiez d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 
 3-pin Battery
-=================
+===============
 
 .. image:: img/3pin_battery.jpg
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC** : Terminal positif de la batterie. Ici, deux ensembles de VCC et GND sont utilisés pour augmenter le courant et réduire la résistance.
+* **Milieu** : Permet d'équilibrer la tension entre les deux cellules pour protéger la batterie.
+* **GND** : Terminal négatif de la batterie.
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. The connector is XH2.54 3P, which can be charged directly after being inserted into the Robot HAT.
+Il s'agit d'un pack de batteries personnalisé fabriqué par SunFounder, constitué de deux batteries 18650 d'une capacité de 2000mAh. Le connecteur est XH2.54 3P, et il peut être chargé directement après avoir été inséré dans le Robot HAT.
 
-**Features**
+**Caractéristiques**
 
-* Composition: Li-ion
-* Battery Capacity: 2000mAh, 14.8Wh
-* Battery Weight: 90.8g
-* Number of Cells: 2
-* Connector: XH2.54 3P
-* Over-discharge protection: 6.0V
+* **Composition** : Li-ion
+* **Capacité de la batterie** : 2000mAh, 14.8Wh
+* **Poids de la batterie** : 90.8g
+* **Nombre de cellules** : 2
+* **Connecteur** : XH2.54 3P
+* **Protection contre la décharge excessive** : 6.0V
 
 5-pin Battery
 -----------------------------------
 
 .. image:: img/5pin_battery.jpg
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC** : Terminal positif de la batterie. Ici, deux ensembles de VCC et GND sont utilisés pour augmenter le courant et réduire la résistance.
+* **Milieu** : Permet d'équilibrer la tension entre les deux cellules pour protéger la batterie.
+* **GND** : Terminal négatif de la batterie.
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. The connector is PH2.0-5P, which can be charged directly after being inserted into the shield.
+Il s'agit d'un pack de batteries personnalisé fabriqué par SunFounder, constitué de deux batteries 18650 d'une capacité de 2000mAh. Le connecteur est PH2.0-5P, et il peut être chargé directement après avoir été inséré dans le bouclier.
 
-**Features**
+**Caractéristiques**
 
-* **Composition**: Li-ion
-* **Battery Capacity**: 2000mAh, 14.8Wh
-* **Battery Weight**: 90.8g
-* **Number of Cells**: 2
-* **Connector**: PH2.0-5P
-* **Over-discharge protection**: 6.0V
+* **Composition** : Li-ion
+* **Capacité de la batterie** : 2000mAh, 14.8Wh
+* **Poids de la batterie** : 90.8g
+* **Nombre de cellules** : 2
+* **Connecteur** : PH2.0-5P
+* **Protection contre la décharge excessive** : 6.0V

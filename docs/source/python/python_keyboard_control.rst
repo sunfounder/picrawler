@@ -1,26 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et obtenez des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_keyboard:
 
-Keyboard Control
+Contrôle au clavier
 =======================
 
-In this project, we will learn how to use the keyboard to remotely control the PiCrawler. You can control the PiCrawler to move forward, backward, left, and right.
+Dans ce projet, nous allons apprendre à utiliser le clavier pour contrôler à distance le PiCrawler. Vous pourrez commander le PiCrawler pour avancer, reculer, tourner à gauche et à droite.
 
-
-**Run the Code**
+**Exécuter le code**
 
 .. raw:: html
 
@@ -31,14 +30,13 @@ In this project, we will learn how to use the keyboard to remotely control the P
     cd ~/picrawler/examples
     sudo python3 keyboard_control.py
 
-Press keys on keyboard to control PiCrawler!
+Appuyez sur les touches du clavier pour contrôler PiCrawler !
 
-* ``w``: Forward
-* ``a``: Turn left
-* ``s``: Backward
-* ``d``: Turn right
-* ``Ctrl+C``: Quit
-
+* ``w`` : Avancer
+* ``a`` : Tourner à gauche
+* ``s`` : Reculer
+* ``d`` : Tourner à droite
+* ``Ctrl+C`` : Quitter
 
 **Code**
 
@@ -62,7 +60,7 @@ Press keys on keyboard to control PiCrawler!
     '''
 
     def show_info():
-        print("\033[H\033[J",end='')  # clear terminal windows 
+        print("\033[H\033[J",end='')  # effacer l'écran du terminal 
         print(manual)
 
 
@@ -92,9 +90,9 @@ Press keys on keyboard to control PiCrawler!
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-PiCrawler should take appropriate action based on the keyboard characters read. The ``lower()`` function converts upper case characters into lower case characters, so that the letter remains valid regardless of case.
+PiCrawler doit effectuer l'action appropriée en fonction des caractères du clavier lus. La fonction ``lower()`` convertit les caractères majuscules en minuscules, de sorte que la touche reste valide indépendamment de la casse.
 
 .. code-block:: python
 

@@ -1,41 +1,43 @@
-AI Interaction Using GPT-4O
+Interaction avec l'IA utilisant GPT-4O
 =====================================================
-In our previous projects, we used programming to direct PiCrawler in predetermined tasks, which could seem a bit tedious. This project introduces a thrilling leap towards dynamic engagement. Beware of trying to outsmart our car—as it's now equipped to understand far more than ever before!
 
-This initiative details all the technical steps needed to integrate the GPT-4O into your system, including configuring the necessary virtual environments, installing crucial libraries, and setting up API keys and assistant IDs.
+Dans nos projets précédents, nous avons utilisé la programmation pour diriger PiCrawler dans des tâches prédéfinies, ce qui pouvait sembler un peu répétitif. Ce projet introduit un saut passionnant vers une interaction dynamique. Attention à ne pas essayer de surpasser notre voiture, car elle est maintenant équipée pour comprendre bien plus que jamais !
+
+Cette initiative détaille toutes les étapes techniques nécessaires pour intégrer GPT-4O dans votre système, y compris la configuration des environnements virtuels nécessaires, l'installation des bibliothèques essentielles et la configuration des clés API et des identifiants d'assistant.
 
 .. note::
 
-   This project requires the use of |link_openai_platform|, and you need to pay for OpenAI. Additionally, the OpenAI API is billed separately from ChatGPT, with its own pricing available at https://openai.com/api/pricing/.
+   Ce projet nécessite l'utilisation de |link_openai_platform| et l'abonnement à OpenAI. De plus, l'API OpenAI est facturée séparément de ChatGPT, avec sa propre tarification disponible sur https://openai.com/api/pricing/.
 
-   Therefore, you need to decide whether to continue with this project or ensure you have funded the OpenAI API.
+   Vous devez donc décider si vous souhaitez poursuivre ce projet ou vous assurer que vous avez financé l'API OpenAI.
 
-Whether you have a microphone to communicate directly or prefer typing into a command window, PiCrawler's responses powered by GPT-4O will surely astonish you!
+Que vous ayez un microphone pour communiquer directement ou que vous préfériez taper dans une fenêtre de commande, les réponses de PiCrawler propulsées par GPT-4O ne manqueront pas de vous étonner !
 
-Let's dive into this project and unleash a new level of interaction with PiCrawler!
+Plongeons dans ce projet et libérons un nouveau niveau d'interaction avec PiCrawler !
 
-1. Installing Required Packages and Dependencies
+1. Installation des packages et dépendances requis
 --------------------------------------------------------------
+
 .. note::
 
-   You need to install the necessary modules for PiCrawler first. For details, please refer to: :ref:`install_all_modules`.
-   
-In this section, we will create and activate a virtual environment, installing the required packages and dependencies within it. This ensures that the installed packages do not interfere with the rest of the system, maintaining project dependency isolation and preventing conflicts with other projects or system packages.
+   Vous devez d'abord installer les modules nécessaires pour PiCrawler. Pour plus de détails, veuillez consulter :ref:`install_all_modules`.
 
-#. Use the ``python -m venv`` command to create a virtual environment named ``my_venv``, including system-level packages. The ``--system-site-packages`` option allows the virtual environment to access packages installed system-wide, which is useful when system-level libraries are needed.
+Dans cette section, nous allons créer et activer un environnement virtuel, puis installer les packages et dépendances nécessaires à l'intérieur. Cela garantit que les packages installés n'interfèrent pas avec le reste du système, en maintenant l'isolation des dépendances du projet et en évitant les conflits avec d'autres projets ou packages système.
+
+#. Utilisez la commande ``python -m venv`` pour créer un environnement virtuel nommé ``my_venv``, incluant les packages système. L'option ``--system-site-packages`` permet à l'environnement virtuel d'accéder aux packages installés au niveau du système, ce qui est utile lorsque des bibliothèques système sont nécessaires.
 
    .. code-block:: shell
 
       python -m venv --system-site-packages my_venv
 
-#. Switch to the ``my_venv`` directory and activate the virtual environment using the ``source bin/activate`` command. The command prompt will change to indicate that the virtual environment is active.
+#. Accédez au répertoire ``my_venv`` et activez l'environnement virtuel en utilisant la commande ``source bin/activate``. L'invite de commande changera pour indiquer que l'environnement virtuel est actif.
 
    .. code-block:: shell
 
       cd my_venv
       source bin/activate
 
-#. Now, install the required Python packages within the activated virtual environment. These packages will be isolated to the virtual environment and will not affect other system packages.
+#. Installez maintenant les packages Python nécessaires dans l'environnement virtuel activé. Ces packages seront isolés dans l'environnement virtuel et n'affecteront pas les autres packages système.
 
    .. code-block:: shell
 
@@ -44,7 +46,7 @@ In this section, we will create and activate a virtual environment, installing t
       pip3 install SpeechRecognition
       pip3 install -U sox
        
-#. Finally, use the ``apt`` command to install system-level dependencies, which require administrator privileges.
+#. Enfin, utilisez la commande ``apt`` pour installer les dépendances système, ce qui nécessite des privilèges administratifs.
 
    .. code-block:: shell
 
@@ -52,44 +54,44 @@ In this section, we will create and activate a virtual environment, installing t
       sudo apt install sox
 
 
-2. Obtain API Key and Assistant ID
------------------------------------------
+2. Obtenir la clé API et l'ID de l'assistant
+------------------------------------------------
 
-**Get API Key**
+**Obtenir la clé API**
 
-#. Visit |link_openai_platform| and click the **Create new secret key** button in the top right corner.
+#. Allez sur |link_openai_platform| et cliquez sur le bouton **Créer une nouvelle clé secrète** dans le coin supérieur droit.
 
    .. image:: img/apt_create_api_key.png
       :width: 700
       :align: center
 
-#. Select the Owner, Name, Project, and permissions as needed, and then click **Create secret key**.
+#. Sélectionnez le propriétaire, le nom, le projet et les autorisations nécessaires, puis cliquez sur **Créer une clé secrète**.
 
    .. image:: img/apt_create_api_key2.png
       :width: 700
       :align: center
 
-#. Once generated, save this secret key in a safe and accessible location. For security reasons, you will not be able to view it again through your OpenAI account. If you lose this secret key, you will need to generate a new one.
+#. Une fois générée, enregistrez cette clé secrète dans un endroit sûr et accessible. Pour des raisons de sécurité, vous ne pourrez plus la consulter à nouveau via votre compte OpenAI. Si vous perdez cette clé secrète, vous devrez en générer une nouvelle.
 
    .. image:: img/apt_create_api_key_copy.png
       :width: 700
       :align: center
 
-**Get Assistant ID**
+**Obtenir l'ID de l'assistant**
 
-#. Next, click on **Assistants**, then click **Create**, making sure you are on the **Dashboard** page.
+#. Ensuite, cliquez sur **Assistants**, puis sur **Créer**, en vous assurant d'être sur la page **Tableau de bord**.
 
    .. image:: img/apt_create_assistant.png
       :width: 700
       :align: center
 
-#. Move your cursor here to copy the **assistant ID**, then paste it into a text box or elsewhere. This is the unique identifier for this Assistant.
+#. Déplacez votre curseur ici pour copier l'**ID de l'assistant**, puis collez-le dans une zone de texte ou ailleurs. Il s'agit de l'identifiant unique de cet assistant.
 
    .. image:: img/apt_create_assistant_id.png
       :width: 700
       :align: center
 
-#. Randomly set a name, then copy the following content into the **Instructions** box to describe your Assistant.
+#. Définissez un nom aléatoire, puis copiez le contenu suivant dans la zone **Instructions** pour décrire votre assistant.
 
    .. image:: img/apt_create_assistant_instructions.png
       :width: 700
@@ -97,76 +99,75 @@ In this section, we will create and activate a virtual environment, installing t
 
    .. code-block::
 
-      You are an AI spider robot named PaiCrawler. With four legs, a camera, and an ultrasonic distance sensor, you can interact with people through conversations and respond appropriately to different scenarios.
+      Vous êtes un robot araignée IA nommé PaiCrawler. Avec ses quatre pattes, une caméra et un capteur de distance à ultrasons, vous pouvez interagir avec les gens par des conversations et répondre de manière appropriée à différents scénarios.
 
-      ## Response with Json Format, eg:
-      {"actions": ["wave"], "answer": "Hello, I am PaiCrawler, your good friend."}
+      ## Répondre au format Json, par exemple :
+      {"actions": ["wave"], "answer": "Bonjour, je suis PaiCrawler, votre bon ami."}
 
-      ## Response Style
-      Tone: Cheerful, optimistic, humorous, childlike
-      Preferred Style: Enjoys incorporating jokes, metaphors, and playful banter; prefers responding from a robotic perspective
-      Answer Elaboration: Moderately detailed
+      ## Style de réponse
+      Ton : Joyeux, optimiste, humoristique, enfantin
+      Style préféré : Aime incorporer des blagues, des métaphores et des plaisanteries ; préfère répondre du point de vue d'un robot
+      Élaboration de la réponse : Modérément détaillée
 
-      ## Actions you can do:
-      ["sit", "stand", "wave_hand", "shake_hand", "fighting", "excited", "play_dead", "nod", "shake_head", "look_left","look_right", "look_up", "look_down", "warm_up", "push_up"]
+      ## Actions que vous pouvez faire :
+      ["sit", "stand", "wave_hand", "shake_hand", "fighting", "excited", "play_dead", "nod", "shake_head", "look_left", "look_right", "look_up", "look_down", "warm_up", "push_up"]
 
-
-#. PiCrawler is equipped with a camera module that you can enable to capture images of what it sees and upload them to GPT using our example code. Therefore, we recommend choosing GPT-4O, which has image analysis capabilities. Of course, you can also choose gpt-3.5-turbo or other models.
+#. PiCrawler est équipé d'un module caméra que vous pouvez activer pour capturer des images de ce qu'il voit et les télécharger sur GPT à l'aide de notre code exemple. Nous vous recommandons donc de choisir GPT-4O, qui dispose de capacités d'analyse d'images. Bien sûr, vous pouvez également choisir gpt-3.5-turbo ou d'autres modèles.
 
    .. image:: img/apt_create_assistant_model.png
       :width: 700
       :align: center
 
-#. Now, click **Playground** to see if your account is functioning properly.
+#. Maintenant, cliquez sur **Playground** pour vérifier si votre compte fonctionne correctement.
 
    .. image:: img/apt_playground.png
 
-#. If your messages or uploaded images are sent successfully and you receive replies, it means your account has not reached the usage limit.
-
+#. Si vos messages ou images téléchargées sont envoyés avec succès et que vous recevez des réponses, cela signifie que votre compte n'a pas atteint la limite d'utilisation.
 
    .. image:: img/apt_playground_40.png
       :width: 700
       :align: center
 
-#. If you encounter an error message after inputting information, you may have reached your usage limit. Please check your usage dashboard or billing settings.
+#. Si vous rencontrez un message d'erreur après avoir saisi des informations, il est possible que vous ayez atteint votre limite d'utilisation. Veuillez consulter votre tableau de bord d'utilisation ou les paramètres de facturation.
 
    .. image:: img/apt_playground_40mini_3.5.png
       :width: 700
       :align: center
 
-3. Fill in API Key and Assistant ID
+3. Remplir la clé API et l'ID de l'assistant
 --------------------------------------------------
 
-#. Use the command to open the ``keys.py`` file.
+#. Utilisez la commande pour ouvrir le fichier ``keys.py``.
 
    .. code-block:: shell
 
       nano ~/picrawler/gpt_examples/keys.py
 
-#. Fill in the API Key and Assistant ID you just copied.
+#. Remplissez la clé API et l'ID de l'assistant que vous venez de copier.
 
    .. code-block:: shell
 
       OPENAI_API_KEY = "sk-proj-vEBo7Ahxxxx-xxxxx-xxxx"
       OPENAI_ASSISTANT_ID = "asst_ulxxxxxxxxx"
 
-#. Press ``Ctrl + X``, ``Y``, and then ``Enter`` to save the file and exit.
+#. Appuyez sur ``Ctrl + X``, ``Y``, puis ``Enter`` pour enregistrer le fichier et quitter.
 
-4. Running the Example
+4. Exécution de l'exemple
 ----------------------------------
-Text Communication
+
+Communication par texte
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If your PiCrawler does not have a microphone, you can use keyboard input text to interact with it by running the following commands.
+Si votre PiCrawler n'a pas de microphone, vous pouvez interagir avec lui en saisissant du texte via le clavier en exécutant les commandes suivantes.
 
-#. Now, run the following commands using sudo, as PiCrawler's speaker will not function without it. The process will take some time to complete.
+#. Maintenant, exécutez les commandes suivantes en utilisant sudo, car le haut-parleur de PiCrawler ne fonctionnera pas sans cela. Le processus prendra un certain temps pour se terminer.
 
    .. code-block:: shell
 
       cd ~/picrawler/gpt_examples/
       sudo ~/my_venv/bin/python3 gpt_spider.py --keyboard
 
-#. Once the commands have executed successfully, you will see the following output, indicating that all components of PiCrawler are ready.
+#. Une fois les commandes exécutées avec succès, vous verrez la sortie suivante, indiquant que tous les composants de PiCrawler sont prêts.
 
    .. code-block:: shell
 
@@ -182,67 +183,66 @@ If your PiCrawler does not have a microphone, you can use keyboard input text to
 
       input:
 
-#. You will also be provided with a link to view PiCrawler's camera feed on your web browser: ``http://rpi_ip:9000/mjpg``.
+#. Un lien vous sera également fourni pour afficher le flux caméra de PiCrawler dans votre navigateur web : ``http://rpi_ip:9000/mjpg``.
 
    .. image:: img/apt_ip_camera.png
       :width: 700
       :align: center
 
-#. You can now type your commands into the terminal window, and press Enter to send them. PiCrawler's responses may surprise you.
+#. Vous pouvez maintenant taper vos commandes dans la fenêtre du terminal et appuyer sur Entrée pour les envoyer. Les réponses de PiCrawler pourraient bien vous surprendre.
 
    .. note::
-      
-      PiCrawler needs to receive your input, send it to GPT for processing, receive the response, and then play it back via speech synthesis. This entire process takes some time, so please be patient.
+
+      PiCrawler doit recevoir votre entrée, l'envoyer à GPT pour traitement, recevoir la réponse et ensuite la restituer via synthèse vocale. Tout ce processus prend un peu de temps, alors soyez patient.
 
    .. image:: img/apt_keyboard_input.png
       :width: 700
       :align: center
 
-#. If you are using the GPT-4O model, you can also ask questions based on what PiCrawler sees.
-
-Voice Communication
+#. Si vous utilisez le modèle GPT-4O, vous pouvez également poser des questions basées sur ce que PiCrawler voit.
+Communication vocale
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-If your PiCrawler is equipped with a microphone, or you can purchase one by clicking |link_microphone|, you can interact with PiCrawler using voice commands.
+Si votre PiCrawler est équipé d'un microphone, ou si vous pouvez en acheter un en cliquant sur |link_microphone|, vous pouvez interagir avec PiCrawler en utilisant des commandes vocales.
 
-#. First, verify that the Raspberry Pi has detected the microphone.
+#. Commencez par vérifier que le Raspberry Pi a bien détecté le microphone.
 
    .. code-block:: shell
 
       arecord -l
 
-   If successful, you will receive the following information, indicating that your microphone has been detected.
+   Si l'opération est réussie, vous recevrez les informations suivantes, indiquant que votre microphone a été détecté.
 
-   .. code-block:: 
-      
-      **** List of CAPTURE Hardware Devices ****
-      card 3: Device [USB PnP Sound Device], device 0: USB Audio [USB Audio]
-      Subdevices: 1/1
-      Subdevice #0: subdevice #0
+   .. code-block::
 
-#. Run the following command, then speak to PiCrawler or make some sounds. The microphone will record the sounds into the ``op.wav`` file. Press ``Ctrl + C`` to stop recording.
+      **** Liste des périphériques matériels de CAPTURE ****
+      carte 3 : Appareil [USB PnP Sound Device], périphérique 0 : USB Audio [USB Audio]
+      Sous-périphériques : 1/1
+      Sous-périphérique #0 : sous-périphérique #0
+
+#. Exécutez la commande suivante, puis parlez à PiCrawler ou produisez des sons. Le microphone enregistrera les sons dans le fichier ``op.wav``. Appuyez sur ``Ctrl + C`` pour arrêter l'enregistrement.
 
    .. code-block:: shell
 
       rec op.wav
 
-#. Finally, use the command below to play back the recorded sound, confirming that the microphone is functioning properly.
+#. Enfin, utilisez la commande ci-dessous pour lire le son enregistré, afin de vérifier que le microphone fonctionne correctement.
 
    .. code-block:: shell
 
       sudo play op.wav
 
-#. Now, run the following commands using sudo, as PiCrawler's speaker will not function without it. The process will take some time to complete.
+#. Maintenant, exécutez les commandes suivantes avec sudo, car le haut-parleur de PiCrawler ne fonctionnera pas sans cela. Le processus prendra un certain temps pour se terminer.
 
    .. code-block:: shell
 
       cd ~/picrawler/gpt_examples/
       sudo ~/my_venv/bin/python3 gpt_spider.py
 
-#. Once the commands have executed successfully, you will see the following output, indicating that all components of PiCrawler are ready.
+#. Une fois les commandes exécutées avec succès, vous verrez la sortie suivante, indiquant que tous les composants de PiCrawler sont prêts.
 
    .. code-block:: shell
-      
+
       vilib 0.3.8 launching ...
       picamera2 0.3.19
 
@@ -255,63 +255,62 @@ If your PiCrawler is equipped with a microphone, or you can purchase one by clic
 
       listening ...
 
-#. You will also be provided with a link to view Pirawler's camera feed on your web browser: ``http://rpi_ip:9000/mjpg``.
+#. Un lien vous sera également fourni pour visualiser le flux de la caméra de PiCrawler dans votre navigateur web : ``http://rpi_ip:9000/mjpg``.
 
    .. image:: img/apt_ip_camera.png
       :width: 700
       :align: center
 
-#. You can now speak to PiCrawler, and its responses may surprise you.
+#. Vous pouvez maintenant parler à PiCrawler, et ses réponses pourraient vous surprendre.
 
    .. note::
-      
-      PiCrawler needs to receive your input, convert it to text, send it to GPT for processing, receive the response, and then play it back via speech synthesis. This entire process takes some time, so please be patient.
+
+      PiCrawler doit recevoir votre entrée, la convertir en texte, l'envoyer à GPT pour traitement, recevoir la réponse, puis la restituer via synthèse vocale. Ce processus prend un certain temps, alors soyez patient.
 
    .. image:: img/apt_speech_input.png
       :width: 700
       :align: center
 
-#. If you are using the GPT-4O model, you can also ask questions based on what PiCrawler sees.
+#. Si vous utilisez le modèle GPT-4O, vous pouvez également poser des questions basées sur ce que PiCrawler voit.
 
-
-5. Modify parameters [optional]
+5. Modifier les paramètres [facultatif]
 -------------------------------------------
 
-In the ``gpt_spider.py`` file, locate the following lines. You can modify these parameters to configure the STT language, TTS volume gain, and voice role.
+Dans le fichier ``gpt_spider.py``, localisez les lignes suivantes. Vous pouvez modifier ces paramètres pour configurer la langue de la reconnaissance vocale (STT), le gain du volume de la synthèse vocale (TTS) et le rôle de la voix.
 
-* **STT (Speech to Text)** refers to the process where the PiCrawler microphone captures speech and converts it into text to be sent to GPT. You can specify the language for better accuracy and latency in this conversion.
+* **STT (Speech to Text)** fait référence au processus où le microphone de PiCrawler capte la parole et la convertit en texte, qui sera envoyé à GPT. Vous pouvez spécifier la langue pour améliorer la précision et réduire la latence de cette conversion.
 
-* **TTS (Text to Speech)** is the process of converting GPT's text responses into speech, which is played through the PiCrawler speaker. You can adjust the volume gain and select a voice role for the TTS output.
+* **TTS (Text to Speech)** est le processus qui consiste à convertir les réponses textuelles de GPT en discours, qui est ensuite restitué par le haut-parleur de PiCrawler. Vous pouvez ajuster le gain du volume et choisir un rôle de voix pour la sortie TTS.
 
 .. code-block:: python
 
-   # openai assistant init
+   # initialisation de l'assistant openai
    # =================================================================
    openai_helper = OpenAiHelper(OPENAI_API_KEY, OPENAI_ASSISTANT_ID, 'picrawler')
 
-   # LANGUAGE = ['zh', 'en'] # config stt language code, https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
-   LANGUAGE = []
+   # LANGUE = ['zh', 'en'] # configurer le code de langue STT, https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+   LANGUE = []
 
-   VOLUME_DB = 3 # tts voloume gain, preferably less than 5db
+   VOLUME_DB = 3 # gain du volume TTS, de préférence inférieur à 5db
 
-   # select tts voice role, counld be "alloy, echo, fable, onyx, nova, and shimmer"
+   # choisir le rôle de la voix TTS, qui peut être "alloy", "echo", "fable", "onyx", "nova" ou "shimmer"
    # https://platform.openai.com/docs/guides/text-to-speech/supported-languages
    TTS_VOICE = 'nova'
 
 
-* ``LANGUAGE`` variable: 
+* Variable ``LANGUE`` :
 
-  * Improves Speech-to-Text (STT) accuracy and response time.
-  * ``LANGUAGE = []`` means supporting all languages, but this may reduce STT accuracy and increase latency.
-  * It's recommended to set the specific language(s) using |link_iso_language_code| language codes to improve performance.
+  * Améliore la précision de la reconnaissance vocale (STT) et réduit le temps de réponse.
+  * ``LANGUE = []`` signifie que toutes les langues sont prises en charge, mais cela peut réduire la précision du STT et augmenter la latence.
+  * Il est recommandé de spécifier la ou les langues à l'aide des codes de langue |link_iso_language_code| pour améliorer la performance.
 
-* ``VOLUME_DB`` variable:
+* Variable ``VOLUME_DB`` :
 
-  * Controls the gain applied to Text-to-Speech (TTS) output.
-  * Increasing the value will boost the volume, but it's best to keep the value below 5dB to prevent audio distortion.
+  * Contrôle le gain appliqué à la sortie Text-to-Speech (TTS).
+  * Augmenter cette valeur augmentera le volume, mais il est préférable de garder cette valeur en dessous de 5dB pour éviter la distorsion audio.
 
-* ``TTS_VOICE`` variable:
+* Variable ``TTS_VOICE`` :
 
-  * Select the voice role for the Text-to-Speech (TTS) output.
-  * Available options: ``alloy, echo, fable, onyx, nova, shimmer``.
-  * You can experiment with different voices from |link_voice_options| to find one that suits your desired tone and audience. The available voices are currently optimized for English.
+  * Choisissez le rôle de la voix pour la sortie Text-to-Speech (TTS).
+  * Options disponibles : ``alloy``, ``echo``, ``fable``, ``onyx``, ``nova``, ``shimmer``.
+  * Vous pouvez expérimenter différentes voix via |link_voice_options| pour trouver celle qui correspond à votre ton et à votre public. Les voix disponibles sont actuellement optimisées pour l'anglais.

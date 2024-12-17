@@ -1,46 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez plus profondément dans le Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Servo Zeroing for Assembly
-=================================
+Réglage du zéro du servo pour l'assemblage
+=================================================
 
-Before assembling the servo, 
-the angle needs to be set to zero. 
-This is because the servo motor has a limited range of motion, 
-setting the angle to zero degrees ensures that the servo is in its 
-initial position and does not exceed its range of motion when the servo is powered on. 
-If the servo is not set to zero degrees prior to assembly, 
-it may attempt to exceed its range of motion when powered, 
-potentially damaging the servo or the mechanical system it is connected to. 
-Therefore, setting the angle to zero is an important step to ensure the 
-safe and normal operation of the servo motor.
+Avant d'assembler le servo, il est nécessaire de régler l'angle à zéro. 
+Cela est dû au fait que le moteur servo a une plage de mouvement limitée. 
+En réglant l'angle à zéro degrés, on s'assure que le servo est dans sa position initiale et qu'il ne dépasse pas sa plage de mouvement lorsqu'il est sous tension. 
+Si le servo n'est pas réglé à zéro avant l'assemblage, 
+il pourrait tenter de dépasser sa plage de mouvement lorsqu'il est alimenté, 
+ce qui pourrait endommager le servo ou le système mécanique auquel il est connecté. 
+Ainsi, le réglage de l'angle à zéro est une étape importante pour garantir le bon fonctionnement et la sécurité du moteur servo.
 
 
-For Python User
-------------------------
-
-Please refer to :ref:`quick_guide_python` to complete the 
-installation of the Raspberry Pi OS and adjust the angle of the servos.
 
 
-For Ezblock User
------------------------
+
+Pour les utilisateurs Python
+----------------------------------
+
+Veuillez consulter :ref:`quick_guide_python` pour compléter l'installation 
+du système d'exploitation Raspberry Pi et ajuster l'angle des servos.
+
+Pour les utilisateurs Ezblock
+---------------------------------
 
 .. note::
 
-    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
+    Si vous utilisez un Raspberry Pi 5, notre logiciel de programmation graphique, EzBlock, n'est pas pris en charge.
 
-After you have installed the ezblock system, 
-the P11 pin can be used to adjust the servo. 
-Please refer to :ref:`ezb_servo_adjust` for details.
+Après avoir installé le système Ezblock, 
+le pin P11 peut être utilisé pour ajuster le servo. 
+Pour plus de détails, veuillez consulter :ref:`ezb_servo_adjust`.

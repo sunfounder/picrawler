@@ -1,62 +1,58 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et bénéficiez de découvertes exclusives.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ezb_posture:
 
-Adjust Posture
+Ajuster la posture
 ==========================
 
-In this example, we use the remote function to control the PiCrawler foot by foot and assume the desired posture.
+Dans cet exemple, nous utilisons la fonction de télécommande pour contrôler chaque pied du PiCrawler et obtenir la posture souhaitée.
 
-You can tap the button to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
+Vous pouvez appuyer sur le bouton pour afficher les valeurs de coordonnées actuelles. Ces valeurs de coordonnées seront utiles lorsque vous créerez des actions uniques pour PiCrawler.
 
 .. image:: ../python/img/1cood.A.png
 
+**Programme**
 
-**Program**
+.. note:: 
 
-.. note::
-
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
-
+    * Vous pouvez écrire le programme en suivant l'image ci-dessous, veuillez consulter le tutoriel : :ref:`ezblock:create_project_latest`.
+    * Ou trouvez le code portant le même nom sur la page **Exemples** d'EzBlock Studio et cliquez directement sur **Exécuter** ou **Modifier**.
 
 .. image:: img/do_single_leg.png
     :width: 800
 
-Switch to the Remote Control interface, and you will see the following widgets.
+Passez à l'interface de télécommande, vous verrez les widgets suivants.
 
 .. image:: img/do_single_leg_B-1.png
     :width: 600
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-What you need to pay attention to in this project are the following three blocks:
+Les trois blocs suivants sont à prendre en compte dans ce projet :
 
 .. image:: img/sp210928_115847.png
 
-Modify the coordinate value of a certain leg individually.
+Modifiez la valeur des coordonnées d'un pied spécifique.
 
 .. image:: img/sp210928_115908.png
 
-Returns the coordinate value of the corresponding leg.
+Retourne la valeur des coordonnées du pied correspondant.
 
 .. image:: img/sp210928_115958.png
 
-
-You may want to simplify the program with Functions, especially when you perform the same operation multiple times. Putting these operations into a newly declared function can greatly facilitate your 
-use.
+Vous souhaiterez peut-être simplifier le programme avec des Fonctions, notamment lorsque vous effectuez la même opération plusieurs fois. Regrouper ces opérations dans une fonction nouvellement déclarée peut grandement faciliter votre utilisation.
 
 .. image:: img/sp210928_135733.png
     :width: 500

@@ -1,49 +1,49 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et bénéficiez de découvertes exclusives.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ezb_avoid:
 
-Obstacle Avoidance
+Évitement d'obstacles
 =============================
 
-
-In this project, picrawler will use an ultrasonic module to detect obstacles in front. 
-When PiCrawler detects an obstacle, it will send a signal and look for another direction to move forward.
+Dans ce projet, le PiCrawler utilise un module ultrason pour détecter les obstacles 
+devant lui. Lorsqu'il détecte un obstacle, le PiCrawler envoie un signal et cherche 
+une autre direction pour avancer.
 
 .. image:: ../python/img/avoid1.png
 
-**Program**
+**Programme**
 
-.. note::
+.. note:: 
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Vous pouvez écrire le programme selon l'image ci-dessous, veuillez consulter le tutoriel : :ref:`ezblock:create_project_latest`.
+    * Ou trouvez le code portant le même nom sur la page **Exemples** d'EzBlock Studio et cliquez directement sur **Exécuter** ou **Modifier**.
 
 .. image:: img/avoid.png
 
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-You can find the following blocks in the **Module** category to achieve distance detection:
+Vous pouvez trouver les blocs suivants dans la catégorie **Module** pour réaliser la détection de distance :
 
 .. image:: img/sp210928_103046.png
     :width: 600
 
-It should be noted that the two pins of the block should correspond to the actual wiring, that is, trig-D2, echo-D3.
+Il convient de noter que les deux broches du bloc doivent correspondre au câblage réel, à savoir trig-D2, echo-D3.
 
-Here is the main program.
+Voici le programme principal.
 
-* Read the ``distance`` detected by ultrasonic module and filter out the values less than 0 (When the ultrasonic module is too far from the obstacle or cannot read the data correctly, ``distance<0`` will appear).
-* When the ``distance`` is less than ``alert_distance`` (the threshold value set earlier, which is 10), play the sound effect ``sign.wav``. PiCrawler does ``turn left`` .
-* When the ``distance`` is greater than ``alert_distance``, PiCrawler will move ``forward``.
+* Lire la ``distance`` détectée par le module ultrason et filtrer les valeurs inférieures à 0 (lorsque le module ultrason est trop éloigné de l'obstacle ou qu'il ne peut pas lire les données correctement, ``distance<0`` apparaîtra).
+* Lorsque la ``distance`` est inférieure à ``alert_distance`` (la valeur seuil définie précédemment, qui est de 10), jouer l'effet sonore ``sign.wav``. Le PiCrawler effectue une ``rotation à gauche``.
+* Lorsque la ``distance`` est supérieure à ``alert_distance``, le PiCrawler avance ``tout droit``.

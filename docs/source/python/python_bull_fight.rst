@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et obtenez des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions et concours festifs** : Participez à des concours et à des promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_bull:
 
-Bull Fight
-==========
+Le Combat de Taureaux
+==========================
 
-Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
+Transformez PiCrawler en un taureau enragé ! Utilisez sa caméra pour suivre et foncer sur le drap rouge !
 
 .. image:: img/bullfight.png
 
-**Run the Code**
+**Exécuter le Code**
 
 .. raw:: html
 
@@ -33,9 +33,9 @@ Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
     sudo python3 bull_fight.py
 
 
-**View the Image**
+**Voir l'Image**
 
-After the code runs, the terminal will display the following prompt:
+Après l'exécution du code, le terminal affichera le message suivant :
 
 .. code-block::
 
@@ -47,15 +47,14 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``https://192.168.18.113:9000/mjpg``
+Vous pouvez ensuite entrer ``http://<votre IP>:9000/mjpg`` dans votre navigateur pour afficher l'écran vidéo. Par exemple : ``https://192.168.18.113:9000/mjpg``
 
 .. image:: img/display.png
 
 **Code**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
-
+    Vous pouvez **Modifier/Réinitialiser/Copier/Exécuter/Arrêter** le code ci-dessous. Mais avant cela, vous devez vous rendre dans le répertoire du code source, comme ``picrawler\examples``. Après avoir modifié le code, vous pouvez l'exécuter directement pour voir l'effet.
 
 .. raw:: html
 
@@ -102,11 +101,11 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
         main()
 
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-In general, this project combines the knowledge points of :ref:`py_move`, :ref:`py_vision` and :ref:`py_sound`.
+En général, ce projet combine les points de connaissances de :ref:`py_move`, :ref:`py_vision` et :ref:`py_sound`.
 
-Its flow is shown in the figure below:
+Son déroulement est illustré dans la figure ci-dessous :
 
 .. image:: img/bull_fight-f.png
 

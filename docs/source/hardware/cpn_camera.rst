@@ -1,20 +1,19 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et bénéficiez d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 Camera Module
-====================================
-
+================
 
 **Description**
 
@@ -22,42 +21,38 @@ Camera Module
    :width: 200
    :align: center
 
-This is a 5MP Raspberry Pi camera module with OV5647 sensor. It's plug and play, connect the included ribbon cable to the CSI (Camera Serial Interface) port on your Raspberry Pi and you're ready to go.
+Il s'agit d'un module caméra 5MP pour Raspberry Pi avec un capteur OV5647. Il est prêt à l'emploi : il vous suffit de connecter le câble ruban inclus au port CSI (Camera Serial Interface) de votre Raspberry Pi et vous êtes prêt à l'utiliser.
 
-The board is small, about 25mm x 23mm x 9mm, and weighs 3g, making it ideal for mobile or other size and weight-critical applications. The camera module has a native resolution of 5 megapixels and has an on-board fixed focus lens that captures still images at 2592 x 1944 pixels, and also supports 1080p30, 720p60 and 640x480p90 video.
+La carte est de petite taille, environ 25 mm x 23 mm x 9 mm, et pèse 3 g, ce qui la rend idéale pour les applications mobiles ou autres applications où la taille et le poids sont critiques. Le module caméra a une résolution native de 5 mégapixels et un objectif à mise au point fixe qui capture des images fixes à 2592 x 1944 pixels. Il prend également en charge la vidéo en 1080p à 30 ips, 720p à 60 ips et 640x480p à 90 ips.
 
 .. note:: 
 
-   The module is only capable of capturing pictures and videos, not sound.
+   Le module est uniquement capable de capturer des images et des vidéos, mais pas de son.
+
+**Spécifications**
+
+* **Résolution des images fixes** : 2592×1944 
+* **Résolution vidéo prise en charge** : 1080p/30 ips, 720p/60 ips et 640x480p à 60/90 ips
+* **Ouverture (F)** : 1.8 
+* **Angle de vue** : 65 degrés
+* **Dimensions** : 24 mm x 23,5 mm x 8 mm
+* **Poids** : 3 g
+* **Interface** : Connecteur CSI
+* **Systèmes d'exploitation pris en charge** : Raspberry Pi OS (version la plus récente recommandée)
+
+
+**Assemblez le module caméra**
 
 
 
-**Specification**
+Sur le module caméra ou le Raspberry Pi, vous trouverez un connecteur plastique plat. Tirez soigneusement sur le commutateur de fixation noir jusqu'à ce qu'il soit partiellement sorti. Insérez le câble FFC dans le connecteur plastique dans la direction indiquée et poussez le commutateur de fixation en place.
 
-* **Static Images Resolution**: 2592×1944 
-* **Supported Video Resolution**: 1080p/30 fps, 720p/ 60fps and 640 x480p 60/90 video recording 
-* **Aperture (F)**: 1.8 
-* **Visual Angle**: 65 degree 
-* **Dimension**: 24mmx23.5mmx8mm 
-* **Weight**: 3g 
-* **Interface**: CSI connector 
-* **Supported OS**: Raspberry Pi OS(latest version recommended) 
-
-
-
-**Assemble the Camera Module**
-
-
-On the camera module or Raspberry Pi, you will find a flat plastic connector. Carefully pull out the black fixing switch until the fixing switch is partially pulled out. Insert the FFC cable into the plastic connector in the direction shown and push the fixing switch back into place.
-
-If the FFC wire is installed correctly, it will be straight and will not pull out when you gently pull on it. If not, reinstall it again.
-
+Si le câble FFC est correctement installé, il sera droit et ne se détachera pas si vous tirez légèrement dessus. Sinon, réinstallez-le correctement.
 
 .. image:: img/connect_ffc.png
 .. image:: img/1.10_camera.png
    :width: 700
 
-.. warning::
+.. warning:: 
 
-   Do not install the camera with the power on, it may damage your camera.
-
+   Ne pas installer la caméra lorsque l'alimentation est activée, cela pourrait endommager votre caméra.

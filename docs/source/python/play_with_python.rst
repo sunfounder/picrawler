@@ -1,34 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et obtenez des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions et concours festifs** : Participez à des concours et des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _play_python:
 
-Play with Python
+Jouer avec Python
 ====================
 
-If you want to program in python, then you will need to learn some basic Python programming skills and basic knowledge of Raspberry Pi, please configure the Raspberry Pi first according to :ref:`quick_guide_python`.
+Si vous souhaitez programmer en Python, vous devrez d'abord acquérir quelques compétences de base en programmation Python ainsi que des connaissances fondamentales sur le Raspberry Pi. Veuillez configurer votre Raspberry Pi en suivant le guide :ref:`quick_guide_python`.
 
-
-.. toctree::
+.. toctree:: 
     :maxdepth: 2
 
     python_start/quick_guide_on_python
     python_start/calibrate
 
-
-
-After the assembly is complete, you can try to run the projects below.
+Une fois l'assemblage terminé, vous pouvez essayer de réaliser les projets ci-dessous.
 
 .. toctree::
 
@@ -48,4 +45,4 @@ After the assembly is complete, you can try to run the projects below.
 
 
 
-
+    
