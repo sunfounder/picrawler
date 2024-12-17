@@ -1,45 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _ezb_twist:
 
-Twist 
+ツイスト
 ==================
 
-We already know how to make PiCrawler assume a specific pose, the next step is to combine the poses to form a continuous action.
+これまでにPiCrawlerが特定のポーズを取る方法を学びましたが、次のステップはこれらのポーズを組み合わせて連続的な動作を作成することです。
 
-Here, PiCrawler's four feet are up and down in twos, jumping with the music.
+ここでは、PiCrawlerの4つの足がペアで上下に動き、音楽に合わせてジャンプします。
 
-**Program**
+**プログラム**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 以下の画像を参考にしてプログラムを作成できます。詳細なチュートリアルについては、:ref:`ezblock:create_project_latest` をご参照ください。
+    * または、EzBlock Studioの **Examples** ページで同名のコードを見つけ、 **実行** または **編集** をクリックして直接操作することもできます。
 
 .. image:: img/twist.png
     :width: 800
 
-**How it works?**
+**動作の仕組み**
 
-It uses two layers of for loops to make the ``new_step`` array produce continuous and regular changes, and at the same time, **do step** executes the posture to form a continuous action.
+このプログラムでは、2層のforループを使用して ``new_step`` 配列が連続的かつ規則的に変化するようにし、その一方で **do step** がポーズを実行して連続した動作を形成します。
 
-You can intuitively get the coordinate value array corresponding to each pose from :ref:`ezb_posture`.
+各ポーズに対応する座標値の配列は、:ref:`ezb_posture` から直感的に取得できます。
 
-One thing you need to pay attention to is this coordinate matrix block:
+注意すべき点は、この座標行列ブロックです：
 
 .. image:: img/sp210928_154257.png
-    
-It is essentially a two-dimensional array, which can be processed by blocks in the **List** category. Its structure is ``[[right front],[left front],[left rear],[right rear]]``.
-In other words, in this example, ``new_step#1`` corresponds to the right front; ``new_step#2`` corresponds to the left front; ``new_step#3`` corresponds to the left rear; and ``new_step#4`` corresponds to right rear.
+
+本質的には二次元配列であり、 **List** カテゴリー内のブロックを使って処理できます。その構造は ``[[右前],[左前],[左後],[右後]]`` です。
+つまり、この例では、 ``new_step#1`` は右前に対応し、 ``new_step#2`` は左前、 ``new_step#3`` は左後、 ``new_step#4`` は右後に対応しています。

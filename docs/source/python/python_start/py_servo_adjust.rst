@@ -1,40 +1,40 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームのサポートを受けて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみいただけます。
+    - **イベントやプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探求と創造の準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-7. Servo Adjust (Important)
+7. サーボの調整（重要）
 ===================================
 
 .. note::
 
-    If your Robot HAT is version V44 or higher (with the speaker located at the top of the board) and includes an onboard **Zero** button, you can skip this step and simply press the **Zero** button to activate the servo zeroing program.
+    Robot HATのバージョンがV44以上（スピーカーが基板の上部にあり、オンボードの **Zero** ボタンがある場合）の場合、このステップをスキップして、 **Zero** ボタンを押すだけでサーボのゼロ設定プログラムを起動できます。
 
     .. image:: img/robot_hat_v44.png
         :width: 500
         :align: center
 
 
-The angle range of the servo is -90~90, but the angle set at the factory is random, maybe 0°, maybe 45°; if we assemble it with such an angle directly, it will lead to a chaotic state after the robot runs the code, or worse, it will cause the servo to block and burn out.
+サーボの角度範囲は-90〜90ですが、工場で設定されている角度はランダムです。例えば、0°または45°などです。この角度でそのまま組み立ててしまうと、ロボットがコードを実行した後、サーボが不安定になったり、最悪の場合、サーボが動作しなくなったり、焼き付いて故障する原因となります。
 
-So here we need to set all the servo angles to 0° and then install them, so that the servo angle is in the middle, no matter which direction to turn.
+そのため、すべてのサーボ角度を0°に設定してから取り付ける必要があります。これにより、どの方向に回転させても、サーボの角度が中央に保たれます。
 
-#. To ensure that the servo has been properly set to 0°, first insert the servo arm into the servo shaft and then gently rotate the rocker arm to a different angle. This servo arm is just to allow you to clearly see that the servo is rotating.
+#. サーボが正しく0°に設定されていることを確認するために、まずサーボアームをサーボシャフトに挿入し、その後、軽くロッカーアームを別の角度に回転させます。このサーボアームは、サーボが回転していることを明確に確認するためのものです。
 
     .. image:: img/servo_arm.png
         :align: center
 
 
-#. Now, run ``servo_zeroing.py`` in the ``examples/`` folder.
+#. 次に、 ``examples/`` フォルダ内の ``servo_zeroing.py`` を実行します。
 
     .. raw:: html
 
@@ -45,17 +45,15 @@ So here we need to set all the servo angles to 0° and then install them, so tha
         cd ~/picrawler/examples
         sudo python3 servo_zeroing.py
 
-#. Next, plug the servo cable into the P11 port as follows, at the same time you will see the servo arm rotate to a position(This is the 0° position, which is a random location and may not be vertical or parallel.).
+#. 次に、サーボケーブルをP11ポートに接続します。同時に、サーボアームが位置を回転しているのが見えるはずです（これが0°の位置であり、ランダムな場所なので垂直または平行ではない場合があります）。
 
     .. image:: img/servo_pin11.jpg
 
 
-#. Now, remove the servo arm, ensuring the servo wire remains connected, and do not turn off the power. Then continue the assembly following the paper instructions.
+#. サーボアームを外しますが、サーボケーブルは接続されたままで、電源は切らないでください。その後、組み立て手順書に従って組み立てを続けます。
 
 .. note::
 
-    * Do not unplug this servo cable before fixing it with the servo screw, you can unplug it after fixing it.
-    * Do not rotate the servo while it is powered on to avoid damage; if the servo shaft is not inserted at the right angle, pull the servo out and reinsert it.
-    * Before assembling each servo, you need to plug the servo cable into PWM pin and turn on the power to set its angle to 0°.
-
-
+    * サーボのネジで固定する前にサーボケーブルを抜かないでください。固定後にケーブルを抜いても構いません。
+    * サーボが電源オンの状態で回転しないようにしてください。もしサーボシャフトが正しい角度で挿入されていない場合は、サーボを抜いて再度挿入してください。
+    * 各サーボを組み立てる前に、サーボケーブルをPWMピンに接続し、電源を入れてその角度を0°に設定する必要があります。

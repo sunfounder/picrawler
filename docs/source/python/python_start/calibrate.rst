@@ -1,32 +1,32 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に興味を持つ仲間たちと一緒に、さらに深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを通じて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換してスキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表を早期にチェックでき、先行情報を得ることができます。
+    - **特別割引**: 最新製品に対して、限定の割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Calibrate the PiCrawler
-=============================
+PiCrawlerのキャリブレーション
+===============================
 
-Due to possible deviations during PiCrawler installation or limitations of the servos themselves, some servo angles may be slightly tilted, so you can calibrate them.
+PiCrawlerの組み立て時に若干のずれが生じる可能性があり、またサーボ自体の制約により、サーボ角度が少し傾くことがあります。そのため、キャリブレーションを行うことができます。
 
-Of course you can skip this chapter if you think the assembly is perfect and doesn't require calibration.
+もちろん、組み立てが完璧だと感じている場合やキャリブレーションが不要だと思われる場合は、この章をスキップしても構いません。
 
 
-The specific steps are as follows:
+具体的な手順は以下の通りです：
 
-1. Take out the assembly leaflet, turn it to the last page, and lay it flat on the table. Then place the PiCrawler as shown below, aligning its bottom with the outline on the calibration chart.
+1. 組み立てリーフレットを取り出し、最後のページを開いて平らなテーブルに置きます。その後、下記のようにPiCrawlerを配置し、キャリブレーションシートの輪郭に合わせて底面を揃えます。
 
     .. image:: img/calibration2.png
 
-#. Run the ``calibration.py``.
+2. ``calibration.py`` を実行します。
 
     .. raw:: html
 
@@ -36,23 +36,19 @@ The specific steps are as follows:
 
         cd ~/picrawler/examples/calibration
         sudo python3 calibration.py
-        
-    After running the above code, you will see the following interface displayed in the terminal.
+
+    上記のコードを実行すると、ターミナルに次のインターフェースが表示されます。
 
     .. image:: img/calibration1.png
 
-
-#. Press ``2`` and ``3`` keys respectively to choose left 2 legs，then press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` keys to move them to the calibration point.
+3. ``2`` と ``3`` のキーをそれぞれ押して、左側の2つの足を選択します。その後、``w``、``a``、``s``、``d``、``r``、および ``f`` のキーを使用して、キャリブレーションポイントに移動させます。
 
     .. image:: img/calibration3.png
 
-#. Now, change the calibration paper to the right and press the ``1`` and ``4`` keys to choose right 2 legs, then press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` keys to move them to the calibration point.
+4. 次にキャリブレーションシートを右側に移動させ、``1`` と ``4`` のキーを押して、右側の2つの足を選択します。その後、再度 ``w``、``a``、``s``、``d``、``r``、および ``f`` のキーを使用して、キャリブレーションポイントに移動させます。
 
     .. image:: img/calibration4.png
 
-#. After the calibration is completed, press the ``space`` key to save, you will be prompted to enter ``Y`` to confirm, and then ``ctrl+c`` to exit the program to complete the calibration.
+5. キャリブレーションが完了したら、``space`` キーを押して保存します。確認のために ``Y`` を入力するよう求められ、続いて ``ctrl+c`` を押してプログラムを終了します。これでキャリブレーションが完了します。
 
     .. image:: img/calibration5.png
-
-
-

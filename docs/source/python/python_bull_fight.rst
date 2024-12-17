@@ -1,27 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新製品に対して限定割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
+
 
 .. _py_bull:
 
-Bull Fight
-==========
+ブルファイト
+==============
 
-Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
+PiCrawlerを怒った雄牛に変身させましょう！そのカメラを使って赤い布を追跡し、突進させます！
 
 .. image:: img/bullfight.png
 
-**Run the Code**
+**コードを実行する**
 
 .. raw:: html
 
@@ -33,9 +34,9 @@ Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
     sudo python3 bull_fight.py
 
 
-**View the Image**
+**画像の表示**
 
-After the code runs, the terminal will display the following prompt:
+コードが実行されると、ターミナルには以下のようなプロンプトが表示されます：
 
 .. code-block::
 
@@ -47,15 +48,14 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``https://192.168.18.113:9000/mjpg``
+その後、ブラウザで ``http://<your IP>:9000/mjpg`` を入力して、ビデオ画面を表示できます。例: ``https://192.168.18.113:9000/mjpg``
 
 .. image:: img/display.png
 
-**Code**
+**コード**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
-
+    以下のコードは **修正/リセット/コピー/実行/停止** できます。ただし、まずソースコードのパス（例: ``picrawler/examples``）に移動する必要があります。コードを修正した後、直接実行して効果を確認できます。
 
 .. raw:: html
 
@@ -102,11 +102,10 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
         main()
 
 
-**How it works?**
+**仕組み**
 
-In general, this project combines the knowledge points of :ref:`py_move`, :ref:`py_vision` and :ref:`py_sound`.
+このプロジェクトは、:ref:`py_move` 、:ref:`py_vision` 、および:ref:`py_sound` の知識ポイントを組み合わせています。
 
-Its flow is shown in the figure below:
+その流れは以下の図に示されています：
 
 .. image:: img/bull_fight-f.png
-

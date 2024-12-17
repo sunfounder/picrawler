@@ -1,23 +1,24 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新しい製品に対する限定割引をお楽しみください。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-Hardware
+
+ハードウェア
 ==================
 
-When you are writing code, you may need to know how each module works or the role of each pin, then please see this chapter.
+コードを書く際には、各モジュールの動作や各ピンの役割を知る必要がある場合があります。この章では、各モジュールの機能、技術的なパラメータ、および動作原理について説明します。
 
-In this chapter you will find a description of each module's function, technical parameters and working principle.
+この章では、各モジュールの詳細な説明をご覧いただけます。
 
 .. toctree::
     :maxdepth: 1

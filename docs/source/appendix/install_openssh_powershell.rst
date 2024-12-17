@@ -1,23 +1,23 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _openssh_powershell:
 
-Install OpenSSH via Powershell
-==================================
+PowerShell経由でOpenSSHをインストール
+======================================
 
-When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP address>``) to connect to your Raspberry Pi, but the following error message appears.
+``ssh <username>@<hostname>.local``（または ``ssh <username>@<IP address>``）を使用してRaspberry Piに接続しようとしたときに、次のエラーメッセージが表示される場合があります。
 
     .. code-block::
 
@@ -25,20 +25,20 @@ When you use ``ssh <username>@<hostname>.local`` (or ``ssh <username>@<IP addres
         spelling of the name, or if a path was included, verify that the path is correct and try again.
 
 
-It means your computer system is too old and does not have `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ pre-installed, you need to follow the tutorial below to install it manually.
+これは、使用しているコンピューターのシステムが古く、 `OpenSSH <https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui>`_ が事前にインストールされていないことを意味します。以下の手順に従って、手動でインストールする必要があります。
 
-#. Type ``powershell`` in the search box of your Windows desktop, right click on the ``Windows PowerShell``, and select ``Run as administrator`` from the menu that appears.
+#. Windowsデスクトップの検索ボックスに ``powershell`` と入力し、 ``Windows PowerShell`` を右クリックして、表示されるメニューから ``管理者として実行`` を選択します。
 
     .. image:: img/powershell_ssh.png
         :align: center
 
-#. Use the following command to install ``OpenSSH.Client``.
+#. 次のコマンドを使用して、 ``OpenSSH.Client`` をインストールします。
 
     .. code-block::
 
         Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
-#. After installation, the following output will be returned.
+#. インストールが完了すると、以下の出力が表示されます。
 
     .. code-block::
 
@@ -46,13 +46,13 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         Online        : True
         RestartNeeded : False
 
-#. Verify the installation by using the following command.
+#. 次のコマンドを使用してインストールを確認します。
 
     .. code-block::
 
         Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
-#. It now tells you that ``OpenSSH.Client`` has been successfully installed.
+#. これで、 ``OpenSSH.Client`` が正常にインストールされたことが確認できます。
 
     .. code-block::
 
@@ -63,8 +63,8 @@ It means your computer system is too old and does not have `OpenSSH <https://lea
         State : NotPresent
 
     .. warning:: 
-        If the above prompt does not appear, it means that your Windows system is still too old, and you are advised to install a third-party SSH tool, like PuTTY.
+        上記のメッセージが表示されない場合は、使用しているWindowsシステムが依然として古いため、PuTTYのようなサードパーティ製SSHツールのインストールをお勧めします。
 
-#. Now restart PowerShell and continue to run it as administrator. At this point you will be able to log in to your Raspberry Pi using the ``ssh`` command, where you will be prompted to enter the password you set up earlier.
+#. PowerShellを再起動し、再度管理者として実行します。この時点で、 ``ssh`` コマンドを使用してRaspberry Piにログインできるようになります。ログイン時に、以前設定したパスワードの入力を求められます。
 
     .. image:: img/powershell_login.png

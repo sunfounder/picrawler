@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒に深く学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 FAQ
 ===========================
 
-Q1: After installing Ezblock OS, the servo can't turn to 0°?
--------------------------------------------------------------------
+Q1: Ezblock OSをインストールした後、サーボが0°に戻らないのはなぜですか？
+---------------------------------------------------------------------------
 
-1) Check if the servo cable is properly connected and if the Robot HAT power is on.
-2) Press Reset button.
-3) If you have already run the program in Ezblock Studio, the custom program for P11 is no longer available. You can refer to the picture below to manually write a program in Ezblock Studio to set the servo angle to 0.
+1) サーボのケーブルが正しく接続されているか、Robot HATの電源が入っているかを確認してください。
+2) リセットボタンを押してください。
+3) すでにEzblock Studioでプログラムを実行している場合、P11用のカスタムプログラムは利用できません。以下の画像を参考にして、Ezblock Studioでサーボ角度を0に設定するプログラムを手動で作成してください。
 
 .. image:: img/faq_servo.png
 
-Q2: When using VNC, I am prompted that the desktop cannot be displayed at the moment?
---------------------------------------------------------------------------------------------
+Q2: VNCを使用していると、「デスクトップを表示できません」と表示されるのはなぜですか？
+------------------------------------------------------------------------------------------------
 
-In Terminal, type ``sudo raspi-config`` to change the resolution.
+ターミナルで ``sudo raspi-config`` を入力し、解像度を変更してください。
 
-Q3: Why does the servo sometimes return to the middle position for no reason?
+Q3: サーボが時々理由もなく中央位置に戻るのはなぜですか？
 ------------------------------------------------------------------------------------
 
-When the servo is blocked by a structure or other object and cannot reach its intended position, the servo will enter the power-off protection mode in order to prevent the servo from being burned out by too much current.
+サーボが構造物や他の物体にブロックされ、意図した位置に到達できない場合、サーボは過電流による故障を防ぐため、電源オフ保護モードに入ります。
 
-After a period of power failure, if no PWM signal is given to the servo, the servo will automatically return to its original position.
+一定時間電源が切れた後、PWM信号がサーボに送信されない場合、サーボは自動的に元の位置に戻ります。
 
-Q4: About the Robot HAT Detailed Tutorial?
+Q4: Robot HATの詳細なチュートリアルについては？
 -----------------------------------------------------
 
-You can find a comprehensive tutorial about the Robot HAT here, including information on its hardware and API.
+Robot HATの詳細なチュートリアルは、こちらで確認できます。ハードウェアやAPIに関する情報も含まれています。
 
 * |link_robot_hat|

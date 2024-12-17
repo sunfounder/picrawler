@@ -1,29 +1,26 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 愛好者コミュニティへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒に深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 購入後の問題や技術的な課題を、コミュニティとチームのサポートを受けて解決できます。
+    - **学びと共有**: スキル向上のためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行プレビューにいち早くアクセスできます。
+    - **特別割引**: 最新製品に対する特別割引を楽しめます。
+    - **祝典プロモーションとプレゼント**: プレゼントキャンペーンや季節限定のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
-Component List and Assembly Instructions
+部品リストと組み立て手順
 ==============================================
 
-You need to check whether there are missing or damaged components according to the list first. If there are any problems, please contact us and we will solve them as soon as possible.
+まず、部品リストに基づいて不足している部品や破損している部品がないか確認してください。もし問題があれば、すぐにご連絡ください。迅速に対応いたします。
 
-Please follow the steps on the PDF to assemble.
+PDFに記載されている手順に従って組み立てを行ってください。
 
-If the servo has been powered on, please do not turn the Servo shaft to avoid damage.
+サーボモーターが電源オンの場合、サーボシャフトを回転させないでください。故障の原因となる可能性があります。
 
+* :Download:`部品リストと組み立て手順 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0102v30-a0000684-picrawler.pdf>`.
 
-* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0102v30-a0000684-picrawler.pdf>`.
-
-
-* You can find a comprehensive tutorial about the |link_robot_hat| here, including information on its hardware and API.
-
+* |link_robot_hat| に関する包括的なチュートリアルをご覧いただけます。ハードウェアおよびAPIに関する情報も含まれています。

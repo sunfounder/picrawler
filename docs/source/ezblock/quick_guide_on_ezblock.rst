@@ -1,72 +1,68 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **特別プレビュー**: 新製品の発表や先行公開をいち早く手に入れることができます。
+    - **特別割引**: 新しい製品に対する限定割引を楽しめます。
+    - **フェスティブプロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _ezb_servo_adjust:
 
-Quick Guide on EzBlock
+EzBlockのクイックガイド
 ===========================
 
 .. note::
 
-    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
+    Raspberry Pi 5をご使用の場合、グラフィカルプログラミングソフトウェアEzBlockはサポートされていません。
 
-The angle range of the servo is -90~90, but the angle set at the factory is random, maybe 0°, maybe 45°; if we assemble it with such an angle directly, it will lead to a chaotic state after the robot runs the code, or worse, it will cause the servo to block and burn out.
+サーボの角度範囲は-90～90度ですが、工場出荷時に設定された角度はランダムで、0°や45°の可能性があります。この角度で直接組み立てを行うと、ロボットがコードを実行した際に動作が乱れるか、最悪の場合はサーボがロックされて焼損する原因となります。
 
-So here we need to set all the servo angles to 0° and then install them, so that the servo angle is in the middle, no matter which direction to turn.
+そのため、すべてのサーボ角度を0°に設定してから取り付ける必要があります。これにより、サーボの角度は中央に位置し、どの方向に回転させても問題ありません。
 
-#. Firstly, :ref:`ezblock:install_ezblock_os_latest` (EzBlock's own tutorials) onto a Micro SD card, once the installation is complete, insert it into the Raspberry Pi.
+#. まず、:ref:`ezblock:install_ezblock_os_latest` （EzBlockの公式チュートリアル）をMicro SDカードにインストールし、インストールが完了したら、それをRaspberry Piに挿入します。
 
     .. note::
-        After the installation is complete, please return to this page.
+        インストールが完了したら、このページに戻ってください。
 
     .. image:: img/insert_sd_card.png
         :width: 500
         :align: center
 
-#. To ensure that the servo has been properly set to 0°, first insert the servo arm into the servo shaft and then gently rotate the rocker arm to a different angle. This servo arm is just to allow you to clearly see that the servo is rotating.
+#. サーボが適切に0°に設定されていることを確認するため、サーボアームをサーボシャフトに挿入し、ロッカーアームを異なる角度に優しく回転させます。このサーボアームは、サーボが回転していることを明確に確認するためのものです。
 
     .. image:: img/servo_arm.png
 
-#. Follow the instructions on the assembly foldout, insert the battery cable and turn the power switch to the ON. Then plug in a powered USB-C cable to activate the battery. Wait for 1-2 minutes, there will be a sound to indicate that the Raspberry Pi boots successfully.
+#. 組立図に従い、バッテリーケーブルを挿入し、電源スイッチをONにします。次に、電源が供給されるようにUSB-Cケーブルを差し込んでバッテリーを起動します。1〜2分待つと、Raspberry Piの起動が成功したことを知らせる音が鳴ります。
 
     .. image:: img/Z_BTR.JPG
         :width: 800
         :align: center
 
-#. Next, plug the servo cable into the P11 port as follows.
+#. 次に、サーボケーブルをP11ポートに挿入します。
 
     .. image:: img/Z_P11.JPG
 
-#. Press and hold the **USR** key, then press the **RST** key to execute the servo zeroing script within the system. When you see the servo arm rotate to a position(This is the 0° position, which is a random location and may not be vertical or parallel.), it indicates that the program has run.
+#. **USR** ボタンを押し続け、次に **RST** ボタンを押して、システム内でサーボゼロ設定スクリプトを実行します。サーボアームが回転して位置に到達すると（これは0°の位置であり、ランダムな場所であり、垂直または平行ではない場合があります）、プログラムが実行されたことを示します。
 
     .. note::
 
-        This step only needs to be done once; afterward, simply insert other servo wires, and they will automatically zero.
+        この手順は一度だけ実行すれば十分です。その後、他のサーボケーブルを挿入すれば、自動的にゼロ設定が行われます。
 
     .. image:: img/Z_P11_BT.png
         :width: 400
         :align: center
-    
-#. Now, remove the servo arm, ensuring the servo wire remains connected, and do not turn off the power. Then continue the assembly following the paper assembly instructions.
+
+#. これでサーボアームを取り外しますが、サーボケーブルが接続されていることを確認し、電源を切らないでください。その後、紙の組み立て指示に従って作業を続けます。
 
 .. note::
 
-    * Do not unplug this servo cable before fastening this servo with the servo screw, you can unplug it after fastening.
-    * Do not turn the servo while it is powered on to avoid damage; if the servo shaft is inserted at the wrong angle, pull out the servo and reinsert it.
-    * Before assembling each servo, you need to plug the servo cable into P11 and turn on the power to set its angle to 0°.
-    * This zeroing function will be disabled if you download a program to the robot later with the EzBlock APP.
-
-
-
-
+    * サーボスクリューでサーボを固定する前に、サーボケーブルを抜かないでください。固定後にケーブルを抜くことができます。
+    * 電源が入っている状態でサーボを回転させないでください。損傷を防ぐためです。サーボシャフトが誤った角度で挿入されている場合は、サーボを抜き、再度挿入してください。
+    * 各サーボを組み立てる前に、サーボケーブルをP11に挿入し、電源を入れて角度を0°に設定する必要があります。
+    * EzBlockアプリで後でプログラムをダウンロードすると、このゼロ設定機能は無効になります。

@@ -1,53 +1,50 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と共にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _ezb_pose:
 
-Pose
+ポーズ
 ===============
 
-
-PiCrawler can assume a specific posture by writing a coordinate array. Here it assumes a raised right rear foot posture.
+PiCrawlerは座標配列を使って特定のポーズを取ることができます。ここでは、右後ろ足を上げたポーズを取らせています。
 
 .. image:: ../python/img/4cood.A.png
 
-
-
-**Program**
+**プログラム**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 以下の画像を参考にしてプログラムを書くことができます。詳細なチュートリアルについては、:ref:`ezblock:create_project_latest` をご参照ください。
+    * または、EzBlock Studioの **Examples** ページで同名のコードを見つけ、 **実行** または **編集** をクリックすることができます。
 
 .. image:: img/dostep.png
 
 
-**How it works?**
+**仕組みは？**
 
-In this code, the code you need to pay attention to is this **do step**.
+このコードで注目すべきは、この **do step** です。
 
-It has two uses:
+それには2つの使い方があります：
 
-One: It can directly use **stand** or **sit**.
+1. 直接 **stand** （立つ）や **sit** （座る）を使うことができます。
 
-Second: It can also write an array of 4 coordinate values.
+2. また、4つの座標値の配列を書いて指定することもできます。
 
-Each foot has an independent coordinate system. As shown below:
+各足には独立した座標系があります。以下のようになります：
 
 .. image:: ../python/img/4cood.png
 
-You need to measure the coordinates of each toe individually. As shown below:
+各つま先の座標を個別に測定する必要があります。以下のように示されます：
 
 .. image:: ../python/img/1cood.png

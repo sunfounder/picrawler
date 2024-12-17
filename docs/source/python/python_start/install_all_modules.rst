@@ -1,24 +1,24 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に関心のある仲間たちと一緒に、さらに深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームの支援を受けて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の限定割引をお楽しみいただけます。
+    - **イベントやプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探求と創造の準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _install_all_modules:
 
 
-5. Install All the Modules (Important)
-===============================================
+5. すべてのモジュールをインストールする（重要）
+===============================================================
 
-Make sure you are connected to the Internet and update your system:
+インターネットに接続されていることを確認し、システムを更新します：
 
 .. raw:: html
 
@@ -31,18 +31,18 @@ Make sure you are connected to the Internet and update your system:
 
 .. note::
 
-    Python3 related packages must be installed if you are installing the Lite version OS.
+    Python3関連のパッケージは、LiteバージョンのOSをインストールしている場合に必須です。
 
     .. raw:: html
 
         <run></run>
 
     .. code-block::
-    
+
         sudo apt install git python3-pip python3-setuptools python3-smbus
 
 
-Install ``robot-hat`` module.
+``robot-hat`` モジュールをインストールします。
 
 .. raw:: html
 
@@ -55,7 +55,7 @@ Install ``robot-hat`` module.
     cd robot-hat
     sudo python3 setup.py install
 
-Then download the code and install ``vilib`` module.
+次に、コードをダウンロードして ``vilib`` モジュールをインストールします。
 
 .. raw:: html
 
@@ -68,7 +68,7 @@ Then download the code and install ``vilib`` module.
     cd vilib
     sudo python3 install.py
 
-Then download the code and install ``picrawler`` module.
+次に、コードをダウンロードして ``picrawler`` モジュールをインストールします。
 
 .. raw:: html
 
@@ -81,9 +81,9 @@ Then download the code and install ``picrawler`` module.
     cd picrawler
     sudo python3 setup.py install
 
-This step will take a little time, so please be patient.
+この手順は少し時間がかかりますので、少々お待ちください。
 
-Finally, you need to run the script ``i2samp.sh`` to install the components required by the i2s amplifier, otherwise the pislot will have no sound.
+最後に、 ``i2samp.sh`` スクリプトを実行してi2sアンプに必要なコンポーネントをインストールします。これを行わないと、ピースロットから音が出ません。
 
 .. raw:: html
 
@@ -96,15 +96,16 @@ Finally, you need to run the script ``i2samp.sh`` to install the components requ
 	
 .. image:: img/i2s.png
 
-Type ``y`` and press ``Enter`` to continue running the script.
+``y`` と入力して、 **Enter** キーを押してスクリプトを実行します。
 
 .. image:: img/i2s2.png
 
-Type ``y`` and press ``Enter`` to run ``/dev/zero`` in the background.
+``y`` と入力して、 **Enter** キーを押してバックグラウンドで ``/dev/zero`` を実行します。
 
 .. image:: img/i2s3.png
 
-Type ``y`` and press ``Enter`` to restart the machine.
+``y`` と入力して、 **Enter** キーを押してマシンを再起動します。
 
 .. note::
-    If there is no sound after restarting, you may need to run the ``i2samp.sh`` script multiple times.
+
+    再起動後に音が出ない場合は、 ``i2samp.sh`` スクリプトを複数回実行する必要があるかもしれません。

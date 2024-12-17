@@ -1,25 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新製品に対して限定割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
+
 
 .. _py_vision:
 
-Computer Vision
+コンピュータビジョン
 =======================
 
-This project will officially enter the field of computer vision!
+このプロジェクトでは、コンピュータビジョンの分野に正式に進出します！
 
-**Run the Code**
+**コードを実行する**
 
 .. raw:: html
 
@@ -30,9 +31,9 @@ This project will officially enter the field of computer vision!
     cd ~/picrawler/examples
     sudo python3 display.py
 
-**View the Image**
+**画像の表示**
 
-After the code runs, the terminal will display the following prompt:
+コードが実行されると、ターミナルに以下のプロンプトが表示されます：
 
 .. code-block::
 
@@ -44,62 +45,60 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``https://192.168.18.113:9000/mjpg``
+その後、ブラウザで ``http://<your IP>:9000/mjpg`` を入力して、ビデオ画面を表示できます。例えば、 ``https://192.168.18.113:9000/mjpg`` です。
 
 .. image:: img/display.png
 
 
-After the program runs, you will see the following information in the final:
+プログラムが実行された後、最終的に以下の情報が表示されます：
 
+* 関数を呼び出すためにキーを入力してください！
+* ``q``: 写真を撮る
+* ``1``: 色検出：赤
+* ``2``: 色検出：オレンジ
+* ``3``: 色検出：黄色
+* ``4``: 色検出：緑
+* ``5``: 色検出：青
+* ``6``: 色検出：紫
+* ``0``: 色検出をオフにする
+* ``r``: QRコードをスキャンする
+* ``f``: 顔検出をON/OFFする
+* ``s``: 検出したオブジェクトの情報を表示する
 
-* Input key to call the function!
-* ``q``: Take photo
-* ``1``: Color detect : red
-* ``2``: Color detect : orange
-* ``3``: Color detect : yellow
-* ``4``: Color detect : green
-* ``5``: Color detect : blue
-* ``6``: Color detect : purple
-* ``0``: Switch off Color detect
-* ``r``: Scan the QR code
-* ``f``: Switch ON/OFF face detect
-* ``s``: Display detected object information
+プロンプトに従って、対応する機能を有効にしてください。
 
-Please follow the prompts to activate the corresponding functions.
+    *  **写真を撮る**
 
-    *  **Take Photo**
-
-        Type ``q`` in the terminal and press Enter. The picture currently seen by the camera will be saved (if the color detection function is turned on, the mark box will also appear in the saved picture). You can see these photos from the ``~/Pictures/PiCrawler/`` directory of the Raspberry Pi.
-        You can use tools such as :ref:`filezilla` to transfer photos to your PC.
+        ターミナルで ``q`` を入力し、Enterを押します。カメラが現在見ている画像が保存されます（色検出機能が有効な場合、保存された画像にもマークボックスが表示されます）。これらの写真はRaspberry Piの ``~/Pictures/PiCrawler/`` ディレクトリから確認できます。
+        また、ツール（例: :ref:`filezilla` ）を使用して、写真をPCに転送できます。
         
 
-    *  **Color Detect**
+    *  **色検出**
 
-        Entering a number between ``1~6`` will detect one of the colors in "red, orange, yellow, green, blue, purple". Enter ``0`` to turn off color detection.
+        ``1~6`` の数字を入力すると、「赤、オレンジ、黄色、緑、青、紫」のいずれかの色が検出されます。``0``を入力すると、色検出がオフになります。
 
         .. image:: img/DTC2.png
 
-        .. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
+        .. note:: 色検出用のPDFカラーカードは、:download:`こちらからダウンロードして印刷できます <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>`。
 
 
-    *  **Face Detect**
+    *  **顔検出**
 
-        Type ``f`` to turn on face detection.
+        ターミナルで ``f`` を入力して、顔検出をONにします。
 
         .. image:: img/DTC5.png
 
-    *  **QR Code Detect**
+    *  **QRコード検出**
 
-        Enter ``r`` to open the QR code recognition. No other operations can be performed before the QR code is recognized. The decoding information of the QR code will be printed in the terminal.
+        ``r`` を入力して、QRコード認識を有効にします。QRコードが認識されるまで、他の操作はできません。QRコードのデコード情報はターミナルに表示されます。
 
         .. image:: img/DTC4.png
 
-    *  **Display Information**
+    *  **情報表示**
 
-        Entering ``s`` will print the information of the face detection (and color detection) target in the terminal. Including the center coordinates (X, Y) and size (Weight, height) of the measured object.
+        ``s`` を入力すると、顔検出（および色検出）のターゲット情報がターミナルに表示されます。これには、検出された物体の中心座標（X、Y）やサイズ（幅、高さ）が含まれます。
 
-
-**Code** 
+**コード**
 
 .. code-block:: python
 
@@ -117,18 +116,18 @@ Please follow the prompts to activate the corresponding functions.
     qr_code_flag = False
     
     MANUAL = '''
-    Input key to call the function!
-        q: Take photo
-        1: Color detect : red
-        2: Color detect : orange
-        3: Color detect : yellow
-        4: Color detect : green
-        5: Color detect : blue
-        6: Color detect : purple
-        0: Switch off Color detect
-        r: Scan the QR code
-        f: Switch ON/OFF face detect
-        s: Display detected object information
+    関数を呼び出すためにキーを入力してください！
+        q: 写真を撮る
+        1: 色検出：赤
+        2: 色検出：オレンジ
+        3: 色検出：黄色
+        4: 色検出：緑
+        5: 色検出：青
+        6: 色検出：紫
+        0: 色検出をオフにする
+        r: QRコードをスキャンする
+        f: 顔検出をON/OFFする
+        s: 検出したオブジェクトの情報を表示する
     '''
     
     color_list = ['close', 'red', 'orange', 'yellow', 
@@ -194,13 +193,13 @@ Please follow the prompts to activate the corresponding functions.
         print(MANUAL)
     
         while True:
-            # readkey
+            # キー入力
             key = input()
             key = key.lower()
-            # take photo
+            # 写真を撮る
             if key == 'q':
                 take_photo()
-            # color detect         
+            # 色検出         
             elif key != '' and key in ('0123456'):  # '' in ('0123') -> True
                 index = int(key)
                 if index == 0:
@@ -210,11 +209,11 @@ Please follow the prompts to activate the corresponding functions.
                     flag_color = True
                     Vilib.color_detect(color_list[index]) # color_detect(color:str -> color_name/close)
                 print('Color detect : %s'%color_list[index])  
-            # face detection
+            # 顔検出
             elif key =="f":
                 flag_face = not flag_face
                 face_detect(flag_face)
-            # qrcode detection
+            # QRコード検出
             elif key =="r":
                 qr_code_flag = not qr_code_flag
                 if qr_code_flag == True:
@@ -224,10 +223,10 @@ Please follow the prompts to activate the corresponding functions.
                         qrcode_thread.start()
                 else:
                     if qrcode_thread != None and qrcode_thread.is_alive(): 
-                       # wait for thread to end 
+                       # スレッド終了を待機 
                         qrcode_thread.join()
                         print('QRcode Detect: close')
-            # show detected object information
+            # 検出されたオブジェクト情報を表示
             elif key == "s":
                 object_show()
     
@@ -237,58 +236,56 @@ Please follow the prompts to activate the corresponding functions.
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**仕組み**
 
-The first thing you need to pay attention to here is the following function. These two functions allow you to start the camera.
+最初に注目すべき関数は以下です。この2つの関数でカメラを起動できます。
 
 .. code-block:: python
 
     Vilib.camera_start()
     Vilib.display()
 
-Functions related to "object detection":
+「オブジェクト検出」に関連する関数：
 
-* ``Vilib.face_detect_switch(True)`` : Switch ON/OFF face detection
-* ``Vilib.color_detect(color)`` : For color detection, only one color detection can be performed at the same time. The parameters that can be input are: ``"red"``, ``"orange"``, ``"yellow"``, ``"green"``, ``"blue"``, ``"purple"``
-* ``Vilib.color_detect_switch(False)`` : Switch OFF color detection
-* ``Vilib.qrcode_detect_switch(False)`` : Switch ON/OFF QR code detection, Returns the decoded data of the QR code.
-* ``Vilib.gesture_detect_switch(False)`` : Switch ON/OFF gesture detection
-* ``Vilib.traffic_sign_detect_switch(False)`` : Switch ON/OFF traffic sign detection
+* ``Vilib.face_detect_switch(True)`` : 顔検出のON/OFF切り替え
+* ``Vilib.color_detect(color)`` : 色検出用、同時に1色のみ検出できます。入力可能な色は、 ``"red"`` , ``"orange"`` , ``"yellow"`` , ``"green"`` , ``"blue"`` , ``"purple"`` です
+* ``Vilib.color_detect_switch(False)`` : 色検出のOFF
+* ``Vilib.qrcode_detect_switch(False)`` : QRコード検出のON/OFF切り替え、QRコードのデコード情報を返します。
+* ``Vilib.gesture_detect_switch(False)`` : ジェスチャー検出のON/OFF切り替え
+* ``Vilib.traffic_sign_detect_switch(False)`` : 交通標識検出のON/OFF切り替え
 
-The information detected by the target will be stored in the ``detect_obj_parameter = Manager().dict()`` dictionary.
+ターゲットで検出された情報は、 ``detect_obj_parameter = Manager().dict()`` 辞書に保存されます。
 
-In the main program, you can use it like this:
+メインプログラムでは、次のように利用できます：
 
 .. code-block:: python
 
     Vilib.detect_obj_parameter['color_x']
 
-The keys of the dictionary and their uses are shown in the following list:
+辞書のキーとその使用方法は以下の通りです：
 
-* ``color_x``: the x value of the center coordinate of the detected color block, the range is 0~320
-* ``color_y``: the y value of the center coordinate of the detected color block, the range is 0~240
-* ``color_w``: the width of the detected color block, the range is 0~320
-* ``color_h``: the height of the detected color block, the range is 0~240
-* ``color_n``: the number of detected color patches
-* ``human_x``: the x value of the center coordinate of the detected human face, the range is 0~320
-* ``human_y``: the y value of the center coordinate of the detected face, the range is 0~240
-* ``human_w``: the width of the detected human face, the range is 0~320
-* ``human_h``: the height of the detected face, the range is 0~240
-* ``human_n``: the number of detected faces
-* ``traffic_sign_x``: the center coordinate x value of the detected traffic sign, the range is 0~320
-* ``traffic_sign_y``: the center coordinate y value of the detected traffic sign, the range is 0~240
-* ``traffic_sign_w``: the width of the detected traffic sign, the range is 0~320
-* ``traffic_sign_h``: the height of the detected traffic sign, the range is 0~240
-* ``traffic_sign_t``: the content of the detected traffic sign, the value list is `['stop','right','left','forward']`
-* ``gesture_x``: The center coordinate x value of the detected gesture, the range is 0~320
-* ``gesture_y``: The center coordinate y value of the detected gesture, the range is 0~240
-* ``gesture_w``: The width of the detected gesture, the range is 0~320
-* ``gesture_h``: The height of the detected gesture, the range is 0~240
-* ``gesture_t``: The content of the detected gesture, the value list is `["paper","scissor","rock"]`
-* ``qr_date``: the content of the QR code being detected
-* ``qr_x``: the center coordinate x value of the QR code to be detected, the range is 0~320
-* ``qr_y``: the center coordinate y value of the QR code to be detected, the range is 0~240
-* ``qr_w``: the width of the QR code to be detected, the range is 0~320
-* ``qr_h``: the height of the QR code to be detected, the range is 0~320
-
-
+* ``color_x`` : 検出された色ブロックの中心座標のx値、範囲は0〜320
+* ``color_y`` : 検出された色ブロックの中心座標のy値、範囲は0〜240
+* ``color_w`` : 検出された色ブロックの幅、範囲は0〜320
+* ``color_h`` : 検出された色ブロックの高さ、範囲は0〜240
+* ``color_n`` : 検出された色ブロックの数
+* ``human_x`` : 検出された顔の中心座標のx値、範囲は0〜320
+* ``human_y`` : 検出された顔の中心座標のy値、範囲は0〜240
+* ``human_w`` : 検出された顔の幅、範囲は0〜320
+* ``human_h`` : 検出された顔の高さ、範囲は0〜240
+* ``human_n`` : 検出された顔の数
+* ``traffic_sign_x`` : 検出された交通標識の中心座標x値、範囲は0〜320
+* ``traffic_sign_y`` : 検出された交通標識の中心座標y値、範囲は0〜240
+* ``traffic_sign_w`` : 検出された交通標識の幅、範囲は0〜320
+* ``traffic_sign_h`` : 検出された交通標識の高さ、範囲は0〜240
+* ``traffic_sign_t`` : 検出された交通標識の内容、値のリストは `['stop','right','left','forward']`
+* ``gesture_x`` : 検出されたジェスチャーの中心座標x値、範囲は0〜320
+* ``gesture_y`` : 検出されたジェスチャーの中心座標y値、範囲は0〜240
+* ``gesture_w`` : 検出されたジェスチャーの幅、範囲は0〜320
+* ``gesture_h`` : 検出されたジェスチャーの高さ、範囲は0〜240
+* ``gesture_t`` : 検出されたジェスチャーの内容、値のリストは `["paper","scissor","rock"]`
+* ``qr_date`` : 検出中のQRコードの内容
+* ``qr_x`` : 検出中のQRコードの中心座標x値、範囲は0〜320
+* ``qr_y`` : 検出中のQRコードの中心座標y値、範囲は0〜240
+* ``qr_w`` : 検出中のQRコードの幅、範囲は0〜320
+* ``qr_h`` : 検出中のQRコードの高さ、範囲は0〜320

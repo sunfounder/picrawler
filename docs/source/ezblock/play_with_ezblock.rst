@@ -1,32 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32を愛する仲間たちと一緒に、さらに深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティとチームの助けを借りて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開情報をいち早く入手できます。
+    - **特別割引**: 新製品に対する独占的な割引を享受できます。
+    - **フェスティブプロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造を楽しむ準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _play_ezblock:
 
-Play with Ezblock
+EzBlockで遊ぼう
 ===========================
 
 .. note::
 
-    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
+    Raspberry Pi 5をご使用の場合、グラフィカルプログラミングソフトウェアEzBlockはサポートされていません。
 
-For beginners and novices, EzBlock is a software development platform offered by SunFounder for Raspberry Pi. Ezbock offers two programming environments: a graphical environment and a Python environment.
+初心者や入門者向けに、EzBlockはSunFounderが提供するRaspberry Pi用のソフトウェア開発プラットフォームです。EzBlockは、グラフィカル環境とPython環境の2つのプログラミング環境を提供します。
 
-It is available for almost all types of devices, including Mac, PC, and Android.
+Mac、PC、Androidなど、ほぼすべてのデバイスで利用できます。
 
-Here is a tutorial to help you complete EzBlock installation, download, and use.
-
+EzBlockのインストール、ダウンロード、使用方法を完了するためのチュートリアルを以下に示します。
 
 .. toctree::
     :maxdepth: 2
@@ -36,15 +35,13 @@ Here is a tutorial to help you complete EzBlock installation, download, and use.
     calibrate
 
 
-**Projects**
+**プロジェクト**
 
-Here, we show you the projects of playing PiCrawler on Ezblock Studio. If you are new to these, you can refer to the code images inside each project to program, and can learn the use of blocks according to TIPS.
+ここでは、EzBlock StudioでPiCrawlerを操作するプロジェクトをご紹介します。初めての方は、各プロジェクト内のコード画像を参考にしてプログラムを作成し、TIPSに従ってブロックの使い方を学んでください。
 
-If you don't want to write these projects one by one, we have uploaded them to Ezblock Studio's Examples page and you can run them directly or edit them and run them later.
-
+これらのプロジェクトを一つずつ書きたくない場合、EzBlock Studioの「Examples」ページにアップロードしているので、直接実行したり、後で編集して実行することもできます。
 
 .. toctree::
-
 
     ezblock_move
     ezblock_remote_control

@@ -1,26 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に関心のある仲間とともに、さらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新製品に対して限定割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_record:
 
-Record New Step
-=================
+新しいステップの記録
+======================
 
-We use the keyboard to control PiCrawler to make several poses in turn, and record these poses. Replay them later.
+このプロジェクトでは、キーボードを使ってPiCrawlerを操作し、いくつかのポーズを順番に実行し、それらのポーズを記録します。その後、記録したポーズを再生できます。
 
-
-**Run the Code**
+**コードの実行**
 
 .. raw:: html
 
@@ -31,16 +30,15 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
     cd ~/picrawler/examples
     sudo python3 record_new_step_by_keyboard.py
 
-After the code runs, please operate according to the prompt that pops up in the terminal.
+コードを実行した後、ターミナルに表示されるプロンプトに従って操作してください。
 
-* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
-* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``space`` to print all coordinate values.
-* Press ``p`` to have PiCrawler replay the recorded action.
-* Press ``esc`` to exit.
+* ``1234`` キーを押して足を個別に選択します。 ``1`` : 右前足、 ``2`` : 左前足、 ``3`` : 左後足、 ``4`` : 右後足
+* ``w`` 、 ``a`` 、 ``s`` 、 ``d`` 、 ``r`` 、 ``f`` を押して、PiCrawlerの座標値をゆっくりと制御します。
+* ``space`` キーを押すと、すべての座標値が表示され、現在のステップが保存されます。
+* ``p`` キーを押すと、記録されたアクションを再生します。
+* ``esc`` キーを押すと、終了します。
 
-
-**Code**
+**コード**
 
 .. code-block:: python
 
@@ -136,7 +134,7 @@ After the code runs, please operate according to the prompt that pops up in the 
                 save_new_step()
             elif 'p' == key:
                 play_all_new_step()
-            elif chr(27) == key:# 27 for ESC
+            elif chr(27) == key:# 27はESCキー
                 break    
 
             sleep(0.05)
@@ -147,11 +145,11 @@ After the code runs, please operate according to the prompt that pops up in the 
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**仕組みは？**
 
-This project was born out of :ref:`py_posture`. Added recording and replay functions.
+このプロジェクトは、:ref:`py_posture` から生まれました。録音と再生機能が追加されています。
 
-The recording function is implemented by the following code.
+録音機能は以下のコードで実現されています。
 
 .. code-block:: python
 
@@ -162,10 +160,10 @@ The recording function is implemented by the following code.
         print(new_step)
 
 .. note:: 
-    The assignment here needs to use the `Deep Copy <https://docs.python.org/3/library/copy.html>`_ function, otherwise the ``new_step`` will not get a new array object when appending.
+    ここでの代入には、 `Deep Copy <https://docs.python.org/3/library/copy.html>`_  関数を使用する必要があります。さもなければ、 ``new_step`` に新しい配列オブジェクトが追加されません。
 
 
-The replay function is implemented by the following code.
+再生機能は以下のコードで実現されています。
 
 .. code-block:: python
 

@@ -1,26 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に関心のある仲間とともに、さらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新製品に対して限定割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_keyboard:
 
-Keyboard Control
+キーボード操作
 =======================
 
-In this project, we will learn how to use the keyboard to remotely control the PiCrawler. You can control the PiCrawler to move forward, backward, left, and right.
+このプロジェクトでは、キーボードを使用してPiCrawlerをリモートで制御する方法を学びます。PiCrawlerを前進、後退、左旋回、右旋回させることができます。
 
-
-**Run the Code**
+**コードの実行**
 
 .. raw:: html
 
@@ -31,16 +30,15 @@ In this project, we will learn how to use the keyboard to remotely control the P
     cd ~/picrawler/examples
     sudo python3 keyboard_control.py
 
-Press keys on keyboard to control PiCrawler!
+キーボードのキーを押してPiCrawlerを操作してください！
 
-* ``w``: Forward
-* ``a``: Turn left
-* ``s``: Backward
-* ``d``: Turn right
-* ``Ctrl+C``: Quit
+* ``w``: 前進
+* ``a``: 左旋回
+* ``s``: 後退
+* ``d``: 右旋回
+* ``Ctrl+C``: 終了
 
-
-**Code**
+**コード**
 
 .. code-block:: python
 
@@ -62,7 +60,7 @@ Press keys on keyboard to control PiCrawler!
     '''
 
     def show_info():
-        print("\033[H\033[J",end='')  # clear terminal windows 
+        print("\033[H\033[J", end='')  # ターミナルウィンドウをクリア 
         print(manual)
 
 
@@ -92,9 +90,9 @@ Press keys on keyboard to control PiCrawler!
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**仕組みは？**
 
-PiCrawler should take appropriate action based on the keyboard characters read. The ``lower()`` function converts upper case characters into lower case characters, so that the letter remains valid regardless of case.
+PiCrawlerは、読み取ったキーボードの文字に基づいて適切な動作を実行します。 ``lower()`` 関数は、大文字を小文字に変換するため、大文字・小文字に関係なく文字が有効になります。
 
 .. code-block:: python
 

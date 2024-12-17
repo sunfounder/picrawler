@@ -1,62 +1,59 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と共にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _ezb_posture:
 
-Adjust Posture
+姿勢の調整
 ==========================
 
-In this example, we use the remote function to control the PiCrawler foot by foot and assume the desired posture.
+この例では、リモート機能を使ってPiCrawlerの足を1本ずつ制御し、所定の姿勢を取らせます。
 
-You can tap the button to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
+ボタンをタップすることで、現在の座標値を表示できます。これらの座標値は、PiCrawlerのユニークなアクションを作成する際に役立ちます。
 
 .. image:: ../python/img/1cood.A.png
 
-
-**Program**
+**プログラム**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
-
+    * 以下の画像を参考にしてプログラムを書くことができます。詳細なチュートリアルについては、:ref:`ezblock:create_project_latest` をご参照ください。
+    * または、EzBlock Studioの **Examples** ページで同名のコードを見つけ、 **実行** または **編集** をクリックすることができます。
 
 .. image:: img/do_single_leg.png
     :width: 800
 
-Switch to the Remote Control interface, and you will see the following widgets.
+リモートコントロールインターフェースに切り替えると、以下のウィジェットが表示されます。
 
 .. image:: img/do_single_leg_B-1.png
     :width: 600
 
-**How it works?**
+**仕組みは？**
 
-What you need to pay attention to in this project are the following three blocks:
+このプロジェクトで注意すべき3つのブロックは次の通りです：
 
 .. image:: img/sp210928_115847.png
 
-Modify the coordinate value of a certain leg individually.
+特定の足の座標値を個別に変更します。
 
 .. image:: img/sp210928_115908.png
 
-Returns the coordinate value of the corresponding leg.
+対応する足の座標値を返します。
 
 .. image:: img/sp210928_115958.png
 
-
-You may want to simplify the program with Functions, especially when you perform the same operation multiple times. Putting these operations into a newly declared function can greatly facilitate your 
-use.
+同じ操作を複数回実行する場合、プログラムを簡略化するために関数を使用することをお勧めします。
+これらの操作を新しく宣言した関数にまとめることで、使用が非常に簡単になります。
 
 .. image:: img/sp210928_135733.png
     :width: 500

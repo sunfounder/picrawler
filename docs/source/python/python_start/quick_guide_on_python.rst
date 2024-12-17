@@ -1,27 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームのサポートを受けて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみいただけます。
+    - **イベントやプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探求と創造の準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _quick_guide_python:
 
-Quick Guide on Python
+Pythonクイックガイド
 ==========================
 
-This section is to teach you how to install Raspberry Pi OS, configure wifi to Raspberry Pi, remote access to Raspberry Pi to run the corresponding code.
+このセクションでは、Raspberry Pi OSのインストール方法、Raspberry PiのWi-Fi設定、Raspberry Piにリモートアクセスして対応するコードを実行する方法について説明します。
 
-If you are familiar with Raspberry Pi and can open the command line successfully, then you can skip the first 3 parts and then complete the last part. 
-
-
+もしRaspberry Piに慣れていて、コマンドラインを正常に開ける場合は、最初の3つのパートをスキップし、最後のパートだけを完了することができます。
 
 .. toctree::
     :maxdepth: 1

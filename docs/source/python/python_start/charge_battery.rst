@@ -1,44 +1,42 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に興味を持つ仲間たちとともに、さらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題に、コミュニティやチームのサポートを活用して解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを高めましょう。
+    - **限定プレビュー**: 新製品の発表に早期アクセスでき、先行情報を手に入れることができます。
+    - **特別割引**: 最新製品に対する限定の割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-3. Power Supply for Raspberry Pi (Important)
+3. Raspberry Piの電源供給（重要）
 =====================================================
 
-Charge
+充電
 -------------------
 
-Insert the battery cable. Next, insert the USB-C cable to charge the battery.
-You will need to provide your own charger; we recommend a 5V 3A charger, or your commonly used smartphone charger will suffice.
+バッテリーケーブルを挿入してください。その後、USB-Cケーブルを挿入してバッテリーの充電を開始します。
+充電器はご自身で用意する必要があります。5V 3Aの充電器をお勧めしますが、通常使用しているスマートフォンの充電器でも問題ありません。
 
 .. image:: img/BTR_IMG_1096.png
 
-.. note::
-    Connect an external Type-C power source to the Type-C port on the robot hat; it will immediately start charging the battery, and a red indicator light will illuminate.\
-    When the battery is fully charged, the red light will automatically turn off.
+.. note:: 
+    外部のType-C電源をロボットハットのType-Cポートに接続すると、すぐにバッテリーの充電が開始され、赤色のインジケーターライトが点灯します。\
+    バッテリーが完全に充電されると、赤色のインジケーターライトは自動的に消灯します。
 
 
-Power ON
+電源オン
 ----------------------
 
-Turn on the power switch. The Power indicator light and the battery level indicator light will illuminate.
+電源スイッチを入れてください。電源インジケーターライトとバッテリー残量インジケーターライトが点灯します。
 
 .. image:: img/BTR_IMG_1097.png
 
+数秒待つと、軽いビープ音が聞こえ、Raspberry Piの起動が完了したことが通知されます。
 
-Wait for a few seconds, and you will hear a slight beep, indicating that the Raspberry Pi has successfully booted.
-
-.. note::
-    If both battery level indicator lights are off, please charge the battery.
-    When you need extended programming or debugging sessions, you can keep the Raspberry Pi operational by inserting the USB-C cable to charge the battery simultaneously.
-
+.. note:: 
+    バッテリー残量インジケーターライトが両方とも消灯している場合は、バッテリーの充電を行ってください。\
+    長時間のプログラミングやデバッグ作業が必要な場合は、USB-Cケーブルを挿入してバッテリーの充電を行いながら、Raspberry Piを稼働させることができます。

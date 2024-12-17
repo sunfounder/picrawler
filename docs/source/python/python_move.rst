@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に関心のある仲間とともに、さらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新製品に対して限定割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_move:
 
-Move
+移動
 ==============
 
-This is PiCrawler's first project. Perform its most basic function - move.
+これはPiCrawlerの最初のプロジェクトです。最も基本的な機能である「移動」を実行します。
 
 .. image:: img/move.png
 
-**Run the Code**
+**コードを実行する**
 
 .. raw:: html
 
@@ -32,12 +32,12 @@ This is PiCrawler's first project. Perform its most basic function - move.
     cd ~/picrawler/examples
     sudo python3 move.py
 
-After the code is executed, PiCrawler will perform the following actions in sequence: move forward, move backward, turn left, turn right, stand.
+コードが実行されると、PiCrawlerは以下の動作を順番に実行します：前進、後退、左旋回、右旋回、立つ。
 
-**Code**
+**コード**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to  source code path like ``pisloth\examples``. After modifying the code, you can run it directly to see the effect.
+    以下のコードは **修正/リセット/コピー/実行/停止** できます。ですが、実行する前にソースコードパス（例： ``pisloth\examples`` ）に移動する必要があります。コードを修正した後は、そのまま実行して効果を確認できます。
 
 .. raw:: html
 
@@ -75,21 +75,21 @@ After the code is executed, PiCrawler will perform the following actions in sequ
         main()
 
 
-**How it works?**
+**仕組みは？**
 
-First, import the ``Picrawler`` class from the ``picrawler`` library you have installed, which contains all of PiCrawler's actions and the functions that implement them.
+まず、インストールした ``picrawler`` ライブラリから ``Picrawler`` クラスをインポートします。このクラスには、PiCrawlerのすべての動作と、それを実現する関数が含まれています。
 
 .. code-block:: python
 
     from picrawler import Picrawler
 
-Then instantiate the ``crawler`` class.
+次に、 ``crawler`` クラスをインスタンス化します。
 
 .. code-block:: python
 
     crawler = Picrawler() 
 
-Finally use the ``crawler.do_action()`` function to make Pisloth move.
+最後に、 ``crawler.do_action()`` 関数を使用して、PiCrawlerを動かします。
 
 .. code-block:: python
     
@@ -100,10 +100,10 @@ Finally use the ``crawler.do_action()`` function to make Pisloth move.
     crawler.do_action('turn left angle',2,speed) 
     crawler.do_action('turn right angle',2,speed)
 
-In general, all movement of PiCrawler can be implemented with the ``do_action()`` function. It has 3 parameters:
+一般的に、PiCrawlerのすべての移動は ``do_action()`` 関数で実行できます。この関数には3つのパラメータがあります：
 
-* ``motion_name`` is the name of specific actions, including: ``forward``, ``turn right``, ``turn left``, ``backward``, ``turn left angle``, ``turn right angle``.
-* ``step`` represents the number of each action is done, the default is 1.
-* ``speed`` indicates the speed of the action, the default is 50 and the range is 0~100.
+* ``motion_name`` は特定の動作名で、以下のような動作を含みます： ``forward`` 、 ``turn right``、 ``turn left`` 、 ``backward`` 、 ``turn left angle`` 、 ``turn right angle`` 。
+* ``step`` は各動作が実行される回数で、デフォルトは1です。
+* ``speed`` は動作の速度を指定し、デフォルトは50で、範囲は0〜100です。
 
-In addition, ``crawler.do_step('stand',speed)`` is also used here to make PiCrawler stand. The usage of this function will be explained in the following example.
+また、 ``crawler.do_step('stand',speed)`` もここで使用されており、PiCrawlerを立たせることができます。この関数の使い方については、次の例で説明します。

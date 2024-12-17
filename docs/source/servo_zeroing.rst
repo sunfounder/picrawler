@@ -1,46 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！ Raspberry Pi、Arduino、ESP32について、他の愛好者と深く掘り下げて学びましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**：スキルを高めるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビュー情報をいち早く知ることができます。
+    - **特別割引**：最新製品に対する特別割引を享受できます。
+    - **季節のプロモーションやプレゼント企画**：プレゼントやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、作成したいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
-Servo Zeroing for Assembly
+サーボモーターのゼロ位置設定
 =================================
 
-Before assembling the servo, 
-the angle needs to be set to zero. 
-This is because the servo motor has a limited range of motion, 
-setting the angle to zero degrees ensures that the servo is in its 
-initial position and does not exceed its range of motion when the servo is powered on. 
-If the servo is not set to zero degrees prior to assembly, 
-it may attempt to exceed its range of motion when powered, 
-potentially damaging the servo or the mechanical system it is connected to. 
-Therefore, setting the angle to zero is an important step to ensure the 
-safe and normal operation of the servo motor.
+サーボモーターを組み立てる前に、 
+角度をゼロに設定する必要があります。 
+これはサーボモーターに可動範囲があり、 
+角度をゼロ度に設定することで、サーボが初期位置にあり、 
+電源を入れたときに可動範囲を超えないようにするためです。 
+組み立て前にサーボをゼロ度に設定していないと、 
+電源を入れたときに可動範囲を超えようとし、 
+サーボモーターや接続されている機械システムを損傷する可能性があります。 
+そのため、ゼロ位置に設定することは、 
+サーボモーターの安全で正常な動作を確保するための重要なステップです。
 
 
-For Python User
+Pythonユーザー向け
 ------------------------
 
-Please refer to :ref:`quick_guide_python` to complete the 
-installation of the Raspberry Pi OS and adjust the angle of the servos.
+Raspberry Pi OSのインストールとサーボの角度調整については、 
+:ref:`quick_guide_python` を参照してください。
 
-
-For Ezblock User
------------------------
+Ezblockユーザー向け
+------------------------
 
 .. note::
 
-    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
+    Raspberry Pi 5を使用している場合、グラフィカルプログラミングソフトウェアのEzBlockはサポートされていません。
 
-After you have installed the ezblock system, 
-the P11 pin can be used to adjust the servo. 
-Please refer to :ref:`ezb_servo_adjust` for details.
+Ezblockシステムのインストール後、 
+P11ピンを使用してサーボを調整できます。 
+詳細については、:ref:`ezb_servo_adjust` を参照してください。

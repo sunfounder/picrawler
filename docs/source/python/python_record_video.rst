@@ -1,25 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に関心のある仲間たちとともに、さらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新製品に対して限定割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_video:
 
-Record Video
+ビデオ録画
 ==================
 
-This example will guide you how to use the recording function.
+この例では、録画機能の使い方を紹介します。
 
-**Run the Code**
+**コードの実行**
 
 .. raw:: html
 
@@ -31,17 +31,16 @@ This example will guide you how to use the recording function.
     sudo python3 record_video.py
 
 
-After the code runs, you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
+コードが実行された後、ブラウザに ``http://<your IP>:9000/mjpg`` と入力すると、ビデオ画面が表示されます。例： ``http://192.168.18.113:9000/mjpg`` 
 
 .. image:: img/display.png
 
-Recording can be stopped or started by pressing the keys on the keyboard.
+録画は、キーボードのキーを押すことで開始、停止、再開できます。
 
-* Press ``q`` to begin recording or pause/continue, ``e`` to stop recording or save.
-* If you want to exit the program, press ``Ctrl+C``.
+* ``q`` を押して録画を開始、または一時停止/再開します。 ``e`` を押して録画を停止または保存します。
+* プログラムを終了するには、 ``Ctrl+C`` を押してください。
 
-
-**Code** 
+**コード**
 
 .. code-block:: python
 
@@ -65,28 +64,28 @@ Recording can be stopped or started by pressing the keys on the keyboard.
         print(msg, end=end, flush=True)
     
     def main():
-        rec_flag = 'stop' # start,pause,stop
+        rec_flag = 'stop' # start, pause, stop
         vname = None
         Vilib.rec_video_set["path"] = VIDEO_PATH
     
         Vilib.camera_start(vflip=False,hflip=False) 
         Vilib.display(local=True,web=True)
-        sleep(0.8)  # wait for startup
+        sleep(0.8)  # スタートアップを待機
     
         print(MANUAL)
         while True:
-            # read keyboard
+            # キーボード入力を読み取る
             key = readchar.readkey()
             key = key.lower()
-            # start,pause
+            # 録画開始、一時停止
             if key == 'q':
                 key = None
                 if rec_flag == 'stop':            
                     rec_flag = 'start'
-                    # set name
+                    # 名前を設定
                     vname = strftime("%Y-%m-%d-%H.%M.%S", localtime())
                     Vilib.rec_video_set["name"] = vname
-                    # start record
+                    # 録画を開始
                     Vilib.rec_video_run()
                     Vilib.rec_video_start()
                     print_overwrite('rec start ...')
@@ -98,13 +97,13 @@ Recording can be stopped or started by pressing the keys on the keyboard.
                     rec_flag = 'start'
                     Vilib.rec_video_start()
                     print_overwrite('continue')
-            # stop       
+            # 停止       
             elif key == 'e' and rec_flag != 'stop':
                 key = None
                 rec_flag = 'stop'
                 Vilib.rec_video_stop()
-                print_overwrite("The video saved as %s%s.avi"%(Vilib.rec_video_set["path"],vname),end='\n')  
-            # quit
+                print_overwrite("ビデオは%s%s.aviとして保存されました"%(Vilib.rec_video_set["path"],vname),end='\n')  
+            # 終了
             elif key == readchar.key.CTRL_C:
                 Vilib.camera_close()
                 print('\nquit')
@@ -115,13 +114,15 @@ Recording can be stopped or started by pressing the keys on the keyboard.
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**仕組みは？**
 
-Functions related to recording include the following:
 
-* ``Vilib.rec_video_run(video_name)``: Started the thread to record the video. ``video_name`` is the name of the video file, it should be a string.
-* ``Vilib.rec_video_start()``: Start or continue video recording.
-* ``Vilib.rec_video_pause()``: Pause recording.
-* ``Vilib.rec_video_stop()``: Stop recording.
+録画に関連する機能は以下の通りです：
 
-``Vilib.rec_video_set["path"] = "~/video/test/"`` sets the storage location of video files.
+
+* ``Vilib.rec_video_run(video_name)`` : 録画スレッドを開始します。 ``video_name`` はビデオファイルの名前で、文字列で指定する必要があります。
+* ``Vilib.rec_video_start()`` : 録画を開始または再開します。
+* ``Vilib.rec_video_pause()`` : 録画を一時停止します。
+* ``Vilib.rec_video_stop()`` : 録画を停止します。
+
+``Vilib.rec_video_set["path"] = "~/video/test/"`` は、ビデオファイルの保存先を設定します。

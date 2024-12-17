@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に関心のある仲間たちと一緒に、さらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを通じて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表に早期アクセスし、先行して情報を得られます。
+    - **特別割引**: 最新の製品に対して、限定の割引を楽しむことができます。
+    - **祝祭プロモーションとプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_sound:
 
-Sound Effect
+音声効果
 =====================
 
-In this example, we use PiCrawler's (to be precise, Robot HAT's) sound effects. It consists of three parts, namely **Muisc**, **Sound**, **Text to Speech**.
+この例では、PiCrawler（正確にはRobot HAT）の音声効果を使用します。音声効果は、 **音楽** 、 **サウンド** 、 **テキスト読み上げ** の3つの部分で構成されています。
 
 .. image:: img/tts.png
 
-**Install i2samp**
+**i2sampのインストール**
 
-Before using that functions, first activate the speaker so that it will be enabled and can make sounds.
+これらの機能を使用する前に、まずスピーカーを有効にして、音を出せるようにする必要があります。
 
-Run ``i2samp.sh`` in, and this script will install everything needed to use i2s amplifier.
+``i2samp.sh`` を実行して、このスクリプトを使ってi2sアンプを使用するために必要なすべての設定を行います。
 
 .. raw:: html
 
@@ -36,12 +36,11 @@ Run ``i2samp.sh`` in, and this script will install everything needed to use i2s 
     cd ~/picrawler/
     sudo bash i2samp.sh 
 
-There will be several prompts asking to confirm the request. Respond to all prompts with a **Y**. After the changes have been made to the Raspberry Pi system, the computer will need to reboot for these changes to take effect.
+いくつかの確認メッセージが表示されるので、すべてのプロンプトに **Y** で答えてください。Raspberry Piの設定が変更された後、これらの変更が有効になるためには、コンピュータを再起動する必要があります。
 
-After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a sound successfully plays from the speaker, the configuration is complete.
+再起動後、再度 ``i2samp.sh`` スクリプトを実行して、アンプをテストします。スピーカーから音が正常に再生されれば、設定は完了です。
 
-
-**Run the Code**
+**コードの実行**
 
 .. raw:: html
 
@@ -52,17 +51,17 @@ After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a 
     cd ~/picrawler/examples
     sudo python3 sound_effect.py
 
-After the code runs, please operate according to the prompt that printed on the terminal.
+コードが実行された後、ターミナルに表示されたプロンプトに従って操作してください。
 
-Input key to call the function!
-* ``q``: Play background music
-* ``1``: Play sound effect
-* ``2``: Play sound effect with threads
-* ``t``: Text to speak
-* If you want to exit the program, press ``Ctrl+C``.
+機能を呼び出すためにキーを入力してください！
 
+* ``q`` : 背景音楽を再生
+* ``1`` : サウンドエフェクトを再生
+* ``2`` : スレッドを使ってサウンドエフェクトを再生
+* ``t`` : テキストを読み上げ
+* プログラムを終了するには、 ``Ctrl+C`` を押してください。
 
-**Code** 
+**コード**
 
 .. code-block:: python
 
@@ -128,50 +127,49 @@ Input key to call the function!
         main()
 
 
-**How it works?**
+**仕組みは？**
 
-Functions related to background music include these:
+背景音楽に関連する機能は以下の通りです：
 
-* ``music = Music()`` : Declare the object.
-* ``music.music_set_volume(20)`` : Set the volume, the range is 0~100.
-* ``music.music_play(./musics/sports-Ahjay_Stelino.mp3)`` : Play music files, here is the **sports-Ahjay_Stelino.mp3** file under the ``./musics`` path.
-* ``music.music_stop()`` : Stop playing background music.
+* ``music = Music()`` : オブジェクトを宣言します。
+* ``music.music_set_volume(20)`` : 音量を設定します。範囲は0~100です。
+* ``music.music_play(./musics/sports-Ahjay_Stelino.mp3)`` : 音楽ファイルを再生します。ここでは、 ``./musics`` パスにある **sports-Ahjay_Stelino.mp3** ファイルを再生します。
+* ``music.music_stop()`` : 背景音楽の再生を停止します。
 
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
+    異なる音楽や効果音を ``musics`` または ``sounds`` フォルダに追加できます。追加方法は:ref:`filezilla` を参照してください。
 
-
-Functions related to sound effects include these:
+サウンドエフェクトに関連する機能は以下の通りです：
 
 * ``music = Music()``
-* ``music.sound_play('./sounds/talk1.wav')``: Play the sound effect file, here is the **talk1.wav** file under the ``./musics`` path.
-* ``music.sound_play_threading('./sounds/talk1.wav')``: Play the sound effect file in a new thread mode without suspending the main thread.
+* ``music.sound_play('./sounds/talk1.wav')`` : サウンドエフェクトファイルを再生します。ここでは、 ``./musics`` パスにある **talk1.wav** ファイルを再生します。
+* ``music.sound_play_threading('./sounds/talk1.wav')`` : サウンドエフェクトファイルを新しいスレッドで再生し、メインスレッドを停止しません。
 
-Functions related to Text to Speech include these:
+テキスト読み上げに関連する機能は以下の通りです：
 
 * ``tts = TTS()``
-* ``tts.say(words)`` : Text audio.
-* ``tts.lang("en-US")`` :  Set the language.
+* ``tts.say(words)`` : テキストを音声に変換して読み上げます。
+* ``tts.lang("en-US")`` : 言語を設定します。
 
 .. note:: 
 
-    Set the language by setting the parameters of ``lang("")`` with the following characters.
+    言語は、 ``lang("")`` パラメータで次のような文字列を設定することで指定できます。
 
 .. list-table:: Language
     :widths: 15 50
 
     *   - zh-CN 
-        - Mandarin (Chinese)
+        - 中国語（普通話）
     *   - en-US 
-        - English-United States
+        - 英語（アメリカ）
     *   - en-GB     
-        - English-United Kingdom
+        - 英語（イギリス）
     *   - de-DE     
-        - Germany-Deutsch
+        - ドイツ語（Deutsch）
     *   - es-ES     
-        - España-Español
+        - スペイン語（España）
     *   - fr-FR  
-        - France-Le français
+        - フランス語（フランス）
     *   - it-IT  
-        - Italia-lingua italiana
+        - イタリア語（Italia）

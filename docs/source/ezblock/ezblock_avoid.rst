@@ -1,49 +1,47 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 .. _ezb_avoid:
 
-Obstacle Avoidance
+障害物回避
 =============================
 
-
-In this project, picrawler will use an ultrasonic module to detect obstacles in front. 
-When PiCrawler detects an obstacle, it will send a signal and look for another direction to move forward.
+このプロジェクトでは、PiCrawlerが超音波モジュールを使用して前方の障害物を検出します。
+PiCrawlerが障害物を検出すると、信号を送信し、別の方向に進むための道を探します。
 
 .. image:: ../python/img/avoid1.png
 
-**Program**
+**プログラム**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 以下の画像に従ってプログラムを書くことができます。詳細なチュートリアルについては、:ref:`ezblock:create_project_latest` をご参照ください。
+    * あるいは、EzBlock Studioの **Examples** ページで同名のコードを見つけて、 **実行** または **編集** を直接クリックすることができます。
 
 .. image:: img/avoid.png
 
 
-**How it works?**
+**仕組みは？**
 
-You can find the following blocks in the **Module** category to achieve distance detection:
+距離検出を実現するために、 **Module** カテゴリに次のブロックを使用します：
 
 .. image:: img/sp210928_103046.png
     :width: 600
 
-It should be noted that the two pins of the block should correspond to the actual wiring, that is, trig-D2, echo-D3.
+注意すべき点は、ブロックの2つのピンが実際の配線に対応していることです。つまり、trigはD2、echoはD3です。
 
-Here is the main program.
+以下はメインプログラムの概要です。
 
-* Read the ``distance`` detected by ultrasonic module and filter out the values less than 0 (When the ultrasonic module is too far from the obstacle or cannot read the data correctly, ``distance<0`` will appear).
-* When the ``distance`` is less than ``alert_distance`` (the threshold value set earlier, which is 10), play the sound effect ``sign.wav``. PiCrawler does ``turn left`` .
-* When the ``distance`` is greater than ``alert_distance``, PiCrawler will move ``forward``.
+* 超音波モジュールで検出された ``distance`` を読み取り、0未満の値をフィルタリングします（超音波モジュールが障害物から遠すぎるか、データを正しく読み取れない場合、 ``distance<0`` が表示されます）。
+* ``distance``が ``alert_distance`` （以前設定したしきい値、10）未満の場合、効果音 ``sign.wav`` を再生します。PiCrawlerは ``左に回転`` します。
+* ``distance``が ``alert_distance`` より大きい場合、PiCrawlerは ``前進`` します。

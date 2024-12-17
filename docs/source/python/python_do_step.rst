@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に関心のある仲間と一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新製品に対して限定割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_pose:
 
-Pose
+ポーズ
 =============
 
-PiCrawler can assume a specific posture by writing a coordinate array. Here it assumes a raised right rear foot posture.
+PiCrawlerは座標の配列を記述することで特定のポーズを取ることができます。ここでは、右後足を上げたポーズを取らせています。
 
 .. image:: img/4cood.A.png
 
-**Run the Code**
+**コードの実行**
 
 .. raw:: html
 
@@ -33,7 +33,7 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
     sudo python3 do_step.py
 
 
-**Code**
+**コード**
 
 .. raw:: html
 
@@ -46,7 +46,7 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
 
     crawler = Picrawler() 
 
-    ## [right front],[left front],[left rear],[right rear]
+    ## [右前足], [左前足], [左後足], [右後足]
     new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
     stand_step = crawler.move_list['stand'][0]
 
@@ -65,42 +65,40 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**仕組みは？**
 
-In this code, the code you need to pay attention to is this ``crawler.do_step()``.
+このコードで注目すべき部分は ``crawler.do_step()`` です。
 
-Similar to ``do_action()``, ``do_step()`` can also manipulate PiCrawler's behavior.
-The difference is that the former can perform the continuous behavior of ``move forward``, while the latter can be used to make separate gestures of ``stand`` and ``sit``.
-
-
-It has two uses:
+``do_action()`` と似ていますが、 ``do_step()`` もPiCrawlerの動作を制御できます。
+違いは、前者が「前進」のような連続的な動作を行うのに対し、後者は「立つ」や「座る」などの個別の動作を実行するために使われます。
 
 
-One: It can write strings, directly use the ``step_list`` dictionary in the ``picrawler`` library.
+このメソッドには2つの使い方があります。
+
+1つ目: 文字列を記述し、 ``picrawler`` ライブラリ内の ``step_list`` 辞書を直接利用できます。
 
 .. code-block:: python
 
     crawler.do_step('stand',speed) 
-    # "speed" indicates the speed of the step, the range is 0~100.
+    # "speed"はステップの速度を示し、範囲は0～100です。
 
-
-Second: It can also write an array of 4 coordinate values.
+2つ目: 4つの座標値を含む配列を記述できます。
 
 .. code-block:: python
 
     new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
-    # These four coordinates are used to control the four legs of right front, left front, left rear, and left rear respectively.
+    # これらの4つの座標は、右前足、左前足、左後足、右後足をそれぞれ制御するために使用します。
 
-Each foot has an independent coordinate system. As shown below:
+各足には独立した座標系があります。以下の図のように表示されます。
 
 .. image:: img/4cood.png
 
-You need to measure the coordinates of each toe individually. As shown below:
+各つま先の座標を個別に測定する必要があります。以下の図のように表示されます。
 
 .. image:: img/1cood.png
 
 
-By the way: the ``step_list`` called in the first method also consists of an array containing 4 coordinate values.
+ちなみに、最初の方法で呼び出す ``step_list`` も4つの座標値を含む配列で構成されています。
 
 .. code-block:: python
 

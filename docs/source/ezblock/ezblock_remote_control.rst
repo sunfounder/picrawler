@@ -1,72 +1,69 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と共にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _ezb_remote:
 
-Remote Control
+リモートコントロール
 =========================
 
-
-In this project, we will learn how to remote control the PiCrawler. 
-You can control the PiCrawler to move forward, backward, left, and right.
+このプロジェクトでは、PiCrawlerをリモートで操作する方法を学びます。  
+PiCrawlerを前進、後退、左、右に動かすことができます。
 
 .. image:: img/remote_control.png
 
 .. note:: 
 
-    You can refer to :ref:`ezblock:remote_control_latest`. Come and carry out this project smoothly.
+    :ref:`ezblock:remote_control_latest` を参照できます。スムーズにプロジェクトを進めるために、こちらをご確認ください。
 
-**Program**
+**プログラム**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 以下の画像を参考にしてプログラムを書くことができます。詳細なチュートリアルについては、:ref:`ezblock:create_project_latest` をご参照ください。
+    * または、EzBlock Studioの **Examples** ページで同名のコードを見つけ、 **実行** または **編集** をクリックすることができます。
 
 .. image:: img/remote.png
 
-Switch to the Remote Control interface, and you will see the following widgets.
+リモートコントロールインターフェースに切り替えると、次のウィジェットが表示されます。
 
 .. image:: img/remote_B.png
 
-After the program is running, you can activate PiCrawler through D-Pad.
+プログラムが実行されると、D-Padを使用してPiCrawlerを操作できます。
 
-**How it works?**
+**動作の仕組み**
 
-After dragging out the widget on the Remote Control interface, a category named **Remote** will appear in the block categories column of the programming interface.
+リモートコントロールインターフェースでウィジェットをドラッグすると、プログラミングインターフェースのブロックカテゴリーに「 **Remote** 」というカテゴリーが表示されます。
 
-Here we add the D-Pad widget, so the **D-Pad get value** block appears here.
+ここでD-Padウィジェットを追加すると、「 **D-Pad get value** 」ブロックが表示されます。
 
 .. image:: img/sp210927_180739.png
 
-D-Pad can be regarded as a four-in-one button. You can choose which button to read in the second groove of the block.
+D-Padは四つのボタンを一つにまとめたものとして考えることができます。ブロックの2番目のスロットで、どのボタンを読み取るかを選択できます。
 
-When the button is pressed, the value is "1"; when the button is not pressed, the value is "0".
-
+ボタンが押されていると、値は「1」になり、押されていないと値は「0」になります。
 
 .. image:: img/sp210927_182447.png
     :width: 200
 
-We used an **if** block (you can find it in the **Logic** category on the left) to make the PiCrawler move forward once when the **UP** button of the D-pad is pressed.
+**if**ブロック（左側の **Logic** カテゴリーにあります）を使用して、D-Padの **UP** ボタンが押されたときにPiCrawlerが前進するようにしました。
 
 .. image:: img/sp210927_182828.png
     :width: 600
 
-You can click the gear icon on the upper left of the block to modify the shape of the **if** block to realize multiple judgment branches.
-
+ブロックの左上にあるギアアイコンをクリックすると、 **if** ブロックの形を変更して、複数の条件分岐を実現できます。
 
 .. image:: img/sp210927_183237.png
     :width: 300
 
-**if** block is usually used with **=** block, **=** block can be modified to **>**, **<** and other conditions through the drop-down menu, please use it flexibly.
+**if**ブロックは通常、 **=** ブロックと一緒に使用されますが、 **=** ブロックはドロップダウンメニューで **>** や **<** などの条件に変更できますので、柔軟に使用してください。

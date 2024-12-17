@@ -1,52 +1,49 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _ezb_bull:
 
-Bull Fight
+闘牛
 ======================
 
-
-Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
+PiCrawlerを怒った牛に変身させましょう！カメラを使って赤い布を追跡し、突進させます！
 
 .. image:: ../python/img/bullfight.png
 
-.. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
+.. note:: カラーチェックには、以下のPDFカラーカードをダウンロードして印刷できます: :download:`PDFカラーカード <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>`。
 
-
-**Program**
+**プログラム**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 以下の画像に従ってプログラムを書くことができます。詳細なチュートリアルについては、:ref:`ezblock:create_project_latest` をご参照ください。
+    * あるいは、EzBlock Studioの **Examples** ページで同名のコードを見つけて、 **実行** または **編集** を直接クリックすることができます。
 
 .. image:: img/sp210928_175806.png
     :width: 800
 
 
-Switch to the Remote Control interface, you will see the following screen.
+リモートコントロールインターフェースに切り替えると、以下の画面が表示されます。
 
 .. image:: img/sp21aa.png
 
 
-**How it works?**
+**仕組みは？**
 
-In general, this project combines the knowledge points of :ref:`ezb_move`, :ref:`ezb_vision` and :ref:`ezb_sound`.
+このプロジェクトは、:ref:`ezb_move` 、:ref:`ezb_vision` 、および:ref:`ezb_sound` の知識を組み合わせたものです。
 
-Its flow is shown in the figure below:
+そのフローは、以下の図に示されています。
 
 .. image:: ../python/img/bull_fight-f.png
     :width: 600
-

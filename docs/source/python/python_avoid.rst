@@ -1,28 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを通じて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新しい製品に対して限定割引をお楽しみください。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
+
 
 .. _py_avoid:
 
-Obstacle Avoidance
+障害物回避
 =====================
 
-In this project, picrawler will use an ultrasonic module to detect obstacles in front. 
-When PiCrawler detects an obstacle, it will send a signal and look for another direction to move forward.
+このプロジェクトでは、PiCrawlerが超音波モジュールを使用して前方の障害物を検出します。
+PiCrawlerが障害物を検出すると、信号を送信し、別の方向に進むために方向転換を行います。
 
 .. image:: img/avoid1.png
 
-**Run the Code**
+**コードを実行する**
 
 .. raw:: html
 
@@ -33,14 +34,12 @@ When PiCrawler detects an obstacle, it will send a signal and look for another d
     cd ~/picrawler/examples
     sudo python3 avoid.py
 
-After the code runs, PiCrawler will walk forward. If it detects that the distance of the obstacle ahead is less than 10cm, it will stop and sound a warning, then turn left and stop. If there is no obstacle in the direction after turning left or the obstacle distance is greater than 10, it will continue to move forward.
+コードを実行すると、PiCrawlerは前進を開始します。もし障害物までの距離が10cm未満であると検出した場合、警告音を鳴らして停止し、左に回転して停止します。左に回転後、障害物がなければまたは障害物までの距離が10cm以上であれば、前進を続けます。
 
-
-
-**Code**
+**コード**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+    下記のコードは **修正/リセット/コピー/実行/停止** できます。ただし、まずはソースコードのパス（例えば ``picrawler\examples`` ）に移動してください。コードを修正した後、直接実行して効果を確認できます。
 
 .. raw:: html
 
@@ -84,26 +83,25 @@ After the code runs, PiCrawler will walk forward. If it detects that the distanc
         while True:
             main()
 
-**How it works?**
+**動作の仕組み**
 
-You can get the distance by importing the ``Ultrasonic`` class.
+``Ultrasonic`` クラスをインポートすることで、距離を取得できます。
 
 .. code-block:: python
 
     from robot_hat import Ultrasonic
 
-Then initialize the ultrasonic pins.
+次に、超音波のピンを初期化します。
 
 .. code-block:: python
 
     sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
 
+こちらがメインのプログラムです。
 
-Here is the main program.
-
-* Read the ``distance`` detected by ultrasonic module and filter out the values less than 0 (When the ultrasonic module is too far from the obstacle or cannot read the data correctly, ``distance<0`` will appear).
-* When the ``distance`` is less than or equal to  ``alert_distance`` (the threshold value set earlier, which is 10), play the sound effect ``sign.wav``. PiCrawler does ``turn left angle`` .
-* When the ``distance`` is greater than ``alert_distance``, PiCrawler will move ``forward``.
+* 超音波モジュールで検出した ``distance``を読み取り、0未満の値を除外します（超音波モジュールが障害物から遠すぎるか、データが正しく読み取れない場合に ``distance<0`` が表示されます）。
+* ``distance`` が ``alert_distance`` （事前に設定した閾値、ここでは10）以下の場合、 ``sign.wav`` の効果音を再生し、PiCrawlerは ``turn left angle`` の動作を行います。
+* ``distance`` が ``alert_distance`` より大きければ、PiCrawlerは ``forward`` の動作を続けます。
 
 .. code-block:: python
 
@@ -122,7 +120,6 @@ Here is the main program.
         crawler.do_action('forward', 1,speed)
         time.sleep(0.2)
 
-
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
+    ``musics`` や ``sounds`` フォルダにさまざまな効果音や音楽を追加することができます。詳細は:ref:`filezilla` をご参照ください。

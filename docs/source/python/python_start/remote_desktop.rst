@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と共にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームのサポートを受けて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみいただけます。
+    - **イベントやプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探求と創造の準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _remote_desktop:
 
-Remote Desktop Access for Raspberry Pi
+Raspberry Piのリモートデスクトップアクセス
 ==================================================
 
-For those preferring a graphical user interface (GUI) over command-line access, the Raspberry Pi supports remote desktop functionality. This guide will walk you through setting up and using VNC (Virtual Network Computing) for remote access.
+コマンドラインアクセスよりもグラフィカルユーザーインターフェース（GUI）を好む方には、Raspberry Piはリモートデスクトップ機能をサポートしています。このガイドでは、リモートアクセス用にVNC（Virtual Network Computing）を設定し、使用する方法を説明します。
 
-We recommend using `VNC® Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ for this purpose.
+この目的には、 `VNC® Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ の使用をお勧めします。
 
-**Enabling VNC Service on Raspberry Pi**
+**Raspberry PiでのVNCサービスの有効化**
 
-VNC service comes pre-installed in the Raspberry Pi OS but is disabled by default. Follow these steps to enable it:
+VNCサービスはRaspberry Pi OSに標準でインストールされていますが、初期設定では無効になっています。以下の手順で有効化できます：
 
-#. Enter the following command in the Raspberry Pi terminal:
+#. Raspberry Piターミナルで以下のコマンドを入力します：
 
     .. raw:: html
 
@@ -35,36 +35,36 @@ VNC service comes pre-installed in the Raspberry Pi OS but is disabled by defaul
 
         sudo raspi-config
 
-#. Navigate to **Interfacing Options** using the down arrow key, then press **Enter**.
+#. 下矢印キーを使って **Interfacing Options** に移動し、 **Enter** を押します。
 
     .. image:: img/config_interface.png
         :align: center
 
-#. Select **VNC** from the options.
+#. オプションから **VNC** を選択します。
 
     .. image:: img/vnc.png
         :align: center
 
-#. Use the arrow keys to choose **<Yes>** -> **<OK>** -> **<Finish>** and finalize the VNC service activation.
+#. 矢印キーで **<Yes>** -> **<OK>** -> **<Finish>** を選択し、VNCサービスを有効化します。
 
     .. image:: img/vnc_yes.png
         :align: center
 
-**Logging in via VNC Viewer**
+**VNC Viewerでのログイン**
 
-#. Download and install `VNC Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ on your personal computer.
+#. ご自身のパソコンに `VNC Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ をダウンロードしてインストールします。
 
-#. Once installed, launch VNC Viewer. Enter the hostname or IP address of your Raspberry Pi and press Enter.
+#. インストール後、VNC Viewerを起動します。Raspberry Piのホスト名またはIPアドレスを入力し、Enterキーを押します。
 
     .. image:: img/vnc_viewer1.png
         :align: center
 
-#. When prompted, enter your Raspberry Pi's username and password, then click **OK**.
+#. プロンプトが表示されたら、Raspberry Piのユーザー名とパスワードを入力し、 **OK** をクリックします。
 
     .. image:: img/vnc_viewer2.png
         :align: center
 
-#. After a few seconds, the Raspberry Pi OS desktop will be displayed. Now you can open the Terminal to start entering commands.
+#. 数秒後、Raspberry Pi OSのデスクトップが表示されます。これでターミナルを開き、コマンドを入力する準備が整いました。
 
     .. image:: img/bookwarm.png
         :align: center

@@ -1,28 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に興味がある仲間たちと一緒に、さらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを通じて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表に早期アクセスし、先行して情報を得られます。
+    - **特別割引**: 最新の製品に対して、限定の割引を楽しむことができます。
+    - **祝祭プロモーションとプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_treasure:
 
-Treasure Hunt
+宝探し
 ============================
 
-Arrange a maze in your room and place six different color cards in six corners. Then control PiCrawler to search for these color cards one by one!
+部屋に迷路を作り、6つの異なる色のカードを6つの隅に配置します。その後、PiCrawlerを使って、これらの色のカードを一つずつ探していきます！
 
-.. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
+.. note:: 色の検出のために、:download:`PDFカラーカード <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` をダウンロードして印刷できます。
 
-
-**Run the Code**
+**コードを実行する**
 
 .. raw:: html
 
@@ -34,9 +33,9 @@ Arrange a maze in your room and place six different color cards in six corners. 
     sudo python3 treasure_hunt.py
 
 
-**View the Image**
+**画像を表示する**
 
-After the code runs, the terminal will display the following prompt:
+コードが実行されると、ターミナルに以下のようなプロンプトが表示されます：
 
 .. code-block::
 
@@ -48,11 +47,11 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
+その後、ブラウザに ``http://<your IP>:9000/mjpg`` と入力して、動画画面を表示できます。例えば、 ``http://192.168.18.113:9000/mjpg`` 。
 
 .. image:: img/display.png
 
-**Code**
+**コード**
 
 .. code-block:: python
 
@@ -100,7 +99,7 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 	    global key
 	    while True:
 	        key_temp = readchar.readkey()
-	        print('\r',end='')
+	        print('\r',end='')  # カーソルを行頭に戻す
 	        with lock:
 	            key = key_temp.lower()
 	            if key == readchar.key.SPACE:
@@ -158,11 +157,11 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 	    main()
 
 
-**How it works?**
+**仕組みは？**
 
-In general, this project combines the knowledge points of :ref:`py_keyboard`, :ref:`py_vision` and :ref:`py_sound`.
+このプロジェクトは、:ref:`py_keyboard` 、:ref:`py_vision` 、および:ref:`py_sound` の知識を組み合わせたものです。
 
-Its flow is shown in the figure below:
+その流れは以下の図に示されています：
 
 .. image:: img/treasure_hunt-f.png
 

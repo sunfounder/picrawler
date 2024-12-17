@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に関心のある仲間と一緒にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新製品に対して限定割引を楽しめます。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _py_posture:
 
-Adjust Posture
+姿勢調整
 =====================
 
-In this example, we use the keyboard to control the PiCrawler foot by foot and assume the desired posture.
+この例では、キーボードを使ってPiCrawlerの各足を個別に操作し、希望する姿勢を取らせます。
 
-You can press the space bar to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
+スペースバーを押すと、現在の座標値が表示されます。この座標値は、PiCrawlerの独自のアクションを作成する際に役立ちます。
 
 .. image:: img/1cood.A.png
 
-**Run the Code**
+**コードの実行**
 
 .. raw:: html
 
@@ -34,14 +34,13 @@ You can press the space bar to print out the current coordinate values. These co
     cd ~/picrawler/examples
     sudo python3 do_single_leg.py
 
-After the code runs, please operate according to the prompt that pops up in the terminal.
+コードが実行された後、ターミナルに表示されるプロンプトに従って操作を行ってください。
 
-* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
-* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``Ctrl+C`` to exit.
+* ``1234``キーで足を個別に選択します。 ``1`` : 右前足、 ``2`` : 左前足、 ``3`` : 左後足、 ``4`` : 右後足
+* ``w`` , ``a`` , ``s`` , ``d`` , ``r`` , ``f`` キーでPiCrawlerの座標値をゆっくりと制御できます。
+* ``Ctrl+C`` で終了します。
 
-
-**Code**
+**コード**
 
 .. code-block:: python
 
@@ -67,8 +66,8 @@ After the code runs, please operate according to the prompt that pops up in the 
         4: Select right rear leg
 
         W: Y++          R: Z++             
-        A: X--          F: Z--
-        S: Y--
+        A: X--          F: Z-- 
+        S: Y-- 
         D: X++          Ctrl+C: Quit
     '''
     legs_list = ['right front', 'left front', 'left rear', 'right rear']
@@ -83,7 +82,7 @@ After the code runs, please operate according to the prompt that pops up in the 
         coordinate=crawler.current_step_all_leg_value()  
 
         def show_info():
-            print("\033[H\033[J", end='')  # clear terminal windows
+            print("\033[H\033[J", end='')  # ターミナルの画面をクリア
             print(manual)   
             print('%s : %s'%(leg+1, legs_list[leg])) 
             print('coordinate: %s'%(coordinate))  
@@ -91,14 +90,14 @@ After the code runs, please operate according to the prompt that pops up in the 
         show_info()
 
         while True:
-            # readkey
+            # キー入力を読み取る
             key = readchar.readkey()
             key = key.lower()
-            # select the leg 
+            # 足を選択
             if key in ('1234'):
                 leg = int(key) - 1
                 show_info()
-            # move
+            # 移動
             elif key in ('wsadrf'):         
                 if 'w' == key:
                     coordinate[leg][1]=coordinate[leg][1] + step    
@@ -124,5 +123,5 @@ After the code runs, please operate according to the prompt that pops up in the 
     if __name__ == "__main__":
         main()
 
-* ``current_step_all_leg_value()``: Returns the coordinate values of all legs.
-* ``do_single_leg(leg,coordinate[leg],speed)``: Modify the coordinate value of a certain leg individually.
+* ``current_step_all_leg_value()``: すべての足の座標値を返します。
+* ``do_single_leg(leg,coordinate[leg],speed)``: 特定の足の座標値を個別に変更します。

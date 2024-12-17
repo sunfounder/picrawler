@@ -1,52 +1,51 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と共にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _ezb_sound:
 
-Sound Effect
+音声効果
 =======================
 
-In this example, we use PiCrawler's (to be precise, Robot HAT's) sound effects. It consists of three parts, namely **Muisc**, **Sound**, **Text to Speech**.
+この例では、PiCrawler（厳密にはRobot HAT）の音声効果を使用します。これは、 **音楽** 、 **音声** 、 **テキスト読み上げ** の3つの部分で構成されています。
 
 .. image:: ../python/img/tts.png
 
-**Program**
+**プログラム**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 以下の画像を参考にしてプログラムを書くことができます。詳細なチュートリアルについては、:ref:`ezblock:create_project_latest` をご参照ください。
+    * または、EzBlock Studioの **Examples** ページで同名のコードを見つけ、 **実行** または **編集** をクリックすることができます。
 
 .. image:: img/soundeff.png
 
-Switch to the Remote Control interface, and you will see the following widgets.
+リモートコントロールインターフェースに切り替えると、次のウィジェットが表示されます。
 
 .. image:: img/soundeff_B.png
 
-After the program is running, you can press different buttons to make PiCrawler sound.
+プログラムが実行されると、異なるボタンを押してPiCrawlerから音を出すことができます。
 
-**How it works?**
+**動作の仕組み**
 
-Functions related to background music include these:
+バックグラウンドミュージックに関連する関数は次の通りです：
 
 .. image:: img/sp210928_101816.png
 
-Functions related to sound effects include these:
+音声効果に関連する関数は次の通りです：
 
 .. image:: img/sp210928_101727.png
 
-
-Functions related to Text to Speech include these:
+テキスト読み上げに関連する関数は次の通りです：
 
 .. image:: img/sp210928_101609.png

@@ -1,16 +1,17 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者とともにさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートで解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **特別なプレビュー**: 新製品の発表や先行公開に早期アクセスできます。
+    - **特別割引**: 新しい製品に対する限定割引をお楽しみください。
+    - **祝祭プロモーションとプレゼント**: プレゼントや祝祭のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
+
 
 Ultrasonic Module
 ================================
@@ -19,47 +20,46 @@ Ultrasonic Module
     :width: 400
     :align: center
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG**: トリガーパルス入力
+* **ECHO**: エコーパルス出力
+* **GND**: グランド（接地）
+* **VCC**: 5V電源
 
-This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+こちらはHC-SR04超音波距離センサーで、2cmから400cmまでの非接触距離測定が可能で、精度は最大で3mmです。モジュールには超音波送信機、受信機、および制御回路が含まれています。
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+測定プロジェクトに使用するには、4つのピン（VCC（電源）、Trig（トリガー）、Echo（受信）、GND（接地））を接続するだけで簡単に使用できます。
 
-**Features**
+**特徴**
 
-* Working Voltage: DC5V
-* Working Current: 16mA
-* Working Frequency: 40Hz
-* Max Range: 500cm
-* Min Range: 2cm
-* Trigger Input Signal: 10uS TTL pulse
-* Echo Output Signal: Input TTL lever signal and the range in proportion
-* Connector: XH2.54-4P
-* Dimension: 46x20.5x15 mm
+* 動作電圧: DC5V
+* 動作電流: 16mA
+* 動作周波数: 40Hz
+* 最大測定範囲: 500cm
+* 最小測定範囲: 2cm
+* トリガー入力信号: 10uS TTLパルス
+* エコー出力信号: 入力TTLレベル信号と距離に比例
+* コネクタ: XH2.54-4P
+* サイズ: 46x20.5x15 mm
 
-**Principle**
+**原理**
 
-The basic principles are as follows:
+基本的な原理は次の通りです。
 
-* Using IO trigger for at least 10us high level signal.
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* IOトリガーを使用し、少なくとも10usの高レベル信号を送信します。
+* モジュールは40kHzで8サイクルの超音波バーストを送信し、パルス信号を受信したかどうかを検出します。
+* 信号が戻ってきた場合、エコーは高レベルを出力します。高レベルの持続時間は、送信から戻るまでの時間です。
+* 距離 = (高レベル時間 × 音速（340M/S）) ÷ 2
 
     .. image:: img/ultrasonic_prin.jpg
         :width: 800
 
-Formula: 
+公式:
 
-* us / 58 = centimeters distance
-* us / 148 = inch distance
-* distance = high level time x velocity (340M/S) / 2
+* us / 58 = 距離（センチメートル）
+* us / 148 = 距離（インチ）
+* 距離 = 高レベル時間 × 音速（340M/S）÷ 2
 
+**使用上の注意**
 
-**Application Notes**
-
-* This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
-* The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
+* このモジュールは、電源を入れた状態で接続しないでください。必要に応じて、モジュールのGNDを先に接続してください。そうしないと、モジュールの動作に影響を与える可能性があります。
+* 測定対象の物体の面積は少なくとも0.5平方メートル以上で、できるだけ平坦である必要があります。そうでない場合、測定結果に影響を与える可能性があります。

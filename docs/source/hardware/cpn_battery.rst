@@ -1,54 +1,54 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題を、コミュニティやチームのサポートを受けて解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換し、スキルを向上させましょう。
+    - **特別プレビュー**: 新製品の発表や先行公開をいち早く手に入れることができます。
+    - **特別割引**: 新しい製品に対する限定割引を楽しめます。
+    - **フェスティブプロモーションとプレゼント**: プレゼントや祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 
-3-pin Battery
+3ピンバッテリー
 =================
 
 .. image:: img/3pin_battery.jpg
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC**: バッテリーの正端子。ここではVCCとGNDが2セットあり、電流を増加させ、抵抗を減らすための設計です。
+* **中央**: 2つのセル間の電圧を均衡させ、バッテリーを保護します。
+* **GND**: バッテリーの負端子。
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. The connector is XH2.54 3P, which can be charged directly after being inserted into the Robot HAT.
+これはSunFounderによってカスタム作成されたバッテリーパックで、2つの18650バッテリーを使用し、容量は2000mAhです。コネクタはXH2.54 3Pで、Robot HATに挿入すると直接充電が可能です。
 
-**Features**
+**特徴**
 
-* Composition: Li-ion
-* Battery Capacity: 2000mAh, 14.8Wh
-* Battery Weight: 90.8g
-* Number of Cells: 2
-* Connector: XH2.54 3P
-* Over-discharge protection: 6.0V
+* **構成**: Li-ion
+* **バッテリー容量**: 2000mAh, 14.8Wh
+* **バッテリー重量**: 90.8g
+* **セル数**: 2
+* **コネクタ**: XH2.54 3P
+* **過放電保護**: 6.0V
 
-5-pin Battery
+5ピンバッテリー
 -----------------------------------
 
 .. image:: img/5pin_battery.jpg
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC**: バッテリーの正端子。ここではVCCとGNDが2セットあり、電流を増加させ、抵抗を減らすための設計です。
+* **中央**: 2つのセル間の電圧を均衡させ、バッテリーを保護します。
+* **GND**: バッテリーの負端子。
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. The connector is PH2.0-5P, which can be charged directly after being inserted into the shield.
+こちらもSunFounderによってカスタム作成されたバッテリーパックで、2つの18650バッテリーを使用し、容量は2000mAhです。コネクタはPH2.0-5Pで、シールドに挿入すると直接充電が可能です。
 
-**Features**
+**特徴**
 
-* **Composition**: Li-ion
-* **Battery Capacity**: 2000mAh, 14.8Wh
-* **Battery Weight**: 90.8g
-* **Number of Cells**: 2
-* **Connector**: PH2.0-5P
-* **Over-discharge protection**: 6.0V
+* **構成**: Li-ion
+* **バッテリー容量**: 2000mAh, 14.8Wh
+* **バッテリー重量**: 90.8g
+* **セル数**: 2
+* **コネクタ**: PH2.0-5P
+* **過放電保護**: 6.0V

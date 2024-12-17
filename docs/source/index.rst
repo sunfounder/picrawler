@@ -1,46 +1,53 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 愛好者コミュニティへようこそ！ Raspberry Pi、Arduino、ESP32 について、他の愛好者と一緒に深く掘り下げて学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: 購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**: スキルを高めるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新しい製品発表や先行プレビューに早期アクセスできます。
+    - **特別割引**: 最新製品に対する独占的な割引を楽しめます。
+    - **祝典プロモーションとプレゼント**: プレゼントキャンペーンや季節ごとのプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
-SunFounder Raspberry Pi Robot - |link_PiCrawler|
+SunFounder Raspberry Pi ロボット - |link_PiCrawler|
 =====================================================
 
 * |link_Pi_Crawler|
 
-Thank you for choosing our |link_PiCrawler|.
+|link_PiCrawler| をお選びいただきありがとうございます。
+
+.. note::
+    This document is available in the following languages.
+
+        * |link_en_tutorials|
+        * |link_ja_tutorials|
+        * |link_german_tutorials|
+   
+    Please click on the respective links to access the document in your preferred language.
 
 .. image:: img/picrawler.jpg
     :width: 600
     :align: center
 
-PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. 
-It is equipped with a camera module, which can perform color recognition, face detection and other items; 
-12 metal gear servos support it to walk, dance, and pose various postures; 
-the ultrasonic module on the body allows it to quickly detect obstacles in front of it; the expansion board-robot HAT is equipped with a speaker, allowing it to express emotions such as happiness and excitement.
+PiCrawlerは、アルミ合金製の構造を持つRaspberry Pi用の四足歩行ロボットです。 
+カメラモジュールが搭載されており、カラー認識や顔認識などを実行できます。 
+12個の金属ギアサーボモーターにより、歩行、ダンス、さまざまなポーズを取ることができます。 
+本体に搭載された超音波モジュールは、前方の障害物を迅速に検知することができます。拡張ボードであるロボットHATにはスピーカーも搭載されており、喜びや興奮といった感情を表現することができます。
 
+この文書には、リストおよび組み立てのPDF、Robot HATの紹介、そしてPiCrawlerのプログラミングが含まれています。
 
-This document includes the list and assembly pdf, Robot HAT introduction and PiCrawler programming.
+プログラミング部分は、:ref:`play_ezblock` と :ref:`play_python` の2章に分かれており、それぞれの章でPiCrawlerを希望通りに動作させる方法を説明しています。
 
-The programming part is divided into two chapters: :ref:`play_ezblock` & :ref:`play_python`, each chapter allows you to explain how to make PiCrawler work the way you want.
+Ezblock Studioは、SunFounderが初心者向けに開発した開発プラットフォームで、Raspberry Piの導入障壁を下げることを目的としています。グラフィカルとPythonという2つのプログラミング言語をサポートしており、ほぼすべての異なるデバイスで使用可能です。BluetoothとWi-Fiにも対応しており、Ezblock Studioでコードをダウンロードして、Raspberry Piをリモートで制御できます。
 
-Ezblock Studio is a development platform developed by SunFounder for beginners, aiming to lower the barriers to entry for Raspberry Pi. It has two programming languages: Graphical and Python, which can be used on almost all different types of devices. With Bluetooth and Wi-Fi support, you can download codes on Ezblock Studio and remotely control Raspberry Pi.
+より経験豊富なメイカーは、人気のあるプログラミング言語であるPythonを使用することができます。
 
-More experienced makers can use the popular programming language-Python.
+ご質問がある場合は、service@sunfounder.comまでメールをお送りください。できるだけ早くご返答いたします。
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
-
-
-**Content**
+**内容**
 
 .. toctree::
     :maxdepth: 2
@@ -54,8 +61,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     hardware/cpn_hardware
     faq
 
-Copyright Notice
+著作権について
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+本マニュアルに含まれるすべてのコンテンツ（テキスト、画像、コードを含むがこれに限られない）はSunFounder社に帰属します。これらのコンテンツは、個人的な学習、調査、楽しみ、またはその他の非商業的・非営利的な目的でのみ使用できます。著作権法および関連法規に従い、著者および関連する権利者の法的権利を侵害しない範囲で使用する必要があります。これらのコンテンツを商業的利益のために無断で使用する個人または団体に対して、会社は法的措置を取る権利を有します。

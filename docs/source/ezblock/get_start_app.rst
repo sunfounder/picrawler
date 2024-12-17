@@ -1,16 +1,16 @@
-.. _install_ezblock:
+.. _install_ezblock: 
 
-Install and Configure EzBlock Studio
+EzBlock Studioのインストールと設定
 =========================================
 
-As soon as the robot is assembled, you will need to carry out some basic operations.
+ロボットの組み立てが完了したら、いくつかの基本的な操作を行う必要があります。
 
-* :ref:`ezblock:install_ezblock_app_latest`: Download and install EzBlock Studio on your device or use the web-based version.
-* :ref:`ezblock:connect_product_ezblock_latest`: Configure Wi-Fi, Bluetooth and calibrate before use.
-* :ref:`ezblock:open_run_latest`: View or run the related example directly.
+* :ref:`ezblock:install_ezblock_app_latest`: デバイスにEzBlock Studioをダウンロードしてインストールするか、Web版を使用します。
+* :ref:`ezblock:connect_product_ezblock_latest`: Wi-FiやBluetoothの設定を行い、使用前にキャリブレーションを行います。
+* :ref:`ezblock:open_run_latest`: 関連するサンプルを直接確認したり、実行したりできます。
 
 .. note::
 
-    After you connect the PiCrawler, there will be a calibration step. This is because of possible deviations in the installation process or limitations of the servos themselves, making some servo angles slightly tilted, so you can calibrate them in this step.
+    PiCrawlerを接続した後、キャリブレーションの手順が表示されます。これは、組み立て時に発生する可能性のある誤差やサーボモーター自体の制限により、サーボ角度がわずかに傾いていることがあるため、これを調整するためのステップです。
     
-    But if you think the assembly is perfect and no calibration is needed, you can also skip this step.
+    ただし、組み立てが完璧でキャリブレーションが不要だと感じる場合は、このステップをスキップすることもできます。

@@ -1,73 +1,66 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と共にさらに深く学びましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティやチームのサポートを受けて、購入後の問題や技術的な課題を解決できます。
+    - **学びと共有**: ヒントやチュートリアルを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の特別割引をお楽しみいただけます。
+    - **イベントやプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探求と創造の準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-1. What Do We Need?
+1. 必要なものは？
 ===========================
 
-Required Components
+必要なコンポーネント
 -----------------------
 
 **Raspberry Pi**
 
-The Raspberry Pi is a low cost, credit-card sized computer that plugs
-into a computer monitor or TV, and uses a standard keyboard and mouse.
-It is a capable little device that enables people of all ages to explore
-computing, and to learn how to program in languages like Scratch and
-Python.
+Raspberry Piは、コンピュータモニターやテレビに接続して使用する、クレジットカードサイズの低価
+格コンピュータです。標準的なキーボードとマウスを使用します。この小さなデバイスは、すべての年齢
+層の人々がコンピュータを学び、ScratchやPythonなどのプログラミング言語を学ぶ手助けをします。
 
 .. image:: img/compitable_pi.jpg
     :width: 600
     :align: center
 
-**Power Adapter**
+**電源アダプタ**
 
-To connect to a power socket, the Raspberry Pi has a micro USB port (the
-same found on many mobile phones). You will need a power supply which
-provides at least 2.5 amps.
+Raspberry Piには、モバイルフォンと同じタイプのマイクロUSBポートがあり、電源ソケットに接続す
+るために使用します。少なくとも2.5アンペアの電流を供給できる電源が必要です。
 
-**Micro SD Card**
+**マイクロSDカード**
 
-Your Raspberry Pi needs an Micro SD card to store all its files and the
-Raspberry Pi OS. You will need a micro SD card with a capacity of at
-least 8 GB
+Raspberry Piには、ファイルやRaspberry Pi OSを保存するためのマイクロSDカードが必要です。
+容量は最低でも8GBのものを使用してください。
 
-Optional Components
--------------------------
+オプションのコンポーネント
+----------------------------
 
-**Screen**
+**スクリーン**
 
-To view the desktop environment of Raspberry Pi, you need to use the
-screen that can be a TV screen or a computer monitor. If the screen has
-built-in speakers, the Pi plays sounds via them.
+Raspberry Piのデスクトップ環境を表示するためには、テレビやコンピュータモニターなどのスクリー
+ンが必要です。スクリーンに内蔵スピーカーがある場合、Piはそのスピーカーを通じて音声を再生します。
 
-**Mouse & Keyboard**
+**マウスとキーボード**
 
-When you use a screen , a USB keyboard and a USB mouse are also needed.
+スクリーンを使用する場合、USBキーボードとUSBマウスも必要です。
 
 **HDMI**
 
-The Raspberry Pi has a HDMI output port that is compatible with the HDMI
-ports of most modern TV and computer monitors. If your screen has only
-DVI or VGA ports, you will need to use the appropriate conversion line.
+Raspberry PiにはHDMI出力ポートがあり、ほとんどの最新のテレビやコンピュータモニターのHDMIポート
+と互換性があります。もしスクリーンにDVIやVGAポートしかない場合は、それに対応した変換ケーブルを
+使用する必要があります。
 
-**Case**
+**ケース**
 
-You can put the Raspberry Pi in a case; by this means, you can protect
-your device.
+Raspberry Piをケースに入れて保護することができます。これにより、デバイスを保護できます。
 
-**Sound or Earphone**
+**サウンドまたはイヤフォン**
 
-The Raspberry Pi is equipped with an audio port about 3.5 mm that can be
-used when your screen has no built-in speakers or when there is no
-screen operation.
+Raspberry Piには3.5mmのオーディオポートがあり、スクリーンに内蔵スピーカーがない場合やスクリ
+ーンを使用しない場合に音声を出力するために使用できます。

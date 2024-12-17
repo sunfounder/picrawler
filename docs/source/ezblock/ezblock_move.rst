@@ -1,61 +1,59 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と共にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _ezb_move:
 
-Move
+移動
 =================
 
-
-This is PiCrawler's first project. Perform its most basic function - move.
+これはPiCrawlerの最初のプロジェクトです。最も基本的な機能である「移動」を実行します。
 
 .. image:: ../python/img/move.png
 
-
-**Program**
+**プログラム**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 以下の画像を参考にしてプログラムを書くことができます。詳細なチュートリアルについては、:ref:`ezblock:create_project_latest` をご参照ください。
+    * または、EzBlock Studioの **Examples** ページで同名のコードを見つけ、 **実行** または **編集** をクリックすることができます。
 
 .. image:: img/move.png
 
-Click the Upload & Run button at the bottom right of the screen, and PiCrawler will execute "forward" and "backward" actions in sequence.
+画面右下の「アップロード & 実行」ボタンをクリックすると、PiCrawlerは「前進」と「後退」の動作を順番に実行します。
 
 
-**How it works?**
+**動作の仕組み**
 
-First, you need to understand the program framework of Ezblock. as follows:
+まず、Ezblockのプログラムフレームワークを理解する必要があります。以下のようになります。
 
 .. image:: img/sp210927_162828.png
     :width: 200
 
-All Ezblock projects contain these two blocks. The **Start** block runs at the beginning of the program and is executed only once, and is often used to set variables; the **Forever** block runs after **Start**, and will be executed repeatedly, and is often used to implement main functions.
-If you delete these two blocks, you can drag them back from the **Basic** category on the left.
+すべてのEzblockプロジェクトには、この2つのブロックが含まれています。 **Start** ブロックはプログラムの最初に実行され、一度だけ実行されます。主に変数の設定に使用されます。 **Forever** ブロックは **Start** の後に実行され、繰り返し実行されます。主にメイン機能を実装するために使用されます。
+これらの2つのブロックを削除した場合、左側の **Basic** カテゴリーから再度ドラッグして追加できます。
 
-Next you need to understand the following blocks.
+次に、以下のブロックを理解する必要があります。
 
 .. image:: img/sp210927_165133.png
 
-**do action** allows PiCrawler to perform basic actions. You can modify the options in the first groove. For example, select "Turn Left", "Back" and so on.
-The second groove can set the number of executions of the action, and only integer numbers greater than 0 can be written.
-The third groove can set the speed of the action, and only integers within 0~100 can be written.
+**do action** ブロックは、PiCrawlerに基本的な動作を実行させることができます。最初のグルーブでオプションを変更できます。例えば、「左に曲がる」や「後ろに進む」などです。
+2番目のグルーブでは、動作の実行回数を設定できます。ここには、0より大きい整数のみを入力できます。
+3番目のグルーブでは、動作の速度を設定できます。0から100の範囲の整数のみを入力できます。
 
 .. image:: img/sp210927_170717.png
     :width: 500
 
-**do step** is similar to **do action**, but it is not an action but a static posture. Such as "stand", "sit".
+**do step**は、 **do action** に似ていますが、動作ではなく静的な姿勢を設定するものです。例えば「立つ」や「座る」などです。
 
-Both blocks can be dragged from the **PiCrawler** category on the left.
+これらの2つのブロックは、左側の **PiCrawler** カテゴリーからドラッグして使用できます。

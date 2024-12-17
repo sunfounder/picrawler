@@ -1,25 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32に興味を持つ仲間たちと一緒に、さらに深く学んでいきましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティやチームの支援を受けて、購入後の問題や技術的な課題を解決します。
+    - **学びと共有**: チュートリアルやヒントを交換して、スキルを向上させましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**: 最新製品の限定割引をお楽しみいただけます。
+    - **イベントやプレゼント**: プレゼント企画や祝祭プロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探求と創造の準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
 .. _i2c_spi_config:
 
-6. Check I2C Interface
+6. I2Cインターフェースの確認
 ========================================
 
-We will be using the Raspberry Pi's I2C interface. This interface should have been enabled when installing the ``robot-hat`` module earlier. To ensure everything is in order, let's check if it is indeed enabled.
+Raspberry PiのI2Cインターフェースを使用します。このインターフェースは、先ほど ``robot-hat`` モジュールをインストールする際に有効化されています。すべてが正しく設定されているか確認してみましょう。
 
-#. Input the following command:
+#. 次のコマンドを入力します。
 
     .. raw:: html
 
@@ -29,17 +29,17 @@ We will be using the Raspberry Pi's I2C interface. This interface should have be
 
         sudo raspi-config
 
-#. Choose **Interfacing Options** by press the down arrow key on your keyboard, then press the **Enter** key.
+#. キーボードの下矢印キーを使用して **Interfacing Options** を選択し、 **Enter** キーを押します。
 
     .. image:: img/image282.png
         :align: center
 
-#. Then **I2C**.
+#. 次に、**I2C** を選択します。
 
     .. image:: img/image283.png
         :align: center
 
-#. Use the arrow keys on the keyboard to select **<Yes>** -> **<OK>** to complete the setup of the I2C.
+#. キーボードの矢印キーで **<Yes>** を選択し、 **<OK>** を押してI2Cの設定を完了します。
 
     .. image:: img/image284.png
         :align: center

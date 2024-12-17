@@ -1,61 +1,62 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
-Calibrate the PiCrawler
+PiCrawlerのキャリブレーション
 ================================
 
-After you connect the PiCrawler, there will be a calibration step. This is because of possible deviations in the installation process or limitations of the servos themselves, making some servo angles slightly tilted, so you can calibrate them in this step.
-    
-But if you think the assembly is perfect and no calibration is needed, you can also skip this step.
+PiCrawlerを接続した後、キャリブレーションの手順が必要です。これは、組み立て時に発生する可能性のあるズレや、サーボモーター自体の限界により、サーボの角度がわずかに傾いてしまうためです。この手順でキャリブレーションを行うことで、正しい位置に調整できます。
+
+しかし、組み立てが完璧でキャリブレーションが不要だと思う場合は、この手順をスキップすることも可能です。
 
 .. note::
-    If you want to recalibrate the robot during use, please follow the steps below.
-    
-    You can open the product detail page by clicking the connect icon in the upper left corner.
+
+    使用中にロボットのキャリブレーションを再調整したい場合は、以下の手順に従ってください。
+
+    左上隅にある接続アイコンをクリックして、製品詳細ページを開きます。
 
     .. image:: img/calibrate0.png
 
-    Click the **Settings** button.
+    **設定** ボタンをクリックします。
 
     .. image:: img/calibrate1.png
 
-    On this page, you can change the product name, product type, view the app version or calibrate the robot. Once you click on **Calibrate** you can go to the calibration page.
+    このページでは、製品名や製品タイプの変更、アプリのバージョン確認、またはロボットのキャリブレーションができます。 **キャリブレーション** をクリックすると、キャリブレーションページに進むことができます。
 
     .. image:: img/calibrate2.png
 
 
-The calibration steps are as follows:
+キャリブレーションの手順は次の通りです：
 
-#. Take out the assembly leaflet, turn it to the last page, and lay it flat on the table. Then place the PiCrawler as shown below, aligning its bottom with the outline on the calibration chart.
+#. 組み立て用のリーフレットを取り出し、最後のページを開いてテーブルに平らに置きます。その後、PiCrawlerを以下のように配置し、底面をキャリブレーションチャートのアウトラインに合わせます。
 
     .. image:: img/calibration2.png
         :align: center
 
-#. Go back to EzBlock Studio, select one foot on the left, then click the 3 sets of X, Y and Z buttons, and let the toes slowly align with the calibration point.
+#. EzBlock Studioに戻り、左側の1本の足を選択し、X、Y、Zの3つのボタンをクリックして、足の先端がキャリブレーションポイントにゆっくり合わせるように調整します。
 
-   * The calibration buttons are used for fine-tuning, and you need to press these buttons multiple times to see the pin position change.
-   * It is recommended to click the up button of Z axis to lift the foot up first, then go to adjust X and Y.
+   * キャリブレーションボタンは微調整用で、これらのボタンを何度か押すとピンの位置が変わるのが見えます。
+   * Z軸の上ボタンを先に押して足を持ち上げ、次にX軸とY軸を調整することをお勧めします。
 
     .. image:: img/calibration4.jpg
         :align: center
 
-#. Align the other foot on the left in the same way.
+#. 左側の足を同様にキャリブレーションします。
 
     .. image:: img/calibration3.png
         :align: center
 
-#. After calibrating the left two feet, change the calibration paper to the right, and calibrate the right two feet according to the above method.
+#. 左の2本の足をキャリブレーションした後、キャリブレーション用紙を右に移動し、同じ手順で右の2本の足をキャリブレーションします。
 
     .. image:: img/calibration4.png
         :align: center

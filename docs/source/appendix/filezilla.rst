@@ -1,47 +1,46 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、FacebookのSunFounder Raspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Raspberry Pi、Arduino、ESP32について、他の愛好者と一緒にさらに深く学んでいきましょう。
 
-    **Why Join?**
+    **なぜ参加するべきか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家によるサポート**：購入後の問題や技術的な課題を、コミュニティやチームの支援を通じて解決できます。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換できます。
+    - **限定プレビュー**：新製品の発表やプレビューをいち早く見ることができます。
+    - **特別割引**：最新製品に対する専用割引を享受できます。
+    - **季節のプロモーションとプレゼント企画**：プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造を楽しみたいですか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
 .. _filezilla:
 
-Filezilla Software
+Filezillaソフトウェア
 ==========================
 
 .. image:: img/filezilla_icon.png
 
-The File Transfer Protocol (FTP) is a standard communication protocol used for the transfer of computer files from a server to a client on a computer network.
+File Transfer Protocol（FTP）は、コンピューターネットワーク上でサーバーからクライアントにファイルを転送するための標準的な通信プロトコルです。
 
-Filezilla is an open source software that not only supports FTP, but also FTP over TLS (FTPS) and SFTP. We can use Filezilla to upload local files (such as pictures and audio, etc.) to the Raspberry Pi, or download files from the Raspberry Pi to the local.
+Filezillaは、FTPだけでなく、TLSを使用したFTP（FTPS）およびSFTPもサポートするオープンソースのソフトウェアです。これを使用して、ローカルのファイル（画像や音声など）をRaspberry Piにアップロードしたり、Raspberry Piからローカルにファイルをダウンロードしたりできます。
 
-**Step 1**: Download Filezilla.
+**ステップ 1**: Filezillaのダウンロード。
 
-Download the client from `Filezilla’s official website <https://filezilla-project.org/>`_, Filezilla has a very good tutorial, please refer to: `Documentation - Filezilla <https://wiki.filezilla-project.org/Documentation>`_.
+`Filezillaの公式ウェブサイト <https://filezilla-project.org/>` からクライアントをダウンロードしてください。Filezillaには非常に良いチュートリアルがありますので、こちらを参照してください: `Documentation - Filezilla <https://wiki.filezilla-project.org/Documentation>`。
 
-**Step 2**: Connect to Raspberry Pi
+**ステップ 2**: Raspberry Piに接続する。
 
-After a quick install open it up and now `connect it to an FTP server <https://wiki.filezilla-project.org/Using#Connecting_to_an_FTP_server>`_. It has 3 ways to connect, here we use the **Quick Connect** bar. Enter the **hostname/IP**, **username**, **password** and **port (22)**, then click **Quick Connect** or press **Enter** to connect to the server.
+インストール後、Filezillaを開き、 `FTPサーバーへの接続方法 <https://wiki.filezilla-project.org/Using#Connecting_to_an_FTP_server>` を参照して接続します。接続方法は3種類ありますが、ここでは **Quick Connect** バーを使用します。 **ホスト名/IPアドレス** 、 **ユーザー名** 、 **パスワード** 、 **ポート（22）** を入力し、 **Quick Connect** をクリックするか、 **Enter** を押してサーバーに接続します。
 
 .. image:: img/filezilla_connect.png
 
 .. note::
 
-    Quick Connect is a good way to test your login information. If you want to create a permanent entry, you can select **File**-> **Copy Current Connection to Site Manager** after a successful Quick Connect, enter the name and click **OK**. Next time you will be able to connect by selecting the previously saved site inside **File** -> **Site Manager**.
-    
+    Quick Connectは、ログイン情報をテストするための便利な方法です。恒久的な接続を作成したい場合は、Quick Connectが成功した後、 **File** -> **Copy Current Connection to Site Manager** を選択し、名前を入力して **OK** をクリックします。次回は、 **File** -> **Site Manager** から保存したサイトを選択することで接続できます。
+
     .. image:: img/ftp_site.png
 
-**Step 3**: Upload/download files.
+**ステップ 3**: ファイルのアップロード/ダウンロード。
 
-You can upload local files to Raspberry Pi by dragging and dropping them, or download the files inside Raspberry Pi
-files locally.
+ローカルのファイルをRaspberry Piにドラッグ＆ドロップしてアップロードするか、Raspberry Pi内のファイルをローカルにダウンロードできます。
 
 .. image:: img/upload_ftp.png
