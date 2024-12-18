@@ -1,40 +1,39 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec des passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Profitez d'un accès anticipé aux annonces des nouveaux produits et avant-premières.
+    - **Remises exclusives** : Bénéficiez de réductions spéciales sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-7. Servo Adjust (Important)
+7. Réglage des Servos (Important)
 ===================================
 
-.. note::
+.. note:: 
 
-    If your Robot HAT is version V44 or higher (with the speaker located at the top of the board) and includes an onboard **Zero** button, you can skip this step and simply press the **Zero** button to activate the servo zeroing program.
+    Si votre Robot HAT est en version V44 ou supérieure (avec le haut-parleur situé en haut de la carte) et comprend un bouton intégré **Zero**, vous pouvez ignorer cette étape et simplement appuyer sur le bouton **Zero** pour activer le programme de mise à zéro des servos.
 
     .. image:: img/robot_hat_v44.png
         :width: 500
         :align: center
 
 
-The angle range of the servo is -90~90, but the angle set at the factory is random, maybe 0°, maybe 45°; if we assemble it with such an angle directly, it will lead to a chaotic state after the robot runs the code, or worse, it will cause the servo to block and burn out.
+L'angle de fonctionnement des servos varie de -90° à 90°, mais l'angle configuré en usine est aléatoire, pouvant être 0°, 45°, ou autre. Si nous assemblons directement le robot avec ces angles aléatoires, cela entraînera un fonctionnement désordonné du robot ou, pire, le blocage et la surchauffe des servos.
 
-So here we need to set all the servo angles to 0° and then install them, so that the servo angle is in the middle, no matter which direction to turn.
+Nous devons donc régler tous les servos à un angle de 0° avant de les installer, ce qui place l'angle du servo au centre, quelle que soit la direction de rotation.
 
-#. To ensure that the servo has been properly set to 0°, first insert the servo arm into the servo shaft and then gently rotate the rocker arm to a different angle. This servo arm is just to allow you to clearly see that the servo is rotating.
+#. Pour vérifier que le servo est bien réglé sur 0°, insérez d'abord le bras du servo dans l'axe du servo, puis faites doucement pivoter le bras pour observer son fonctionnement.
 
     .. image:: img/servo_arm.png
         :align: center
 
-
-#. Now, run ``servo_zeroing.py`` in the ``examples/`` folder.
+#. Ensuite, exécutez le script ``servo_zeroing.py`` situé dans le dossier ``examples/``.
 
     .. raw:: html
 
@@ -45,17 +44,14 @@ So here we need to set all the servo angles to 0° and then install them, so tha
         cd ~/picrawler/examples
         sudo python3 servo_zeroing.py
 
-#. Next, plug the servo cable into the P11 port as follows, at the same time you will see the servo arm rotate to a position(This is the 0° position, which is a random location and may not be vertical or parallel.).
+#. Branchez ensuite le câble du servo sur le port P11 comme indiqué ci-dessous. Vous verrez alors le bras du servo pivoter pour atteindre une position. (Ceci est la position 0°, qui peut être une position aléatoire et non nécessairement verticale ou parallèle.)
 
     .. image:: img/servo_pin11.jpg
 
-
-#. Now, remove the servo arm, ensuring the servo wire remains connected, and do not turn off the power. Then continue the assembly following the paper instructions.
+#. Retirez maintenant le bras du servo tout en maintenant le câble du servo branché et sans éteindre l'alimentation. Continuez l'assemblage en suivant les instructions du manuel papier.
 
 .. note::
 
-    * Do not unplug this servo cable before fixing it with the servo screw, you can unplug it after fixing it.
-    * Do not rotate the servo while it is powered on to avoid damage; if the servo shaft is not inserted at the right angle, pull the servo out and reinsert it.
-    * Before assembling each servo, you need to plug the servo cable into PWM pin and turn on the power to set its angle to 0°.
-
-
+    * Ne débranchez pas ce câble servo avant de le fixer avec la vis du servo. Vous pouvez le débrancher après l'avoir fixé.
+    * Ne faites pas tourner le servo lorsqu'il est alimenté pour éviter de l'endommager. Si l'axe du servo n'est pas inséré dans la bonne position, retirez le servo et réinsérez-le correctement.
+    * Avant d'assembler chaque servo, branchez le câble du servo sur une broche PWM et allumez l'alimentation pour régler son angle à 0°.

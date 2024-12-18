@@ -1,24 +1,23 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec des passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Profitez d'un accès anticipé aux annonces des nouveaux produits et avant-premières.
+    - **Remises exclusives** : Bénéficiez de réductions spéciales sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _install_all_modules:
 
-
-5. Install All the Modules (Important)
+5. Installer tous les modules (Important)
 ===============================================
 
-Make sure you are connected to the Internet and update your system:
+Assurez-vous d'être connecté à Internet et mettez à jour votre système :
 
 .. raw:: html
 
@@ -31,18 +30,17 @@ Make sure you are connected to the Internet and update your system:
 
 .. note::
 
-    Python3 related packages must be installed if you are installing the Lite version OS.
+    Les packages liés à Python3 doivent être installés si vous utilisez la version Lite du système d'exploitation.
 
     .. raw:: html
 
         <run></run>
 
     .. code-block::
-    
+
         sudo apt install git python3-pip python3-setuptools python3-smbus
 
-
-Install ``robot-hat`` module.
+Installez le module ``robot-hat``.
 
 .. raw:: html
 
@@ -55,7 +53,7 @@ Install ``robot-hat`` module.
     cd robot-hat
     sudo python3 setup.py install
 
-Then download the code and install ``vilib`` module.
+Téléchargez ensuite le code et installez le module ``vilib``.
 
 .. raw:: html
 
@@ -68,7 +66,7 @@ Then download the code and install ``vilib`` module.
     cd vilib
     sudo python3 install.py
 
-Then download the code and install ``picrawler`` module.
+Ensuite, téléchargez le code et installez le module ``picrawler``.
 
 .. raw:: html
 
@@ -81,9 +79,9 @@ Then download the code and install ``picrawler`` module.
     cd picrawler
     sudo python3 setup.py install
 
-This step will take a little time, so please be patient.
+Cette étape prendra un peu de temps, soyez patient.
 
-Finally, you need to run the script ``i2samp.sh`` to install the components required by the i2s amplifier, otherwise the pislot will have no sound.
+Enfin, vous devez exécuter le script ``i2samp.sh`` pour installer les composants requis par l'amplificateur i2s, sinon le pislot n'aura pas de son.
 
 .. raw:: html
 
@@ -96,15 +94,15 @@ Finally, you need to run the script ``i2samp.sh`` to install the components requ
 	
 .. image:: img/i2s.png
 
-Type ``y`` and press ``Enter`` to continue running the script.
+Tapez ``y`` et appuyez sur ``Entrée`` pour continuer à exécuter le script.
 
 .. image:: img/i2s2.png
 
-Type ``y`` and press ``Enter`` to run ``/dev/zero`` in the background.
+Tapez ``y`` et appuyez sur ``Entrée`` pour exécuter ``/dev/zero`` en arrière-plan.
 
 .. image:: img/i2s3.png
 
-Type ``y`` and press ``Enter`` to restart the machine.
+Tapez ``y`` et appuyez sur ``Entrée`` pour redémarrer la machine.
 
 .. note::
-    If there is no sound after restarting, you may need to run the ``i2samp.sh`` script multiple times.
+    Si aucun son n'est émis après le redémarrage, vous devrez peut-être exécuter le script ``i2samp.sh`` plusieurs fois.

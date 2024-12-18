@@ -1,65 +1,63 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec des passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Profitez d'un accès anticipé aux annonces des nouveaux produits et avant-premières.
+    - **Remises exclusives** : Bénéficiez de réductions spéciales sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-4. Set up Your Raspberry Pi
-============================
+4. Configurer votre Raspberry Pi
+==================================
 
-If You Have a Screen
--------------------------
+Si vous avez un écran
+-----------------------
 
-If you have a screen, it will be easy for you to operate on the
-Raspberry Pi.
+Si vous disposez d’un écran, il sera facile d’opérer directement sur le Raspberry Pi.
 
-**Required Components**
+**Composants nécessaires**
 
-* Any Raspberry Pi   
-* 1 * Power Adapter
-* 1 * Micro SD card
-* 1 * Screen Power Adapter
-* 1 * HDMI cable
-* 1 * Screen
-* 1 * Mouse
-* 1 * Keyboard
+* Tout modèle de Raspberry Pi
+* 1 * Adaptateur secteur
+* 1 * Carte Micro SD
+* 1 * Adaptateur secteur pour écran
+* 1 * Câble HDMI
+* 1 * Écran
+* 1 * Souris
+* 1 * Clavier
 
-1. Insert the SD card you’ve set up with Raspberry Pi OS into the micro SD card slot on the underside of your Raspberry Pi.
+1. Insérez la carte SD configurée avec Raspberry Pi OS dans le lecteur de carte micro SD situé sous votre Raspberry Pi.
 
-#. Plug in the Mouse and Keyboard.
+#. Branchez la souris et le clavier.
 
-#. Connect the screen to Raspberry Pi’s HDMI port and make sure your screen is plugged into a wall socket and switched on.
+#. Connectez l'écran au port HDMI du Raspberry Pi et assurez-vous que votre écran est branché à une prise murale et allumé.
 
     .. note::
 
-        If you use a Raspberry Pi 4, you need to connect the screen to the HDMI0 (nearest the power in port).
+        Si vous utilisez un Raspberry Pi 4, connectez l'écran au port HDMI0 (le plus proche du port d'alimentation).
 
-#. Use the power adapter to power the Raspberry Pi. 
+#. Utilisez l'adaptateur secteur pour alimenter le Raspberry Pi.
 
-#. After a few seconds, the Raspberry Pi OS desktop will be displayed. Now you can open the Terminal to start entering commands.
+#. Après quelques secondes, le bureau de Raspberry Pi OS s'affichera. Vous pouvez désormais ouvrir le Terminal pour commencer à entrer des commandes.
 
     .. image:: img/bookwarm.png
         :align: center
 
-If You Have No Screen
---------------------------
+Si vous n'avez pas d'écran
+-----------------------------
 
-If you don't have a monitor, you can remotely log into your Raspberry Pi.
+Si vous ne disposez pas d’un écran, vous pouvez accéder à votre Raspberry Pi à distance.
 
-You can apply the SSH command to open the Raspberry Pi's Bash shell. Bash is the standard default shell for Linux. The shell itself is a command (instruction) when the user uses Unix/Linux. Most of what you need to do can be done through the shell.
+Vous pouvez utiliser la commande SSH pour ouvrir le shell Bash du Raspberry Pi. Bash est le shell par défaut standard pour Linux. Le shell est une interface permettant à l'utilisateur d'envoyer des instructions à Unix/Linux. La plupart des tâches que vous devez réaliser peuvent être effectuées via le shell.
 
-If you're not satisfied with using the command window to access your Raspberry Pi, you can also use the remote desktop feature to easily manage files on your Raspberry Pi using a GUI.
+Si vous trouvez que l'utilisation de la fenêtre de commande pour accéder à votre Raspberry Pi est limitée, vous pouvez également utiliser la fonctionnalité de bureau à distance pour gérer facilement les fichiers sur votre Raspberry Pi via une interface graphique.
 
-See below for detailed tutorials for each system.
-
+Voir ci-dessous les tutoriels détaillés pour chaque système.
 
 .. toctree::
 

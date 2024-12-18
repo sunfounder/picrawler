@@ -1,44 +1,42 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec des passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Profitez d'un accès anticipé aux annonces des nouveaux produits et avant-premières.
+    - **Remises exclusives** : Bénéficiez de réductions spéciales sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-3. Power Supply for Raspberry Pi (Important)
+3. Alimentation pour Raspberry Pi (Important)
 =====================================================
 
 Charge
 -------------------
 
-Insert the battery cable. Next, insert the USB-C cable to charge the battery.
-You will need to provide your own charger; we recommend a 5V 3A charger, or your commonly used smartphone charger will suffice.
+Insérez le câble de la batterie. Ensuite, branchez le câble USB-C pour recharger la batterie.  
+Vous devrez utiliser votre propre chargeur ; nous recommandons un chargeur 5V 3A, ou un chargeur de smartphone couramment utilisé conviendra également.
 
 .. image:: img/BTR_IMG_1096.png
 
-.. note::
-    Connect an external Type-C power source to the Type-C port on the robot hat; it will immediately start charging the battery, and a red indicator light will illuminate.\
-    When the battery is fully charged, the red light will automatically turn off.
+.. note:: 
+    Connectez une source d'alimentation externe Type-C au port Type-C sur le robot hat ; la charge de la batterie commencera immédiatement, et un voyant rouge s'allumera.\
+    Lorsque la batterie sera complètement chargée, le voyant rouge s'éteindra automatiquement.
 
 
-Power ON
+Mise sous tension
 ----------------------
 
-Turn on the power switch. The Power indicator light and the battery level indicator light will illuminate.
+Allumez l'interrupteur d'alimentation. Le voyant d'alimentation ainsi que les indicateurs de niveau de la batterie s'allumeront.
 
 .. image:: img/BTR_IMG_1097.png
 
+Attendez quelques secondes, et vous entendrez un léger bip indiquant que le Raspberry Pi a démarré avec succès.
 
-Wait for a few seconds, and you will hear a slight beep, indicating that the Raspberry Pi has successfully booted.
-
-.. note::
-    If both battery level indicator lights are off, please charge the battery.
-    When you need extended programming or debugging sessions, you can keep the Raspberry Pi operational by inserting the USB-C cable to charge the battery simultaneously.
-
+.. note:: 
+    Si les deux voyants d'indicateur de niveau de la batterie sont éteints, veuillez recharger la batterie.\
+    Si vous avez besoin de sessions prolongées de programmation ou de débogage, vous pouvez maintenir le Raspberry Pi opérationnel en insérant simultanément le câble USB-C pour recharger la batterie.
