@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. ¡Explora más a fondo Raspberry Pi, Arduino y ESP32 con otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y vistas previas.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_move:
 
-Move
+Moverse
 ==============
 
-This is PiCrawler's first project. Perform its most basic function - move.
+Este es el primer proyecto de PiCrawler. Realiza su función más básica: moverse.
 
 .. image:: img/move.png
 
-**Run the Code**
+**Ejecutar el Código**
 
 .. raw:: html
 
@@ -32,12 +32,12 @@ This is PiCrawler's first project. Perform its most basic function - move.
     cd ~/picrawler/examples
     sudo python3 move.py
 
-After the code is executed, PiCrawler will perform the following actions in sequence: move forward, move backward, turn left, turn right, stand.
+Después de ejecutar el código, PiCrawler realizará las siguientes acciones en secuencia: avanzar, retroceder, girar a la izquierda, girar a la derecha, y mantenerse de pie.
 
-**Code**
+**Código**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to  source code path like ``pisloth\examples``. After modifying the code, you can run it directly to see the effect.
+    Puedes **Modificar/Restablecer/Copiar/Ejecutar/Detener** el código a continuación. Pero antes de eso, debes dirigirte a la ruta del código fuente, como ``pisloth\examples``. Después de modificar el código, puedes ejecutarlo directamente para ver el efecto.
 
 .. raw:: html
 
@@ -75,21 +75,21 @@ After the code is executed, PiCrawler will perform the following actions in sequ
         main()
 
 
-**How it works?**
+**¿Cómo funciona?**
 
-First, import the ``Picrawler`` class from the ``picrawler`` library you have installed, which contains all of PiCrawler's actions and the functions that implement them.
+Primero, importa la clase ``Picrawler`` desde la biblioteca ``picrawler`` que has instalado, la cual contiene todas las acciones de PiCrawler y las funciones que las implementan.
 
 .. code-block:: python
 
     from picrawler import Picrawler
 
-Then instantiate the ``crawler`` class.
+Luego, instancia la clase ``crawler``.
 
 .. code-block:: python
 
     crawler = Picrawler() 
 
-Finally use the ``crawler.do_action()`` function to make Pisloth move.
+Finalmente, utiliza la función ``crawler.do_action()`` para hacer que PiCrawler se mueva.
 
 .. code-block:: python
     
@@ -100,10 +100,10 @@ Finally use the ``crawler.do_action()`` function to make Pisloth move.
     crawler.do_action('turn left angle',2,speed) 
     crawler.do_action('turn right angle',2,speed)
 
-In general, all movement of PiCrawler can be implemented with the ``do_action()`` function. It has 3 parameters:
+En general, todo el movimiento de PiCrawler puede implementarse con la función ``do_action()``. Esta tiene 3 parámetros:
 
-* ``motion_name`` is the name of specific actions, including: ``forward``, ``turn right``, ``turn left``, ``backward``, ``turn left angle``, ``turn right angle``.
-* ``step`` represents the number of each action is done, the default is 1.
-* ``speed`` indicates the speed of the action, the default is 50 and the range is 0~100.
+* ``motion_name`` es el nombre de las acciones específicas, incluyendo: ``forward``, ``turn right``, ``turn left``, ``backward``, ``turn left angle``, ``turn right angle``.
+* ``step`` representa el número de veces que se realiza cada acción, el valor predeterminado es 1.
+* ``speed`` indica la velocidad de la acción, el valor predeterminado es 50 y el rango es de 0~100.
 
-In addition, ``crawler.do_step('stand',speed)`` is also used here to make PiCrawler stand. The usage of this function will be explained in the following example.
+Además, aquí también se utiliza ``crawler.do_step('stand',speed)`` para hacer que PiCrawler se mantenga de pie. El uso de esta función se explicará en el siguiente ejemplo.

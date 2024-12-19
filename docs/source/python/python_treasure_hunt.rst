@@ -1,28 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. ¡Explora más a fondo Raspberry Pi, Arduino y ESP32 con otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y vistas previas.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_treasure:
 
-Treasure Hunt
+Búsqueda del Tesoro
 ============================
 
-Arrange a maze in your room and place six different color cards in six corners. Then control PiCrawler to search for these color cards one by one!
+Organiza un laberinto en tu habitación y coloca seis tarjetas de colores diferentes en seis esquinas. Luego, controla a PiCrawler para buscar estas tarjetas de colores una por una.
 
-.. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
+.. note:: Puedes descargar e imprimir las :download:`Tarjetas de Color en PDF <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` para la detección de colores.
 
-
-**Run the Code**
+**Ejecutar el Código**
 
 .. raw:: html
 
@@ -34,9 +33,9 @@ Arrange a maze in your room and place six different color cards in six corners. 
     sudo python3 treasure_hunt.py
 
 
-**View the Image**
+**Ver la Imagen**
 
-After the code runs, the terminal will display the following prompt:
+Después de ejecutar el código, la terminal mostrará el siguiente mensaje:
 
 .. code-block::
 
@@ -48,29 +47,29 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
+Luego, puedes ingresar ``http://<tu IP>:9000/mjpg`` en el navegador para ver la pantalla de video. Por ejemplo: ``http://192.168.18.113:9000/mjpg``.
 
 .. image:: img/display.png
 
-**Code**
+**Código**
 
 .. code-block:: python
 
-	from picrawler import Picrawler
-	from time import sleep
+    from picrawler import Picrawler
+    from time import sleep
 	from robot_hat import Music,TTS
-	from vilib import Vilib
-	import readchar
-	import random
-	import threading
+    from vilib import Vilib
+    import readchar
+    import random
+    import threading
+
+    crawler = Picrawler()
 	
-	crawler = Picrawler()
 	
-	
-	music = Music()
-	tts = TTS()
-	
-	manual = '''
+    music = Music()
+    tts = TTS()
+
+    manual = '''
 	Press keys on keyboard to control Picrawler!
 	    w: Forward
 	    a: Turn left
@@ -78,91 +77,91 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 	    d: Turn right
 	    space: Say the target again
 	    Ctrl^C: Quit
-	'''
-	
-	color = "red"
+    '''
+
+    color = "red"
 	color_list=["red","orange","yellow","green","blue","purple"]
-	key_dict = {
-	    'w': 'forward',
-	    's': 'backward',
-	    'a': 'turn_left',
-	    'd': 'turn_right',
-	}
-	def renew_color_detect():
-	    global color
-	    color = random.choice(color_list)
-	    Vilib.color_detect(color)
+    key_dict = {
+        'w': 'forward',
+        's': 'backward',
+        'a': 'turn_left',
+        'd': 'turn_right',
+    }
+    def renew_color_detect():
+        global color
+        color = random.choice(color_list)
+        Vilib.color_detect(color)
 	    tts.say("Look for " + color)
-	
-	key = None
-	lock = threading.Lock()
-	def key_scan_thread():
-	    global key
-	    while True:
-	        key_temp = readchar.readkey()
+
+    key = None
+    lock = threading.Lock()
+    def key_scan_thread():
+        global key
+        while True:
+            key_temp = readchar.readkey()
 	        print('\r',end='')
-	        with lock:
-	            key = key_temp.lower()
-	            if key == readchar.key.SPACE:
-	                key = 'space'
-	            elif key == readchar.key.CTRL_C:
-	                key = 'quit'
-	                break
-	        sleep(0.01)
-	
-	def main():
-	    global key
-	    action = None
+            with lock:
+                key = key_temp.lower()
+                if key == readchar.key.SPACE:
+                    key = 'space'
+                elif key == readchar.key.CTRL_C:
+                    key = 'quit'
+                    break
+            sleep(0.01)
+
+    def main():
+        global key
+        action = None
 	    Vilib.camera_start(vflip=False,hflip=False)
 	    Vilib.display(local=False,web=True)
-	    sleep(0.8)
-	    speed = 80
-	    print(manual)
-	
-	    sleep(1)
-	    _key_t = threading.Thread(target=key_scan_thread)
-	    _key_t.setDaemon(True)
-	    _key_t.start()
-	
+        sleep(0.8)
+        speed = 80
+        print(manual)
+
+        sleep(1)
+        _key_t = threading.Thread(target=key_scan_thread)
+        _key_t.setDaemon(True)
+        _key_t.start()
+
 	    tts.say("game start")
-	    sleep(0.05)   
-	    renew_color_detect()
-	    while True:
+        sleep(0.05)
+        renew_color_detect()
+        while True:
 	
 	        if Vilib.detect_obj_parameter['color_n']!=0 and Vilib.detect_obj_parameter['color_w']>100:
 	            tts.say("will done")
-	            sleep(0.05)   
-	            renew_color_detect()
-	
-	        with lock:
+                sleep(0.05)
+                renew_color_detect()
+
+            with lock:
 	            if key != None and key in ('wsad'):
-	                action = key_dict[str(key)]
+                    action = key_dict[str(key)]
 	                key =  None
-	            elif key == 'space':
+                elif key == 'space':
 	                tts.say("Look for " + color)
 	                key =  None
-	            elif key == 'quit':
-	                _key_t.join()
-	                Vilib.camera_close()
+                elif key == 'quit':
+                    _key_t.join()
+                    Vilib.camera_close()
 	                print("\n\rQuit") 
-	                break 
-	
+                    break
+
 	        if action != None:
 	            crawler.do_action(action,1,speed)  
-	            action = None
+                action = None
+
+            sleep(0.05)
+
 	
-	        sleep(0.05)          
-	
-	
-	if __name__ == "__main__":
-	    main()
+    if __name__ == "__main__":
+        main()
 
 
-**How it works?**
+**¿Cómo funciona?**
 
-In general, this project combines the knowledge points of :ref:`py_keyboard`, :ref:`py_vision` and :ref:`py_sound`.
+En general, este proyecto combina los conocimientos de :ref:`py_keyboard`, :ref:`py_vision` y :ref:`py_sound`.
 
-Its flow is shown in the figure below:
+Su flujo se muestra en la siguiente figura:
 
 .. image:: img/treasure_hunt-f.png
 

@@ -1,35 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. ¡Explora más a fondo Raspberry Pi, Arduino y ESP32 con otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y vistas previas.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 Robot HAT
 ==================
 
-|link_robot_hat_v4| is a multifunctional expansion board that allows Raspberry Pi to be quickly turned into a robot. 
-An MCU is on board to extend the PWM output and ADC input for the Raspberry Pi, 
-as well as a motor driver chip, I2S audio module and mono speaker. 
-As well as the GPIOs that lead out of the Raspberry Pi itself.
+|link_robot_hat_v4| es una placa de expansión multifuncional que permite convertir rápidamente una Raspberry Pi en un robot. 
+Incluye un MCU integrado para ampliar la salida PWM y la entrada ADC de la Raspberry Pi, 
+así como un chip controlador de motor, un módulo de audio I2S y un altavoz mono. 
+También dispone de los GPIOs que se derivan directamente de la Raspberry Pi.
 
-It also comes with a Speaker, 
-which can be used to play background music, sound effects and implement TTS functions to make your project more interesting.
+Viene con un altavoz, 
+que puede utilizarse para reproducir música de fondo, efectos de sonido e implementar funciones TTS, haciendo que tu proyecto sea más interesante.
 
-Accepts 7-12V power input with 2 battery indicators, 1 charge indicator and 1 power indicator. 
-The board also has a user available LED and a button for you to quickly test some effects.
+Acepta una entrada de energía de 7-12V con 2 indicadores de batería, 1 indicador de carga y 1 indicador de energía. 
+La placa también incluye un LED y un botón disponible para el usuario, lo que permite probar rápidamente algunos efectos.
 
-For detailed instructions, please refer to: |link_robot_hat_v4|.
-
-
-
-
-
-
+Para instrucciones detalladas, por favor consulta: |link_robot_hat_v4|.

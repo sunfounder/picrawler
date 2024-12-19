@@ -1,65 +1,65 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. ¡Explora más a fondo Raspberry Pi, Arduino y ESP32 con otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y vistas previas.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Ultrasonic Module
+Módulo Ultrasónico
 ================================
 
 .. image:: img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG**: Entrada de pulso de activación
+* **ECHO**: Salida de pulso de eco
+* **GND**: Tierra
+* **VCC**: Suministro de 5V
 
-This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+Este es el sensor ultrasónico de distancia HC-SR04, que proporciona medición sin contacto desde 2 cm hasta 400 cm con una precisión de hasta 3 mm. Incluye un transmisor ultrasónico, un receptor y un circuito de control.
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+Solo necesitas conectar 4 pines: VCC (alimentación), Trig (disparador), Echo (recepción) y GND (tierra) para facilitar su uso en proyectos de medición.
 
-**Features**
+**Características**
 
-* Working Voltage: DC5V
-* Working Current: 16mA
-* Working Frequency: 40Hz
-* Max Range: 500cm
-* Min Range: 2cm
-* Trigger Input Signal: 10uS TTL pulse
-* Echo Output Signal: Input TTL lever signal and the range in proportion
-* Connector: XH2.54-4P
-* Dimension: 46x20.5x15 mm
+* Voltaje de trabajo: DC5V
+* Corriente de trabajo: 16mA
+* Frecuencia de trabajo: 40Hz
+* Rango máximo: 500cm
+* Rango mínimo: 2cm
+* Señal de entrada de activación: Pulso TTL de 10uS
+* Señal de salida de eco: Señal de nivel TTL proporcional al rango
+* Conector: XH2.54-4P
+* Dimensiones: 46x20.5x15 mm
 
-**Principle**
+**Principio**
 
-The basic principles are as follows:
+Los principios básicos son los siguientes:
 
-* Using IO trigger for at least 10us high level signal.
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* Usar el disparador IO para enviar una señal de nivel alto durante al menos 10us.
+* El módulo emite una ráfaga de 8 ciclos de ultrasonido a 40 kHz y detecta si se recibe una señal de pulso.
+* Echo enviará un nivel alto si se devuelve una señal; la duración del nivel alto es el tiempo desde la emisión hasta el retorno.
+* Distancia = (tiempo de nivel alto x velocidad del sonido (340M/S)) / 2
 
     .. image:: img/ultrasonic_prin.jpg
         :width: 800
 
-Formula: 
+Fórmula: 
 
-* us / 58 = centimeters distance
-* us / 148 = inch distance
-* distance = high level time x velocity (340M/S) / 2
+* us / 58 = distancia en centímetros
+* us / 148 = distancia en pulgadas
+* distancia = tiempo de nivel alto x velocidad (340M/S) / 2
 
 
-**Application Notes**
+**Notas de Aplicación**
 
-* This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
-* The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
+* Este módulo no debe conectarse mientras esté encendido; si es necesario, conecta primero el GND del módulo. De lo contrario, afectará su funcionamiento.
+* El área del objeto a medir debe ser al menos de 0.5 metros cuadrados y lo más plana posible. De lo contrario, afectará los resultados.

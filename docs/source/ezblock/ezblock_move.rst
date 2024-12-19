@@ -1,61 +1,60 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Adéntrate más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ezb_move:
 
-Move
+Moverse
 =================
 
-
-This is PiCrawler's first project. Perform its most basic function - move.
+Este es el primer proyecto de PiCrawler. Realiza su función más básica: moverse.
 
 .. image:: ../python/img/move.png
 
-
-**Program**
+**Programa**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Puedes escribir el programa según la siguiente imagen, consulta el tutorial: :ref:`ezblock:create_project_latest`.
+    * O encuentra el código con el mismo nombre en la página de **Ejemplos** de EzBlock Studio y haz clic en **Ejecutar** o **Editar** directamente.
 
 .. image:: img/move.png
 
-Click the Upload & Run button at the bottom right of the screen, and PiCrawler will execute "forward" and "backward" actions in sequence.
+Haz clic en el botón **Subir y Ejecutar** en la parte inferior derecha de la pantalla, y PiCrawler ejecutará las acciones de "adelante" y "atrás" en secuencia.
 
 
-**How it works?**
+**¿Cómo funciona?**
 
-First, you need to understand the program framework of Ezblock. as follows:
+Primero, necesitas comprender la estructura del programa en Ezblock, como se muestra a continuación:
 
 .. image:: img/sp210927_162828.png
     :width: 200
 
-All Ezblock projects contain these two blocks. The **Start** block runs at the beginning of the program and is executed only once, and is often used to set variables; the **Forever** block runs after **Start**, and will be executed repeatedly, and is often used to implement main functions.
-If you delete these two blocks, you can drag them back from the **Basic** category on the left.
+Todos los proyectos de Ezblock contienen estos dos bloques. El bloque **Inicio** se ejecuta al comienzo del programa y solo una vez; a menudo se utiliza para establecer variables. El bloque **Siempre** se ejecuta después de **Inicio** y se ejecutará repetidamente, generalmente para implementar las funciones principales.
+Si eliminas estos dos bloques, puedes arrastrarlos nuevamente desde la categoría **Básico** a la izquierda.
 
-Next you need to understand the following blocks.
+A continuación, debes comprender los siguientes bloques:
 
 .. image:: img/sp210927_165133.png
 
-**do action** allows PiCrawler to perform basic actions. You can modify the options in the first groove. For example, select "Turn Left", "Back" and so on.
-The second groove can set the number of executions of the action, and only integer numbers greater than 0 can be written.
-The third groove can set the speed of the action, and only integers within 0~100 can be written.
+**do action** permite que PiCrawler realice acciones básicas. Puedes modificar las opciones en la primera ranura, por ejemplo, seleccionar "Girar a la izquierda", "Retroceder", entre otras.
+La segunda ranura puede establecer el número de ejecuciones de la acción, y solo se pueden escribir números enteros mayores a 0.
+La tercera ranura puede establecer la velocidad de la acción, y solo se pueden escribir números enteros dentro del rango 0~100.
 
 .. image:: img/sp210927_170717.png
     :width: 500
 
-**do step** is similar to **do action**, but it is not an action but a static posture. Such as "stand", "sit".
+**do step** es similar a **do action**, pero no es una acción sino una postura estática, como "pararse" o "sentarse".
 
-Both blocks can be dragged from the **PiCrawler** category on the left.
+
+Ambos bloques se pueden arrastrar desde la categoría **PiCrawler** a la izquierda.

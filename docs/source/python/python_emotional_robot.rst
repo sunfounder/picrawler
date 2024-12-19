@@ -1,25 +1,25 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. ¡Explora más a fondo Raspberry Pi, Arduino y ESP32 con otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y vistas previas.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_emotional:
 
-Emotional Robot
-===============
+Robot Emocional
+===================
 
-This example shows several interesting custom actions of PiCrawler.
+Este ejemplo muestra varias acciones personalizadas interesantes de PiCrawler.
 
-**Run the Code**
+**Ejecutar el Código**
 
 .. raw:: html
 
@@ -31,10 +31,10 @@ This example shows several interesting custom actions of PiCrawler.
     sudo python3 emotional_robot.py
 
 
-**Code**
+**Código**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+    Puedes **Modificar/Restablecer/Copiar/Ejecutar/Detener** el código a continuación. Pero antes de eso, necesitas ir a la ruta del código fuente como ``picrawler\examples``. Después de modificar el código, puedes ejecutarlo directamente para ver el efecto.
 
 
 .. raw:: html
@@ -81,7 +81,7 @@ This example shows several interesting custom actions of PiCrawler.
                 new_step[(i-1)%4] = drop
                 crawler.do_step(new_step,speed)
 
-    ##"[[right front], [left front], [left rear], [left rear]]")
+    ##"[[delantera derecha], [delantera izquierda], [trasera izquierda], [trasera derecha]]")
 
     def pushup(speed):
         up=[[80, 0, -100], [80, 0, -100],[0, 120, -60], [0, 120, -60]]
@@ -111,4 +111,3 @@ This example shows several interesting custom actions of PiCrawler.
 
     
  
-    

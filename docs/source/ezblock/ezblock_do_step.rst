@@ -1,53 +1,50 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Adéntrate más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ezb_pose:
 
-Pose
+Postura
 ===============
 
-
-PiCrawler can assume a specific posture by writing a coordinate array. Here it assumes a raised right rear foot posture.
+PiCrawler puede asumir una postura específica escribiendo un array de coordenadas. Aquí asume una postura con la pata trasera derecha levantada.
 
 .. image:: ../python/img/4cood.A.png
 
-
-
-**Program**
+**Programa**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Puedes escribir el programa según la siguiente imagen, consulta el tutorial: :ref:`ezblock:create_project_latest`.
+    * O encuentra el código con el mismo nombre en la página de **Ejemplos** de EzBlock Studio y haz clic en **Ejecutar** o **Editar** directamente.
 
 .. image:: img/dostep.png
 
 
-**How it works?**
+**¿Cómo funciona?**
 
-In this code, the code you need to pay attention to is this **do step**.
+En este código, lo que debes prestar atención es a este bloque **do step**.
 
-It has two uses:
+Tiene dos usos:
 
-One: It can directly use **stand** or **sit**.
+Primero: Puede usarse directamente con **stand** o **sit**.
 
-Second: It can also write an array of 4 coordinate values.
+Segundo: También puede escribir un array de 4 valores de coordenadas.
 
-Each foot has an independent coordinate system. As shown below:
+Cada pata tiene un sistema de coordenadas independiente. Como se muestra a continuación:
 
 .. image:: ../python/img/4cood.png
 
-You need to measure the coordinates of each toe individually. As shown below:
+Debes medir las coordenadas de cada dedo individualmente. Como se muestra a continuación:
 
 .. image:: ../python/img/1cood.png

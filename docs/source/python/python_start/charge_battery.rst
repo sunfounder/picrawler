@@ -1,44 +1,42 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. ¡Explora más a fondo Raspberry Pi, Arduino y ESP32 con otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y vistas previas.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-3. Power Supply for Raspberry Pi (Important)
-=====================================================
+3. Fuente de alimentación para Raspberry Pi (Importante)
+============================================================
 
-Charge
--------------------
+Carga
+--------------------
 
-Insert the battery cable. Next, insert the USB-C cable to charge the battery.
-You will need to provide your own charger; we recommend a 5V 3A charger, or your commonly used smartphone charger will suffice.
+Conecta el cable de la batería. Luego, conecta el cable USB-C para cargar la batería.  
+Deberás proporcionar tu propio cargador; recomendamos un cargador de 5V 3A o el cargador común de tu smartphone será suficiente.
 
 .. image:: img/BTR_IMG_1096.png
 
 .. note::
-    Connect an external Type-C power source to the Type-C port on the robot hat; it will immediately start charging the battery, and a red indicator light will illuminate.\
-    When the battery is fully charged, the red light will automatically turn off.
+    Conecta una fuente de alimentación externa de tipo C al puerto tipo C del Robot HAT; la batería comenzará a cargarse inmediatamente y se encenderá un indicador rojo.\
+    Cuando la batería esté completamente cargada, la luz roja se apagará automáticamente.
 
 
-Power ON
+Encender
 ----------------------
 
-Turn on the power switch. The Power indicator light and the battery level indicator light will illuminate.
+Enciende el interruptor de alimentación. Se iluminarán la luz indicadora de encendido y el indicador de nivel de batería.
 
 .. image:: img/BTR_IMG_1097.png
 
-
-Wait for a few seconds, and you will hear a slight beep, indicating that the Raspberry Pi has successfully booted.
+Espera unos segundos, y escucharás un leve pitido, indicando que el Raspberry Pi se ha iniciado correctamente.
 
 .. note::
-    If both battery level indicator lights are off, please charge the battery.
-    When you need extended programming or debugging sessions, you can keep the Raspberry Pi operational by inserting the USB-C cable to charge the battery simultaneously.
-
+    Si ambos indicadores de nivel de batería están apagados, carga la batería.  
+    Si necesitas realizar sesiones prolongadas de programación o depuración, puedes mantener el Raspberry Pi operativo insertando el cable USB-C para cargar la batería al mismo tiempo.

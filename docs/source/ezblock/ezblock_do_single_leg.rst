@@ -1,62 +1,60 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Adéntrate más en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ezb_posture:
 
-Adjust Posture
+Ajustar Postura
 ==========================
 
-In this example, we use the remote function to control the PiCrawler foot by foot and assume the desired posture.
+En este ejemplo, utilizamos la función remota para controlar pie por pie al PiCrawler y asumir la postura deseada.
 
-You can tap the button to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
+Puedes presionar el botón para imprimir los valores de las coordenadas actuales. Estos valores son útiles cuando creas acciones únicas para el PiCrawler.
 
 .. image:: ../python/img/1cood.A.png
 
 
-**Program**
+**Programa**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
-
+    * Puedes escribir el programa según la siguiente imagen. Consulta el tutorial: :ref:`ezblock:create_project_latest`.
+    * O encuentra el código con el mismo nombre en la página de **Ejemplos** de EzBlock Studio y haz clic en **Ejecutar** o **Editar** directamente.
 
 .. image:: img/do_single_leg.png
     :width: 800
 
-Switch to the Remote Control interface, and you will see the following widgets.
+Cambia a la interfaz de Control Remoto y verás los siguientes widgets.
 
 .. image:: img/do_single_leg_B-1.png
     :width: 600
 
-**How it works?**
+**¿Cómo funciona?**
 
-What you need to pay attention to in this project are the following three blocks:
+Lo que necesitas prestar atención en este proyecto son los siguientes tres bloques:
 
 .. image:: img/sp210928_115847.png
 
-Modify the coordinate value of a certain leg individually.
+Modifica individualmente el valor de coordenada de una pierna específica.
 
 .. image:: img/sp210928_115908.png
 
-Returns the coordinate value of the corresponding leg.
+Devuelve el valor de coordenada de la pierna correspondiente.
 
 .. image:: img/sp210928_115958.png
 
 
-You may want to simplify the program with Functions, especially when you perform the same operation multiple times. Putting these operations into a newly declared function can greatly facilitate your 
-use.
+Podrías simplificar el programa con Funciones, especialmente cuando realizas la misma operación varias veces. Incluir estas operaciones en una función recién declarada puede facilitar en gran medida su uso.
 
 .. image:: img/sp210928_135733.png
     :width: 500

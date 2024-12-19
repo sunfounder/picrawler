@@ -1,27 +1,27 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. ¡Explora más a fondo Raspberry Pi, Arduino y ESP32 con otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y vistas previas.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_twist:
 
 Twist
 ==============
 
-We already know how to make PiCrawler assume a specific pose, the next step is to combine the poses to form a continuous action.
+Ya sabemos cómo hacer que PiCrawler asuma una pose específica. El siguiente paso es combinar las poses para formar una acción continua.
 
-Here, PiCrawler's four feet are up and down in twos, jumping with the music.
+Aquí, las cuatro patas de PiCrawler se levantan y bajan de dos en dos, saltando al ritmo de la música.
 
-**Run the Code**
+**Ejecutar el Código**
 
 .. raw:: html
 
@@ -32,12 +32,10 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
     cd ~/picrawler/examples
     sudo python3 twist.py
 
-
-**Code**
+**Código**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
-
+    Puedes **Modificar/Restablecer/Copiar/Ejecutar/Detener** el código a continuación. Pero antes, necesitas ir a la ruta del código fuente como ``picrawler\examples``. Después de modificar el código, puedes ejecutarlo directamente para ver el efecto.
 
 .. raw:: html
 
@@ -79,14 +77,14 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**¿Cómo funciona?**
 
-In this code, you need to pay attention to this part:
+En este código, debes prestar atención a esta parte:
 
 .. code-block:: python
 
     def twist(speed):
-        ## [right front],[left front],[left rear],[right rear]
+        ## [derecha delantera],[izquierda delantera],[izquierda trasera],[derecha trasera]
         new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
         for i in range(4):
             for inc in range(30,60,5):  
@@ -99,33 +97,31 @@ In this code, you need to pay attention to this part:
                 new_step[(i-1)%4] = drop
                 crawler.do_step(new_step,speed)
 
-Simply put, it uses two layers of for loops to make the ``new_step`` array produce continuous and regular changes, and at the same time, ``crawler.do_step()`` executes the posture to form a continuous action.
+En resumen, utiliza dos capas de bucles for para que el array ``new_step`` produzca cambios continuos y regulares. Al mismo tiempo, ``crawler.do_step()`` ejecuta la pose para formar una acción continua.
 
-You can intuitively get the coordinate value array corresponding to each pose from :ref:`py_posture`.
+Puedes obtener intuitivamente el array de valores de coordenadas correspondiente a cada pose desde :ref:`py_posture`.
 
+Además, el ejemplo también reproduce música de fondo. El método de implementación es el siguiente.
 
-In addition, the example also played background music. The implementation method is as follows.
-
-Play music by importing the following libraries.
+Reproduce música importando las siguientes bibliotecas:
 
 .. code-block:: python
 
     from robot_hat import Music
 
-Declare a Music object.
+Declara un objeto Music:
 
 .. code-block:: python
 
     music = Music()
 
-Play the background music in the ``picrawler/examples/musics`` directory and set the volume to 20. You can also add music to the ``musics`` folder via :ref:`filezilla`.
+Reproduce la música de fondo en el directorio ``picrawler/examples/musics`` y establece el volumen en 20. También puedes añadir música a la carpeta ``musics`` mediante :ref:`filezilla`.
 
 .. code-block:: python
 
     music.music_play('./musics/sports-Ahjay_Stelino.mp3')
     music.music_set_volume(20)
 
-
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
+    Puedes agregar diferentes efectos de sonido o música a las carpetas ``musics`` o ``sounds`` a través de :ref:`filezilla`.
