@@ -1,45 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto per esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ezb_twist:
 
-Twist 
+Twist
 ==================
 
-We already know how to make PiCrawler assume a specific pose, the next step is to combine the poses to form a continuous action.
+Abbiamo già imparato come far assumere a PiCrawler una postura specifica; il passo successivo è combinare le posture per creare un'azione continua.
 
-Here, PiCrawler's four feet are up and down in twos, jumping with the music.
+In questo esempio, le quattro zampe di PiCrawler si muovono su e giù a coppie, saltando a ritmo di musica.
 
-**Program**
+**Programma**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Puoi scrivere il programma seguendo l'immagine sottostante, facendo riferimento al tutorial: :ref:`ezblock:create_project_latest`.
+    * Oppure trova il codice con lo stesso nome nella pagina **Esempi** di EzBlock Studio e clicca direttamente su **Esegui** o **Modifica**.
 
 .. image:: img/twist.png
     :width: 800
 
-**How it works?**
+**Come funziona?**
 
-It uses two layers of for loops to make the ``new_step`` array produce continuous and regular changes, and at the same time, **do step** executes the posture to form a continuous action.
+Utilizza due cicli **for** annidati per fare in modo che l'array ``new_step`` produca cambiamenti continui e regolari. Allo stesso tempo, il blocco **do step** esegue le posture per formare un'azione continua.
 
-You can intuitively get the coordinate value array corresponding to each pose from :ref:`ezb_posture`.
+Puoi ottenere intuitivamente l'array di coordinate corrispondente a ciascuna postura da :ref:`ezb_posture`.
 
-One thing you need to pay attention to is this coordinate matrix block:
+Un elemento importante da tenere in considerazione è questo blocco della matrice delle coordinate:
 
 .. image:: img/sp210928_154257.png
-    
-It is essentially a two-dimensional array, which can be processed by blocks in the **List** category. Its structure is ``[[right front],[left front],[left rear],[right rear]]``.
-In other words, in this example, ``new_step#1`` corresponds to the right front; ``new_step#2`` corresponds to the left front; ``new_step#3`` corresponds to the left rear; and ``new_step#4`` corresponds to right rear.
+
+È essenzialmente un array bidimensionale che può essere elaborato tramite i blocchi della categoria **Lista**. La sua struttura è ``[[anteriore destro],[anteriore sinistro],[posteriore sinistro],[posteriore destro]]``.
+In altre parole, in questo esempio, ``new_step#1`` corrisponde all'anteriore destro; ``new_step#2`` corrisponde all'anteriore sinistro; ``new_step#3`` corrisponde al posteriore sinistro; e ``new_step#4`` corrisponde al posteriore destro.

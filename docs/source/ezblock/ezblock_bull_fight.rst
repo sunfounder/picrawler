@@ -1,51 +1,48 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto per esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ezb_bull:
 
-Bull Fight
+Corrida del Toro
 ======================
 
-
-Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
+Trasforma PiCrawler in un toro furioso! Usalo per tracciare e caricare un drappo rosso con la sua telecamera!
 
 .. image:: ../python/img/bullfight.png
 
-.. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
+.. note:: Puoi scaricare e stampare le :download:`schede colore in formato PDF <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` per il rilevamento dei colori.
 
-
-**Program**
+**Programma**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Puoi scrivere il programma seguendo l'immagine sottostante, facendo riferimento al tutorial: :ref:`ezblock:create_project_latest`.
+    * Oppure trova il codice con lo stesso nome nella pagina **Esempi** di EzBlock Studio e clicca direttamente su **Esegui** o **Modifica**.
 
 .. image:: img/sp210928_175806.png
     :width: 800
 
-
-Switch to the Remote Control interface, you will see the following screen.
+Passa all'interfaccia del telecomando, vedrai la seguente schermata.
 
 .. image:: img/sp21aa.png
 
 
-**How it works?**
+**Come funziona?**
 
-In general, this project combines the knowledge points of :ref:`ezb_move`, :ref:`ezb_vision` and :ref:`ezb_sound`.
+In generale, questo progetto combina i punti chiave di :ref:`ezb_move`, :ref:`ezb_vision` e :ref:`ezb_sound`.
 
-Its flow is shown in the figure below:
+Il flusso del progetto è illustrato nella figura seguente:
 
 .. image:: ../python/img/bull_fight-f.png
     :width: 600

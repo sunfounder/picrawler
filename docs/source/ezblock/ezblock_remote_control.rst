@@ -1,72 +1,69 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto per esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ezb_remote:
 
-Remote Control
+Controllo Remoto
 =========================
 
-
-In this project, we will learn how to remote control the PiCrawler. 
-You can control the PiCrawler to move forward, backward, left, and right.
+In questo progetto, impareremo come controllare a distanza il PiCrawler. 
+Puoi comandare il PiCrawler a muoversi in avanti, indietro, a sinistra e a destra.
 
 .. image:: img/remote_control.png
 
 .. note:: 
 
-    You can refer to :ref:`ezblock:remote_control_latest`. Come and carry out this project smoothly.
+    Puoi fare riferimento a :ref:`ezblock:remote_control_latest`. Realizza questo progetto con facilità.
 
-**Program**
+**Programma**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * Puoi scrivere il programma seguendo l'immagine sottostante, facendo riferimento al tutorial: :ref:`ezblock:create_project_latest`.
+    * Oppure trova il codice con lo stesso nome nella pagina **Esempi** di EzBlock Studio e clicca direttamente su **Esegui** o **Modifica**.
 
 .. image:: img/remote.png
 
-Switch to the Remote Control interface, and you will see the following widgets.
+Passa all'interfaccia di Controllo Remoto e vedrai i seguenti widget.
 
 .. image:: img/remote_B.png
 
-After the program is running, you can activate PiCrawler through D-Pad.
+Dopo l'avvio del programma, puoi attivare il PiCrawler tramite il D-Pad.
 
-**How it works?**
+**Come funziona?**
 
-After dragging out the widget on the Remote Control interface, a category named **Remote** will appear in the block categories column of the programming interface.
+Dopo aver aggiunto il widget sull'interfaccia di Controllo Remoto, apparirà una categoria denominata **Remote** nella colonna delle categorie dei blocchi dell'interfaccia di programmazione.
 
-Here we add the D-Pad widget, so the **D-Pad get value** block appears here.
+Qui abbiamo aggiunto il widget D-Pad, quindi il blocco **D-Pad get value** è presente in questa sezione.
 
 .. image:: img/sp210927_180739.png
 
-D-Pad can be regarded as a four-in-one button. You can choose which button to read in the second groove of the block.
+Il D-Pad può essere considerato come un pulsante "quattro in uno". Puoi scegliere quale pulsante leggere nel secondo spazio del blocco.
 
-When the button is pressed, the value is "1"; when the button is not pressed, the value is "0".
-
+Quando il pulsante è premuto, il valore è "1"; quando il pulsante non è premuto, il valore è "0".
 
 .. image:: img/sp210927_182447.png
     :width: 200
 
-We used an **if** block (you can find it in the **Logic** category on the left) to make the PiCrawler move forward once when the **UP** button of the D-pad is pressed.
+Abbiamo utilizzato un blocco **if** (puoi trovarlo nella categoria **Logic** a sinistra) per fare in modo che il PiCrawler si muova in avanti una volta quando il pulsante **UP** del D-pad è premuto.
 
 .. image:: img/sp210927_182828.png
     :width: 600
 
-You can click the gear icon on the upper left of the block to modify the shape of the **if** block to realize multiple judgment branches.
-
+Puoi cliccare l'icona a forma di ingranaggio in alto a sinistra del blocco per modificare la struttura del blocco **if** e realizzare ramificazioni multiple di giudizio.
 
 .. image:: img/sp210927_183237.png
     :width: 300
 
-**if** block is usually used with **=** block, **=** block can be modified to **>**, **<** and other conditions through the drop-down menu, please use it flexibly.
+Il blocco **if** è solitamente utilizzato insieme al blocco **=**. Quest'ultimo può essere modificato in **>**, **<** e altre condizioni tramite il menu a discesa. Usalo in modo flessibile.

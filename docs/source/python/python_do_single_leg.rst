@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti Speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a promozioni e concorsi durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_posture:
 
-Adjust Posture
-=====================
+Regolare la Postura
+======================
 
-In this example, we use the keyboard to control the PiCrawler foot by foot and assume the desired posture.
+In questo esempio utilizzeremo la tastiera per controllare il PiCrawler, piede per piede, e impostare la postura desiderata.
 
-You can press the space bar to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
+Puoi premere la barra spaziatrice per stampare i valori attuali delle coordinate. Questi valori delle coordinate saranno utili per creare azioni uniche per il PiCrawler.
 
 .. image:: img/1cood.A.png
 
-**Run the Code**
+**Esegui il Codice**
 
 .. raw:: html
 
@@ -34,14 +34,13 @@ You can press the space bar to print out the current coordinate values. These co
     cd ~/picrawler/examples
     sudo python3 do_single_leg.py
 
-After the code runs, please operate according to the prompt that pops up in the terminal.
+Dopo l'esecuzione del codice, segui le istruzioni visualizzate nel terminale:
 
-* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
-* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``Ctrl+C`` to exit.
+* Premi ``1234`` per selezionare i piedi separatamente: ``1``: piede anteriore destro, ``2``: piede anteriore sinistro, ``3``: piede posteriore sinistro, ``4``: piede posteriore destro.
+* Premi ``w``, ``a``, ``s``, ``d``, ``r`` e ``f`` per controllare lentamente i valori delle coordinate del PiCrawler.
+* Premi ``Ctrl+C`` per uscire.
 
-
-**Code**
+**Codice**
 
 .. code-block:: python
 
@@ -124,5 +123,5 @@ After the code runs, please operate according to the prompt that pops up in the 
     if __name__ == "__main__":
         main()
 
-* ``current_step_all_leg_value()``: Returns the coordinate values of all legs.
-* ``do_single_leg(leg,coordinate[leg],speed)``: Modify the coordinate value of a certain leg individually.
+* ``current_step_all_leg_value()``: Restituisce i valori delle coordinate di tutte le gambe.
+* ``do_single_leg(leg,coordinate[leg],speed)``: Modifica individualmente il valore della coordinata di una determinata gamba.

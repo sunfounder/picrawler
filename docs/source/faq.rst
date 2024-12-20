@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora a fondo Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a concorsi e promozioni speciali.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti subito!
 
 FAQ
 ===========================
 
-Q1: After installing Ezblock OS, the servo can't turn to 0°?
--------------------------------------------------------------------
+Q1: Dopo aver installato Ezblock OS, il servo non può girare a 0°?
+----------------------------------------------------------------------
 
-1) Check if the servo cable is properly connected and if the Robot HAT power is on.
-2) Press Reset button.
-3) If you have already run the program in Ezblock Studio, the custom program for P11 is no longer available. You can refer to the picture below to manually write a program in Ezblock Studio to set the servo angle to 0.
+1) Verifica che il cavo del servo sia collegato correttamente e che l'alimentazione del Robot HAT sia accesa.
+2) Premi il pulsante di reset.
+3) Se hai già eseguito il programma in Ezblock Studio, il programma personalizzato per P11 non è più disponibile. Puoi fare riferimento all'immagine qui sotto per scrivere manualmente un programma in Ezblock Studio per impostare l'angolo del servo a 0.
 
 .. image:: img/faq_servo.png
 
-Q2: When using VNC, I am prompted that the desktop cannot be displayed at the moment?
---------------------------------------------------------------------------------------------
+Q2: Usando VNC, mi viene detto che il desktop non può essere visualizzato al momento?
+--------------------------------------------------------------------------------------
 
-In Terminal, type ``sudo raspi-config`` to change the resolution.
+Nel terminale, digita ``sudo raspi-config`` per modificare la risoluzione.
 
-Q3: Why does the servo sometimes return to the middle position for no reason?
-------------------------------------------------------------------------------------
+Q3: Perché a volte il servo ritorna alla posizione centrale senza motivo?
+-------------------------------------------------------------------------------
 
-When the servo is blocked by a structure or other object and cannot reach its intended position, the servo will enter the power-off protection mode in order to prevent the servo from being burned out by too much current.
+Quando il servo è bloccato da una struttura o un altro oggetto e non può raggiungere la posizione desiderata, entrerà in modalità di protezione dallo spegnimento per evitare di essere danneggiato da una corrente eccessiva.
 
-After a period of power failure, if no PWM signal is given to the servo, the servo will automatically return to its original position.
+Dopo un periodo di interruzione dell'alimentazione, se non viene dato alcun segnale PWM al servo, questo tornerà automaticamente alla sua posizione originale.
 
-Q4: About the Robot HAT Detailed Tutorial?
------------------------------------------------------
+Q4: Dove posso trovare il tutorial dettagliato sul Robot HAT?
+----------------------------------------------------------------
 
-You can find a comprehensive tutorial about the Robot HAT here, including information on its hardware and API.
+Puoi trovare un tutorial completo sul Robot HAT qui, incluse informazioni sul suo hardware e API.
 
 * |link_robot_hat|

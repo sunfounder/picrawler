@@ -1,26 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti Speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a promozioni e concorsi durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_record:
 
-Record New Step
-=================
+Registra Nuovo Passo
+=======================
 
-We use the keyboard to control PiCrawler to make several poses in turn, and record these poses. Replay them later.
+Utilizziamo la tastiera per controllare PiCrawler affinché assuma diverse pose, registriamo queste pose e le riproduciamo successivamente.
 
-
-**Run the Code**
+**Esegui il Codice**
 
 .. raw:: html
 
@@ -31,16 +30,15 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
     cd ~/picrawler/examples
     sudo python3 record_new_step_by_keyboard.py
 
-After the code runs, please operate according to the prompt that pops up in the terminal.
+Dopo l'esecuzione del codice, segui le istruzioni che appaiono nel terminale.
 
-* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
-* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``space`` to print all coordinate values.
-* Press ``p`` to have PiCrawler replay the recorded action.
-* Press ``esc`` to exit.
+* Premi ``1234`` per selezionare le zampe singolarmente, ``1``: zampa anteriore destra, ``2``: zampa anteriore sinistra, ``3``: zampa posteriore sinistra, ``4``: zampa posteriore destra
+* Premi ``w``, ``a``, ``s``, ``d``, ``r`` e ``f`` per controllare lentamente i valori delle coordinate del PiCrawler.
+* Premi ``space`` per stampare tutti i valori delle coordinate.
+* Premi ``p`` per far riprodurre a PiCrawler l'azione registrata.
+* Premi ``esc`` per uscire.
 
-
-**Code**
+**Codice**
 
 .. code-block:: python
 
@@ -136,7 +134,7 @@ After the code runs, please operate according to the prompt that pops up in the 
                 save_new_step()
             elif 'p' == key:
                 play_all_new_step()
-            elif chr(27) == key:# 27 for ESC
+            elif chr(27) == key:  # 27 per ESC
                 break    
 
             sleep(0.05)
@@ -147,11 +145,11 @@ After the code runs, please operate according to the prompt that pops up in the 
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**Come funziona?**
 
-This project was born out of :ref:`py_posture`. Added recording and replay functions.
+Questo progetto nasce da :ref:`py_posture` e aggiunge funzioni di registrazione e riproduzione.
 
-The recording function is implemented by the following code.
+La funzione di registrazione è implementata con il seguente codice.
 
 .. code-block:: python
 
@@ -162,10 +160,9 @@ The recording function is implemented by the following code.
         print(new_step)
 
 .. note:: 
-    The assignment here needs to use the `Deep Copy <https://docs.python.org/3/library/copy.html>`_ function, otherwise the ``new_step`` will not get a new array object when appending.
+    L'assegnazione qui richiede l'uso della funzione `Deep Copy <https://docs.python.org/3/library/copy.html>`_, altrimenti ``new_step`` non otterrà un nuovo oggetto array quando viene aggiunto.
 
-
-The replay function is implemented by the following code.
+La funzione di riproduzione è implementata con il seguente codice.
 
 .. code-block:: python
 

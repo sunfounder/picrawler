@@ -1,46 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti Speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a promozioni e concorsi durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-Servo Zeroing for Assembly
-=================================
+Azzeramento del Servo per il Montaggio
+=========================================
 
-Before assembling the servo, 
-the angle needs to be set to zero. 
-This is because the servo motor has a limited range of motion, 
-setting the angle to zero degrees ensures that the servo is in its 
-initial position and does not exceed its range of motion when the servo is powered on. 
-If the servo is not set to zero degrees prior to assembly, 
-it may attempt to exceed its range of motion when powered, 
-potentially damaging the servo or the mechanical system it is connected to. 
-Therefore, setting the angle to zero is an important step to ensure the 
-safe and normal operation of the servo motor.
+Prima di assemblare il servo, 
+è necessario impostare l'angolo a zero. 
+Questo perché il motore del servo ha un intervallo di movimento limitato; 
+impostare l'angolo a zero gradi garantisce che il servo si trovi nella sua 
+posizione iniziale e non superi il proprio intervallo di movimento quando è alimentato. 
+Se il servo non viene impostato a zero gradi prima dell'assemblaggio, 
+potrebbe tentare di superare il proprio intervallo di movimento una volta alimentato, 
+potenzialmente danneggiando il servo o il sistema meccanico a cui è collegato. 
+Pertanto, impostare l'angolo a zero è un passaggio fondamentale per garantire il 
+funzionamento sicuro e regolare del motore del servo.
 
 
-For Python User
+Per Utenti Python
 ------------------------
 
-Please refer to :ref:`quick_guide_python` to complete the 
-installation of the Raspberry Pi OS and adjust the angle of the servos.
+Fai riferimento a :ref:`quick_guide_python` per completare l'installazione 
+del sistema operativo Raspberry Pi e regolare l'angolo dei servomotori.
 
-
-For Ezblock User
+Per Utenti Ezblock
 -----------------------
 
 .. note::
 
-    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
+    Se stai utilizzando un Raspberry Pi 5, il nostro software di programmazione grafica, EzBlock, non è supportato.
 
-After you have installed the ezblock system, 
-the P11 pin can be used to adjust the servo. 
-Please refer to :ref:`ezb_servo_adjust` for details.
+Dopo aver installato il sistema EzBlock, 
+il pin P11 può essere utilizzato per regolare il servo. 
+Fai riferimento a :ref:`ezb_servo_adjust` per i dettagli.

@@ -1,61 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto per esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-Calibrate the PiCrawler
+Calibrare il PiCrawler
 ================================
 
-After you connect the PiCrawler, there will be a calibration step. This is because of possible deviations in the installation process or limitations of the servos themselves, making some servo angles slightly tilted, so you can calibrate them in this step.
-    
-But if you think the assembly is perfect and no calibration is needed, you can also skip this step.
+Dopo aver collegato il PiCrawler, sarà necessario effettuare una calibrazione. Questo passaggio è fondamentale a causa di possibili deviazioni durante il processo di installazione o di limitazioni intrinseche dei servomotori, che possono causare una leggera inclinazione degli angoli dei servi. Durante questa fase, potrai calibrare questi angoli.
+
+Tuttavia, se ritieni che l'assemblaggio sia perfetto e non sia necessaria alcuna calibrazione, puoi saltare questo passaggio.
 
 .. note::
-    If you want to recalibrate the robot during use, please follow the steps below.
-    
-    You can open the product detail page by clicking the connect icon in the upper left corner.
+    Se desideri ricalibrare il robot durante l'utilizzo, segui i passaggi indicati di seguito.
+
+    Puoi aprire la pagina dei dettagli del prodotto cliccando sull'icona di connessione nell'angolo in alto a sinistra.
 
     .. image:: img/calibrate0.png
 
-    Click the **Settings** button.
+    Clicca sul pulsante **Impostazioni**.
 
     .. image:: img/calibrate1.png
 
-    On this page, you can change the product name, product type, view the app version or calibrate the robot. Once you click on **Calibrate** you can go to the calibration page.
+    In questa pagina, puoi modificare il nome del prodotto, il tipo di prodotto, visualizzare la versione dell'app o calibrare il robot. Una volta cliccato su **Calibra**, verrai indirizzato alla pagina di calibrazione.
 
     .. image:: img/calibrate2.png
 
 
-The calibration steps are as follows:
+I passaggi per la calibrazione sono i seguenti:
 
-#. Take out the assembly leaflet, turn it to the last page, and lay it flat on the table. Then place the PiCrawler as shown below, aligning its bottom with the outline on the calibration chart.
+#. Prendi il foglio di montaggio, giralo all'ultima pagina e posizionalo piatto sul tavolo. Poi posiziona il PiCrawler come mostrato nell'immagine, allineando la sua base con il contorno sul grafico di calibrazione.
 
     .. image:: img/calibration2.png
         :align: center
 
-#. Go back to EzBlock Studio, select one foot on the left, then click the 3 sets of X, Y and Z buttons, and let the toes slowly align with the calibration point.
+#. Torna a EzBlock Studio, seleziona un piede sul lato sinistro, quindi clicca sui 3 gruppi di pulsanti X, Y e Z, facendo in modo che le dita si allineino lentamente con il punto di calibrazione.
 
-   * The calibration buttons are used for fine-tuning, and you need to press these buttons multiple times to see the pin position change.
-   * It is recommended to click the up button of Z axis to lift the foot up first, then go to adjust X and Y.
+   * I pulsanti di calibrazione vengono utilizzati per le regolazioni fini; è necessario premere più volte questi pulsanti per vedere il cambiamento nella posizione del perno.
+   * Si consiglia di cliccare prima sul pulsante "su" dell'asse Z per sollevare il piede, quindi regolare gli assi X e Y.
 
     .. image:: img/calibration4.jpg
         :align: center
 
-#. Align the other foot on the left in the same way.
+#. Allinea nello stesso modo l'altro piede sul lato sinistro.
 
     .. image:: img/calibration3.png
         :align: center
 
-#. After calibrating the left two feet, change the calibration paper to the right, and calibrate the right two feet according to the above method.
+#. Dopo aver calibrato i due piedi sinistri, sposta il foglio di calibrazione sul lato destro e calibra i due piedi destri seguendo lo stesso metodo descritto.
 
     .. image:: img/calibration4.png
         :align: center

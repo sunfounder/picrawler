@@ -1,60 +1,56 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto per esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ezb_vision:
 
-Computer Vision
+Visione Artificiale
 =============================
 
-This project will officially enter the field of computer vision!
-
+Questo progetto segna ufficialmente l'ingresso nel campo della visione artificiale!
 
 .. note:: 
-    
-    You can read :ref:`ezblock:video_latest`. Come and carry out this project smoothly.
 
+    Puoi leggere :ref:`ezblock:video_latest` per portare a termine questo progetto con successo.
 
-**Program**
+**Programma**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
-
+    * Puoi scrivere il programma seguendo l'immagine sottostante, facendo riferimento al tutorial: :ref:`ezblock:create_project_latest`.
+    * Oppure trova il codice con lo stesso nome nella pagina **Esempi** di EzBlock Studio e clicca direttamente su **Esegui** o **Modifica**.
 
 .. image:: img/sp210928_165255.png
     :width: 800
 
-Switch to the Remote Control interface, and you will see the following widgets.
+Passa all'interfaccia di controllo remoto e vedrai i seguenti widget.
 
 .. image:: img/sp210928_165642.png
 
-After the program is running, you can switch the slider widget to turn on/off the face detection; click the D-Pad to select the color of the detection; click the button to print the detection result.
+Dopo l'avvio del programma, puoi spostare il cursore per attivare/disattivare il rilevamento facciale; clicca sul D-Pad per selezionare il colore da rilevare; clicca sul pulsante per stampare il risultato del rilevamento.
 
-**How it works?**
+**Come funziona?**
 
 .. image:: img/sp210928_170920.png
 
-This block is used to enable the camera module.
+Questo blocco viene utilizzato per abilitare il modulo della telecamera.
 
 .. image:: img/sp210928_171021.png
     :width: 400
 
-These two blocks are used to enable the face detection/color detection function.
+Questi due blocchi vengono utilizzati per abilitare la funzione di rilevamento facciale o rilevamento del colore.
 
 .. image:: img/sp210928_171125.png
     :width: 400
 
-These two blocks are used to output information. The detection result has five output values, namely coordinate x value, coordinate y value, width, height, and number.
-
+Questi due blocchi vengono utilizzati per emettere informazioni. Il risultato del rilevamento ha cinque valori in uscita, ovvero il valore delle coordinate x, il valore delle coordinate y, la larghezza, l'altezza e il numero.

@@ -1,46 +1,55 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora a fondo Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a concorsi e promozioni speciali.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti subito!
 
 SunFounder Raspberry Pi Robot - |link_PiCrawler|
 =====================================================
 
 * |link_Pi_Crawler|
 
-Thank you for choosing our |link_PiCrawler|.
+Grazie per aver scelto il nostro |link_PiCrawler|.
+
+.. note::
+    This document is available in the following languages.
+
+        * |link_en_tutorials|
+        * |link_ja_tutorials|
+        * |link_german_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+   
+    Please click on the respective links to access the document in your preferred language.
 
 .. image:: img/picrawler.jpg
     :width: 600
     :align: center
 
-PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. 
-It is equipped with a camera module, which can perform color recognition, face detection and other items; 
-12 metal gear servos support it to walk, dance, and pose various postures; 
-the ultrasonic module on the body allows it to quickly detect obstacles in front of it; the expansion board-robot HAT is equipped with a speaker, allowing it to express emotions such as happiness and excitement.
+PiCrawler è un robot quadrupede basato su Raspberry Pi con una struttura in lega di alluminio. 
+È dotato di un modulo fotocamera, in grado di eseguire riconoscimento dei colori, rilevamento del volto e altre funzioni; 
+12 servocomandi con ingranaggi metallici gli permettono di camminare, danzare e assumere varie posture; 
+il modulo ultrasonico sul corpo gli consente di rilevare rapidamente ostacoli davanti a sé; l'espansione Robot HAT include un altoparlante, che gli permette di esprimere emozioni come felicità ed entusiasmo.
 
+Questo documento include l'elenco e il PDF di assemblaggio, l'introduzione al Robot HAT e la programmazione di PiCrawler.
 
-This document includes the list and assembly pdf, Robot HAT introduction and PiCrawler programming.
+La parte di programmazione è divisa in due capitoli: :ref:`play_ezblock` & :ref:`play_python`, ognuno dei quali spiega come far funzionare PiCrawler secondo le tue esigenze.
 
-The programming part is divided into two chapters: :ref:`play_ezblock` & :ref:`play_python`, each chapter allows you to explain how to make PiCrawler work the way you want.
+Ezblock Studio è una piattaforma di sviluppo creata da SunFounder per principianti, con l'obiettivo di abbassare le barriere di ingresso al Raspberry Pi. Offre due linguaggi di programmazione: grafico e Python, utilizzabili su quasi tutti i tipi di dispositivi. Con il supporto Bluetooth e Wi-Fi, puoi scaricare i codici su Ezblock Studio e controllare Raspberry Pi da remoto.
 
-Ezblock Studio is a development platform developed by SunFounder for beginners, aiming to lower the barriers to entry for Raspberry Pi. It has two programming languages: Graphical and Python, which can be used on almost all different types of devices. With Bluetooth and Wi-Fi support, you can download codes on Ezblock Studio and remotely control Raspberry Pi.
+I maker più esperti possono utilizzare il popolare linguaggio di programmazione Python.
 
-More experienced makers can use the popular programming language-Python.
+Se hai domande, invia un'email a service@sunfounder.com e ti risponderemo il prima possibile.
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
-
-
-**Content**
+**Indice**
 
 .. toctree::
     :maxdepth: 2
@@ -54,8 +63,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     hardware/cpn_hardware
     faq
 
-Copyright Notice
+Avviso sul Copyright
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+Tutti i contenuti, inclusi ma non limitati a testi, immagini e codice presenti in questo manuale, sono di proprietà della SunFounder Company. Dovresti utilizzarli esclusivamente per studio personale, indagine, divertimento o altri scopi non commerciali o senza fini di lucro, rispettando le normative e le leggi sul copyright, senza violare i diritti legali dell'autore e dei titolari dei diritti. Per qualsiasi individuo o organizzazione che utilizzi questi contenuti per profitto commerciale senza autorizzazione, la Società si riserva il diritto di intraprendere azioni legali.

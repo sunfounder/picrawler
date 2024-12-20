@@ -1,32 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti Speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a promozioni e concorsi durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-Calibrate the PiCrawler
+Calibrazione del PiCrawler
 =============================
 
-Due to possible deviations during PiCrawler installation or limitations of the servos themselves, some servo angles may be slightly tilted, so you can calibrate them.
+A causa di possibili deviazioni durante l'installazione del PiCrawler o delle limitazioni intrinseche dei servomotori, alcuni angoli dei servo potrebbero risultare leggermente inclinati. È quindi possibile calibrarli.
 
-Of course you can skip this chapter if you think the assembly is perfect and doesn't require calibration.
+Naturalmente, puoi saltare questo capitolo se ritieni che l'assemblaggio sia perfetto e non necessiti di calibrazione.
 
+I passaggi specifici sono i seguenti:
 
-The specific steps are as follows:
-
-1. Take out the assembly leaflet, turn it to the last page, and lay it flat on the table. Then place the PiCrawler as shown below, aligning its bottom with the outline on the calibration chart.
+1. Prendi il foglio di istruzioni per l'assemblaggio, giralo all'ultima pagina e posizionalo piatto sul tavolo. Quindi colloca il PiCrawler come mostrato di seguito, allineando la base con il contorno sulla scheda di calibrazione.
 
     .. image:: img/calibration2.png
 
-#. Run the ``calibration.py``.
+#. Esegui il file ``calibration.py``.
 
     .. raw:: html
 
@@ -36,21 +35,20 @@ The specific steps are as follows:
 
         cd ~/picrawler/examples/calibration
         sudo python3 calibration.py
-        
-    After running the above code, you will see the following interface displayed in the terminal.
+
+    Dopo aver eseguito il codice sopra, vedrai la seguente interfaccia visualizzata nel terminale.
 
     .. image:: img/calibration1.png
 
-
-#. Press ``2`` and ``3`` keys respectively to choose left 2 legs，then press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` keys to move them to the calibration point.
+#. Premi rispettivamente i tasti ``2`` e ``3`` per selezionare le due gambe sinistre, poi usa i tasti ``w``, ``a``, ``s``, ``d``, ``r``, e ``f`` per spostarle verso il punto di calibrazione.
 
     .. image:: img/calibration3.png
 
-#. Now, change the calibration paper to the right and press the ``1`` and ``4`` keys to choose right 2 legs, then press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` keys to move them to the calibration point.
+#. Ora, sposta la carta di calibrazione a destra e premi i tasti ``1`` e ``4`` per selezionare le due gambe destre, quindi usa i tasti ``w``, ``a``, ``s``, ``d``, ``r``, e ``f`` per spostarle verso il punto di calibrazione.
 
     .. image:: img/calibration4.png
 
-#. After the calibration is completed, press the ``space`` key to save, you will be prompted to enter ``Y`` to confirm, and then ``ctrl+c`` to exit the program to complete the calibration.
+#. Dopo aver completato la calibrazione, premi il tasto ``spazio`` per salvare; ti verrà chiesto di inserire ``Y`` per confermare, e successivamente di premere ``ctrl+c`` per uscire dal programma e completare la calibrazione.
 
     .. image:: img/calibration5.png
 

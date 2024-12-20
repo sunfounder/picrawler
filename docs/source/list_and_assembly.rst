@@ -1,29 +1,26 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora a fondo Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a concorsi e promozioni speciali.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti subito!
 
-Component List and Assembly Instructions
-==============================================
+Elenco Componenti e Istruzioni di Assemblaggio
+==================================================
 
-You need to check whether there are missing or damaged components according to the list first. If there are any problems, please contact us and we will solve them as soon as possible.
+Devi controllare se ci sono componenti mancanti o danneggiati rispetto all'elenco. In caso di problemi, contattaci e li risolveremo il prima possibile.
 
-Please follow the steps on the PDF to assemble.
+Segui i passaggi descritti nel PDF per completare l'assemblaggio.
 
-If the servo has been powered on, please do not turn the Servo shaft to avoid damage.
+Se il servomotore è già alimentato, non girare l'albero del servo per evitare danni.
 
+* :Download:`Elenco Componenti e Istruzioni di Assemblaggio <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0102v30-a0000684-picrawler.pdf>`.
 
-* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0102v30-a0000684-picrawler.pdf>`.
-
-
-* You can find a comprehensive tutorial about the |link_robot_hat| here, including information on its hardware and API.
-
+* Puoi trovare un tutorial completo sul |link_robot_hat| qui, comprensivo di informazioni sul suo hardware e sulle API.

@@ -1,32 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora a fondo Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a concorsi e promozioni speciali.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti subito!
 
 .. _play_ezblock:
 
-Play with Ezblock
+Giocare con Ezblock
 ===========================
 
 .. note::
 
-    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
+    Se stai utilizzando un Raspberry Pi 5, il nostro software di programmazione grafica, EzBlock, non è supportato.
 
-For beginners and novices, EzBlock is a software development platform offered by SunFounder for Raspberry Pi. Ezbock offers two programming environments: a graphical environment and a Python environment.
+Per principianti e neofiti, EzBlock è una piattaforma di sviluppo software offerta da SunFounder per Raspberry Pi. EzBlock offre due ambienti di programmazione: un ambiente grafico e un ambiente Python.
 
-It is available for almost all types of devices, including Mac, PC, and Android.
+È compatibile con quasi tutti i tipi di dispositivi, inclusi Mac, PC e Android.
 
-Here is a tutorial to help you complete EzBlock installation, download, and use.
-
+Ecco un tutorial per aiutarti a completare l'installazione, il download e l'uso di EzBlock.
 
 .. toctree::
     :maxdepth: 2
@@ -36,15 +35,13 @@ Here is a tutorial to help you complete EzBlock installation, download, and use.
     calibrate
 
 
-**Projects**
+**Progetti**
 
-Here, we show you the projects of playing PiCrawler on Ezblock Studio. If you are new to these, you can refer to the code images inside each project to program, and can learn the use of blocks according to TIPS.
+Qui mostriamo i progetti per utilizzare PiCrawler su EzBlock Studio. Se sei nuovo a tutto questo, puoi fare riferimento alle immagini del codice all'interno di ogni progetto per programmare e imparare l'uso dei blocchi seguendo i suggerimenti.
 
-If you don't want to write these projects one by one, we have uploaded them to Ezblock Studio's Examples page and you can run them directly or edit them and run them later.
-
+Se non vuoi scrivere questi progetti uno per uno, li abbiamo caricati nella pagina Esempi di EzBlock Studio: puoi eseguirli direttamente o modificarli e eseguirli in seguito.
 
 .. toctree::
-
 
     ezblock_move
     ezblock_remote_control

@@ -1,73 +1,70 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti Speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a promozioni e concorsi durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-1. What Do We Need?
+1. Cosa ci serve?
 ===========================
 
-Required Components
+Componenti Necessari
 -----------------------
 
 **Raspberry Pi**
 
-The Raspberry Pi is a low cost, credit-card sized computer that plugs
-into a computer monitor or TV, and uses a standard keyboard and mouse.
-It is a capable little device that enables people of all ages to explore
-computing, and to learn how to program in languages like Scratch and
-Python.
+Il Raspberry Pi è un computer a basso costo, delle dimensioni di una carta di credito, 
+che si collega a un monitor o una TV e utilizza una tastiera e un mouse standard. È un 
+dispositivo versatile che permette a persone di tutte le età di esplorare il mondo 
+dell'informatica e imparare a programmare in linguaggi come Scratch e Python.
 
 .. image:: img/compitable_pi.jpg
     :width: 600
     :align: center
 
-**Power Adapter**
+**Adattatore di Alimentazione**
 
-To connect to a power socket, the Raspberry Pi has a micro USB port (the
-same found on many mobile phones). You will need a power supply which
-provides at least 2.5 amps.
+Per collegare il Raspberry Pi a una presa di corrente, è necessario un adattatore micro USB 
+(lo stesso utilizzato da molti telefoni cellulari). L'alimentatore deve fornire almeno 2,5 
+ampere.
 
-**Micro SD Card**
+**Scheda Micro SD**
 
-Your Raspberry Pi needs an Micro SD card to store all its files and the
-Raspberry Pi OS. You will need a micro SD card with a capacity of at
-least 8 GB
+Il Raspberry Pi necessita di una scheda Micro SD per memorizzare tutti i file e il sistema 
+operativo Raspberry Pi OS. È richiesta una scheda Micro SD con una capacità minima di 8 GB.
 
-Optional Components
+Componenti Opzionali
 -------------------------
 
-**Screen**
+**Schermo**
 
-To view the desktop environment of Raspberry Pi, you need to use the
-screen that can be a TV screen or a computer monitor. If the screen has
-built-in speakers, the Pi plays sounds via them.
+Per visualizzare l'ambiente desktop del Raspberry Pi, è necessario uno schermo che può 
+essere una TV o un monitor per computer. Se lo schermo dispone di altoparlanti integrati, 
+il Raspberry Pi riproduce l'audio tramite essi.
 
-**Mouse & Keyboard**
+**Mouse e Tastiera**
 
-When you use a screen , a USB keyboard and a USB mouse are also needed.
+Se si utilizza uno schermo, sono necessari anche una tastiera USB e un mouse USB.
 
 **HDMI**
 
-The Raspberry Pi has a HDMI output port that is compatible with the HDMI
-ports of most modern TV and computer monitors. If your screen has only
-DVI or VGA ports, you will need to use the appropriate conversion line.
+Il Raspberry Pi dispone di una porta di uscita HDMI compatibile con le porte HDMI 
+della maggior parte dei moderni televisori e monitor per computer. Se lo schermo 
+dispone solo di porte DVI o VGA, sarà necessario utilizzare un adattatore di conversione 
+appropriato.
 
 **Case**
 
-You can put the Raspberry Pi in a case; by this means, you can protect
-your device.
+Puoi mettere il Raspberry Pi in un case per proteggere il dispositivo.
 
-**Sound or Earphone**
+**Cuffie o Altoparlanti**
 
-The Raspberry Pi is equipped with an audio port about 3.5 mm that can be
-used when your screen has no built-in speakers or when there is no
-screen operation.
+Il Raspberry Pi è dotato di una porta audio da 3,5 mm che può essere utilizzata quando 
+lo schermo non dispone di altoparlanti integrati o quando non è in uso uno schermo.
