@@ -20,14 +20,15 @@ SunFounder Raspberry Pi Robot - |link_PiCrawler|
 Merci d'avoir choisi notre |link_PiCrawler|.
 
 .. note::
-    This document is available in the following languages.
+    Ce document est disponible dans les langues suivantes :
 
         * |link_en_tutorials|
         * |link_ja_tutorials|
         * |link_german_tutorials|
         * |link_fr_tutorials|
+        * |link_es_tutorials|
    
-    Please click on the respective links to access the document in your preferred language.
+    Veuillez cliquer sur les liens correspondants pour accéder au document dans votre langue préférée.
 
 .. image:: img/picrawler.jpg
     :width: 600
