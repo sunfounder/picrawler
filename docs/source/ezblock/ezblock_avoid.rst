@@ -43,5 +43,5 @@ PiCrawlerが障害物を検出すると、信号を送信し、別の方向に�
 以下はメインプログラムの概要です。
 
 * 超音波モジュールで検出された ``distance`` を読み取り、0未満の値をフィルタリングします（超音波モジュールが障害物から遠すぎるか、データを正しく読み取れない場合、 ``distance<0`` が表示されます）。
-* ``distance``が ``alert_distance`` （以前設定したしきい値、10）未満の場合、効果音 ``sign.wav`` を再生します。PiCrawlerは ``左に回転`` します。
-* ``distance``が ``alert_distance`` より大きい場合、PiCrawlerは ``前進`` します。
+* ``distance`` が ``alert_distance`` （以前設定したしきい値、10）未満の場合、効果音 ``sign.wav`` を再生します。PiCrawlerは ``左に回転`` します。
+* ``distance`` が ``alert_distance`` より大きい場合、PiCrawlerは ``前進`` します。

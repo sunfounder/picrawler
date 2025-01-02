@@ -34,7 +34,7 @@ Raspberry PiのI2Cインターフェースを使用します。このインタ�
     .. image:: img/image282.png
         :align: center
 
-#. 次に、**I2C** を選択します。
+#. 次に、 **I2C** を選択します。
 
     .. image:: img/image283.png
         :align: center

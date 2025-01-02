@@ -30,7 +30,7 @@ AIインタラクションの実現：GPT-4Oの使用
 
       python -m venv --system-site-packages my_venv
 
-#. ``my_venv``ディレクトリに移動し、 ``source bin/activate`` コマンドで仮想環境を有効化します。コマンドプロンプトが変わり、仮想環境が有効になったことを示します。
+#. ``my_venv`` ディレクトリに移動し、 ``source bin/activate`` コマンドで仮想環境を有効化します。コマンドプロンプトが変わり、仮想環境が有効になったことを示します。
 
    .. code-block:: shell
 
@@ -58,7 +58,7 @@ AIインタラクションの実現：GPT-4Oの使用
 
 **APIキーの取得**
 
-#. |link_openai_platform| にアクセスし、右上隅の**新しい秘密キーを作成**ボタンをクリックします。
+#. |link_openai_platform| にアクセスし、右上隅の **新しい秘密キーを作成** ボタンをクリックします。
 
    .. image:: img/apt_create_api_key.png
       :width: 700
@@ -181,7 +181,7 @@ PiCrawlerにマイクが搭載されていない場合は、以下のコマン�
 
       input:
 
-#. また、PiCrawlerのカメラ映像をウェブブラウザで表示するためのリンクも提供されます: ``http://rpi_ip:9000/mjpg``。
+#. また、PiCrawlerのカメラ映像をウェブブラウザで表示するためのリンクも提供されます: ``http://rpi_ip:9000/mjpg`` 。
 
    .. image:: img/apt_ip_camera.png
       :width: 700
@@ -254,7 +254,7 @@ PiCrawlerにマイクが搭載されている場合、または|link_microphone|
 
       listening ...
 
-#. PiCrawlerのカメラ映像をウェブブラウザで表示するためのリンクも提供されます: ``http://rpi_ip:9000/mjpg``。
+#. PiCrawlerのカメラ映像をウェブブラウザで表示するためのリンクも提供されます: ``http://rpi_ip:9000/mjpg`` 。
 
    .. image:: img/apt_ip_camera.png
       :width: 700
