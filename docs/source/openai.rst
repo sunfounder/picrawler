@@ -112,7 +112,7 @@ Dans cette section, nous allons créer et activer un environnement virtuel, puis
       ## Actions que vous pouvez faire :
       ["sit", "stand", "wave_hand", "shake_hand", "fighting", "excited", "play_dead", "nod", "shake_head", "look_left", "look_right", "look_up", "look_down", "warm_up", "push_up"]
 
-#. PiCrawler est équipé d'un module caméra que vous pouvez activer pour capturer des images de ce qu'il voit et les télécharger sur GPT à l'aide de notre code exemple. Nous vous recommandons donc de choisir GPT-4O, qui dispose de capacités d'analyse d'images. Bien sûr, vous pouvez également choisir gpt-3.5-turbo ou d'autres modèles.
+#. PiCrawler est équipé d'un module caméra que vous pouvez activer pour capturer des images de ce qu'il voit et les télécharger sur GPT à l'aide de notre code exemple. Nous vous recommandons donc de choisir GPT-4O-mini, qui dispose de capacités d'analyse d'images. Bien sûr, vous pouvez également choisir gpt-3.5-turbo ou d'autres modèles.
 
    .. image:: img/apt_create_assistant_model.png
       :width: 700
