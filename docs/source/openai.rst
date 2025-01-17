@@ -111,7 +111,7 @@ AIインタラクションの実現：GPT-4Oの使用
       ## Actions you can do:
       ["sit", "stand", "wave_hand", "shake_hand", "fighting", "excited", "play_dead", "nod", "shake_head", "look_left","look_right", "look_up", "look_down", "warm_up", "push_up"]
 
-#. PiCrawlerにはカメラモジュールが搭載されており、これを有効にして、PiCrawlerが見た画像をキャプチャし、例のコードを使用してGPTにアップロードできます。そのため、画像解析機能を持つGPT-4Oを選択することをお勧めします。もちろん、gpt-3.5-turboや他のモデルを選ぶこともできます。
+#. PiCrawlerにはカメラモジュールが搭載されており、これを有効にして、PiCrawlerが見た画像をキャプチャし、例のコードを使用してGPTにアップロードできます。そのため、画像解析機能を持つGPT-4O-miniを選択することをお勧めします。もちろん、gpt-3.5-turboや他のモデルを選ぶこともできます。
 
    .. image:: img/apt_create_assistant_model.png
       :width: 700
