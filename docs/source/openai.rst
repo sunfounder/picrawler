@@ -114,7 +114,7 @@ En esta sección, crearemos y activaremos un entorno virtual, instalando los paq
       ["sit", "stand", "wave_hand", "shake_hand", "fighting", "excited", "play_dead", "nod", "shake_head", "look_left","look_right", "look_up", "look_down", "warm_up", "push_up"]
 
 
-#. PiCrawler está equipado con un módulo de cámara que puedes habilitar para capturar imágenes de lo que ve y cargarlas en GPT usando nuestro código de ejemplo. Por lo tanto, recomendamos elegir GPT-4O, que tiene capacidades de análisis de imágenes. Por supuesto, también puedes elegir gpt-3.5-turbo u otros modelos.
+#. PiCrawler está equipado con un módulo de cámara que puedes habilitar para capturar imágenes de lo que ve y cargarlas en GPT usando nuestro código de ejemplo. Por lo tanto, recomendamos elegir GPT-4O-mini, que tiene capacidades de análisis de imágenes. Por supuesto, también puedes elegir gpt-3.5-turbo u otros modelos.
 
    .. image:: img/apt_create_assistant_model.png
       :width: 700
