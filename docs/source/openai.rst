@@ -10,12 +10,12 @@ Dieses Projekt beschreibt alle technischen Schritte, die notwendig sind, um GPT-
 
    Sie sollten daher entscheiden, ob Sie mit diesem Projekt fortfahren möchten, und sicherstellen, dass die OpenAI-API finanziert ist.
 
-Egal, ob Sie ein Mikrofon verwenden, um direkt zu kommunizieren, oder ob Sie lieber über ein Befehlsfenster schreiben – die Antworten von PiCrawler, unterstützt durch GPT-4O, werden Sie begeistern!
+Egal, ob Sie ein Mikrofon verwenden, um direkt zu kommunizieren, oder ob Sie lieber über ein Befehlsfenster schreiben – die Antworten von PiCrawler, unterstützt durch GPT-4O-mini, werden Sie begeistern!
 
 Lassen Sie uns in dieses Projekt eintauchen und eine neue Ebene der Interaktion mit PiCrawler freisetzen!  
 
 1. Installation der erforderlichen Pakete und Abhängigkeiten  
---------------------------------------------------------------  
+----------------------------------------------------------------
 
 .. note::  
 
