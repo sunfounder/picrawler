@@ -42,3 +42,16 @@ Q4 : Où trouver un tutoriel détaillé sur la Robot HAT ?
 Vous pouvez consulter un tutoriel complet sur la Robot HAT ici, comprenant des informations sur son matériel et son API.
 
 * |link_robot_hat|
+
+Q5 : À propos du chargeur de batterie
+-------------------------------------------------------------------
+
+Pour charger la batterie, il suffit de connecter une alimentation Type-C de 5V/2A au port d'alimentation du Robot Hat. Il n'est pas nécessaire d'allumer l'interrupteur d'alimentation du Robot Hat pendant le chargement.
+Vous pouvez également utiliser l'appareil pendant la charge de la batterie.
+
+.. image:: img/robot_hat_pic.png
+    :align: center
+    :width: 500
+
+Pendant la charge, la puissance d'entrée est amplifiée par la puce de charge pour recharger la batterie tout en alimentant simultanément le convertisseur DC-DC pour un usage externe. La puissance de charge est d'environ 10 W.
+Si la consommation électrique externe reste élevée sur une longue période, la batterie peut compléter l'alimentation, de manière similaire à l'utilisation d'un téléphone en charge. Cependant, veillez à ne pas épuiser complètement la capacité de la batterie lors d'une utilisation et d'une charge simultanées.
