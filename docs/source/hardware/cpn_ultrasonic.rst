@@ -1,5 +1,3 @@
-.. note::
-
     Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora a fondo Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
     **Perché unirti a noi?**
@@ -16,8 +14,8 @@ Modulo Ultrasonico
 ================================
 
 .. image:: img/ultrasonic_pic.png
-    :width: 400
-    :align: center
+  :width: 400
+  :align: center
 
 * **TRIG**: Ingresso impulso di attivazione
 * **ECHO**: Uscita impulso di eco
