@@ -1,0 +1,13 @@
+{
+    "version": 1.0,
+    "target": "rpi/pisp",
+    "algorithms": {
+        "rpi.denoise": {
+            "parameters": {
+                "use_sdn": true,
+                "sdn_mode": "auto"
+            }
+        },
+        "rpi.sdn": null
+    }
+}

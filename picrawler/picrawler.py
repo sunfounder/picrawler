@@ -12,7 +12,7 @@ class Picrawler(Robot):
 
     def __init__(self, pin_list=PIN_LIST, init_angles=None):  
 
-        utils.reset_mcu()
+        utils.reset_mcu_sync()
         time.sleep(0.2)
 
         super().__init__(pin_list, db=self.OFFSET_FILE, name='picrawler', init_angles=init_angles)
