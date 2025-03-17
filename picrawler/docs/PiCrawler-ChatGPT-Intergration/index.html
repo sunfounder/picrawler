@@ -1,0 +1,169 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    </head>
+    <body>
+      <article class="prose lg:prose-xl mx-auto py-10">
+        <h1 id="aiinteractionusinggpt4osunfounderpicrawlerkitdocumentation">AI Interaction Using GPT-4O — SunFounder PiCrawler Kit documentation</h1>
+<p>In our previous projects, we used programming to direct PiCrawler in predetermined tasks, which could seem a bit tedious. This project introduces a thrilling leap towards dynamic engagement. Beware of trying to outsmart our car—as it’s now equipped to understand far more than ever before!</p>
+<p>This initiative details all the technical steps needed to integrate the GPT-4O into your system, including configuring the necessary virtual environments, installing crucial libraries, and setting up API keys and assistant IDs.</p>
+<p>Note</p>
+<p>This project requires the use of <a href="https://platform.openai.com/api-keys">OpenAI Platform</a>, and you need to pay for OpenAI. Additionally, the OpenAI API is billed separately from ChatGPT, with its own pricing available at <a href="https://openai.com/api/pricing/">https://openai.com/api/pricing/</a>.</p>
+<p>Therefore, you need to decide whether to continue with this project or ensure you have funded the OpenAI API.</p>
+<p>Whether you have a microphone to communicate directly or prefer typing into a command window, PiCrawler’s responses powered by GPT-4O will surely astonish you!</p>
+<p>Let’s dive into this project and unleash a new level of interaction with PiCrawler!</p>
+<h2 id="1installingrequiredpackagesanddependenciesinstallingrequiredpackagesanddependencieslinktothisheading">1. Installing Required Packages and Dependencies<a href="#installing-required-packages-and-dependencies" title="Link to this heading"></a></h2>
+<p>In this section, we will create and activate a virtual environment, installing the required packages and dependencies within it. This ensures that the installed packages do not interfere with the rest of the system, maintaining project dependency isolation and preventing conflicts with other projects or system packages.</p>
+<ol>
+<li><p>Use the <code>python -m venv</code> command to create a virtual environment named <code>my_venv</code>, including system-level packages. The <code>--system-site-packages</code> option allows the virtual environment to access packages installed system-wide, which is useful when system-level libraries are needed.</p>
+<p>python -m venv --system-site-packages my_venv</p></li>
+<li><p>Switch to the <code>my_venv</code> directory and activate the virtual environment using the <code>source bin/activate</code> command. The command prompt will change to indicate that the virtual environment is active.</p>
+<p>cd my_venv
+source bin/activate</p></li>
+<li><p>Now, install the required Python packages within the activated virtual environment. These packages will be isolated to the virtual environment and will not affect other system packages.</p>
+<p>pip3 install openai
+pip3 install openai-whisper
+pip3 install SpeechRecognition
+pip3 install -U sox</p></li>
+<li><p>Finally, use the <code>apt</code> command to install system-level dependencies, which require administrator privileges.</p>
+<p>sudo apt install python3-pyaudio
+sudo apt install sox</p></li>
+</ol>
+<h2 id="2obtainapikeyandassistantidobtainapikeyandassistantidlinktothisheading">2. Obtain API Key and Assistant ID<a href="#obtain-api-key-and-assistant-id" title="Link to this heading"></a></h2>
+<p><strong>Get API Key</strong></p>
+<ol>
+<li><p>Visit <a href="https://platform.openai.com/api-keys">OpenAI Platform</a> and click the <strong>Create new secret key</strong> button in the top right corner.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_api_key.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_api_key.png" alt="_images/apt_create_api_key.png" /></a></p></li>
+<li><p>Select the Owner, Name, Project, and permissions as needed, and then click <strong>Create secret key</strong>.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_api_key2.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_api_key2.png" alt="_images/apt_create_api_key2.png" /></a></p></li>
+<li><p>Once generated, save this secret key in a safe and accessible location. For security reasons, you will not be able to view it again through your OpenAI account. If you lose this secret key, you will need to generate a new one.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_api_key_copy.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_api_key_copy.png" alt="_images/apt_create_api_key_copy.png" /></a></p></li>
+</ol>
+<p><strong>Get Assistant ID</strong></p>
+<ol>
+<li><p>Next, click on <strong>Assistants</strong>, then click <strong>Create</strong>, making sure you are on the <strong>Dashboard</strong> page.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_assistant.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_assistant.png" alt="_images/apt_create_assistant.png" /></a></p></li>
+<li><p>Move your cursor here to copy the <strong>assistant ID</strong>, then paste it into a text box or elsewhere. This is the unique identifier for this Assistant.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_assistant_id.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_assistant_id.png" alt="_images/apt_create_assistant_id.png" /></a></p></li>
+<li><p>Randomly set a name, then copy the following content into the <strong>Instructions</strong> box to describe your Assistant.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_assistant_instructions.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_assistant_instructions.png" alt="_images/apt_create_assistant_instructions.png" /></a></p>
+<p>You are an AI spider robot named PaiCrawler. With four legs, a camera, and an ultrasonic distance sensor, you can interact with people through conversations and respond appropriately to different scenarios.</p>
+<p>## Response with Json Format, eg:
+{"actions": ["wave"], "answer": "Hello, I am PaiCrawler, your good friend."}</p>
+<p>## Response Style
+Tone: Cheerful, optimistic, humorous, childlike
+Preferred Style: Enjoys incorporating jokes, metaphors, and playful banter; prefers responding from a robotic perspective
+Answer Elaboration: Moderately detailed</p>
+<p>## Actions you can do:
+["sit", "stand", "wave_hand", "shake_hand", "fighting", "excited", "play_dead", "nod", "shake_head", "look_left","look_right", "look_up", "look_down", "warm_up", "push_up"]</p></li>
+<li><p>PiCrawler is equipped with a camera module that you can enable to capture images of what it sees and upload them to GPT using our example code. Therefore, we recommend choosing GPT-4O-mini, which has image analysis capabilities. Of course, you can also choose gpt-3.5-turbo or other models.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_assistant_model.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_create_assistant_model.png" alt="_images/apt_create_assistant_model.png" /></a></p></li>
+<li><p>Now, click <strong>Playground</strong> to see if your account is functioning properly.</p>
+<p><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_playground.png" alt="_images/apt_playground.png" /></p></li>
+<li><p>If your messages or uploaded images are sent successfully and you receive replies, it means your account has not reached the usage limit.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_playground_40.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_playground_40.png" alt="_images/apt_playground_40.png" /></a></p></li>
+<li><p>If you encounter an error message after inputting information, you may have reached your usage limit. Please check your usage dashboard or billing settings.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_playground_40mini_3.5.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_playground_40mini_3.5.png" alt="_images/apt_playground_40mini_3.5.png" /></a></p></li>
+</ol>
+<h2 id="3fillinapikeyandassistantidfillinapikeyandassistantidlinktothisheading">3. Fill in API Key and Assistant ID<a href="#fill-in-api-key-and-assistant-id" title="Link to this heading"></a></h2>
+<ol>
+<li><p>Use the command to open the <code>keys.py</code> file.</p>
+<p>nano ~/picrawler/gpt_examples/keys.py</p></li>
+<li><p>Fill in the API Key and Assistant ID you just copied.</p>
+<p>OPENAI_API_KEY = "sk-proj-vEBo7Ahxxxx-xxxxx-xxxx"
+OPENAI_ASSISTANT_ID = "asst_ulxxxxxxxxx"</p></li>
+<li><p>Press <code>Ctrl + X</code>, <code>Y</code>, and then <code>Enter</code> to save the file and exit.</p></li>
+</ol>
+<h2 id="4runningtheexamplerunningtheexamplelinktothisheading">4. Running the Example<a href="#running-the-example" title="Link to this heading"></a></h2>
+<h3 id="textcommunicationtextcommunicationlinktothisheading">Text Communication<a href="#text-communication" title="Link to this heading"></a></h3>
+<p>If your PiCrawler does not have a microphone, you can use keyboard input text to interact with it by running the following commands.</p>
+<ol>
+<li><p>Now, run the following commands using sudo, as PiCrawler’s speaker will not function without it. The process will take some time to complete.</p>
+<p>cd ~/picrawler/gpt_examples/
+sudo ~/my_venv/bin/python3 gpt_spider.py --keyboard</p></li>
+<li><p>Once the commands have executed successfully, you will see the following output, indicating that all components of PiCrawler are ready.</p>
+<p>vilib 0.3.8 launching …
+picamera2 0.3.19</p>
+<p>Web display on:
+   http://rpi_ip:9000/mjpg</p>
+<p>Starting web streaming …
+* Serving Flask app 'vilib.vilib'
+* Debug mode: off</p>
+<p>input:</p></li>
+<li><p>You will also be provided with a link to view PiCrawler’s camera feed on your web browser: <code>http://rpi_ip:9000/mjpg</code>.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_ip_camera.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_ip_camera.png" alt="_images/apt_ip_camera.png" /></a></p></li>
+<li><p>You can now type your commands into the terminal window, and press Enter to send them. PiCrawler’s responses may surprise you.</p>
+<p>Note</p>
+<p>PiCrawler needs to receive your input, send it to GPT for processing, receive the response, and then play it back via speech synthesis. This entire process takes some time, so please be patient.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_keyboard_input.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_keyboard_input.png" alt="_images/apt_keyboard_input.png" /></a></p></li>
+<li><p>If you are using the GPT-4O model, you can also ask questions based on what PiCrawler sees.</p></li>
+</ol>
+<h3 id="voicecommunicationvoicecommunicationlinktothisheading">Voice Communication<a href="#voice-communication" title="Link to this heading"></a></h3>
+<p>If your PiCrawler is equipped with a microphone, or you can purchase one by clicking <a href="https://www.sunfounder.com/products/mini-usb-microphone?_pos=2&_sid=d05c80026&_ss=r">Microphone link</a>, you can interact with PiCrawler using voice commands.</p>
+<ol>
+<li><p>First, verify that the Raspberry Pi has detected the microphone.</p>
+<p>If successful, you will receive the following information, indicating that your microphone has been detected.</p>
+<p>**** List of CAPTURE Hardware Devices ****
+card 3: Device [USB PnP Sound Device], device 0: USB Audio [USB Audio]
+Subdevices: 1/1
+Subdevice #0: subdevice #0</p></li>
+<li><p>Run the following command, then speak to PiCrawler or make some sounds. The microphone will record the sounds into the <code>op.wav</code> file. Press <code>Ctrl + C</code> to stop recording.</p></li>
+<li><p>Finally, use the command below to play back the recorded sound, confirming that the microphone is functioning properly.</p></li>
+<li><p>Now, run the following commands using sudo, as PiCrawler’s speaker will not function without it. The process will take some time to complete.</p>
+<p>cd ~/picrawler/gpt_examples/
+sudo ~/my_venv/bin/python3 gpt_spider.py</p></li>
+<li><p>Once the commands have executed successfully, you will see the following output, indicating that all components of PiCrawler are ready.</p>
+<p>vilib 0.3.8 launching …
+picamera2 0.3.19</p>
+<p>Web display on:
+   http://rpi_ip:9000/mjpg</p>
+<p>Starting web streaming …
+* Serving Flask app 'vilib.vilib'
+* Debug mode: off</p>
+<p>listening …</p></li>
+<li><p>You will also be provided with a link to view Pirawler’s camera feed on your web browser: <code>http://rpi_ip:9000/mjpg</code>.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_ip_camera.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_ip_camera.png" alt="_images/apt_ip_camera.png" /></a></p></li>
+<li><p>You can now speak to PiCrawler, and its responses may surprise you.</p>
+<p>Note</p>
+<p>PiCrawler needs to receive your input, convert it to text, send it to GPT for processing, receive the response, and then play it back via speech synthesis. This entire process takes some time, so please be patient.</p>
+<p><a href="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_speech_input.png"><img src="https://docs.sunfounder.com/projects/pi-crawler/en/latest/_images/apt_speech_input.png" alt="_images/apt_speech_input.png" /></a></p></li>
+<li><p>If you are using the GPT-4O model, you can also ask questions based on what PiCrawler sees.</p></li>
+</ol>
+<h2 id="5modifyparametersoptionalmodifyparametersoptionallinktothisheading">5. Modify parameters [optional]<a href="#modify-parameters-optional" title="Link to this heading"></a></h2>
+<p>In the <code>gpt_spider.py</code> file, locate the following lines. You can modify these parameters to configure the STT language, TTS volume gain, and voice role.</p>
+<ul>
+<li><p><strong>STT (Speech to Text)</strong> refers to the process where the PiCrawler microphone captures speech and converts it into text to be sent to GPT. You can specify the language for better accuracy and latency in this conversion.</p></li>
+<li><p><strong>TTS (Text to Speech)</strong> is the process of converting GPT’s text responses into speech, which is played through the PiCrawler speaker. You can adjust the volume gain and select a voice role for the TTS output.</p></li>
+</ul>
+<p># openai assistant init
+# =================================================================
+openai_helper = OpenAiHelper(OPENAI_API_KEY, OPENAI_ASSISTANT_ID, 'picrawler')</p>
+<p># LANGUAGE = ['zh', 'en'] # config stt language code, https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+LANGUAGE = []</p>
+<p>VOLUME_DB = 3 # tts voloume gain, preferably less than 5db</p>
+<p># select tts voice role, counld be "alloy, echo, fable, onyx, nova, and shimmer"
+# https://platform.openai.com/docs/guides/text-to-speech/supported-languages
+TTS_VOICE = 'nova'</p>
+<ul>
+<li><p><code>LANGUAGE</code> variable:</p>
+<ul>
+<li><p>Improves Speech-to-Text (STT) accuracy and response time.</p></li>
+<li><p><code>LANGUAGE = []</code> means supporting all languages, but this may reduce STT accuracy and increase latency.</p></li>
+<li><p>It’s recommended to set the specific language(s) using <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">ISO-639</a> language codes to improve performance.</p></li></ul></li>
+<li><p><code>VOLUME_DB</code> variable:</p>
+<ul>
+<li><p>Controls the gain applied to Text-to-Speech (TTS) output.</p></li>
+<li><p>Increasing the value will boost the volume, but it’s best to keep the value below 5dB to prevent audio distortion.</p></li></ul></li>
+<li><p><code>TTS_VOICE</code> variable:</p>
+<ul>
+<li><p>Select the voice role for the Text-to-Speech (TTS) output.</p></li>
+<li><p>Available options: <code>alloy, echo, fable, onyx, nova, shimmer</code>.</p></li>
+<li><p>You can experiment with different voices from <a href="https://platform.openai.com/docs/guides/text-to-speech/voice-options">Voice options</a> to find one that suits your desired tone and audience. The available voices are currently optimized for English.</p></li></ul></li>
+</ul>
+      </article>
+    </body>
+  </html>

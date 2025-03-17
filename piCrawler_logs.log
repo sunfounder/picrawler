@@ -1,0 +1,1759 @@
+spider@PiSpider:~/picrawler/gpt_examples $ sudo ~/my_venv/bin/python3 gpt_spider.py --pl
+OpenAI API key is properly configured.
+Detecting OpenAI API version and capabilities...
+2025-03-12 17:16:47,597 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/assistants/asst_MXP6p0by1JdPXC0rCFpcTZjg "HTTP/1.1 200 OK"
+Using vision-capable model: gpt-4o-mini
+2025-03-12 17:16:48,087 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+Created new conversation thread: thread_3urTOOodgsiRfehP8VrKOz3I
+2025-03-12 17:16:48,553 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_3urTOOodgsiRfehP8VrKOz3I/messages "HTTP/1.1 200 OK"
+2025-03-12 17:16:49,664 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_3urTOOodgsiRfehP8VrKOz3I/runs "HTTP/1.1 200 OK"
+Initializing assistant with instructions...
+2025-03-12 17:16:50,056 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_3urTOOodgsiRfehP8VrKOz3I/runs/run_zse46ap4jKNuSz4xqZ9f18dx "HTTP/1.1 200 OK"
+2025-03-12 17:16:51,944 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_3urTOOodgsiRfehP8VrKOz3I/runs/run_zse46ap4jKNuSz4xqZ9f18dx "HTTP/1.1 200 OK"
+2025-03-12 17:16:53,313 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_3urTOOodgsiRfehP8VrKOz3I/runs/run_zse46ap4jKNuSz4xqZ9f18dx "HTTP/1.1 200 OK"
+Assistant initialized successfully
+Initializing audio output...
+error: XDG_RUNTIME_DIR is invalid or not set in the environment.
+Using pygame.mixer.music wrapper for audio output
+SDN tuning fix already exists.
+Warning: Unable to import or use Vilib class: cannot import name 'Vilib' from 'vilib' (/home/spider/my_venv/lib/python3.11/site-packages/vilib/__init__.py)
+Trying to use picamera2 instead...
+Successfully loaded picamera2. Setting up camera...
+Detected libcamera.so.0.3, which might have compatibility issues
+Trying to initialize camera anyway...
+[0:27:16.433081159] [58766]  INFO Camera camera_manager.cpp:327 libcamera v0.4.0+53-29156679
+[0:27:16.463890368] [59197]  WARN RPiSdn sdn.cpp:40 Using legacy SDN tuning - please consider moving SDN inside rpi.denoise
+[0:27:16.466209516] [59197]  INFO RPI vc4.cpp:447 Registered camera /base/soc/i2c0mux/i2c@1/ov5647@36 to Unicam device /dev/media3 and ISP device /dev/media0
+[0:27:16.466319774] [59197]  INFO RPI pipeline_base.cpp:1121 Using configuration file '/usr/share/libcamera/pipeline/rpi/vc4/rpi_apps.yaml'
+2025-03-12 17:16:55,308 - picamera2.picamera2 - INFO - Initialization successful.
+2025-03-12 17:16:55,309 - picamera2.picamera2 - INFO - Camera now open.
+[0:27:16.474238672] [58766]  INFO Camera camera.cpp:1202 configuring streams: (0) 640x480-XBGR8888 (1) 640x480-SGBRG10_CSI2P
+[0:27:16.474712927] [59197]  INFO RPI vc4.cpp:622 Sensor: /base/soc/i2c0mux/i2c@1/ov5647@36 - Selected sensor format: 640x480-SGBRG10_1X10 - Selected unicam format: 640x480-pGAA
+2025-03-12 17:16:55,316 - picamera2.picamera2 - INFO - Configuration successful!
+2025-03-12 17:16:55,414 - picamera2.picamera2 - INFO - Camera started
+Camera initialized with picamera2 successfully
+Camera set to: <picamera2.picamera2.Picamera2 object at 0x7f9c714110>
+Starting camera web server at http://0.0.0.0:9001/
+Web display available at: http://192.168.1.248:9001/
+ * Serving Flask app 'flask_camera_server'
+ * Debug mode: off
+2025-03-12 17:16:55,631 - werkzeug - INFO - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9001
+ * Running on http://192.168.1.248:9001
+2025-03-12 17:16:55,632 - werkzeug - INFO - Press CTRL+C to quit
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM front
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround40
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround41
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround50
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround51
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround71
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM iec958
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+Available microphones:
+  0: bcm2835 Headphones: - (hw:0,0)
+  1: KRUX EPIC 1000S MIC: USB Audio (hw:2,0)
+Found USB microphone at index 1
+  2: dmixer
+  3: softvol
+  4: dmix
+  5: default
+Using microphone: KRUX EPIC 1000S MIC: USB Audio (hw:2,0)
+Testing microphone connection...
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM front
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround40
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround41
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround50
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround51
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround71
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM iec958
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM front
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround40
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround41
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround50
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround51
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround71
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM iec958
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+Microphone test complete
+Raspberry Pi audio module (snd_bcm2835) is already loaded
+ALSA configuration file already exists.
+Warning: gpio command not found. LED functionality will be disabled.
+Using Polish language for speech recognition
+OpenAI Helper language set to: pl
+Setting OpenAI to respond in Polish
+2025-03-12 17:16:56,344 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+Created new conversation thread: thread_d87VYsnktp32motq35M8x5WJ
+2025-03-12 17:16:56,784 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 200 OK"
+2025-03-12 17:16:59,786 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs "HTTP/1.1 200 OK"
+Initializing assistant with instructions...
+2025-03-12 17:17:00,466 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_35Dj1qVMMGnoOawE58UlD1fB "HTTP/1.1 200 OK"
+2025-03-12 17:17:02,066 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_35Dj1qVMMGnoOawE58UlD1fB "HTTP/1.1 200 OK"
+2025-03-12 17:17:03,470 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_35Dj1qVMMGnoOawE58UlD1fB "HTTP/1.1 200 OK"
+2025-03-12 17:17:04,922 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_35Dj1qVMMGnoOawE58UlD1fB "HTTP/1.1 200 OK"
+Assistant initialized successfully
+Setting OpenAI to respond in Polish
+Initializing PiCrawler and zeroing servos...
+Servo 0 set to zero
+Servo 1 set to zero
+Servo 2 set to zero
+Servo 3 set to zero
+Servo 4 set to zero
+Servo 5 set to zero
+Servo 6 set to zero
+Servo 7 set to zero
+Servo 8 set to zero
+Servo 9 set to zero
+Servo 10 set to zero
+Servo 11 set to zero
+Servo zeroing completed
+Robot standing successfully
+Speak handler started with speech_is_playing= False
+Action handler thread started
+Checking voice presets...
+Greeting preset 'morning_greeting' is valid
+Greeting preset 'afternoon_greeting' is valid
+Greeting preset 'evening_greeting' is valid
+Greeting preset 'standard_greeting' is valid
+Goodbye preset 'standard_goodbye' is valid
+Goodbye preset 'sleep_goodbye' is valid
+Goodbye preset 'short_goodbye' is valid
+Response preset 'error_response' is valid
+Response preset 'thinking_response' is valid
+Response preset 'not_understood' is valid
+Voice presets setup complete
+Playing initial greeting sound...
+Executing action from preset: greeting
+Greeting...
+Playing audio: voice_presets/greetings/afternoon_greeting_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Executing action from preset: wave_hand
+Executing action from preset: nod
+Getting personalized greeting from the Assistant...
+Attempt 1/3 to get greeting
+Processing request: 'Witaj! Właśnie się uruchomiłem. Proszę, powitaj użytkownika w języku polskim! Odpowiedź MUSI być w języku polskim.'
+2025-03-12 17:17:19,802 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs "HTTP/1.1 200 OK"
+2025-03-12 17:17:20,447 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 200 OK"
+2025-03-12 17:17:21,895 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs "HTTP/1.1 200 OK"
+2025-03-12 17:17:22,275 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_Ctwj2N6oZ7LuircTyiwblGos "HTTP/1.1 200 OK"
+2025-03-12 17:17:23,271 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_Ctwj2N6oZ7LuircTyiwblGos "HTTP/1.1 200 OK"
+2025-03-12 17:17:24,177 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_Ctwj2N6oZ7LuircTyiwblGos "HTTP/1.1 200 OK"
+2025-03-12 17:17:24,829 - werkzeug - INFO - 192.168.1.176 - - [12/Mar/2025 17:17:24] "GET / HTTP/1.1" 200 -
+2025-03-12 17:17:24,910 - werkzeug - INFO - 192.168.1.176 - - [12/Mar/2025 17:17:24] "GET /video_feed HTTP/1.1" 200 -
+2025-03-12 17:17:25,022 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_Ctwj2N6oZ7LuircTyiwblGos "HTTP/1.1 200 OK"
+2025-03-12 17:17:25,242 - werkzeug - INFO - 192.168.1.176 - - [12/Mar/2025 17:17:25] "GET /logo.png HTTP/1.1" 404 -
+2025-03-12 17:17:25,439 - werkzeug - INFO - 192.168.1.176 - - [12/Mar/2025 17:17:25] "GET / HTTP/1.1" 200 -
+2025-03-12 17:17:25,873 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_Ctwj2N6oZ7LuircTyiwblGos "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:17:26,163 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+Raw response: {"actions": ["greeting", "excited"], "answer": "Witaj! Jestem Arachne, twoja ciekawska pajęcza robot...
+Creating TTS for Assistant greeting...
+2025-03-12 17:17:27,413 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+Assistant greeting TTS created: ./tts/25-03-12_17-17-26_3dB.wav
+Executing greeting action: greeting
+Greeting...
+Playing audio: ./tts/25-03-12_17-17-26_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Executing greeting action: excited
+Initial greeting completed.
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 61.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:17:51,921 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.278 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:17:52,349 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:17:53,139 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:17:53,925 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:17:56,682 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs "HTTP/1.1 200 OK"
+Created run with ID: run_olqlnCxTaxY5O7Ofqn5Izyhq
+2025-03-12 17:17:57,110 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_olqlnCxTaxY5O7Ofqn5Izyhq "HTTP/1.1 200 OK"
+2025-03-12 17:17:58,472 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_olqlnCxTaxY5O7Ofqn5Izyhq "HTTP/1.1 200 OK"
+2025-03-12 17:18:00,079 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_olqlnCxTaxY5O7Ofqn5Izyhq "HTTP/1.1 200 OK"
+2025-03-12 17:18:01,513 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_olqlnCxTaxY5O7Ofqn5Izyhq "HTTP/1.1 200 OK"
+2025-03-12 17:18:03,139 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_olqlnCxTaxY5O7Ofqn5Izyhq "HTTP/1.1 200 OK"
+2025-03-12 17:18:04,593 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_olqlnCxTaxY5O7Ofqn5Izyhq "HTTP/1.1 200 OK"
+2025-03-12 17:18:06,021 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_olqlnCxTaxY5O7Ofqn5Izyhq "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:18:06,280 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 14.357 s
+2025-03-12 17:18:07,052 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-18-06_3dB.wav
+tts takes: 2.735 s
+actions: ['look_around', 'move_closer']
+Waiting for speech to complete...
+Action handler processing 2 actions: ['look_around', 'move_closer']
+Making sure robot is standing...
+Playing audio: ./tts/25-03-12_17-18-06_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Turning left 45 degrees...
+Turning right 45 degrees...
+Actions wait timeout, continuing...
+Ready for next interaction
+Speak now...
+Turning right 45 degrees...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 949.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Turning left 45 degrees...
+Successfully performed action: look_around
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+Moving closer...
+Walking forward...
+2025-03-12 17:18:33,680 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 2.665 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:18:34,159 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:18:35,278 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:18:35,811 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:18:37,392 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs "HTTP/1.1 200 OK"
+Created run with ID: run_SQgzSCdlHOHBFwcoFkGBzwcK
+2025-03-12 17:18:37,880 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_SQgzSCdlHOHBFwcoFkGBzwcK "HTTP/1.1 200 OK"
+2025-03-12 17:18:39,316 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_SQgzSCdlHOHBFwcoFkGBzwcK "HTTP/1.1 200 OK"
+Successfully performed action: move_closer
+Action status set back to standby
+2025-03-12 17:18:40,642 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_SQgzSCdlHOHBFwcoFkGBzwcK "HTTP/1.1 200 OK"
+2025-03-12 17:18:42,043 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_SQgzSCdlHOHBFwcoFkGBzwcK "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:18:42,318 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 8.636 s
+2025-03-12 17:18:43,346 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-18-42_3dB.wav
+tts takes: 2.558 s
+actions: ['walk_forward', 'look_around']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-18-42_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Action handler processing 2 actions: ['walk_forward', 'look_around']
+Making sure robot is standing...
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Walking forward...
+Actions wait timeout, continuing...
+Ready for next interaction
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 163.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Successfully performed action: walk_forward
+Turning left 45 degrees...
+Turning right 45 degrees...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:19:10,377 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.946 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:19:10,872 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:19:11,697 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+Turning right 45 degrees...
+2025-03-12 17:19:12,478 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:19:14,148 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs "HTTP/1.1 200 OK"
+Created run with ID: run_EC91yyCdk0H4YKrKqEkfI28D
+2025-03-12 17:19:14,481 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_EC91yyCdk0H4YKrKqEkfI28D "HTTP/1.1 200 OK"
+2025-03-12 17:19:15,832 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_EC91yyCdk0H4YKrKqEkfI28D "HTTP/1.1 200 OK"
+Turning left 45 degrees...
+2025-03-12 17:19:17,211 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_EC91yyCdk0H4YKrKqEkfI28D "HTTP/1.1 200 OK"
+2025-03-12 17:19:18,574 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_EC91yyCdk0H4YKrKqEkfI28D "HTTP/1.1 200 OK"
+2025-03-12 17:19:20,101 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_EC91yyCdk0H4YKrKqEkfI28D "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:19:20,372 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 9.992 s
+Successfully performed action: look_around
+2025-03-12 17:19:21,260 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+Action status set back to standby
+TTS file created: ./tts/25-03-12_17-19-20_3dB.wav
+tts takes: 2.879 s
+actions: ['move_closer', 'look_up']
+Waiting for speech to complete...
+Action handler processing 2 actions: ['move_closer', 'look_up']
+Making sure robot is standing...
+Playing audio: ./tts/25-03-12_17-19-20_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Moving closer...
+Walking forward...
+Successfully performed action: move_closer
+Actions wait timeout, continuing...
+Ready for next interaction
+Successfully performed action: look_up
+Action status set back to standby
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 318.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:19:42,686 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.059 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:19:43,258 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:19:44,062 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:19:44,556 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:19:49,955 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs "HTTP/1.1 200 OK"
+Created run with ID: run_U6MkSIBxUSQ3TlZHcwmOadHL
+2025-03-12 17:19:50,409 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_U6MkSIBxUSQ3TlZHcwmOadHL "HTTP/1.1 200 OK"
+2025-03-12 17:19:51,808 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_U6MkSIBxUSQ3TlZHcwmOadHL "HTTP/1.1 200 OK"
+2025-03-12 17:19:53,337 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_U6MkSIBxUSQ3TlZHcwmOadHL "HTTP/1.1 200 OK"
+2025-03-12 17:20:18,841 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_U6MkSIBxUSQ3TlZHcwmOadHL "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:20:19,097 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 36.390 s
+2025-03-12 17:20:22,225 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-20-19_3dB.wav
+tts takes: 7.726 s
+actions: ['curious', 'look_around']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-20-19_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Action handler processing 2 actions: ['curious', 'look_around']
+Making sure robot is standing...
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Acting curious...
+Moving closer...
+Walking forward...
+Actions wait timeout, continuing...
+Ready for next interaction
+Successfully performed action: curious
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 65.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Turning left 45 degrees...
+Turning right 45 degrees...
+Turning right 45 degrees...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:20:53,355 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.454 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:20:53,876 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs?limit=1 "HTTP/1.1 200 OK"
+Turning left 45 degrees...
+2025-03-12 17:20:54,509 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:20:54,961 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:20:56,340 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs "HTTP/1.1 200 OK"
+Created run with ID: run_UWIWesIsrkwSeRfLYKRGhgv1
+2025-03-12 17:20:56,837 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:20:58,177 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+Successfully performed action: look_around
+Action status set back to standby
+2025-03-12 17:20:59,597 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:00,942 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:02,885 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:04,263 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:05,635 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:07,025 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:08,601 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:10,106 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:11,458 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:12,821 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:14,152 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:15,538 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:17,085 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:18,472 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:19,934 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:21,286 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:22,693 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:24,169 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+2025-03-12 17:21:25,507 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_UWIWesIsrkwSeRfLYKRGhgv1 "HTTP/1.1 200 OK"
+Run did not complete within the timeout period
+chat takes: 33.151 s
+Detected action from text: shake_head
+2025-03-12 17:21:27,223 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-21-26_3dB.wav
+tts takes: 2.484 s
+actions: ['shake_head']
+Waiting for speech to complete...
+Action handler processing 1 actions: ['shake_head']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-21-26_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Speech has completed, continuing...
+Successfully performed action: shake_head
+Action status set back to standby
+Actions completed, continuing...
+Ready for next interaction
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 298.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:21:50,854 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.584 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:21:51,354 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs?limit=1 "HTTP/1.1 200 OK"
+Active run run_UWIWesIsrkwSeRfLYKRGhgv1 found. Waiting for completion...
+2025-03-12 17:21:57,262 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:21:57,681 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 400 Bad Request"
+Error attaching image: Error code: 400 - {'error': {'message': "Can't add messages to thread_d87VYsnktp32motq35M8x5WJ while a run run_UWIWesIsrkwSeRfLYKRGhgv1 is active.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2025-03-12 17:21:58,009 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 400 Bad Request"
+Error: Error code: 400 - {'error': {'message': "Can't add messages to thread_d87VYsnktp32motq35M8x5WJ while a run run_UWIWesIsrkwSeRfLYKRGhgv1 is active.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2025-03-12 17:21:58,304 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 400 Bad Request"
+Inner error processing image: Error code: 400 - {'error': {'message': "Can't add messages to thread_d87VYsnktp32motq35M8x5WJ while a run run_UWIWesIsrkwSeRfLYKRGhgv1 is active.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+chat takes: 7.446 s
+Detected action from text: shake_head
+2025-03-12 17:21:59,095 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-21-58_3dB.wav
+tts takes: 3.405 s
+actions: ['shake_head']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-21-58_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Action handler processing 1 actions: ['shake_head']
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Successfully performed action: shake_head
+Action status set back to standby
+Actions completed, continuing...
+Ready for next interaction
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 399.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:22:14,401 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.805 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:22:14,857 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:22:15,687 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:22:17,700 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:22:20,005 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs "HTTP/1.1 200 OK"
+Created run with ID: run_WebZr50NI4Q1KWJfBorJFq1W
+2025-03-12 17:22:20,587 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_WebZr50NI4Q1KWJfBorJFq1W "HTTP/1.1 200 OK"
+2025-03-12 17:22:21,926 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_WebZr50NI4Q1KWJfBorJFq1W "HTTP/1.1 200 OK"
+2025-03-12 17:22:23,323 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_WebZr50NI4Q1KWJfBorJFq1W "HTTP/1.1 200 OK"
+2025-03-12 17:22:24,668 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_WebZr50NI4Q1KWJfBorJFq1W "HTTP/1.1 200 OK"
+2025-03-12 17:22:26,121 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/runs/run_WebZr50NI4Q1KWJfBorJFq1W "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:22:26,394 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_d87VYsnktp32motq35M8x5WJ/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 11.991 s
+2025-03-12 17:22:27,402 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-22-26_3dB.wav
+tts takes: 15.936 s
+actions: ['wave_hand', 'greeting']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-22-26_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Action handler processing 2 actions: ['wave_hand', 'greeting']
+Making sure robot is standing...
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Successfully performed action: wave_hand
+Greeting...
+Successfully performed action: greeting
+Action status set back to standby
+Actions completed, continuing...
+Ready for next interaction
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 462.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+^C
+Shutting down gracefully...
+Robot returned to sit position.
+Playing goodbye message...
+Executing action from preset: wave_hand
+Executing action from preset: excited
+Executing action from preset: sit
+Cleaning up...
+2025-03-12 17:22:59,503 - picamera2.picamera2 - INFO - Camera stopped
+2025-03-12 17:22:59,907 - picamera2.picamera2 - INFO - Camera closed successfully.
+Picamera2 resources released.
+Shutdown complete.
+Cleaning up...
+Picamera2 resources released.
+Robot returned to sit position.
+Shutdown complete.
+spider@PiSpider:~/picrawler/gpt_examples $ sudo ~/my_venv/bin/python3 gpt_spider.py --pl
+OpenAI API key is properly configured.
+Detecting OpenAI API version and capabilities...
+2025-03-12 17:23:08,266 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/assistants/asst_MXP6p0by1JdPXC0rCFpcTZjg "HTTP/1.1 200 OK"
+Using vision-capable model: gpt-4o-mini
+2025-03-12 17:23:08,648 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+Created new conversation thread: thread_2YhoYT9wE8ebRVzDjDzPx6rj
+2025-03-12 17:23:09,141 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_2YhoYT9wE8ebRVzDjDzPx6rj/messages "HTTP/1.1 200 OK"
+2025-03-12 17:23:11,501 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_2YhoYT9wE8ebRVzDjDzPx6rj/runs "HTTP/1.1 200 OK"
+Initializing assistant with instructions...
+2025-03-12 17:23:11,868 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_2YhoYT9wE8ebRVzDjDzPx6rj/runs/run_qyaWblkb6RIM1ssFSs2EToFk "HTTP/1.1 200 OK"
+2025-03-12 17:23:13,223 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_2YhoYT9wE8ebRVzDjDzPx6rj/runs/run_qyaWblkb6RIM1ssFSs2EToFk "HTTP/1.1 200 OK"
+2025-03-12 17:23:14,584 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_2YhoYT9wE8ebRVzDjDzPx6rj/runs/run_qyaWblkb6RIM1ssFSs2EToFk "HTTP/1.1 200 OK"
+2025-03-12 17:23:16,398 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_2YhoYT9wE8ebRVzDjDzPx6rj/runs/run_qyaWblkb6RIM1ssFSs2EToFk "HTTP/1.1 200 OK"
+Assistant initialized successfully
+Initializing audio output...
+error: XDG_RUNTIME_DIR is invalid or not set in the environment.
+Using pygame.mixer.music wrapper for audio output
+SDN tuning fix already exists.
+Warning: Unable to import or use Vilib class: cannot import name 'Vilib' from 'vilib' (/home/spider/my_venv/lib/python3.11/site-packages/vilib/__init__.py)
+Trying to use picamera2 instead...
+Successfully loaded picamera2. Setting up camera...
+Detected libcamera.so.0.3, which might have compatibility issues
+Trying to initialize camera anyway...
+[0:33:39.499510309] [72665]  INFO Camera camera_manager.cpp:327 libcamera v0.4.0+53-29156679
+[0:33:39.527878724] [73176]  WARN RPiSdn sdn.cpp:40 Using legacy SDN tuning - please consider moving SDN inside rpi.denoise
+[0:33:39.530157673] [73176]  INFO RPI vc4.cpp:447 Registered camera /base/soc/i2c0mux/i2c@1/ov5647@36 to Unicam device /dev/media3 and ISP device /dev/media0
+[0:33:39.530275987] [73176]  INFO RPI pipeline_base.cpp:1121 Using configuration file '/usr/share/libcamera/pipeline/rpi/vc4/rpi_apps.yaml'
+2025-03-12 17:23:18,373 - picamera2.picamera2 - INFO - Initialization successful.
+2025-03-12 17:23:18,373 - picamera2.picamera2 - INFO - Camera now open.
+[0:33:39.538216049] [72665]  INFO Camera camera.cpp:1202 configuring streams: (0) 640x480-XBGR8888 (1) 640x480-SGBRG10_CSI2P
+[0:33:39.538764841] [73176]  INFO RPI vc4.cpp:622 Sensor: /base/soc/i2c0mux/i2c@1/ov5647@36 - Selected sensor format: 640x480-SGBRG10_1X10 - Selected unicam format: 640x480-pGAA
+2025-03-12 17:23:18,381 - picamera2.picamera2 - INFO - Configuration successful!
+2025-03-12 17:23:18,482 - picamera2.picamera2 - INFO - Camera started
+Camera initialized with picamera2 successfully
+Camera set to: <picamera2.picamera2.Picamera2 object at 0x7f6fbad050>
+Starting camera web server at http://0.0.0.0:9001/
+Web display available at: http://192.168.1.248:9001/
+ * Serving Flask app 'flask_camera_server'
+ * Debug mode: off
+2025-03-12 17:23:18,732 - werkzeug - INFO - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9001
+ * Running on http://192.168.1.248:9001
+2025-03-12 17:23:18,733 - werkzeug - INFO - Press CTRL+C to quit
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM front
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround40
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround41
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround50
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround51
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround71
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM iec958
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+Available microphones:
+  0: bcm2835 Headphones: - (hw:0,0)
+  1: KRUX EPIC 1000S MIC: USB Audio (hw:2,0)
+Found USB microphone at index 1
+  2: dmixer
+  3: softvol
+  4: dmix
+  5: default
+Using microphone: KRUX EPIC 1000S MIC: USB Audio (hw:2,0)
+Testing microphone connection...
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM front
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround40
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround41
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround50
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround51
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround71
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM iec958
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM sysdefault
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM front
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround21
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround40
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround41
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround50
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround51
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM surround71
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM iec958
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM spdif
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib confmisc.c:855:(parse_card) cannot find card 'Generic'
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_card_inum returned error: No such device
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_concat returned error: No such device
+ALSA lib confmisc.c:1334:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5180:(_snd_config_evaluate) function snd_func_refer returned error: No such device
+ALSA lib conf.c:5703:(snd_config_expand) Evaluate error: No such device
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:972:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+Microphone test complete
+Raspberry Pi audio module (snd_bcm2835) is already loaded
+ALSA configuration file already exists.
+Warning: gpio command not found. LED functionality will be disabled.
+Using Polish language for speech recognition
+OpenAI Helper language set to: pl
+Setting OpenAI to respond in Polish
+2025-03-12 17:23:19,360 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+Created new conversation thread: thread_HsLZBPkrHwS3FCvzfe9jEBhA
+2025-03-12 17:23:19,726 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages "HTTP/1.1 200 OK"
+2025-03-12 17:23:21,393 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs "HTTP/1.1 200 OK"
+Initializing assistant with instructions...
+2025-03-12 17:23:21,747 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_JBGuv81g07FM02ibRLLVJmwR "HTTP/1.1 200 OK"
+2025-03-12 17:23:23,132 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_JBGuv81g07FM02ibRLLVJmwR "HTTP/1.1 200 OK"
+2025-03-12 17:23:24,995 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_JBGuv81g07FM02ibRLLVJmwR "HTTP/1.1 200 OK"
+2025-03-12 17:23:26,339 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_JBGuv81g07FM02ibRLLVJmwR "HTTP/1.1 200 OK"
+Assistant initialized successfully
+Setting OpenAI to respond in Polish
+Initializing PiCrawler and zeroing servos...
+Servo 0 set to zero
+Servo 1 set to zero
+Servo 2 set to zero
+Servo 3 set to zero
+Servo 4 set to zero
+Servo 5 set to zero
+Servo 6 set to zero
+Servo 7 set to zero
+Servo 8 set to zero
+Servo 9 set to zero
+Servo 10 set to zero
+Servo 11 set to zero
+Servo zeroing completed
+Robot standing successfully
+Speak handler started with speech_is_playing= False
+Action handler thread started
+Checking voice presets...
+Greeting preset 'morning_greeting' is valid
+Greeting preset 'afternoon_greeting' is valid
+Greeting preset 'evening_greeting' is valid
+Greeting preset 'standard_greeting' is valid
+Goodbye preset 'standard_goodbye' is valid
+Goodbye preset 'sleep_goodbye' is valid
+Goodbye preset 'short_goodbye' is valid
+Response preset 'error_response' is valid
+Response preset 'thinking_response' is valid
+Response preset 'not_understood' is valid
+Voice presets setup complete
+Playing initial greeting sound...
+Executing action from preset: greeting
+Greeting...
+Playing audio: voice_presets/greetings/afternoon_greeting_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Executing action from preset: wave_hand
+Executing action from preset: nod
+Getting personalized greeting from the Assistant...
+Attempt 1/3 to get greeting
+Processing request: 'Witaj! Właśnie się uruchomiłem. Proszę, powitaj użytkownika w języku polskim! Odpowiedź MUSI być w języku polskim.'
+2025-03-12 17:23:41,248 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs "HTTP/1.1 200 OK"
+2025-03-12 17:23:41,876 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages "HTTP/1.1 200 OK"
+2025-03-12 17:23:42,826 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs "HTTP/1.1 200 OK"
+2025-03-12 17:23:43,240 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_7hHd18kXbpncWC64xGzktkML "HTTP/1.1 200 OK"
+2025-03-12 17:23:44,112 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_7hHd18kXbpncWC64xGzktkML "HTTP/1.1 200 OK"
+2025-03-12 17:23:44,987 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_7hHd18kXbpncWC64xGzktkML "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:23:45,267 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+Raw response: {"actions": ["greeting", "excited"], "answer": "Witaj! Cieszę się, że się uruchomiłeś! Jak mogę Ci p...
+Creating TTS for Assistant greeting...
+2025-03-12 17:23:46,925 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+Assistant greeting TTS created: ./tts/25-03-12_17-23-45_3dB.wav
+Executing greeting action: greeting
+Greeting...
+Playing audio: ./tts/25-03-12_17-23-45_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Executing greeting action: excited
+Initial greeting completed.
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 114.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:24:15,400 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 3.382 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:24:15,975 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:24:17,236 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:24:19,495 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:24:20,665 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs "HTTP/1.1 200 OK"
+Created run with ID: run_HU8XyJbeHZXPV4rt8uOmcNfw
+2025-03-12 17:24:21,111 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_HU8XyJbeHZXPV4rt8uOmcNfw "HTTP/1.1 200 OK"
+2025-03-12 17:24:22,543 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_HU8XyJbeHZXPV4rt8uOmcNfw "HTTP/1.1 200 OK"
+2025-03-12 17:24:24,204 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_HU8XyJbeHZXPV4rt8uOmcNfw "HTTP/1.1 200 OK"
+2025-03-12 17:24:25,653 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_HU8XyJbeHZXPV4rt8uOmcNfw "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:24:25,901 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 10.499 s
+2025-03-12 17:24:26,869 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-24-25_3dB.wav
+tts takes: 4.335 s
+actions: ['look_down', 'move_closer']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-24-25_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Action handler processing 2 actions: ['look_down', 'move_closer']
+Making sure robot is standing...
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Successfully performed action: look_down
+Moving closer...
+Walking forward...
+Actions wait timeout, continuing...
+Ready for next interaction
+Successfully performed action: move_closer
+Action status set back to standby
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 509.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:24:59,590 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.672 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:25:00,055 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:25:00,818 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:25:01,413 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:25:03,373 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs "HTTP/1.1 200 OK"
+Created run with ID: run_6vU95Ywe0IuvWEXhnl11kjyQ
+2025-03-12 17:25:03,829 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_6vU95Ywe0IuvWEXhnl11kjyQ "HTTP/1.1 200 OK"
+2025-03-12 17:25:05,325 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_6vU95Ywe0IuvWEXhnl11kjyQ "HTTP/1.1 200 OK"
+2025-03-12 17:25:06,861 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_6vU95Ywe0IuvWEXhnl11kjyQ "HTTP/1.1 200 OK"
+2025-03-12 17:25:08,261 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_6vU95Ywe0IuvWEXhnl11kjyQ "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:25:08,507 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 8.915 s
+2025-03-12 17:25:09,453 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-25-08_3dB.wav
+tts takes: 3.104 s
+actions: ['look_around', 'excited']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-25-08_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Action handler processing 2 actions: ['look_around', 'excited']
+Making sure robot is standing...
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Turning left 45 degrees...
+Turning right 45 degrees...
+Actions wait timeout, continuing...
+Ready for next interaction
+Speak now...
+Turning right 45 degrees...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 59.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Turning left 45 degrees...
+Successfully performed action: look_around
+Successfully performed action: excited
+Action status set back to standby
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:25:46,791 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 6.888 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:25:47,280 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:25:48,084 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:25:48,545 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:25:49,895 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs "HTTP/1.1 200 OK"
+Created run with ID: run_Cr4mSWhzzlVQA7hdO8R7lkE1
+2025-03-12 17:25:50,362 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_Cr4mSWhzzlVQA7hdO8R7lkE1 "HTTP/1.1 200 OK"
+2025-03-12 17:25:51,793 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_Cr4mSWhzzlVQA7hdO8R7lkE1 "HTTP/1.1 200 OK"
+2025-03-12 17:25:53,164 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_Cr4mSWhzzlVQA7hdO8R7lkE1 "HTTP/1.1 200 OK"
+2025-03-12 17:25:54,569 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_Cr4mSWhzzlVQA7hdO8R7lkE1 "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:25:54,857 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 8.063 s
+2025-03-12 17:25:56,267 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-25-54_3dB.wav
+tts takes: 12.666 s
+actions: ['look_up', 'turn_left']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-25-54_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Action handler processing 2 actions: ['look_up', 'turn_left']
+Making sure robot is standing...
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Successfully performed action: look_up
+Turning left 45 degrees...
+Successfully performed action: turn_left
+Action status set back to standby
+Actions completed, continuing...
+Ready for next interaction
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 333.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:26:22,316 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.323 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:26:22,833 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:26:23,764 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:26:24,275 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:26:25,795 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs "HTTP/1.1 200 OK"
+Created run with ID: run_FjgHInIXDPbsTH9vhyYTccfm
+2025-03-12 17:26:26,137 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_FjgHInIXDPbsTH9vhyYTccfm "HTTP/1.1 200 OK"
+2025-03-12 17:26:27,800 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_FjgHInIXDPbsTH9vhyYTccfm "HTTP/1.1 200 OK"
+2025-03-12 17:26:29,137 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_FjgHInIXDPbsTH9vhyYTccfm "HTTP/1.1 200 OK"
+2025-03-12 17:26:30,492 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_FjgHInIXDPbsTH9vhyYTccfm "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:26:30,784 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 8.467 s
+2025-03-12 17:26:31,719 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-26-30_3dB.wav
+tts takes: 3.785 s
+actions: ['move_closer', 'look_around']
+Waiting for speech to complete...
+Action handler processing 2 actions: ['move_closer', 'look_around']
+Making sure robot is standing...
+Playing audio: ./tts/25-03-12_17-26-30_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Moving closer...
+Walking forward...
+Successfully performed action: move_closer
+Actions wait timeout, continuing...
+Ready for next interaction
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 23.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Turning left 45 degrees...
+Turning right 45 degrees...
+Turning right 45 degrees...
+Turning left 45 degrees...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:27:04,424 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.562 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:27:05,303 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs?limit=1 "HTTP/1.1 200 OK"
+Successfully performed action: look_around
+2025-03-12 17:27:05,990 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+Action status set back to standby
+2025-03-12 17:27:06,556 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:27:08,146 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs "HTTP/1.1 200 OK"
+Created run with ID: run_ATgQDu7W92hwWMxT20QJxHbw
+2025-03-12 17:27:08,571 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_ATgQDu7W92hwWMxT20QJxHbw "HTTP/1.1 200 OK"
+2025-03-12 17:27:10,129 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_ATgQDu7W92hwWMxT20QJxHbw "HTTP/1.1 200 OK"
+2025-03-12 17:27:11,607 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_ATgQDu7W92hwWMxT20QJxHbw "HTTP/1.1 200 OK"
+2025-03-12 17:27:13,081 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_ATgQDu7W92hwWMxT20QJxHbw "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:27:13,328 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 8.901 s
+Detected action from text: shake_head
+Added implied action: shake_head
+2025-03-12 17:27:14,329 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-27-13_3dB.wav
+tts takes: 4.676 s
+actions: ['sit', 'look_down', 'shake_head']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-27-13_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Action handler processing 3 actions: ['sit', 'look_down', 'shake_head']
+Making sure robot is standing...
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Successfully performed action: sit
+Successfully performed action: look_down
+Successfully performed action: shake_head
+Action status set back to standby
+Actions completed, continuing...
+Ready for next interaction
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 422.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Using speech recognition language: pl
+Using OpenAI's Whisper service directly
+2025-03-12 17:27:31,419 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+stt takes: 1.684 s
+Image captured with picamera2
+Processing request with image: ./img_input.jpg
+2025-03-12 17:27:32,246 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs?limit=1 "HTTP/1.1 200 OK"
+2025-03-12 17:27:33,059 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-03-12 17:27:33,530 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages "HTTP/1.1 200 OK"
+Successfully attached image ./img_input.jpg to message
+2025-03-12 17:27:36,615 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs "HTTP/1.1 200 OK"
+Created run with ID: run_MfpKM8kpo086KdPvAfz44YHg
+2025-03-12 17:27:37,397 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_MfpKM8kpo086KdPvAfz44YHg "HTTP/1.1 200 OK"
+2025-03-12 17:27:38,822 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_MfpKM8kpo086KdPvAfz44YHg "HTTP/1.1 200 OK"
+2025-03-12 17:27:40,196 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_MfpKM8kpo086KdPvAfz44YHg "HTTP/1.1 200 OK"
+2025-03-12 17:27:41,684 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_MfpKM8kpo086KdPvAfz44YHg "HTTP/1.1 200 OK"
+2025-03-12 17:27:43,049 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/runs/run_MfpKM8kpo086KdPvAfz44YHg "HTTP/1.1 200 OK"
+Run completed successfully
+2025-03-12 17:27:43,321 - httpx - INFO - HTTP Request: GET https://api.openai.com/v1/threads/thread_HsLZBPkrHwS3FCvzfe9jEBhA/messages?limit=1&order=desc "HTTP/1.1 200 OK"
+chat takes: 11.900 s
+2025-03-12 17:27:44,809 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+TTS file created: ./tts/25-03-12_17-27-43_3dB.wav
+tts takes: 4.265 s
+actions: ['wave_hand', 'smile']
+Waiting for speech to complete...
+Playing audio: ./tts/25-03-12_17-27-43_3dB.wav
+speech_is_playing set to True
+Audio playback completed
+Speech flags reset: loaded=False, playing=False
+Action handler processing 2 actions: ['wave_hand', 'smile']
+Making sure robot is standing...
+Speech has completed, continuing...
+Speech completed. Waiting for user to speak...
+Waiting for actions to complete...
+Successfully performed action: wave_hand
+No such action
+No such action
+Successfully performed action: smile
+Action status set back to standby
+Actions completed, continuing...
+Ready for next interaction
+Speak now...
+listening ... (Press Ctrl+C to exit)
+Adjusting for ambient noise... Please be quiet.
+Ambient energy level: 321.0
+Using fixed threshold: 80
+Testing audio levels - speak to see levels...
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+Listening timed out. No speech detected.
+Speak now...
+^C
+Shutting down gracefully...
+Robot returned to sit position.
+Playing goodbye message...
+Executing action from preset: sit
+Executing action from preset: play_dead
+Cleaning up...
+2025-03-12 17:29:27,249 - picamera2.picamera2 - INFO - Camera stopped
+2025-03-12 17:29:27,653 - picamera2.picamera2 - INFO - Camera closed successfully.
+Picamera2 resources released.
+Shutdown complete.
+Cleaning up...
+Picamera2 resources released.
+Robot returned to sit position.
+Shutdown complete.
