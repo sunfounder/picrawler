@@ -121,9 +121,7 @@ rst_epilog = """
 
     <a href="https://docs.sunfounder.com/projects/pi-crawler/de/latest/" target="_blank">Deutsch Online-Kurs</a>
 
-.. |link_robot_hat_v4| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/" target="_blank">Robot HAT</a>
 
 .. |link_voice_options| raw:: html
 
@@ -147,7 +145,16 @@ rst_epilog = """
 
 .. |link_robot_hat| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/hardware_introduction.html" target="_blank">SunFounder Robot HAT</a>
+    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/index.html" target="_blank">SunFounder Robot HAT Series</a>
+
+.. |link_robot_hat_v4| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/robot_hat_v4/hardware_introduction.html" target="_blank">SunFounder Robot HAT V4</a>
+
+.. |link_robot_hat_v5| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/robot_hat_v5/hardware_introduction.html" target="_blank">SunFounder Robot HAT V5</a>
+
 
 .. |link_Pi_Crawler| raw:: html
 
