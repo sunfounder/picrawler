@@ -19,7 +19,7 @@ Lucha de Toros
 
 ¡Convierte a PiCrawler en un toro enojado! Usa su cámara para seguir y embestir la tela roja.
 
-.. image:: img/bullfight.png
+.. .. image:: img/bullfight.png
 
 **Ejecutar el Código**
 

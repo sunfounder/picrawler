@@ -31,7 +31,7 @@ Gracias por elegir nuestro |link_PiCrawler|.
    
     Haga clic en los enlaces correspondientes para acceder al documento en el idioma de su preferencia.
 
-.. image:: img/picrawler.jpg
+.. .. image:: img/picrawler.jpg
     :width: 600
     :align: center
 

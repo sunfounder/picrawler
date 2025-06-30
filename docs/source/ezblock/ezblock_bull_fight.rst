@@ -19,7 +19,7 @@ Lucha de Toros
 
 ¡Convierte a PiCrawler en un toro enfurecido! Usa su cámara para rastrear y embestir el paño rojo.
 
-.. image:: ../python/img/bullfight.png
+.. .. image:: ../python/img/bullfight.png
 
 .. note:: Puedes descargar e imprimir las :download:`Tarjetas de Colores en PDF <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` para la detección de colores.
 

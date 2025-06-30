@@ -20,7 +20,7 @@ Evitación de Obstáculos
 En este proyecto, PiCrawler usará un módulo ultrasónico para detectar obstáculos frente a él. 
 Cuando PiCrawler detecte un obstáculo, enviará una señal y buscará otra dirección para avanzar.
 
-.. image:: img/avoid1.png
+.. .. image:: img/avoid1.png
 
 **Ejecutar el Código**
 

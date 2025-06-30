@@ -19,7 +19,7 @@ Moverse
 
 Este es el primer proyecto de PiCrawler. Realiza su función más básica: moverse.
 
-.. image:: img/move.png
+.. .. image:: img/move.png
 
 **Ejecutar el Código**
 
