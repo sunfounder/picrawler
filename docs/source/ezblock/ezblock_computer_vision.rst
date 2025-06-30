@@ -15,7 +15,7 @@
 .. _ezb_vision:
 
 Computer Vision  
-=============================  
+=============================
 
 In diesem Projekt betreten wir offiziell das Feld der Computer Vision!  
 

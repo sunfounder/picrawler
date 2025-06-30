@@ -19,7 +19,7 @@ Bewegung
 
 Dies ist das erste Projekt von PiCrawler. Es führt seine grundlegende Funktion aus – die Bewegung.
 
-.. image:: img/move.png
+.. .. image:: img/move.png
 
 **Code ausführen**
 

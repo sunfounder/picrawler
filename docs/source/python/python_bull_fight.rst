@@ -19,7 +19,7 @@ Bullenkampf
 
 Verwandeln Sie den PiCrawler in einen wütenden Stier! Nutzen Sie seine Kamera, um das rote Tuch zu verfolgen und darauf loszustürmen!  
 
-.. image:: img/bullfight.png  
+.. .. image:: img/bullfight.png  
 
 **Code ausführen**
 

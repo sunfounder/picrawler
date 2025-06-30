@@ -15,11 +15,11 @@
 .. _ezb_sound:  
 
 Soundeffekte  
-=======================  
+=======================
 
 In diesem Beispiel verwenden wir die Soundeffekte von PiCrawler (genauer gesagt, des Robot HAT). Sie bestehen aus drei Teilen: **Musik**, **Sound** und **Text-to-Speech**.  
 
-.. image:: ../python/img/tts.png  
+.. .. image:: ../python/img/tts.png  
 
 **Programm**  
 

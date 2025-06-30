@@ -20,7 +20,7 @@ Hindernisvermeidung
 In diesem Projekt verwendet der PiCrawler ein Ultraschallmodul, um Hindernisse vor ihm zu erkennen.  
 Wenn der PiCrawler ein Hindernis erkennt, sendet er ein Signal und sucht nach einer anderen Richtung, um weiterzugehen.  
 
-.. image:: img/avoid1.png  
+.. .. image:: img/avoid1.png  
 
 **Code ausführen**  
 

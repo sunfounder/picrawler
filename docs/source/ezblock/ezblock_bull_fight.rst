@@ -15,14 +15,16 @@
 .. _ezb_bull:
 
 Stierkampf  
-======================  
+======================
 
 Verwandeln Sie PiCrawler in einen wütenden Stier! Verwenden Sie die Kamera, um ein rotes Tuch zu verfolgen und darauf zuzustürmen!  
 
-.. image:: ../python/img/bullfight.png  
+.. .. image:: ../python/img/bullfight.png  
+
 .. note:: Sie können die :download:`PDF-Farbkarten <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` herunterladen und ausdrucken, um die Farberkennung zu nutzen.  
 
 **Programm**  
+
 .. note:: 
 
     * Sie können das Programm gemäß der folgenden Abbildung schreiben. Bitte folgen Sie dem Tutorial: :ref:`ezblock:create_project_latest`.  

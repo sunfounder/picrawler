@@ -15,7 +15,7 @@
 .. _ezb_emotional:
 
 Emotionaler Roboter  
-==========================  
+==========================
 
 
 Dieses Beispiel zeigt mehrere interessante benutzerdefinierte Aktionen des PiCrawler.  

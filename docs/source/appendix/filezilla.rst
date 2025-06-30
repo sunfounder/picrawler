@@ -15,7 +15,7 @@
 .. _filezilla:
 
 Filezilla-Software  
-==========================  
+==========================
 
 .. image:: img/filezilla_icon.png  
 

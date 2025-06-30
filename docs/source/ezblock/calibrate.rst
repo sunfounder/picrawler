@@ -13,7 +13,7 @@
     👉 Bereit, mit uns zu entdecken und zu gestalten? Klicken Sie auf [|link_sf_facebook|] und treten Sie noch heute bei!
 
 Kalibrierung des PiCrawler  
-================================  
+================================
 
 Nach dem Anschließen des PiCrawler folgt ein Kalibrierungsschritt. Dies ist notwendig, da es durch mögliche Abweichungen beim Zusammenbau oder durch Beschränkungen der Servos selbst zu geringfügigen Abweichungen der Servo-Winkel kommen kann. In diesem Schritt können Sie diese kalibrieren.  
 

@@ -20,7 +20,7 @@ Fernsteuerung
 In diesem Projekt lernen wir, wie man PiCrawler fernsteuert.  
 Sie können PiCrawler steuern, um vorwärts, rückwärts, nach links und nach rechts zu bewegen.  
 
-.. image:: img/remote_control.png  
+.. .. image:: img/remote_control.png  
 
 .. note:: 
 

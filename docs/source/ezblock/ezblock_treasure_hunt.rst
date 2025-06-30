@@ -15,7 +15,7 @@
 .. _ezb_treasure:  
 
 Schatzsuche  
-============================  
+============================
 
 Richten Sie ein Labyrinth in Ihrem Raum ein und platzieren Sie sechs Farbkarten an sechs verschiedenen Ecken. Anschließend können Sie PiCrawler steuern, um diese Farbkarten nacheinander zu finden!  
 

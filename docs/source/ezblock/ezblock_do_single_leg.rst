@@ -15,7 +15,7 @@
 .. _ezb_posture:
 
 Haltung anpassen  
-==========================  
+==========================
 
 In diesem Beispiel verwenden wir die Fernsteuerungsfunktion, um PiCrawler Fuß für Fuß zu steuern und die gewünschte Haltung einzunehmen.  
 

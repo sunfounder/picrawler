@@ -15,7 +15,7 @@
 .. _ezb_pose:
 
 Pose  
-===============  
+===============
 
 PiCrawler kann eine bestimmte Haltung einnehmen, indem ein Koordinatenarray geschrieben wird. Hier wird eine Haltung mit angehobenem rechten Hinterfuß eingenommen.  
 
