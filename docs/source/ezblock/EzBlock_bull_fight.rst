@@ -4,7 +4,7 @@
 
 让 PiCrawler 成为愤怒的公牛！用它的相机追踪功能来冲撞红布！
 
-.. image:: img/bullfight.png
+.. .. image:: img/bullfight.png
 
 .. note:: 
     

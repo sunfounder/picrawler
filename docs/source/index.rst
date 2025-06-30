@@ -4,7 +4,7 @@
 
 感谢您选择我们的PiCrawler。
 
-.. image:: img/picrawler.jpg
+.. .. image:: img/picrawler.jpg
     :width: 400
 
 PiCrawler 是一款铝合金结构的树莓派四足机器人。配备摄像头模组，可进行颜色识别、人脸检测等项目；12个金属齿轮舵机支持它走路、跳舞、以及摆出各种姿势；机身上的超声波模块让它能够快速检测到前方的障碍物；扩展板-Robot HAT配备了扬声器，可以表达幸福和兴奋等情绪。

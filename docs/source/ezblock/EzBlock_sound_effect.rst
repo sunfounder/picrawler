@@ -5,7 +5,7 @@
 
 在本例中，我们使用 PiCrawler（准确地说是 Robot HAT）的音效。它由三部分组成，分别是背景音乐，音效和语音。
 
-.. image:: img/tts.png
+.. .. image:: img/tts.png
 
 
 **程序**

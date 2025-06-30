@@ -6,7 +6,7 @@
 
 #. 拿出组装折页，将它翻到最后一页，平整的放桌上。然后将PiCrawler如下图放置，需要将它的底部与校准图上的轮廓线对齐。
 
-    .. image:: img/cali3.jpg
+    .. image:: img/calibration2.png
         :align: center
         
 #. 回到EzBlock，选中左侧的一只脚，然后点击X，Y和Z的3组按键，让脚尖慢慢对准校准点。
@@ -19,10 +19,10 @@
 
 #. 用同样的方法校准左侧另外一只脚。
 
-    .. image:: img/cali2.jpg
+    .. image:: img/calibration3.png
         :align: center
 
 #. 校准完左侧两只脚后，将校准纸换到右边，按照上述的方法来校准右侧两只脚。
 
-    .. image:: img/cali1.jpg
+    .. image:: img/calibration4.png
         :align: center

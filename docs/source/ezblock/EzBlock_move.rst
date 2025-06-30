@@ -12,7 +12,7 @@
 
   你可以直接打开我们提供的示例或者是按照下图来编写程序，详细教程请参考 :ref:`open_create`。
 
-.. image:: img/move.png
+.. .. image:: img/move.png
 
 点击屏幕右下方的上传和运行按钮，PiCrawler 将依次执行“前进”和“后退”动作。
 

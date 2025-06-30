@@ -3,7 +3,7 @@
 
 这个例子展示了 PiCrawler 的几个有趣的自定义动作。
 
-.. image:: img/emotional.png
+.. .. image:: img/emotional.png
 
 **运行代码**
 

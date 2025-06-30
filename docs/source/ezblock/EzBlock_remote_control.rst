@@ -6,7 +6,7 @@
 
 在这个项目中，我们将学习如何远程控制 PiCrawler。您可以控制 PiCrawler 向前、向后、向左和向右移动。
 
-.. image:: img/remote_control.png
+.. .. image:: img/remote_control.png
 
 
 **程序**

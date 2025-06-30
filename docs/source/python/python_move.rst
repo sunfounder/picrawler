@@ -5,7 +5,7 @@
 
 这是 PiCrawler's 的第一个项目， 让它移动起来。
 
-.. image:: img/move.png
+.. .. image:: img/move.png
     :align: center
 
 **运行代码**
