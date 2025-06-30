@@ -19,7 +19,7 @@
 
 PiCrawlerを怒った牛に変身させましょう！カメラを使って赤い布を追跡し、突進させます！
 
-.. image:: ../python/img/bullfight.png
+.. .. image:: ../python/img/bullfight.png
 
 .. note:: カラーチェックには、以下のPDFカラーカードをダウンロードして印刷できます: :download:`PDFカラーカード <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>`。
 

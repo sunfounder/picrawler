@@ -19,7 +19,7 @@
 
 この例では、PiCrawler（厳密にはRobot HAT）の音声効果を使用します。これは、 **音楽** 、 **音声** 、 **テキスト読み上げ** の3つの部分で構成されています。
 
-.. image:: ../python/img/tts.png
+.. .. image:: ../python/img/tts.png
 
 **プログラム**
 

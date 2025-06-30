@@ -19,7 +19,7 @@
 
 これはPiCrawlerの最初のプロジェクトです。最も基本的な機能である「移動」を実行します。
 
-.. image:: img/move.png
+.. .. image:: img/move.png
 
 **コードを実行する**
 

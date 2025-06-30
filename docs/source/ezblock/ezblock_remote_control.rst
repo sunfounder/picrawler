@@ -20,7 +20,7 @@
 このプロジェクトでは、PiCrawlerをリモートで操作する方法を学びます。  
 PiCrawlerを前進、後退、左、右に動かすことができます。
 
-.. image:: img/remote_control.png
+.. .. image:: img/remote_control.png
 
 .. note:: 
 

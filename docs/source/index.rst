@@ -31,7 +31,7 @@ SunFounder Raspberry Pi ロボット - |link_PiCrawler|
    
     ご希望の言語のリンクをクリックして、ドキュメントにアクセスしてください。
 
-.. image:: img/picrawler.jpg
+.. .. image:: img/picrawler.jpg
     :width: 600
     :align: center
 

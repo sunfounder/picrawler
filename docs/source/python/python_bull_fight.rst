@@ -20,7 +20,7 @@
 
 PiCrawlerを怒った雄牛に変身させましょう！そのカメラを使って赤い布を追跡し、突進させます！
 
-.. image:: img/bullfight.png
+.. .. image:: img/bullfight.png
 
 **コードを実行する**
 
