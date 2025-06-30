@@ -19,7 +19,7 @@ Combat de taureaux
 
 Transformez le PiCrawler en un taureau furieux ! Utilisez sa caméra pour suivre et foncer sur le tissu rouge !
 
-.. image:: ../python/img/bullfight.png
+.. .. image:: ../python/img/bullfight.png
 
 .. note:: Vous pouvez télécharger et imprimer les :download:`Cartes de Couleurs PDF <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` pour la détection des couleurs.
 

@@ -19,7 +19,7 @@ Déplacement
 
 Voici le premier projet de PiCrawler. Il exécute sa fonction la plus basique : se déplacer.
 
-.. image:: ../python/img/move.png
+.. .. image:: ../python/img/move.png
 
 **Programme**
 

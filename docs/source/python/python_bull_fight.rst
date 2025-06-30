@@ -19,7 +19,7 @@ Le Combat de Taureaux
 
 Transformez PiCrawler en un taureau enragé ! Utilisez sa caméra pour suivre et foncer sur le drap rouge !
 
-.. image:: img/bullfight.png
+.. .. image:: img/bullfight.png
 
 **Exécuter le Code**
 

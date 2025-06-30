@@ -21,7 +21,7 @@ Dans ce projet, le PiCrawler utilise un module ultrason pour détecter les obsta
 devant lui. Lorsqu'il détecte un obstacle, le PiCrawler envoie un signal et cherche 
 une autre direction pour avancer.
 
-.. image:: ../python/img/avoid1.png
+.. .. image:: ../python/img/avoid1.png
 
 **Programme**
 

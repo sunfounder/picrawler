@@ -20,7 +20,7 @@ Contrôle à distance
 Dans ce projet, nous allons apprendre à contrôler à distance le PiCrawler.  
 Vous pouvez contrôler le PiCrawler pour le faire avancer, reculer, tourner à gauche et à droite.
 
-.. image:: img/remote_control.png
+.. .. image:: img/remote_control.png
 
 .. note:: 
 

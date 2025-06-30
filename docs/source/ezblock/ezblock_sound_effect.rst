@@ -19,7 +19,7 @@ Effet sonore
 
 Dans cet exemple, nous utilisons les effets sonores du PiCrawler (plus précisément du Robot HAT). Il se compose de trois parties : **Musique**, **Son**, **Texte en parole**.
 
-.. image:: ../python/img/tts.png
+.. .. image:: ../python/img/tts.png
 
 **Programme**
 

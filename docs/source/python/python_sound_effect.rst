@@ -19,7 +19,7 @@ Effet Sonore
 
 Dans cet exemple, nous utilisons les effets sonores de PiCrawler (plus précisément, ceux du Robot HAT). Cela se compose de trois parties : **Musique**, **Son**, et **Texte à la parole**.
 
-.. image:: img/tts.png
+.. .. image:: img/tts.png
 
 **Installer i2samp**
 

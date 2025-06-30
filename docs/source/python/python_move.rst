@@ -19,7 +19,7 @@ Déplacer
 
 Voici le premier projet de PiCrawler. Il exécute sa fonction de base : se déplacer.
 
-.. image:: img/move.png
+.. .. image:: img/move.png
 
 **Exécuter le code**
 
