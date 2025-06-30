@@ -20,7 +20,7 @@ Evitamento Ostacoli
 In questo progetto, PiCrawler utilizzerà un modulo ultrasonico per rilevare gli ostacoli davanti a sé. 
 Quando PiCrawler rileva un ostacolo, invierà un segnale e cercherà un'altra direzione per proseguire.
 
-.. image:: img/avoid1.png
+.. .. image:: img/avoid1.png
 
 **Esegui il Codice**
 

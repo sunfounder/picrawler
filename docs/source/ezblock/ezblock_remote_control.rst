@@ -20,7 +20,7 @@ Controllo Remoto
 In questo progetto, impareremo come controllare a distanza il PiCrawler. 
 Puoi comandare il PiCrawler a muoversi in avanti, indietro, a sinistra e a destra.
 
-.. image:: img/remote_control.png
+.. .. image:: img/remote_control.png
 
 .. note:: 
 

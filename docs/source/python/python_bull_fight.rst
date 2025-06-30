@@ -19,7 +19,7 @@ Combattimento del Toro
 
 Trasforma PiCrawler in un toro infuriato! Usalo per seguire e caricare un panno rosso utilizzando la sua fotocamera!
 
-.. image:: img/bullfight.png
+.. .. image:: img/bullfight.png
 
 **Esegui il Codice**
 

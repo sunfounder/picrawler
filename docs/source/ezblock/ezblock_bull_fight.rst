@@ -19,7 +19,7 @@ Corrida del Toro
 
 Trasforma PiCrawler in un toro furioso! Usalo per tracciare e caricare un drappo rosso con la sua telecamera!
 
-.. image:: ../python/img/bullfight.png
+.. .. image:: ../python/img/bullfight.png
 
 .. note:: Puoi scaricare e stampare le :download:`schede colore in formato PDF <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` per il rilevamento dei colori.
 

@@ -19,7 +19,7 @@ Movimento
 
 Questo è il primo progetto di PiCrawler. Svolge la sua funzione più basilare: il movimento.
 
-.. image:: ../python/img/move.png
+.. .. image:: ../python/img/move.png
 
 **Programma**
 
