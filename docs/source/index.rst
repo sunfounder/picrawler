@@ -31,9 +31,6 @@ Thank you for choosing our |link_PiCrawler|.
    
     Please click on the respective links to access the document in your preferred language.
 
-.. image:: img/picrawler.jpg
-    :width: 600
-    :align: center
 
 PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. 
 It is equipped with a camera module, which can perform color recognition, face detection and other items; 

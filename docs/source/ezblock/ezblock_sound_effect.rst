@@ -19,8 +19,6 @@ Sound Effect
 
 In this example, we use PiCrawler's (to be precise, Robot HAT's) sound effects. It consists of three parts, namely **Muisc**, **Sound**, **Text to Speech**.
 
-.. image:: ../python/img/tts.png
-
 **Program**
 
 .. note::

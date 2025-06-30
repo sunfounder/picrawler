@@ -21,7 +21,6 @@ Obstacle Avoidance
 In this project, picrawler will use an ultrasonic module to detect obstacles in front. 
 When PiCrawler detects an obstacle, it will send a signal and look for another direction to move forward.
 
-.. image:: ../python/img/avoid1.png
 
 **Program**
 

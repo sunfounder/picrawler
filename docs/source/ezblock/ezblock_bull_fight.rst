@@ -20,8 +20,6 @@ Bull Fight
 
 Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
 
-.. image:: ../python/img/bullfight.png
-
 .. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
 
 

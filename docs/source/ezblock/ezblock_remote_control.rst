@@ -21,8 +21,6 @@ Remote Control
 In this project, we will learn how to remote control the PiCrawler. 
 You can control the PiCrawler to move forward, backward, left, and right.
 
-.. image:: img/remote_control.png
-
 .. note:: 
 
     You can refer to :ref:`ezblock:remote_control_latest`. Come and carry out this project smoothly.

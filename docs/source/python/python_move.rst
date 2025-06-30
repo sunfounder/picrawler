@@ -19,7 +19,6 @@ Move
 
 This is PiCrawler's first project. Perform its most basic function - move.
 
-.. image:: img/move.png
 
 **Run the Code**
 

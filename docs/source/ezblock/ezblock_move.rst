@@ -20,8 +20,6 @@ Move
 
 This is PiCrawler's first project. Perform its most basic function - move.
 
-.. image:: ../python/img/move.png
-
 
 **Program**
 
