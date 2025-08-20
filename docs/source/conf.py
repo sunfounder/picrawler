@@ -120,7 +120,10 @@ rst_epilog = """
 .. |link_german_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/pi-crawler/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+    
+.. |link_zh_tutorials| raw:: html
 
+    <a href="https://docs.sunfounder.com/projects/pi-crawler/zh-cn/latest/" target="_blank">中文在线教程</a>
 
 .. |link_voice_options| raw:: html
 
