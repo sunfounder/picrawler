@@ -23,6 +23,7 @@ SunFounder Raspberry Pi ロボット - |link_PiCrawler|
     このドキュメントは以下の言語で利用可能です。
 
         * |link_en_tutorials|
+        * |link_zh_tutorials|
         * |link_ja_tutorials|
         * |link_german_tutorials|
         * |link_fr_tutorials|
