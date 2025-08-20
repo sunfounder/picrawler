@@ -23,6 +23,7 @@ Thank you for choosing our |link_PiCrawler|.
     This document is available in the following languages.
 
         * |link_en_tutorials|
+        * |link_zh_tutorials|
         * |link_ja_tutorials|
         * |link_german_tutorials|
         * |link_fr_tutorials|
