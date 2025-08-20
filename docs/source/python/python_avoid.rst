@@ -1,27 +1,13 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_avoid:
 
-Obstacle Avoidance
+避障功能
 =====================
 
-In this project, picrawler will use an ultrasonic module to detect obstacles in front. 
-When PiCrawler detects an obstacle, it will send a signal and look for another direction to move forward.
+在本项目中，PiCrawler 将使用超声波模块检测前方的障碍物。  
+当检测到障碍物时，PiCrawler 会发送信号，并寻找其他方向继续前进。  
 
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -32,14 +18,14 @@ When PiCrawler detects an obstacle, it will send a signal and look for another d
     cd ~/picrawler/examples
     sudo python3 avoid.py
 
-After the code runs, PiCrawler will walk forward. If it detects that the distance of the obstacle ahead is less than 10cm, it will stop and sound a warning, then turn left and stop. If there is no obstacle in the direction after turning left or the obstacle distance is greater than 10, it will continue to move forward.
+代码运行后，PiCrawler 会开始向前行走。如果检测到前方障碍物距离小于 10cm，它会停止并发出提示音，然后左转并暂停。若左转方向无障碍物，或障碍物距离大于 10cm，它将继续向前移动。  
 
 
 
-**Code**
+**代码**
 
-.. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+.. note::  
+    你可以对下面的代码进行 **Modify/Reset/Copy/Run/Stop** 操作。但在此之前，需要先进入源码路径，如 ``picrawler\examples``。修改代码后，可以直接运行查看效果。  
 
 .. raw:: html
 
@@ -83,26 +69,26 @@ After the code runs, PiCrawler will walk forward. If it detects that the distanc
         while True:
             main()
 
-**How it works?**
+**工作原理**
 
-You can get the distance by importing the ``Ultrasonic`` class.
+你可以通过导入 ``Ultrasonic`` 类来获取测距功能。  
 
 .. code-block:: python
 
     from robot_hat import Ultrasonic
 
-Then initialize the ultrasonic pins.
+接着初始化超声波引脚。  
 
 .. code-block:: python
 
     sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
 
 
-Here is the main program.
+以下是主程序逻辑：  
 
-* Read the ``distance`` detected by ultrasonic module and filter out the values less than 0 (When the ultrasonic module is too far from the obstacle or cannot read the data correctly, ``distance<0`` will appear).
-* When the ``distance`` is less than or equal to  ``alert_distance`` (the threshold value set earlier, which is 10), play the sound effect ``sign.wav``. PiCrawler does ``turn left angle`` .
-* When the ``distance`` is greater than ``alert_distance``, PiCrawler will move ``forward``.
+* 读取超声波模块检测到的 ``distance``，并过滤掉小于 0 的值（当超声波模块距离障碍物过远或数据读取异常时，可能会返回 ``distance < 0`` ）。  
+* 当 ``distance`` 小于或等于 ``alert_distance``（之前设置的阈值，这里为 10）时，播放提示音 ``sign.wav`` ，并执行 ``turn left angle`` 动作。  
+* 当 ``distance`` 大于 ``alert_distance`` 时，PiCrawler 将执行 ``forward`` 前进动作。  
 
 .. code-block:: python
 
@@ -122,6 +108,6 @@ Here is the main program.
         time.sleep(0.2)
 
 
-.. note::
+.. note::  
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
+    你可以通过 :ref:`filezilla` 将不同的音效或音乐添加到 ``musics`` 或 ``sounds`` 文件夹中。  

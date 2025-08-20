@@ -1,28 +1,14 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_treasure:
 
-Treasure Hunt
+寻宝游戏
 ============================
 
-Arrange a maze in your room and place six different color cards in six corners. Then control PiCrawler to search for these color cards one by one!
+在房间里摆放一个迷宫，并在六个角落放置六张不同颜色的卡片。然后控制 PiCrawler 挨个寻找这些彩色卡片！
 
-.. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
+.. note:: 你可以下载并打印 :download:`PDF 彩色卡片 <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` 以便进行颜色识别。
 
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -34,9 +20,9 @@ Arrange a maze in your room and place six different color cards in six corners. 
     sudo python3 treasure_hunt.py
 
 
-**View the Image**
+**查看图片**
 
-After the code runs, the terminal will display the following prompt:
+代码运行后，终端会显示如下提示：
 
 .. code-block::
 
@@ -48,11 +34,11 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
+然后，你可以在浏览器中输入 ``http://<your IP>:9000/mjpg`` 查看视频画面。例如： ``http://192.168.18.113:9000/mjpg``
 
 .. image:: img/display.png
 
-**Code**
+**代码**
 
 .. code-block:: python
 
@@ -158,11 +144,11 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 	    main()
 
 
-**How it works?**
+**它是如何工作的？**
 
-In general, this project combines the knowledge points of :ref:`py_keyboard`, :ref:`py_vision` and :ref:`py_sound`.
+总体而言，该项目结合了 :ref:`py_keyboard` 、:ref:`py_vision` 和 :ref:`py_sound` 三个知识点。
 
-Its flow is shown in the figure below:
+其执行流程如下图所示：
 
 .. image:: img/treasure_hunt-f.png
 

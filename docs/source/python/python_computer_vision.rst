@@ -1,25 +1,11 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_vision:
 
-Computer Vision
+计算机视觉
 =======================
 
-This project will officially enter the field of computer vision!
+本项目将正式进入计算机视觉领域！
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -30,9 +16,9 @@ This project will officially enter the field of computer vision!
     cd ~/picrawler/examples
     sudo python3 display.py
 
-**View the Image**
+**查看画面**
 
-After the code runs, the terminal will display the following prompt:
+代码运行后，终端会显示如下提示：  
 
 .. code-block::
 
@@ -44,62 +30,61 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``https://192.168.18.113:9000/mjpg``
+随后，在浏览器中输入 ``http://<your IP>:9000/mjpg`` 即可查看视频画面，例如： ``https://192.168.18.113:9000/mjpg``  
 
 .. image:: img/display.png
 
 
-After the program runs, you will see the following information in the final:
+程序运行后，最后你会在终端看到以下提示信息：  
 
 
-* Input key to call the function!
-* ``q``: Take photo
-* ``1``: Color detect : red
-* ``2``: Color detect : orange
-* ``3``: Color detect : yellow
-* ``4``: Color detect : green
-* ``5``: Color detect : blue
-* ``6``: Color detect : purple
-* ``0``: Switch off Color detect
-* ``r``: Scan the QR code
-* ``f``: Switch ON/OFF face detect
-* ``s``: Display detected object information
+* 输入按键以调用对应功能！
+* ``q``: 拍照
+* ``1``: 颜色识别：红色
+* ``2``: 颜色识别：橙色
+* ``3``: 颜色识别：黄色
+* ``4``: 颜色识别：绿色
+* ``5``: 颜色识别：蓝色
+* ``6``: 颜色识别：紫色
+* ``0``: 关闭颜色识别
+* ``r``: 扫描二维码
+* ``f``: 开/关人脸识别
+* ``s``: 显示检测到的对象信息
 
-Please follow the prompts to activate the corresponding functions.
+请根据提示操作以启用对应功能。  
 
-    *  **Take Photo**
+    *  **拍照**
 
-        Type ``q`` in the terminal and press Enter. The picture currently seen by the camera will be saved (if the color detection function is turned on, the mark box will also appear in the saved picture). You can see these photos from the ``~/Pictures/PiCrawler/`` directory of the Raspberry Pi.
-        You can use tools such as :ref:`filezilla` to transfer photos to your PC.
-        
+        在终端输入 ``q`` 并按回车，摄像头当前画面将被保存（若颜色识别已开启，保存的照片中也会显示标记框）。照片会保存在树莓派的 ``~/Pictures/PiCrawler/`` 目录下。  
+        你可以使用 :ref:`filezilla` 等工具将照片传输到电脑。  
 
-    *  **Color Detect**
+    *  **颜色识别**
 
-        Entering a number between ``1~6`` will detect one of the colors in "red, orange, yellow, green, blue, purple". Enter ``0`` to turn off color detection.
+        输入 ``1~6`` 中的任意数字，即可识别“红、橙、黄、绿、蓝、紫”中的一种颜色；输入 ``0`` 可关闭颜色识别。  
 
         .. image:: img/DTC2.png
 
-        .. note:: You can download and print the :download:`PDF Color Cards <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` for color detection.
+        .. note:: 你可以下载并打印 :download:`PDF 色卡 <https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf>` 以进行颜色识别。  
 
 
-    *  **Face Detect**
+    *  **人脸识别**
 
-        Type ``f`` to turn on face detection.
+        输入 ``f`` 开启人脸检测。  
 
         .. image:: img/DTC5.png
 
-    *  **QR Code Detect**
+    *  **二维码识别**
 
-        Enter ``r`` to open the QR code recognition. No other operations can be performed before the QR code is recognized. The decoding information of the QR code will be printed in the terminal.
+        输入 ``r`` 开启二维码识别。在二维码识别完成前，无法执行其他操作。二维码的解码信息会打印在终端中。  
 
         .. image:: img/DTC4.png
 
-    *  **Display Information**
+    *  **显示信息**
 
-        Entering ``s`` will print the information of the face detection (and color detection) target in the terminal. Including the center coordinates (X, Y) and size (Weight, height) of the measured object.
+        输入 ``s`` 将在终端打印人脸检测（以及颜色检测）的目标信息，包括目标的中心坐标 (X, Y) 以及大小 (宽度、高度)。  
 
 
-**Code** 
+**代码** 
 
 .. code-block:: python
 
@@ -237,58 +222,58 @@ Please follow the prompts to activate the corresponding functions.
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**工作原理**
 
-The first thing you need to pay attention to here is the following function. These two functions allow you to start the camera.
+首先需要注意以下函数，这两个函数可以启动摄像头：  
 
 .. code-block:: python
 
     Vilib.camera_start()
     Vilib.display()
 
-Functions related to "object detection":
+与“目标检测”相关的函数有：  
 
-* ``Vilib.face_detect_switch(True)`` : Switch ON/OFF face detection
-* ``Vilib.color_detect(color)`` : For color detection, only one color detection can be performed at the same time. The parameters that can be input are: ``"red"``, ``"orange"``, ``"yellow"``, ``"green"``, ``"blue"``, ``"purple"``
-* ``Vilib.color_detect_switch(False)`` : Switch OFF color detection
-* ``Vilib.qrcode_detect_switch(False)`` : Switch ON/OFF QR code detection, Returns the decoded data of the QR code.
-* ``Vilib.gesture_detect_switch(False)`` : Switch ON/OFF gesture detection
-* ``Vilib.traffic_sign_detect_switch(False)`` : Switch ON/OFF traffic sign detection
+* ``Vilib.face_detect_switch(True)`` : 开/关人脸检测  
+* ``Vilib.color_detect(color)`` : 进行颜色检测，同一时间只能检测一种颜色。可输入的参数有： ``"red"`` 、 ``"orange"`` 、 ``"yellow"`` 、 ``"green"`` 、 ``"blue"`` 、 ``"purple"``  
+* ``Vilib.color_detect_switch(False)`` : 关闭颜色检测  
+* ``Vilib.qrcode_detect_switch(False)`` : 开/关二维码检测，并返回二维码的解码数据  
+* ``Vilib.gesture_detect_switch(False)`` : 开/关手势检测  
+* ``Vilib.traffic_sign_detect_switch(False)`` : 开/关交通标志检测  
 
-The information detected by the target will be stored in the ``detect_obj_parameter = Manager().dict()`` dictionary.
+目标检测到的信息会存储在 ``detect_obj_parameter = Manager().dict()`` 字典中。  
 
-In the main program, you can use it like this:
+在主程序中，可以这样调用：  
 
 .. code-block:: python
 
     Vilib.detect_obj_parameter['color_x']
 
-The keys of the dictionary and their uses are shown in the following list:
+字典中的键及其含义如下：  
 
-* ``color_x``: the x value of the center coordinate of the detected color block, the range is 0~320
-* ``color_y``: the y value of the center coordinate of the detected color block, the range is 0~240
-* ``color_w``: the width of the detected color block, the range is 0~320
-* ``color_h``: the height of the detected color block, the range is 0~240
-* ``color_n``: the number of detected color patches
-* ``human_x``: the x value of the center coordinate of the detected human face, the range is 0~320
-* ``human_y``: the y value of the center coordinate of the detected face, the range is 0~240
-* ``human_w``: the width of the detected human face, the range is 0~320
-* ``human_h``: the height of the detected face, the range is 0~240
-* ``human_n``: the number of detected faces
-* ``traffic_sign_x``: the center coordinate x value of the detected traffic sign, the range is 0~320
-* ``traffic_sign_y``: the center coordinate y value of the detected traffic sign, the range is 0~240
-* ``traffic_sign_w``: the width of the detected traffic sign, the range is 0~320
-* ``traffic_sign_h``: the height of the detected traffic sign, the range is 0~240
-* ``traffic_sign_t``: the content of the detected traffic sign, the value list is `['stop','right','left','forward']`
-* ``gesture_x``: The center coordinate x value of the detected gesture, the range is 0~320
-* ``gesture_y``: The center coordinate y value of the detected gesture, the range is 0~240
-* ``gesture_w``: The width of the detected gesture, the range is 0~320
-* ``gesture_h``: The height of the detected gesture, the range is 0~240
-* ``gesture_t``: The content of the detected gesture, the value list is `["paper","scissor","rock"]`
-* ``qr_date``: the content of the QR code being detected
-* ``qr_x``: the center coordinate x value of the QR code to be detected, the range is 0~320
-* ``qr_y``: the center coordinate y value of the QR code to be detected, the range is 0~240
-* ``qr_w``: the width of the QR code to be detected, the range is 0~320
-* ``qr_h``: the height of the QR code to be detected, the range is 0~320
+* ``color_x``: 检测到的颜色块中心点 x 坐标，范围 0~320  
+* ``color_y``: 检测到的颜色块中心点 y 坐标，范围 0~240  
+* ``color_w``: 检测到的颜色块宽度，范围 0~320  
+* ``color_h``: 检测到的颜色块高度，范围 0~240  
+* ``color_n``: 检测到的颜色块数量  
+* ``human_x``: 检测到的人脸中心点 x 坐标，范围 0~320  
+* ``human_y``: 检测到的人脸中心点 y 坐标，范围 0~240  
+* ``human_w``: 检测到的人脸宽度，范围 0~320  
+* ``human_h``: 检测到的人脸高度，范围 0~240  
+* ``human_n``: 检测到的人脸数量  
+* ``traffic_sign_x``: 检测到的交通标志中心点 x 坐标，范围 0~320  
+* ``traffic_sign_y``: 检测到的交通标志中心点 y 坐标，范围 0~240  
+* ``traffic_sign_w``: 检测到的交通标志宽度，范围 0~320  
+* ``traffic_sign_h``: 检测到的交通标志高度，范围 0~320  
+* ``traffic_sign_t``: 检测到的交通标志内容，可选值为 `['stop','right','left','forward']`  
+* ``gesture_x``: 检测到的手势中心点 x 坐标，范围 0~320  
+* ``gesture_y``: 检测到的手势中心点 y 坐标，范围 0~240  
+* ``gesture_w``: 检测到的手势宽度，范围 0~320  
+* ``gesture_h``: 检测到的手势高度，范围 0~320  
+* ``gesture_t``: 检测到的手势内容，可选值为 `["paper","scissor","rock"]`  
+* ``qr_date``: 检测到的二维码内容  
+* ``qr_x``: 检测到的二维码中心点 x 坐标，范围 0~320  
+* ``qr_y``: 检测到的二维码中心点 y 坐标，范围 0~240  
+* ``qr_w``: 检测到的二维码宽度，范围 0~320  
+* ``qr_h``: 检测到的二维码高度，范围 0~240  
 
 

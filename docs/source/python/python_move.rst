@@ -1,26 +1,12 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_move:
 
-Move
+移动
 ==============
 
-This is PiCrawler's first project. Perform its most basic function - move.
+这是 PiCrawler 的第一个项目，用来展示它最基本的功能 —— 移动。
 
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -31,12 +17,12 @@ This is PiCrawler's first project. Perform its most basic function - move.
     cd ~/picrawler/examples
     sudo python3 move.py
 
-After the code is executed, PiCrawler will perform the following actions in sequence: move forward, move backward, turn left, turn right, stand.
+代码执行后，PiCrawler 将依次完成以下动作：前进、后退、左转、右转、站立。
 
-**Code**
+**代码**
 
 .. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to  source code path like ``pisloth\examples``. After modifying the code, you can run it directly to see the effect.
+    你可以对下面的代码进行 **Modify/Reset/Copy/Run/Stop** 操作。但在此之前，需要进入源码路径，例如 ``pisloth\examples``。修改代码后可直接运行并查看效果。
 
 .. raw:: html
 
@@ -74,21 +60,21 @@ After the code is executed, PiCrawler will perform the following actions in sequ
         main()
 
 
-**How it works?**
+**它是如何工作的？**
 
-First, import the ``Picrawler`` class from the ``picrawler`` library you have installed, which contains all of PiCrawler's actions and the functions that implement them.
+首先，从已安装的 ``picrawler`` 库中导入 ``Picrawler`` 类，该类包含了 PiCrawler 的全部动作以及实现这些动作的函数。
 
 .. code-block:: python
 
     from picrawler import Picrawler
 
-Then instantiate the ``crawler`` class.
+然后实例化 ``crawler`` 类。
 
 .. code-block:: python
 
     crawler = Picrawler() 
 
-Finally use the ``crawler.do_action()`` function to make Pisloth move.
+最后，通过 ``crawler.do_action()`` 函数来控制 PiCrawler 移动。
 
 .. code-block:: python
     
@@ -99,10 +85,10 @@ Finally use the ``crawler.do_action()`` function to make Pisloth move.
     crawler.do_action('turn left angle',2,speed) 
     crawler.do_action('turn right angle',2,speed)
 
-In general, all movement of PiCrawler can be implemented with the ``do_action()`` function. It has 3 parameters:
+总体而言，PiCrawler 的所有移动动作都可以通过 ``do_action()`` 函数实现。它包含 3 个参数：
 
-* ``motion_name`` is the name of specific actions, including: ``forward``, ``turn right``, ``turn left``, ``backward``, ``turn left angle``, ``turn right angle``.
-* ``step`` represents the number of each action is done, the default is 1.
-* ``speed`` indicates the speed of the action, the default is 50 and the range is 0~100.
+* ``motion_name`` 表示具体的动作名称，包括： ``forward`` 、 ``turn right`` 、 ``turn left`` 、 ``backward`` 、 ``turn left angle`` 、 ``turn right angle`` 。
+* ``step`` 表示动作执行的次数，默认值为 1。
+* ``speed`` 表示动作执行的速度，默认值为 50，取值范围为 0~100。
 
-In addition, ``crawler.do_step('stand',speed)`` is also used here to make PiCrawler stand. The usage of this function will be explained in the following example.
+此外，这里还使用了 ``crawler.do_step('stand',speed)`` 来让 PiCrawler 保持站立状态。该函数的用法将在后续示例中进一步说明。

@@ -1,55 +1,42 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 SunFounder Raspberry Pi Robot - |link_PiCrawler|
 =====================================================
 
 * |link_Pi_Crawler|
 
-Thank you for choosing our |link_PiCrawler|.
+感谢您选择我们的 |link_PiCrawler|。
 
 .. note::
-    This document is available in the following languages.
+    本文档提供以下语言版本：
 
         * |link_en_tutorials|
+        * |link_zh_tutorials|
         * |link_ja_tutorials|
         * |link_german_tutorials|
         * |link_fr_tutorials|
         * |link_es_tutorials|
         * |link_it_tutorials|
    
-    Please click on the respective links to access the document in your preferred language.
+    请点击相应的链接，访问您所需语言的文档。
 
 
-PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. 
-It is equipped with a camera module, which can perform color recognition, face detection and other items; 
-12 metal gear servos support it to walk, dance, and pose various postures; 
-the ultrasonic module on the body allows it to quickly detect obstacles in front of it; the expansion board-robot HAT is equipped with a speaker, allowing it to express emotions such as happiness and excitement.
+PiCrawler 是一款基于 Raspberry Pi 的四足机器人，采用铝合金结构设计。  
+它配备了摄像头模块，可实现颜色识别、人脸检测等功能；  
+搭载 12 个金属齿轮舵机，能够支持其行走、跳舞及摆出多种姿势；  
+机身上的超声波模块可以快速检测前方障碍物；  
+扩展板 Robot HAT 内置扬声器，使其能够表达快乐、兴奋等情绪。  
+
+本手册包含零件清单及组装 PDF、Robot HAT 介绍以及 PiCrawler 编程指南。  
+
+编程部分分为两个章节：:ref:`play_ezblock` 与 :ref:`play_python`，分别讲解如何让 PiCrawler 按照您的需求运行。  
+
+Ezblock Studio 是 SunFounder 专为初学者开发的平台，旨在降低 Raspberry Pi 的学习门槛。它支持图形化编程和 Python 两种语言，几乎可在所有类型的设备上使用。凭借蓝牙和 Wi-Fi 功能，您可以在 Ezblock Studio 上下载代码并远程控制 Raspberry Pi。  
+
+对于有更多经验的创客，可以直接使用流行的编程语言 —— Python。  
+
+如果您有任何问题，请发送邮件至 service@sunfounder.com，我们会尽快回复您。  
 
 
-This document includes the list and assembly pdf, Robot HAT introduction and PiCrawler programming.
-
-The programming part is divided into two chapters: :ref:`play_ezblock` & :ref:`play_python`, each chapter allows you to explain how to make PiCrawler work the way you want.
-
-Ezblock Studio is a development platform developed by SunFounder for beginners, aiming to lower the barriers to entry for Raspberry Pi. It has two programming languages: Graphical and Python, which can be used on almost all different types of devices. With Bluetooth and Wi-Fi support, you can download codes on Ezblock Studio and remotely control Raspberry Pi.
-
-More experienced makers can use the popular programming language-Python.
-
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
-
-
-**Content**
+**目录**
 
 .. toctree::
     :maxdepth: 2
@@ -63,8 +50,9 @@ If you have any questions, please send an email to service@sunfounder.com and we
     hardware/cpn_hardware
     faq
 
-Copyright Notice
+版权声明
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+本手册中的所有内容（包括但不限于文字、图片、代码）均归 SunFounder 公司所有。  
+您仅可在相关法规和著作权法的范围内，将其用于个人学习、研究、娱乐或其他非商业、非营利用途，而不得侵犯作者及相关权利人的合法权益。  
+任何个人或组织未经许可，将其用于商业牟利目的的，SunFounder 公司保留依法追究其法律责任的权利。  

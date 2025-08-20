@@ -1,61 +1,47 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Calibrate the PiCrawler
+校准 PiCrawler
 ================================
 
-After you connect the PiCrawler, there will be a calibration step. This is because of possible deviations in the installation process or limitations of the servos themselves, making some servo angles slightly tilted, so you can calibrate them in this step.
+连接 PiCrawler 后，需要进行一次校准。这是因为在组装过程中可能存在微小误差，或者舵机本身存在一定的精度限制，导致部分舵机角度略有偏差，因此需要通过此步骤进行校准。  
     
-But if you think the assembly is perfect and no calibration is needed, you can also skip this step.
+如果你认为装配完全准确且无需调整，也可以跳过该步骤。
 
 .. note::
-    If you want to recalibrate the robot during use, please follow the steps below.
+    如果在使用过程中需要重新校准机器人，请按照以下步骤操作。
     
-    You can open the product detail page by clicking the connect icon in the upper left corner.
+    点击左上角的连接图标，打开产品详情页。
 
     .. image:: img/calibrate0.png
 
-    Click the **Settings** button.
+    点击 **Settings** 按钮。
 
     .. image:: img/calibrate1.png
 
-    On this page, you can change the product name, product type, view the app version or calibrate the robot. Once you click on **Calibrate** you can go to the calibration page.
+    在该页面中，你可以修改产品名称、产品类型、查看应用版本或对机器人进行校准。点击 **Calibrate** 后即可进入校准页面。
 
     .. image:: img/calibrate2.png
 
 
-The calibration steps are as follows:
+校准步骤如下：
 
-#. Take out the assembly leaflet, turn it to the last page, and lay it flat on the table. Then place the PiCrawler as shown below, aligning its bottom with the outline on the calibration chart.
+#. 取出装配说明书，翻到最后一页并平放在桌面上。然后将 PiCrawler 按下图所示方式放置，使其底部与校准图纸上的轮廓对齐。
 
     .. image:: img/calibration2.png
         :align: center
 
-#. Go back to EzBlock Studio, select one foot on the left, then click the 3 sets of X, Y and Z buttons, and let the toes slowly align with the calibration point.
+#. 返回 EzBlock Studio，选择左侧的一只脚，然后依次点击 X、Y、Z 三组按钮，使脚趾缓慢对准校准点。
 
-   * The calibration buttons are used for fine-tuning, and you need to press these buttons multiple times to see the pin position change.
-   * It is recommended to click the up button of Z axis to lift the foot up first, then go to adjust X and Y.
+   * 校准按钮用于微调，需要多次点击才能看到针脚位置的变化。
+   * 建议先点击 Z 轴的上升按钮，将脚抬起，再去调整 X 和 Y 轴。
 
     .. image:: img/calibration4.jpg
         :align: center
 
-#. Align the other foot on the left in the same way.
+#. 以相同方式校准左侧的另一只脚。
 
     .. image:: img/calibration3.png
         :align: center
 
-#. After calibrating the left two feet, change the calibration paper to the right, and calibrate the right two feet according to the above method.
+#. 左侧两只脚校准完成后，将校准纸移至右侧，并按照相同方法完成右侧两只脚的校准。
 
     .. image:: img/calibration4.png
         :align: center

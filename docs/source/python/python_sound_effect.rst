@@ -1,31 +1,17 @@
-.. note::
+.. _py_sound: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-.. _py_sound:
-
-Sound Effect
+音效功能
 =====================
 
-In this example, we use PiCrawler's (to be precise, Robot HAT's) sound effects. It consists of three parts, namely **Muisc**, **Sound**, **Text to Speech**.
+在本示例中，我们将使用 PiCrawler（更准确地说，是 Robot HAT）的音效功能。它分为三个部分： **Muisc** 、 **Sound** 、 **Text to Speech** 。
 
 .. .. image:: img/tts.png
 
-**Install i2samp**
+**安装i2samp**
 
-Before using that functions, first activate the speaker so that it will be enabled and can make sounds.
+在使用这些功能之前，需要先启用扬声器，使其能够发声。
 
-Run ``i2samp.sh`` in, and this script will install everything needed to use i2s amplifier.
+运行 ``i2samp.sh`` 脚本，该脚本会安装使用 i2s 放大器所需的所有依赖。
 
 .. raw:: html
 
@@ -36,12 +22,12 @@ Run ``i2samp.sh`` in, and this script will install everything needed to use i2s 
     cd ~/picrawler/
     sudo bash i2samp.sh 
 
-There will be several prompts asking to confirm the request. Respond to all prompts with a **Y**. After the changes have been made to the Raspberry Pi system, the computer will need to reboot for these changes to take effect.
+运行过程中会出现多次提示，要求确认操作。请全部输入 **Y** 确认。完成系统修改后，需要重启树莓派才能使更改生效。
 
-After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a sound successfully plays from the speaker, the configuration is complete.
+重启后，请再次运行 ``i2samp.sh`` 脚本来测试放大器。如果扬声器能够正常播放声音，说明配置完成。
 
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -52,17 +38,17 @@ After rebooting, run the ``i2samp.sh`` script again to test the amplifier. If a 
     cd ~/picrawler/examples
     sudo python3 sound_effect.py
 
-After the code runs, please operate according to the prompt that printed on the terminal.
+程序运行后，请根据终端打印的提示进行操作。
 
-Input key to call the function!
-* ``q``: Play background music
-* ``1``: Play sound effect
-* ``2``: Play sound effect with threads
-* ``t``: Text to speak
-* If you want to exit the program, press ``Ctrl+C``.
+输入按键即可调用相应功能：
+* ``q``: 播放背景音乐
+* ``1``: 播放音效
+* ``2``: 多线程播放音效
+* ``t``: 文本转语音
+* 若要退出程序，请按 ``Ctrl+C``
 
 
-**Code** 
+**代码** 
 
 .. code-block:: python
 
@@ -128,50 +114,50 @@ Input key to call the function!
         main()
 
 
-**How it works?**
+**它是如何工作的？**
 
-Functions related to background music include these:
+与背景音乐相关的函数包括：
 
-* ``music = Music()`` : Declare the object.
-* ``music.music_set_volume(20)`` : Set the volume, the range is 0~100.
-* ``music.music_play(./musics/sports-Ahjay_Stelino.mp3)`` : Play music files, here is the **sports-Ahjay_Stelino.mp3** file under the ``./musics`` path.
-* ``music.music_stop()`` : Stop playing background music.
+* ``music = Music()`` : 声明对象  
+* ``music.music_set_volume(20)`` : 设置音量，范围为 0~100  
+* ``music.music_play(./musics/sports-Ahjay_Stelino.mp3)`` : 播放音乐文件，此处播放的是 ``./musics`` 路径下的 **sports-Ahjay_Stelino.mp3** 文件  
+* ``music.music_stop()`` : 停止播放背景音乐  
 
 .. note::
 
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
+    你可以通过 :ref:`filezilla` 将不同的音效或音乐文件添加到 ``musics`` 或 ``sounds`` 文件夹中。
 
 
-Functions related to sound effects include these:
+与音效相关的函数包括：
 
-* ``music = Music()``
-* ``music.sound_play('./sounds/talk1.wav')``: Play the sound effect file, here is the **talk1.wav** file under the ``./musics`` path.
-* ``music.sound_play_threading('./sounds/talk1.wav')``: Play the sound effect file in a new thread mode without suspending the main thread.
+* ``music = Music()``  
+* ``music.sound_play('./sounds/talk1.wav')``: 播放音效文件，此处为 ``./musics`` 路径下的 **talk1.wav**  
+* ``music.sound_play_threading('./sounds/talk1.wav')``: 以多线程模式播放音效，不会阻塞主线程
 
-Functions related to Text to Speech include these:
+与文本转语音相关的函数包括：
 
-* ``tts = TTS()``
-* ``tts.say(words)`` : Text audio.
-* ``tts.lang("en-US")`` :  Set the language.
+* ``tts = TTS()``  
+* ``tts.say(words)`` : 将文本转换为语音  
+* ``tts.lang("en-US")`` : 设置语言  
 
 .. note:: 
 
-    Set the language by setting the parameters of ``lang("")`` with the following characters.
+    可以通过设置 ``lang("")`` 的参数来指定语言，支持以下选项：
 
 .. list-table:: Language
     :widths: 15 50
 
     *   - zh-CN 
-        - Mandarin (Chinese)
+        - 普通话（中文）
     *   - en-US 
-        - English-United States
+        - 英语-美国
     *   - en-GB     
-        - English-United Kingdom
+        - 英语-英国
     *   - de-DE     
-        - Germany-Deutsch
+        - 德语-德国
     *   - es-ES     
-        - España-Español
+        - 西班牙语-西班牙
     *   - fr-FR  
-        - France-Le français
+        - 法语-法国
     *   - it-IT  
-        - Italia-lingua italiana
+        - 意大利语-意大利

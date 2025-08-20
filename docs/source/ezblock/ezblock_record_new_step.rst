@@ -1,49 +1,35 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _ezb_record:
 
-Record New Step
+记录新动作
 ==============================
 
-We use the remote function to control PiCrawler to make several poses in turn, and record these poses. Replay them later.
+我们通过远程控制功能让 PiCrawler 依次摆出多个姿态，并将这些姿态记录下来，之后可以进行回放。
 
 
 **Program**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 你可以根据下图编写程序，详细操作请参考教程：:ref:`ezblock:create_project_latest`。
+    * 或者在 EzBlock Studio 的 **Examples** 页面找到同名示例代码，直接点击 **Run** 或 **Edit** 运行或修改。
 
 .. image:: img/record.png
     :width: 800
 
-Switch to the Remote Control interface, and you will see the following widgets.
+切换到远程控制界面后，你将看到如下组件。
 
 .. image:: img/sp210928_164343-1.png
     :width: 600
 
-**How it works?**
+**工作原理**
 
 
-This project was born out of :ref:`ezb_posture`. Added recording and replay functions.
+本项目源自 :ref:`ezb_posture`，在其基础上新增了记录和回放功能。
 
-The recording function is implemented by the following code.
+以下代码实现了动作记录功能：
 
 .. image:: img/sp210928_164449.png
 
-The replay function is implemented by the following code.
+以下代码实现了动作回放功能：
 
 .. image:: img/sp210928_164500.png

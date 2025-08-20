@@ -1,27 +1,13 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_pose:
 
-Pose
+姿态
 =============
 
-PiCrawler can assume a specific posture by writing a coordinate array. Here it assumes a raised right rear foot posture.
+PiCrawler 可以通过编写坐标数组来摆出特定的姿态。这里演示的是抬起右后腿的姿势。
 
 .. image:: img/4cood.A.png
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -33,7 +19,7 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
     sudo python3 do_step.py
 
 
-**Code**
+**代码**
 
 .. raw:: html
 
@@ -46,7 +32,7 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
 
     crawler = Picrawler() 
 
-    ## [right front],[left front],[left rear],[right rear]
+    ## [右前腿],[左前腿],[左后腿],[右后腿]
     new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
     stand_step = crawler.move_list['stand'][0]
 
@@ -65,42 +51,42 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**它是如何工作的？**
 
-In this code, the code you need to pay attention to is this ``crawler.do_step()``.
+在这段代码中，你需要特别关注的是 ``crawler.do_step()`` 。
 
-Similar to ``do_action()``, ``do_step()`` can also manipulate PiCrawler's behavior.
-The difference is that the former can perform the continuous behavior of ``move forward``, while the latter can be used to make separate gestures of ``stand`` and ``sit``.
-
-
-It has two uses:
+与 ``do_action()`` 类似， ``do_step()`` 也能控制 PiCrawler 的动作。  
+不同之处在于：前者用于执行连续动作，例如 ``move forward`` ；而后者则用来实现 ``stand`` 、 ``sit`` 等独立的姿态。
 
 
-One: It can write strings, directly use the ``step_list`` dictionary in the ``picrawler`` library.
+它有两种用法：
+
+
+第一种：可以直接传入字符串，调用 ``picrawler`` 库中的 ``step_list`` 字典。
 
 .. code-block:: python
 
     crawler.do_step('stand',speed) 
-    # "speed" indicates the speed of the step, the range is 0~100.
+    # "speed" 表示动作速度，范围为 0~100。
 
 
-Second: It can also write an array of 4 coordinate values.
+第二种：也可以直接传入包含 4 组坐标值的数组。
 
 .. code-block:: python
 
     new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
-    # These four coordinates are used to control the four legs of right front, left front, left rear, and left rear respectively.
+    # 这四组坐标分别用于控制右前腿、左前腿、左后腿和右后腿。
 
-Each foot has an independent coordinate system. As shown below:
+每条腿都有独立的坐标系，如下图所示：
 
 .. image:: img/4cood.png
 
-You need to measure the coordinates of each toe individually. As shown below:
+你需要分别测量每个足端的坐标，如下图所示：
 
 .. image:: img/1cood.png
 
 
-By the way: the ``step_list`` called in the first method also consists of an array containing 4 coordinate values.
+顺带一提：第一种方法中调用的 ``step_list`` 其实也是由 4 组坐标值数组组成的。
 
 .. code-block:: python
 
@@ -120,7 +106,7 @@ By the way: the ``step_list`` called in the first method also consists of an arr
         ],
               
     }
-
+    
 
 
 

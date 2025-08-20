@@ -1,29 +1,15 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Component List and Assembly Instructions
+零件清单与组装说明 
 ==============================================
 
-You need to check whether there are missing or damaged components according to the list first. If there are any problems, please contact us and we will solve them as soon as possible.
+请您先根据零件清单核对，确认是否有缺失或损坏的部件。若发现问题，请及时联系我们，我们会尽快为您解决。  
 
-Please follow the steps on the PDF to assemble.
+请按照 PDF 中的步骤进行组装。  
 
-If the servo has been powered on, please do not turn the Servo shaft to avoid damage.
-
-
-* :Download:`Component List and Assembly Instructions <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0102v30-a0000684-picrawler.pdf>`.
+若舵机已上电，请勿强行旋转舵机轴，以免造成损坏。  
 
 
-* You can find a comprehensive tutorial about the |link_robot_hat| here, including information on its hardware and API.
+* :Download:`零件清单与组装说明 <https://github.com/sunfounder/sf-pdf/raw/master/assembly_file/z0102v30-a0000684-picrawler.pdf>`  
+
+
+* 您可以在此处找到关于 |link_robot_hat| 的完整教程，其中包含硬件介绍及 API 使用说明。  
 

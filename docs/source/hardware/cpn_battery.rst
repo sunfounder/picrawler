@@ -1,54 +1,39 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-
-3-pin Battery
+3-pin 电池
 =================
 
 .. image:: img/3pin_battery.jpg
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC**: 电池正极端子。此处提供两组 VCC 和 GND，用于增加电流并降低阻抗。  
+* **Middle**: 用于平衡两节电池之间的电压，从而保护电池。  
+* **GND**: 电池负极端子。  
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. The connector is XH2.54 3P, which can be charged directly after being inserted into the Robot HAT.
+这是由 SunFounder 定制的电池组，由两节 18650 电池组成，容量为 2000mAh。其接口为 XH2.54 3P，可在插入 Robot HAT 后直接充电。  
 
-**Features**
+**参数特性**
 
-* Composition: Li-ion
-* Battery Capacity: 2000mAh, 14.8Wh
-* Battery Weight: 90.8g
-* Number of Cells: 2
-* Connector: XH2.54 3P
-* Over-discharge protection: 6.0V
+* 组成: 锂离子电池 (Li-ion)  
+* 电池容量: 2000mAh, 14.8Wh  
+* 电池重量: 90.8g  
+* 电芯数量: 2  
+* 接口: XH2.54 3P  
+* 过放电保护: 6.0V  
 
-5-pin Battery
+5-pin 电池
 -----------------------------------
 
 .. image:: img/5pin_battery.jpg
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC**: 电池正极端子。此处同样提供两组 VCC 和 GND，用于增加电流并降低阻抗。  
+* **Middle**: 用于平衡两节电池之间的电压，从而保护电池。  
+* **GND**: 电池负极端子。  
 
-This is a custom battery pack made by SunFounder consisting of two 18650 batteries with a capacity of 2000mAh. The connector is PH2.0-5P, which can be charged directly after being inserted into the shield.
+这是由 SunFounder 定制的电池组，由两节 18650 电池组成，容量为 2000mAh。其接口为 PH2.0-5P，可在插入扩展板后直接充电。  
 
-**Features**
+**参数特性**
 
-* **Composition**: Li-ion
-* **Battery Capacity**: 2000mAh, 14.8Wh
-* **Battery Weight**: 90.8g
-* **Number of Cells**: 2
-* **Connector**: PH2.0-5P
-* **Over-discharge protection**: 6.0V
+* **组成**: 锂离子电池 (Li-ion)  
+* **电池容量**: 2000mAh, 14.8Wh  
+* **电池重量**: 90.8g  
+* **电芯数量**: 2  
+* **接口**: PH2.0-5P  
+* **过放电保护**: 6.0V  

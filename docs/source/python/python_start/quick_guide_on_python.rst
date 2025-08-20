@@ -1,25 +1,11 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _quick_guide_python:
 
-Quick Guide on Python
+Python 快速指南
 ==========================
 
-This section is to teach you how to install Raspberry Pi OS, configure wifi to Raspberry Pi, remote access to Raspberry Pi to run the corresponding code.
+本章节将指导你如何安装 Raspberry Pi OS、为 Raspberry Pi 配置 WiFi、远程访问 Raspberry Pi，并运行相应的代码。
 
-If you are familiar with Raspberry Pi and can open the command line successfully, then you can skip the first 3 parts and then complete the last part. 
+如果你已经熟悉 Raspberry Pi 并能成功打开命令行，可以跳过前 3 个部分，直接完成最后的部分。
 
 
 
@@ -33,6 +19,6 @@ If you are familiar with Raspberry Pi and can open the command line successfully
     install_all_modules
     enable_i2c
     py_servo_adjust
-    
+
 
 

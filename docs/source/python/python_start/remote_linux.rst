@@ -1,40 +1,26 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-For Linux/Unix Users
+适用于 Linux/Unix 用户 
 ==========================
 
-#. Locate and open the **Terminal** on your Linux/Unix system.
+#. 在 Linux/Unix 系统中找到并打开 **Terminal** 终端。
 
-#. Ensure your Raspberry Pi is connected to the same network. Verify this by typing ``ping <hostname>.local``. For example:
+#. 确保 Raspberry Pi 已连接到同一网络。你可以通过输入 ``ping <hostname>.local`` 来验证。例如：
 
     .. code-block::
 
         ping raspberrypi.local
 
-    You should see the Raspberry Pi's IP address if it's connected to the network.
+    如果 Raspberry Pi 已成功连接网络，你会看到其对应的 IP 地址。
 
-    * If the terminal shows a message like ``Ping request could not find host pi.local. Please check the name and try again.``, double-check the hostname you've entered.
-    * If you're unable to retrieve the IP address, inspect your network or WiFi settings on the Raspberry Pi.
+    * 如果终端提示 ``Ping request could not find host pi.local. Please check the name and try again.`` ，请检查你输入的主机名是否正确。
+    * 如果仍无法获取 IP 地址，请检查 Raspberry Pi 的网络或 WiFi 设置。
 
-#. Initiate an SSH connection by typing ``ssh <username>@<hostname>.local`` or ``ssh <username>@<IP address>``. For instance:
+#. 通过输入 ``ssh <username>@<hostname>.local`` 或 ``ssh <username>@<IP address>`` 来建立 SSH 连接。例如：
 
     .. code-block::
 
         ssh pi@raspberrypi.local
 
-#. On your first login, you'll encounter a security message. Type ``yes`` to proceed.
+#. 第一次登录时，你会看到一条安全提示信息。请输入 ``yes`` 继续。
 
     .. code-block::
 
@@ -42,9 +28,9 @@ For Linux/Unix Users
         ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
         Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Enter the password you previously set. Note that for security reasons, the password won't be visible as you type.
+#. 输入你之前设置的密码。请注意，出于安全考虑，输入时密码不会显示。
 
     .. note::
-        It's normal for the password characters not to display in the terminal. Just ensure to enter the correct password.
+        在终端中看不到密码字符是正常的，只需确保输入正确即可。
 
-#. Once you've successfully logged in, your Raspberry Pi is now connected, and you're ready to proceed to the next step.
+#. 登录成功后，你的 Raspberry Pi 就已连接，现在可以继续进行下一步操作。

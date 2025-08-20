@@ -1,24 +1,10 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _ezb_pose:
 
-Pose
+姿态
 ===============
 
 
-PiCrawler can assume a specific posture by writing a coordinate array. Here it assumes a raised right rear foot posture.
+通过编写坐标数组，PiCrawler 可以摆出特定的姿态。这里展示的是抬起右后脚的姿势。
 
 .. image:: ../python/img/4cood.A.png
 
@@ -28,26 +14,27 @@ PiCrawler can assume a specific posture by writing a coordinate array. Here it a
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 你可以根据下图编写程序，详细操作请参考教程：:ref:`ezblock:create_project_latest`。
+    * 或者在 EzBlock Studio 的 **Examples** 页面找到同名示例代码，直接点击 **Run** 或 **Edit** 运行或修改。
 
 .. image:: img/dostep.png
 
 
-**How it works?**
+**工作原理**
 
-In this code, the code you need to pay attention to is this **do step**.
+在本代码中，需要特别注意的是 **do step**。
 
-It has two uses:
+它有两种用法：
 
-One: It can directly use **stand** or **sit**.
+1. 可以直接调用 **stand** 或 **sit**。
 
-Second: It can also write an array of 4 coordinate values.
+2. 也可以编写包含 4 个坐标值的数组。
 
-Each foot has an independent coordinate system. As shown below:
+每只脚都有独立的坐标系，如下图所示：
+
 
 .. image:: ../python/img/4cood.png
 
-You need to measure the coordinates of each toe individually. As shown below:
+你需要分别测量每个脚趾的坐标，如下图所示：
 
 .. image:: ../python/img/1cood.png

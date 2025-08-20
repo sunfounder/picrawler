@@ -1,25 +1,11 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_video:
 
-Record Video
+录制视频
 ==================
 
-This example will guide you how to use the recording function.
+本示例将演示如何使用视频录制功能。
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -31,17 +17,17 @@ This example will guide you how to use the recording function.
     sudo python3 record_video.py
 
 
-After the code runs, you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``http://192.168.18.113:9000/mjpg``
+代码运行后，可以在浏览器中输入 ``http://<your IP>:9000/mjpg`` 来查看实时画面，例如： ``http://192.168.18.113:9000/mjpg``
 
 .. image:: img/display.png
 
-Recording can be stopped or started by pressing the keys on the keyboard.
+通过键盘按键可以开始或停止录制。
 
-* Press ``q`` to begin recording or pause/continue, ``e`` to stop recording or save.
-* If you want to exit the program, press ``Ctrl+C``.
+* 按下 ``q`` 开始录制，或实现暂停/继续；按下 ``e`` 停止录制并保存视频。  
+* 若要退出程序，请按 ``Ctrl+C``   。
 
 
-**Code** 
+**代码** 
 
 .. code-block:: python
 
@@ -71,22 +57,22 @@ Recording can be stopped or started by pressing the keys on the keyboard.
     
         Vilib.camera_start(vflip=False,hflip=False) 
         Vilib.display(local=True,web=True)
-        sleep(0.8)  # wait for startup
+        sleep(0.8)  # 等待启动完成
     
         print(MANUAL)
         while True:
-            # read keyboard
+            # 读取键盘输入
             key = readchar.readkey()
             key = key.lower()
-            # start,pause
+            # 开始/暂停
             if key == 'q':
                 key = None
                 if rec_flag == 'stop':            
                     rec_flag = 'start'
-                    # set name
+                    # 设置文件名
                     vname = strftime("%Y-%m-%d-%H.%M.%S", localtime())
                     Vilib.rec_video_set["name"] = vname
-                    # start record
+                    # 开始录制
                     Vilib.rec_video_run()
                     Vilib.rec_video_start()
                     print_overwrite('rec start ...')
@@ -115,13 +101,13 @@ Recording can be stopped or started by pressing the keys on the keyboard.
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**它是如何工作的？**
 
-Functions related to recording include the following:
+与录制相关的函数包括以下几项：
 
-* ``Vilib.rec_video_run(video_name)``: Started the thread to record the video. ``video_name`` is the name of the video file, it should be a string.
-* ``Vilib.rec_video_start()``: Start or continue video recording.
-* ``Vilib.rec_video_pause()``: Pause recording.
-* ``Vilib.rec_video_stop()``: Stop recording.
+* ``Vilib.rec_video_run(video_name)`` ：启动视频录制线程。 ``video_name`` 为视频文件名，需为字符串  
+* ``Vilib.rec_video_start()`` ：开始或继续录制视频  
+* ``Vilib.rec_video_pause()`` ：暂停录制  
+* ``Vilib.rec_video_stop()`` ：停止录制  
 
-``Vilib.rec_video_set["path"] = "~/video/test/"`` sets the storage location of video files.
+另外， ``Vilib.rec_video_set["path"] = "~/video/test/"`` 用于设置视频文件的保存路径。

@@ -1,26 +1,12 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_record:
 
-Record New Step
+记录新动作
 =================
 
-We use the keyboard to control PiCrawler to make several poses in turn, and record these poses. Replay them later.
+我们使用键盘依次控制 PiCrawler 做出几个姿态，并将这些姿态记录下来，之后可以进行回放。
 
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -31,16 +17,16 @@ We use the keyboard to control PiCrawler to make several poses in turn, and reco
     cd ~/picrawler/examples
     sudo python3 record_new_step_by_keyboard.py
 
-After the code runs, please operate according to the prompt that pops up in the terminal.
+代码运行后，请根据终端中弹出的提示进行操作。
 
-* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
-* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``space`` to print all coordinate values.
-* Press ``p`` to have PiCrawler replay the recorded action.
-* Press ``esc`` to exit.
+* 按下 ``1234`` 分别选择不同的脚， ``1`` : 右前脚， ``2``: 左前脚， ``3``: 左后脚， ``4`` : 右后脚  
+* 按下 ``w`` 、 ``a`` 、 ``s`` 、 ``d`` 、 ``r`` 、 ``f`` 来逐步控制 PiCrawler 的坐标值  
+* 按下 ``space`` 打印所有坐标值  
+* 按下 ``p`` 回放已记录的动作  
+* 按下 ``esc`` 退出程序  
 
 
-**Code**
+**代码**
 
 .. code-block:: python
 
@@ -147,11 +133,11 @@ After the code runs, please operate according to the prompt that pops up in the 
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**它是如何工作的？**
 
-This project was born out of :ref:`py_posture`. Added recording and replay functions.
+该项目基于 :ref:`py_posture` 开发，并新增了动作记录与回放功能。
 
-The recording function is implemented by the following code.
+动作记录功能由以下代码实现：
 
 .. code-block:: python
 
@@ -162,10 +148,10 @@ The recording function is implemented by the following code.
         print(new_step)
 
 .. note:: 
-    The assignment here needs to use the `Deep Copy <https://docs.python.org/3/library/copy.html>`_ function, otherwise the ``new_step`` will not get a new array object when appending.
+    这里必须使用 `Deep Copy <https://docs.python.org/3/library/copy.html>`_ ，否则在 ``append`` 时 ``new_step`` 不会得到一个新的数组对象。
 
 
-The replay function is implemented by the following code.
+动作回放功能由以下代码实现：
 
 .. code-block:: python
 

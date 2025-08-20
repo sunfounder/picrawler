@@ -1,26 +1,12 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_bull:
 
-Bull Fight
+斗牛
 ==========
 
-Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
+让 PiCrawler 变身愤怒的公牛！利用摄像头锁定红布并发起冲击！
 
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -32,9 +18,9 @@ Make PiCrawler an angry bull! Use its camera to track and rush the red cloth!
     sudo python3 bull_fight.py
 
 
-**View the Image**
+**查看画面**
 
-After the code runs, the terminal will display the following prompt:
+代码运行后，终端会显示如下提示：  
 
 .. code-block::
 
@@ -46,14 +32,14 @@ After the code runs, the terminal will display the following prompt:
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the video screen. such as:  ``https://192.168.18.113:9000/mjpg``
+然后在浏览器中输入 ``http://<your IP>:9000/mjpg`` 即可查看视频画面，例如： ``https://192.168.18.113:9000/mjpg``  
 
 .. image:: img/display.png
 
-**Code**
+**代码**
 
-.. note::
-    You can **Modify/Reset/Copy/Run/Stop** the code below. But before that, you need to go to source code path like ``picrawler\examples``. After modifying the code, you can run it directly to see the effect.
+.. note::  
+    你可以对以下代码进行 **Modify/Reset/Copy/Run/Stop** 操作。但在此之前，需要进入源码路径，如 ``picrawler\examples``。修改后可直接运行查看效果。  
 
 
 .. raw:: html
@@ -101,11 +87,11 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
         main()
 
 
-**How it works?**
+**工作原理**
 
-In general, this project combines the knowledge points of :ref:`py_move`, :ref:`py_vision` and :ref:`py_sound`.
+总体而言，本项目结合了 :ref:`py_move`、:ref:`py_vision` 与 :ref:`py_sound` 的相关知识点。  
 
-Its flow is shown in the figure below:
+其流程如下图所示：  
 
 .. image:: img/bull_fight-f.png
 

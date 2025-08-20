@@ -1,34 +1,20 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _ezb_emotional:
 
-Emotional Robot
+情感机器人
 ==========================
 
 
-This example shows several interesting custom actions of PiCrawler. 
+本示例展示了 PiCrawler 的一些有趣自定义动作。  
 
-It is a supplementary example of :ref:`ezb_twist`.
+它是 :ref:`ezb_twist` 的补充示例。
 
 
 **Program**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 你可以根据下图编写程序，详细操作请参考教程：:ref:`ezblock:create_project_latest`。
+    * 或者在 EzBlock Studio 的 **Examples** 页面找到同名示例代码，直接点击 **Run** 或 **Edit** 运行或修改。
 
 .. image:: img/sp210928_173753.png
     :width: 800

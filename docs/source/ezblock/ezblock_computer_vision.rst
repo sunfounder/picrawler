@@ -1,60 +1,46 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _ezb_vision:
 
-Computer Vision
+计算机视觉
 =============================
 
-This project will officially enter the field of computer vision!
+本项目将正式带你进入计算机视觉的领域！
 
 
 .. note:: 
     
-    You can read :ref:`ezblock:video_latest`. Come and carry out this project smoothly.
+    你可以先阅读 :ref:`ezblock:video_latest`，以便更顺利地开展本项目。
 
 
 **Program**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 你可以根据下图编写程序，具体操作请参考教程：:ref:`ezblock:create_project_latest`。
+    * 或者在 EzBlock Studio 的 **Examples** 页面找到同名示例代码，直接点击 **Run** 或 **Edit** 运行或修改。
 
 
 .. image:: img/sp210928_165255.png
     :width: 800
 
-Switch to the Remote Control interface, and you will see the following widgets.
+切换到远程控制界面后，你将看到如下组件。
 
 .. image:: img/sp210928_165642.png
 
-After the program is running, you can switch the slider widget to turn on/off the face detection; click the D-Pad to select the color of the detection; click the button to print the detection result.
+程序运行后，你可以通过滑块组件来开启/关闭人脸检测；点击方向键选择检测的颜色；点击按钮则会输出检测结果。
 
-**How it works?**
+**工作原理**
 
 .. image:: img/sp210928_170920.png
 
-This block is used to enable the camera module.
+该模块用于启用摄像头。
 
 .. image:: img/sp210928_171021.png
     :width: 400
 
-These two blocks are used to enable the face detection/color detection function.
+这两个模块用于开启人脸检测/颜色检测功能。
 
 .. image:: img/sp210928_171125.png
     :width: 400
 
-These two blocks are used to output information. The detection result has five output values, namely coordinate x value, coordinate y value, width, height, and number.
+这两个模块用于输出信息。检测结果包含五个输出值，分别是：x 坐标值、y 坐标值、宽度、高度以及数量。
 

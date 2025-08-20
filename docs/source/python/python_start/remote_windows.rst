@@ -1,28 +1,14 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-For Windows Users
+适用于 Windows 用户
 =======================
 
-For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved through the following steps:
+对于 Windows 10 或更高版本的用户，可以通过以下步骤远程登录到 Raspberry Pi：
 
-#. Search for ``powershell`` in your Windows search box. Right-click on ``Windows PowerShell`` and select ``Run as administrator``.
+#. 在 Windows 搜索框中输入 ``powershell``。右键点击 ``Windows PowerShell``，选择 **以管理员身份运行** 。
 
     .. image:: img/powershell_ssh.png
         :align: center
 
-#. Determine your Raspberry Pi's IP address by typing ``ping -4 <hostname>.local`` in PowerShell.
+#. 在 PowerShell 中输入 ``ping -4 <hostname>.local`` 来获取 Raspberry Pi 的 IP 地址。
 
     .. code-block::
 
@@ -32,12 +18,12 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
         :width: 550
         :align: center
 
-    The Raspberry Pi's IP address will be displayed once it's connected to the network.
+    当 Raspberry Pi 成功连接到网络后，其 IP 地址将会显示出来。
 
-    * If the terminal displays ``Ping request could not find host pi.local. Please check the name and try again.``, verify the hostname you've entered is correct.
-    * If the IP address still isn't retrievable, check your network or WiFi settings on the Raspberry Pi.
+    * 如果终端提示 ``Ping request could not find host pi.local. Please check the name and try again.``，请检查输入的主机名是否正确。
+    * 如果依然无法获取 IP 地址，请检查 Raspberry Pi 的网络或 WiFi 设置。
 
-#. Once the IP address is confirmed, log in to your Raspberry Pi using ``ssh <username>@<hostname>.local`` or ``ssh <username>@<IP address>``.
+#. 确认 IP 地址后，使用 ``ssh <username>@<hostname>.local`` 或 ``ssh <username>@<IP address>`` 登录到 Raspberry Pi。
 
     .. code-block::
 
@@ -45,9 +31,9 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
 
     .. warning::
 
-        If an error appears stating ``The term 'ssh' is not recognized as the name of a cmdlet...``, your system may not have SSH tools pre-installed. In this case, you need to manually install OpenSSH following :ref:`openssh_powershell`, or use a third-party tool, like PuTTY.
+        如果出现错误提示 ``The term 'ssh' is not recognized as the name of a cmdlet...``，说明系统未预装 SSH 工具。此时你需要按照 :ref:`openssh_powershell` 手动安装 OpenSSH，或者使用第三方工具（如 PuTTY）。
 
-#. A security message will appear on your first login. Enter ``yes`` to proceed.
+#. 首次登录时会出现一条安全提示，请输入 ``yes`` 继续。
 
     .. code-block::
 
@@ -55,12 +41,12 @@ For Windows 10 or higher users, remote login to a Raspberry Pi can be achieved t
         ED25519 key fingerprint is SHA256:oo7x3ZSgAo032wD1tE8eW0fFM/kmewIvRwkBys6XRwg.
         Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-#. Enter the password you previously set. Note that the password characters won't be displayed on the screen, which is a standard security feature.
+#. 输入之前设置的密码。请注意，出于安全考虑，输入时密码不会显示在屏幕上。
 
     .. note::
-        The absence of visible characters when typing the password is normal. Ensure you input the correct password.
+        输入密码时没有字符显示是正常现象，请确保输入正确的密码。
 
-#. Once connected, your Raspberry Pi is ready for remote operations.
+#. 连接成功后，你的 Raspberry Pi 就可以进行远程操作了。
 
     .. image:: img/sp221221_140628.png
         :width: 550

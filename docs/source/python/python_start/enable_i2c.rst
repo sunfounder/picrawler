@@ -1,25 +1,11 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _i2c_spi_config:
 
-6. Check I2C Interface
+6. 检查 I2C 接口
 ========================================
 
-We will be using the Raspberry Pi's I2C interface. This interface should have been enabled when installing the ``robot-hat`` module earlier. To ensure everything is in order, let's check if it is indeed enabled.
+我们将使用树莓派的 I2C 接口。在之前安装 ``robot-hat`` 模块时，该接口应已被启用。为确保一切正常，让我们来检查一下是否确实开启了它。
 
-#. Input the following command:
+#. 输入以下命令：
 
     .. raw:: html
 
@@ -29,17 +15,17 @@ We will be using the Raspberry Pi's I2C interface. This interface should have be
 
         sudo raspi-config
 
-#. Choose **Interfacing Options** by press the down arrow key on your keyboard, then press the **Enter** key.
+#. 使用键盘方向键选择 **Interfacing Options** ，然后按下 **Enter** 键。
 
     .. image:: img/image282.png
         :align: center
 
-#. Then **I2C**.
+#. 接着选择 **I2C** 。
 
     .. image:: img/image283.png
         :align: center
 
-#. Use the arrow keys on the keyboard to select **<Yes>** -> **<OK>** to complete the setup of the I2C.
+#. 使用键盘方向键选择 **<Yes>** -> **<OK>**，即可完成 I2C 接口的配置。
 
     .. image:: img/image284.png
         :align: center

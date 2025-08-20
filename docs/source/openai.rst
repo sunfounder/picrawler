@@ -1,41 +1,41 @@
-AI Interaction Using GPT-4O
+使用 GPT-4O 的 AI 交互
 =====================================================
-In our previous projects, we used programming to direct PiCrawler in predetermined tasks, which could seem a bit tedious. This project introduces a thrilling leap towards dynamic engagement. Beware of trying to outsmart our car—as it's now equipped to understand far more than ever before!
+在之前的项目中，我们主要通过编程让 PiCrawler 执行预设任务，可能略显单调。本项目将带来一次令人振奋的突破，让交互更具动态性。请小心，别试图“智胜”这台小车——它现在比以往更聪明！
 
-This initiative details all the technical steps needed to integrate the GPT-4O into your system, including configuring the necessary virtual environments, installing crucial libraries, and setting up API keys and assistant IDs.
+本项目将详细介绍如何将 GPT-4O 集成到系统中，包括配置虚拟环境、安装必要的库，以及设置 API Key 和 Assistant ID。
 
 .. note::
 
-   This project requires the use of |link_openai_platform|, and you need to pay for OpenAI. Additionally, the OpenAI API is billed separately from ChatGPT, with its own pricing available at https://openai.com/api/pricing/.
+   本项目需要使用 |link_openai_platform|，并需支付 OpenAI 的相关费用。此外，OpenAI API 的计费独立于 ChatGPT，具体价格请参考 https://openai.com/api/pricing/。
 
-   Therefore, you need to decide whether to continue with this project or ensure you have funded the OpenAI API.
+   因此，请您在继续之前，确认是否愿意承担 OpenAI API 的费用。
 
-Whether you have a microphone to communicate directly or prefer typing into a command window, PiCrawler's responses powered by GPT-4O will surely astonish you!
+无论是通过麦克风直接交流，还是在命令行中输入文字，基于 GPT-4O 的 PiCrawler 都会带给您惊喜！
 
-Let's dive into this project and unleash a new level of interaction with PiCrawler!
+让我们一同深入本项目，释放 PiCrawler 全新的交互潜力吧！
 
-1. Installing Required Packages and Dependencies
+1. 安装所需软件包与依赖
 --------------------------------------------------------------
 .. note::
 
-   You need to install the necessary modules for PiCrawler first. For details, please refer to: :ref:`install_all_modules`.
+   在开始之前，您需要先为 PiCrawler 安装必要的模块。详情请参考：:ref:`install_all_modules`。
    
-In this section, we will create and activate a virtual environment, installing the required packages and dependencies within it. This ensures that the installed packages do not interfere with the rest of the system, maintaining project dependency isolation and preventing conflicts with other projects or system packages.
+在这一部分，我们将创建并激活虚拟环境，并在其中安装所需的软件包和依赖。这样可以确保安装的包与系统环境隔离，避免对其他项目或系统组件造成冲突。
 
-#. Use the ``python -m venv`` command to create a virtual environment named ``my_venv``, including system-level packages. The ``--system-site-packages`` option allows the virtual environment to access packages installed system-wide, which is useful when system-level libraries are needed.
+#. 使用 ``python -m venv`` 命令创建名为 ``my_venv`` 的虚拟环境，并包含系统级别的包。``--system-site-packages`` 选项允许虚拟环境访问系统范围内已安装的库，适用于需要依赖系统库的情况。
 
    .. code-block:: shell
 
       python -m venv --system-site-packages my_venv
 
-#. Switch to the ``my_venv`` directory and activate the virtual environment using the ``source bin/activate`` command. The command prompt will change to indicate that the virtual environment is active.
+#. 切换到 ``my_venv`` 目录，并使用 ``source bin/activate`` 命令激活虚拟环境。激活后，命令行提示符将发生变化。
 
    .. code-block:: shell
 
       cd my_venv
       source bin/activate
 
-#. Now, install the required Python packages within the activated virtual environment. These packages will be isolated to the virtual environment and will not affect other system packages.
+#. 在已激活的虚拟环境中安装所需 Python 库，这些库仅作用于该虚拟环境，不会影响系统环境。
 
    .. code-block:: shell
 
@@ -44,7 +44,7 @@ In this section, we will create and activate a virtual environment, installing t
       pip3 install SpeechRecognition
       pip3 install -U sox
        
-#. Finally, use the ``apt`` command to install system-level dependencies, which require administrator privileges.
+#. 最后，使用 ``apt`` 安装系统依赖（需管理员权限）。
 
    .. code-block:: shell
 
@@ -52,44 +52,44 @@ In this section, we will create and activate a virtual environment, installing t
       sudo apt install sox
 
 
-2. Obtain API Key and Assistant ID
+2. 获取 API Key 和 Assistant ID
 -----------------------------------------
 
-**Get API Key**
+**获取 API Key**
 
-#. Visit |link_openai_platform| and click the **Create new secret key** button in the top right corner.
+#. 访问 |link_openai_platform| ，点击右上角 **Create new secret key** 按钮。
 
    .. image:: img/apt_create_api_key.png
       :width: 700
       :align: center
 
-#. Select the Owner, Name, Project, and permissions as needed, and then click **Create secret key**.
+#. 按需选择 Owner、Name、Project 和权限，然后点击 **Create secret key** 。
 
    .. image:: img/apt_create_api_key2.png
       :width: 700
       :align: center
 
-#. Once generated, save this secret key in a safe and accessible location. For security reasons, you will not be able to view it again through your OpenAI account. If you lose this secret key, you will need to generate a new one.
+#. 生成后，请将该密钥保存在安全可访问的位置。出于安全考虑，OpenAI 不会再次显示该密钥。如遗失，需重新生成。
 
    .. image:: img/apt_create_api_key_copy.png
       :width: 700
       :align: center
 
-**Get Assistant ID**
+**获取 Assistant ID**
 
-#. Next, click on **Assistants**, then click **Create**, making sure you are on the **Dashboard** page.
+#. 点击 **Assistants** ，然后点击 **Create** ，确保当前在 **Dashboard** 页面。
 
    .. image:: img/apt_create_assistant.png
       :width: 700
       :align: center
 
-#. Move your cursor here to copy the **assistant ID**, then paste it into a text box or elsewhere. This is the unique identifier for this Assistant.
+#. 将鼠标悬停在此处复制 **assistant ID** ，并保存到文本框或其他地方。它是该 Assistant 的唯一标识。
 
    .. image:: img/apt_create_assistant_id.png
       :width: 700
       :align: center
 
-#. Randomly set a name, then copy the following content into the **Instructions** box to describe your Assistant.
+#. 任意设置名称，并将以下内容复制到 **Instructions** 文本框中，用于描述 Assistant。
 
    .. image:: img/apt_create_assistant_instructions.png
       :width: 700
@@ -111,62 +111,62 @@ In this section, we will create and activate a virtual environment, installing t
       ["sit", "stand", "wave_hand", "shake_hand", "fighting", "excited", "play_dead", "nod", "shake_head", "look_left","look_right", "look_up", "look_down", "warm_up", "push_up"]
 
 
-#. PiCrawler is equipped with a camera module that you can enable to capture images of what it sees and upload them to GPT using our example code. Therefore, we recommend choosing GPT-4O-mini, which has image analysis capabilities. Of course, you can also choose gpt-3.5-turbo or other models.
+#. PiCrawler 配备了摄像头模块，您可以启用它拍摄图像并上传至 GPT 进行处理。我们推荐选择具备图像分析能力的 GPT-4O-mini。当然，您也可以选择 gpt-3.5-turbo 或其他模型。
 
    .. image:: img/apt_create_assistant_model.png
       :width: 700
       :align: center
 
-#. Now, click **Playground** to see if your account is functioning properly.
+#. 点击 **Playground**，测试您的账号是否正常工作。
 
    .. image:: img/apt_playground.png
 
-#. If your messages or uploaded images are sent successfully and you receive replies, it means your account has not reached the usage limit.
+#. 若消息或图片上传成功，并收到回复，说明账号未达到使用上限。
 
 
    .. image:: img/apt_playground_40.png
       :width: 700
       :align: center
 
-#. If you encounter an error message after inputting information, you may have reached your usage limit. Please check your usage dashboard or billing settings.
+#. 如果输入信息后出现错误提示，可能是已达到使用限额，请检查使用情况或计费设置。
 
    .. image:: img/apt_playground_40mini_3.5.png
       :width: 700
       :align: center
 
-3. Fill in API Key and Assistant ID
+3. 填写 API Key 与 Assistant ID
 --------------------------------------------------
 
-#. Use the command to open the ``keys.py`` file.
+#. 使用命令打开 ``keys.py`` 文件。
 
    .. code-block:: shell
 
       nano ~/picrawler/gpt_examples/keys.py
 
-#. Fill in the API Key and Assistant ID you just copied.
+#. 将刚才复制的 API Key 和 Assistant ID 填入其中。
 
    .. code-block:: shell
 
       OPENAI_API_KEY = "sk-proj-vEBo7Ahxxxx-xxxxx-xxxx"
       OPENAI_ASSISTANT_ID = "asst_ulxxxxxxxxx"
 
-#. Press ``Ctrl + X``, ``Y``, and then ``Enter`` to save the file and exit.
+#. 按 ``Ctrl + X`` ， ``Y`` ，然后 ``Enter`` 保存并退出。
 
-4. Running the Example
+4. 运行示例
 ----------------------------------
-Text Communication
+文字交互
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If your PiCrawler does not have a microphone, you can use keyboard input text to interact with it by running the following commands.
+如果您的 PiCrawler 没有麦克风，可以通过键盘输入文字与其互动，方法如下：
 
-#. Now, run the following commands using sudo, as PiCrawler's speaker will not function without it. The process will take some time to complete.
+#. 使用 sudo 运行以下命令（否则扬声器无法工作），执行过程可能需要一些时间。
 
    .. code-block:: shell
 
       cd ~/picrawler/gpt_examples/
       sudo ~/my_venv/bin/python3 gpt_spider.py --keyboard
 
-#. Once the commands have executed successfully, you will see the following output, indicating that all components of PiCrawler are ready.
+#. 成功执行后，您将看到如下输出，表示 PiCrawler 各组件已就绪。
 
    .. code-block:: shell
 
@@ -182,64 +182,64 @@ If your PiCrawler does not have a microphone, you can use keyboard input text to
 
       input:
 
-#. You will also be provided with a link to view PiCrawler's camera feed on your web browser: ``http://rpi_ip:9000/mjpg``.
+#. 系统会提供一个链接，您可以在浏览器中查看 PiCrawler 的摄像头画面： ``http://rpi_ip:9000/mjpg`` 。
 
    .. image:: img/apt_ip_camera.png
       :width: 700
       :align: center
 
-#. You can now type your commands into the terminal window, and press Enter to send them. PiCrawler's responses may surprise you.
+#. 在终端输入指令并回车，PiCrawler 会进行回应，效果可能让您惊喜。
 
    .. note::
       
-      PiCrawler needs to receive your input, send it to GPT for processing, receive the response, and then play it back via speech synthesis. This entire process takes some time, so please be patient.
+      PiCrawler 需要接收输入 → 发送至 GPT → 获取回复 → 语音合成播放。此过程需要一定时间，请耐心等待。
 
    .. image:: img/apt_keyboard_input.png
       :width: 700
       :align: center
 
-#. If you are using the GPT-4O model, you can also ask questions based on what PiCrawler sees.
+#. 若使用 GPT-4O 模型，您还可以基于 PiCrawler 的实时视觉提问。
 
-Voice Communication
-^^^^^^^^^^^^^^^^^^^^^^^^
+语音交互
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If your PiCrawler is equipped with a microphone, or you can purchase one by clicking |link_microphone|, you can interact with PiCrawler using voice commands.
+如果您的 PiCrawler 配备了麦克风，或您可点击 |link_microphone| 购买一个，就可以通过语音与其互动。
 
-#. First, verify that the Raspberry Pi has detected the microphone.
+#. 首先确认树莓派是否检测到麦克风。
 
    .. code-block:: shell
 
       arecord -l
 
-   If successful, you will receive the following information, indicating that your microphone has been detected.
+   若成功，将显示如下信息，表明麦克风已被识别。
 
    .. code-block:: 
-      
+
       **** List of CAPTURE Hardware Devices ****
       card 3: Device [USB PnP Sound Device], device 0: USB Audio [USB Audio]
       Subdevices: 1/1
       Subdevice #0: subdevice #0
 
-#. Run the following command, then speak to PiCrawler or make some sounds. The microphone will record the sounds into the ``op.wav`` file. Press ``Ctrl + C`` to stop recording.
+#. 执行以下命令，对 PiCrawler 说话或发出声音，麦克风会将声音录制为 ``op.wav`` 文件。按 ``Ctrl + C`` 停止录音。
 
    .. code-block:: shell
 
       rec op.wav
 
-#. Finally, use the command below to play back the recorded sound, confirming that the microphone is functioning properly.
+#. 使用以下命令回放录音，确认麦克风工作正常。
 
    .. code-block:: shell
 
       sudo play op.wav
 
-#. Now, run the following commands using sudo, as PiCrawler's speaker will not function without it. The process will take some time to complete.
+#. 使用 sudo 执行以下命令（否则扬声器无法工作），执行过程可能需要一些时间。
 
    .. code-block:: shell
 
       cd ~/picrawler/gpt_examples/
       sudo ~/my_venv/bin/python3 gpt_spider.py
 
-#. Once the commands have executed successfully, you will see the following output, indicating that all components of PiCrawler are ready.
+#. 成功运行后，您将看到如下输出，表明 PiCrawler 各组件已就绪。
 
    .. code-block:: shell
       
@@ -255,33 +255,33 @@ If your PiCrawler is equipped with a microphone, or you can purchase one by clic
 
       listening ...
 
-#. You will also be provided with a link to view Pirawler's camera feed on your web browser: ``http://rpi_ip:9000/mjpg``.
+#. 系统会提供一个链接，您可以在浏览器中查看 PiCrawler 的摄像头画面： ``http://rpi_ip:9000/mjpg`` 。
 
    .. image:: img/apt_ip_camera.png
       :width: 700
       :align: center
 
-#. You can now speak to PiCrawler, and its responses may surprise you.
+#. 现在您可以直接与 PiCrawler 对话，它的回应可能会让您惊喜。
 
    .. note::
       
-      PiCrawler needs to receive your input, convert it to text, send it to GPT for processing, receive the response, and then play it back via speech synthesis. This entire process takes some time, so please be patient.
+      PiCrawler 将接收语音输入 → 转换为文字 → 发送至 GPT → 获取回复 → 语音合成播放。整个过程需要一定时间，请耐心等待。
 
    .. image:: img/apt_speech_input.png
       :width: 700
       :align: center
 
-#. If you are using the GPT-4O model, you can also ask questions based on what PiCrawler sees.
+#. 若使用 GPT-4O 模型，您同样可以基于 PiCrawler 的视觉输入进行提问。
 
 
-5. Modify parameters [optional]
+5. 修改参数 [可选]
 -------------------------------------------
 
-In the ``gpt_spider.py`` file, locate the following lines. You can modify these parameters to configure the STT language, TTS volume gain, and voice role.
+在 ``gpt_spider.py`` 文件中，找到以下代码行。您可以根据需要修改参数，用于配置语音识别语言（STT）、语音合成音量增益（TTS）及语音角色。
 
-* **STT (Speech to Text)** refers to the process where the PiCrawler microphone captures speech and converts it into text to be sent to GPT. You can specify the language for better accuracy and latency in this conversion.
+* **STT（语音转文字）** ：通过 PiCrawler 的麦克风将语音转换为文字并发送至 GPT。您可以指定语言，以提升识别精度和响应速度。  
 
-* **TTS (Text to Speech)** is the process of converting GPT's text responses into speech, which is played through the PiCrawler speaker. You can adjust the volume gain and select a voice role for the TTS output.
+* **TTS（文字转语音）** ：将 GPT 的文字回复转换为语音，通过扬声器播放。您可以调整音量增益，并选择不同的语音角色。  
 
 .. code-block:: python
 
@@ -299,19 +299,19 @@ In the ``gpt_spider.py`` file, locate the following lines. You can modify these 
    TTS_VOICE = 'nova'
 
 
-* ``LANGUAGE`` variable: 
+* ``LANGUAGE`` 变量：  
 
-  * Improves Speech-to-Text (STT) accuracy and response time.
-  * ``LANGUAGE = []`` means supporting all languages, but this may reduce STT accuracy and increase latency.
-  * It's recommended to set the specific language(s) using |link_iso_language_code| language codes to improve performance.
+  * 提升语音识别的准确度与响应速度。  
+  * ``LANGUAGE = []`` 表示支持所有语言，但可能降低准确度并增加延迟。  
+  * 建议使用 |link_iso_language_code| 中的语言代码，指定具体语言以优化性能。  
 
-* ``VOLUME_DB`` variable:
+* ``VOLUME_DB`` 变量：  
 
-  * Controls the gain applied to Text-to-Speech (TTS) output.
-  * Increasing the value will boost the volume, but it's best to keep the value below 5dB to prevent audio distortion.
+  * 控制语音输出的音量增益。  
+  * 增大数值可提升音量，但建议保持在 5dB 以下，以避免失真。  
 
-* ``TTS_VOICE`` variable:
+* ``TTS_VOICE`` 变量：  
 
-  * Select the voice role for the Text-to-Speech (TTS) output.
-  * Available options: ``alloy, echo, fable, onyx, nova, shimmer``.
-  * You can experiment with different voices from |link_voice_options| to find one that suits your desired tone and audience. The available voices are currently optimized for English.
+  * 用于选择语音合成的音色。  
+  * 可选项包括 ``alloy, echo, fable, onyx, nova, shimmer`` 。  
+  * 您可以通过 |link_voice_options| 试听不同声音，选择适合的语调与风格。目前这些声音主要针对英语进行了优化。  

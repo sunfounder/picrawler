@@ -1,70 +1,56 @@
-.. note::
+.. _ezb_remote: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-.. _ezb_remote:
-
-Remote Control
+远程控制
 =========================
 
 
-In this project, we will learn how to remote control the PiCrawler. 
-You can control the PiCrawler to move forward, backward, left, and right.
+在本项目中，我们将学习如何远程控制 PiCrawler。  
+你可以操控 PiCrawler 向前、向后、向左或向右移动。
 
 .. note:: 
 
-    You can refer to :ref:`ezblock:remote_control_latest`. Come and carry out this project smoothly.
+    你可以参考 :ref:`ezblock:remote_control_latest`，以便更顺利地完成本项目。
 
 **Program**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 你可以根据下图编写程序，详细操作请参考教程：:ref:`ezblock:create_project_latest`。
+    * 或者在 EzBlock Studio 的 **Examples** 页面找到同名示例代码，直接点击 **Run** 或 **Edit** 运行或修改。
 
 .. image:: img/remote.png
 
-Switch to the Remote Control interface, and you will see the following widgets.
+切换到远程控制界面后，你将看到如下组件。
 
 .. image:: img/remote_B.png
 
-After the program is running, you can activate PiCrawler through D-Pad.
+程序运行后，你可以通过 D-Pad 激活并控制 PiCrawler。
 
-**How it works?**
+**工作原理**
 
-After dragging out the widget on the Remote Control interface, a category named **Remote** will appear in the block categories column of the programming interface.
+当你在远程控制界面拖出组件后，编程界面的模块分类栏中会新增一个名为 **Remote** 的类别。
 
-Here we add the D-Pad widget, so the **D-Pad get value** block appears here.
+这里我们添加了 D-Pad 控件，因此会出现 **D-Pad get value** 模块。
 
 .. image:: img/sp210927_180739.png
 
-D-Pad can be regarded as a four-in-one button. You can choose which button to read in the second groove of the block.
+D-Pad 可以理解为四合一的按键。你可以在模块的第二个槽位中选择要读取的具体按键。
 
-When the button is pressed, the value is "1"; when the button is not pressed, the value is "0".
+当按键被按下时，返回值为 "1"；当按键未按下时，返回值为 "0"。
 
 
 .. image:: img/sp210927_182447.png
     :width: 200
 
-We used an **if** block (you can find it in the **Logic** category on the left) to make the PiCrawler move forward once when the **UP** button of the D-pad is pressed.
+我们使用了一个 **if** 模块（可在左侧 **Logic** 分类中找到），使得当 D-Pad 的 **UP** 按键被按下时，PiCrawler 执行一次前进动作。
 
 .. image:: img/sp210927_182828.png
     :width: 600
 
-You can click the gear icon on the upper left of the block to modify the shape of the **if** block to realize multiple judgment branches.
+你可以点击模块左上角的齿轮图标，修改 **if** 模块的结构，从而实现多条件分支判断。
 
 
 .. image:: img/sp210927_183237.png
     :width: 300
 
-**if** block is usually used with **=** block, **=** block can be modified to **>**, **<** and other conditions through the drop-down menu, please use it flexibly.
+**if** 模块通常与 **=** 模块搭配使用。通过下拉菜单， **=** 模块可以修改为 **>** 、 **<** 等条件，请根据需要灵活使用。

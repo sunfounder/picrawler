@@ -1,24 +1,9 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _install_all_modules:
 
-
-5. Install All the Modules (Important)
+5. 安装所有模块（重要）
 ===============================================
 
-Make sure you are connected to the Internet and update your system:
+请确保树莓派已连接至互联网，并先更新系统：
 
 .. raw:: html
 
@@ -31,7 +16,7 @@ Make sure you are connected to the Internet and update your system:
 
 .. note::
 
-    Python3 related packages must be installed if you are installing the Lite version OS.
+    如果你安装的是 Lite 版本的系统，则必须额外安装与 Python3 相关的依赖包。
 
     .. raw:: html
 
@@ -42,7 +27,7 @@ Make sure you are connected to the Internet and update your system:
         sudo apt install git python3-pip python3-setuptools python3-smbus
 
 
-Install ``robot-hat`` module.
+安装 ``robot-hat`` 模块。
 
 .. raw:: html
 
@@ -55,7 +40,7 @@ Install ``robot-hat`` module.
     cd robot-hat
     sudo python3 setup.py install
 
-Then download the code and install ``vilib`` module.
+接着下载代码并安装 ``vilib`` 模块。
 
 .. raw:: html
 
@@ -68,7 +53,7 @@ Then download the code and install ``vilib`` module.
     cd vilib
     sudo python3 install.py
 
-Then download the code and install ``picrawler`` module.
+然后下载代码并安装 ``picrawler`` 模块。
 
 .. raw:: html
 
@@ -81,9 +66,9 @@ Then download the code and install ``picrawler`` module.
     cd picrawler
     sudo python3 setup.py install
 
-This step will take a little time, so please be patient.
+此过程可能需要一些时间，请耐心等待。
 
-Finally, you need to run the script ``i2samp.sh`` to install the components required by the i2s amplifier, otherwise the pislot will have no sound.
+最后，你需要运行脚本 ``i2samp.sh`` 来安装 i2s 放大器所需的组件，否则 pislot 将无法发声。
 
 .. raw:: html
 
@@ -96,15 +81,15 @@ Finally, you need to run the script ``i2samp.sh`` to install the components requ
 	
 .. image:: img/i2s.png
 
-Type ``y`` and press ``Enter`` to continue running the script.
+输入 ``y`` 并按下 ``Enter`` 键以继续运行脚本。
 
 .. image:: img/i2s2.png
 
-Type ``y`` and press ``Enter`` to run ``/dev/zero`` in the background.
+输入 ``y`` 并按下 ``Enter`` 键以在后台运行 ``/dev/zero``。
 
 .. image:: img/i2s3.png
 
-Type ``y`` and press ``Enter`` to restart the machine.
+输入 ``y`` 并按下 ``Enter`` 键以重启设备。
 
 .. note::
-    If there is no sound after restarting, you may need to run the ``i2samp.sh`` script multiple times.
+    如果重启后依旧没有声音，可能需要多次运行 ``i2samp.sh`` 脚本。

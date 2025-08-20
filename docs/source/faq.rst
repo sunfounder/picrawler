@@ -1,57 +1,44 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 FAQ
 ===========================
 
-Q1: After installing Ezblock OS, the servo can't turn to 0°?
+Q1: 安装 Ezblock OS 后，舵机无法转到 0°？
 -------------------------------------------------------------------
 
-1) Check if the servo cable is properly connected and if the Robot HAT power is on.
-2) Press Reset button.
-3) If you have already run the program in Ezblock Studio, the custom program for P11 is no longer available. You can refer to the picture below to manually write a program in Ezblock Studio to set the servo angle to 0.
+1) 检查舵机线是否正确连接，以及 Robot HAT 电源是否已打开。  
+2) 按下 Reset 按钮。  
+3) 如果你已经在 Ezblock Studio 中运行过程序，那么 P11 的自定义程序将不可用。你可以参考下图，在 Ezblock Studio 中手动编写程序，将舵机角度设置为 0。  
 
 .. image:: img/faq_servo.png
 
-Q2: When using VNC, I am prompted that the desktop cannot be displayed at the moment?
+Q2: 使用 VNC 时提示暂时无法显示桌面？
 --------------------------------------------------------------------------------------------
 
-In Terminal, type ``sudo raspi-config`` to change the resolution.
+在终端中输入 ``sudo raspi-config`` 修改分辨率。
 
-Q3: Why does the servo sometimes return to the middle position for no reason?
+Q3: 为什么舵机有时会无缘无故回到中间位置？
 ------------------------------------------------------------------------------------
 
-When the servo is blocked by a structure or other object and cannot reach its intended position, the servo will enter the power-off protection mode in order to prevent the servo from being burned out by too much current.
+当舵机被结构或其他物体阻挡，无法到达目标位置时，会自动进入断电保护模式，以避免因电流过大而烧毁舵机。  
 
-After a period of power failure, if no PWM signal is given to the servo, the servo will automatically return to its original position.
+在断电一段时间后，如果没有继续给舵机输入 PWM 信号，它会自动回到初始位置。  
 
-Q4: About the Robot HAT Detailed Tutorial?
+Q4: 关于 Robot HAT 的详细教程？
 -----------------------------------------------------
 
-You can find a comprehensive tutorial about the Robot HAT here, including information on its hardware and API.
+你可以在这里找到关于 Robot HAT 的完整教程，其中包含硬件信息及 API 使用方法。  
 
 * |link_robot_hat|
 
-Q5: About the Battery Charger?
+Q5: 关于电池充电器？
 -----------------------------------------------------
 
-To charge the battery, simply connect a 5V/2A Type-C power supply to the Robot Hat's power port. There's no need to turn on the Robot Hat's power switch during charging.
-You can also use the device while charging the battery. 
+要为电池充电，只需将 5V/2A 的 Type-C 电源适配器连接到 Robot HAT 的电源接口。充电过程中无需打开 Robot HAT 的电源开关。  
+你也可以在充电时正常使用设备。  
 
 .. image:: img/robot_hat_pic.png
     :align: center
     :width: 500
 
-During charging, the input power is boosted by the charging chip to charge the battery and simultaneously supply the DC-DC converter for external use, with a charging power of approximately 10W. 
-If external power consumption remains high for an extended period, the battery may supplement the power supply, similar to using a phone while charging. However, be mindful of the battery's capacity to avoid completely depleting it during simultaneous charging and usage.
+在充电过程中，充电芯片会将输入电源升压，为电池充电的同时也为 DC-DC 转换器供电，整体充电功率约为 10W。  
+如果外部负载长时间保持较高功耗，电池可能会辅助供电，这类似于边充电边使用手机。  
+不过需要注意电池容量，避免在充电和使用同时进行时将电池完全耗尽。  

@@ -1,37 +1,23 @@
-.. note::
+.. _control_by_app: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-.. _control_by_app:
-
-Controlled by the APP
+通过 APP 控制
 =======================
 
-The SunFounder controller is used to control Raspberry Pi/Pico based robots.
+SunFounder 控制器可用于操控基于 Raspberry Pi/Pico 的机器人。  
 
-The APP integrates Button, Switch, Joystick, D-pad, Slider and Throttle Slider widgets; Digital Display, Ultrasonic Radar, Grayscale Detection and Speedometer input widgets.
+该 APP 集成了 Button、Switch、Joystick、D-pad、Slider 和 Throttle Slider 等控件；同时还支持 Digital Display、Ultrasonic Radar、Grayscale Detection 和 Speedometer 等输入组件。  
 
-There are 17 areas A-Q , where you can place different widgets to customize your own controller.
+界面上共有 17 个区域（A-Q），你可以在这些区域中放置不同的控件，来自定义专属的控制器。  
 
-In addition, this application provides a live video streaming service.
+此外，该应用还提供实时视频流功能。  
 
-Let's customize a PiCrawler controller using this app.
+下面我们通过此 APP 来定制一个 PiCrawler 控制器。  
 
-**How to do?**
+**具体操作步骤**  
 
-#. Install the ``sunfounder-controller`` module.
+#. 安装 ``sunfounder-controller`` 模块。  
 
-    The ``robot-hat``, ``vilib``, and ``picrawler`` modules need to be installed first, for details see: :ref:`install_all_modules`.
+    在此之前需先安装 ``robot-hat``、 ``vilib`` 和 ``picrawler`` 模块，详情请参考：:ref:`install_all_modules`。  
 
     .. raw:: html
 
@@ -44,7 +30,7 @@ Let's customize a PiCrawler controller using this app.
         cd ~/sunfounder-controller
         sudo python3 setup.py install
 
-#. Run the code.
+#. 运行示例代码。  
 
     .. raw:: html
 
@@ -55,61 +41,61 @@ Let's customize a PiCrawler controller using this app.
         cd ~/sunfounder-controller/examples
         sudo python3 picrawler_control.py
 
-#. Install `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
+#. 从 **APP Store(iOS)** 或 **Google Play(Android)** 安装 `SunFounder Controller <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_。  
 
 
-#. Open and create a new controller.
+#. 打开并创建新控制器。  
 
-    Create a new controller by clicking on the + sign in the SunFounder Controller APP.
+    在 SunFounder Controller APP 中点击 “+” 号来新建一个控制器。  
 
     .. image:: img/app1.PNG
 
-    There are preset controllers for some products in the Preset section, 这里我们选择PiCrawler.
+    在 Preset 区域中已经为部分产品预设了控制器，这里我们选择 PiCrawler。  
 
     .. image:: img/app_control1.jpg
 
-    Give it a name and select the Controller type. 
+    为该控制器命名，并选择 Controller 类型。  
 
     .. image:: img/app_control2.jpg
 
-    进入到这个预设的控制器之后，你会发现已经有一些小部件了。如果你没有其他要修改的，点击|app_save|按键。
+    进入该预设控制器后，可以看到已经存在一些默认控件。如果无需修改，直接点击 ``app_save`` 按钮即可。  
 
     .. image:: img/app_control3.jpg
 
-#. Connect to PiCrawler.
+#. 连接 PiCrawler。  
 
-    When you click the **Connect** button, it will automatically search for robots nearby. Its name is defined in ``picrawler_control.py`` and it must be running at all times.
+    点击 **Connect** 按钮后，系统会自动搜索附近的机器人。其名称在 ``picrawler_control.py`` 中定义，并且必须保持运行。  
 
     .. image:: img/app_control6.jpg
     
-    Once you click on the product name, the message "Connected Successfully" will appear and the product name will appear in the upper right corner.
+    点击产品名称后，会提示 “Connected Successfully”，同时设备名称会显示在右上角。  
 
     .. image:: img/app_control7.jpg
 
     .. note::
 
-        * You need to make sure that your mobile device is connected to the same LAN as PiCrawler.
-        * If it doesn't search automatically, you can also manually enter the IP to connect.
+        * 请确保移动设备与 PiCrawler 处于同一局域网内。  
+        * 如果未能自动搜索到，也可以手动输入 IP 地址进行连接。  
 
         .. image:: img/app11.PNG
 
-#. Run this controller.
+#. 运行控制器。  
 
-    Click the **Run** button to start the controller, you will see the footage of the car shooting, and now you can control your PiCrawler with these widgets.
+    点击 **Run** 按钮即可启动控制器，此时你将看到小车的实时画面，并可以通过各个控件来操控 PiCrawler。  
 
     .. image:: img/app_control8.jpg
     
-    Here are the functions of the widgets.
+    以下是各控件的功能说明：  
 
-    * **A**: Set the power of the Picrawler.
-    * **B**: Show the move speed of the robot.
-    * **C**: The same function as the B widget.
-    * **D**: Show the detected obstacles in red points.
-    * **G**: voice recognition, press and hold this widget to start speaking, and it will show the recognized voice when you release it. We have set ``forward``, ``backard``, ``left`` and ``right`` 4 commands in the code to control the car.
-    * **K**: Control forward, backward, left, and right motions of the car.
-    * **Q**: turn the head(Camera) up, down, left and right.
-    * **N**: Turn on the color recognition function.
-    * **O**: Turn on the face recognition function.
-    * **P**: Turn on the object recognition function, it can recognize nearly 90 kinds of objects, for the list of models, please refer to: https://github.com/sunfounder/vilib/blob/master/workspace/coco_labels.txt.
+    * **A**: 设置 PiCrawler 的供电功率。  
+    * **B**: 显示机器人的运动速度。  
+    * **C**: 与 B 控件功能相同。  
+    * **D**: 以红点形式显示检测到的障碍物。  
+    * **G**: 语音识别功能，长按开始说话，松开后显示识别结果。代码中已设置 ``forward`` 、 ``backard`` 、 ``left`` 和 ``right`` 四个语音指令来控制小车移动。  
+    * **K**: 控制小车前进、后退、左转和右转。  
+    * **Q**: 控制摄像头（头部）上下左右转动。  
+    * **N**: 开启颜色识别功能。  
+    * **O**: 开启人脸识别功能。  
+    * **P**: 开启物体识别功能，可识别约 90 种物体，完整模型列表请参考：https://github.com/sunfounder/vilib/blob/master/workspace/coco_labels.txt。  
 
 

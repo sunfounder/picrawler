@@ -1,71 +1,59 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _ezb_servo_adjust:
 
-Quick Guide on EzBlock
+EzBlock 快速指南
 ===========================
 
 .. note::
 
-    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
+    如果你使用的是 Raspberry Pi 5，我们的图形化编程软件 EzBlock 暂不支持。
 
-The angle range of the servo is -90~90, but the angle set at the factory is random, maybe 0°, maybe 45°; if we assemble it with such an angle directly, it will lead to a chaotic state after the robot runs the code, or worse, it will cause the servo to block and burn out.
+舵机的角度范围是 -90° ~ 90°，但出厂时的初始角度是随机的，可能是 0°，也可能是 45°。  
+如果直接在这种角度下进行组装，在机器人运行代码后可能会出现混乱，甚至更糟，会导致舵机卡死烧毁。
 
-So here we need to set all the servo angles to 0° and then install them, so that the servo angle is in the middle, no matter which direction to turn.
+因此，我们需要先将所有舵机的角度设置为 0°，再进行安装。这样舵机将处于中位角度，无论向哪个方向转动都能保持正常。
 
-#. Firstly, :ref:`ezblock:install_ezblock_os_latest` (EzBlock's own tutorials) onto a Micro SD card, once the installation is complete, insert it into the Raspberry Pi.
+#. 首先，将 :ref:`ezblock:install_ezblock_os_latest` （EzBlock 官方教程）烧录到 Micro SD 卡上。安装完成后，将其插入 Raspberry Pi。
 
     .. note::
-        After the installation is complete, please return to this page.
+        安装完成后，请返回本页面继续操作。
 
     .. image:: img/insert_sd_card.png
         :width: 500
         :align: center
 
-#. To ensure that the servo has been properly set to 0°, first insert the servo arm into the servo shaft and then gently rotate the rocker arm to a different angle. This servo arm is just to allow you to clearly see that the servo is rotating.
+#. 为确保舵机已正确归零，先将舵机臂插入舵机轴，再轻轻转动舵机臂到不同角度。舵机臂的作用是方便你直观观察舵机的转动。
 
     .. image:: img/servo_arm.png
 
-#. Follow the instructions on the assembly foldout, insert the battery cable and turn the power switch to the ON. Then plug in a powered USB-C cable to activate the battery. Wait for 1-2 minutes, there will be a sound to indicate that the Raspberry Pi boots successfully.
+#. 按照装配说明书操作，先插入电池线并将电源开关拨到 ON，再插入一根已供电的 USB-C 线激活电池。等待 1~2 分钟，会听到提示音，表示 Raspberry Pi 启动成功。
 
     .. image:: img/Z_BTR.JPG
         :width: 800
         :align: center
 
-#. Next, plug the servo cable into the P11 port as follows.
+#. 接着，将舵机线插入 P11 端口，如下图所示。
 
     .. image:: img/Z_P11.JPG
 
-#. Press and hold the **USR** key, then press the **RST** key to execute the servo zeroing script within the system. When you see the servo arm rotate to a position(This is the 0° position, which is a random location and may not be vertical or parallel.), it indicates that the program has run.
+#. 长按 **USR** 键，然后按下 **RST** 键，系统将执行舵机归零脚本。  
+   当你看到舵机臂转动到某个位置（此位置即为 0°，它是随机的，可能不是竖直或水平），说明程序已运行完成。
 
     .. note::
 
-        This step only needs to be done once; afterward, simply insert other servo wires, and they will automatically zero.
+        该步骤只需执行一次；之后只需插入其他舵机线，它们会自动归零。
 
     .. image:: img/Z_P11_BT.png
         :width: 400
         :align: center
-    
-#. Now, remove the servo arm, ensuring the servo wire remains connected, and do not turn off the power. Then continue the assembly following the paper assembly instructions.
+
+#. 现在，取下舵机臂，保持舵机线连接并且不要断电，然后继续按照纸质装配说明完成组装。
 
 .. note::
 
-    * Do not unplug this servo cable before fastening this servo with the servo screw, you can unplug it after fastening.
-    * Do not turn the servo while it is powered on to avoid damage; if the servo shaft is inserted at the wrong angle, pull out the servo and reinsert it.
-    * Before assembling each servo, you need to plug the servo cable into P11 and turn on the power to set its angle to 0°.
-    * This zeroing function will be disabled if you download a program to the robot later with the EzBlock APP.
+    * 在用螺丝固定舵机前，请勿拔下该舵机线；固定完成后再拔下即可。  
+    * 舵机通电时不要强行转动，以免损坏；如果舵机轴插入角度有误，请拔出并重新插入。  
+    * 在组装每个舵机前，都需要先将舵机线插入 P11 并通电，将其角度设为 0°。  
+    * 当你之后通过 EzBlock APP 向机器人下载程序后，该归零功能将被禁用。
 
 
 

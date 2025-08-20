@@ -1,29 +1,15 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_posture:
 
-Adjust Posture
+调整姿态
 =====================
 
-In this example, we use the keyboard to control the PiCrawler foot by foot and assume the desired posture.
+在本示例中，我们将通过键盘逐条腿地控制 PiCrawler，并调整到所需的姿态。
 
-You can press the space bar to print out the current coordinate values. These coordinate values come in handy when you create unique actions for PiCrawler.
+你可以按下空格键打印出当前的坐标值。在为 PiCrawler 创建独特的动作时，这些坐标值将非常有用。
 
 .. image:: img/1cood.A.png
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -34,14 +20,14 @@ You can press the space bar to print out the current coordinate values. These co
     cd ~/picrawler/examples
     sudo python3 do_single_leg.py
 
-After the code runs, please operate according to the prompt that pops up in the terminal.
+代码运行后，请根据终端中出现的提示进行操作。
 
-* Press ``1234`` to select the feet separately, ``1``: right front foot, ``2``: left front foot, ``3``: left rear foot, ``4``: right rear foot
-* Press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` to slowly control the PiCrawler's coordinate values.
-* Press ``Ctrl+C`` to exit.
+* 按下 ``1234`` 分别选择腿部， ``1``：右前腿， ``2`` ：左前腿， ``3`` ：左后腿， ``4`` ：右后腿  
+* 按下 ``w`` 、 ``a`` 、 ``s`` 、 ``d`` 、 ``r``、 ``f`` 可逐步调整 PiCrawler 的坐标值  
+* 按下 ``Ctrl+C`` 退出程序  
 
 
-**Code**
+**代码**
 
 .. code-block:: python
 
@@ -124,5 +110,5 @@ After the code runs, please operate according to the prompt that pops up in the 
     if __name__ == "__main__":
         main()
 
-* ``current_step_all_leg_value()``: Returns the coordinate values of all legs.
-* ``do_single_leg(leg,coordinate[leg],speed)``: Modify the coordinate value of a certain leg individually.
+* ``current_step_all_leg_value()``：返回所有腿部的坐标值  
+* ``do_single_leg(leg,coordinate[leg],speed)``：单独修改某条腿的坐标值  

@@ -1,26 +1,12 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _py_keyboard:
 
-Keyboard Control
+键盘控制
 =======================
 
-In this project, we will learn how to use the keyboard to remotely control the PiCrawler. You can control the PiCrawler to move forward, backward, left, and right.
+在本项目中，我们将学习如何使用键盘远程控制 PiCrawler。你可以通过键盘操作让 PiCrawler 前进、后退、左转或右转。
 
 
-**Run the Code**
+**运行代码**
 
 .. raw:: html
 
@@ -31,16 +17,16 @@ In this project, we will learn how to use the keyboard to remotely control the P
     cd ~/picrawler/examples
     sudo python3 keyboard_control.py
 
-Press keys on keyboard to control PiCrawler!
+通过键盘按键来控制 PiCrawler！
 
-* ``w``: Forward
-* ``a``: Turn left
-* ``s``: Backward
-* ``d``: Turn right
-* ``Ctrl+C``: Quit
+* ``w``: 前进
+* ``a``: 左转
+* ``s``: 后退
+* ``d``: 右转
+* ``Ctrl+C``: 退出
 
 
-**Code**
+**代码**
 
 .. code-block:: python
 
@@ -92,9 +78,9 @@ Press keys on keyboard to control PiCrawler!
     if __name__ == "__main__":
         main()
 
-**How it works?**
+**它是如何工作的？**
 
-PiCrawler should take appropriate action based on the keyboard characters read. The ``lower()`` function converts upper case characters into lower case characters, so that the letter remains valid regardless of case.
+PiCrawler 会根据读取到的键盘按键执行相应的动作。 ``lower()`` 函数用于将大写字母转换为小写字母，这样无论输入大小写，都能保持按键有效。
 
 .. code-block:: python
 

@@ -121,11 +121,13 @@ rst_epilog = """
 
     <a href="https://docs.sunfounder.com/projects/pi-crawler/de/latest/" target="_blank">Deutsch Online-Kurs</a>
 
+.. |link_zh_tutorials| raw:: html
 
+    <a href="https://docs.sunfounder.com/projects/pi-crawler/zh-cn/latest/" target="_blank">中文在线教程</a>
 
 .. |link_voice_options| raw:: html
 
-    <a href="https://platform.openai.com/docs/guides/text-to-speech/voice-options" target="_blank">Voice options</a>
+    <a href="https://platform.openai.com/docs/guides/text-to-speech/voice-options" target="_blank">语音选项</a>
 
 .. |link_iso_language_code| raw:: html
 
@@ -133,11 +135,11 @@ rst_epilog = """
 
 .. |link_openai_platform| raw:: html
 
-    <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Platform</a>
+    <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI 平台</a>
 
 .. |link_microphone| raw:: html
 
-    <a href="https://www.sunfounder.com/products/mini-usb-microphone?_pos=2&_sid=d05c80026&_ss=r" target="_blank">Microphone link</a>
+    <a href="https://www.sunfounder.com/products/mini-usb-microphone?_pos=2&_sid=d05c80026&_ss=r" target="_blank">麦克风链接</a>
 
 .. |link_sf_facebook| raw:: html
 
@@ -145,7 +147,7 @@ rst_epilog = """
 
 .. |link_robot_hat| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/index.html" target="_blank">SunFounder Robot HAT Series</a>
+    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/index.html" target="_blank">SunFounder Robot HAT 系列</a>
 
 .. |link_robot_hat_v4| raw:: html
 
@@ -158,7 +160,7 @@ rst_epilog = """
 
 .. |link_Pi_Crawler| raw:: html
 
-    <a href="https://www.sunfounder.com/products/picrawler-robot-kit?_pos=1&_sid=2ebeb7ad0&_ss=r" target="_blank">Purchase Link for PiCrawler</a>
+    <a href="https://www.sunfounder.com/products/picrawler-robot-kit?_pos=1&_sid=2ebeb7ad0&_ss=r" target="_blank">PiCrawler 购买链接</a>
 
 .. |link_PiCrawler| raw:: html
 

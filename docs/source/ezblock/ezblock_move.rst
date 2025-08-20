@@ -1,59 +1,43 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _ezb_move:
 
-Move
+移动
 =================
 
-
-This is PiCrawler's first project. Perform its most basic function - move.
-
+这是 PiCrawler 的第一个项目，实现它最基础的功能 —— 移动。
 
 **Program**
 
 .. note::
 
-    * You can write the program according to the following picture, please refer to the tutorial: :ref:`ezblock:create_project_latest`.
-    * Or find the code with the same name on the **Examples** page of the EzBlock Studio and click **Run** or **Edit** directly.
+    * 你可以根据下图编写程序，详细操作请参考教程：:ref:`ezblock:create_project_latest`。
+    * 或者在 EzBlock Studio 的 **Examples** 页面找到同名示例代码，直接点击 **Run** 或 **Edit** 运行或修改。
 
 .. image:: img/move.png
 
-Click the Upload & Run button at the bottom right of the screen, and PiCrawler will execute "forward" and "backward" actions in sequence.
+点击屏幕右下角的 **Upload & Run** 按钮后，PiCrawler 将依次执行 “forward” 和 “backward” 动作。
 
+**工作原理**
 
-**How it works?**
-
-First, you need to understand the program framework of Ezblock. as follows:
+首先，你需要了解 Ezblock 的程序框架，如下图所示：
 
 .. image:: img/sp210927_162828.png
     :width: 200
 
-All Ezblock projects contain these two blocks. The **Start** block runs at the beginning of the program and is executed only once, and is often used to set variables; the **Forever** block runs after **Start**, and will be executed repeatedly, and is often used to implement main functions.
-If you delete these two blocks, you can drag them back from the **Basic** category on the left.
+所有 Ezblock 项目都包含这两个模块。 **Start** 模块在程序启动时运行，仅执行一次，通常用于设置变量； **Forever** 模块在 **Start** 之后运行，会被循环执行，通常用于实现主要功能。  
+如果不小心删除了这两个模块，可以从左侧的 **Basic** 分类中拖拽回来。
 
-Next you need to understand the following blocks.
+接下来需要了解以下模块：
 
 .. image:: img/sp210927_165133.png
 
-**do action** allows PiCrawler to perform basic actions. You can modify the options in the first groove. For example, select "Turn Left", "Back" and so on.
-The second groove can set the number of executions of the action, and only integer numbers greater than 0 can be written.
-The third groove can set the speed of the action, and only integers within 0~100 can be written.
+**do action** 模块让 PiCrawler 执行基础动作。  
+你可以修改第一个槽位的选项，例如选择“Turn Left”“Back”等。  
+第二个槽位用于设置该动作执行的次数，只能填写大于 0 的整数。  
+第三个槽位用于设置动作的速度，只能填写 0~100 之间的整数。
 
 .. image:: img/sp210927_170717.png
     :width: 500
 
-**do step** is similar to **do action**, but it is not an action but a static posture. Such as "stand", "sit".
+**do step** 与 **do action** 类似，但它不是动作，而是静态姿态，例如 “stand” “sit”。
 
-Both blocks can be dragged from the **PiCrawler** category on the left.
+这两个模块都可以从左侧的 **PiCrawler** 分类中拖拽获取。

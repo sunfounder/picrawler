@@ -1,32 +1,18 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-Calibrate the PiCrawler
+校准 PiCrawler
 =============================
 
-Due to possible deviations during PiCrawler installation or limitations of the servos themselves, some servo angles may be slightly tilted, so you can calibrate them.
+由于在安装 PiCrawler 过程中可能存在偏差，或伺服舵机本身存在一定的限制，部分舵机的角度可能会出现轻微偏移，因此需要进行校准。
 
-Of course you can skip this chapter if you think the assembly is perfect and doesn't require calibration.
+当然，如果你认为装配已经非常精准，无需调整，可以跳过本章节。
 
 
-The specific steps are as follows:
+具体步骤如下：
 
-1. Take out the assembly leaflet, turn it to the last page, and lay it flat on the table. Then place the PiCrawler as shown below, aligning its bottom with the outline on the calibration chart.
+1. 取出装配说明书，翻到最后一页并平放在桌面上。然后将 PiCrawler 按下图所示放置，使其底部与校准图上的轮廓对齐。
 
     .. image:: img/calibration2.png
 
-#. Run the ``calibration.py``.
+#. 运行 ``calibration.py``。
 
     .. raw:: html
 
@@ -37,20 +23,20 @@ The specific steps are as follows:
         cd ~/picrawler/examples/calibration
         sudo python3 calibration.py
         
-    After running the above code, you will see the following interface displayed in the terminal.
+    运行上述代码后，你将在终端中看到如下界面。
 
     .. image:: img/calibration1.png
 
 
-#. Press ``2`` and ``3`` keys respectively to choose left 2 legs，then press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` keys to move them to the calibration point.
+#. 分别按下 ``2`` 和 ``3`` 键选择左侧两条腿，然后使用 ``w`` 、 ``a`` 、 ``s`` 、 ``d`` 、 ``r`` 和 ``f`` 键将它们移动到校准点。
 
     .. image:: img/calibration3.png
 
-#. Now, change the calibration paper to the right and press the ``1`` and ``4`` keys to choose right 2 legs, then press ``w``, ``a``, ``s``, ``d``, ``r``, and ``f`` keys to move them to the calibration point.
+#. 接着，将校准纸移到右侧，并按下 ``1`` 和 ``4`` 键选择右侧两条腿，再使用 ``w`` 、 ``a`` 、 ``s`` 、 ``d`` 、 ``r`` 和 ``f`` 键将它们移动到校准点。
 
     .. image:: img/calibration4.png
 
-#. After the calibration is completed, press the ``space`` key to save, you will be prompted to enter ``Y`` to confirm, and then ``ctrl+c`` to exit the program to complete the calibration.
+#. 校准完成后，按下 ``space`` 键保存，此时会提示输入 ``Y`` 进行确认，然后按 ``ctrl+c`` 退出程序，即完成校准。
 
     .. image:: img/calibration5.png
 

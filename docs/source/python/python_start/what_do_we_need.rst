@@ -1,73 +1,45 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-1. What Do We Need?
+1. 我们需要什么？ 
 ===========================
 
-Required Components
+必需组件
 -----------------------
 
 **Raspberry Pi**
 
-The Raspberry Pi is a low cost, credit-card sized computer that plugs
-into a computer monitor or TV, and uses a standard keyboard and mouse.
-It is a capable little device that enables people of all ages to explore
-computing, and to learn how to program in languages like Scratch and
-Python.
+Raspberry Pi 是一款低成本、信用卡大小的微型计算机，可以连接到显示器或电视，并通过标准键盘和鼠标进行操作。
+它是一台功能强大的小型设备，适合各个年龄层用户探索计算机世界，并学习使用 Scratch 和 Python 等编程语言。  
 
 .. image:: img/compitable_pi.jpg
     :width: 600
     :align: center
 
-**Power Adapter**
+**电源适配器**
 
-To connect to a power socket, the Raspberry Pi has a micro USB port (the
-same found on many mobile phones). You will need a power supply which
-provides at least 2.5 amps.
+Raspberry Pi 通过 micro USB 接口（与许多手机相同）连接到电源插座。你需要一个至少能提供 2.5 安培电流的电源适配器。  
 
-**Micro SD Card**
+**Micro SD 卡**
 
-Your Raspberry Pi needs an Micro SD card to store all its files and the
-Raspberry Pi OS. You will need a micro SD card with a capacity of at
-least 8 GB
+Raspberry Pi 需要一张 Micro SD 卡来存储所有文件和 Raspberry Pi OS 系统。建议使用容量至少为 8 GB 的 Micro SD 卡。  
 
-Optional Components
+可选组件
 -------------------------
 
-**Screen**
+**显示屏**
 
-To view the desktop environment of Raspberry Pi, you need to use the
-screen that can be a TV screen or a computer monitor. If the screen has
-built-in speakers, the Pi plays sounds via them.
+如果你希望查看 Raspberry Pi 的桌面环境，可以使用显示屏（如电视或电脑显示器）。如果显示屏带有内置扬声器，Raspberry Pi 会通过它们输出声音。  
 
-**Mouse & Keyboard**
+**鼠标和键盘**
 
-When you use a screen , a USB keyboard and a USB mouse are also needed.
+在使用显示屏时，还需要配备 USB 键盘和 USB 鼠标。  
 
 **HDMI**
 
-The Raspberry Pi has a HDMI output port that is compatible with the HDMI
-ports of most modern TV and computer monitors. If your screen has only
-DVI or VGA ports, you will need to use the appropriate conversion line.
+Raspberry Pi 提供 HDMI 输出接口，可与大多数现代电视和电脑显示器的 HDMI 接口兼容。如果你的显示屏只有 DVI 或 VGA 接口，则需要使用相应的转换线缆。  
 
-**Case**
+**外壳**
 
-You can put the Raspberry Pi in a case; by this means, you can protect
-your device.
+你可以为 Raspberry Pi 配备一个外壳，以便更好地保护设备。  
 
-**Sound or Earphone**
+**音响或耳机**
 
-The Raspberry Pi is equipped with an audio port about 3.5 mm that can be
-used when your screen has no built-in speakers or when there is no
-screen operation.
+Raspberry Pi 配备了一个 3.5 mm 音频接口，可在显示屏没有内置扬声器或未使用显示屏时输出声音。  

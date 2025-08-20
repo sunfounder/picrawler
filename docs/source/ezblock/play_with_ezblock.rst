@@ -1,31 +1,17 @@
-.. note::
-
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
-
-    **Why Join?**
-
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
 .. _play_ezblock:
 
-Play with Ezblock
+畅玩 EzBlock
 ===========================
 
 .. note::
 
-    If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported.
+    如果你使用的是 Raspberry Pi 5，我们的图形化编程软件 EzBlock 暂不支持。
 
-For beginners and novices, EzBlock is a software development platform offered by SunFounder for Raspberry Pi. Ezbock offers two programming environments: a graphical environment and a Python environment.
+对于初学者而言，EzBlock 是 SunFounder 专为 Raspberry Pi 提供的软件开发平台。EzBlock 提供两种编程环境：图形化编程环境和 Python 编程环境。
 
-It is available for almost all types of devices, including Mac, PC, and Android.
+它几乎可以在所有类型的设备上运行，包括 Mac、PC 和 Android。
 
-Here is a tutorial to help you complete EzBlock installation, download, and use.
+以下教程将帮助你完成 EzBlock 的安装、下载与使用。
 
 
 .. toctree::
@@ -35,13 +21,12 @@ Here is a tutorial to help you complete EzBlock installation, download, and use.
     get_start_app
     calibrate
 
-
 **Projects**
 
-Here, we show you the projects of playing PiCrawler on Ezblock Studio. If you are new to these, you can refer to the code images inside each project to program, and can learn the use of blocks according to TIPS.
+在这里，我们展示了使用 EzBlock Studio 操控 PiCrawler 的各类项目。  
+如果你是新手，可以参考每个项目中的代码示意图来编程，并根据 **TIPS** 学习模块的使用方法。
 
-If you don't want to write these projects one by one, we have uploaded them to Ezblock Studio's Examples page and you can run them directly or edit them and run them later.
-
+如果你不想逐个编写这些项目，我们已经将它们上传至 EzBlock Studio 的 **Examples** 页面，你可以直接运行，或者先编辑再运行。
 
 .. toctree::
 
@@ -58,4 +43,3 @@ If you don't want to write these projects one by one, we have uploaded them to E
     ezblock_record_new_step   
     ezblock_twist
     ezblock_emotional_robot
-
