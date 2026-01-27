@@ -32,22 +32,21 @@ Thank you for choosing our |link_PiCrawler|.
    
     Please click on the respective links to access the document in your preferred language.
 
+.. image:: img/PiCrawler.jpg
+    :width: 500px
+    :align: center
 
-PiCrawler is a Raspberry Pi quadruped robot with aluminum alloy structure. 
-It is equipped with a camera module, which can perform color recognition, face detection and other items; 
-12 metal gear servos support it to walk, dance, and pose various postures; 
-the ultrasonic module on the body allows it to quickly detect obstacles in front of it; the expansion board-robot HAT is equipped with a speaker, allowing it to express emotions such as happiness and excitement.
+PiCrawler is a Raspberry Pi–based quadruped robot with an aluminum alloy structure.  
+It features a camera module for color recognition and face detection, 12 metal-gear servos for walking and dynamic movements, an ultrasonic sensor for obstacle detection, and a Robot HAT with a built-in speaker for expressive sound effects.
 
+This documentation includes the parts list, assembly guide, Robot HAT introduction, and PiCrawler programming tutorials.
 
-This document includes the list and assembly pdf, Robot HAT introduction and PiCrawler programming.
+Programming is divided into two chapters:
 
-The programming part is divided into two chapters: :ref:`play_ezblock` & :ref:`play_python`, each chapter allows you to explain how to make PiCrawler work the way you want.
+* :ref:`play_ezblock`: Use Ezblock Studio for graphical programming.
+* :ref:`play_python`: More experienced users can program PiCrawler directly using Python.
 
-Ezblock Studio is a development platform developed by SunFounder for beginners, aiming to lower the barriers to entry for Raspberry Pi. It has two programming languages: Graphical and Python, which can be used on almost all different types of devices. With Bluetooth and Wi-Fi support, you can download codes on Ezblock Studio and remotely control Raspberry Pi.
-
-More experienced makers can use the popular programming language-Python.
-
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+If you have any questions, please contact service@sunfounder.com.
 
 
 **Content**
@@ -60,7 +59,7 @@ If you have any questions, please send an email to service@sunfounder.com and we
     ezblock/play_with_ezblock
     servo_zeroing
     openai
-    appendix/appendix
+    appendix
     hardware/cpn_hardware
     faq
 

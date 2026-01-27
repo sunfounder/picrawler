@@ -17,18 +17,36 @@
 Play with Python
 ====================
 
-If you want to program in python, then you will need to learn some basic Python programming skills and basic knowledge of Raspberry Pi, please configure the Raspberry Pi first according to :ref:`quick_guide_python`.
+Learn how to set up your Raspberry Pi environment:  
+install Raspberry Pi OS, configure Wi-Fi, and enable remote access so you can run Python code easily.  
+If you already know how to use Raspberry Pi and access its command line, you may skip directly to the later parts.
 
+.. _quick_guide_python:
+
+1. Quick Guide on Python
+--------------------------------------------
+
+Learn how to set up your Raspberry Pi environment:  
+install Raspberry Pi OS, configure Wi-Fi, and enable remote access so you can run Python code easily.  
+If you already know how to use Raspberry Pi and access its command line, you may skip directly to the later parts.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
-    python_start/quick_guide_on_python
-    python_start/calibrate
+    ../_shared/pi_start/need_components
+    ../_shared/pi_start/install_os_trixie
+    ../_shared/pi_start/power_supply_robot_hat
+    ../_shared/pi_start/set_up_pi
+    install_all_modules
+    py_servo_adjust
+    calibrate
 
 
+2. Hands-on Python Projects
+----------------------------------------------
 
-After the assembly is complete, you can try to run the projects below.
+In this section, you will explore practical Python projects to control and extend PiCrawler.  
+These examples demonstrate movement control, sensor-based interaction, sound effects, and computer vision features, helping you learn how to build your own PiCrawler applications.
 
 .. toctree::
 

@@ -12,27 +12,15 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _quick_guide_python:
-
-Quick Guide on Python
-==========================
-
-This section is to teach you how to install Raspberry Pi OS, configure wifi to Raspberry Pi, remote access to Raspberry Pi to run the corresponding code.
-
-If you are familiar with Raspberry Pi and can open the command line successfully, then you can skip the first 3 parts and then complete the last part. 
-
-
+Appendix
+===============
 
 .. toctree::
     :maxdepth: 1
 
-    what_do_we_need
-    installing_the_os
-    charge_battery
-    set_up_your_raspberry_pi
-    install_all_modules
-    enable_i2c
-    py_servo_adjust
-    
-
-
+    _shared/appendix/i2c_configuration
+    _shared/appendix/spi_configuration
+    _shared/appendix/remote_desktop
+    _shared/appendix/filezilla
+    _shared/appendix/install_openssh_powershell
+    _shared/appendix/login_windows
