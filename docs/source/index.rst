@@ -32,24 +32,21 @@ SunFounder Raspberry Pi ロボット - |link_PiCrawler|
    
     ご希望の言語のリンクをクリックして、ドキュメントにアクセスしてください。
 
-.. .. image:: img/picrawler.jpg
-    :width: 600
+.. image:: img/PiCrawler.jpg
+    :width: 500px
     :align: center
 
-PiCrawlerは、アルミ合金製の構造を持つRaspberry Pi用の四足歩行ロボットです。 
-カメラモジュールが搭載されており、カラー認識や顔認識などを実行できます。 
-12個の金属ギアサーボモーターにより、歩行、ダンス、さまざまなポーズを取ることができます。 
-本体に搭載された超音波モジュールは、前方の障害物を迅速に検知することができます。拡張ボードであるロボットHATにはスピーカーも搭載されており、喜びや興奮といった感情を表現することができます。
+PiCrawler は Raspberry Pi をベースにした四足歩行ロボットで、アルミ合金構造を採用しています。  
+カラー認識や顔検出が可能なカメラモジュール、歩行やダイナミックな動作を実現する 12 個のメタルギアサーボ、障害物検知用の超音波センサー、表現豊かな効果音を出力できる内蔵スピーカー付き Robot HAT を搭載しています。
 
-この文書には、リストおよび組み立てのPDF、Robot HATの紹介、そしてPiCrawlerのプログラミングが含まれています。
+本ドキュメントには、部品リスト、組み立てガイド、Robot HAT の紹介、および PiCrawler のプログラミングチュートリアルが含まれています。
 
-プログラミング部分は、:ref:`play_ezblock` と :ref:`play_python` の2章に分かれており、それぞれの章でPiCrawlerを希望通りに動作させる方法を説明しています。
+プログラミングは次の 2 つの章に分かれています：
 
-Ezblock Studioは、SunFounderが初心者向けに開発した開発プラットフォームで、Raspberry Piの導入障壁を下げることを目的としています。グラフィカルとPythonという2つのプログラミング言語をサポートしており、ほぼすべての異なるデバイスで使用可能です。BluetoothとWi-Fiにも対応しており、Ezblock Studioでコードをダウンロードして、Raspberry Piをリモートで制御できます。
+* :ref:`play_ezblock`: Ezblock Studio を使用したビジュアルプログラミング。
+* :ref:`play_python`: より経験のあるユーザーは、Python を使用して PiCrawler を直接プログラミングできます。
 
-より経験豊富なメイカーは、人気のあるプログラミング言語であるPythonを使用することができます。
-
-ご質問がある場合は、service@sunfounder.comまでメールをお送りください。できるだけ早くご返答いたします。
+ご不明な点がございましたら、service@sunfounder.com までお問い合わせください。
 
 **内容**
 
@@ -61,7 +58,7 @@ Ezblock Studioは、SunFounderが初心者向けに開発した開発プラッ�
     ezblock/play_with_ezblock
     servo_zeroing
     openai
-    appendix/appendix
+    appendix
     hardware/cpn_hardware
     faq
 

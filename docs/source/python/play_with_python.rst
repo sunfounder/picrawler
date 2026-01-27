@@ -15,22 +15,42 @@
 
 .. _play_python:
 
-Pythonで遊ぼう
+Python で遊ぼう
 ====================
 
-Pythonでプログラムを作成したい場合は、基本的なPythonプログラミングスキルとRaspberry Piに関する基本的な知識が必要です。まずは、:ref:`quick_guide_python` に従ってRaspberry Piの設定を行ってください。
+Raspberry Pi 環境のセットアップ方法を学びます。  
+Raspberry Pi OS のインストール、Wi-Fi の設定、リモートアクセスの有効化を行い、Python コードを簡単に実行できるようにします。  
+すでに Raspberry Pi の使用方法やコマンドライン操作に慣れている場合は、後半の内容を直接進めても構いません。
+
+.. _quick_guide_python:
+
+1. Python クイックガイド
+--------------------------------------------
+
+Raspberry Pi 環境のセットアップ方法を学びます。  
+Raspberry Pi OS のインストール、Wi-Fi の設定、リモートアクセスの有効化を行い、Python コードを簡単に実行できるようにします。  
+すでに Raspberry Pi の使用方法やコマンドライン操作に慣れている場合は、後半の内容を直接進めても構いません。
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
-    python_start/quick_guide_on_python
-    python_start/calibrate
+    ../_shared/pi_start/need_components
+    ../_shared/pi_start/install_os_trixie
+    ../_shared/pi_start/power_supply_robot_hat
+    ../_shared/pi_start/set_up_pi
+    install_all_modules
+    py_servo_adjust
+    calibrate
 
 
+2. Python 実践プロジェクト
+----------------------------------------------
 
-組み立てが完了したら、以下のプロジェクトを試してみましょう。
+このセクションでは、PiCrawler を制御および拡張するための実践的な Python プロジェクトを学びます。  
+移動制御、センサーによるインタラクション、サウンドエフェクト、コンピュータビジョン機能などの例を通じて、独自の PiCrawler アプリケーションを構築する方法を学習できます。
 
 .. toctree::
+
 
     python_move
     python_keyboard_control
