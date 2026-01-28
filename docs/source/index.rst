@@ -61,7 +61,7 @@ Se hai domande, invia un'email a service@sunfounder.com e ti risponderemo il pri
     ezblock/play_with_ezblock
     servo_zeroing
     openai
-    appendix/appendix
+    appendix
     hardware/cpn_hardware
     faq
 

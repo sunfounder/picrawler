@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-7. Regolazione del Servo (Importante)
+Regolazione del Servo (Importante)
 =========================================
 
 .. note::
