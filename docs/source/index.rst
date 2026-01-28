@@ -32,28 +32,21 @@ Vielen Dank, dass Sie sich für unseren |link_PiCrawler| entschieden haben.
    
     Bitte klicken Sie auf die entsprechenden Links, um das Dokument in Ihrer bevorzugten Sprache zu öffnen.
 
-.. 
-    .. image:: img/picrawler.jpg
-    :width: 600
+.. image:: img/PiCrawler.jpg
+    :width: 500px
     :align: center
 
-PiCrawler ist ein vierbeiniger Roboter mit einer Aluminiumlegierungsstruktur, der auf einem Raspberry Pi basiert.  
-Er ist mit einem Kameramodul ausgestattet, das Funktionen wie Farberkennung, Gesichtserkennung und weitere Objekterkennungen ausführen kann.  
-12 Servomotoren mit Metallgetriebe ermöglichen ihm das Laufen, Tanzen und Einnehmen verschiedener Posen.  
-Das Ultraschallmodul an seinem Gehäuse erlaubt ihm, Hindernisse vor sich schnell zu erkennen.  
-Die Erweiterungsplatine Robot HAT verfügt über einen Lautsprecher, mit dem der PiCrawler Emotionen wie Freude und Aufregung ausdrücken kann.
+PiCrawler ist ein auf Raspberry Pi basierender vierbeiniger Roboter mit einer Struktur aus Aluminiumlegierung.  
+Er verfügt über ein Kameramodul zur Farberkennung und Gesichtserkennung, 12 Metallgetriebe-Servos für Gehen und dynamische Bewegungen, einen Ultraschallsensor zur Hinderniserkennung sowie ein Robot HAT mit integriertem Lautsprecher für ausdrucksstarke Soundeffekte.
 
-Dieses Dokument umfasst die Liste und Montage-PDF, eine Einführung zum Robot HAT sowie die Programmierung des PiCrawler.
+Diese Dokumentation enthält die Teileliste, die Montageanleitung, eine Einführung in den Robot HAT und PiCrawler-Programmier-Tutorials.
 
-Der Programmierabschnitt ist in zwei Kapitel unterteilt: :ref:`play_ezblock` & :ref:`play_python`. Jedes Kapitel erklärt, wie Sie den PiCrawler so steuern können, wie Sie es möchten.
+Die Programmierung ist in zwei Kapitel unterteilt:
 
-Ezblock Studio ist eine von SunFounder entwickelte Entwicklungsplattform für Anfänger, die darauf abzielt, die Einstiegshürden für Raspberry Pi zu senken.  
-Sie unterstützt zwei Programmiersprachen: Grafische Programmierung und Python, die auf nahezu allen Gerätetypen verwendet werden können.  
-Mit Bluetooth- und WLAN-Unterstützung können Sie Codes in Ezblock Studio herunterladen und den Raspberry Pi fernsteuern.
+* :ref:`play_ezblock`: Ezblock Studio für die grafische Programmierung verwenden.
+* :ref:`play_python`: Erfahrenere Benutzer können PiCrawler direkt mit Python programmieren.
 
-Erfahrenere Nutzer können die beliebte Programmiersprache Python verwenden.
-
-Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com, und wir werden so schnell wie möglich antworten.
+Wenn Sie Fragen haben, wenden Sie sich bitte an service@sunfounder.com.
 
 **Inhalt**
 
@@ -65,7 +58,7 @@ Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com, u
     ezblock/play_with_ezblock  
     servo_zeroing  
     openai  
-    appendix/appendix  
+    appendix  
     hardware/cpn_hardware  
     faq  
 
