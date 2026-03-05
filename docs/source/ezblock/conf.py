@@ -18,8 +18,8 @@ import sphinx_rtd_theme
 html_theme = 'sphinx_rtd_theme'
 # -- Project information -----------------------------------------------------
 
-project = 'pisloth'
-copyright = '2021, sunfounder'
+project = 'SunFounder Picrawler Kit'
+copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'sunfounder'
 
 

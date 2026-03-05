@@ -31,7 +31,7 @@
 **代码**
 
 .. note::
-    你可以对下面的代码进行 **Modify/Reset/Copy/Run/Stop** 操作。但在此之前，需要进入源码路径，例如 ``pisloth\examples``。修改代码后可直接运行并查看效果。
+    你可以对下面的代码进行 **Modify/Reset/Copy/Run/Stop** 操作。但在此之前，需要进入源码路径，例如 ``picrawler\examples``。修改代码后可直接运行并查看效果。
 
 .. raw:: html
 
