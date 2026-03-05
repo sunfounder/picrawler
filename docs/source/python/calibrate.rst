@@ -5,6 +5,9 @@
 
 当然，如果你认为装配已经非常精准，无需调整，可以跳过本章节。
 
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/48FLHB_cw3k?si=Zla7BApIt0o6tq73" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 具体步骤如下：
 
