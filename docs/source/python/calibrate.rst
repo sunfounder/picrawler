@@ -19,6 +19,9 @@ Aufgrund möglicher Abweichungen während der Installation des PiCrawler oder Ei
 
 Selbstverständlich können Sie dieses Kapitel überspringen, wenn Sie der Meinung sind, dass die Montage perfekt ist und keine Kalibrierung erfordert.  
 
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/48FLHB_cw3k?si=Zla7BApIt0o6tq73" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Die spezifischen Schritte sind wie folgt:  
 
