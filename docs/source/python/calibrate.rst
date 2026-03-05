@@ -19,6 +19,9 @@ Debido a posibles desviaciones durante la instalación del PiCrawler o limitacio
 
 Por supuesto, puedes omitir este capítulo si crees que el ensamblaje es perfecto y no requiere calibración.
 
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/48FLHB_cw3k?si=Zla7BApIt0o6tq73" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Los pasos específicos son los siguientes:
 

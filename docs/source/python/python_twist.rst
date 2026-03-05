@@ -32,6 +32,14 @@ Aquí, las cuatro patas de PiCrawler se levantan y bajan de dos en dos, saltando
     cd ~/picrawler/examples
     sudo python3 twist.py
 
+Después de que el programa comienza, el robot primero se pone de pie lentamente para alcanzar una postura estable.
+
+Una vez de pie, la música de fondo comienza a reproducirse. Al mismo tiempo, el robot realiza un movimiento continuo de baile con torsión. Durante este movimiento, las cuatro patas se levantan y bajan alternativamente, creando un efecto rítmico de torsión. Las patas se mueven en pares coordinados para que el cuerpo parezca balancearse de un lado a otro.
+
+Un pequeño retraso entre cada paso hace que el movimiento sea más suave y estable, en lugar de brusco o demasiado rápido.
+
+El robot continúa bailando mientras suena la música. Cuando se presiona **Ctrl+C**, el programa se detiene y el robot vuelve de forma segura a una posición sentada antes de salir.
+
 **Código**
 
 .. note::
@@ -45,38 +53,54 @@ Aquí, las cuatro patas de PiCrawler se levantan y bajan de dos en dos, saltando
 
     from picrawler import Picrawler
     from robot_hat import Music
+    from time import sleep
 
     music = Music()
     crawler = Picrawler()
 
-
     def twist(speed):
-        new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
+        new_step = [[50, 50, -80], [50, 50, -80], [50, 50, -80], [50, 50, -80]]
+
         for i in range(4):
-            for inc in range(30, 60, 5): 
-                rise = [50,50,(-80+inc*0.5)]
-                drop = [50,50,(-80-inc)]
+            for inc in range(30, 60, 5):
+                rise = [50, 50, (-80 + inc * 0.5)]
+                drop = [50, 50, (-80 - inc)]
 
-                new_step[i]=rise
-                new_step[(i+2)%4] = drop
-                new_step[(i+1)%4] = rise
-                new_step[(i-1)%4] = drop
-                # print(new_step)
-                crawler.do_step(new_step,speed)
+                new_step[i] = rise
+                new_step[(i + 2) % 4] = drop
+                new_step[(i + 1) % 4] = rise
+                new_step[(i - 1) % 4] = drop
 
+                crawler.do_step(new_step, speed)
+                sleep(0.03)  # small delay to make motion smoother and less "crazy"
 
-    def main():  
+    def main():
+        try:
+            # Stand up slowly first
+            crawler.do_step('stand', 40)
+            sleep(1.0)
 
-        music.music_play('./musics/sports-Ahjay_Stelino.mp3')
-        music.music_set_volume(20)
+            # Start music
+            music.music_play('./musics/sports-Ahjay_Stelino.mp3')
+            music.music_set_volume(20)
 
-        while True:
-            twist(speed=100) 
+            while True:
+                twist(speed=100)
 
-    
+        except KeyboardInterrupt:
+            print("\nCtrl+C detected, exiting...")
+
+        finally:
+            # Sit down safely before exit
+            try:
+                crawler.do_step('sit', 40)
+                sleep(1.0)
+            except Exception:
+                pass
+
     if __name__ == "__main__":
         main()
-
+    
 **¿Cómo funciona?**
 
 En este código, debes prestar atención a esta parte:
@@ -84,18 +108,21 @@ En este código, debes prestar atención a esta parte:
 .. code-block:: python
 
     def twist(speed):
-        ## [derecha delantera],[izquierda delantera],[izquierda trasera],[derecha trasera]
-        new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
-        for i in range(4):
-            for inc in range(30,60,5):  
-                rise = [50,50,(-80+inc*0.5)]
-                drop = [50,50,(-80-inc)]
+        new_step = [[50, 50, -80], [50, 50, -80], [50, 50, -80], [50, 50, -80]]
 
-                new_step[i]=rise
-                new_step[(i+2)%4] = drop
-                new_step[(i+1)%4] = rise
-                new_step[(i-1)%4] = drop
-                crawler.do_step(new_step,speed)
+        for i in range(4):
+            for inc in range(30, 60, 5):
+                rise = [50, 50, (-80 + inc * 0.5)]
+                drop = [50, 50, (-80 - inc)]
+
+                new_step[i] = rise
+                new_step[(i + 2) % 4] = drop
+                new_step[(i + 1) % 4] = rise
+                new_step[(i - 1) % 4] = drop
+
+                crawler.do_step(new_step, speed)
+                sleep(0.03)  # small delay to make motion smoother and less "crazy"
+
 
 En resumen, utiliza dos capas de bucles for para que el array ``new_step`` produzca cambios continuos y regulares. Al mismo tiempo, ``crawler.do_step()`` ejecuta la pose para formar una acción continua.
 
