@@ -32,6 +32,14 @@ Ici, les quatre pieds de PiCrawler se soulèvent et s'abaissent par paires, en s
     cd ~/picrawler/examples
     sudo python3 twist.py
 
+Après le démarrage du programme, le robot se met d’abord debout lentement afin d’atteindre une posture stable.
+
+Une fois debout, la musique de fond commence à jouer. En même temps, le robot effectue un mouvement de danse en torsion continu. Pendant ce mouvement, les quatre pattes se lèvent et s’abaissent alternativement, créant un effet de torsion rythmique. Les pattes se déplacent par paires coordonnées, ce qui donne l’impression que le corps se balance de gauche à droite.
+
+Un court délai entre chaque étape rend le mouvement plus fluide et plus stable, au lieu d’être brusque ou trop rapide.
+
+Le robot continue de danser pendant que la musique joue. Lorsque **Ctrl+C** est pressé, le programme s’arrête et le robot revient en toute sécurité à une position assise avant de quitter.
+
 
 **Code**
 
@@ -46,85 +54,104 @@ Ici, les quatre pieds de PiCrawler se soulèvent et s'abaissent par paires, en s
 
     from picrawler import Picrawler
     from robot_hat import Music
+    from time import sleep
 
     music = Music()
     crawler = Picrawler()
 
-
     def twist(speed):
-        new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
+        new_step = [[50, 50, -80], [50, 50, -80], [50, 50, -80], [50, 50, -80]]
+
         for i in range(4):
-            for inc in range(30, 60, 5): 
-                rise = [50,50,(-80+inc*0.5)]
-                drop = [50,50,(-80-inc)]
+            for inc in range(30, 60, 5):
+                rise = [50, 50, (-80 + inc * 0.5)]
+                drop = [50, 50, (-80 - inc)]
 
-                new_step[i]=rise
-                new_step[(i+2)%4] = drop
-                new_step[(i+1)%4] = rise
-                new_step[(i-1)%4] = drop
-                # print(new_step)
-                crawler.do_step(new_step,speed)
+                new_step[i] = rise
+                new_step[(i + 2) % 4] = drop
+                new_step[(i + 1) % 4] = rise
+                new_step[(i - 1) % 4] = drop
 
+                crawler.do_step(new_step, speed)
+                sleep(0.03)  # small delay to make motion smoother and less "crazy"
 
-    def main():  
+    def main():
+        try:
+            # Stand up slowly first
+            crawler.do_step('stand', 40)
+            sleep(1.0)
 
-        music.music_play('./musics/sports-Ahjay_Stelino.mp3')
-        music.music_set_volume(20)
+            # Start music
+            music.music_play('./musics/sports-Ahjay_Stelino.mp3')
+            music.music_set_volume(20)
 
-        while True:
-            twist(speed=100) 
+            while True:
+                twist(speed=100)
 
+        except KeyboardInterrupt:
+            print("\nCtrl+C detected, exiting...")
+
+        finally:
+            # Sit down safely before exit
+            try:
+                crawler.do_step('sit', 40)
+                sleep(1.0)
+            except Exception:
+                pass
 
     if __name__ == "__main__":
         main()
 
-**Comment ça fonctionne ?**
+**Comment cela fonctionne ?**
 
-Dans ce code, il faut prêter attention à cette partie :
+Dans ce code, vous devez porter attention à la partie suivante :
 
 .. code-block:: python
 
     def twist(speed):
-        ## [avant droit], [avant gauche], [arrière gauche], [arrière droit]
-        new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
+        new_step = [[50, 50, -80], [50, 50, -80], [50, 50, -80], [50, 50, -80]]
+
         for i in range(4):
-            for inc in range(30,60,5):  
-                rise = [50,50,(-80+inc*0.5)]
-                drop = [50,50,(-80-inc)]
+            for inc in range(30, 60, 5):
+                rise = [50, 50, (-80 + inc * 0.5)]
+                drop = [50, 50, (-80 - inc)]
 
-                new_step[i]=rise
-                new_step[(i+2)%4] = drop
-                new_step[(i+1)%4] = rise
-                new_step[(i-1)%4] = drop
-                crawler.do_step(new_step,speed)
+                new_step[i] = rise
+                new_step[(i + 2) % 4] = drop
+                new_step[(i + 1) % 4] = rise
+                new_step[(i - 1) % 4] = drop
 
-En résumé, cela utilise deux boucles `for` pour faire en sorte que le tableau ``new_step`` subisse des changements réguliers et continus, et simultanément, la fonction ``crawler.do_step()`` exécute la posture pour créer une action fluide.
+                crawler.do_step(new_step, speed)
+                sleep(0.03)  # petit délai pour rendre le mouvement plus fluide et moins brusque
 
-Vous pouvez obtenir intuitivement le tableau des valeurs de coordonnées correspondant à chaque posture dans :ref:`py_posture`.
+En termes simples, ce code utilise deux boucles ``for`` imbriquées pour faire varier
+de manière continue et régulière les valeurs du tableau ``new_step``.  
+En même temps, ``crawler.do_step()`` exécute chaque posture, ce qui crée
+un mouvement continu.
 
+Vous pouvez obtenir intuitivement le tableau de coordonnées correspondant
+à chaque posture dans :ref:`py_posture`.
 
-De plus, l'exemple joue également de la musique en arrière-plan. Voici comment cela est mis en œuvre.
+De plus, cet exemple joue également une musique de fond.  
+La méthode d’implémentation est la suivante.
 
-Jouer de la musique en important les bibliothèques suivantes.
+Jouer de la musique en important la bibliothèque suivante :
 
 .. code-block:: python
 
     from robot_hat import Music
 
-Déclarez un objet Music.
+Déclarer un objet ``Music`` :
 
 .. code-block:: python
 
     music = Music()
 
-Jouez la musique située dans le répertoire ``picrawler/examples/musics`` et réglez le volume à 20. Vous pouvez également ajouter de la musique dans le dossier ``musics`` via :ref:`filezilla`.
+Lire la musique de fond située dans le dossier ``picrawler/examples/musics``
+et régler le volume à 20. Vous pouvez également ajouter de la musique
+dans le dossier ``musics`` via :ref:`filezilla`.
 
 .. code-block:: python
 
     music.music_play('./musics/sports-Ahjay_Stelino.mp3')
     music.music_set_volume(20)
-
-
-.. note::
-
-    Vous pouvez ajouter différents effets sonores ou musiques dans les dossiers ``musics`` ou ``sounds`` via :ref:`filezilla`.

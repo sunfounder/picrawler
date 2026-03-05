@@ -20,6 +20,11 @@ En raison des possibles déviations lors de l'installation du PiCrawler ou des l
 
 Bien sûr, vous pouvez sauter ce chapitre si vous pensez que l'assemblage est parfait et qu'aucune calibration n'est nécessaire.
 
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/48FLHB_cw3k?si=Zla7BApIt0o6tq73" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 Étapes spécifiques :
 
 1. Prenez le feuillet d'assemblage, tournez-le à la dernière page et posez-le à plat sur la table. Ensuite, placez le PiCrawler comme indiqué ci-dessous, en alignant sa base avec le contour du graphique de calibration.

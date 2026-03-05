@@ -51,76 +51,88 @@ Après le redémarrage, exécutez à nouveau le script ``i2samp.sh`` pour tester
     cd ~/picrawler/examples
     sudo python3 sound_effect.py
 
-Une fois le code exécuté, suivez les instructions qui s'affichent dans le terminal.
+Lorsque le programme démarre, un menu de contrôle s’affiche dans le terminal.
 
-Appuyez sur une touche pour appeler la fonction !
-* ``q`` : Lire la musique de fond
-* ``1`` : Lire un effet sonore
-* ``2`` : Lire un effet sonore avec des fils d'exécution
-* ``t`` : Texte à parler
-* Pour quitter le programme, appuyez sur ``Ctrl+C``.
+Appuyer sur une touche déclenche immédiatement la fonction correspondante.
+
+* ``q`` : Active ou désactive la musique de fond.
+* ``1`` : Joue plusieurs effets sonores l’un après l’autre (mode bloquant).
+* ``2`` : Joue les mêmes effets sonores en utilisant le multithreading (mode non bloquant).
+* ``t`` : Le système prononce le mot « Hello » en utilisant la synthèse vocale.
+
+Le programme fonctionne en continu et attend une entrée clavier.
+
+Appuyez sur Ctrl+C pour arrêter le programme.
+Avant de quitter, toute musique de fond est arrêtée automatiquement.
 
 **Code**
 
 .. code-block:: python
 
-    '''
-        Sorry, currently there is only sound when running with sudo
-    '''
-
     from time import sleep
-    from robot_hat import Music,TTS
+    import readchar
+    from robot_hat import Music, TTS
 
     music = Music()
     tts = TTS()
 
     manual = '''
-    Input key to call the function!
-        q: Play background music
-        1: Play sound effect
-        2: Play sound effect with threads
+    Press a key to trigger actions (no Enter needed):
+        q: Play/Stop background music
+        1: Play sound effect (blocking)
+        2: Play sound effect (threading)
         t: Text to speak
 
         Ctrl^C: quit
     '''
 
-    def main():  
+    def main():
         print(manual)
 
         flag_bgm = False
         music.music_set_volume(20)
         tts.lang("en-US")
 
+        try:
+            while True:
+                # Real-time key input (no Enter required)
+                key = readchar.readkey().lower()
 
-        while True:
-            key = input() 
-            key = key.lower() 
-            if key == "q":
-                flag_bgm = not flag_bgm
-                if flag_bgm is True:
-                    music.music_play('./musics/sports-Ahjay_Stelino.mp3')
-                else:
-                    music.music_stop()
+                if key == "q":
+                    flag_bgm = not flag_bgm
+                    if flag_bgm:
+                        music.music_play('./musics/sports-Ahjay_Stelino.mp3')
+                    else:
+                        music.music_stop()
 
-            elif key == "1":
-                music.sound_play('./sounds/talk1.wav')
-                sleep(0.05)
-                music.sound_play('./sounds/talk3.wav')
-                sleep(0.05)
-                music.sound_play('./sounds/sign.wav')
-                sleep(0.5)
+                elif key == "1":
+                    music.sound_play('./sounds/talk1.wav')
+                    sleep(0.05)
+                    music.sound_play('./sounds/talk3.wav')
+                    sleep(0.05)
+                    music.sound_play('./sounds/sign.wav')
+                    sleep(0.5)
 
-            elif key =="2":
-                music.sound_play_threading('./sounds/talk1.wav')
-                sleep(0.05)
-                music.sound_play_threading('./sounds/talk3.wav')
-                sleep(0.05)
-                music.sound_play_threading('./sounds/sign.wav')
-                sleep(0.5)
+                elif key == "2":
+                    music.sound_play_threading('./sounds/talk1.wav')
+                    sleep(0.05)
+                    music.sound_play_threading('./sounds/talk3.wav')
+                    sleep(0.05)
+                    music.sound_play_threading('./sounds/sign.wav')
+                    sleep(0.5)
 
-            elif key == "t":
-                words = "Hello"
-                tts.say(words)
+                elif key == "t":
+                    tts.say("Hello")
+
+        except KeyboardInterrupt:
+            print("\nquit")
+
+        finally:
+            # Stop music before exit to reduce error messages
+            try:
+                music.music_stop()
+            except Exception:
+                pass
 
     if __name__ == "__main__":
         main()

@@ -30,13 +30,26 @@ Dans ce projet, nous allons apprendre à utiliser le clavier pour contrôler à 
     cd ~/picrawler/examples
     sudo python3 keyboard_control.py
 
-Appuyez sur les touches du clavier pour contrôler PiCrawler !
+Au démarrage du programme, le PiCrawler s’initialise et une interface de contrôle au clavier
+s’affiche dans le terminal.
+
+Appuyez sur les touches du clavier pour contrôler le PiCrawler !
 
 * ``w`` : Avancer
 * ``a`` : Tourner à gauche
 * ``s`` : Reculer
 * ``d`` : Tourner à droite
 * ``Ctrl+C`` : Quitter
+
+La vitesse actuelle est affichée et peut être ajustée avec :
+
+- + / ] pour augmenter la vitesse
+- - / [ pour diminuer la vitesse
+
+Après chaque action, un court délai est appliqué pour améliorer la stabilité.
+
+Appuyez sur Ctrl+C pour quitter.
+Avant de s’arrêter, le PiCrawler exécute une action « sit » (assise) en toute sécurité.
 
 **Code**
 
@@ -46,74 +59,176 @@ Appuyez sur les touches du clavier pour contrôler PiCrawler !
     from time import sleep
     import readchar
 
-    crawler = Picrawler() 
-    speed = 90
+    crawler = Picrawler()
 
-    manual = '''
-    Press keys on keyboard to control PiCrawler!
-        W: Forward
-        A: Turn left
-        S: Backward
-        D: Turn right
+    SPEED_MIN = 20
+    SPEED_MAX = 70
+    speed = 60
 
-        Ctrl^C: Quit
-    '''
+    STEP = 1            # Number of action steps per key press
+    ACTION_GAP = 0.25   # Delay after each action to reduce current spikes
+
+    manual = """
+    Keyboard Control - PiCrawler
+
+    Movement:
+    W: Forward
+    A: Turn left
+    S: Backward
+    D: Turn right
+
+    Speed Control:
+    + / ] : Increase speed
+    - / [ : Decrease speed
+
+    Other:
+    Space  : Stop (no action)
+    Ctrl+C : Quit (auto sit)
+    """
+
+    def clamp(value, min_value, max_value):
+        """Limit value within a specified range."""
+        return max(min_value, min(max_value, value))
 
     def show_info():
-        print("\033[H\033[J",end='')  # effacer l'écran du terminal 
+        """Clear terminal and display control instructions."""
+        print("\033[H\033[J", end="")  # Clear terminal screen
         print(manual)
+        print(f"Current speed: {speed}  (range {SPEED_MIN}-{SPEED_MAX})")
+        print(f"Action gap: {ACTION_GAP:.2f}s")
 
+    def do_move(action_name):
+        """Execute movement action with safety delay."""
+        crawler.do_action(action_name, STEP, speed)
+        sleep(ACTION_GAP)
 
-    def main(): 
-        show_info()   
-        while True:
-            key = readchar.readkey()
-            key = key.lower()
-            if key in('wsad'):
-                if 'w' == key:
-                    crawler.do_action('forward',1,speed)     
-                elif 's' == key:
-                    crawler.do_action('backward',1,speed)          
-                elif 'a' == key:
-                    crawler.do_action('turn left',1,speed)           
-                elif 'd' == key:
-                    crawler.do_action('turn right',1,speed)
-                sleep(0.05)
-                show_info()  
-            elif key == readchar.key.CTRL_C:
-                print("\n Quit") 
-                break    
+    def safe_sit():
+        """Safely sit down before program exit."""
+        try:
+            crawler.do_step("sit", clamp(speed, 20, 40))
+            sleep(1.0)
+        except Exception:
+            pass
 
-            sleep(0.02)          
+    def main():
+        show_info()
 
-    
+        try:
+            while True:
+                key = readchar.readkey()
+                k = key.lower()
+
+                if k == "w":
+                    do_move("forward")
+                elif k == "s":
+                    do_move("backward")
+                elif k == "a":
+                    do_move("turn left")
+                elif k == "d":
+                    do_move("turn right")
+
+                # Speed increase
+                elif k in ("+", "]"):
+                    global speed
+                    speed = clamp(speed + 5, SPEED_MIN, SPEED_MAX)
+
+                # Speed decrease
+                elif k in ("-", "["):
+                    speed = clamp(speed - 5, SPEED_MIN, SPEED_MAX)
+
+                # Stop (no movement)
+                elif k == " ":
+                    pass
+
+                # Quit using readchar special key
+                elif key == readchar.key.CTRL_C:
+                    print("\nQuit.")
+                    break
+
+                show_info()
+                sleep(0.02)
+
+        except KeyboardInterrupt:
+            print("\nQuit (KeyboardInterrupt).")
+
+        finally:
+            safe_sit()
+
     if __name__ == "__main__":
         main()
 
-**Comment ça fonctionne ?**
+**Comment cela fonctionne ?**
 
-PiCrawler doit effectuer l'action appropriée en fonction des caractères du clavier lus. La fonction ``lower()`` convertit les caractères majuscules en minuscules, de sorte que la touche reste valide indépendamment de la casse.
+#. Création de l’objet robot
 
-.. code-block:: python
+   .. code-block:: python
 
-    def main(): 
-        show_info()   
-        while True:
-            key = readchar.readkey()
-            key = key.lower()
-            if key in('wsad'):
-                if 'w' == key:
-                    crawler.do_action('forward',1,speed)     
-                elif 's' == key:
-                    crawler.do_action('backward',1,speed)          
-                elif 'a' == key:
-                    crawler.do_action('turn left',1,speed)           
-                elif 'd' == key:
-                    crawler.do_action('turn right',1,speed)
-                sleep(0.05)
-                show_info()  
-            elif key == readchar.key.CTRL_C:
-                print("\n Quit") 
-                break    
-            
-            sleep(0.02)  
+      crawler = Picrawler()
+
+   Cette ligne crée un objet ``Picrawler``.
+   Il permet au programme de contrôler les mouvements du robot.
+
+#. Définition d’une plage de vitesse sûre
+
+   .. code-block:: python
+
+      SPEED_MIN = 20
+      SPEED_MAX = 70
+      speed = 60
+
+   Ces variables définissent la plage de vitesse autorisée.
+   ``speed`` stocke la vitesse de déplacement actuelle.
+   Le robot ne se déplacera pas plus vite que la valeur maximale.
+
+#. Limitation de la vitesse avec clamp()
+
+   .. code-block:: python
+
+      def clamp(value, min_value, max_value):
+          return max(min_value, min(max_value, value))
+
+   Cette fonction garantit que la vitesse reste dans une plage sûre.
+   Elle empêche les mouvements instables causés par des valeurs extrêmes.
+
+#. Exécution d’un mouvement
+
+   .. code-block:: python
+
+      def do_move(action_name):
+          crawler.do_action(action_name, STEP, speed)
+          sleep(ACTION_GAP)
+
+   Cette fonction envoie une commande de mouvement au robot.
+   ``ACTION_GAP`` ajoute un court délai afin d’améliorer la stabilité.
+
+#. Lecture de l’entrée clavier
+
+   .. code-block:: python
+
+      key = readchar.readkey()
+      k = key.lower()
+
+   Le programme attend qu’une touche soit pressée.
+   La touche est convertie en minuscule pour assurer la cohérence.
+
+#. Logique de contrôle du mouvement
+
+   .. code-block:: python
+
+      if k == "w":
+          do_move("forward")
+      elif k == "s":
+          do_move("backward")
+
+   Lorsqu’une touche est pressée, le mouvement correspondant est exécuté immédiatement.
+   Il n’est pas nécessaire d’appuyer sur Entrée.
+
+#. Sortie sécurisée
+
+   .. code-block:: python
+
+      finally:
+          safe_sit()
+
+   Avant la fin du programme, le robot exécute une action « sit » sécurisée.
+   Cela évite une posture instable ou un arrêt brutal.

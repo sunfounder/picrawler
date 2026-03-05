@@ -32,12 +32,21 @@ Voici le premier projet de PiCrawler. Il exécute sa fonction de base : se dépl
     cd ~/picrawler/examples
     sudo python3 move.py
 
-Après l'exécution du code, PiCrawler effectuera les actions suivantes dans cet ordre : avancer, reculer, tourner à gauche, tourner à droite, se tenir debout.
+Lorsque le programme démarre, le PiCrawler se met debout et attend brièvement.
+
+Il exécute ensuite en continu un cycle de mouvements :
+avancer, reculer, tourner à gauche, tourner à droite,
+petit virage à gauche et petit virage à droite.
+
+Chaque action est séparée par de courts délais afin de rendre les mouvements plus fluides.
+
+Appuyez sur Ctrl+C pour arrêter le programme.
+Avant de quitter, le PiCrawler se met en position assise en toute sécurité.
 
 **Code**
 
 .. note::
-    Vous pouvez **modifier/réinitialiser/copier/exécuter/arrêter** le code ci-dessous. Mais avant cela, vous devez accéder au répertoire source du code, comme ``pisloth\examples``. Après avoir modifié le code, vous pouvez l'exécuter directement pour voir l'effet.
+    Vous pouvez **modifier/réinitialiser/copier/exécuter/arrêter** le code ci-dessous. Mais avant cela, vous devez accéder au répertoire source du code, comme ``picrawler\examples``. Après avoir modifié le code, vous pouvez l'exécuter directement pour voir l'effet.
 
 .. raw:: html
 
@@ -47,63 +56,111 @@ Après l'exécution du code, PiCrawler effectuera les actions suivantes dans cet
 
     from picrawler import Picrawler
     from time import sleep
-    
-    crawler = Picrawler() 
-    
-    def main():  
-        
-        speed = 80
-              
-        while True:
-           
-            crawler.do_action('forward',2,speed)
-            sleep(0.05)     
-            crawler.do_action('backward',2,speed)
-            sleep(0.05)          
-            crawler.do_action('turn left',2,speed)
-            sleep(0.05)           
-            crawler.do_action('turn right',2,speed)
-            sleep(0.05)  
-            crawler.do_action('turn left angle',2,speed)
-            sleep(0.05)  
-            crawler.do_action('turn right angle',2,speed)
-            sleep(0.05) 
-            crawler.do_step('stand',speed)
-            sleep(1)
-    
+
+    crawler = Picrawler()  # Create PiCrawler object
+
+    def main():
+        speed = 80  # Movement speed
+
+        try:
+            crawler.do_step('stand', 40)  # Stand up
+            sleep(1.0)
+
+            while True:
+                crawler.do_action('forward', 1, speed)   # Move forward
+                sleep(0.25)
+
+                crawler.do_action('backward', 1, speed)  # Move backward
+                sleep(0.25)
+
+                crawler.do_action('turn left', 1, speed)  # Turn left
+                sleep(0.25)
+
+                crawler.do_action('turn right', 1, speed)  # Turn right
+                sleep(0.25)
+
+                crawler.do_action('turn left angle', 1, speed)  # Small left turn
+                sleep(0.3)
+
+                crawler.do_action('turn right angle', 1, speed)  # Small right turn
+                sleep(0.3)
+
+                sleep(0.5)
+
+        except KeyboardInterrupt:
+            print("\nCtrl+C pressed...")
+
+        finally:
+            crawler.do_step('sit', 40)  # Sit down before exit
+            sleep(1.0)
+
     if __name__ == "__main__":
         main()
 
 
-**Comment ça fonctionne ?**
+**Comment cela fonctionne ?**
 
-Tout d'abord, importez la classe ``Picrawler`` depuis la bibliothèque ``picrawler`` que vous avez installée, qui contient toutes les actions de PiCrawler et les fonctions qui les implémentent.
+#. Importation et initialisation
 
-.. code-block:: python
+   .. code-block:: python
 
-    from picrawler import Picrawler
+      from picrawler import Picrawler
+      from time import sleep
 
-Ensuite, instanciez la classe ``crawler`` :
+      crawler = Picrawler()
 
-.. code-block:: python
+   Le script importe les modules nécessaires et crée un objet
+   ``Picrawler``, utilisé pour contrôler tous les mouvements du robot.
 
-    crawler = Picrawler() 
+#. Fonction principale et préparation
 
-Enfin, utilisez la fonction ``crawler.do_action()`` pour faire déplacer PiCrawler.
+   .. code-block:: python
 
-.. code-block:: python
-    
-    crawler.do_action('forward',2,speed)    
-    crawler.do_action('backward',2,speed)         
-    crawler.do_action('turn left',2,speed)          
-    crawler.do_action('turn right',2,speed) 
-    crawler.do_action('turn left angle',2,speed) 
-    crawler.do_action('turn right angle',2,speed)
+      def main():
+          speed = 80
+          crawler.do_step('stand', 40)
+          sleep(1.0)
 
-En général, tous les mouvements de PiCrawler peuvent être réalisés avec la fonction ``do_action()``. Elle comporte trois paramètres :
+   La fonction ``main()`` définit la vitesse de déplacement.
+   Avant de démarrer la boucle, le robot se met debout et se stabilise.
 
-* ``motion_name`` est le nom de l'action spécifique, incluant : ``forward``, ``turn right``, ``turn left``, ``backward``, ``turn left angle``, ``turn right angle``.
-* ``step`` représente le nombre de fois que chaque action est effectuée, par défaut égal à 1.
-* ``speed`` indique la vitesse de l'action, par défaut égal à 50, avec une plage de 0 à 100.
+#. Boucle de mouvement continue
 
-De plus, ``crawler.do_step('stand',speed)`` est également utilisé ici pour faire tenir PiCrawler debout. L'utilisation de cette fonction sera expliquée dans l'exemple suivant.
+   .. code-block:: python
+
+      while True:
+          crawler.do_action('forward', 1, speed)
+          crawler.do_action('backward', 1, speed)
+          crawler.do_action('turn left', 1, speed)
+          crawler.do_action('turn right', 1, speed)
+          crawler.do_action('turn left angle', 1, speed)
+          crawler.do_action('turn right angle', 1, speed)
+
+   Le robot exécute en continu une séquence prédéfinie
+   d’actions de mouvement dans une boucle infinie.
+   De courts délais entre les actions permettent d’obtenir
+   des mouvements plus fluides.
+
+#. Gestion de la sortie sécurisée
+
+   .. code-block:: python
+
+      except KeyboardInterrupt:
+          print("\nCtrl+C pressed...")
+      finally:
+          crawler.do_step('sit', 40)
+
+   La structure ``try / except / finally`` garantit que :
+
+   - **Ctrl+C** arrête la boucle en toute sécurité.
+   - Le robot se remet en position assise avant la fin du programme.
+
+#. Point d’entrée du programme
+
+   .. code-block:: python
+
+      if __name__ == "__main__":
+          main()
+
+   Cela garantit que ``main()`` s’exécute uniquement lorsque
+   le script est lancé directement.

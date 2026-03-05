@@ -32,6 +32,11 @@ PiCrawler peut adopter une posture spécifique en définissant un tableau de coo
     cd ~/picrawler/examples
     sudo python3 do_step.py
 
+Après avoir lancé le programme, le robot se met d’abord debout lentement afin d’atteindre une posture stable.
+
+Une fois debout, le robot exécute ensuite deux actions en boucle. Il commence par se placer dans une posture de pas en position debout et maintient cette position pendant quelques secondes, puis il passe à un pas personnalisé où les pattes se déplacent vers différentes coordonnées. Cela crée un mouvement répété de changement de posture.
+
+Le robot continue d’alterner entre ces deux positions jusqu’à ce que le programme soit arrêté. Si **Ctrl+C** est pressé, le programme se termine en toute sécurité et le robot revient à une position assise.
 
 **Code**
 
@@ -41,28 +46,51 @@ PiCrawler peut adopter une posture spécifique en définissant un tableau de coo
 
 .. code-block:: python
 
+    #!/usr/bin/env python3
     from picrawler import Picrawler
     from time import sleep
 
-    crawler = Picrawler() 
+    # Create Picrawler instance
+    crawler = Picrawler()
 
-    ## [avant droit], [avant gauche], [arrière gauche], [arrière droit]
-    new_step=[[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
+    # Leg order:
+    # [right front], [left front], [left rear], [right rear]
+    new_step = [[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
+
+    # Get the default stand step from the move list
     stand_step = crawler.move_list['stand'][0]
 
-    def main():  
-        while True:
-            speed = 80
 
-            print(f"stand step: {stand_step}")
-            crawler.do_step(stand_step, speed)
-            sleep(3)
-            print(f"new step: {new_step}")
-            crawler.do_step(new_step,speed)
-            sleep(3)
+    def main():
+        action_speed = 80  # Speed for movement actions
 
-    
-    if __name__ == "__main__": 
+        try:
+            # Stand up slowly at 40% speed to reduce current spikes
+            crawler.do_step('stand', 40)
+            sleep(1.0)
+
+            # Continuous action loop
+            while True:
+                crawler.do_step(stand_step, action_speed)
+                sleep(3)
+
+                crawler.do_step(new_step, action_speed)
+                sleep(3)
+
+        except KeyboardInterrupt:
+            # Handle Ctrl+C for safe exit
+            print("\nExiting safely...")
+
+        finally:
+            # Return to sitting position before shutting down
+            try:
+                crawler.do_step('sit', 40)
+                sleep(1.0)
+            except Exception:
+                pass
+
+
+    if __name__ == "__main__":
         main()
 
 **Comment ça fonctionne ?**
