@@ -33,7 +33,21 @@ Quando PiCrawler rileva un ostacolo, invierà un segnale e cercherà un'altra di
     cd ~/picrawler/examples
     sudo python3 avoid.py
 
-Dopo l'esecuzione del codice, PiCrawler inizierà a camminare in avanti. Se rileva che la distanza dell'ostacolo davanti è inferiore a 10 cm, si fermerà e emetterà un segnale acustico di avvertimento, quindi girerà a sinistra e si fermerà. Se non ci sono ostacoli nella direzione dopo aver girato a sinistra o la distanza dell'ostacolo è maggiore di 10 cm, continuerà a muoversi in avanti.
+Quando il programma si avvia, PiCrawler si alza.
+
+Misura continuamente la distanza utilizzando il sensore a ultrasuoni
+e stampa il valore nel terminale.
+
+Se viene rilevato un ostacolo entro 15 cm:
+- Viene riprodotto un suono di avviso.
+- Il robot esegue una piccola rotazione verso sinistra.
+
+Se il percorso è libero:
+- Il robot si muove in avanti.
+
+Il robot continua a evitare gli ostacoli automaticamente finché non si preme Ctrl+C.
+
+Prima di uscire, si siede in modo sicuro.
 
 **Codice**
 
@@ -47,78 +61,219 @@ Dopo l'esecuzione del codice, PiCrawler inizierà a camminare in avanti. Se rile
 .. code-block:: python
 
     from picrawler import Picrawler
-    from robot_hat import TTS, Music
-    from robot_hat import Ultrasonic
-    from robot_hat import Pin
+    from robot_hat import Music, Ultrasonic, Pin
     import time
+    import signal
 
-    tts = TTS()
     music = Music()
+    crawler = Picrawler()
+    sonar = Ultrasonic(Pin("D2"), Pin("D3"))  # Ultrasonic trigger/echo pins
 
-    crawler = Picrawler() 
-    sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
-    music.music_set_volume(100)
+    music.music_set_volume(100)  # Set speaker volume
 
-    alert_distance = 15
-    speed = 80
+    alert_distance = 15  # Obstacle warning distance (cm)
+    speed = 80           # Movement speed
+
+    # ----------------------------
+    # Add hardware timeout to sonar.read()
+    # Prevent program from freezing
+    # ----------------------------
+    class Timeout(Exception):
+        pass
+
+    def _alarm_handler(signum, frame):
+        raise Timeout()
+
+    signal.signal(signal.SIGALRM, _alarm_handler)
+
+    # Read distance once with timeout protection
+    def safe_read_once(timeout_s=1):
+        try:
+            signal.alarm(timeout_s)
+            d = sonar.read()
+            signal.alarm(0)
+            return d
+        except Timeout:
+            signal.alarm(0)
+            return None
+        except Exception:
+            signal.alarm(0)
+            return None
+
+    # Read multiple times and return median value (anti-noise)
+    def read_distance_filtered(n=5, gap=0.03, timeout_s=1):
+        vals = []
+        for _ in range(n):
+            d = safe_read_once(timeout_s=timeout_s)
+            if d is not None and d > 0:
+                vals.append(d)
+            time.sleep(gap)
+
+        if not vals:
+            return None
+
+        vals.sort()
+        return vals[len(vals)//2]  # Median filter
 
     def main():
-        distance = sonar.read()
-        print(distance)
-        if distance < 0:
-            pass
-        elif distance <= alert_distance:
+        distance = read_distance_filtered(n=5, gap=0.03, timeout_s=1)
+        print("distance:", distance)
+
+        if distance is None:
+            time.sleep(0.15)  # Wait if read failed
+            return
+
+        if distance <= alert_distance:
+            # Obstacle detected → play sound and turn
             try:
                 music.sound_play_threading('./sounds/sign.wav', volume=100)
             except Exception as e:
-                print(e)
-            crawler.do_action('turn left angle',3,speed)
-            time.sleep(0.2)
-        else :
-            crawler.do_action('forward', 1,speed)
-            time.sleep(0.2)
+                print("sound error:", e)
+
+            crawler.do_action('turn left angle', 1, speed)
+            time.sleep(0.5)  # Quiet window after movement
+        else:
+            # Path clear → move forward
+            crawler.do_action('forward', 1, speed)
+            time.sleep(0.4)
 
     if __name__ == "__main__":
-        while True:
-            main()
+        try:
+            crawler.do_step('stand', 40)  # Stand before starting
+            time.sleep(1.0)
+
+            while True:
+                main()
+
+        except KeyboardInterrupt:
+            print("\nStop.")
+        finally:
+            try:
+                crawler.do_step('sit', 40)  # Sit before exit
+                time.sleep(1.0)
+            except Exception:
+                pass
 
 **Come funziona?**
 
-Puoi ottenere la distanza importando la classe ``Ultrasonic``.
+#. Blocco di inizializzazione
 
-.. code-block:: python
+   .. code-block:: python
 
-    from robot_hat import Ultrasonic
+      music = Music()
+      crawler = Picrawler()
+      sonar = Ultrasonic(Pin("D2"), Pin("D3"))
 
-Successivamente, inizializza i pin ultrasonici.
+      music.music_set_volume(100)
+      alert_distance = 15
+      speed = 80
 
-.. code-block:: python
+   Questo blocco inizializza i tre moduli principali:
+   - ``music``: controlla la riproduzione dei suoni.
+   - ``crawler``: controlla i movimenti del PiCrawler.
+   - ``sonar``: legge la distanza tramite il sensore a ultrasuoni.
 
-    sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
+   Imposta inoltre il volume dell'altoparlante, la soglia di rilevamento degli ostacoli (cm)
+   e la velocità di movimento.
 
-Ecco il programma principale.
+#. Blocco di configurazione del timeout (evita che ``sonar.read()`` si blocchi)
 
-* Legge la ``distanza`` rilevata dal modulo ultrasonico e filtra i valori inferiori a 0 (Quando il modulo ultrasonico è troppo lontano dall'ostacolo o non può leggere i dati correttamente, comparirà ``distance<0``).
-* Quando la ``distanza`` è minore o uguale a ``alert_distance`` (il valore di soglia impostato in precedenza, che è 10), riproduce l'effetto sonoro ``sign.wav``. PiCrawler esegue ``turn left angle``.
-* Quando la ``distanza`` è maggiore di ``alert_distance``, PiCrawler si muove in ``forward``.
+   .. code-block:: python
 
-.. code-block:: python
+      class Timeout(Exception):
+          pass
 
-    distance = sonar.read()
-    print(distance)
-    if distance < 0:
-        pass
-    elif distance <= alert_distance:
-        try:
-            music.sound_play_threading('./sounds/sign.wav', volume=100)
-        except Exception as e:
-            print(e)
-        crawler.do_action('turn left angle',3,speed)
-        time.sleep(0.2)
-    else :
-        crawler.do_action('forward', 1,speed)
-        time.sleep(0.2)
+      def _alarm_handler(signum, frame):
+          raise Timeout()
 
-.. note::
+      signal.signal(signal.SIGALRM, _alarm_handler)
 
-    Puoi aggiungere diversi effetti sonori o musiche alla cartella ``musics`` o ``sounds`` tramite :ref:`filezilla`.
+   Il driver del sensore a ultrasuoni può bloccarsi mentre attende il segnale di eco.
+   Questo blocco installa un gestore di segnale in modo che il programma possa interrompere
+   una chiamata bloccata a ``sonar.read()`` e continuare a funzionare.
+
+#. Funzione: safe_read_once()
+
+   .. code-block:: python
+
+      def safe_read_once(timeout_s=1):
+          try:
+              signal.alarm(timeout_s)
+              d = sonar.read()
+              signal.alarm(0)
+              return d
+          except Timeout:
+              signal.alarm(0)
+              return None
+          except Exception:
+              signal.alarm(0)
+              return None
+
+   Questa funzione legge una volta la distanza a ultrasuoni con protezione di timeout.
+   - Se la lettura ha successo, restituisce il valore della distanza.
+   - Se scade il timeout o si verifica un errore, restituisce ``None`` invece di bloccarsi.
+
+#. Funzione: read_distance_filtered()
+
+   .. code-block:: python
+
+      def read_distance_filtered(n=5, gap=0.03, timeout_s=1):
+          vals = []
+          for _ in range(n):
+              d = safe_read_once(timeout_s=timeout_s)
+              if d is not None and d > 0:
+                  vals.append(d)
+              time.sleep(gap)
+
+          if not vals:
+              return None
+
+          vals.sort()
+          return vals[len(vals)//2]
+
+   Questa funzione migliora l'affidabilità effettuando più letture:
+   - I valori non validi (``None`` oppure ``<= 0``) vengono ignorati.
+   - I valori rimanenti vengono ordinati.
+   - Viene restituito il valore mediano per ridurre il rumore.
+
+#. Funzione: main() (logica principale di decisione e azione)
+
+   .. code-block:: python
+
+      def main():
+          distance = read_distance_filtered(...)
+          if distance is None:
+              return
+
+          if distance <= alert_distance:
+              music.sound_play_threading(...)
+              crawler.do_action('turn left angle', 1, speed)
+          else:
+              crawler.do_action('forward', 1, speed)
+
+   Questa è la logica di controllo principale:
+
+   - Legge un valore di distanza filtrato.
+   - Se la lettura fallisce, salta questo ciclo.
+   - Se un ostacolo è più vicino di ``alert_distance``, riproduce un suono di avviso e gira a sinistra.
+   - Altrimenti, si muove in avanti.
+
+#. Blocco di avvio del programma (ciclo continuo + uscita sicura)
+
+   .. code-block:: python
+
+      if __name__ == "__main__":
+          try:
+              crawler.do_step('stand', 40)
+              while True:
+                  main()
+          except KeyboardInterrupt:
+              print("\nStop.")
+          finally:
+              crawler.do_step('sit', 40)
+
+   Questo blocco controlla il flusso generale del programma:
+   - Il crawler si alza prima di iniziare.
+   - Il programma esegue ``main()`` ripetutamente in un ciclo infinito.
+   - Premendo Ctrl+C si interrompe il ciclo.
+   - Il crawler si siede prima che il programma termini.

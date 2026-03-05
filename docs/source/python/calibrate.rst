@@ -19,6 +19,10 @@ A causa di possibili deviazioni durante l'installazione del PiCrawler o delle li
 
 Naturalmente, puoi saltare questo capitolo se ritieni che l'assemblaggio sia perfetto e non necessiti di calibrazione.
 
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/48FLHB_cw3k?si=Zla7BApIt0o6tq73" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 I passaggi specifici sono i seguenti:
 
 1. Prendi il foglio di istruzioni per l'assemblaggio, giralo all'ultima pagina e posizionalo piatto sul tavolo. Quindi colloca il PiCrawler come mostrato di seguito, allineando la base con il contorno sulla scheda di calibrazione.
