@@ -32,12 +32,22 @@
     cd ~/picrawler/examples
     sudo python3 move.py
 
-コードが実行されると、PiCrawlerは以下の動作を順番に実行します：前進、後退、左旋回、右旋回、立つ。
+プログラムが開始されると、PiCrawler は立ち上がり、短時間待機します。
+
+その後、以下の動作サイクルを継続的に実行します：
+前進、後退、左旋回、右旋回、
+小さな左旋回、小さな右旋回。
+
+各動作の間には短い待機時間が設けられており、
+より滑らかな動きになるようにしています。
+
+Ctrl+C を押すとプログラムが停止します。
+終了前に、PiCrawler は安全に座る姿勢に戻ります。
 
 **コード**
 
 .. note::
-    以下のコードは **修正/リセット/コピー/実行/停止** できます。ですが、実行する前にソースコードパス（例： ``pisloth\examples`` ）に移動する必要があります。コードを修正した後は、そのまま実行して効果を確認できます。
+    以下のコードは **修正/リセット/コピー/実行/停止** できます。ですが、実行する前にソースコードパス（例： ``picrawler\examples`` ）に移動する必要があります。コードを修正した後は、そのまま実行して効果を確認できます。
 
 .. raw:: html
 
@@ -47,63 +57,110 @@
 
     from picrawler import Picrawler
     from time import sleep
-    
-    crawler = Picrawler() 
-    
-    def main():  
-        
-        speed = 80
-              
-        while True:
-           
-            crawler.do_action('forward',2,speed)
-            sleep(0.05)     
-            crawler.do_action('backward',2,speed)
-            sleep(0.05)          
-            crawler.do_action('turn left',2,speed)
-            sleep(0.05)           
-            crawler.do_action('turn right',2,speed)
-            sleep(0.05)  
-            crawler.do_action('turn left angle',2,speed)
-            sleep(0.05)  
-            crawler.do_action('turn right angle',2,speed)
-            sleep(0.05) 
-            crawler.do_step('stand',speed)
-            sleep(1)
-    
+
+    crawler = Picrawler()  # Create PiCrawler object
+
+    def main():
+        speed = 80  # Movement speed
+
+        try:
+            crawler.do_step('stand', 40)  # Stand up
+            sleep(1.0)
+
+            while True:
+                crawler.do_action('forward', 1, speed)   # Move forward
+                sleep(0.25)
+
+                crawler.do_action('backward', 1, speed)  # Move backward
+                sleep(0.25)
+
+                crawler.do_action('turn left', 1, speed)  # Turn left
+                sleep(0.25)
+
+                crawler.do_action('turn right', 1, speed)  # Turn right
+                sleep(0.25)
+
+                crawler.do_action('turn left angle', 1, speed)  # Small left turn
+                sleep(0.3)
+
+                crawler.do_action('turn right angle', 1, speed)  # Small right turn
+                sleep(0.3)
+
+                sleep(0.5)
+
+        except KeyboardInterrupt:
+            print("\nCtrl+C pressed...")
+
+        finally:
+            crawler.do_step('sit', 40)  # Sit down before exit
+            sleep(1.0)
+
     if __name__ == "__main__":
         main()
 
 
 **仕組みは？**
 
-まず、インストールした ``picrawler`` ライブラリから ``Picrawler`` クラスをインポートします。このクラスには、PiCrawlerのすべての動作と、それを実現する関数が含まれています。
+#. インポートと初期化
 
-.. code-block:: python
+   .. code-block:: python
 
-    from picrawler import Picrawler
+      from picrawler import Picrawler
+      from time import sleep
 
-次に、 ``crawler`` クラスをインスタンス化します。
+      crawler = Picrawler()
 
-.. code-block:: python
+   このスクリプトでは、必要なモジュールをインポートし、
+   ``Picrawler`` オブジェクトを作成します。  
+   このオブジェクトは、ロボットのすべての動作を制御するために使用されます。
 
-    crawler = Picrawler() 
+#. メイン関数と初期設定
 
-最後に、 ``crawler.do_action()`` 関数を使用して、PiCrawlerを動かします。
+   .. code-block:: python
 
-.. code-block:: python
-    
-    crawler.do_action('forward',2,speed)    
-    crawler.do_action('backward',2,speed)         
-    crawler.do_action('turn left',2,speed)          
-    crawler.do_action('turn right',2,speed) 
-    crawler.do_action('turn left angle',2,speed) 
-    crawler.do_action('turn right angle',2,speed)
+      def main():
+          speed = 80
+          crawler.do_step('stand', 40)
+          sleep(1.0)
 
-一般的に、PiCrawlerのすべての移動は ``do_action()`` 関数で実行できます。この関数には3つのパラメータがあります：
+   ``main()`` 関数では移動速度を設定します。  
+   ループを開始する前に、ロボットは立ち上がり、姿勢を安定させます。
 
-* ``motion_name`` は特定の動作名で、以下のような動作を含みます： ``forward`` 、 ``turn right``、 ``turn left`` 、 ``backward`` 、 ``turn left angle`` 、 ``turn right angle`` 。
-* ``step`` は各動作が実行される回数で、デフォルトは1です。
-* ``speed`` は動作の速度を指定し、デフォルトは50で、範囲は0〜100です。
+#. 連続動作ループ
 
-また、 ``crawler.do_step('stand',speed)`` もここで使用されており、PiCrawlerを立たせることができます。この関数の使い方については、次の例で説明します。
+   .. code-block:: python
+
+      while True:
+          crawler.do_action('forward', 1, speed)
+          crawler.do_action('backward', 1, speed)
+          crawler.do_action('turn left', 1, speed)
+          crawler.do_action('turn right', 1, speed)
+          crawler.do_action('turn left angle', 1, speed)
+          crawler.do_action('turn right angle', 1, speed)
+
+   ロボットは無限ループの中で、事前に定義された一連の
+   動作を繰り返し実行します。  
+   各動作の間に短い待機時間を入れることで、動きがより滑らかになります。
+
+#. 安全な終了処理
+
+   .. code-block:: python
+
+      except KeyboardInterrupt:
+          print("\nCtrl+C pressed...")
+      finally:
+          crawler.do_step('sit', 40)
+
+   ``try / except / finally`` 構造により、以下を保証します：
+   - Ctrl+C によってループを安全に停止できます。
+   - プログラム終了前にロボットが座る動作を行います。
+
+#. プログラムエントリ
+
+   .. code-block:: python
+
+      if __name__ == "__main__":
+          main()
+
+   これにより、スクリプトが直接実行された場合のみ
+   ``main()`` が実行されます。

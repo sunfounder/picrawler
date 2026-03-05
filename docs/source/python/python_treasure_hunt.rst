@@ -55,113 +55,369 @@
 
 .. code-block:: python
 
+	#!/usr/bin/env python3
 	from picrawler import Picrawler
-	from time import sleep
-	from robot_hat import Music,TTS
+	from time import sleep, time
+	from robot_hat import Music, TTS
 	from vilib import Vilib
 	import readchar
 	import random
 	import threading
-	
+
 	crawler = Picrawler()
-	
-	
-	music = Music()
+	music = Music()   # kept for compatibility (not used here)
 	tts = TTS()
-	
-	manual = '''
+
+	MANUAL = '''
 	Press keys on keyboard to control Picrawler!
-	    w: Forward
-	    a: Turn left
-	    s: Backward
-	    d: Turn right
-	    space: Say the target again
-	    Ctrl^C: Quit
+		w: Forward
+		a: Turn left
+		s: Backward
+		d: Turn right
+		space: Say the target again
+		Ctrl+C: Quit
 	'''
-	
+
 	color = "red"
-	color_list=["red","orange","yellow","green","blue","purple"]
+	color_list = ["red", "orange", "yellow", "green", "blue", "purple"]
+
 	key_dict = {
-	    'w': 'forward',
-	    's': 'backward',
-	    'a': 'turn_left',
-	    'd': 'turn_right',
+		'w': 'forward',
+		's': 'backward',
+		'a': 'turn_left',
+		'd': 'turn_right',
 	}
-	def renew_color_detect():
-	    global color
-	    color = random.choice(color_list)
-	    Vilib.color_detect(color)
-	    tts.say("Look for " + color)
-	
-	key = None
+
+	# ----------------------------
+	# Thread-safe key handling
+	# ----------------------------
 	lock = threading.Lock()
+	key_state = None               # last key event
+	stop_event = threading.Event() # signal to exit cleanly
+
+	def set_key(k):
+		global key_state
+		with lock:
+			key_state = k
+
+	def pop_key():
+		"""Read and clear the last key event."""
+		global key_state
+		with lock:
+			k = key_state
+			key_state = None
+		return k
+
 	def key_scan_thread():
-	    global key
-	    while True:
-	        key_temp = readchar.readkey()
-	        print('\r',end='')  # カーソルを行頭に戻す
-	        with lock:
-	            key = key_temp.lower()
-	            if key == readchar.key.SPACE:
-	                key = 'space'
-	            elif key == readchar.key.CTRL_C:
-	                key = 'quit'
-	                break
-	        sleep(0.01)
-	
+		"""Keyboard input thread (quiet exit on Ctrl+C)."""
+		while not stop_event.is_set():
+			try:
+				k = readchar.readkey()
+			except KeyboardInterrupt:
+				# Ctrl+C may raise KeyboardInterrupt inside this thread
+				stop_event.set()
+				break
+			except Exception:
+				sleep(0.02)
+				continue
+
+			if k == readchar.key.SPACE:
+				set_key('space')
+			elif k == readchar.key.CTRL_C:
+				set_key('quit')
+				stop_event.set()
+				break
+			else:
+				try:
+					set_key(str(k).lower())
+				except Exception:
+					pass
+
+			sleep(0.01)
+
+	# ----------------------------
+	# Game logic
+	# ----------------------------
+	def renew_color_detect():
+		global color
+		color = random.choice(color_list)
+		try:
+			Vilib.color_detect(color)
+		except Exception:
+			pass
+		try:
+			tts.say("Look for " + color)
+		except Exception:
+			pass
+
+	def safe_camera_close():
+		try:
+			Vilib.color_detect("close")
+		except Exception:
+			pass
+		try:
+			Vilib.camera_close()
+		except Exception:
+			pass
+
+	def safe_sit():
+		try:
+			crawler.do_step('sit', 40)
+			sleep(0.5)
+		except Exception:
+			pass
+
+	def stand_ready():
+		"""
+		Stand up after startup.
+		Requirement: stand at 40, then only move after WASD is pressed.
+		"""
+		try:
+			crawler.do_step('stand', 40)
+			sleep(0.8)
+		except Exception:
+			pass
+
 	def main():
-	    global key
-	    action = None
-	    Vilib.camera_start(vflip=False,hflip=False)
-	    Vilib.display(local=False,web=True)
-	    sleep(0.8)
-	    speed = 80
-	    print(manual)
-	
-	    sleep(1)
-	    _key_t = threading.Thread(target=key_scan_thread)
-	    _key_t.setDaemon(True)
-	    _key_t.start()
-	
-	    tts.say("game start")
-	    sleep(0.05)   
-	    renew_color_detect()
-	    while True:
-	
-	        if Vilib.detect_obj_parameter['color_n']!=0 and Vilib.detect_obj_parameter['color_w']>100:
-	            tts.say("will done")
-	            sleep(0.05)   
-	            renew_color_detect()
-	
-	        with lock:
-	            if key != None and key in ('wsad'):
-	                action = key_dict[str(key)]
-	                key =  None
-	            elif key == 'space':
-	                tts.say("Look for " + color)
-	                key =  None
-	            elif key == 'quit':
-	                _key_t.join()
-	                Vilib.camera_close()
-	                print("\n\rQuit") 
-	                break 
-	
-	        if action != None:
-	            crawler.do_action(action,1,speed)  
-	            action = None
-	
-	        sleep(0.05)          
-	
-	
+		speed = 80
+		action = None
+
+		# Start camera + web preview
+		Vilib.camera_start(vflip=False, hflip=False)
+		Vilib.display(local=False, web=True)
+		sleep(0.8)
+
+		print(MANUAL)
+
+		# Start keyboard thread (daemon, so it won't block process exit)
+		t = threading.Thread(target=key_scan_thread, daemon=True)
+		t.start()
+
+		# Announce and stand up to 40
+		try:
+			tts.say("game start")
+		except Exception:
+			pass
+		sleep(0.05)
+
+		stand_ready()
+		renew_color_detect()
+
+		try:
+			while not stop_event.is_set():
+				# If target detected and large enough -> renew target
+				try:
+					n = Vilib.detect_obj_parameter.get('color_n', 0)
+					w = Vilib.detect_obj_parameter.get('color_w', 0)
+				except Exception:
+					n, w = 0, 0
+
+				if n != 0 and w > 100:
+					try:
+						tts.say("well done")
+					except Exception:
+						pass
+					sleep(0.05)
+					renew_color_detect()
+
+				# Handle key event
+				k = pop_key()
+
+				if k in key_dict:
+					action = key_dict[k]
+
+				elif k == 'space':
+					try:
+						tts.say("Look for " + color)
+					except Exception:
+						pass
+
+				elif k == 'quit':
+					stop_event.set()
+
+				# Move only after receiving a WASD action
+				if action is not None:
+					try:
+						crawler.do_action(action, 1, speed)
+					except Exception:
+						pass
+					action = None
+
+				sleep(0.05)
+
+		except KeyboardInterrupt:
+			stop_event.set()
+
+		finally:
+			# Clean exit
+			stop_event.set()
+			safe_camera_close()
+			safe_sit()
+			print("\nQuit")
+
 	if __name__ == "__main__":
-	    main()
+		main()
 
 
 **仕組みは？**
 
-このプロジェクトは、:ref:`py_keyboard` 、:ref:`py_vision` 、および:ref:`py_sound` の知識を組み合わせたものです。
+#. このプログラムの概要
 
-その流れは以下の図に示されています：
+   このプログラムは、PiCrawler 用のシンプルな「宝探しゲーム」です。
 
-.. image:: img/treasure_hunt-f.png
+   • カメラ映像は Web ページにストリーミングされます（ローカル GUI ウィンドウは使用しません）。  
+   • Vilib がターゲットカラー（red / orange / yellow / green / blue / purple）を検出します。  
+   • WASD キーでロボットを操作します。  
+   • 検出された色の物体が十分大きくなると、プログラムは成功をアナウンスし、新しいターゲットカラーに切り替えます。  
+   • Ctrl+C を押すと、スレッドのエラー表示なしで安全に終了します。
 
+#. キーボード入力はバックグラウンドスレッドで処理
+
+   .. code-block:: python
+
+      stop_event = threading.Event()
+      key_state = None
+
+      def key_scan_thread():
+          while not stop_event.is_set():
+              try:
+                  k = readchar.readkey()
+              except KeyboardInterrupt:
+                  stop_event.set()
+                  break
+
+   キーボード入力の読み取りは、専用のスレッドで実行されます。  
+   これにより、キー入力待ちでメインループがブロックされるのを防ぎます。
+
+   Ctrl+C はこのスレッド内（readchar の動作）で KeyboardInterrupt を発生させることがあるため、  
+   それを捕捉してエラー表示ではなくクリーン終了のトリガーとして使用します。
+
+#. キーイベントの安全な共有
+
+   .. code-block:: python
+
+      lock = threading.Lock()
+
+      def set_key(k):
+          global key_state
+          with lock:
+              key_state = k
+
+      def pop_key():
+          global key_state
+          with lock:
+              k = key_state
+              key_state = None
+          return k
+
+   プログラムは共有変数 ``key_state`` を保護するためにロックを使用します。
+
+   キーボードスレッドは ``set_key()`` を使ってキーイベントを書き込み、  
+   メインループは ``pop_key()`` を使ってイベントを読み取り、同時にクリアします。
+
+   これにより、競合状態を防ぎながら安全にキー入力へ反応できます。
+
+#. カメラと Web プレビュー
+
+   .. code-block:: python
+
+      Vilib.camera_start(vflip=False, hflip=False)
+      Vilib.display(local=False, web=True)
+
+   カメラを起動し、Web プレビューを有効にします。  
+   ``local=False`` にすることで、デスクトップ環境のないシステムで  
+   GUI クラッシュが発生するのを防ぎます。
+
+#. まず立ち上がり、その後操作キーを待つ
+
+   .. code-block:: python
+
+      crawler.do_step('stand', 40)
+      sleep(0.8)
+
+   起動後、ロボットは速度 40 で立ち上がり、姿勢を安定させます。  
+   プログラムはロボットを自動で動かしません。  
+   WASD キーが入力されたときのみ動作します。
+
+#. ターゲットカラーの選択
+
+   .. code-block:: python
+
+      color = random.choice(COLOR_LIST)
+      Vilib.color_detect(color)
+      tts.say("Look for " + color)
+
+   リストからランダムに色が選ばれます。  
+   Vilib のカラー検出がその色に対して有効になります。  
+   TTS が現在のターゲットを読み上げ、ユーザーに探す色を知らせます。
+
+#. 「成功」の検出とターゲットの切り替え
+
+   .. code-block:: python
+
+      n = Vilib.detect_obj_parameter.get('color_n', 0)
+      w = Vilib.detect_obj_parameter.get('color_w', 0)
+
+      if n != 0 and w > 100:
+          tts.say("well done")
+          renew_color_detect()
+
+   Vilib は ``detect_obj_parameter`` を継続的に更新します。
+
+   • ``color_n`` はターゲットが検出されたかどうかを示します  
+   • ``color_w`` は検出された物体の幅（距離 / 大きさの目安）です
+
+   ターゲットが存在し、かつ十分大きい場合、  
+   プログラムは成功をアナウンスし、すぐに新しいランダムカラーへ切り替えます。
+
+#. WASD による移動制御
+
+   .. code-block:: python
+
+      if k in key_dict:
+          action = key_dict[k]
+
+      if action is not None:
+          crawler.do_action(action, 1, speed)
+          action = None
+
+   メインループはキーイベントを確認します：
+
+   • w → forward  
+   • s → backward  
+   • a → turn_left  
+   • d → turn_right  
+
+   移動キーが押されると、ロボットは短い動作ステップを1回実行します。  
+   この設計により、操作の反応性を保ちながら、  
+   ロボットが暴走するような連続移動を防ぎます。
+
+#. スペースキー：ターゲットメッセージの再表示
+
+   .. code-block:: python
+
+      elif k == 'space':
+          tts.say("Look for " + color)
+
+   Space キーを押すと、現在のターゲットメッセージを再度読み上げます。  
+   ユーザーがターゲットカラーを忘れた場合に便利です。
+
+#. 終了処理とクリーンアップ
+
+   .. code-block:: python
+
+      finally:
+          stop_event.set()
+          Vilib.color_detect("close")
+          Vilib.camera_close()
+          crawler.do_step('sit', 40)
+
+   プログラム終了時：
+
+   • ``stop_event`` によりキーボードスレッドを停止します。  
+   • Vilib のカラー検出を無効化します。  
+   • カメラを安全に閉じます。  
+   • ロボットは座る姿勢に戻ります。
+
+   この終了処理の順序により、カメラリソースのエラーを防ぎ、  
+   ロボットが安全な姿勢でプログラムを終了できるようにします。

@@ -45,7 +45,7 @@
     * Debug mode: off
     * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
 
-その後、ブラウザで ``http://<your IP>:9000/mjpg`` を入力して、ビデオ画面を表示できます。例えば、 ``https://192.168.18.113:9000/mjpg`` です。
+その後、ブラウザで ``http://<your IP>:9000/mjpg`` を入力して、ビデオ画面を表示できます。例えば、 ``http://192.168.18.113:9000/mjpg`` です。
 
 .. image:: img/display.png
 
@@ -69,7 +69,7 @@
 
     *  **写真を撮る**
 
-        ターミナルで ``q`` を入力し、Enterを押します。カメラが現在見ている画像が保存されます（色検出機能が有効な場合、保存された画像にもマークボックスが表示されます）。これらの写真はRaspberry Piの ``~/Pictures/PiCrawler/`` ディレクトリから確認できます。
+        ターミナルで ``q`` を入力し。カメラが現在見ている画像が保存されます（色検出機能が有効な場合、保存された画像にもマークボックスが表示されます）。これらの写真はRaspberry Piの ``~/Pictures/PiCrawler/`` ディレクトリから確認できます。
         また、ツール（例: :ref:`filezilla` ）を使用して、写真をPCに転送できます。
         
 
@@ -105,134 +105,152 @@
     from vilib import Vilib
     from time import sleep, time, strftime, localtime
     import threading
+    import readchar
     from os import getlogin
-    
+
     USERNAME = getlogin()
     PICTURE_PATH = f"/home/{USERNAME}/Pictures/"
-    
-    
+
     flag_face = False
     flag_color = False
     qr_code_flag = False
-    
+
     MANUAL = '''
-    関数を呼び出すためにキーを入力してください！
-        q: 写真を撮る
-        1: 色検出：赤
-        2: 色検出：オレンジ
-        3: 色検出：黄色
-        4: 色検出：緑
-        5: 色検出：青
-        6: 色検出：紫
-        0: 色検出をオフにする
-        r: QRコードをスキャンする
-        f: 顔検出をON/OFFする
-        s: 検出したオブジェクトの情報を表示する
+    Press a key to call the function:
+        q: Take photo
+        1: Color detect : red
+        2: Color detect : orange
+        3: Color detect : yellow
+        4: Color detect : green
+        5: Color detect : blue
+        6: Color detect : purple
+        0: Switch off Color detect
+        r: Scan the QR code (toggle)
+        f: Switch ON/OFF face detect
+        s: Display detected object information
+        Ctrl+C: Quit
     '''
-    
-    color_list = ['close', 'red', 'orange', 'yellow', 
-            'green', 'blue', 'purple',
-    ]
-    
+
+    color_list = ['close', 'red', 'orange', 'yellow', 'green', 'blue', 'purple']
+
     def face_detect(flag):
-        print("Face Detect:" + str(flag))
+        print("Face Detect:", flag)
         Vilib.face_detect_switch(flag)
-    
-    
+
     def qrcode_detect():
         global qr_code_flag
-        if qr_code_flag == True:
-            Vilib.qrcode_detect_switch(True)
-            print("Waitting for QR code")
-    
+        Vilib.qrcode_detect_switch(True)
+        print("Waiting for QR code...")
+
         text = None
-        while True:
-            temp = Vilib.detect_obj_parameter['qr_data']
-            if temp != "None" and temp != text: 
-                text = temp         
-                print('QR code:%s'%text)
-            if qr_code_flag == False:          
-                break
-            sleep(0.5)
+        while qr_code_flag:
+            temp = Vilib.detect_obj_parameter.get('qr_data', "None")
+            if temp != "None" and temp != text:
+                text = temp
+                print("QR code:", text)
+            sleep(0.2)
+
         Vilib.qrcode_detect_switch(False)
-    
-    
+
     def take_photo():
-        _time = strftime('%Y-%m-%d-%H-%M-%S',localtime(time()))
-        name = 'photo_%s'%_time
+        _time = strftime('%Y-%m-%d-%H-%M-%S', localtime(time()))
+        name = f'photo_{_time}'
         Vilib.take_photo(name, PICTURE_PATH)
-        print('photo save as %s%s.jpg'%(PICTURE_PATH, name))
-    
-    
+        print(f'Photo saved as {PICTURE_PATH}{name}.jpg')
+
     def object_show():
         global flag_color, flag_face
-    
-        if flag_color is True:
-            if Vilib.detect_obj_parameter['color_n'] == 0:
+
+        if flag_color:
+            if Vilib.detect_obj_parameter.get('color_n', 0) == 0:
                 print('Color Detect: None')
             else:
-                color_coodinate = (Vilib.detect_obj_parameter['color_x'],Vilib.detect_obj_parameter['color_y'])
-                color_size = (Vilib.detect_obj_parameter['color_w'],Vilib.detect_obj_parameter['color_h'])
-                print("[Color Detect] ","Coordinate:",color_coodinate,"Size",color_size)
-    
-        if flag_face is True:
-            if Vilib.detect_obj_parameter['human_n'] == 0:
+                x = Vilib.detect_obj_parameter.get('color_x')
+                y = Vilib.detect_obj_parameter.get('color_y')
+                w = Vilib.detect_obj_parameter.get('color_w')
+                h = Vilib.detect_obj_parameter.get('color_h')
+                print("[Color Detect] Coordinate:", (x, y), "Size:", (w, h))
+
+        if flag_face:
+            if Vilib.detect_obj_parameter.get('human_n', 0) == 0:
                 print('Face Detect: None')
             else:
-                human_coodinate = (Vilib.detect_obj_parameter['human_x'],Vilib.detect_obj_parameter['human_y'])
-                human_size = (Vilib.detect_obj_parameter['human_w'],Vilib.detect_obj_parameter['human_h'])
-                print("[Face Detect] ","Coordinate:",human_coodinate,"Size",human_size)
-    
-    
+                x = Vilib.detect_obj_parameter.get('human_x')
+                y = Vilib.detect_obj_parameter.get('human_y')
+                w = Vilib.detect_obj_parameter.get('human_w')
+                h = Vilib.detect_obj_parameter.get('human_h')
+                print("[Face Detect] Coordinate:", (x, y), "Size:", (w, h))
+
     def main():
         global flag_face, flag_color, qr_code_flag
         qrcode_thread = None
-    
-        Vilib.camera_start(vflip=False,hflip=False)
-        Vilib.display(local=True,web=True)
+
+        Vilib.camera_start(vflip=False, hflip=False)
+        Vilib.display(local=True, web=True)
         print(MANUAL)
-    
-        while True:
-            # キー入力
-            key = input()
-            key = key.lower()
-            # 写真を撮る
-            if key == 'q':
-                take_photo()
-            # 色検出         
-            elif key != '' and key in ('0123456'):  # '' in ('0123') -> True
-                index = int(key)
-                if index == 0:
-                    flag_color = False
-                    Vilib.color_detect('close')
-                else:
-                    flag_color = True
-                    Vilib.color_detect(color_list[index]) # color_detect(color:str -> color_name/close)
-                print('Color detect : %s'%color_list[index])  
-            # 顔検出
-            elif key =="f":
-                flag_face = not flag_face
-                face_detect(flag_face)
-            # QRコード検出
-            elif key =="r":
-                qr_code_flag = not qr_code_flag
-                if qr_code_flag == True:
-                    if qrcode_thread == None or not qrcode_thread.is_alive():
-                        qrcode_thread = threading.Thread(target=qrcode_detect)
-                        qrcode_thread.setDaemon(True)
-                        qrcode_thread.start()
-                else:
-                    if qrcode_thread != None and qrcode_thread.is_alive(): 
-                       # スレッド終了を待機 
-                        qrcode_thread.join()
+
+        try:
+            while True:
+                key = readchar.readkey().lower()
+
+                if key == 'q':
+                    take_photo()
+
+                elif key in '0123456':
+                    index = int(key)
+                    if index == 0:
+                        flag_color = False
+                        Vilib.color_detect('close')
+                    else:
+                        flag_color = True
+                        Vilib.color_detect(color_list[index])
+                    print('Color detect:', color_list[index])
+
+                elif key == 'f':
+                    flag_face = not flag_face
+                    face_detect(flag_face)
+
+                elif key == 'r':
+                    qr_code_flag = not qr_code_flag
+                    if qr_code_flag:
+                        if qrcode_thread is None or not qrcode_thread.is_alive():
+                            qrcode_thread = threading.Thread(target=qrcode_detect, daemon=True)
+                            qrcode_thread.start()
+                    else:
                         print('QRcode Detect: close')
-            # 検出されたオブジェクト情報を表示
-            elif key == "s":
-                object_show()
-    
-            sleep(0.5)
-    
-    
+
+                elif key == 's':
+                    object_show()
+
+                sleep(0.05)
+
+        except KeyboardInterrupt:
+            print("\nQuit.")
+
+        finally:
+            # Stop QR thread and switches
+            qr_code_flag = False
+            try:
+                Vilib.qrcode_detect_switch(False)
+            except Exception:
+                pass
+
+            try:
+                Vilib.color_detect('close')
+            except Exception:
+                pass
+
+            try:
+                Vilib.face_detect_switch(False)
+            except Exception:
+                pass
+
+            # Close camera
+            try:
+                Vilib.camera_close()
+            except Exception:
+                pass
+
     if __name__ == "__main__":
         main()
 

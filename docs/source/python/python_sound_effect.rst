@@ -51,77 +51,89 @@
     cd ~/picrawler/examples
     sudo python3 sound_effect.py
 
-コードが実行された後、ターミナルに表示されたプロンプトに従って操作してください。
+プログラムが開始されると、ターミナルに操作メニューが表示されます。
 
-機能を呼び出すためにキーを入力してください！
+キーを押すと、対応する機能がすぐに実行されます。
 
-* ``q`` : 背景音楽を再生
-* ``1`` : サウンドエフェクトを再生
-* ``2`` : スレッドを使ってサウンドエフェクトを再生
-* ``t`` : テキストを読み上げ
-* プログラムを終了するには、 ``Ctrl+C`` を押してください。
+* ``q``：バックグラウンド音楽の再生 / 停止を切り替えます。
+* ``1``：複数の効果音を順番に再生します（ブロッキングモード）。
+* ``2``：同じ効果音をスレッドを使用して再生します（ノンブロッキング）。
+* ``t``：テキスト読み上げ（TTS）機能を使って「Hello」と発話します。
+
+プログラムは継続して実行され、キー入力を待機します。
+
+Ctrl+C を押すとプログラムが停止します。  
+終了前に、再生中のバックグラウンド音楽は自動的に停止します。
+
 
 **コード**
 
 .. code-block:: python
 
-    '''
-        Sorry, currently there is only sound when running with sudo
-    '''
-
     from time import sleep
-    from robot_hat import Music,TTS
+    import readchar
+    from robot_hat import Music, TTS
 
     music = Music()
     tts = TTS()
 
     manual = '''
-    Input key to call the function!
-        q: Play background music
-        1: Play sound effect
-        2: Play sound effect with threads
+    Press a key to trigger actions (no Enter needed):
+        q: Play/Stop background music
+        1: Play sound effect (blocking)
+        2: Play sound effect (threading)
         t: Text to speak
 
         Ctrl^C: quit
     '''
 
-    def main():  
+    def main():
         print(manual)
 
         flag_bgm = False
         music.music_set_volume(20)
         tts.lang("en-US")
 
+        try:
+            while True:
+                # Real-time key input (no Enter required)
+                key = readchar.readkey().lower()
 
-        while True:
-            key = input() 
-            key = key.lower() 
-            if key == "q":
-                flag_bgm = not flag_bgm
-                if flag_bgm is True:
-                    music.music_play('./musics/sports-Ahjay_Stelino.mp3')
-                else:
-                    music.music_stop()
+                if key == "q":
+                    flag_bgm = not flag_bgm
+                    if flag_bgm:
+                        music.music_play('./musics/sports-Ahjay_Stelino.mp3')
+                    else:
+                        music.music_stop()
 
-            elif key == "1":
-                music.sound_play('./sounds/talk1.wav')
-                sleep(0.05)
-                music.sound_play('./sounds/talk3.wav')
-                sleep(0.05)
-                music.sound_play('./sounds/sign.wav')
-                sleep(0.5)
+                elif key == "1":
+                    music.sound_play('./sounds/talk1.wav')
+                    sleep(0.05)
+                    music.sound_play('./sounds/talk3.wav')
+                    sleep(0.05)
+                    music.sound_play('./sounds/sign.wav')
+                    sleep(0.5)
 
-            elif key =="2":
-                music.sound_play_threading('./sounds/talk1.wav')
-                sleep(0.05)
-                music.sound_play_threading('./sounds/talk3.wav')
-                sleep(0.05)
-                music.sound_play_threading('./sounds/sign.wav')
-                sleep(0.5)
+                elif key == "2":
+                    music.sound_play_threading('./sounds/talk1.wav')
+                    sleep(0.05)
+                    music.sound_play_threading('./sounds/talk3.wav')
+                    sleep(0.05)
+                    music.sound_play_threading('./sounds/sign.wav')
+                    sleep(0.5)
 
-            elif key == "t":
-                words = "Hello"
-                tts.say(words)
+                elif key == "t":
+                    tts.say("Hello")
+
+        except KeyboardInterrupt:
+            print("\nquit")
+
+        finally:
+            # Stop music before exit to reduce error messages
+            try:
+                music.music_stop()
+            except Exception:
+                pass
 
     if __name__ == "__main__":
         main()
