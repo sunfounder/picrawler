@@ -22,9 +22,9 @@
     cd ~/picrawler/
     sudo bash i2samp.sh 
 
-运行过程中会出现多次提示，要求确认操作。请全部输入 **Y** 确认。完成系统修改后，需要重启树莓派才能使更改生效。
+系统会出现多次提示以确认请求。请对所有提示输入 **Y** 进行确认。完成对 Raspberry Pi 系统的修改后，需要重新启动计算机，使这些更改生效。
 
-重启后，请再次运行 ``i2samp.sh`` 脚本来测试放大器。如果扬声器能够正常播放声音，说明配置完成。
+重启完成后，再次运行 ``i2samp.sh`` 脚本来测试功放。如果扬声器能够成功播放声音，则说明配置已经完成。
 
 
 **运行代码**
@@ -38,81 +38,91 @@
     cd ~/picrawler/examples
     sudo python3 sound_effect.py
 
-程序运行后，请根据终端打印的提示进行操作。
+当程序启动时，终端中会显示一个控制菜单。
 
-输入按键即可调用相应功能：
-* ``q``: 播放背景音乐
-* ``1``: 播放音效
-* ``2``: 多线程播放音效
-* ``t``: 文本转语音
-* 若要退出程序，请按 ``Ctrl+C``
+按下键盘按键会立即触发对应的功能。
 
+* ``q``：切换背景音乐的开启或关闭。
+* ``1``：依次播放多个音效（阻塞模式）。
+* ``2``：使用线程播放相同的音效（非阻塞模式）。
+* ``t``：系统使用文本转语音功能朗读单词 “Hello”。
+
+程序会持续运行并等待键盘输入。
+
+按下 Ctrl+C 可以停止程序。
+在程序退出之前，所有背景音乐会自动停止。
 
 **代码** 
 
 .. code-block:: python
 
-    '''
-        Sorry, currently there is only sound when running with sudo
-    '''
-
     from time import sleep
-    from robot_hat import Music,TTS
+    import readchar
+    from robot_hat import Music, TTS
 
     music = Music()
     tts = TTS()
 
     manual = '''
-    Input key to call the function!
-        q: Play background music
-        1: Play sound effect
-        2: Play sound effect with threads
+    Press a key to trigger actions (no Enter needed):
+        q: Play/Stop background music
+        1: Play sound effect (blocking)
+        2: Play sound effect (threading)
         t: Text to speak
 
         Ctrl^C: quit
     '''
 
-    def main():  
+    def main():
         print(manual)
 
         flag_bgm = False
         music.music_set_volume(20)
         tts.lang("en-US")
 
+        try:
+            while True:
+                # Real-time key input (no Enter required)
+                key = readchar.readkey().lower()
 
-        while True:
-            key = input() 
-            key = key.lower() 
-            if key == "q":
-                flag_bgm = not flag_bgm
-                if flag_bgm is True:
-                    music.music_play('./musics/sports-Ahjay_Stelino.mp3')
-                else:
-                    music.music_stop()
+                if key == "q":
+                    flag_bgm = not flag_bgm
+                    if flag_bgm:
+                        music.music_play('./musics/sports-Ahjay_Stelino.mp3')
+                    else:
+                        music.music_stop()
 
-            elif key == "1":
-                music.sound_play('./sounds/talk1.wav')
-                sleep(0.05)
-                music.sound_play('./sounds/talk3.wav')
-                sleep(0.05)
-                music.sound_play('./sounds/sign.wav')
-                sleep(0.5)
+                elif key == "1":
+                    music.sound_play('./sounds/talk1.wav')
+                    sleep(0.05)
+                    music.sound_play('./sounds/talk3.wav')
+                    sleep(0.05)
+                    music.sound_play('./sounds/sign.wav')
+                    sleep(0.5)
 
-            elif key =="2":
-                music.sound_play_threading('./sounds/talk1.wav')
-                sleep(0.05)
-                music.sound_play_threading('./sounds/talk3.wav')
-                sleep(0.05)
-                music.sound_play_threading('./sounds/sign.wav')
-                sleep(0.5)
+                elif key == "2":
+                    music.sound_play_threading('./sounds/talk1.wav')
+                    sleep(0.05)
+                    music.sound_play_threading('./sounds/talk3.wav')
+                    sleep(0.05)
+                    music.sound_play_threading('./sounds/sign.wav')
+                    sleep(0.5)
 
-            elif key == "t":
-                words = "Hello"
-                tts.say(words)
+                elif key == "t":
+                    tts.say("Hello")
+
+        except KeyboardInterrupt:
+            print("\nquit")
+
+        finally:
+            # Stop music before exit to reduce error messages
+            try:
+                music.music_stop()
+            except Exception:
+                pass
 
     if __name__ == "__main__":
         main()
-
 
 **它是如何工作的？**
 

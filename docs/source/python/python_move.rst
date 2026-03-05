@@ -17,7 +17,16 @@
     cd ~/picrawler/examples
     sudo python3 move.py
 
-代码执行后，PiCrawler 将依次完成以下动作：前进、后退、左转、右转、站立。
+当程序启动时，PiCrawler 会先站立起来，并短暂等待。
+
+随后它会持续执行一个循环动作：
+向前移动、向后移动、向左转、向右转、
+小幅左转以及小幅右转。
+
+每个动作之间都会加入短暂的延时，使运动更加平稳。
+
+按下 Ctrl+C 可以停止程序。
+在程序退出之前，机器人会安全地坐下。
 
 **代码**
 
@@ -32,63 +41,111 @@
 
     from picrawler import Picrawler
     from time import sleep
-    
-    crawler = Picrawler() 
-    
-    def main():  
-        
-        speed = 80
-              
-        while True:
-           
-            crawler.do_action('forward',2,speed)
-            sleep(0.05)     
-            crawler.do_action('backward',2,speed)
-            sleep(0.05)          
-            crawler.do_action('turn left',2,speed)
-            sleep(0.05)           
-            crawler.do_action('turn right',2,speed)
-            sleep(0.05)  
-            crawler.do_action('turn left angle',2,speed)
-            sleep(0.05)  
-            crawler.do_action('turn right angle',2,speed)
-            sleep(0.05) 
-            crawler.do_step('stand',speed)
-            sleep(1)
-    
+
+    crawler = Picrawler()  # Create PiCrawler object
+
+    def main():
+        speed = 80  # Movement speed
+
+        try:
+            crawler.do_step('stand', 40)  # Stand up
+            sleep(1.0)
+
+            while True:
+                crawler.do_action('forward', 1, speed)   # Move forward
+                sleep(0.25)
+
+                crawler.do_action('backward', 1, speed)  # Move backward
+                sleep(0.25)
+
+                crawler.do_action('turn left', 1, speed)  # Turn left
+                sleep(0.25)
+
+                crawler.do_action('turn right', 1, speed)  # Turn right
+                sleep(0.25)
+
+                crawler.do_action('turn left angle', 1, speed)  # Small left turn
+                sleep(0.3)
+
+                crawler.do_action('turn right angle', 1, speed)  # Small right turn
+                sleep(0.3)
+
+                sleep(0.5)
+
+        except KeyboardInterrupt:
+            print("\nCtrl+C pressed...")
+
+        finally:
+            crawler.do_step('sit', 40)  # Sit down before exit
+            sleep(1.0)
+
     if __name__ == "__main__":
         main()
 
 
 **它是如何工作的？**
 
-首先，从已安装的 ``picrawler`` 库中导入 ``Picrawler`` 类，该类包含了 PiCrawler 的全部动作以及实现这些动作的函数。
+#. 导入与初始化
 
-.. code-block:: python
+   .. code-block:: python
 
-    from picrawler import Picrawler
+      from picrawler import Picrawler
+      from time import sleep
 
-然后实例化 ``crawler`` 类。
+      crawler = Picrawler()
 
-.. code-block:: python
+   该脚本导入所需的模块，并创建一个
+   ``Picrawler`` 对象，用于控制机器人的所有运动。
 
-    crawler = Picrawler() 
+#. 主函数与初始化设置
 
-最后，通过 ``crawler.do_action()`` 函数来控制 PiCrawler 移动。
+   .. code-block:: python
 
-.. code-block:: python
-    
-    crawler.do_action('forward',2,speed)    
-    crawler.do_action('backward',2,speed)         
-    crawler.do_action('turn left',2,speed)          
-    crawler.do_action('turn right',2,speed) 
-    crawler.do_action('turn left angle',2,speed) 
-    crawler.do_action('turn right angle',2,speed)
+      def main():
+          speed = 80
+          crawler.do_step('stand', 40)
+          sleep(1.0)
 
-总体而言，PiCrawler 的所有移动动作都可以通过 ``do_action()`` 函数实现。它包含 3 个参数：
+   ``main()`` 函数中定义了机器人的运动速度。
+   在进入循环之前，机器人会先站立起来并保持稳定。
 
-* ``motion_name`` 表示具体的动作名称，包括： ``forward`` 、 ``turn right`` 、 ``turn left`` 、 ``backward`` 、 ``turn left angle`` 、 ``turn right angle`` 。
-* ``step`` 表示动作执行的次数，默认值为 1。
-* ``speed`` 表示动作执行的速度，默认值为 50，取值范围为 0~100。
+#. 持续运动循环
 
-此外，这里还使用了 ``crawler.do_step('stand',speed)`` 来让 PiCrawler 保持站立状态。该函数的用法将在后续示例中进一步说明。
+   .. code-block:: python
+
+      while True:
+          crawler.do_action('forward', 1, speed)
+          crawler.do_action('backward', 1, speed)
+          crawler.do_action('turn left', 1, speed)
+          crawler.do_action('turn right', 1, speed)
+          crawler.do_action('turn left angle', 1, speed)
+          crawler.do_action('turn right angle', 1, speed)
+
+   机器人会在无限循环中持续执行一组预定义的
+   运动动作。
+
+   每个动作之间加入短暂延时，可以让动作更加平滑。
+
+#. 安全退出处理
+
+   .. code-block:: python
+
+      except KeyboardInterrupt:
+          print("\nCtrl+C pressed...")
+      finally:
+          crawler.do_step('sit', 40)
+
+   ``try / except / finally`` 结构确保：
+
+   - 按下 Ctrl+C 时可以安全地停止循环。
+   - 程序退出前，机器人会先执行坐下动作。
+
+#. 程序入口
+
+   .. code-block:: python
+
+      if __name__ == "__main__":
+          main()
+
+   该结构确保只有在脚本被直接运行时，
+   才会执行 ``main()`` 函数。

@@ -18,9 +18,21 @@
     cd ~/picrawler/examples
     sudo python3 avoid.py
 
-代码运行后，PiCrawler 会开始向前行走。如果检测到前方障碍物距离小于 10cm，它会停止并发出提示音，然后左转并暂停。若左转方向无障碍物，或障碍物距离大于 10cm，它将继续向前移动。  
+当程序启动时，PiCrawler 会站立起来。
 
+它会持续使用超声波传感器测量距离，
+并在终端中打印测量到的数值。
 
+如果在 15 cm 范围内检测到障碍物：
+- 会播放警告声音。
+- 机器人会进行一次小幅度左转。
+
+如果前方路径是畅通的：
+- 机器人会向前移动。
+
+机器人会持续自动避障运行，直到你按下 Ctrl+C。
+
+在程序退出之前，机器人会安全地坐下。
 
 **代码**
 
@@ -34,80 +46,223 @@
 .. code-block:: python
 
     from picrawler import Picrawler
-    from robot_hat import TTS, Music
-    from robot_hat import Ultrasonic
-    from robot_hat import Pin
+    from robot_hat import Music, Ultrasonic, Pin
     import time
+    import signal
 
-    tts = TTS()
     music = Music()
+    crawler = Picrawler()
+    sonar = Ultrasonic(Pin("D2"), Pin("D3"))  # Ultrasonic trigger/echo pins
 
-    crawler = Picrawler() 
-    sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
-    music.music_set_volume(100)
+    music.music_set_volume(100)  # Set speaker volume
 
-    alert_distance = 15
-    speed = 80
+    alert_distance = 15  # Obstacle warning distance (cm)
+    speed = 80           # Movement speed
+
+    # ----------------------------
+    # Add hardware timeout to sonar.read()
+    # Prevent program from freezing
+    # ----------------------------
+    class Timeout(Exception):
+        pass
+
+    def _alarm_handler(signum, frame):
+        raise Timeout()
+
+    signal.signal(signal.SIGALRM, _alarm_handler)
+
+    # Read distance once with timeout protection
+    def safe_read_once(timeout_s=1):
+        try:
+            signal.alarm(timeout_s)
+            d = sonar.read()
+            signal.alarm(0)
+            return d
+        except Timeout:
+            signal.alarm(0)
+            return None
+        except Exception:
+            signal.alarm(0)
+            return None
+
+    # Read multiple times and return median value (anti-noise)
+    def read_distance_filtered(n=5, gap=0.03, timeout_s=1):
+        vals = []
+        for _ in range(n):
+            d = safe_read_once(timeout_s=timeout_s)
+            if d is not None and d > 0:
+                vals.append(d)
+            time.sleep(gap)
+
+        if not vals:
+            return None
+
+        vals.sort()
+        return vals[len(vals)//2]  # Median filter
 
     def main():
-        distance = sonar.read()
-        print(distance)
-        if distance < 0:
-            pass
-        elif distance <= alert_distance:
+        distance = read_distance_filtered(n=5, gap=0.03, timeout_s=1)
+        print("distance:", distance)
+
+        if distance is None:
+            time.sleep(0.15)  # Wait if read failed
+            return
+
+        if distance <= alert_distance:
+            # Obstacle detected → play sound and turn
             try:
                 music.sound_play_threading('./sounds/sign.wav', volume=100)
             except Exception as e:
-                print(e)
-            crawler.do_action('turn left angle',3,speed)
-            time.sleep(0.2)
-        else :
-            crawler.do_action('forward', 1,speed)
-            time.sleep(0.2)
+                print("sound error:", e)
+
+            crawler.do_action('turn left angle', 1, speed)
+            time.sleep(0.5)  # Quiet window after movement
+        else:
+            # Path clear → move forward
+            crawler.do_action('forward', 1, speed)
+            time.sleep(0.4)
 
     if __name__ == "__main__":
-        while True:
-            main()
+        try:
+            crawler.do_step('stand', 40)  # Stand before starting
+            time.sleep(1.0)
+
+            while True:
+                main()
+
+        except KeyboardInterrupt:
+            print("\nStop.")
+        finally:
+            try:
+                crawler.do_step('sit', 40)  # Sit before exit
+                time.sleep(1.0)
+            except Exception:
+                pass
 
 **工作原理**
 
-你可以通过导入 ``Ultrasonic`` 类来获取测距功能。  
+#. 初始化模块
 
-.. code-block:: python
+   .. code-block:: python
 
-    from robot_hat import Ultrasonic
+      music = Music()
+      crawler = Picrawler()
+      sonar = Ultrasonic(Pin("D2"), Pin("D3"))
 
-接着初始化超声波引脚。  
+      music.music_set_volume(100)
+      alert_distance = 15
+      speed = 80
 
-.. code-block:: python
+   该代码块初始化三个主要模块：
+   - ``music``：用于控制声音播放。
+   - ``crawler``：用于控制 PiCrawler 的运动。
+   - ``sonar``：通过超声波传感器读取距离。
 
-    sonar = Ultrasonic(Pin("D2") ,Pin("D3"))
+   同时还设置了扬声器音量、障碍物检测阈值（单位：厘米），
+   以及机器人的运动速度。
 
+#. 超时保护模块（防止 sonar.read() 卡死）
 
-以下是主程序逻辑：  
+   .. code-block:: python
 
-* 读取超声波模块检测到的 ``distance``，并过滤掉小于 0 的值（当超声波模块距离障碍物过远或数据读取异常时，可能会返回 ``distance < 0`` ）。  
-* 当 ``distance`` 小于或等于 ``alert_distance``（之前设置的阈值，这里为 10）时，播放提示音 ``sign.wav`` ，并执行 ``turn left angle`` 动作。  
-* 当 ``distance`` 大于 ``alert_distance`` 时，PiCrawler 将执行 ``forward`` 前进动作。  
+      class Timeout(Exception):
+          pass
 
-.. code-block:: python
+      def _alarm_handler(signum, frame):
+          raise Timeout()
 
-    distance = sonar.read()
-    print(distance)
-    if distance < 0:
-        pass
-    elif distance <= alert_distance:
-        try:
-            music.sound_play_threading('./sounds/sign.wav', volume=100)
-        except Exception as e:
-            print(e)
-        crawler.do_action('turn left angle',3,speed)
-        time.sleep(0.2)
-    else :
-        crawler.do_action('forward', 1,speed)
-        time.sleep(0.2)
+      signal.signal(signal.SIGALRM, _alarm_handler)
 
+   超声波驱动在等待回波信号时可能会阻塞程序。
+   该代码块安装了一个信号处理器，使程序可以中断
+   卡住的 ``sonar.read()`` 调用，从而保证程序继续运行。
 
-.. note::  
+#. 函数：safe_read_once()
 
-    你可以通过 :ref:`filezilla` 将不同的音效或音乐添加到 ``musics`` 或 ``sounds`` 文件夹中。  
+   .. code-block:: python
+
+      def safe_read_once(timeout_s=1):
+          try:
+              signal.alarm(timeout_s)
+              d = sonar.read()
+              signal.alarm(0)
+              return d
+          except Timeout:
+              signal.alarm(0)
+              return None
+          except Exception:
+              signal.alarm(0)
+              return None
+
+   该函数在带有超时保护的情况下读取一次超声波距离。
+
+   - 如果读取成功，则返回距离值。
+   - 如果读取超时或发生错误，则返回 ``None``，避免程序卡死。
+
+#. 函数：read_distance_filtered()
+
+   .. code-block:: python
+
+      def read_distance_filtered(n=5, gap=0.03, timeout_s=1):
+          vals = []
+          for _ in range(n):
+              d = safe_read_once(timeout_s=timeout_s)
+              if d is not None and d > 0:
+                  vals.append(d)
+              time.sleep(gap)
+
+          if not vals:
+              return None
+
+          vals.sort()
+          return vals[len(vals)//2]
+
+   该函数通过多次采样来提高测量可靠性：
+
+   - 无效数据（``None`` 或 ``<= 0``）会被忽略。
+   - 将剩余的有效数据排序。
+   - 返回中位数作为最终距离值，从而减少噪声影响。
+
+#. 函数：main()（核心决策与动作）
+
+   .. code-block:: python
+
+      def main():
+          distance = read_distance_filtered(...)
+          if distance is None:
+              return
+
+          if distance <= alert_distance:
+              music.sound_play_threading(...)
+              crawler.do_action('turn left angle', 1, speed)
+          else:
+              crawler.do_action('forward', 1, speed)
+
+   这是主要的控制逻辑：
+
+   - 读取经过过滤的距离值。
+   - 如果读取失败，则跳过本次循环。
+   - 如果检测到的障碍物距离小于 ``alert_distance``，
+     则播放警告声音并向左转。
+   - 否则机器人向前移动。
+
+#. 程序入口模块（循环运行 + 安全退出）
+
+   .. code-block:: python
+
+      if __name__ == "__main__":
+          try:
+              crawler.do_step('stand', 40)
+              while True:
+                  main()
+          except KeyboardInterrupt:
+              print("\nStop.")
+          finally:
+              crawler.do_step('sit', 40)
+
+   该代码块控制程序的整体运行流程：
+
+   - 程序开始前，机器人先站立。
+   - 在无限循环中不断执行 ``main()``。
+   - 按下 Ctrl+C 可以终止程序。
+   - 程序退出前，机器人会安全地坐下。
