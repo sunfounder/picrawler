@@ -45,83 +45,238 @@ Recording can be stopped or started by pressing the keys on the keyboard.
 
 .. code-block:: python
 
-    from time import sleep,strftime,localtime
+    from time import sleep, strftime, localtime
     from vilib import Vilib
-    import readchar 
+    import readchar
     from os import getlogin
-    
+    import os
+
     USERNAME = getlogin()
     VIDEO_PATH = f"/home/{USERNAME}/Videos/"
-    
+
     MANUAL = '''
     Press keys on keyboard to control recording:
         Q: record/pause/continue
         E: stop
-        Ctrl^C: Quit
+        Ctrl+C: Quit
     '''
-    
-    def print_overwrite(msg,  end='', flush=True):
-        print('\r\033[2K', end='',flush=True)
+
+    def print_overwrite(msg, end='', flush=True):
+        """Overwrite the current terminal line."""
+        print('\r\033[2K', end='', flush=True)
         print(msg, end=end, flush=True)
-    
+
+    def safe_stop_recording():
+        """Stop recording safely (avoid exceptions during exit)."""
+        try:
+            Vilib.rec_video_stop()
+        except Exception:
+            pass
+
+    def safe_close_camera():
+        """Close camera safely (avoid exceptions during exit)."""
+        try:
+            Vilib.camera_close()
+        except Exception:
+            pass
+
     def main():
-        rec_flag = 'stop' # start,pause,stop
+        rec_flag = 'stop'  # Possible states: start, pause, stop
         vname = None
+
+        # Ensure the video directory exists
+        os.makedirs(VIDEO_PATH, exist_ok=True)
+
+        # Set save path for recorded videos
         Vilib.rec_video_set["path"] = VIDEO_PATH
-    
-        Vilib.camera_start(vflip=False,hflip=False) 
-        Vilib.display(local=True,web=True)
-        sleep(0.8)  # wait for startup
-    
+
+        # Start camera and preview
+        Vilib.camera_start(vflip=False, hflip=False)
+        Vilib.display(local=False, web=True)
+        sleep(0.8)  # Wait for camera startup
+
         print(MANUAL)
-        while True:
-            # read keyboard
-            key = readchar.readkey()
-            key = key.lower()
-            # start,pause
-            if key == 'q':
-                key = None
-                if rec_flag == 'stop':            
-                    rec_flag = 'start'
-                    # set name
-                    vname = strftime("%Y-%m-%d-%H.%M.%S", localtime())
-                    Vilib.rec_video_set["name"] = vname
-                    # start record
-                    Vilib.rec_video_run()
-                    Vilib.rec_video_start()
-                    print_overwrite('rec start ...')
-                elif rec_flag == 'start':
-                    rec_flag = 'pause'
-                    Vilib.rec_video_pause()
-                    print_overwrite('pause')
-                elif rec_flag == 'pause':
-                    rec_flag = 'start'
-                    Vilib.rec_video_start()
-                    print_overwrite('continue')
-            # stop       
-            elif key == 'e' and rec_flag != 'stop':
-                key = None
-                rec_flag = 'stop'
-                Vilib.rec_video_stop()
-                print_overwrite("The video saved as %s%s.avi"%(Vilib.rec_video_set["path"],vname),end='\n')  
-            # quit
-            elif key == readchar.key.CTRL_C:
-                Vilib.camera_close()
-                print('\nquit')
-                break 
-    
+
+        try:
+            while True:
+                # Read keyboard input (no Enter needed)
+                key = readchar.readkey().lower()
+
+                # Q: start / pause / continue
+                if key == 'q':
+                    if rec_flag == 'stop':
+                        rec_flag = 'start'
+
+                        # Generate filename based on timestamp
+                        vname = strftime("%Y-%m-%d-%H.%M.%S", localtime())
+                        Vilib.rec_video_set["name"] = vname
+
+                        # Start recording
+                        Vilib.rec_video_run()
+                        Vilib.rec_video_start()
+                        print_overwrite('rec start ...')
+
+                    elif rec_flag == 'start':
+                        rec_flag = 'pause'
+                        Vilib.rec_video_pause()
+                        print_overwrite('pause')
+
+                    elif rec_flag == 'pause':
+                        rec_flag = 'start'
+                        Vilib.rec_video_start()
+                        print_overwrite('continue')
+
+                # E: stop recording
+                elif key == 'e' and rec_flag != 'stop':
+                    rec_flag = 'stop'
+                    safe_stop_recording()
+                    print_overwrite(
+                        "The video saved as %s%s.avi" % (Vilib.rec_video_set["path"], vname),
+                        end='\n'
+                    )
+
+                # Ctrl+C (readchar special key): quit
+                elif key == readchar.key.CTRL_C:
+                    print('\nquit')
+                    break
+
+                sleep(0.1)
+
+        except KeyboardInterrupt:
+            # Handle Ctrl+C from terminal as well
+            print('\nquit')
+
+        finally:
+            # If recording is still active, stop it before closing camera
+            if rec_flag != 'stop':
+                safe_stop_recording()
+            safe_close_camera()
             sleep(0.1)
-    
+
     if __name__ == "__main__":
         main()
 
 **How it works?**
 
-Functions related to recording include the following:
+#. What This Program Does
 
-* ``Vilib.rec_video_run(video_name)``: Started the thread to record the video. ``video_name`` is the name of the video file, it should be a string.
-* ``Vilib.rec_video_start()``: Start or continue video recording.
-* ``Vilib.rec_video_pause()``: Pause recording.
-* ``Vilib.rec_video_stop()``: Stop recording.
+   This program allows you to control video recording using your keyboard.
 
-``Vilib.rec_video_set["path"] = "~/video/test/"`` sets the storage location of video files.
+   • Q → Start / Pause / Continue recording  
+   • E → Stop recording  
+   • Ctrl+C → Quit the program  
+
+   The recorded video will be saved in the Videos folder.
+
+#. Prepare the Video Folder
+
+   .. code-block:: python
+
+      USERNAME = getlogin()
+      VIDEO_PATH = f"/home/{USERNAME}/Videos/"
+      os.makedirs(VIDEO_PATH, exist_ok=True)
+
+   The program finds your current username  
+   and creates a Videos folder if it does not already exist.
+
+   All recorded videos will be saved here.
+
+#. Start the Camera
+
+   .. code-block:: python
+
+      Vilib.camera_start(vflip=False, hflip=False)
+      Vilib.display(local=False, web=True)
+      sleep(0.8)
+
+   The camera is turned on.
+   Web preview is enabled so you can watch the live stream in your browser.
+
+   The short delay allows the camera to start properly.
+
+#. Recording State Setup
+
+   .. code-block:: python
+
+      rec_flag = 'stop'
+      vname = None
+
+   The program uses a variable called rec_flag
+   to remember the current recording state:
+
+   • stop  → not recording  
+   • start → recording  
+   • pause → paused 
+
+#. Wait for Keyboard Input
+
+   .. code-block:: python
+
+      key = readchar.readkey().lower()
+
+   The program waits for a key press.
+
+#. Press Q to Start Recording
+
+   .. code-block:: python
+
+      if rec_flag == 'stop':
+          vname = strftime("%Y-%m-%d-%H.%M.%S", localtime())
+          Vilib.rec_video_set["name"] = vname
+          Vilib.rec_video_run()
+          Vilib.rec_video_start()
+
+   When you press Q for the first time:
+
+   • A filename is generated using the current date and time  
+   • Recording starts immediately  
+
+   Example filename:
+   2026-03-03-15.30.21.avi
+
+#. Press Q Again to Pause
+
+   .. code-block:: python
+
+      elif rec_flag == 'start':
+          Vilib.rec_video_pause()
+
+   If recording is already running,
+   pressing Q will pause the recording.
+
+#. Press Q Again to Continue
+
+   .. code-block:: python
+
+      elif rec_flag == 'pause':
+          Vilib.rec_video_start()
+
+   If recording is paused,
+   pressing Q again will continue recording.
+
+#. Press E to Stop Recording
+
+   .. code-block:: python
+
+      elif key == 'e' and rec_flag != 'stop':
+          Vilib.rec_video_stop()
+
+   Pressing E will completely stop the recording.
+
+   The video file will be saved in: ``/home/your_username/Videos/``
+
+#. Exit the Program Safely
+
+   .. code-block:: python
+
+      finally:
+          if rec_flag != 'stop':
+              Vilib.rec_video_stop()
+          Vilib.camera_close()
+
+   When the program exits:
+
+   • Recording is stopped (if still running)  
+   • The camera is closed safely  
+
+   This prevents broken video files or camera errors.

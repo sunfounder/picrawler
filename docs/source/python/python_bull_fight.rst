@@ -63,49 +63,201 @@ Then you can enter ``http://<your IP>:9000/mjpg`` in the browser to view the vid
 .. code-block:: python
 
     from picrawler import Picrawler
-    from time import sleep
+    from time import sleep, time
     from robot_hat import Music
     from vilib import Vilib
-    
-    
-    crawler = Picrawler() 
-    
+
+    # Create robot and audio controller objects
+    crawler = Picrawler()
     music = Music()
-    
+
     def main():
-        Vilib.camera_start()
-        Vilib.display()
-        Vilib.color_detect("red") 
-        speed = 80
-    
-        while True:
-            if Vilib.detect_obj_parameter['color_n']!=0:
-                coordinate_x = Vilib.detect_obj_parameter['color_x']
-                music.sound_play_threading('./sounds/talk1.wav')
-    
-                if coordinate_x < 100:
-                    crawler.do_action('turn left',1,speed)
-                    sleep(0.05) 
-                elif coordinate_x > 220:
-                    crawler.do_action('turn right',1,speed)
-                    sleep(0.05) 
-                else :
-                    crawler.do_action('forward',2,speed)
-                    sleep(0.05)    
-            else :
-                crawler.do_step('stand',speed)
-                sleep(0.05)
-    
-    
+        # Start camera and enable preview window
+        Vilib.camera_start(vflip=False, hflip=False)
+        Vilib.display(local=False, web=True)
+
+        # Enable red color detection
+        Vilib.color_detect("red")
+
+        speed = 80                  # Movement speed
+        last_seen = False           # Indicates whether the red target was detected in previous loop
+        last_beep = 0               # Timestamp of last sound playback
+        BEEP_COOLDOWN = 1.0         # Minimum interval between sound effects (seconds)
+
+        # Stand once before starting tracking
+        crawler.do_step('stand', 40)
+        sleep(1.0)
+
+        try:
+            while True:
+                # Read detection result
+                if Vilib.detect_obj_parameter.get('color_n', 0) != 0:
+
+                    # Get horizontal coordinate of detected red object
+                    coordinate_x = Vilib.detect_obj_parameter.get('color_x', 0)
+
+                    # Play sound effect with cooldown to avoid spamming
+                    now = time()
+                    if now - last_beep >= BEEP_COOLDOWN:
+                        try:
+                            music.sound_play_threading('./sounds/talk1.wav')
+                        except Exception:
+                            pass
+                        last_beep = now
+
+                    # Steering logic based on horizontal position
+                    # Left side of image
+                    if coordinate_x < 100:
+                        crawler.do_action('turn left', 1, speed)
+
+                    # Right side of image
+                    elif coordinate_x > 220:
+                        crawler.do_action('turn right', 1, speed)
+
+                    # Center area → move forward
+                    else:
+                        crawler.do_action('forward', 2, speed)
+
+                    last_seen = True
+                    sleep(0.05)
+
+                else:
+                    # No red target detected
+
+                    # Stop movement only once when target is lost
+                    # This prevents repeated stand() calls that cause "push-up" effect
+                    if last_seen:
+                        crawler.do_step('stand', 40)
+                        last_seen = False
+
+                    sleep(0.15)
+
+        except KeyboardInterrupt:
+            # Stop program safely when Ctrl+C is pressed
+            print("\nStop.")
+
+        finally:
+            # Cleanup section to avoid exit errors
+
+            # Disable color detection
+            try:
+                Vilib.color_detect("close")
+            except Exception:
+                pass
+
+            # Close camera safely
+            try:
+                Vilib.camera_close()
+            except Exception:
+                pass
+
+            # Make the robot sit before exit
+            try:
+                crawler.do_step('sit', 40)
+                sleep(1.0)
+            except Exception:
+                pass
+
     if __name__ == "__main__":
         main()
 
 
 **How it works?**
 
-In general, this project combines the knowledge points of :ref:`py_move`, :ref:`py_vision` and :ref:`py_sound`.
+#. Camera Initialization
 
-Its flow is shown in the figure below:
+   .. code-block:: python
 
-.. image:: img/bull_fight-f.png
+      Vilib.camera_start(vflip=False, hflip=False)
+      Vilib.display(local=False, web=True)
+      Vilib.color_detect("red")
+
+   The camera is started and web preview is enabled.
+   Red color detection is activated.
+   Vilib continuously processes frames in the background
+   and stores detection results in detect_obj_parameter.
+
+#. Robot Preparation
+
+   .. code-block:: python
+
+      crawler.do_step('stand', 40)
+      sleep(1.0)
+
+   The robot performs a stand action before tracking begins.
+   A short delay ensures the posture is stable.
+
+#. Detecting the Target
+
+   .. code-block:: python
+
+      if Vilib.detect_obj_parameter.get('color_n', 0) != 0:
+          coordinate_x = Vilib.detect_obj_parameter.get('color_x', 0)
+
+   The program checks whether a red object is detected.
+   If detected, it reads the horizontal center coordinate (x position)
+   of the red object in the image.
+
+#. Steering Decision Logic
+
+   .. code-block:: python
+
+      if coordinate_x < 100:
+          crawler.do_action('turn left', 1, speed)
+      elif coordinate_x > 220:
+          crawler.do_action('turn right', 1, speed)
+      else:
+          crawler.do_action('forward', 2, speed)
+
+   The image is divided into three horizontal zones:
+   left, center, and right.
+
+   • Left zone → turn left  
+   • Right zone → turn right  
+   • Center zone → move forward  
+
+   This allows the robot to track and follow the red object.
+
+#. Sound Cooldown Mechanism
+
+   .. code-block:: python
+
+      now = time()
+      if now - last_beep >= BEEP_COOLDOWN:
+          music.sound_play_threading('./sounds/talk1.wav')
+          last_beep = now
+
+   A cooldown timer prevents repeated sound playback.
+   The sound effect plays at most once per second
+   even if the object remains detected.
+
+#. Target Lost Handling
+
+   .. code-block:: python
+
+      if last_seen:
+          crawler.do_step('stand', 40)
+          last_seen = False
+
+   When the red object disappears,
+   the robot stops and returns to a stable stand position.
+
+   The last_seen flag ensures stand() is called only once.
+   This prevents repeated posture reset that may cause shaking.
+
+#. Safe Exit and Cleanup
+
+   .. code-block:: python
+
+      finally:
+          Vilib.color_detect("close")
+          Vilib.camera_close()
+          crawler.do_step('sit', 40)
+
+   When the program exits (for example, Ctrl+C),
+   color detection is disabled,
+   the camera is closed safely,
+   and the robot performs a sit action.
+
+   This prevents camera errors and unstable shutdown behavior.
 

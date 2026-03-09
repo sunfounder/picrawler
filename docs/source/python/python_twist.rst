@@ -32,6 +32,13 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
     cd ~/picrawler/examples
     sudo python3 twist.py
 
+After the program starts, the robot first stands up slowly to reach a stable posture.
+
+Once standing, background music begins to play. At the same time, the robot performs a continuous twisting dance movement. During this motion, the four legs alternately rise and lower, creating a rhythmic twisting effect. The legs move in coordinated pairs so the body appears to sway from side to side.
+
+A short delay between each step makes the motion smoother and more stable rather than abrupt or overly fast.
+
+The robot continues dancing while the music plays. When **Ctrl+C** is pressed, the program stops and the robot safely returns to a sitting position before exiting.
 
 **Code**
 
@@ -47,35 +54,51 @@ Here, PiCrawler's four feet are up and down in twos, jumping with the music.
 
     from picrawler import Picrawler
     from robot_hat import Music
+    from time import sleep
 
     music = Music()
     crawler = Picrawler()
 
-
     def twist(speed):
-        new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
+        new_step = [[50, 50, -80], [50, 50, -80], [50, 50, -80], [50, 50, -80]]
+
         for i in range(4):
-            for inc in range(30, 60, 5): 
-                rise = [50,50,(-80+inc*0.5)]
-                drop = [50,50,(-80-inc)]
+            for inc in range(30, 60, 5):
+                rise = [50, 50, (-80 + inc * 0.5)]
+                drop = [50, 50, (-80 - inc)]
 
-                new_step[i]=rise
-                new_step[(i+2)%4] = drop
-                new_step[(i+1)%4] = rise
-                new_step[(i-1)%4] = drop
-                # print(new_step)
-                crawler.do_step(new_step,speed)
+                new_step[i] = rise
+                new_step[(i + 2) % 4] = drop
+                new_step[(i + 1) % 4] = rise
+                new_step[(i - 1) % 4] = drop
 
+                crawler.do_step(new_step, speed)
+                sleep(0.03)  # small delay to make motion smoother and less "crazy"
 
-    def main():  
+    def main():
+        try:
+            # Stand up slowly first
+            crawler.do_step('stand', 40)
+            sleep(1.0)
 
-        music.music_play('./musics/sports-Ahjay_Stelino.mp3')
-        music.music_set_volume(20)
+            # Start music
+            music.music_play('./musics/sports-Ahjay_Stelino.mp3')
+            music.music_set_volume(20)
 
-        while True:
-            twist(speed=100) 
+            while True:
+                twist(speed=100)
 
-    
+        except KeyboardInterrupt:
+            print("\nCtrl+C detected, exiting...")
+
+        finally:
+            # Sit down safely before exit
+            try:
+                crawler.do_step('sit', 40)
+                sleep(1.0)
+            except Exception:
+                pass
+
     if __name__ == "__main__":
         main()
 
@@ -86,18 +109,20 @@ In this code, you need to pay attention to this part:
 .. code-block:: python
 
     def twist(speed):
-        ## [right front],[left front],[left rear],[right rear]
-        new_step=[[50, 50, -80], [50, 50, -80],[50, 50, -80], [50, 50, -80]]
-        for i in range(4):
-            for inc in range(30,60,5):  
-                rise = [50,50,(-80+inc*0.5)]
-                drop = [50,50,(-80-inc)]
+        new_step = [[50, 50, -80], [50, 50, -80], [50, 50, -80], [50, 50, -80]]
 
-                new_step[i]=rise
-                new_step[(i+2)%4] = drop
-                new_step[(i+1)%4] = rise
-                new_step[(i-1)%4] = drop
-                crawler.do_step(new_step,speed)
+        for i in range(4):
+            for inc in range(30, 60, 5):
+                rise = [50, 50, (-80 + inc * 0.5)]
+                drop = [50, 50, (-80 - inc)]
+
+                new_step[i] = rise
+                new_step[(i + 2) % 4] = drop
+                new_step[(i + 1) % 4] = rise
+                new_step[(i - 1) % 4] = drop
+
+                crawler.do_step(new_step, speed)
+                sleep(0.03)  # small delay to make motion smoother and less "crazy"
 
 Simply put, it uses two layers of for loops to make the ``new_step`` array produce continuous and regular changes, and at the same time, ``crawler.do_step()`` executes the posture to form a continuous action.
 
@@ -124,8 +149,3 @@ Play the background music in the ``picrawler/examples/musics`` directory and set
 
     music.music_play('./musics/sports-Ahjay_Stelino.mp3')
     music.music_set_volume(20)
-
-
-.. note::
-
-    You can add different sound effects or music to ``musics`` or ``sounds`` folder via :ref:`filezilla`.
