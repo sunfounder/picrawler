@@ -356,12 +356,11 @@ class Picrawler(Robot):
             if self.ready_state ==  0:
                 _stand += self.ready
             self.z_current = self.Z_DEFAULT
-            _stand += [[
-                [self.X_DEFAULT,self.Y_DEFAULT,self.z_current],
-                [self.X_DEFAULT,self.Y_START,self.z_current],
-                [self.X_DEFAULT,self.Y_START,self.z_current],
-                [self.X_DEFAULT,self.Y_DEFAULT,self.z_current],
-            ]]
+            _stand += [
+                [[self.X_DEFAULT,self.Y_DEFAULT,self.z_current/3],[self.X_DEFAULT,self.Y_START,self.z_current/3],[self.X_DEFAULT,self.Y_START,self.z_current/3],[self.X_DEFAULT,self.Y_DEFAULT,self.z_current/3]],
+                [[self.X_DEFAULT,self.Y_DEFAULT,self.z_current*2/3],[self.X_DEFAULT,self.Y_START,self.z_current*2/3],[self.X_DEFAULT,self.Y_START,self.z_current*2/3],[self.X_DEFAULT,self.Y_DEFAULT,self.z_current*2/3]],
+                [[self.X_DEFAULT,self.Y_DEFAULT,self.z_current],[self.X_DEFAULT,self.Y_START,self.z_current],[self.X_DEFAULT,self.Y_START,self.z_current],[self.X_DEFAULT,self.Y_DEFAULT,self.z_current]],
+            ]
             return _stand
            
         
