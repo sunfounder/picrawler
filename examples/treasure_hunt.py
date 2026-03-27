@@ -115,14 +115,14 @@ def stand_ready():
     Stand up after startup.
     Requirement: stand at 40, then only move after WASD is pressed.
     """
-    try:
-        crawler.do_step('stand', 40)
-        sleep(0.8)
-    except Exception:
-        pass
+    # try:
+    #     # crawler.do_step('stand', 40)
+    #     # sleep(0.8)
+    # except Exception:
+    #     pass
 
 def main():
-    speed = 80
+    speed = 70
     action = None
 
     # Start camera + web preview

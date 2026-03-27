@@ -10,16 +10,13 @@ crawler = Picrawler()
 new_step = [[45, 45, -75], [45, 0, -75], [45, 0, -30], [45, 45, -75]]
 
 # Get the default stand step from the move list
-stand_step = crawler.move_list['stand'][0]
+stand_step = crawler.move_list['stand'][-1]
 
 
 def main():
-    action_speed = 80  # Speed for movement actions
+    action_speed = 50  # Speed for movement actions
 
     try:
-        # Stand up slowly at 40% speed to reduce current spikes
-        crawler.do_step('stand', 40)
-        sleep(1.0)
 
         # Continuous action loop
         while True:

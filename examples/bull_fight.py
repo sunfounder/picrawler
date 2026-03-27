@@ -15,7 +15,7 @@ def main():
     # Enable red color detection
     Vilib.color_detect("red")
 
-    speed = 80                  # Movement speed
+    speed = 70                  # Movement speed
     last_seen = False           # Indicates whether the red target was detected in previous loop
     last_beep = 0               # Timestamp of last sound playback
     BEEP_COOLDOWN = 1.0         # Minimum interval between sound effects (seconds)

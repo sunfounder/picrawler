@@ -57,7 +57,7 @@ def wave_hand(spider):
     ]
 
     for coord in coords:
-        spider.do_step(coord, 90)
+        spider.do_step(coord, 60)
 
 
 def shake_hand(spider):
@@ -81,7 +81,7 @@ def shake_hand(spider):
     ]
 
     for coord in coords:
-        spider.do_step(coord, 82)
+        spider.do_step(coord, 60)
 
 
 def fighting(spider):
@@ -124,33 +124,52 @@ def fighting(spider):
     ]
 
     for coord in ready:
-        spider.do_step(coord, 80)
+        spider.do_step(coord, 60)
     for coord in twist_butt:
-        spider.do_step(coord, 82)
+        spider.do_step(coord, 80)
     sleep(0.2)
     for coord in pounce_bite:
-        spider.do_step(coord, 100)
+        spider.do_step(coord, 60)
     sleep(1)
     for coord in return_stand:
-        spider.do_step(coord, 82)
+        spider.do_step(coord, 60)
 
 
 def excited(spider):
+    """
+    Excited motion.
+    Optimized to keep the energetic up-down feeling
+    while reducing sudden full-body load spikes.
+    """
+
     coords = [
-        # stand
+        # normal stand
         [[45, 45, -50], [45, 0, -50], [45, 0, -50], [45, 45, -50]],
-        #
-        [[45, 45, -30], [45, 0, -30], [45, 0, -30], [45, 45, -30]],
-        [[45, 45, -80], [45, 0, -80], [45, 0, -80], [45, 45, -80]],
-        [[45, 45, -30], [45, 0, -30], [45, 0, -30], [45, 45, -30]],
-        [[45, 45, -80], [45, 0, -80], [45, 0, -80], [45, 45, -80]],
-        [[45, 45, -30], [45, 0, -30], [45, 0, -30], [45, 45, -30]],
-        [[45, 45, -80], [45, 0, -80], [45, 0, -80], [45, 45, -80]],
-        #
+
+        # bounce up
+        [[45, 45, -38], [45, 0, -38], [45, 0, -38], [45, 45, -38]],
+
+        # middle buffer
+        [[45, 45, -60], [45, 0, -60], [45, 0, -60], [45, 45, -60]],
+
+        # bounce down
+        [[45, 45, -72], [45, 0, -72], [45, 0, -72], [45, 45, -72]],
+
+        # bounce up again
+        [[45, 45, -40], [45, 0, -40], [45, 0, -40], [45, 45, -40]],
+
+        # middle buffer
+        [[45, 45, -60], [45, 0, -60], [45, 0, -60], [45, 45, -60]],
+
+        # bounce down again
+        [[45, 45, -72], [45, 0, -72], [45, 0, -72], [45, 45, -72]],
+
+        # final return
         [[45, 45, -50], [45, 0, -50], [45, 0, -50], [45, 45, -50]],
     ]
+
     for coord in coords:
-        spider.do_step(coord, 80)
+        spider.do_step(coord, 70)
 
 def play_dead(spider):
     sit = [
@@ -184,39 +203,57 @@ def play_dead(spider):
     for coord in sit:
         spider.do_step(coord, 60)
     for coord in play_dead:
-        spider.do_step(coord, 85)
+        spider.do_step(coord, 80)
     for coord in return_stand:
-        spider.do_step(coord, 60)
+        spider.do_step(coord, 40)
 
 
 def nod(spider):
+    """
+    Nodding motion.
+    Optimized to keep the nod visible but less exaggerated.
+    """
+
     stand = [
-        # stand
+        # normal stand
         [[45, 45, -50], [45, 0, -50], [45, 0, -50], [45, 45, -50]],
     ]
 
-    nod = [
-        [[45, 45, -80], [45, 0, -50], [45, 0, -20], [45, 45, -30]],
-        [[45, 45, -20], [45, 0, -36], [45, 20, -52], [40, 20, -80]],
-        [[45, 45, -80], [45, 0, -50], [45, 0, -20], [45, 45, -30]],
-        [[45, 45, -20], [45, 0, -36], [45, 20, -52], [40, 20, -80]],
-        [[45, 45, -80], [45, 0, -50], [45, 0, -20], [45, 45, -30]],
+    nod_motion = [
+        # head/body dips slightly forward
+        [[45, 45, -68], [45, 0, -48], [45, 5, -32], [45, 45, -38]],
+
+        # lift back a bit and rebalance
+        [[45, 45, -32], [45, 0, -42], [45, 15, -48], [42, 20, -68]],
+
+        # nod again
+        [[45, 45, -68], [45, 0, -48], [45, 5, -32], [45, 45, -38]],
+
+        # lift back
+        [[45, 45, -32], [45, 0, -42], [45, 15, -48], [42, 20, -68]],
+
+        # final nod
+        [[45, 45, -68], [45, 0, -48], [45, 5, -32], [45, 45, -38]],
     ]
 
     return_stand = [
-        [[45, 45, -80], [45, 0, -50], [45, 0, -40], [45, 45, -40]],
-        [[45, 45, -60], [45, 0, -50], [45, 0, -40], [45, 45, -40]],
+        [[45, 45, -62], [45, 0, -48], [45, 0, -40], [45, 45, -42]],
+        [[45, 45, -55], [45, 0, -50], [45, 0, -45], [45, 45, -45]],
         [[45, 45, -50], [45, 0, -50], [45, 0, -50], [45, 45, -50]],
     ]
 
     for coord in stand:
         spider.do_step(coord, 60)
-    for coord in nod:
+
+    for coord in nod_motion:
         spider.do_step(coord, 70)
-    sleep(.2)
+
+    sleep(0.15)
+
     for coord in return_stand:
-        spider.do_step(coord, 80)
-    sleep(1)
+        spider.do_step(coord, 75)
+
+    sleep(0.6)
 
 
 def shake_head(spider):
@@ -225,6 +262,11 @@ def shake_head(spider):
         [[45, 45, -50], [45, 0, -50], [45, 20, -50], [45, 45, -50]],
         [[45, 45, -50], [45, 20, -30], [45, 20, -50], [45, 45, -50]],
         [[45, 45, -50], [45, 45, -50], [45, 20, -50], [45, 45, -50]],
+    ]
+
+    stand = [
+        # normal stand
+        [[45, 45, -50], [45, 0, -50], [45, 0, -50], [45, 45, -50]],
     ]
 
     twist_butt = [
@@ -243,13 +285,14 @@ def shake_head(spider):
         [[45, 45, -50], [45, 0, -50], [45, 0, -50], [45, 45, -50]],
     ]
 
-    for coord in ready:
-        spider.do_step(coord, 80)
+    for coord in stand:
+        spider.do_step(coord, 60)
+
     for coord in twist_butt:
-        spider.do_step(coord, 90)
+        spider.do_step(coord, 70)
     sleep(.5)
     for coord in return_stand:
-        spider.do_step(coord, 82)
+        spider.do_step(coord, 60)
 
 
 def look_left(spider):
@@ -265,9 +308,9 @@ def look_left(spider):
     ]
 
     for coord in stand:
-        spider.do_step(coord, 80)
+        spider.do_step(coord, 60)
     for coord in look_left:
-        spider.do_step(coord, 80)
+        spider.do_step(coord, 70)
 
 
 def look_right(spider):
@@ -283,9 +326,9 @@ def look_right(spider):
     ]
 
     for coord in stand:
-        spider.do_step(coord, 80)
+        spider.do_step(coord, 60)
     for coord in look_right:
-        spider.do_step(coord, 80)
+        spider.do_step(coord, 70)
 
 
 def warm_up(spider):
@@ -343,19 +386,19 @@ def warm_up(spider):
     ]
 
     for coord in stand:
-        spider.do_step(coord, 80)
+        spider.do_step(coord, 60)
     sleep(0.5)
     for coord in left_right:
-        spider.do_step(coord, 75)
+        spider.do_step(coord, 60)
     sleep(.3)
     for coord in clockwise:
-        spider.do_step(coord, 90)
+        spider.do_step(coord, 70)
     sleep(.3)
     for coord in anticlockwise:
-        spider.do_step(coord, 90)
+        spider.do_step(coord, 70)
     sleep(.3)
     for coord in return_stand:
-        spider.do_step(coord, 80)
+        spider.do_step(coord, 70)
 
 
 def push_up(spider):
@@ -377,9 +420,9 @@ def push_up(spider):
     ]
 
     for coord in ready:
-        spider.do_step(coord,70)
+        spider.do_step(coord,60)
     for coord in push_up:
-        spider.do_step(coord, 80)
+        spider.do_step(coord, 70)
 
 
 actions_dict = {
@@ -456,7 +499,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f'Error:\n {e}')
     finally:
-        my_spider.do_action("sit", speed=60)
+        my_spider.do_action("sit", speed=40)
         sleep(.1)
 
 

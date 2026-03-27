@@ -32,7 +32,7 @@ def main():
         music.music_set_volume(20)
 
         while True:
-            twist(speed=100)
+            twist(speed=80)
 
     except KeyboardInterrupt:
         print("\nCtrl+C detected, exiting...")

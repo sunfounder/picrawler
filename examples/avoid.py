@@ -10,7 +10,7 @@ sonar = Ultrasonic(Pin("D2"), Pin("D3"))  # Ultrasonic trigger/echo pins
 music.music_set_volume(100)  # Set speaker volume
 
 alert_distance = 15  # Obstacle warning distance (cm)
-speed = 80           # Movement speed
+speed = 70           # Movement speed
 
 # ----------------------------
 # Add hardware timeout to sonar.read()
@@ -77,8 +77,6 @@ def main():
 
 if __name__ == "__main__":
     try:
-        crawler.do_step('stand', 40)  # Stand before starting
-        time.sleep(1.0)
 
         while True:
             main()

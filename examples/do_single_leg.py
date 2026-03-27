@@ -5,7 +5,7 @@ import readchar
 
 crawler = Picrawler()
 
-SPEED = 80
+SPEED = 70
 STEP_SIZE = 2
 
 manual = '''
@@ -56,10 +56,6 @@ def main():
 
     try:
         print(manual)
-
-        # Stand up first
-        crawler.do_step('stand', 40)
-        sleep(0.5)
 
         # Get current coordinates
         coordinate = crawler.current_step_all_leg_value()

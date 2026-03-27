@@ -4,9 +4,9 @@ import readchar
 
 crawler = Picrawler()
 
-SPEED_MIN = 20
-SPEED_MAX = 70
-speed = 60
+SPEED_MIN = 50
+SPEED_MAX = 90
+speed = 70
 
 STEP = 1            # Number of action steps per key press
 ACTION_GAP = 0.25   # Delay after each action to reduce current spikes
