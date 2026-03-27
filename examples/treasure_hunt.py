@@ -1,183 +1,190 @@
-from pydoc import text
+#!/usr/bin/env python3
+from picrawler import Picrawler
+from time import sleep, time
+from robot_hat import Music, TTS
 from vilib import Vilib
-from time import sleep, time, strftime, localtime
-import threading
 import readchar
-import os
+import random
+import threading
 
-flag_face = False
-flag_color = False
-qr_code_flag = False
+crawler = Picrawler()
+music = Music()   # kept for compatibility (not used here)
+tts = TTS()
 
-manual = '''
-Input key to call the function!
-    q: Take photo
-    1: Color detect : red
-    2: Color detect : orange
-    3: Color detect : yellow
-    4: Color detect : green
-    5: Color detect : blue
-    6: Color detect : purple
-    0: Switch off Color detect
-    r: Scan the QR code
-    f: Switch ON/OFF face detect
-    s: Display detected object information
+MANUAL = '''
+Press keys on keyboard to control Picrawler!
+        w: Forward
+        a: Turn left
+        s: Backward
+        d: Turn right
+        space: Say the target again
+        Ctrl+C: Quit
 '''
 
-color_list = ['close', 'red', 'orange', 'yellow',
-        'green', 'blue', 'purple',
-]
+color = "red"
+color_list = ["red", "orange", "yellow", "green", "blue", "purple"]
 
-def face_detect(flag):
-    print("Face Detect:" + str(flag))
-    Vilib.face_detect_switch(flag)
+key_dict = {
+        'w': 'forward',
+        's': 'backward',
+        'a': 'turn_left',
+        'd': 'turn_right',
+}
 
+# ----------------------------
+# Thread-safe key handling
+# ----------------------------
+lock = threading.Lock()
+key_state = None               # last key event
+stop_event = threading.Event() # signal to exit cleanly
 
-def qrcode_detect():
-    global qr_code_flag
-    if qr_code_flag == True:
-        Vilib.qrcode_detect_switch(True)
-        print("Waitting for QR code")
+def set_key(k):
+        global key_state
+        with lock:
+                key_state = k
 
-    text = None
-    while True:
-        temp = Vilib.detect_obj_parameter['qr_data']
-        if temp != "None" and temp != text:
-            text = temp
-            print('QR code:%s'%text)
+def pop_key():
+        """Read and clear the last key event."""
+        global key_state
+        with lock:
+                k = key_state
+                key_state = None
+        return k
 
-        if qr_code_flag == False:
-            break
+def key_scan_thread():
+        """Keyboard input thread (quiet exit on Ctrl+C)."""
+        while not stop_event.is_set():
+                try:
+                        k = readchar.readkey()
+                except KeyboardInterrupt:
+                        # Ctrl+C may raise KeyboardInterrupt inside this thread
+                        stop_event.set()
+                        break
+                except Exception:
+                        sleep(0.02)
+                        continue
 
-        sleep(0.5)
+                if k == readchar.key.SPACE:
+                        set_key('space')
+                elif k == readchar.key.CTRL_C:
+                        set_key('quit')
+                        stop_event.set()
+                        break
+                else:
+                        try:
+                                set_key(str(k).lower())
+                        except Exception:
+                                pass
 
-    Vilib.qrcode_detect_switch(False)
+                sleep(0.01)
 
+# ----------------------------
+# Game logic
+# ----------------------------
+def renew_color_detect():
+        global color
+        color = random.choice(color_list)
+        try:
+                Vilib.color_detect(color)
+        except Exception:
+                pass
+        try:
+                tts.say("Look for " + color)
+        except Exception:
+                pass
 
-def take_photo():
-    _time = strftime('%Y-%m-%d-%H-%M-%S',localtime(time()))
-    name = 'photo_%s'%_time
-    username = os.getlogin()
+def safe_camera_close():
+        try:
+                Vilib.color_detect("close")
+        except Exception:
+                pass
+        try:
+                Vilib.camera_close()
+        except Exception:
+                pass
 
-    path = f"/home/{username}/Pictures/"
-    Vilib.take_photo(name, path)
-    print('photo save as %s%s.jpg'%(path,name))
-
-
-def object_show():
-    global flag_color, flag_face
-
-    if flag_color is True:
-        if Vilib.detect_obj_parameter['color_n'] == 0:
-            print('Color Detect: None')
-        else:
-            color_coodinate = (Vilib.detect_obj_parameter['color_x'],Vilib.detect_obj_parameter['color_y'])
-            color_size = (Vilib.detect_obj_parameter['color_w'],Vilib.detect_obj_parameter['color_h'])
-            print("[Color Detect] ","Coordinate:",color_coodinate,"Size",color_size)
-
-    if flag_face is True:
-        if Vilib.detect_obj_parameter['human_n'] == 0:
-            print('Face Detect: None')
-        else:
-            human_coodinate = (Vilib.detect_obj_parameter['human_x'],Vilib.detect_obj_parameter['human_y'])
-            human_size = (Vilib.detect_obj_parameter['human_w'],Vilib.detect_obj_parameter['human_h'])
-            print("[Face Detect] ","Coordinate:",human_coodinate,"Size",human_size)
-
+def safe_sit():
+        try:
+                crawler.do_step('sit', 40)
+                sleep(0.5)
+        except Exception:
+                pass
 
 def main():
-    global flag_face, flag_color, qr_code_flag
-    qrcode_thread = None
+        speed = 70
+        action = None
 
-    # start camera
-    Vilib.camera_start(vflip=False,hflip=False)
-    sleep(1)
+        # Start camera + web preview
+        Vilib.camera_start(vflip=False, hflip=False)
+        Vilib.display(local=False, web=True)
+        sleep(0.8)
 
-    # start web preview
-    Vilib.display(local=False,web=True)
+        print(MANUAL)
 
-    print(manual)
+        # Start keyboard thread (daemon, so it won't block process exit)
+        t = threading.Thread(target=key_scan_thread, daemon=True)
+        t.start()
 
-    try:
-        while True:
+        # Announce and stand up to 40
+        try:
+                tts.say("game start")
+        except Exception:
+                pass
+        sleep(0.05)
 
-            key = readchar.readkey()
-            key = key.lower()
-
-            # take photo
-            if key == 'q':
-                take_photo()
-
-            # color detect
-            elif key != '' and key in ('0123456'):
-                index = int(key)
-
-                if index == 0:
-                    flag_color = False
-                    Vilib.color_detect('close')
-                else:
-                    flag_color = True
-                    Vilib.color_detect(color_list[index])
-
-                print('Color detect : %s'%color_list[index])
-
-            # face detection
-            elif key =="f":
-                flag_face = not flag_face
-                face_detect(flag_face)
-
-            # qrcode detection
-            elif key =="r":
-                qr_code_flag = not qr_code_flag
-
-                if qr_code_flag == True:
-                    if qrcode_thread == None or not qrcode_thread.is_alive():
-                        qrcode_thread = threading.Thread(target=qrcode_detect)
-                        qrcode_thread.daemon = True
-                        qrcode_thread.start()
-
-                else:
-                    if qrcode_thread != None and qrcode_thread.is_alive():
-                        qrcode_thread.join()
-                        print('QRcode Detect: close')
-
-            # show detected object information
-            elif key == "s":
-                object_show()
-
-            sleep(0.1)
-
-    except KeyboardInterrupt:
-        print("\nCtrl+C detected, exiting safely...")
-
-    finally:
-        # stop QR detection
-        qr_code_flag = False
+        renew_color_detect()
 
         try:
-            Vilib.qrcode_detect_switch(False)
-        except:
-            pass
+                while not stop_event.is_set():
+                        # If target detected and large enough -> renew target
+                        try:
+                                n = Vilib.detect_obj_parameter.get('color_n', 0)
+                                w = Vilib.detect_obj_parameter.get('color_w', 0)
+                        except Exception:
+                                n, w = 0, 0
 
-        # stop color detection
-        try:
-            Vilib.color_detect("close")
-        except:
-            pass
+                        if n != 0 and w > 100:
+                                try:
+                                        tts.say("well done")
+                                except Exception:
+                                        pass
+                                sleep(0.05)
+                                renew_color_detect()
 
-        # stop face detection
-        try:
-            Vilib.face_detect_switch(False)
-        except:
-            pass
+                        # Handle key event
+                        k = pop_key()
 
-        # close camera
-        try:
-            Vilib.camera_close()
-        except:
-            pass
+                        if k in key_dict:
+                                action = key_dict[k]
 
-        print("Camera closed. Program exit.")
+                        elif k == 'space':
+                                try:
+                                        tts.say("Look for " + color)
+                                except Exception:
+                                        pass
 
+                        elif k == 'quit':
+                                stop_event.set()
+
+                        # Move only after receiving a WASD action
+                        if action is not None:
+                                try:
+                                        crawler.do_action(action, 1, speed)
+                                except Exception:
+                                        pass
+                                action = None
+
+                        sleep(0.05)
+
+        except KeyboardInterrupt:
+                stop_event.set()
+
+        finally:
+                # Clean exit
+                stop_event.set()
+                safe_camera_close()
+                safe_sit()
+                print("\nQuit")
 
 if __name__ == "__main__":
-    main()
+        main()

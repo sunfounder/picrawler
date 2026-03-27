@@ -23,13 +23,16 @@ def twist(speed):
 
 def main():
     try:
+        # Stand up slowly first
+        crawler.do_step('stand', 40)
+        sleep(1.0)
 
         # Start music
         music.music_play('./musics/sports-Ahjay_Stelino.mp3')
         music.music_set_volume(20)
 
         while True:
-            twist(speed=70)
+            twist(speed=80)
 
     except KeyboardInterrupt:
         print("\nCtrl+C detected, exiting...")

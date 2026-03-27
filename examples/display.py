@@ -45,9 +45,12 @@ def qrcode_detect():
         if temp != "None" and temp != text:
             text = temp
             print('QR code:%s'%text)
+
         if qr_code_flag == False:
             break
+
         sleep(0.5)
+
     Vilib.qrcode_detect_switch(False)
 
 
@@ -85,49 +88,95 @@ def main():
     global flag_face, flag_color, qr_code_flag
     qrcode_thread = None
 
+    # start camera
     Vilib.camera_start(vflip=False,hflip=False)
-    Vilib.display(local=True,web=True)
+    sleep(1)
+
+    # start web preview
+    Vilib.display(local=False,web=True)
+
     print(manual)
 
-    while True:
-        # readkey
-        key = readchar.readkey()
-        key = key.lower()
-        # take photo
-        if key == 'q':
-            take_photo()
-        # color detect
-        elif key != '' and key in ('0123456'):  # '' in ('0123') -> True
-            index = int(key)
-            if index == 0:
-                flag_color = False
-                Vilib.color_detect('close')
-            else:
-                flag_color = True
-                Vilib.color_detect(color_list[index]) # color_detect(color:str -> color_name/close)
-            print('Color detect : %s'%color_list[index])
-        # face detection
-        elif key =="f":
-            flag_face = not flag_face
-            face_detect(flag_face)
-        # qrcode detection
-        elif key =="r":
-            qr_code_flag = not qr_code_flag
-            if qr_code_flag == True:
-                if qrcode_thread == None or not qrcode_thread.is_alive():
-                    qrcode_thread = threading.Thread(target=qrcode_detect)
-                    qrcode_thread.daemon = True
-                    qrcode_thread.start()
-            else:
-                if qrcode_thread != None and qrcode_thread.is_alive():
-                # wait for thread to end
-                    qrcode_thread.join()
-                    print('QRcode Detect: close')
-        # show detected object information
-        elif key == "s":
-            object_show()
+    try:
+        while True:
 
-        sleep(0.5)
+            key = readchar.readkey()
+            key = key.lower()
+
+            # take photo
+            if key == 'q':
+                take_photo()
+
+            # color detect
+            elif key != '' and key in ('0123456'):
+                index = int(key)
+
+                if index == 0:
+                    flag_color = False
+                    Vilib.color_detect('close')
+                else:
+                    flag_color = True
+                    Vilib.color_detect(color_list[index])
+
+                print('Color detect : %s'%color_list[index])
+
+            # face detection
+            elif key =="f":
+                flag_face = not flag_face
+                face_detect(flag_face)
+
+            # qrcode detection
+            elif key =="r":
+                qr_code_flag = not qr_code_flag
+
+                if qr_code_flag == True:
+                    if qrcode_thread == None or not qrcode_thread.is_alive():
+                        qrcode_thread = threading.Thread(target=qrcode_detect)
+                        qrcode_thread.daemon = True
+                        qrcode_thread.start()
+
+                else:
+                    if qrcode_thread != None and qrcode_thread.is_alive():
+                        qrcode_thread.join()
+                        print('QRcode Detect: close')
+
+            # show detected object information
+            elif key == "s":
+                object_show()
+
+            sleep(0.1)
+
+    except KeyboardInterrupt:
+        print("\nCtrl+C detected, exiting safely...")
+
+    finally:
+        # stop QR detection
+        qr_code_flag = False
+
+        try:
+            Vilib.qrcode_detect_switch(False)
+        except:
+            pass
+
+        # stop color detection
+        try:
+            Vilib.color_detect("close")
+        except:
+            pass
+
+        # stop face detection
+        try:
+            Vilib.face_detect_switch(False)
+        except:
+            pass
+
+        # close camera
+        try:
+            Vilib.camera_close()
+        except:
+            pass
+
+        print("Camera closed. Program exit.")
 
 
 if __name__ == "__main__":
