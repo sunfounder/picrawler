@@ -55,3 +55,12 @@ Q5: バッテリーチャージャーについて
 
 充電中は、充電チップが入力電力をブーストしてバッテリーを充電すると同時に、外部用のDC-DCコンバータに電力を供給します。充電出力はおおよそ10Wです。
 外部の消費電力が長時間にわたって高い状態が続く場合、バッテリーが電力供給を補助することがあります。これは、スマートフォンを充電しながら使用する場合と似ています。ただし、同時に充電と使用を行う際には、バッテリー容量が完全に消耗しないよう注意してください。
+
+Q6: PiCamera のインストールについて
+-----------------------------------------------------
+
+お使いの Raspberry Pi のモデル（Raspberry Pi 5/4/Zero 2 W モデル）に応じて PiCamera をインストールしてください。
+
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/vwsna5zb9o8?si=oNH6fxpg_XW0tS15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
