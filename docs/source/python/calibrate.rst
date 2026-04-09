@@ -7,13 +7,24 @@
 
 .. raw:: html
 
-    <iframe width="600" height="400" src="https://www.youtube.com/embed/48FLHB_cw3k?si=Zla7BApIt0o6tq73" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe
+        src="https://player.bilibili.com/player.html?isOutside=true&aid=116373649037491&bvid=BV1CaDsBKESF&cid=37359846822&p=1"
+        width="600"
+        height="400"
+        scrolling="no"
+        border="0"
+        frameborder="no"
+        framespacing="0"
+        allowfullscreen="true">
+    </iframe>
 
 具体步骤如下：
 
 1. 取出装配说明书，翻到最后一页并平放在桌面上。然后将 PiCrawler 按下图所示放置，使其底部与校准图上的轮廓对齐。
 
-    .. image:: img/calibration2.png
+    .. image:: img/calibration.png
+
+    .. image:: img/calibration_v1.png
 
 #. 运行 ``calibration.py``。
 

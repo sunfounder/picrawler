@@ -42,3 +42,21 @@ Q5: 关于电池充电器？
 在充电过程中，充电芯片会将输入电源升压，为电池充电的同时也为 DC-DC 转换器供电，整体充电功率约为 10W。  
 如果外部负载长时间保持较高功耗，电池可能会辅助供电，这类似于边充电边使用手机。  
 不过需要注意电池容量，避免在充电和使用同时进行时将电池完全耗尽。  
+
+Q6: 关于 PiCamera 的安装？
+-----------------------------------------------------
+
+根据你的 Raspberry Pi 型号（Raspberry Pi 5/4/Zero 2 W 型号）安装 PiCamera。
+
+.. raw:: html
+
+    <iframe
+        src="https://player.bilibili.com/player.html?isOutside=true&aid=116373648840858&bvid=BV1CaDsBNEHa&cid=37360438362&p=1"
+        width="600"
+        height="400"
+        scrolling="no"
+        border="0"
+        frameborder="no"
+        framespacing="0"
+        allowfullscreen="true">
+    </iframe>
