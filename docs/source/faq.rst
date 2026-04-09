@@ -55,3 +55,12 @@ You can also use the device while charging the battery.
 
 During charging, the input power is boosted by the charging chip to charge the battery and simultaneously supply the DC-DC converter for external use, with a charging power of approximately 10W. 
 If external power consumption remains high for an extended period, the battery may supplement the power supply, similar to using a phone while charging. However, be mindful of the battery's capacity to avoid completely depleting it during simultaneous charging and usage.
+
+Q6: About the PiCamera installation?
+-----------------------------------------------------
+
+Install PiCamera based on your Raspberry Pi model(Raspberry Pi 5/4/Zero 2 W Model).
+
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/vwsna5zb9o8?si=oNH6fxpg_XW0tS15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

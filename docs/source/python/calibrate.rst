@@ -28,7 +28,9 @@ The specific steps are as follows:
 
 1. Take out the assembly leaflet, turn it to the last page, and lay it flat on the table. Then place the PiCrawler as shown below, aligning its bottom with the outline on the calibration chart.
 
-    .. image:: img/calibration2.png
+    .. image:: img/calibration.png
+
+    .. image:: img/calibration_v1.png
 
 #. Run the ``calibration.py``.
 
