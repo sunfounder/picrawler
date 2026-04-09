@@ -27,7 +27,8 @@ Die spezifischen Schritte sind wie folgt:
 
 1. Nehmen Sie die Montageanleitung, schlagen Sie die letzte Seite auf und legen Sie sie flach auf den Tisch. Platzieren Sie dann den PiCrawler wie unten gezeigt, wobei sein Boden mit der Umrisslinie auf der Kalibrierungskarte ausgerichtet ist.  
 
-    .. image:: img/calibration2.png  
+    .. image:: img/calibration.png 
+    .. image:: img/calibration_v1.png
 
 #. Führen Sie die Datei ``calibration.py`` aus.  
 

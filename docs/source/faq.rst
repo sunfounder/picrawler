@@ -55,3 +55,12 @@ Das Gerät kann auch während des Ladevorgangs verwendet werden.
 
 Während des Ladevorgangs wird die Eingangsleistung durch den Ladechip verstärkt, um die Batterie zu laden und gleichzeitig den DC-DC-Wandler für die externe Nutzung zu versorgen. Die Ladeleistung beträgt dabei ungefähr 10W.
 Wenn der externe Stromverbrauch über einen längeren Zeitraum hoch bleibt, kann die Batterie die Stromversorgung ergänzen, ähnlich wie bei der Nutzung eines Telefons während des Ladevorgangs. Beachten Sie jedoch die Kapazität der Batterie, um ein vollständiges Entladen während gleichzeitiger Nutzung und Aufladung zu vermeiden.
+
+Q6: Zur Installation der PiCamera?
+-----------------------------------------------------
+
+Installiere die PiCamera entsprechend deinem Raspberry Pi Modell (Raspberry Pi 5/4/Zero 2 W Modell).
+
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/vwsna5zb9o8?si=oNH6fxpg_XW0tS15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
