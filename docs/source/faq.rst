@@ -55,3 +55,12 @@ Puoi anche utilizzare il dispositivo mentre la batteria è in carica.
 
 Durante la ricarica, l'energia in ingresso viene amplificata dal chip di ricarica per caricare la batteria e contemporaneamente alimentare il convertitore DC-DC per uso esterno, con una potenza di ricarica di circa 10W.
 Se il consumo di energia esterna rimane elevato per un periodo prolungato, la batteria potrebbe integrare l'alimentazione, in modo simile all'uso di un telefono mentre è in carica. Tuttavia, fai attenzione alla capacità della batteria per evitare che si esaurisca completamente durante l'uso e la ricarica simultanei.
+
+Q6: Informazioni sull’installazione della PiCamera
+-----------------------------------------------------
+
+Installa la PiCamera in base al modello del tuo Raspberry Pi (Modello Raspberry Pi 5/4/Zero 2 W).
+
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/vwsna5zb9o8?si=oNH6fxpg_XW0tS15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

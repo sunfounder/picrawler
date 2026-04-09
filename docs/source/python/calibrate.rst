@@ -27,7 +27,9 @@ I passaggi specifici sono i seguenti:
 
 1. Prendi il foglio di istruzioni per l'assemblaggio, giralo all'ultima pagina e posizionalo piatto sul tavolo. Quindi colloca il PiCrawler come mostrato di seguito, allineando la base con il contorno sulla scheda di calibrazione.
 
-    .. image:: img/calibration2.png
+    .. image:: img/calibration.png
+
+    .. image:: img/calibration_v1.png
 
 #. Esegui il file ``calibration.py``.
 

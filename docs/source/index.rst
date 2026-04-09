@@ -32,7 +32,7 @@ Grazie per aver scelto il nostro |link_PiCrawler|.
    
     Fare clic sui rispettivi collegamenti per accedere al documento nella lingua desiderata.
 
-.. image:: img/PiCrawler.jpg
+.. image:: img/picrawler.jpg
     :width: 500px
     :align: center
 
@@ -55,6 +55,7 @@ Per qualsiasi domanda, contatta service@sunfounder.com.
     :maxdepth: 2
 
     About this Kit <self>
+    assemble_video
     python/play_with_python 
     ezblock/play_with_ezblock
     servo_zeroing
