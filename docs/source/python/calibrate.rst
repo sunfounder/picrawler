@@ -27,7 +27,9 @@ Los pasos específicos son los siguientes:
 
 1. Saca el folleto de ensamblaje, ábrelo en la última página y colócalo sobre la mesa. Luego coloca el PiCrawler como se muestra a continuación, alineando su base con el contorno en la tabla de calibración.
 
-    .. image:: img/calibration2.png
+    .. image:: img/calibration.png
+
+    .. image:: img/calibration_v1.png
 
 #. Ejecuta el archivo ``calibration.py``.
 
