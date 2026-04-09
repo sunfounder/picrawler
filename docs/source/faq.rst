@@ -55,3 +55,12 @@ Vous pouvez également utiliser l'appareil pendant la charge de la batterie.
 
 Pendant la charge, la puissance d'entrée est amplifiée par la puce de charge pour recharger la batterie tout en alimentant simultanément le convertisseur DC-DC pour un usage externe. La puissance de charge est d'environ 10 W.
 Si la consommation électrique externe reste élevée sur une longue période, la batterie peut compléter l'alimentation, de manière similaire à l'utilisation d'un téléphone en charge. Cependant, veillez à ne pas épuiser complètement la capacité de la batterie lors d'une utilisation et d'une charge simultanées.
+
+Q6: À propos de l’installation de la PiCamera ?
+-----------------------------------------------------
+
+Installez la PiCamera en fonction de votre modèle de Raspberry Pi (Modèle Raspberry Pi 5/4/Zero 2 W).
+
+.. raw:: html
+
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/vwsna5zb9o8?si=oNH6fxpg_XW0tS15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

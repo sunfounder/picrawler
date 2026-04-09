@@ -14,7 +14,7 @@
 
 .. _install_all_modules:
 
-Install All the Modules (Important)
+Installer tous les modules (Important)
 =========================================
 
 #. **Préparer le système**

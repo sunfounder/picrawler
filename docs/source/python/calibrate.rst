@@ -29,7 +29,9 @@ Bien sûr, vous pouvez sauter ce chapitre si vous pensez que l'assemblage est pa
 
 1. Prenez le feuillet d'assemblage, tournez-le à la dernière page et posez-le à plat sur la table. Ensuite, placez le PiCrawler comme indiqué ci-dessous, en alignant sa base avec le contour du graphique de calibration.
 
-    .. image:: img/calibration2.png
+    .. image:: img/calibration.png
+
+    .. image:: img/calibration_v1.png
 
 2. Exécutez le fichier ``calibration.py``.
 
