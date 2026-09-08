@@ -361,6 +361,13 @@ def warm_up(spider):
 
 
 def push_up(spider):
+    # NOTE: do_step -> servo_move() drives ALL servos simultaneously, so moving
+    # the whole robot into the extreme push-up pose in one fast burst spikes the
+    # instantaneous current and can brown out / reboot the Pi. We keep every
+    # pose coordinate identical (no visual change) but:
+    #   1. ramp into the pose much slower (speed 70 -> 30),
+    #   2. pause between the ready frames and settle after the pose,
+    #   3. slow the push-up reps and let the supply recover between them.
     ready = [
         # stand
         [[45, 45, -50], [45, 0, -50], [45, 0, -50], [45, 45, -50]],
@@ -378,11 +385,17 @@ def push_up(spider):
         [[70, 0, -76], [70, 0, -76], [0, 130, -40], [0, 130, -40]],
     ]
 
+    # slow, gentle ramp into the high-torque pose, then settle before pumping
     for coord in ready:
-        spider.do_step(coord,70)
+        spider.do_step(coord, 30)
+        sleep(0.18)
+    sleep(0.6)
+
+    # pump back and forth, but slower, with a short recovery pause between reps
     for coord in push_up:
-        spider.do_step(coord, 35)
-        sleep(0.1)
+        spider.do_step(coord, 30)
+        sleep(0.15)
+    sleep(0.4)
 
 
 actions_dict = {
